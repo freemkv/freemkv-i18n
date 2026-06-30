@@ -1,0 +1,17 @@
+[package]
+name = "freemkv-i18n"
+version = "1.2.0"
+edition = "2024"
+rust-version = "1.86"
+license = "AGPL-3.0-only"
+description = "i18n string loader for the freemkv toolchain (bundled + on-disk locales)"
+repository = "https://github.com/freemkv/freemkv-i18n"
+keywords = ["i18n", "localization", "freemkv"]
+categories = ["internationalization"]
+
+[lib]
+name = "freemkv_i18n"
+path = "src/lib.rs"
+
+[dependencies]
+serde_json = "1"
