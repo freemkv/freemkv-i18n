@@ -1,9 +1,9 @@
 [package]
 name = "freemkv-i18n"
-version = "1.3.0"
+version = "1.3.1"
 edition = "2024"
 rust-version = "1.86"
-license = "AGPL-3.0-only"
+license = "MIT"
 description = "i18n string loader for the freemkv toolchain (bundled + on-disk locales)"
 repository = "https://github.com/freemkv/freemkv-i18n"
 keywords = ["i18n", "localization", "freemkv"]

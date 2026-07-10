@@ -1,5 +1,5 @@
 // freemkv-i18n — i18n string loader (shared across the freemkv toolchain)
-// AGPL-3.0 — freemkv project
+// MIT — freemkv project
 //
 // English is compiled into the binary (always available).
 // Other languages loaded from disk at runtime — drop a JSON file, done.
