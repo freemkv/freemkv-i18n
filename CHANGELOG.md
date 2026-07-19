@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.5.0] — UNRELEASED
+
+### Added
+
+- **`E7026` string** (AACS 2.1 FMTS variant key missing) in all seven bundled
+  locales — closes a gap where the error had a code but no user-facing text, so the
+  CLI rendered the key path instead of a message.
+
+Version sync with the workspace; inherits libfreemkv 1.5.0.
+
 ## [1.4.1] — 2026-07-14
 
 Version sync with the workspace; inherits libfreemkv 1.4.1.
