@@ -90,9 +90,18 @@
       "ime": "IME"
     },
     "secondary": "Secondary",
+    "track": "Track",
     "qualifier": {
       "sdh": "SDH",
       "descriptive_service": "Descriptive Service"
+    }
+  },
+  "mp4": {
+    "excluded_header": "Note: {count} track(s) can't be stored in an MP4 and will be left out (use mkv:// to keep everything):",
+    "reason": {
+      "subtitle": "bitmap subtitle — MP4 carries text subtitles only",
+      "audio": "audio codec has no MP4 mapping",
+      "video": "secondary video view"
     }
   },
   "rip": {
