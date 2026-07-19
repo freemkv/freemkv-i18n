@@ -286,6 +286,7 @@
     "E7021": "Dieses Laufwerk bietet keine Möglichkeit, die Kennung dieser Disc zu lesen.",
     "E7024": "Von keiner Schlüsselquelle ist ein Host-Zertifikat für den sicheren Handshake des Laufwerks verfügbar.",
     "E7025": "Diese Disc verwendet AACS-Busverschlüsselung, aber aus dem sicheren Handshake des Laufwerks konnte kein Busschlüssel gewonnen werden, sodass ihre Daten nicht entschlüsselt werden können (die Ausgabe wäre unlesbar).",
+    "E7026": "Diese Disc verwendet forensische AACS-2.1-Wasserzeichen (FMTS) und es ist kein Variantenschlüssel dafür verfügbar, sodass der Film nicht lückenlos rekonstruiert werden kann. Aktualisieren Sie Ihre Schlüsseldatenbank oder setzen Sie BYPASS_FMTS_KEY, um eine forensisch lückenhafte Ausgabe zu akzeptieren.",
     "E8006": "Die URL der Schlüsseldatenbank verwendet einen nicht unterstützten Adresstyp ({detail}).",
     "E8007": "Der Download der Schlüsseldatenbank wurde zu oft umgeleitet. Prüfen Sie die URL und versuchen Sie es erneut.",
     "E9005": "Interner Fehler beim Erstellen der Ausgabe. Bitte melden Sie dies.",

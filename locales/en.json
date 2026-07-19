@@ -308,6 +308,7 @@
     "E7023": "This disc is copy-protected and no key could be recovered for this title, so it can't be decrypted (the output would be unreadable).",
     "E7024": "No host certificate is available from any key source for the drive's secure handshake.",
     "E7025": "This disc uses AACS bus encryption, but no bus key could be obtained from the drive's secure handshake, so its data can't be decrypted (the output would be unreadable).",
+    "E7026": "This disc uses AACS 2.1 forensic watermarking (FMTS) and no variant key is available for it, so the movie can't be rebuilt without gaps. Update your key database, or set BYPASS_FMTS_KEY to accept a forensically-holed output.",
     "E8000": "Cannot connect to the key database server: {detail}",
     "E8001": "Key database download failed (HTTP {detail}). Try again, or run: freemkv update-keys --url <keydb-url>",
     "E8002": "The key database is empty or invalid. Re-download it with: freemkv update-keys --url <keydb-url>",
