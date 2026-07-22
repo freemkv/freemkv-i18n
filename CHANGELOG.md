@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.5.2] — UNRELEASED
+
+Version sync with the workspace. No functional change.
+
 ## [1.5.0] — UNRELEASED
 
 ### Added
