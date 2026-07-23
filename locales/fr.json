@@ -321,7 +321,7 @@
         "E9030": "Erreur interne lors de la construction de la sortie. Veuillez le signaler.",
         "E9047": "Le lecteur a renvoyé une réponse de taille de disque illisible. Reconnectez le lecteur et réessayez.",
         "E9048": "Ce titre n'a pas de piste vidéo à écrire dans un MP4. Utilisez mkv:// pour une sortie audio ou sous-titres uniquement.",
-        "E9049": "Le codec vidéo de ce titre ne peut pas être stocké dans un MP4. Utilisez mkv:// pour le conserver.",
+        "E9049": "Ce fichier MP4 est incorrect ou tronqué et n'a pas pu être lu.",
         "E9050": "Ce titre ne contient pas les données de configuration nécessaires à un MP4. Utilisez plutôt mkv://.",
         "invalid_log_level": "Erreur : --log-level nécessite un nombre entre 1 et 4 (reçu : '{value}'). Utilisez 1=avert., 2=info, 3=debug, 4=trace.",
         "key_url_bad_scheme": "Erreur : --key-url nécessite une URL http:// ou https:// (reçu : '{value}').",

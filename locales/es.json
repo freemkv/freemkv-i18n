@@ -321,7 +321,7 @@
         "E9030": "Error interno al construir la salida. Por favor, informe de esto.",
         "E9047": "La unidad devolvió una respuesta de tamaño de disco ilegible. Reconecte la unidad e inténtelo de nuevo.",
         "E9048": "Este título no tiene pista de vídeo para escribir en un MP4. Use mkv:// si quiere una salida solo de audio o subtítulos.",
-        "E9049": "El códec de vídeo de este título no se puede almacenar en un MP4. Use mkv:// para conservarlo.",
+        "E9049": "Este archivo MP4 está dañado o incompleto y no se pudo leer.",
         "E9050": "A este título le faltan los datos de configuración que necesita un MP4. Use mkv:// en su lugar.",
         "invalid_log_level": "Error: --log-level requiere un número 1–4 (se obtuvo '{value}'). Use 1=aviso, 2=info, 3=depuración, 4=traza.",
         "key_url_bad_scheme": "Error: --key-url requiere una URL http:// o https:// (se obtuvo '{value}').",

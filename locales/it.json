@@ -321,7 +321,7 @@
         "E9030": "Errore interno durante la creazione dell'output. Si prega di segnalarlo.",
         "E9047": "L'unità ha restituito una risposta di dimensione del disco illeggibile. Ricollega l'unità e riprova.",
         "E9048": "Questo titolo non ha una traccia video da scrivere in un MP4. Usa mkv:// per un output solo audio o solo sottotitoli.",
-        "E9049": "Il codec video di questo titolo non può essere memorizzato in un MP4. Usa mkv:// per conservarlo.",
+        "E9049": "Questo file MP4 è danneggiato o troncato e non può essere letto.",
         "E9050": "A questo titolo mancano i dati di configurazione richiesti da un MP4. Usa invece mkv://.",
         "invalid_log_level": "Errore: --log-level richiede un numero 1–4 (ricevuto '{value}'). Usa 1=avviso, 2=info, 3=debug, 4=trace.",
         "key_url_bad_scheme": "Errore: --key-url richiede un URL http:// o https:// (ricevuto '{value}').",
