@@ -101,7 +101,8 @@
         "reason": {
             "subtitle": "bitmap-ondertitel — MP4 ondersteunt alleen tekstondertitels",
             "audio": "audiocodec heeft geen MP4-toewijzing",
-            "video": "secundaire videoweergave"
+            "video": "secundaire videoweergave",
+            "video_unmappable": "videocodec heeft geen MP4-toewijzing"
         }
     },
     "rip": {

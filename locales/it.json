@@ -101,7 +101,8 @@
         "reason": {
             "subtitle": "sottotitolo bitmap — MP4 supporta solo sottotitoli di testo",
             "audio": "il codec audio non ha una mappatura MP4",
-            "video": "vista video secondaria"
+            "video": "vista video secondaria",
+            "video_unmappable": "il codec video non ha una mappatura MP4"
         }
     },
     "rip": {

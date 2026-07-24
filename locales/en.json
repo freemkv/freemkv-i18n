@@ -101,7 +101,8 @@
     "reason": {
       "subtitle": "bitmap subtitle — MP4 carries text subtitles only",
       "audio": "audio codec has no MP4 mapping",
-      "video": "secondary video view"
+      "video": "secondary video view",
+      "video_unmappable": "video codec has no MP4 mapping"
     }
   },
   "rip": {

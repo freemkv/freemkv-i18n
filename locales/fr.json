@@ -101,7 +101,8 @@
         "reason": {
             "subtitle": "sous-titre bitmap — MP4 ne gère que les sous-titres texte",
             "audio": "le codec audio n'a pas de correspondance MP4",
-            "video": "vue vidéo secondaire"
+            "video": "vue vidéo secondaire",
+            "video_unmappable": "le codec vidéo n'a pas de correspondance MP4"
         }
     },
     "rip": {

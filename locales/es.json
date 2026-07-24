@@ -101,7 +101,8 @@
         "reason": {
             "subtitle": "subtítulo de mapa de bits — MP4 solo admite subtítulos de texto",
             "audio": "el códec de audio no tiene equivalente en MP4",
-            "video": "vista de vídeo secundaria"
+            "video": "vista de vídeo secundaria",
+            "video_unmappable": "el códec de vídeo no tiene equivalente en MP4"
         }
     },
     "rip": {

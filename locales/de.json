@@ -101,7 +101,8 @@
         "reason": {
             "subtitle": "Bitmap-Untertitel – MP4 unterstützt nur Text-Untertitel",
             "audio": "Audio-Codec hat keine MP4-Zuordnung",
-            "video": "sekundäre Videospur"
+            "video": "sekundäre Videospur",
+            "video_unmappable": "Video-Codec hat keine MP4-Zuordnung"
         }
     },
     "rip": {

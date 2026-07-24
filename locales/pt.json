@@ -101,7 +101,8 @@
         "reason": {
             "subtitle": "legenda bitmap — MP4 suporta apenas legendas de texto",
             "audio": "o codec de áudio não tem mapeamento para MP4",
-            "video": "exibição de vídeo secundária"
+            "video": "exibição de vídeo secundária",
+            "video_unmappable": "o codec de vídeo não tem mapeamento para MP4"
         }
     },
     "rip": {
