@@ -12,7 +12,7 @@
         "rip_options": "Opcoes de rip",
         "opt_device": "Especificar dispositivo (padrao: deteccao automatica)",
         "opt_output": "Diretorio de saida (padrao: atual)",
-        "opt_title": "Numero do titulo (padrao: 1 = titulo principal)",
+        "opt_title": "Numero do titulo, ou 'all' (padrao: 1 = titulo principal)",
         "opt_keydb": "Caminho para KEYDB.cfg para descriptografia AACS",
         "opt_list": "Apenas listar titulos, sem extrair",
         "opt_raw": "Gerar m2ts bruto em vez de MKV",
