@@ -1,29 +1,7 @@
 {
     "app": {
-        "usage": "Utilisation : freemkv <commande> [options]",
-        "commands": "Commandes",
-        "cmd_drive_info": "Afficher les informations du lecteur et la compatibilite",
-        "cmd_disc_info": "Afficher les titres, flux et tailles du disque",
-        "cmd_rip": "Sauvegarder un titre du disque",
-        "cmd_remux": "Convertir un m2ts en MKV (pas de lecteur requis)",
-        "cmd_update_keys": "Telecharger et mettre a jour KEYDB.cfg",
-        "cmd_version": "Afficher la version",
-        "cmd_help": "Afficher cette aide",
-        "rip_options": "Options d'extraction",
-        "opt_device": "Specifier le peripherique (par defaut : detection auto)",
-        "opt_output": "Repertoire de sortie (par defaut : repertoire courant)",
-        "opt_title": "Numero de titre, ou 'all' (par defaut : 1 = film principal)",
-        "opt_keydb": "Chemin vers KEYDB.cfg pour le dechiffrement AACS",
-        "opt_list": "Lister les titres uniquement, sans extraire",
-        "opt_raw": "Produire du m2ts brut au lieu de MKV",
-        "examples": "Exemples",
-        "drive_info_options": "Options d'info lecteur",
-        "opt_share": "Capturer et soumettre le profil du lecteur",
-        "opt_mask": "Masquer les numeros de serie",
-        "global_options": "Options globales",
         "opt_quiet": "Mode silencieux",
         "opt_verbose": "Mode detaille (AACS, lecteur, debogage)",
-        "unknown_command": "Commande inconnue : {cmd}",
         "unknown_option": "Option inconnue : {opt}"
     },
     "drive": {
@@ -346,12 +324,13 @@
         "dir_dest_invalid": "Error: '{dest}' is not a valid dir:// path. Use dir://<folder>/ to extract the decrypted file tree into a folder.",
         "dir_dest_is_file": "Error: dir:// target '{path}' is an existing file, not a folder. Choose a folder path for the extracted tree.",
         "dir_dest_not_writable": "Error: cannot create or write the dir:// target '{path}': {error}.",
-        "dir_dest_not_empty": "Error: dir:// target '{path}' is not empty. Pass --force to extract into it anyway, or choose an empty folder."
+        "dir_dest_not_empty": "Error: dir:// target '{path}' is not empty. Pass --force to extract into it anyway, or choose an empty folder.",
+        "unknown_language": "langue inconnue '{tag}' (disponibles sur ce titre : {available})",
+        "stream_none": "aucune"
     },
     "usage": {
         "synopsis_1": "Utilisation : freemkv <source> <dest> [options]",
         "synopsis_2": "              freemkv info <url> [options]",
-        "synopsis_3": "              freemkv verify [disc://]",
         "urls_header": "URLs de flux :",
         "url": {
             "disc_auto": "  disc://                  Lecteur optique (détection automatique)",
@@ -388,7 +367,9 @@
         },
         "flags_header": "Options :",
         "flag": {
-            "title": "  -t, --title N       Sélectionner le titre (base 1, répétable). Défaut : tous.",
+            "title": "  -t, --title N       Sélectionner le titre (base 1, répétable). Défaut : le titre principal (titre 1) ; -t all pour tous.",
+            "audio": "  -a, --audio LANGUES Ne garder que ces langues audio (noms ou codes ISO, séparés par des virgules, insensible à la casse), ou all/none. Défaut : tout garder.",
+            "subtitles": "  -s, --subtitles LANGUES  Ne garder que ces langues de sous-titres (noms ou codes ISO, séparés par des virgules, insensible à la casse), ou all/none. Défaut : tout garder.",
             "keydb": "      --keydb CHEMIN  Chemin vers KEYDB.cfg (source de clés locale)",
             "key_url_1": "      --key-url URL   URL de base du service de clés en ligne (http/https).",
             "key_url_2": "                      Avec --keydb, le keydb est essayé en premier (local",
@@ -401,7 +382,7 @@
             "quiet": "  -q, --quiet         Supprimer la sortie",
             "raw": "      --raw           Ignorer le déchiffrement (sortie chiffrée brute)",
             "multipass": "      --multipass    Écrire/mettre à jour le mapfile pour la récupération multipasse",
-            "share": "  -s, --share         Soumettre le profil du lecteur (avec info disc://)",
+            "share": "      --share         Soumettre le profil du lecteur (info disc:// uniquement ; lors d'un rip, -s signifie --subtitles)",
             "mask": "  -m, --mask          Masquer les numéros de série (avec --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -409,8 +390,6 @@
         "subcommands_header": "Subcommands:",
         "subcmd": {
             "info": "  info <url>               Inspect a disc, image, or file (titles, streams, sizes)",
-            "verify": "  verify [disc://]         Scan disc health (good/slow/recovered/bad sectors)",
-            "remux": "  remux <in> <out>         Convert m2ts/ISO to MKV (the <source> <dest> form)",
             "update_keys": "  update-keys --url URL    Download and install the AACS keydb",
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"

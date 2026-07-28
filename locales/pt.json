@@ -1,29 +1,7 @@
 {
     "app": {
-        "usage": "Uso: freemkv <comando> [opcoes]",
-        "commands": "Comandos",
-        "cmd_drive_info": "Exibir hardware do drive e perfil compativel",
-        "cmd_disc_info": "Exibir titulos, streams e tamanhos do disco",
-        "cmd_rip": "Fazer backup de um titulo do disco",
-        "cmd_remux": "Converter m2ts para MKV (sem drive necessario)",
-        "cmd_update_keys": "Baixar e atualizar KEYDB.cfg",
-        "cmd_version": "Exibir versao",
-        "cmd_help": "Exibir esta ajuda",
-        "rip_options": "Opcoes de rip",
-        "opt_device": "Especificar dispositivo (padrao: deteccao automatica)",
-        "opt_output": "Diretorio de saida (padrao: atual)",
-        "opt_title": "Numero do titulo, ou 'all' (padrao: 1 = titulo principal)",
-        "opt_keydb": "Caminho para KEYDB.cfg para descriptografia AACS",
-        "opt_list": "Apenas listar titulos, sem extrair",
-        "opt_raw": "Gerar m2ts bruto em vez de MKV",
-        "examples": "Exemplos",
-        "drive_info_options": "Opcoes de drive-info",
-        "opt_share": "Capturar e enviar perfil do drive",
-        "opt_mask": "Ocultar numeros de serie",
-        "global_options": "Opcoes globais",
         "opt_quiet": "Suprimir saida",
         "opt_verbose": "Saida detalhada (AACS, drive, info de depuracao)",
-        "unknown_command": "Comando desconhecido: {cmd}",
         "unknown_option": "Opcao desconhecida: {opt}"
     },
     "drive": {
@@ -346,12 +324,13 @@
         "dir_dest_invalid": "Error: '{dest}' is not a valid dir:// path. Use dir://<folder>/ to extract the decrypted file tree into a folder.",
         "dir_dest_is_file": "Error: dir:// target '{path}' is an existing file, not a folder. Choose a folder path for the extracted tree.",
         "dir_dest_not_writable": "Error: cannot create or write the dir:// target '{path}': {error}.",
-        "dir_dest_not_empty": "Error: dir:// target '{path}' is not empty. Pass --force to extract into it anyway, or choose an empty folder."
+        "dir_dest_not_empty": "Error: dir:// target '{path}' is not empty. Pass --force to extract into it anyway, or choose an empty folder.",
+        "unknown_language": "idioma desconhecido '{tag}' (disponiveis neste titulo: {available})",
+        "stream_none": "nenhum"
     },
     "usage": {
         "synopsis_1": "Uso: freemkv <origem> <dest> [opcoes]",
         "synopsis_2": "     freemkv info <url> [opcoes]",
-        "synopsis_3": "     freemkv verify [disc://]",
         "urls_header": "URLs de stream:",
         "url": {
             "disc_auto": "  disc://                  Unidade optica (deteccao automatica)",
@@ -388,7 +367,9 @@
         },
         "flags_header": "Opcoes:",
         "flag": {
-            "title": "  -t, --title N       Selecionar titulo (base 1, repetivel). Padrao: todos.",
+            "title": "  -t, --title N       Selecionar titulo (base 1, repetivel). Padrao: o titulo principal (titulo 1); -t all para todos.",
+            "audio": "  -a, --audio IDIOMAS Manter apenas estes idiomas de audio (nomes ou codigos ISO, separados por virgulas, sem distincao de maiusculas), ou all/none. Padrao: manter todos.",
+            "subtitles": "  -s, --subtitles IDIOMAS  Manter apenas estes idiomas de legendas (nomes ou codigos ISO, separados por virgulas, sem distincao de maiusculas), ou all/none. Padrao: manter todos.",
             "keydb": "      --keydb CAMINHO KEYDB.cfg (fonte de chaves local)",
             "key_url_1": "      --key-url URL   URL base do servico de chaves online (http/https).",
             "key_url_2": "                      Com --keydb, keydb e tentado primeiro (local",
@@ -401,7 +382,7 @@
             "quiet": "  -q, --quiet         Suprimir saida",
             "raw": "      --raw           Ignorar descriptografia (saida cifrada bruta)",
             "multipass": "      --multipass    Gravar/atualizar mapfile para recuperacao multipassagem",
-            "share": "  -s, --share         Enviar perfil do drive (com info disc://)",
+            "share": "      --share         Enviar perfil do drive (apenas info disc://; num rip, -s significa --subtitles)",
             "mask": "  -m, --mask          Ocultar numeros de serie (com --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -409,8 +390,6 @@
         "subcommands_header": "Subcommands:",
         "subcmd": {
             "info": "  info <url>               Inspect a disc, image, or file (titles, streams, sizes)",
-            "verify": "  verify [disc://]         Scan disc health (good/slow/recovered/bad sectors)",
-            "remux": "  remux <in> <out>         Convert m2ts/ISO to MKV (the <source> <dest> form)",
             "update_keys": "  update-keys --url URL    Download and install the AACS keydb",
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"

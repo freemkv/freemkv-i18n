@@ -249,7 +249,7 @@ mod tests {
         out
     }
 
-    /// Collect all dotted key paths from a JSON value (e.g. "app.usage", "error.E1000").
+    /// Collect all dotted key paths from a JSON value (e.g. "disc.scanning", "error.E1000").
     fn collect_keys(value: &Value, prefix: &str, out: &mut Vec<String>) {
         if let Some(obj) = value.as_object() {
             for (k, v) in obj {
