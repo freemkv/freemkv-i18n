@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0] — UNRELEASED
+
+### Changed
+
+- **`opt_title` help string mentions `all`** in all seven bundled locales, matching
+  the CLI's 1.6.0 change: `-t` now defaults to the main title, and `-t all` is the
+  new opt-in for every title.
+
 ## [1.5.2] — UNRELEASED
 
 Version sync with the workspace. No functional change.
