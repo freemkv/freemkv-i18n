@@ -2,11 +2,33 @@
 
 ## [1.6.0] — UNRELEASED
 
-### Changed
+### Fixed
 
-- **`opt_title` help string mentions `all`** in all seven bundled locales, matching
-  the CLI's 1.6.0 change: `-t` now defaults to the main title, and `-t all` is the
-  new opt-in for every title.
+- **`usage.flag.title` (the live `-t` help line)** reworded in all seven bundled
+  locales. It previously read "Default: all." — stale since 1.6.0. It now states
+  the 1.6.0 behaviour: `-t` defaults to the main title (title 1), `-t all` selects
+  every title, and `-t N` is 1-based and repeatable.
+
+### Added
+
+- **`usage.flag.audio` / `usage.flag.subtitles`** help strings (all seven locales)
+  for the `-a`/`--audio` and `-s`/`--subtitles` stream-selection flags: a
+  comma-separated language list (names or ISO codes, case-insensitive) or
+  `all`/`none`, defaulting to keep-all. The `usage.flag.share` line now notes that
+  `--share` is `info disc://`-only and that `-s` on a rip means `--subtitles`.
+- **`error.unknown_language`** (all seven locales, placeholders `{tag}` and
+  `{available}`) plus **`error.stream_none`** — the CLI's stream-selection error is
+  now localized instead of hardcoded English.
+
+### Removed
+
+- **Dead scaffolding keys** from all seven locales: the orphaned `app.*` block
+  (`app.usage`, `app.commands`, `app.cmd_*`, `app.opt_device/output/title/keydb/
+  list/raw/share/mask`, `app.rip_options`, `app.examples`, `app.drive_info_options`,
+  `app.global_options`, `app.unknown_command`), and `usage.subcmd.verify`,
+  `usage.subcmd.remux`, `usage.synopsis_3`. All had zero code references. The three
+  still-used `app.*` keys (`app.unknown_option`, `app.opt_quiet`, `app.opt_verbose`)
+  are kept.
 
 ## [1.5.2] — 2026-07-22
 

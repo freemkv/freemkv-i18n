@@ -1,29 +1,7 @@
 {
     "app": {
-        "usage": "Verwendung: freemkv <Befehl> [Optionen]",
-        "commands": "Befehle",
-        "cmd_drive_info": "Laufwerk-Hardware und Profilzuordnung anzeigen",
-        "cmd_disc_info": "Disc-Titel, Streams und Groessen anzeigen",
-        "cmd_rip": "Einen Disc-Titel sichern",
-        "cmd_remux": "m2ts in MKV umwandeln (kein Laufwerk noetig)",
-        "cmd_update_keys": "KEYDB.cfg herunterladen und aktualisieren",
-        "cmd_version": "Version anzeigen",
-        "cmd_help": "Diese Hilfe anzeigen",
-        "rip_options": "Rip-Optionen",
-        "opt_device": "Geraet angeben (Standard: automatische Erkennung)",
-        "opt_output": "Ausgabeverzeichnis (Standard: aktuelles Verzeichnis)",
-        "opt_title": "Titelnummer oder 'all' (Standard: 1 = Hauptfilm)",
-        "opt_keydb": "Pfad zur KEYDB.cfg fuer AACS-Entschluesselung",
-        "opt_list": "Nur Titel auflisten, nicht rippen",
-        "opt_raw": "Rohes m2ts statt MKV ausgeben",
-        "examples": "Beispiele",
-        "drive_info_options": "Laufwerk-Info-Optionen",
-        "opt_share": "Laufwerkprofil erfassen und einreichen",
-        "opt_mask": "Seriennummern maskieren",
-        "global_options": "Globale Optionen",
         "opt_quiet": "Ausgabe unterdruecken",
         "opt_verbose": "Ausfuehrliche Ausgabe (AACS, Laufwerk, Debug-Infos)",
-        "unknown_command": "Unbekannter Befehl: {cmd}",
         "unknown_option": "Unbekannte Option: {opt}"
     },
     "drive": {
@@ -346,12 +324,13 @@
         "dir_dest_invalid": "Error: '{dest}' is not a valid dir:// path. Use dir://<folder>/ to extract the decrypted file tree into a folder.",
         "dir_dest_is_file": "Error: dir:// target '{path}' is an existing file, not a folder. Choose a folder path for the extracted tree.",
         "dir_dest_not_writable": "Error: cannot create or write the dir:// target '{path}': {error}.",
-        "dir_dest_not_empty": "Error: dir:// target '{path}' is not empty. Pass --force to extract into it anyway, or choose an empty folder."
+        "dir_dest_not_empty": "Error: dir:// target '{path}' is not empty. Pass --force to extract into it anyway, or choose an empty folder.",
+        "unknown_language": "unbekannte Sprache '{tag}' (auf diesem Titel verfügbar: {available})",
+        "stream_none": "keine"
     },
     "usage": {
         "synopsis_1": "Verwendung: freemkv <quelle> <ziel> [optionen]",
         "synopsis_2": "           freemkv info <url> [optionen]",
-        "synopsis_3": "           freemkv verify [disc://]",
         "urls_header": "Stream-URLs:",
         "url": {
             "disc_auto": "  disc://                  Optisches Laufwerk (automatische Erkennung)",
@@ -388,7 +367,9 @@
         },
         "flags_header": "Optionen:",
         "flag": {
-            "title": "  -t, --title N       Titel auswählen (1-basiert, wiederholbar). Standard: alle.",
+            "title": "  -t, --title N       Titel auswählen (1-basiert, wiederholbar). Standard: der Hauptfilm (Titel 1); -t all für alle Titel.",
+            "audio": "  -a, --audio SPR     Nur diese Audiosprachen behalten (Namen oder ISO-Codes, kommagetrennt, Groß-/Kleinschreibung egal), oder all/none. Standard: alle behalten.",
+            "subtitles": "  -s, --subtitles SPR    Nur diese Untertitelsprachen behalten (Namen oder ISO-Codes, kommagetrennt, Groß-/Kleinschreibung egal), oder all/none. Standard: alle behalten.",
             "keydb": "      --keydb PFAD    KEYDB.cfg-Pfad (lokale Schlüsselquelle)",
             "key_url_1": "      --key-url URL   Online-Schlüsseldienst-Basis-URL (http/https).",
             "key_url_2": "                      Mit --keydb wird keydb zuerst versucht (lokal-",
@@ -401,7 +382,7 @@
             "quiet": "  -q, --quiet         Ausgabe unterdrücken",
             "raw": "      --raw           Entschlüsselung überspringen (raw verschlüsselte Ausgabe)",
             "multipass": "      --multipass    Mapfile für Mehrpass-Wiederherstellung schreiben/aktualisieren",
-            "share": "  -s, --share         Laufwerkprofil einreichen (mit info disc://)",
+            "share": "      --share         Laufwerkprofil einreichen (nur info disc://; bei einem Rip bedeutet -s --subtitles)",
             "mask": "  -m, --mask          Seriennummern maskieren (mit --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -409,8 +390,6 @@
         "subcommands_header": "Subcommands:",
         "subcmd": {
             "info": "  info <url>               Inspect a disc, image, or file (titles, streams, sizes)",
-            "verify": "  verify [disc://]         Scan disc health (good/slow/recovered/bad sectors)",
-            "remux": "  remux <in> <out>         Convert m2ts/ISO to MKV (the <source> <dest> form)",
             "update_keys": "  update-keys --url URL    Download and install the AACS keydb",
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
