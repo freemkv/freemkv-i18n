@@ -12,7 +12,7 @@
         "rip_options": "Rip-Optionen",
         "opt_device": "Geraet angeben (Standard: automatische Erkennung)",
         "opt_output": "Ausgabeverzeichnis (Standard: aktuelles Verzeichnis)",
-        "opt_title": "Titelnummer (Standard: 1 = Hauptfilm)",
+        "opt_title": "Titelnummer oder 'all' (Standard: 1 = Hauptfilm)",
         "opt_keydb": "Pfad zur KEYDB.cfg fuer AACS-Entschluesselung",
         "opt_list": "Nur Titel auflisten, nicht rippen",
         "opt_raw": "Rohes m2ts statt MKV ausgeben",

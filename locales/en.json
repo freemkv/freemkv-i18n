@@ -12,7 +12,7 @@
     "rip_options": "Rip options",
     "opt_device": "Specify device (default: auto-detect)",
     "opt_output": "Output directory (default: current)",
-    "opt_title": "Title number (default: 1 = main feature)",
+    "opt_title": "Title number, or 'all' (default: 1 = main feature)",
     "opt_keydb": "Path to KEYDB.cfg (optional; only required for UHD / AACS 2.0+ discs)",
     "opt_list": "List titles only, don't rip",
     "opt_raw": "Output raw m2ts instead of MKV",

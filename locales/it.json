@@ -12,7 +12,7 @@
         "rip_options": "Opzioni di rip",
         "opt_device": "Specifica il dispositivo (predefinito: rilevamento automatico)",
         "opt_output": "Directory di output (predefinito: corrente)",
-        "opt_title": "Numero del titolo (predefinito: 1 = titolo principale)",
+        "opt_title": "Numero del titolo, o 'all' (predefinito: 1 = titolo principale)",
         "opt_keydb": "Percorso di KEYDB.cfg per la decrittazione AACS",
         "opt_list": "Elenca solo i titoli, senza rippare",
         "opt_raw": "Genera m2ts grezzo invece di MKV",

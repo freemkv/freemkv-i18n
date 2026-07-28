@@ -12,7 +12,7 @@
         "rip_options": "Rip-opties",
         "opt_device": "Apparaat opgeven (standaard: automatisch detecteren)",
         "opt_output": "Uitvoermap (standaard: huidige map)",
-        "opt_title": "Titelnummer (standaard: 1 = hoofdfilm)",
+        "opt_title": "Titelnummer of 'all' (standaard: 1 = hoofdfilm)",
         "opt_keydb": "Pad naar KEYDB.cfg voor AACS-decodering",
         "opt_list": "Alleen titels weergeven, niet rippen",
         "opt_raw": "Uitvoer als onbewerkte m2ts in plaats van MKV",

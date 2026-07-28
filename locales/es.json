@@ -12,7 +12,7 @@
         "rip_options": "Opciones de copia",
         "opt_device": "Especificar dispositivo (predeterminado: auto-detectar)",
         "opt_output": "Directorio de salida (predeterminado: actual)",
-        "opt_title": "Número de título (predeterminado: 1 = película principal)",
+        "opt_title": "Número de título, o 'all' (predeterminado: 1 = película principal)",
         "opt_keydb": "Ruta a KEYDB.cfg para descifrado AACS",
         "opt_list": "Solo listar títulos, no copiar",
         "opt_raw": "Salida m2ts sin procesar en lugar de MKV",

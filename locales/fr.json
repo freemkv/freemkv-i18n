@@ -12,7 +12,7 @@
         "rip_options": "Options d'extraction",
         "opt_device": "Specifier le peripherique (par defaut : detection auto)",
         "opt_output": "Repertoire de sortie (par defaut : repertoire courant)",
-        "opt_title": "Numero de titre (par defaut : 1 = film principal)",
+        "opt_title": "Numero de titre, ou 'all' (par defaut : 1 = film principal)",
         "opt_keydb": "Chemin vers KEYDB.cfg pour le dechiffrement AACS",
         "opt_list": "Lister les titres uniquement, sans extraire",
         "opt_raw": "Produire du m2ts brut au lieu de MKV",
