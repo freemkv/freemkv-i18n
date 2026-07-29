@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Hata: dir:// hedefi '{path}' oluşturulamıyor veya yazılamıyor: {error}.",
     "dir_dest_not_empty": "Hata: dir:// hedefi '{path}' boş değil. Yine de içine çıkarmak için --force geçirin veya boş bir klasör seçin.",
     "unknown_language": "bilinmeyen dil '{tag}' (bu başlıkta mevcut: {available})",
-    "stream_none": "yok"
+    "stream_none": "yok",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Kullanım: freemkv <source> <dest> [flags]",

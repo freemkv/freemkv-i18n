@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Kesalahan: tidak dapat membuat atau menulis target dir:// '{path}': {error}.",
     "dir_dest_not_empty": "Kesalahan: target dir:// '{path}' tidak kosong. Berikan --force untuk tetap mengekstrak ke dalamnya, atau pilih folder kosong.",
     "unknown_language": "bahasa '{tag}' tidak dikenal (tersedia pada judul ini: {available})",
-    "stream_none": "tidak ada"
+    "stream_none": "tidak ada",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Penggunaan: freemkv <source> <dest> [flags]",

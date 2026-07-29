@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Error: no se puede crear ni escribir el destino dir:// '{path}': {error}.",
     "dir_dest_not_empty": "Error: el destino dir:// '{path}' no está vacío. Pasa --force para extraer en él de todos modos, o elige una carpeta vacía.",
     "unknown_language": "idioma desconocido '{tag}' (disponibles en este título: {available})",
-    "stream_none": "ninguno"
+    "stream_none": "ninguno",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Uso: freemkv <origen> <destino> [flags]",

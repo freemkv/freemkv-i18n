@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Помилка: неможливо створити чи записати ціль dir:// '{path}': {error}.",
     "dir_dest_not_empty": "Помилка: ціль dir:// '{path}' не порожня. Передайте --force, щоб витягти в неї попри це, або оберіть порожню теку.",
     "unknown_language": "невідома мова '{tag}' (доступні в цьому розділі: {available})",
-    "stream_none": "немає"
+    "stream_none": "немає",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Використання: freemkv <source> <dest> [flags]",

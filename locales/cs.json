@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Chyba: nelze vytvořit ani zapsat cíl dir:// '{path}': {error}.",
     "dir_dest_not_empty": "Chyba: cíl dir:// '{path}' není prázdný. Předejte --force pro rozbalení do něj i tak, nebo zvolte prázdnou složku.",
     "unknown_language": "neznámý jazyk '{tag}' (dostupné v tomto titulu: {available})",
-    "stream_none": "žádné"
+    "stream_none": "žádné",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Použití: freemkv <zdroj> <cíl> [příznaky]",

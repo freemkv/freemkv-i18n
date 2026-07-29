@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Eroare: nu se poate crea sau scrie ținta dir:// '{path}': {error}.",
     "dir_dest_not_empty": "Eroare: ținta dir:// '{path}' nu este goală. Indică --force pentru a extrage oricum în ea sau alege un director gol.",
     "unknown_language": "limbă necunoscută '{tag}' (disponibile pe acest titlu: {available})",
-    "stream_none": "niciuna"
+    "stream_none": "niciuna",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Utilizare: freemkv <source> <dest> [flags]",

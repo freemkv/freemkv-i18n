@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Błąd: nie można utworzyć ani zapisać celu dir:// „{path}”: {error}.",
     "dir_dest_not_empty": "Błąd: cel dir:// „{path}” nie jest pusty. Użyj --force, aby mimo to do niego wyodrębnić, lub wybierz pusty folder.",
     "unknown_language": "nieznany język „{tag}” (dostępne w tym tytule: {available})",
-    "stream_none": "brak"
+    "stream_none": "brak",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Sposób użycia: freemkv <źródło> <cel> [flagi]",

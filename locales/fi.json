@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Virhe: dir://-kohdetta '{path}' ei voi luoda tai siihen kirjoittaa: {error}.",
     "dir_dest_not_empty": "Virhe: dir://-kohde '{path}' ei ole tyhjä. Anna --force purkaaksesi siihen silti tai valitse tyhjä kansio.",
     "unknown_language": "tuntematon kieli '{tag}' (saatavilla tässä nimikkeessä: {available})",
-    "stream_none": "ei mitään"
+    "stream_none": "ei mitään",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Käyttö: freemkv <source> <dest> [flags]",
