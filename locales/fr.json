@@ -72,7 +72,11 @@
       "sdh": "SDH",
       "descriptive_service": "Descriptive Service"
     },
-    "track": "Piste"
+    "track": "Piste",
+    "class": {
+      "audio": "audio",
+      "subtitle": "subtitle"
+    }
   },
   "mp4": {
     "excluded_header": "Remarque : {count} piste(s) ne peuvent pas être stockées dans un MP4 et seront exclues (utilisez mkv:// pour tout conserver) :",
@@ -327,7 +331,8 @@
     "dir_dest_not_empty": "Error: dir:// target '{path}' is not empty. Pass --force to extract into it anyway, or choose an empty folder.",
     "unknown_language": "langue inconnue '{tag}' (disponibles sur ce titre : {available})",
     "stream_none": "aucune",
-    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source.",
+    "no_lang_match": "no {class} track on this title matches '{requested}' (available {class}: {available}). Fix the language, or use all/none."
   },
   "usage": {
     "synopsis_1": "Utilisation : freemkv <source> <dest> [options]",
@@ -619,5 +624,8 @@
     "win": {
       "settings": "Réglages de freemkv"
     }
+  },
+  "warn": {
+    "no_lang_match": "warning: title {num}: no {class} track matches '{requested}' (available: {available}) — keeping video only."
   }
 }

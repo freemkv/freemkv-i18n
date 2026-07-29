@@ -72,6 +72,10 @@
     "qualifier": {
       "sdh": "SDH",
       "descriptive_service": "Περιγραφική υπηρεσία"
+    },
+    "class": {
+      "audio": "audio",
+      "subtitle": "subtitle"
     }
   },
   "mp4": {
@@ -367,7 +371,8 @@
     "dir_dest_not_empty": "Σφάλμα: ο προορισμός dir:// '{path}' δεν είναι κενός. Δώστε --force για εξαγωγή σε αυτόν ούτως ή άλλως, ή επιλέξτε έναν κενό φάκελο.",
     "unknown_language": "άγνωστη γλώσσα '{tag}' (διαθέσιμες σε αυτόν τον τίτλο: {available})",
     "stream_none": "καμία",
-    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source.",
+    "no_lang_match": "no {class} track on this title matches '{requested}' (available {class}: {available}). Fix the language, or use all/none."
   },
   "usage": {
     "synopsis_1": "Χρήση: freemkv <source> <dest> [flags]",
@@ -619,5 +624,8 @@
     "win": {
       "settings": "Ρυθμίσεις freemkv"
     }
+  },
+  "warn": {
+    "no_lang_match": "warning: title {num}: no {class} track matches '{requested}' (available: {available}) — keeping video only."
   }
 }
