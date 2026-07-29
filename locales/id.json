@@ -476,6 +476,7 @@
       "default_dest": "Tujuan default :",
       "filename_template": "Templat nama berkas :",
       "keep_iso": "Simpan ISO perantara :",
+      "auto_eject": "Keluarkan disc saat selesai :",
       "default_selection": "Pilihan default :",
       "sel_main": "Film utama saja",
       "sel_all": "Semua judul",

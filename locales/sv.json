@@ -476,6 +476,7 @@
       "default_dest": "Standardmål :",
       "filename_template": "Filnamnsmall :",
       "keep_iso": "Behåll mellanliggande ISO :",
+      "auto_eject": "Mata ut skivan när klar :",
       "default_selection": "Standardurval :",
       "sel_main": "Endast huvudfilm",
       "sel_all": "Alla titlar",

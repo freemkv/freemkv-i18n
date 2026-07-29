@@ -476,6 +476,7 @@
       "default_dest": "預設目的地：",
       "filename_template": "檔名範本：",
       "keep_iso": "保留中繼 ISO：",
+      "auto_eject": "完成後退出光碟：",
       "default_selection": "預設選擇：",
       "sel_main": "僅主要影片",
       "sel_all": "所有標題",

@@ -476,6 +476,7 @@
       "default_dest": "Predvolený cieľ :",
       "filename_template": "Šablóna názvu súboru :",
       "keep_iso": "Ponechať medziľahlý ISO :",
+      "auto_eject": "Po dokončení vysunúť disk :",
       "default_selection": "Predvolený výber :",
       "sel_main": "Iba hlavný film",
       "sel_all": "Všetky tituly",

@@ -476,6 +476,7 @@
       "default_dest": "기본 대상 :",
       "filename_template": "파일 이름 템플릿 :",
       "keep_iso": "중간 ISO 유지 :",
+      "auto_eject": "완료 시 디스크 꺼내기 :",
       "default_selection": "기본 선택 :",
       "sel_main": "메인 영상만",
       "sel_all": "모든 타이틀",

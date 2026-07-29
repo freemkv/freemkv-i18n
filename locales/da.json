@@ -476,6 +476,7 @@
       "default_dest": "Standarddestination :",
       "filename_template": "Filnavnsskabelon :",
       "keep_iso": "Behold mellemliggende ISO :",
+      "auto_eject": "Skub disken ud når færdig :",
       "default_selection": "Standardvalg :",
       "sel_main": "Kun hovedfilmen",
       "sel_all": "Alle titler",

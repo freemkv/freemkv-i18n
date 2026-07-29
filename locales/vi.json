@@ -476,6 +476,7 @@
       "default_dest": "Đích mặc định :",
       "filename_template": "Mẫu tên tệp :",
       "keep_iso": "Giữ ISO trung gian :",
+      "auto_eject": "Đẩy đĩa ra khi hoàn tất :",
       "default_selection": "Lựa chọn mặc định :",
       "sel_main": "Chỉ phim chính",
       "sel_all": "Tất cả tiêu đề",

@@ -476,6 +476,7 @@
       "default_dest": "Destino predefinido:",
       "filename_template": "Modelo de nome de ficheiro:",
       "keep_iso": "Manter ISO intermédia:",
+      "auto_eject": "Ejectar o disco ao terminar:",
       "default_selection": "Seleção predefinida:",
       "sel_main": "Apenas o filme principal",
       "sel_all": "Todos os títulos",

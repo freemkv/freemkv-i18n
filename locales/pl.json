@@ -476,6 +476,7 @@
       "default_dest": "Domyślne miejsce docelowe:",
       "filename_template": "Szablon nazwy pliku:",
       "keep_iso": "Zachowaj pośredni obraz ISO:",
+      "auto_eject": "Wysuń płytę po zakończeniu:",
       "default_selection": "Domyślny wybór:",
       "sel_main": "Tylko główny film",
       "sel_all": "Wszystkie tytuły",

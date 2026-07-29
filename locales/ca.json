@@ -476,6 +476,7 @@
       "default_dest": "Destinació per defecte :",
       "filename_template": "Plantilla de nom de fitxer :",
       "keep_iso": "Conserva la ISO intermèdia :",
+      "auto_eject": "Expulsa el disc en acabar :",
       "default_selection": "Selecció per defecte :",
       "sel_main": "Només la pel·lícula principal",
       "sel_all": "Tots els títols",

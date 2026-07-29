@@ -476,6 +476,7 @@
       "default_dest": "Výchozí cíl :",
       "filename_template": "Šablona názvu souboru :",
       "keep_iso": "Zachovat mezilehlé ISO :",
+      "auto_eject": "Po dokončení vysunout disk :",
       "default_selection": "Výchozí výběr :",
       "sel_main": "Pouze hlavní film",
       "sel_all": "Všechny tituly",

@@ -476,6 +476,7 @@
       "default_dest": "Default destination :",
       "filename_template": "Filename template :",
       "keep_iso": "Keep intermediate ISO :",
+      "auto_eject": "Eject disc when done :",
       "default_selection": "Default selection :",
       "sel_main": "Main film only",
       "sel_all": "All titles",
