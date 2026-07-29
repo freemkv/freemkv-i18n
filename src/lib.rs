@@ -19,9 +19,13 @@
 // place it in any search path. No code changes needed.
 
 use serde_json::Value;
-use std::sync::OnceLock;
+use std::sync::{OnceLock, RwLock};
 
-static STRINGS: OnceLock<Value> = OnceLock::new();
+// The active catalog. An `RwLock` (not `OnceLock`) so a running GUI can switch
+// language live via `set_locale`; the CLI still sets it exactly once at
+// startup. Reads (`get`/`fmt`) take the read lock; a language switch takes the
+// write lock briefly. `None` until first use, then lazily initialized.
+static STRINGS: RwLock<Option<Value>> = RwLock::new(None);
 static LANG_OVERRIDE: OnceLock<String> = OnceLock::new();
 
 // ── Shipped languages (auto-generated from locales/*.json by build.rs) ─────
@@ -33,10 +37,10 @@ include!(concat!(env!("OUT_DIR"), "/locales_generated.rs"));
 /// override is dead: the language is already chosen. A call at that point is a
 /// caller-ordering bug, so make it visible instead of silently no-opping.
 pub fn set_language(lang: &str) {
-    if STRINGS.get().is_some() {
+    if STRINGS.read().unwrap().is_some() {
         debug_assert!(
             false,
-            "set_language(\"{lang}\") called after strings were initialized; the override is ignored"
+            "set_language(\"{lang}\") called after strings were initialized; use set_locale to switch live"
         );
         eprintln!("warning: --language ignored (set after locale was initialized)");
         return;
@@ -44,28 +48,43 @@ pub fn set_language(lang: &str) {
     let _ = LANG_OVERRIDE.set(lang.to_string());
 }
 
-/// Initialize strings for the current locale.
-/// Priority: bundled locale → disk locale → English fallback.
+/// Switch the active locale at runtime — the live path a GUI language change
+/// uses. Unlike [`set_language`] (a one-shot pre-init override), this
+/// re-resolves and swaps the catalog in place, so subsequent `get`/`fmt` calls
+/// return the new language without a restart. `code` is any locale string
+/// (`"de"`, `"pt-BR"`, `"auto"`); it is normalized and resolved the same way as
+/// startup (full tag → base language → English). Safe to call repeatedly.
+pub fn set_locale(code: &str) {
+    let resolved = resolve_catalog(&normalize_code(code));
+    *STRINGS.write().unwrap() = Some(resolved);
+}
+
+/// Initialize strings for the current locale (CLI startup). Idempotent-ish: it
+/// (re)resolves from the environment / `--language` override and installs the
+/// catalog. `get`/`fmt` also initialize lazily, so calling this is optional.
 pub fn init() {
-    let code = detect_language();
-    // Region-aware resolution: try the full tag (`pt-br`), then the base
-    // language (`pt`), then English. So a `pt-BR` user gets Brazilian strings
-    // when that catalog ships and European Portuguese otherwise.
-    let json = load_for(&code)
+    let json = resolve_catalog(&detect_language());
+    *STRINGS.write().unwrap() = Some(json);
+}
+
+/// Resolve a locale code to a catalog with the region-aware fallback: try the
+/// full tag (`pt-br`), then the base language (`pt`), then English. So a
+/// `pt-BR` user gets Brazilian strings when that catalog ships and European
+/// Portuguese otherwise.
+fn resolve_catalog(code: &str) -> Value {
+    load_for(code)
         .or_else(|| {
-            let base = base_language(&code);
+            let base = base_language(code);
             (base != code).then(|| load_for(base)).flatten()
         })
         .unwrap_or_else(|| {
             // Notify the user when they explicitly requested a locale that isn't
-            // available (VAL-3). Plain English is intentional here: we cannot use
-            // strings::get/fmt because STRINGS isn't set yet.
+            // available (VAL-3). Plain English is intentional here.
             if code != "en" {
                 eprintln!("freemkv: locale '{code}' not found, using English");
             }
             serde_json::from_str(LOCALE_EN).expect("invalid en.json")
-        });
-    let _ = STRINGS.set(json);
+        })
 }
 
 /// Load one locale code: compiled-in first, then disk search paths. `None` if
@@ -81,8 +100,25 @@ fn load_for(code: &str) -> Option<Value> {
 /// Get a string by dotted path (e.g. "disc.scanning", "error.no_drive").
 /// Returns the path itself if not found — makes missing translations visible.
 pub fn get(path: &str) -> String {
-    let strings = STRINGS.get_or_init(|| serde_json::from_str(LOCALE_EN).expect("invalid en.json"));
-    lookup(strings, path)
+    // Fast path: catalog already loaded — take the read lock and look up.
+    {
+        let guard = STRINGS.read().unwrap();
+        if let Some(v) = guard.as_ref() {
+            return lookup(v, path);
+        }
+    }
+    // First use with no explicit init(): resolve from the environment /
+    // --language override (honoring any pre-init set_language), install it, and
+    // retry. The double-check under the write lock avoids a lost update if two
+    // threads race here.
+    {
+        let mut w = STRINGS.write().unwrap();
+        if w.is_none() {
+            *w = Some(resolve_catalog(&detect_language()));
+        }
+    }
+    let guard = STRINGS.read().unwrap();
+    lookup(guard.as_ref().unwrap(), path)
 }
 
 /// Get a string and replace {key} placeholders with values.
