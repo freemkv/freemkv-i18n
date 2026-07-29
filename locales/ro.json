@@ -510,7 +510,7 @@
       "log_quiet": "Silențios",
       "log_normal": "Normal",
       "log_verbose": "Detaliat",
-      "log_debug": "Înregistrează mesaje de depanare :",
+      "log_debug": "Debug",
       "update_keydb": "Actualizează keydb acum",
       "test_connection": "Testează conexiunea"
     },

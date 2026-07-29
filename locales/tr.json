@@ -510,7 +510,7 @@
       "log_quiet": "Sessiz",
       "log_normal": "Normal",
       "log_verbose": "Ayrıntılı",
-      "log_debug": "Hata ayıklama iletilerini günlüğe kaydet :",
+      "log_debug": "Debug",
       "update_keydb": "keydb'yi şimdi güncelle",
       "test_connection": "Bağlantıyı test et"
     },

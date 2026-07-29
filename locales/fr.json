@@ -510,7 +510,7 @@
       "log_quiet": "Silencieux",
       "log_normal": "Normal",
       "log_verbose": "Détaillé",
-      "log_debug": "Journaliser les messages de débogage :",
+      "log_debug": "Debug",
       "update_keydb": "Mettre à jour le keydb maintenant",
       "test_connection": "Tester la connexion"
     },

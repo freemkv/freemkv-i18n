@@ -510,7 +510,7 @@
       "log_quiet": "Αθόρυβη",
       "log_normal": "Κανονική",
       "log_verbose": "Αναλυτική",
-      "log_debug": "Καταγραφή μηνυμάτων εντοπισμού σφαλμάτων :",
+      "log_debug": "Debug",
       "update_keydb": "Ενημέρωση keydb τώρα",
       "test_connection": "Δοκιμή σύνδεσης"
     },

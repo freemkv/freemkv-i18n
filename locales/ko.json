@@ -510,7 +510,7 @@
       "log_quiet": "조용히",
       "log_normal": "보통",
       "log_verbose": "자세히",
-      "log_debug": "디버그 메시지 로그 :",
+      "log_debug": "Debug",
       "update_keydb": "지금 keydb 업데이트",
       "test_connection": "연결 테스트"
     },
