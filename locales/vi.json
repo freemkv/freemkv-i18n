@@ -510,7 +510,7 @@
       "log_quiet": "Tối thiểu",
       "log_normal": "Bình thường",
       "log_verbose": "Chi tiết",
-      "log_debug": "Ghi thông báo gỡ lỗi :",
+      "log_debug": "Debug",
       "update_keydb": "Cập nhật keydb ngay",
       "test_connection": "Kiểm tra kết nối"
     },

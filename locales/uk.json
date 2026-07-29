@@ -510,7 +510,7 @@
       "log_quiet": "Тихо",
       "log_normal": "Звичайно",
       "log_verbose": "Докладно",
-      "log_debug": "Журналювати повідомлення налагодження :",
+      "log_debug": "Debug",
       "update_keydb": "Оновити keydb зараз",
       "test_connection": "Перевірити з'єднання"
     },

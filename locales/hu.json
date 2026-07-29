@@ -510,7 +510,7 @@
       "log_quiet": "Csendes",
       "log_normal": "Normál",
       "log_verbose": "Részletes",
-      "log_debug": "Hibakeresési üzenetek naplózása:",
+      "log_debug": "Debug",
       "update_keydb": "keydb frissítése most",
       "test_connection": "Kapcsolat tesztelése"
     },

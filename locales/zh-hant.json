@@ -510,7 +510,7 @@
       "log_quiet": "安靜",
       "log_normal": "正常",
       "log_verbose": "詳細",
-      "log_debug": "紀錄除錯訊息：",
+      "log_debug": "Debug",
       "update_keydb": "立即更新 keydb",
       "test_connection": "測試連線"
     },

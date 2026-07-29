@@ -510,7 +510,7 @@
       "log_quiet": "Hiljainen",
       "log_normal": "Normaali",
       "log_verbose": "Yksityiskohtainen",
-      "log_debug": "Kirjaa virheenkorjausviestit :",
+      "log_debug": "Debug",
       "update_keydb": "Päivitä keydb nyt",
       "test_connection": "Testaa yhteys"
     },

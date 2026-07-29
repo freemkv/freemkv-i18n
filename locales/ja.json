@@ -510,7 +510,7 @@
       "log_quiet": "静か",
       "log_normal": "標準",
       "log_verbose": "詳細",
-      "log_debug": "デバッグメッセージを記録 :",
+      "log_debug": "Debug",
       "update_keydb": "今すぐ keydb を更新",
       "test_connection": "接続をテスト"
     },

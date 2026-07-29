@@ -510,7 +510,7 @@
       "log_quiet": "Silencioso",
       "log_normal": "Normal",
       "log_verbose": "Detallado",
-      "log_debug": "Registrar mensajes de depuración:",
+      "log_debug": "Debug",
       "update_keydb": "Actualizar keydb ahora",
       "test_connection": "Probar conexión"
     },

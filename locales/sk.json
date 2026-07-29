@@ -510,7 +510,7 @@
       "log_quiet": "Tiché",
       "log_normal": "Normálne",
       "log_verbose": "Podrobné",
-      "log_debug": "Zaznamenávať ladiace správy :",
+      "log_debug": "Debug",
       "update_keydb": "Aktualizovať keydb teraz",
       "test_connection": "Otestovať pripojenie"
     },

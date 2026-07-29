@@ -510,7 +510,7 @@
       "log_quiet": "Stille",
       "log_normal": "Normal",
       "log_verbose": "Detaljert",
-      "log_debug": "Logg feilsøkingsmeldinger:",
+      "log_debug": "Debug",
       "update_keydb": "Oppdater keydb nå",
       "test_connection": "Test tilkobling"
     },

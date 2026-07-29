@@ -510,7 +510,7 @@
       "log_quiet": "Senyap",
       "log_normal": "Normal",
       "log_verbose": "Terperinci",
-      "log_debug": "Catat pesan debug :",
+      "log_debug": "Debug",
       "update_keydb": "Perbarui keydb sekarang",
       "test_connection": "Uji koneksi"
     },
