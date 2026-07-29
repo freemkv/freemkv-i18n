@@ -11,6 +11,7 @@ fn main() {
 
     let mut includes = Vec::new();
     let mut match_arms = Vec::new();
+    let mut codes = Vec::new();
 
     if locales_dir.is_dir() {
         let mut entries: Vec<_> = fs::read_dir(locales_dir)
@@ -22,21 +23,33 @@ fn main() {
 
         for entry in entries {
             let filename = entry.file_name().to_string_lossy().to_string();
-            let code = filename.trim_end_matches(".json");
-            let const_name = format!("LOCALE_{}", code.to_uppercase());
+            let stem = filename.trim_end_matches(".json");
+            // Internal code: lowercase, hyphen-joined (matches normalize_code):
+            // `pt-BR.json`/`pt_BR.json` → `pt-br`. Const name sanitized to a
+            // valid Rust identifier: `pt-br` → `LOCALE_PT_BR`.
+            let code = stem.to_lowercase().replace('_', "-");
+            let const_name = format!("LOCALE_{}", stem.to_uppercase().replace(['-', '.'], "_"));
 
             includes.push(format!(
                 "const {}: &str = include_str!(concat!(env!(\"CARGO_MANIFEST_DIR\"), \"/locales/{}\"));",
                 const_name, filename
             ));
             match_arms.push(format!("        \"{}\" => Some({}),", code, const_name));
+            codes.push(code);
         }
     }
 
+    let codes_arr = codes
+        .iter()
+        .map(|c| format!("\"{}\"", c))
+        .collect::<Vec<_>>()
+        .join(", ");
+
     let generated = format!(
-        "{}\n\nfn bundled_locale(code: &str) -> Option<&'static str> {{\n    match code {{\n{}\n        _ => None,\n    }}\n}}\n",
+        "{}\n\nfn bundled_locale(code: &str) -> Option<&'static str> {{\n    match code {{\n{}\n        _ => None,\n    }}\n}}\n\n/// Every locale code compiled into the crate (derived from locales/*.json).\npub const SHIPPED_CODES: &[&str] = &[{}];\n",
         includes.join("\n"),
         match_arms.join("\n"),
+        codes_arr,
     );
 
     fs::write(&out_path, generated).unwrap();

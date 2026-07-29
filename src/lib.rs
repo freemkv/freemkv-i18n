@@ -48,22 +48,34 @@ pub fn set_language(lang: &str) {
 /// Priority: bundled locale → disk locale → English fallback.
 pub fn init() {
     let code = detect_language();
-    let json = if let Some(data) = bundled_locale(&code) {
-        // Shipped language — compiled in
-        serde_json::from_str(data).expect("invalid bundled locale")
-    } else if let Some(v) = load_locale_file(&code) {
-        // Community language — loaded from disk
-        v
-    } else {
-        // Fallback to English. Notify the user when they explicitly requested a
-        // locale that isn't available (VAL-3). Plain English is intentional here:
-        // we cannot use strings::get/fmt because STRINGS isn't set yet.
-        if code != "en" {
-            eprintln!("freemkv: locale '{code}' not found, using English");
-        }
-        serde_json::from_str(LOCALE_EN).expect("invalid en.json")
-    };
+    // Region-aware resolution: try the full tag (`pt-br`), then the base
+    // language (`pt`), then English. So a `pt-BR` user gets Brazilian strings
+    // when that catalog ships and European Portuguese otherwise.
+    let json = load_for(&code)
+        .or_else(|| {
+            let base = base_language(&code);
+            (base != code).then(|| load_for(base)).flatten()
+        })
+        .unwrap_or_else(|| {
+            // Notify the user when they explicitly requested a locale that isn't
+            // available (VAL-3). Plain English is intentional here: we cannot use
+            // strings::get/fmt because STRINGS isn't set yet.
+            if code != "en" {
+                eprintln!("freemkv: locale '{code}' not found, using English");
+            }
+            serde_json::from_str(LOCALE_EN).expect("invalid en.json")
+        });
     let _ = STRINGS.set(json);
+}
+
+/// Load one locale code: compiled-in first, then disk search paths. `None` if
+/// that exact code has no catalog anywhere (the caller then tries the base
+/// language, then English).
+fn load_for(code: &str) -> Option<Value> {
+    if let Some(data) = bundled_locale(code) {
+        return Some(serde_json::from_str(data).expect("invalid bundled locale"));
+    }
+    load_locale_file(code)
 }
 
 /// Get a string by dotted path (e.g. "disc.scanning", "error.no_drive").
@@ -180,25 +192,62 @@ fn try_load(path: &std::path::Path) -> Option<Value> {
     }
 }
 
-/// "fr_FR.UTF-8" → "fr". Inputs are untrusted (the `--language` CLI flag and
-/// the `LC_*`/`LANG` env vars), so this must never panic. The two-letter code is
-/// taken by *character*, not byte, and validated as ASCII letters — anything
-/// else (multibyte leading chars, digits, punctuation) falls back to English.
+/// Canonicalize a locale string to an internal tag `lang[-script][-region]`,
+/// all lowercase, hyphen-joined: `pt_BR.UTF-8` → `pt-br`, `zh_Hant` → `zh-hant`,
+/// `en-US` → `en-us`, `de` → `de`. Region/script are PRESERVED (no more
+/// collapse to two letters), so `pt-BR` ≠ `pt` and Simplified ≠ Traditional.
+///
+/// Inputs are untrusted (the `--language` CLI flag and the `LC_*`/`LANG` env
+/// vars), so this must never panic — it iterates by *character*, validates
+/// ASCII, and falls back to English on anything malformed.
+///
+/// Chinese without an explicit script infers one from the region (tw/hk/mo →
+/// hant, else hans) and defaults to Simplified, so `zh_CN` → `zh-hans`,
+/// `zh_TW` → `zh-hant`, bare `zh` → `zh-hans`.
 fn normalize_code(s: &str) -> String {
-    // Strip any territory/codeset/modifier suffix (`fr_FR.UTF-8@euro` → `fr`)
-    // before taking the language part.
-    let lang = s
-        .trim()
-        .split(['_', '.', '-', '@', ':'])
-        .next()
-        .unwrap_or("")
-        .to_lowercase();
-    let code: String = lang.chars().take(2).collect();
-    if code.chars().count() == 2 && code.chars().all(|c| c.is_ascii_alphabetic()) {
-        code
-    } else {
-        "en".to_string()
+    // Drop codeset/modifier (`.UTF-8`, `@euro`), keep language[_-subtags].
+    let base = s.trim().split(['.', '@', ':']).next().unwrap_or("");
+    let mut parts = base.split(['_', '-']).filter(|p| !p.is_empty());
+    let lang = parts.next().unwrap_or("").to_ascii_lowercase();
+    if !(2..=3).contains(&lang.len()) || !lang.chars().all(|c| c.is_ascii_alphabetic()) {
+        return "en".to_string();
     }
+    let mut script: Option<String> = None;
+    let mut region: Option<String> = None;
+    for p in parts {
+        if p.len() == 4 && p.chars().all(|c| c.is_ascii_alphabetic()) && script.is_none() {
+            script = Some(p.to_ascii_lowercase()); // hans, hant, latn, cyrl …
+        } else if (p.len() == 2 && p.chars().all(|c| c.is_ascii_alphabetic())
+            || p.len() == 3 && p.chars().all(|c| c.is_ascii_digit()))
+            && region.is_none()
+        {
+            region = Some(p.to_ascii_lowercase()); // br, us, 419 …
+        }
+    }
+    // Chinese script inference (only when no explicit script subtag). Folds the
+    // region into the script so `zh_TW` and `zh_CN` map to the two catalogs.
+    if lang == "zh" && script.is_none() {
+        script = Some(match region.as_deref() {
+            Some("tw") | Some("hk") | Some("mo") => "hant".to_string(),
+            _ => "hans".to_string(),
+        });
+        region = None;
+    }
+    let mut out = lang;
+    if let Some(sc) = script {
+        out.push('-');
+        out.push_str(&sc);
+    }
+    if let Some(rg) = region {
+        out.push('-');
+        out.push_str(&rg);
+    }
+    out
+}
+
+/// The base language subtag (`pt-br` → `pt`, `zh-hant` → `zh`).
+fn base_language(code: &str) -> &str {
+    code.split('-').next().unwrap_or(code)
 }
 
 fn lookup(strings: &Value, path: &str) -> String {
@@ -317,23 +366,56 @@ mod tests {
         // panic — it must fall back to English (or the ASCII language part).
         for input in ["あx", "€a", "Ⓐb", "😀x", "あ", "", ".", "_", "@", "ñ"] {
             let code = normalize_code(input);
+            // A malformed leading subtag must fall back to English; a valid one
+            // yields a lowercase-ASCII tag (lang plus optional -script/-region).
             assert!(
-                code == "en" || (code.len() == 2 && code.chars().all(|c| c.is_ascii_alphabetic())),
-                "normalize_code({input:?}) = {code:?}: must be 'en' or a 2-letter ASCII code"
+                code == "en"
+                    || code
+                        .split('-')
+                        .all(|p| !p.is_empty() && p.chars().all(|c| c.is_ascii_alphanumeric())),
+                "normalize_code({input:?}) = {code:?}: must be 'en' or a clean ASCII tag"
             );
         }
     }
 
     #[test]
     fn normalize_code_extracts_language_part() {
-        assert_eq!(normalize_code("fr_FR.UTF-8"), "fr");
+        // Region and script are now PRESERVED (lowercase, hyphen-joined).
+        assert_eq!(normalize_code("fr_FR.UTF-8"), "fr-fr");
         assert_eq!(normalize_code("de"), "de");
-        assert_eq!(normalize_code("PT_BR"), "pt");
-        assert_eq!(normalize_code("en-US"), "en");
+        assert_eq!(normalize_code("PT_BR"), "pt-br");
+        assert_eq!(normalize_code("en-US"), "en-us");
         assert_eq!(normalize_code("es.UTF-8@modifier"), "es");
+        assert_eq!(normalize_code("es-419"), "es-419");
+        assert_eq!(normalize_code("zh_Hant"), "zh-hant");
+        // Chinese region → script inference.
+        assert_eq!(normalize_code("zh_TW"), "zh-hant");
+        assert_eq!(normalize_code("zh_CN"), "zh-hans");
+        assert_eq!(normalize_code("zh"), "zh-hans");
         // Non-letters fall back rather than producing a bogus code.
         assert_eq!(normalize_code("12"), "en");
         assert_eq!(normalize_code("x"), "en");
+    }
+
+    #[test]
+    fn base_language_strips_subtags() {
+        assert_eq!(base_language("pt-br"), "pt");
+        assert_eq!(base_language("zh-hant"), "zh");
+        assert_eq!(base_language("de"), "de");
+    }
+
+    #[test]
+    fn every_shipped_locale_has_full_key_coverage() {
+        // Auto-covers every locale file (incl. regional variants) so a new
+        // catalog can't ship with missing keys or dropped placeholders.
+        for code in SHIPPED_CODES {
+            if *code == "en" {
+                continue;
+            }
+            let data = bundled_locale_json(code)
+                .unwrap_or_else(|| panic!("{code} in SHIPPED_CODES but not bundled"));
+            verify_locale(code, data);
+        }
     }
 
     #[test]
