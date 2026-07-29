@@ -587,7 +587,10 @@
       "fetching_keydb": "keydb 가져오는 중 …",
       "backing_up": "디스크 전체를 {p}로 백업 중",
       "backup_note": "백업은 타이틀 선택과 손실 허용치를 무시합니다.",
-      "folder_unsupported": "폴더 소스는 아직 지원되지 않습니다: {p}"
+      "folder_unsupported": "폴더 소스는 아직 지원되지 않습니다: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "추출이 진행 중입니다.",

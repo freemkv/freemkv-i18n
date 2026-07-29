@@ -587,7 +587,10 @@
       "fetching_keydb": "A obter keydb …",
       "backing_up": "A criar cópia de segurança de todo o disco para {p}",
       "backup_note": "A cópia de segurança ignora a seleção de títulos e a tolerância a perdas.",
-      "folder_unsupported": "As origens em pasta ainda não são suportadas: {p}"
+      "folder_unsupported": "As origens em pasta ainda não são suportadas: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Está uma extração em curso.",

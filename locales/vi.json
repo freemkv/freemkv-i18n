@@ -587,7 +587,10 @@
       "fetching_keydb": "Đang lấy keydb …",
       "backing_up": "Đang sao lưu toàn đĩa vào {p}",
       "backup_note": "Sao lưu bỏ qua lựa chọn tiêu đề và ngưỡng chịu mất mát.",
-      "folder_unsupported": "Nguồn thư mục chưa được hỗ trợ: {p}"
+      "folder_unsupported": "Nguồn thư mục chưa được hỗ trợ: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Quá trình trích xuất đang diễn ra.",

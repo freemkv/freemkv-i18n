@@ -587,7 +587,10 @@
       "fetching_keydb": "Henter keydb …",
       "backing_up": "Sikkerhedskopierer hele disken til {p}",
       "backup_note": "Sikkerhedskopiering ignorerer titelvalget og tabstolerancen.",
-      "folder_unsupported": "Mappekilder understøttes ikke endnu: {p}"
+      "folder_unsupported": "Mappekilder understøttes ikke endnu: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Et rip er i gang.",
