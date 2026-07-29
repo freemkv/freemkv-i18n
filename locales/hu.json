@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Hiba: nem hozható létre vagy nem írható a(z) „{path}” dir:// cél: {error}.",
     "dir_dest_not_empty": "Hiba: a(z) „{path}” dir:// cél nem üres. Add meg a --force kapcsolót az oda való kibontáshoz, vagy válassz üres mappát.",
     "unknown_language": "ismeretlen nyelv: „{tag}” (ezen a címen elérhető: {available})",
-    "stream_none": "nincs"
+    "stream_none": "nincs",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Használat: freemkv <forrás> <cél> [kapcsolók]",

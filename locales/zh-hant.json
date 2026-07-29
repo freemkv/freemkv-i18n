@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "錯誤：無法建立或寫入 dir:// 目標 '{path}'：{error}。",
     "dir_dest_not_empty": "錯誤：dir:// 目標 '{path}' 不為空。請傳入 --force 以強制擷取至其中，或選擇空的資料夾。",
     "unknown_language": "未知語言 '{tag}'（此標題可用：{available}）",
-    "stream_none": "無"
+    "stream_none": "無",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "用法：freemkv <source> <dest> [flags]",

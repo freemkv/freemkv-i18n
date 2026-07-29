@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Erro: não é possível criar ou gravar no destino dir:// '{path}': {error}.",
     "dir_dest_not_empty": "Erro: o destino dir:// '{path}' não está vazio. Passe --force para extrair nele mesmo assim ou escolha uma pasta vazia.",
     "unknown_language": "idioma desconhecido '{tag}' (disponíveis neste título: {available})",
-    "stream_none": "nenhum"
+    "stream_none": "nenhum",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Uso: freemkv <origem> <destino> [flags]",

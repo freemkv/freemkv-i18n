@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Σφάλμα: δεν είναι δυνατή η δημιουργία ή εγγραφή του προορισμού dir:// '{path}': {error}.",
     "dir_dest_not_empty": "Σφάλμα: ο προορισμός dir:// '{path}' δεν είναι κενός. Δώστε --force για εξαγωγή σε αυτόν ούτως ή άλλως, ή επιλέξτε έναν κενό φάκελο.",
     "unknown_language": "άγνωστη γλώσσα '{tag}' (διαθέσιμες σε αυτόν τον τίτλο: {available})",
-    "stream_none": "καμία"
+    "stream_none": "καμία",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Χρήση: freemkv <source> <dest> [flags]",

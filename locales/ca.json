@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Error: no es pot crear ni escriure la destinació dir:// «{path}»: {error}.",
     "dir_dest_not_empty": "Error: la destinació dir:// «{path}» no és buida. Passeu --force per extreure-hi igualment, o trieu una carpeta buida.",
     "unknown_language": "idioma desconegut «{tag}» (disponibles en aquest títol: {available})",
-    "stream_none": "cap"
+    "stream_none": "cap",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Ús: freemkv <origen> <destinació> [indicadors]",

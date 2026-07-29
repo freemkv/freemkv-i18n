@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "エラー: dir:// のターゲット '{path}' を作成または書き込みできません: {error}。",
     "dir_dest_not_empty": "エラー: dir:// のターゲット '{path}' が空ではありません。それでも展開するには --force を指定するか、空のフォルダを選択してください。",
     "unknown_language": "不明な言語 '{tag}' です（このタイトルで利用可能: {available}）",
-    "stream_none": "なし"
+    "stream_none": "なし",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "使い方: freemkv <source> <dest> [flags]",

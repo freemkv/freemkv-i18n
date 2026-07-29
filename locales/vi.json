@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Lỗi: không thể tạo hoặc ghi đích dir:// '{path}': {error}.",
     "dir_dest_not_empty": "Lỗi: đích dir:// '{path}' không trống. Truyền --force để vẫn trích xuất vào đó, hoặc chọn một thư mục trống.",
     "unknown_language": "ngôn ngữ không xác định '{tag}' (có sẵn trên tiêu đề này: {available})",
-    "stream_none": "không có"
+    "stream_none": "không có",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Cách dùng: freemkv <source> <dest> [flags]",

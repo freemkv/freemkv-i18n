@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Ошибка: не удалось создать или записать цель dir:// «{path}»: {error}.",
     "dir_dest_not_empty": "Ошибка: цель dir:// «{path}» не пуста. Передайте --force, чтобы всё равно извлечь в неё, либо выберите пустую папку.",
     "unknown_language": "неизвестный язык «{tag}» (доступно в этом тайтле: {available})",
-    "stream_none": "нет"
+    "stream_none": "нет",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Использование: freemkv <источник> <назначение> [флаги]",

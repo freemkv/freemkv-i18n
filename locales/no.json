@@ -366,7 +366,8 @@
     "dir_dest_not_writable": "Feil: kan ikke opprette eller skrive dir://-målet «{path}»: {error}.",
     "dir_dest_not_empty": "Feil: dir://-målet «{path}» er ikke tomt. Angi --force for å pakke ut i det likevel, eller velg en tom mappe.",
     "unknown_language": "ukjent språk «{tag}» (tilgjengelig på denne tittelen: {available})",
-    "stream_none": "ingen"
+    "stream_none": "ingen",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Bruk: freemkv <source> <dest> [flagg]",

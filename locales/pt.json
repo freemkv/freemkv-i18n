@@ -326,7 +326,8 @@
     "dir_dest_not_writable": "Error: cannot create or write the dir:// target '{path}': {error}.",
     "dir_dest_not_empty": "Error: dir:// target '{path}' is not empty. Pass --force to extract into it anyway, or choose an empty folder.",
     "unknown_language": "idioma desconhecido '{tag}' (disponiveis neste titulo: {available})",
-    "stream_none": "nenhum"
+    "stream_none": "nenhum",
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
   },
   "usage": {
     "synopsis_1": "Uso: freemkv <origem> <dest> [opcoes]",
