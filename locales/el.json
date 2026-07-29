@@ -457,7 +457,8 @@
       "help": "Βοήθεια",
       "docs": "Τεκμηρίωση freemkv",
       "check_updates": "Έλεγχος για ενημερώσεις…",
-      "edit": "Επεξεργασία"
+      "edit": "Επεξεργασία",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "Τύπος",

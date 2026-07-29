@@ -457,7 +457,8 @@
       "help": "Довідка",
       "docs": "Документація freemkv",
       "check_updates": "Перевірити оновлення…",
-      "edit": "Редагування"
+      "edit": "Редагування",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "Тип",

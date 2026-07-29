@@ -457,7 +457,8 @@
       "help": "도움말",
       "docs": "freemkv 문서",
       "check_updates": "업데이트 확인…",
-      "edit": "편집"
+      "edit": "편집",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "유형",

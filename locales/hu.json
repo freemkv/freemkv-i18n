@@ -457,7 +457,8 @@
       "help": "Súgó",
       "docs": "freemkv dokumentáció",
       "check_updates": "Frissítések keresése…",
-      "edit": "Szerkesztés"
+      "edit": "Szerkesztés",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "Típus",
