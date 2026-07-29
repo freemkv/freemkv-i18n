@@ -457,7 +457,8 @@
       "help": "Trợ giúp",
       "docs": "Tài liệu freemkv",
       "check_updates": "Kiểm tra cập nhật…",
-      "edit": "Chỉnh sửa"
+      "edit": "Chỉnh sửa",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "Loại",

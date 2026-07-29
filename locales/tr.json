@@ -457,7 +457,8 @@
       "help": "Yardım",
       "docs": "freemkv Belgeleri",
       "check_updates": "Güncellemeleri denetle…",
-      "edit": "Düzen"
+      "edit": "Düzen",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "Tür",

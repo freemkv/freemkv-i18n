@@ -457,7 +457,8 @@
       "help": "帮助",
       "docs": "freemkv 文档",
       "check_updates": "检查更新……",
-      "edit": "编辑"
+      "edit": "编辑",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "类型",

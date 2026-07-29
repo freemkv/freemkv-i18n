@@ -457,7 +457,8 @@
       "help": "Bantuan",
       "docs": "Dokumentasi freemkv",
       "check_updates": "Periksa pembaruan…",
-      "edit": "Sunting"
+      "edit": "Sunting",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "Tipe",

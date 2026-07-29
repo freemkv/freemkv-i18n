@@ -457,7 +457,8 @@
       "help": "Pomoc",
       "docs": "Dokumentácia freemkv",
       "check_updates": "Skontrolovať aktualizácie…",
-      "edit": "Upraviť"
+      "edit": "Upraviť",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "Typ",

@@ -457,7 +457,8 @@
       "help": "Ajutor",
       "docs": "Documentație freemkv",
       "check_updates": "Verifică actualizări…",
-      "edit": "Editare"
+      "edit": "Editare",
+      "open_disc": "Open disc…"
     },
     "col": {
       "type": "Tip",
