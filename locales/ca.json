@@ -587,7 +587,10 @@
       "fetching_keydb": "S'està obtenint el keydb …",
       "backing_up": "S'està fent una còpia de seguretat de tot el disc a {p}",
       "backup_note": "La còpia de seguretat ignora la selecció de títols i la tolerància a la pèrdua.",
-      "folder_unsupported": "Els orígens de carpeta encara no són compatibles: {p}"
+      "folder_unsupported": "Els orígens de carpeta encara no són compatibles: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Hi ha una extracció en curs.",

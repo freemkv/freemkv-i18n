@@ -587,7 +587,10 @@
       "fetching_keydb": "Fetching keydb …",
       "backing_up": "Backing up whole disc to {p}",
       "backup_note": "Backup ignores the title selection and the loss tolerance.",
-      "folder_unsupported": "Folder sources are not supported yet: {p}"
+      "folder_unsupported": "Folder sources are not supported yet: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "A rip is in progress.",

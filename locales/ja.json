@@ -587,7 +587,10 @@
       "fetching_keydb": "keydb を取得中 …",
       "backing_up": "ディスク全体を {p} にバックアップ中",
       "backup_note": "バックアップはタイトルの選択と損失許容量を無視します。",
-      "folder_unsupported": "フォルダソースはまだ対応していません: {p}"
+      "folder_unsupported": "フォルダソースはまだ対応していません: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "リッピングが進行中です。",

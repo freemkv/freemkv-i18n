@@ -587,7 +587,10 @@
       "fetching_keydb": "Récupération du keydb …",
       "backing_up": "Sauvegarde du disque entier vers {p}",
       "backup_note": "La sauvegarde ignore la sélection des titres et la tolérance aux pertes.",
-      "folder_unsupported": "Les sources de type dossier ne sont pas encore prises en charge : {p}"
+      "folder_unsupported": "Les sources de type dossier ne sont pas encore prises en charge : {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Une extraction est en cours.",

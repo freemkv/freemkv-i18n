@@ -587,7 +587,10 @@
       "fetching_keydb": "keydb letöltése…",
       "backing_up": "A teljes lemez mentése ide: {p}",
       "backup_note": "A mentés figyelmen kívül hagyja a címkijelölést és a veszteségtűrést.",
-      "folder_unsupported": "A mappaforrások még nem támogatottak: {p}"
+      "folder_unsupported": "A mappaforrások még nem támogatottak: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Kimásolás van folyamatban.",

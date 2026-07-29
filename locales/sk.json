@@ -587,7 +587,10 @@
       "fetching_keydb": "Sťahuje sa keydb …",
       "backing_up": "Zálohuje sa celý disk do {p}",
       "backup_note": "Záloha ignoruje výber titulov a toleranciu straty.",
-      "folder_unsupported": "Priečinkové zdroje zatiaľ nie sú podporované: {p}"
+      "folder_unsupported": "Priečinkové zdroje zatiaľ nie sú podporované: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Prebieha kopírovanie.",

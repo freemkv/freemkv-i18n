@@ -587,7 +587,10 @@
       "fetching_keydb": "keydb getiriliyor …",
       "backing_up": "Tüm disk {p} konumuna yedekleniyor",
       "backup_note": "Yedekleme, başlık seçimini ve kayıp toleransını yok sayar.",
-      "folder_unsupported": "Klasör kaynakları henüz desteklenmiyor: {p}"
+      "folder_unsupported": "Klasör kaynakları henüz desteklenmiyor: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Bir kopyalama sürüyor.",

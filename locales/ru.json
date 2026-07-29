@@ -587,7 +587,10 @@
       "fetching_keydb": "Получение keydb …",
       "backing_up": "Резервное копирование всего диска в {p}",
       "backup_note": "Резервное копирование игнорирует выбор тайтлов и допуск потерь.",
-      "folder_unsupported": "Источники-папки пока не поддерживаются: {p}"
+      "folder_unsupported": "Источники-папки пока не поддерживаются: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Выполняется копирование.",

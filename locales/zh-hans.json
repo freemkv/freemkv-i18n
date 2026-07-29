@@ -587,7 +587,10 @@
       "fetching_keydb": "正在获取 keydb……",
       "backing_up": "正在将整张光盘备份到 {p}",
       "backup_note": "备份会忽略标题选择和丢失容忍度。",
-      "folder_unsupported": "尚不支持文件夹源：{p}"
+      "folder_unsupported": "尚不支持文件夹源：{p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "抓取正在进行中。",

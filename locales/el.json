@@ -587,7 +587,10 @@
       "fetching_keydb": "Λήψη keydb …",
       "backing_up": "Δημιουργία αντιγράφου ασφαλείας ολόκληρου του δίσκου στο {p}",
       "backup_note": "Το αντίγραφο ασφαλείας αγνοεί την επιλογή τίτλων και την ανοχή απώλειας.",
-      "folder_unsupported": "Οι πηγές φακέλου δεν υποστηρίζονται ακόμη: {p}"
+      "folder_unsupported": "Οι πηγές φακέλου δεν υποστηρίζονται ακόμη: {p}",
+      "select_title_first": "Select at least one title to rip.",
+      "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
+      "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
     },
     "alert": {
       "rip_title": "Μια εξαγωγή βρίσκεται σε εξέλιξη.",
