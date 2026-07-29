@@ -338,7 +338,7 @@
     "E9029": "Could not write the extracted file tree to the dir:// target. Check the folder still exists and you have write access.",
     "E9030": "Internal error while building the output. Please report this.",
     "E9047": "The drive returned an unreadable disc-size response. Reconnect the drive and try again.",
-    "E9048": "This title has no video track to write to an MP4. Use mkv:// if you want an audio- or subtitle-only output.",
+    "E9048": "MP4 cannot store this title's video (MP4 holds H.264, HEVC, and AV1 only). Use mkv:// instead, which keeps everything.",
     "E9049": "This MP4 file is malformed or truncated and could not be read.",
     "E9050": "This title's video is missing the configuration data an MP4 needs. Use mkv:// instead.",
     "title_out_of_range": "Title {num} out of range ({count})",
