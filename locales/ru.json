@@ -72,6 +72,10 @@
     "qualifier": {
       "sdh": "SDH",
       "descriptive_service": "Тифлослужба"
+    },
+    "class": {
+      "audio": "audio",
+      "subtitle": "subtitle"
     }
   },
   "mp4": {
@@ -367,7 +371,8 @@
     "dir_dest_not_empty": "Ошибка: цель dir:// «{path}» не пуста. Передайте --force, чтобы всё равно извлечь в неё, либо выберите пустую папку.",
     "unknown_language": "неизвестный язык «{tag}» (доступно в этом тайтле: {available})",
     "stream_none": "нет",
-    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source.",
+    "no_lang_match": "no {class} track on this title matches '{requested}' (available {class}: {available}). Fix the language, or use all/none."
   },
   "usage": {
     "synopsis_1": "Использование: freemkv <источник> <назначение> [флаги]",
@@ -619,5 +624,8 @@
     "win": {
       "settings": "Настройки freemkv"
     }
+  },
+  "warn": {
+    "no_lang_match": "warning: title {num}: no {class} track matches '{requested}' (available: {available}) — keeping video only."
   }
 }

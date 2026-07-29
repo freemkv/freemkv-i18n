@@ -72,6 +72,10 @@
     "qualifier": {
       "sdh": "SDH",
       "descriptive_service": "Layanan Deskriptif"
+    },
+    "class": {
+      "audio": "audio",
+      "subtitle": "subtitle"
     }
   },
   "mp4": {
@@ -367,7 +371,8 @@
     "dir_dest_not_empty": "Kesalahan: target dir:// '{path}' tidak kosong. Berikan --force untuk tetap mengekstrak ke dalamnya, atau pilih folder kosong.",
     "unknown_language": "bahasa '{tag}' tidak dikenal (tersedia pada judul ini: {available})",
     "stream_none": "tidak ada",
-    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source."
+    "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source.",
+    "no_lang_match": "no {class} track on this title matches '{requested}' (available {class}: {available}). Fix the language, or use all/none."
   },
   "usage": {
     "synopsis_1": "Penggunaan: freemkv <source> <dest> [flags]",
@@ -619,5 +624,8 @@
     "win": {
       "settings": "Pengaturan freemkv"
     }
+  },
+  "warn": {
+    "no_lang_match": "warning: title {num}: no {class} track matches '{requested}' (available: {available}) — keeping video only."
   }
 }
