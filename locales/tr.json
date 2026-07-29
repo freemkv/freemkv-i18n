@@ -476,6 +476,7 @@
       "default_dest": "Varsayılan hedef :",
       "filename_template": "Dosya adı şablonu :",
       "keep_iso": "Ara ISO'yu koru :",
+      "auto_eject": "Bitince diski çıkar :",
       "default_selection": "Varsayılan seçim :",
       "sel_main": "Yalnızca ana film",
       "sel_all": "Tüm başlıklar",

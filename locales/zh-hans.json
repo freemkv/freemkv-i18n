@@ -476,6 +476,7 @@
       "default_dest": "默认目标 ：",
       "filename_template": "文件名模板 ：",
       "keep_iso": "保留中间 ISO ：",
+      "auto_eject": "完成后弹出光盘：",
       "default_selection": "默认选择 ：",
       "sel_main": "仅正片",
       "sel_all": "全部标题",

@@ -476,6 +476,7 @@
       "default_dest": "Standaardbestemming:",
       "filename_template": "Bestandsnaamsjabloon:",
       "keep_iso": "Tussenliggende ISO behouden:",
+      "auto_eject": "Schijf uitwerpen als klaar:",
       "default_selection": "Standaardselectie:",
       "sel_main": "Alleen hoofdfilm",
       "sel_all": "Alle titels",

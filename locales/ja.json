@@ -476,6 +476,7 @@
       "default_dest": "デフォルト宛先 :",
       "filename_template": "ファイル名テンプレート :",
       "keep_iso": "中間 ISO を保持 :",
+      "auto_eject": "完了時にディスクを取り出す :",
       "default_selection": "デフォルト選択 :",
       "sel_main": "メイン作品のみ",
       "sel_all": "すべてのタイトル",

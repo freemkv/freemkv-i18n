@@ -476,6 +476,7 @@
       "default_dest": "Alapértelmezett cél:",
       "filename_template": "Fájlnévsablon:",
       "keep_iso": "Köztes ISO megtartása:",
+      "auto_eject": "Lemez kiadása befejezéskor:",
       "default_selection": "Alapértelmezett kijelölés:",
       "sel_main": "Csak a főfilm",
       "sel_all": "Összes cím",

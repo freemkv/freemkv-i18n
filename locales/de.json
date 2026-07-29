@@ -476,6 +476,7 @@
       "default_dest": "Standardziel:",
       "filename_template": "Dateinamenvorlage:",
       "keep_iso": "Zwischen-ISO behalten:",
+      "auto_eject": "Disc nach Abschluss auswerfen:",
       "default_selection": "Standardauswahl:",
       "sel_main": "Nur Hauptfilm",
       "sel_all": "Alle Titel",

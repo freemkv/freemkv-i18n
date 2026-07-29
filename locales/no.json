@@ -476,6 +476,7 @@
       "default_dest": "Standard destinasjon:",
       "filename_template": "Filnavnmal:",
       "keep_iso": "Behold mellomliggende ISO:",
+      "auto_eject": "Løs ut platen når ferdig:",
       "default_selection": "Standard utvalg:",
       "sel_main": "Kun hovedfilm",
       "sel_all": "Alle titler",

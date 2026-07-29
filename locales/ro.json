@@ -476,6 +476,7 @@
       "default_dest": "Destinație implicită :",
       "filename_template": "Șablon nume de fișier :",
       "keep_iso": "Păstrează ISO-ul intermediar :",
+      "auto_eject": "Scoate discul la finalizare :",
       "default_selection": "Selecție implicită :",
       "sel_main": "Doar filmul principal",
       "sel_all": "Toate titlurile",
