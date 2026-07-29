@@ -435,5 +435,186 @@
       "mask": "  -m, --mask          Mask serial numbers (with --share)",
       "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
     }
+  },
+  "gui": {
+    "menu": {
+      "app_about": "About freemkv",
+      "settings": "Settings…",
+      "quit": "Quit freemkv",
+      "file": "File",
+      "open": "Open…",
+      "close": "Close",
+      "set_output": "Set output folder…",
+      "start_rip": "Start rip",
+      "eject": "Eject disc",
+      "select_all_titles": "Select All Titles",
+      "select_no_titles": "Select No Titles",
+      "invert_titles": "Invert Title Selection",
+      "view": "View",
+      "show_log": "Show log",
+      "hide_log": "Hide log",
+      "clear_log": "Clear log",
+      "help": "Help",
+      "docs": "freemkv Documentation",
+      "check_updates": "Check for updates…",
+      "edit": "Edit"
+    },
+    "col": {
+      "type": "Type",
+      "desc": "Description"
+    },
+    "tab": {
+      "output": "Output",
+      "selection": "Selection",
+      "recovery": "Recovery",
+      "keys": "Keys",
+      "advanced": "Advanced"
+    },
+    "set": {
+      "default_output": "Default output :",
+      "default_dest": "Default destination :",
+      "filename_template": "Filename template :",
+      "keep_iso": "Keep intermediate ISO :",
+      "default_selection": "Default selection :",
+      "sel_main": "Main film only",
+      "sel_all": "All titles",
+      "sel_longest": "Longest title",
+      "min_length": "Minimum title length (seconds) :",
+      "min_length_note": "Shorter titles are hidden from the list — most are menus and stings.",
+      "rip_mode": "Rip mode :",
+      "mode_multi": "Multi-pass",
+      "mode_single": "Single pass",
+      "max_passes": "Max recovery passes :",
+      "abort_lost": "Abort on lost seconds :",
+      "abort_lost_note": "0 = require a perfect rip; e.g. 30 tolerates up to 30 s of loss in the main feature.",
+      "capture_no_keys": "Capture even without keys :",
+      "keep_encrypted": "Keep encrypted (raw passthrough) :",
+      "raw_note": "Writes ciphertext untouched — ISO output only. Matches the CLI's --raw.",
+      "overwrite": "Overwrite existing files :",
+      "capture_note": "Writes the still-encrypted image so it can be decrypted later once a key is available.",
+      "key_source": "Key source :",
+      "key_src_local": "Local keydb only",
+      "key_src_online": "Online key service only",
+      "key_src_both": "keydb, then online",
+      "keydb_path": "keydb.cfg location :",
+      "keydb_url": "keydb update URL :",
+      "keyserver_url": "Key service URL :",
+      "keyserver_token": "Key service token :",
+      "language": "Interface language :",
+      "language_note": "Takes effect after you restart freemkv.",
+      "decrypt_threads": "Decrypt threads :",
+      "decrypt_threads_note": "0 = one per CPU core.",
+      "log_detail": "Log detail :",
+      "log_quiet": "Quiet",
+      "log_normal": "Normal",
+      "log_verbose": "Verbose",
+      "log_debug": "Log debug messages :",
+      "update_keydb": "Update keydb now",
+      "test_connection": "Test connection"
+    },
+    "btn": {
+      "open_file": "Open file or ISO…",
+      "show_finder": "Show in Finder",
+      "done": "Done",
+      "run_now": "Run Now",
+      "cancel": "Cancel",
+      "ok": "OK",
+      "close": "Close",
+      "browse": "…"
+    },
+    "group": {
+      "output": "Output",
+      "info": "Info",
+      "information": "Information"
+    },
+    "page": {
+      "empty_title": "No disc inserted",
+      "empty_subtitle": "Insert a disc, or open a file, folder or ISO image.",
+      "detail_default": "Open a disc image to see its titles."
+    },
+    "progress": {
+      "saving_current": "Saving to {container} file",
+      "saving_overall": "Saving all titles to {container} files",
+      "elapsed": "Elapsed: {hms}",
+      "caption_eta": "{pct}%   {elapsed}   Remaining: {hms}",
+      "caption_no_eta": "{pct}%   {elapsed}"
+    },
+    "result": {
+      "finished": "Finished",
+      "cancelled": "Cancelled",
+      "nothing": "Nothing was written"
+    },
+    "info": {
+      "source": "Source :",
+      "source_file": "Source file :",
+      "source_size": "Source size :",
+      "read_rate": "Read rate :",
+      "output_file": "Output file :",
+      "output_size": "Output size :",
+      "free_space": "Free space :",
+      "not_reported": "not reported"
+    },
+    "log": {
+      "ready": "freemkv {version} — ready",
+      "source_closed": "Source closed",
+      "cancelling": "Cancelling …",
+      "nothing_eject": "Nothing to eject — the source is a file, not a drive.",
+      "checking_updates": "Checking for updates …",
+      "mp4_mismatch": "MP4 cannot store {codecs} video. Choose MKV, which keeps everything.",
+      "opened_version": "freemkv {version}",
+      "opened": "{label} opened — {n} title(s), keys: {keys}",
+      "ready_convert": "Ready to convert",
+      "ready_rip": "Ready to rip",
+      "cannot_rip": "Cannot rip: {reasons}",
+      "open_source_first": "Open a source first.",
+      "choose_folder_first": "Choose an output folder first.",
+      "starting_rip": "Starting rip → {dir}",
+      "unreadable": "{n} unreadable sector(s) so far",
+      "not_supported": "Not a supported source: {p}",
+      "settings_saved": "Settings saved",
+      "settings_save_error": "Could not save settings: {e}",
+      "no_keyserver": "No key service URL set.",
+      "keyserver_valid": "Key service URL is valid: {url}",
+      "keyserver_rejected": "Key service URL rejected: {e}",
+      "fetching_keydb": "Fetching keydb …",
+      "backing_up": "Backing up whole disc to {p}",
+      "backup_note": "Backup ignores the title selection and the loss tolerance.",
+      "folder_unsupported": "Folder sources are not supported yet: {p}"
+    },
+    "alert": {
+      "rip_title": "A rip is in progress.",
+      "rip_body": "Quitting will stop it. The partial file so far is kept.",
+      "stop_quit": "Stop & Quit",
+      "keep_ripping": "Keep Ripping"
+    },
+    "panel": {
+      "source_msg": "Select a disc image or video stream",
+      "output_msg": "Choose an output folder",
+      "backup_prompt": "Back up",
+      "backup_msg": "Back up the entire disc (all titles, decrypted) to:",
+      "open_prompt": "Open",
+      "folder_msg": "Select a VIDEO_TS or BDMV folder"
+    },
+    "about": {
+      "version": "Version :",
+      "engine": "Engine :",
+      "licence": "Licence :",
+      "keys": "Keys :",
+      "website": "Website :"
+    },
+    "format": {
+      "mkv": "Selected titles → MKV",
+      "mp4": "Selected titles → MP4",
+      "m2ts": "Selected titles → M2TS",
+      "tracks": "Selected titles → separate track files",
+      "iso": "Whole disc → ISO image",
+      "folder": "Whole disc → decrypted folder",
+      "chapters": "Chapters → file",
+      "json": "Title info → JSON",
+      "fvi": "Video index → .fvi"
+    },
+    "win": {
+      "settings": "freemkv Settings"
+    }
   }
 }
