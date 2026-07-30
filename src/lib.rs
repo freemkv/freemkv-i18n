@@ -396,6 +396,25 @@ mod tests {
             missing
         );
 
+        // ...and no key may exist in the locale that English does not have.
+        // Parity was one-directional, so retiring a string from en.json left it
+        // behind in all 29 locales with nothing to flag it: a stale entry that
+        // translators keep re-translating and reviewers keep reading as live.
+        // Both directions now, so a removal has to be completed everywhere.
+        let mut extra = Vec::new();
+        for key in &locale_keys {
+            if !en_keys.contains(key) {
+                extra.push(key.clone());
+            }
+        }
+        assert!(
+            extra.is_empty(),
+            "{}.json has {} key(s) not present in en.json: {:?}",
+            code,
+            extra.len(),
+            extra
+        );
+
         // Every {placeholder} in English must appear in the translation
         for key in &en_keys {
             let en_val = lookup(&en, key);
