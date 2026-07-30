@@ -289,17 +289,33 @@ fn base_language(code: &str) -> &str {
 }
 
 fn lookup(strings: &Value, path: &str) -> String {
+    if let Some(s) = lookup_in(strings, path) {
+        return s;
+    }
+    // Per-key English fallback. The catalog-level fallback above only chooses
+    // WHICH file to load; without this, a key present in en.json but missing
+    // from the active locale rendered as the raw path — a user running under
+    // `de` saw the literal text `error.E9053`.
+    //
+    // That is strictly worse than English: it is not a message in any language,
+    // and it leaks an internal key into the UI. A translation gap should degrade
+    // to a language the user may not read, not to something nobody can.
+    if let Ok(en) = serde_json::from_str::<Value>(LOCALE_EN)
+        && let Some(s) = lookup_in(&en, path)
+    {
+        return s;
+    }
+    path.to_string()
+}
+
+/// One catalog, no fallback. Returns `None` for a missing or non-string node so
+/// the caller can decide what to do about it.
+fn lookup_in(strings: &Value, path: &str) -> Option<String> {
     let mut node = strings;
     for part in path.split('.') {
-        match node.get(part) {
-            Some(v) => node = v,
-            None => return path.to_string(),
-        }
+        node = node.get(part)?;
     }
-    match node.as_str() {
-        Some(s) => s.to_string(),
-        None => path.to_string(),
-    }
+    node.as_str().map(|s| s.to_string())
 }
 
 #[cfg(test)]
@@ -576,5 +592,54 @@ mod tests {
 
         // An unknown code falls back to the key path (same miss behavior as get).
         assert_eq!(error_message(999_999), "error.E999999");
+    }
+}
+
+#[cfg(test)]
+mod fallback_tests {
+    use super::*;
+
+    /// A key present in English but missing from the active locale must render
+    /// the ENGLISH text, never the raw path.
+    ///
+    /// Before the per-key fallback, `lookup` returned the path itself, so a user
+    /// under a non-English locale saw the literal string `error.E9053` where a
+    /// message belonged. Five error codes added during the 1.6.0 audit were in
+    /// exactly that state — and two of them exist because that audit split apart
+    /// codes that had been reporting total failure as success, so the fix that
+    /// made those failures visible would have shown an internal key.
+    #[test]
+    fn a_key_missing_from_the_locale_falls_back_to_english() {
+        // A catalog that deliberately lacks the key.
+        let sparse: Value = serde_json::json!({ "error": { "E9999": "present" } });
+        let got = lookup(&sparse, "error.E9053");
+        assert_ne!(
+            got, "error.E9053",
+            "a missing key must not render as its own path"
+        );
+        assert!(
+            got.contains("mkv://"),
+            "expected the English text for E9053, got {got:?}"
+        );
+        // A key missing from BOTH still degrades to the path — there is nothing
+        // better to show, and silently returning empty would be worse.
+        assert_eq!(lookup(&sparse, "error.E0000"), "error.E0000");
+    }
+
+    /// Every error code libfreemkv can raise must have an English string. This is
+    /// the check that was absent: five codes shipped without one because nothing
+    /// compared the two lists.
+    #[test]
+    fn the_audit_added_codes_all_have_english_strings() {
+        let en: Value = serde_json::from_str(LOCALE_EN).expect("en.json parses");
+        for code in ["E7027", "E9051", "E9052", "E9053", "E9054"] {
+            let path = format!("error.{code}");
+            let got = lookup(&en, &path);
+            assert_ne!(got, path, "{code} has no English string");
+            assert!(
+                got.len() > 20,
+                "{code} string looks like a placeholder: {got:?}"
+            );
+        }
     }
 }
