@@ -461,7 +461,10 @@
             "docs": "freemkv Belgeleri",
             "check_updates": "Güncellemeleri denetle…",
             "edit": "Düzen",
-            "open_disc": "Disk aç…"
+            "open_disc": "Disk aç…",
+            "exit": "Çıkış",
+            "copy": "Kopyala",
+            "select_all_text": "Tümünü Seç"
         },
         "col": {
             "type": "Tür",
@@ -514,7 +517,9 @@
             "log_verbose": "Ayrıntılı",
             "log_debug": "Hata ayıklama",
             "update_keydb": "keydb'yi şimdi güncelle",
-            "test_connection": "Bağlantıyı test et"
+            "test_connection": "Bağlantıyı test et",
+            "keydb_no_url": "keydb güncelleme adresi ayarlanmadı — yukarıya bir adres ekleyip Güncelle'ye tıklayın.",
+            "keydb_updating": "keydb güncelleniyor… indiriliyor, lütfen bekleyin."
         },
         "btn": {
             "open_file": "Dosya veya ISO aç…",
@@ -524,7 +529,8 @@
             "cancel": "İptal",
             "ok": "Tamam",
             "close": "Kapat",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Dosya Gezgini'nde Göster"
         },
         "group": {
             "output": "Çıktı",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Klasör kaynakları henüz desteklenmiyor: {p}",
             "select_title_first": "Kopyalanacak en az bir başlık seçin.",
             "video_only_warning": "Ses veya altyazı izi seçilmedi — çıktı yalnızca video içerecek.",
-            "raw_iso_only": "“Şifreli tut (raw)” yalnızca Tüm disk → ISO görüntüsü çıktısı için geçerlidir; bu biçimde yok sayılıyor."
+            "raw_iso_only": "“Şifreli tut (raw)” yalnızca Tüm disk → ISO görüntüsü çıktısı için geçerlidir; bu biçimde yok sayılıyor.",
+            "no_drive": "Optik sürücü bulunamadı. İçinde disk olan bir Blu-ray/DVD sürücüsü bağlayın.",
+            "opening_drive": "{label} ({device}) açılıyor",
+            "drives_found": "{n} sürücü bulundu: {list} — disk bulunan sürücü kullanılıyor"
         },
         "alert": {
             "rip_title": "Bir kopyalama sürüyor.",

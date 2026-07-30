@@ -461,7 +461,10 @@
             "docs": "Tài liệu freemkv",
             "check_updates": "Kiểm tra cập nhật…",
             "edit": "Chỉnh sửa",
-            "open_disc": "Mở đĩa…"
+            "open_disc": "Mở đĩa…",
+            "exit": "Thoát",
+            "copy": "Sao chép",
+            "select_all_text": "Chọn tất cả"
         },
         "col": {
             "type": "Loại",
@@ -514,7 +517,9 @@
             "log_verbose": "Chi tiết",
             "log_debug": "Gỡ lỗi",
             "update_keydb": "Cập nhật keydb ngay",
-            "test_connection": "Kiểm tra kết nối"
+            "test_connection": "Kiểm tra kết nối",
+            "keydb_no_url": "Chưa đặt URL cập nhật keydb — hãy thêm ở trên rồi bấm Cập nhật.",
+            "keydb_updating": "Đang cập nhật keydb… đang tải xuống, vui lòng đợi."
         },
         "btn": {
             "open_file": "Mở tệp hoặc ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Hủy",
             "ok": "OK",
             "close": "Đóng",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Hiện trong File Explorer"
         },
         "group": {
             "output": "Đầu ra",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Nguồn thư mục chưa được hỗ trợ: {p}",
             "select_title_first": "Hãy chọn ít nhất một tiêu đề để rip.",
             "video_only_warning": "Chưa chọn rãnh âm thanh hoặc phụ đề nào — đầu ra sẽ chỉ có video.",
-            "raw_iso_only": "“Giữ mã hoá (raw)” chỉ áp dụng cho đầu ra Toàn bộ đĩa → ảnh ISO; sẽ bị bỏ qua với định dạng này."
+            "raw_iso_only": "“Giữ mã hoá (raw)” chỉ áp dụng cho đầu ra Toàn bộ đĩa → ảnh ISO; sẽ bị bỏ qua với định dạng này.",
+            "no_drive": "Không tìm thấy ổ quang. Hãy kết nối ổ Blu-ray/DVD có đĩa.",
+            "opening_drive": "Đang mở {label} ({device})",
+            "drives_found": "Tìm thấy {n} ổ: {list} — đang dùng ổ có đĩa"
         },
         "alert": {
             "rip_title": "Quá trình trích xuất đang diễn ra.",

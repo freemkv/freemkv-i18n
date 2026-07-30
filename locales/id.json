@@ -461,7 +461,10 @@
             "docs": "Dokumentasi freemkv",
             "check_updates": "Periksa pembaruan…",
             "edit": "Sunting",
-            "open_disc": "Buka disc…"
+            "open_disc": "Buka disc…",
+            "exit": "Keluar",
+            "copy": "Salin",
+            "select_all_text": "Pilih Semua"
         },
         "col": {
             "type": "Tipe",
@@ -514,7 +517,9 @@
             "log_verbose": "Terperinci",
             "log_debug": "Debug",
             "update_keydb": "Perbarui keydb sekarang",
-            "test_connection": "Uji koneksi"
+            "test_connection": "Uji koneksi",
+            "keydb_no_url": "URL pembaruan keydb belum diatur — tambahkan di atas, lalu klik Perbarui.",
+            "keydb_updating": "Memperbarui keydb… mengunduh, mohon tunggu."
         },
         "btn": {
             "open_file": "Buka berkas atau ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Batal",
             "ok": "OK",
             "close": "Tutup",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Tampilkan di Explorer"
         },
         "group": {
             "output": "Keluaran",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Sumber folder belum didukung: {p}",
             "select_title_first": "Pilih setidaknya satu judul untuk dirip.",
             "video_only_warning": "Tidak ada trek audio atau subtitle yang dipilih — keluaran hanya berisi video.",
-            "raw_iso_only": "“Tetap terenkripsi (raw)” hanya berlaku untuk keluaran Seluruh disc → image ISO; diabaikan untuk format ini."
+            "raw_iso_only": "“Tetap terenkripsi (raw)” hanya berlaku untuk keluaran Seluruh disc → image ISO; diabaikan untuk format ini.",
+            "no_drive": "Tidak ada drive optik ditemukan. Hubungkan drive Blu-ray/DVD dengan disk.",
+            "opening_drive": "Membuka {label} ({device})",
+            "drives_found": "{n} drive ditemukan: {list} — menggunakan yang berisi disk"
         },
         "alert": {
             "rip_title": "Rip sedang berlangsung.",

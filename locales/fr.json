@@ -461,7 +461,10 @@
             "docs": "Documentation freemkv",
             "check_updates": "Rechercher les mises à jour…",
             "edit": "Édition",
-            "open_disc": "Ouvrir un disque…"
+            "open_disc": "Ouvrir un disque…",
+            "exit": "Quitter",
+            "copy": "Copier",
+            "select_all_text": "Tout sélectionner"
         },
         "col": {
             "type": "Type",
@@ -514,7 +517,9 @@
             "log_verbose": "Détaillé",
             "log_debug": "Débogage",
             "update_keydb": "Mettre à jour le keydb maintenant",
-            "test_connection": "Tester la connexion"
+            "test_connection": "Tester la connexion",
+            "keydb_no_url": "Aucune URL de mise à jour keydb définie — ajoutez-en une ci-dessus, puis cliquez sur Mettre à jour.",
+            "keydb_updating": "Mise à jour de keydb… téléchargement en cours, veuillez patienter."
         },
         "btn": {
             "open_file": "Ouvrir un fichier ou une ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Annuler",
             "ok": "OK",
             "close": "Fermer",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Afficher dans l'Explorateur"
         },
         "group": {
             "output": "Sortie",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Les sources de type dossier ne sont pas encore prises en charge : {p}",
             "select_title_first": "Sélectionnez au moins un titre à ripper.",
             "video_only_warning": "Aucune piste audio ou de sous-titres sélectionnée — la sortie ne contiendra que la vidéo.",
-            "raw_iso_only": "« Conserver chiffré (brut) » ne s'applique qu'à une sortie Disque entier → image ISO ; ignoré pour ce format."
+            "raw_iso_only": "« Conserver chiffré (brut) » ne s'applique qu'à une sortie Disque entier → image ISO ; ignoré pour ce format.",
+            "no_drive": "Aucun lecteur optique trouvé. Connectez un lecteur Blu-ray/DVD contenant un disque.",
+            "opening_drive": "Ouverture de {label} ({device})",
+            "drives_found": "{n} lecteurs trouvés : {list} — utilisation de celui qui contient un disque"
         },
         "alert": {
             "rip_title": "Une extraction est en cours.",

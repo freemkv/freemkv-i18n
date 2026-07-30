@@ -461,7 +461,10 @@
             "docs": "freemkv-dokumentation",
             "check_updates": "Sök efter uppdateringar…",
             "edit": "Redigera",
-            "open_disc": "Öppna skiva…"
+            "open_disc": "Öppna skiva…",
+            "exit": "Avsluta",
+            "copy": "Kopiera",
+            "select_all_text": "Markera allt"
         },
         "col": {
             "type": "Typ",
@@ -514,7 +517,9 @@
             "log_verbose": "Utförlig",
             "log_debug": "Felsökning",
             "update_keydb": "Uppdatera keydb nu",
-            "test_connection": "Testa anslutning"
+            "test_connection": "Testa anslutning",
+            "keydb_no_url": "Ingen URL för keydb-uppdatering angiven — lägg till en ovan och klicka på Uppdatera.",
+            "keydb_updating": "Uppdaterar keydb… hämtar, vänta."
         },
         "btn": {
             "open_file": "Öppna fil eller ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Avbryt",
             "ok": "OK",
             "close": "Stäng",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Visa i Utforskaren"
         },
         "group": {
             "output": "Utdata",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Mappkällor stöds inte ännu: {p}",
             "select_title_first": "Välj minst en titel att rippa.",
             "video_only_warning": "Inga ljud- eller undertextspår valda — utdata kommer endast att innehålla video.",
-            "raw_iso_only": "”Behåll krypterad (raw)” gäller endast utdata Hela skivan → ISO-avbild; ignoreras för det här formatet."
+            "raw_iso_only": "”Behåll krypterad (raw)” gäller endast utdata Hela skivan → ISO-avbild; ignoreras för det här formatet.",
+            "no_drive": "Ingen optisk enhet hittades. Anslut en Blu-ray-/DVD-enhet med en skiva.",
+            "opening_drive": "Öppnar {label} ({device})",
+            "drives_found": "{n} enheter hittades: {list} — använder den med en skiva"
         },
         "alert": {
             "rip_title": "En rippning pågår.",

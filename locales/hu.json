@@ -461,7 +461,10 @@
             "docs": "freemkv dokumentáció",
             "check_updates": "Frissítések keresése…",
             "edit": "Szerkesztés",
-            "open_disc": "Lemez megnyitása…"
+            "open_disc": "Lemez megnyitása…",
+            "exit": "Kilépés",
+            "copy": "Másolás",
+            "select_all_text": "Az összes kijelölése"
         },
         "col": {
             "type": "Típus",
@@ -514,7 +517,9 @@
             "log_verbose": "Részletes",
             "log_debug": "Hibakeresés",
             "update_keydb": "keydb frissítése most",
-            "test_connection": "Kapcsolat tesztelése"
+            "test_connection": "Kapcsolat tesztelése",
+            "keydb_no_url": "Nincs beállítva keydb frissítési URL — adjon meg egyet fent, majd kattintson a Frissítés gombra.",
+            "keydb_updating": "keydb frissítése… letöltés folyamatban, kérem várjon."
         },
         "btn": {
             "open_file": "Fájl vagy ISO megnyitása…",
@@ -524,7 +529,8 @@
             "cancel": "Mégse",
             "ok": "OK",
             "close": "Bezárás",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Megjelenítés az Intézőben"
         },
         "group": {
             "output": "Kimenet",
@@ -586,7 +592,10 @@
             "folder_unsupported": "A mappaforrások még nem támogatottak: {p}",
             "select_title_first": "Válassz ki legalább egy másolandó címet.",
             "video_only_warning": "Nincs kiválasztva hang- vagy feliratsáv — a kimenet csak videót fog tartalmazni.",
-            "raw_iso_only": "A „Titkosítva hagyás (raw)” csak a Teljes lemez → ISO-képfájl kimenetre érvényes; ennél a formátumnál figyelmen kívül marad."
+            "raw_iso_only": "A „Titkosítva hagyás (raw)” csak a Teljes lemez → ISO-képfájl kimenetre érvényes; ennél a formátumnál figyelmen kívül marad.",
+            "no_drive": "Nem található optikai meghajtó. Csatlakoztasson egy Blu-ray/DVD meghajtót lemezzel.",
+            "opening_drive": "{label} ({device}) megnyitása",
+            "drives_found": "{n} meghajtó található: {list} — a lemezt tartalmazó lesz használva"
         },
         "alert": {
             "rip_title": "Kimásolás van folyamatban.",

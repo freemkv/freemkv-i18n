@@ -162,10 +162,12 @@ fn detect_language() -> String {
     // POSIX precedence: LC_ALL overrides every other locale variable, then
     // the category-specific LC_MESSAGES, then LANG as the fallback default.
     for var in &["LC_ALL", "LC_MESSAGES", "LANG"] {
-        if let Ok(val) = std::env::var(var) {
-            if !val.is_empty() && val != "C" && val != "POSIX" {
-                return normalize_code(&val);
-            }
+        if let Ok(val) = std::env::var(var)
+            && !val.is_empty()
+            && val != "C"
+            && val != "POSIX"
+        {
+            return normalize_code(&val);
         }
     }
     "en".to_string()
@@ -176,12 +178,12 @@ fn load_locale_file(code: &str) -> Option<Value> {
     let filename = format!("{}.json", code);
 
     // 1. Next to the binary
-    if let Ok(exe) = std::env::current_exe() {
-        if let Some(dir) = exe.parent() {
-            let path = dir.join("locales").join(&filename);
-            if let Some(v) = try_load(&path) {
-                return Some(v);
-            }
+    if let Ok(exe) = std::env::current_exe()
+        && let Some(dir) = exe.parent()
+    {
+        let path = dir.join("locales").join(&filename);
+        if let Some(v) = try_load(&path) {
+            return Some(v);
         }
     }
 

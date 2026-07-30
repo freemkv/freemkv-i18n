@@ -461,7 +461,10 @@
             "docs": "freemkv-dokumentaatio",
             "check_updates": "Tarkista päivitykset…",
             "edit": "Muokkaa",
-            "open_disc": "Avaa levy…"
+            "open_disc": "Avaa levy…",
+            "exit": "Lopeta",
+            "copy": "Kopioi",
+            "select_all_text": "Valitse kaikki"
         },
         "col": {
             "type": "Tyyppi",
@@ -514,7 +517,9 @@
             "log_verbose": "Yksityiskohtainen",
             "log_debug": "Virheenkorjaus",
             "update_keydb": "Päivitä keydb nyt",
-            "test_connection": "Testaa yhteys"
+            "test_connection": "Testaa yhteys",
+            "keydb_no_url": "keydb-päivitysosoitetta ei ole asetettu — lisää se yllä ja napsauta Päivitä.",
+            "keydb_updating": "Päivitetään keydb… ladataan, odota."
         },
         "btn": {
             "open_file": "Avaa tiedosto tai ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Peruuta",
             "ok": "OK",
             "close": "Sulje",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Näytä Resurssienhallinnassa"
         },
         "group": {
             "output": "Tuloste",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Kansiolähteitä ei vielä tueta: {p}",
             "select_title_first": "Valitse vähintään yksi kopioitava nimike.",
             "video_only_warning": "Ääni- tai tekstitysraitoja ei valittu — tuloste sisältää vain videon.",
-            "raw_iso_only": "”Säilytä salattuna (raw)” koskee vain Koko levy → ISO-kuva -tulostetta; ohitetaan tässä muodossa."
+            "raw_iso_only": "”Säilytä salattuna (raw)” koskee vain Koko levy → ISO-kuva -tulostetta; ohitetaan tässä muodossa.",
+            "no_drive": "Optista asemaa ei löytynyt. Liitä Blu-ray-/DVD-asema, jossa on levy.",
+            "opening_drive": "Avataan {label} ({device})",
+            "drives_found": "{n} asemaa löytyi: {list} — käytetään sitä, jossa on levy"
         },
         "alert": {
             "rip_title": "Rippaus on käynnissä.",

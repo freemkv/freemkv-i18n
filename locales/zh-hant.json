@@ -461,7 +461,10 @@
             "docs": "freemkv 文件",
             "check_updates": "檢查更新…",
             "edit": "編輯",
-            "open_disc": "開啟光碟…"
+            "open_disc": "開啟光碟…",
+            "exit": "結束",
+            "copy": "複製",
+            "select_all_text": "全選"
         },
         "col": {
             "type": "類型",
@@ -514,7 +517,9 @@
             "log_verbose": "詳細",
             "log_debug": "除錯",
             "update_keydb": "立即更新 keydb",
-            "test_connection": "測試連線"
+            "test_connection": "測試連線",
+            "keydb_no_url": "未設定 keydb 更新網址 — 請在上方新增，然後按一下「更新」。",
+            "keydb_updating": "正在更新 keydb… 正在下載，請稍候。"
         },
         "btn": {
             "open_file": "開啟檔案或 ISO…",
@@ -524,7 +529,8 @@
             "cancel": "取消",
             "ok": "OK",
             "close": "關閉",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "在檔案總管中顯示"
         },
         "group": {
             "output": "輸出",
@@ -586,7 +592,10 @@
             "folder_unsupported": "資料夾來源尚未受支援：{p}",
             "select_title_first": "請至少選擇一個要轉換的標題。",
             "video_only_warning": "未選擇音訊或字幕軌道——輸出將只包含影片。",
-            "raw_iso_only": "「保持加密（raw）」僅適用於「整片 → ISO 映像」輸出；此格式將忽略該選項。"
+            "raw_iso_only": "「保持加密（raw）」僅適用於「整片 → ISO 映像」輸出；此格式將忽略該選項。",
+            "no_drive": "找不到光碟機。請連接放有光碟的 Blu-ray/DVD 光碟機。",
+            "opening_drive": "正在開啟 {label}（{device}）",
+            "drives_found": "找到 {n} 部光碟機：{list} — 使用其中放有光碟的那一部"
         },
         "alert": {
             "rip_title": "擷取正在進行中。",
