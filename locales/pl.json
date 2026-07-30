@@ -461,7 +461,10 @@
             "docs": "Dokumentacja freemkv",
             "check_updates": "Sprawdź aktualizacje…",
             "edit": "Edycja",
-            "open_disc": "Otwórz dysk…"
+            "open_disc": "Otwórz dysk…",
+            "exit": "Zakończ",
+            "copy": "Kopiuj",
+            "select_all_text": "Zaznacz wszystko"
         },
         "col": {
             "type": "Typ",
@@ -514,7 +517,9 @@
             "log_verbose": "Szczegółowy",
             "log_debug": "Debugowanie",
             "update_keydb": "Zaktualizuj keydb teraz",
-            "test_connection": "Testuj połączenie"
+            "test_connection": "Testuj połączenie",
+            "keydb_no_url": "Nie ustawiono adresu URL aktualizacji keydb — dodaj go powyżej, a następnie kliknij Aktualizuj.",
+            "keydb_updating": "Aktualizowanie keydb… pobieranie, proszę czekać."
         },
         "btn": {
             "open_file": "Otwórz plik lub ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Anuluj",
             "ok": "OK",
             "close": "Zamknij",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Pokaż w Eksploratorze"
         },
         "group": {
             "output": "Wyjście",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Źródła folderowe nie są jeszcze obsługiwane: {p}",
             "select_title_first": "Wybierz co najmniej jeden tytuł do zgrania.",
             "video_only_warning": "Nie wybrano ścieżek dźwiękowych ani napisów — wynik będzie zawierał tylko obraz.",
-            "raw_iso_only": "„Zachowaj zaszyfrowane (raw)” dotyczy tylko wyjścia Cały dysk → obraz ISO; zostanie zignorowane dla tego formatu."
+            "raw_iso_only": "„Zachowaj zaszyfrowane (raw)” dotyczy tylko wyjścia Cały dysk → obraz ISO; zostanie zignorowane dla tego formatu.",
+            "no_drive": "Nie znaleziono napędu optycznego. Podłącz napęd Blu-ray/DVD z płytą.",
+            "opening_drive": "Otwieranie {label} ({device})",
+            "drives_found": "Znaleziono {n} napędów: {list} — zostanie użyty ten z płytą"
         },
         "alert": {
             "rip_title": "Trwa zgrywanie.",

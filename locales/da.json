@@ -461,7 +461,10 @@
             "docs": "freemkv-dokumentation",
             "check_updates": "Søg efter opdateringer…",
             "edit": "Redigér",
-            "open_disc": "Åbn disk…"
+            "open_disc": "Åbn disk…",
+            "exit": "Afslut",
+            "copy": "Kopiér",
+            "select_all_text": "Markér alt"
         },
         "col": {
             "type": "Type",
@@ -514,7 +517,9 @@
             "log_verbose": "Uddybende",
             "log_debug": "Fejlfinding",
             "update_keydb": "Opdatér keydb nu",
-            "test_connection": "Test forbindelse"
+            "test_connection": "Test forbindelse",
+            "keydb_no_url": "Ingen keydb-opdaterings-URL angivet — tilføj en ovenfor og klik på Opdater.",
+            "keydb_updating": "Opdaterer keydb… downloader, vent venligst."
         },
         "btn": {
             "open_file": "Åbn fil eller ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Annullér",
             "ok": "OK",
             "close": "Luk",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Vis i Stifinder"
         },
         "group": {
             "output": "Output",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Mappekilder understøttes ikke endnu: {p}",
             "select_title_first": "Vælg mindst én titel at rippe.",
             "video_only_warning": "Ingen lyd- eller undertekstspor valgt — outputtet indeholder kun video.",
-            "raw_iso_only": "“Behold krypteret (raw)” gælder kun for output Hele disken → ISO-billede; ignoreres for dette format."
+            "raw_iso_only": "“Behold krypteret (raw)” gælder kun for output Hele disken → ISO-billede; ignoreres for dette format.",
+            "no_drive": "Der blev ikke fundet noget optisk drev. Tilslut et Blu-ray/DVD-drev med en disk.",
+            "opening_drive": "Åbner {label} ({device})",
+            "drives_found": "{n} drev fundet: {list} — bruger det med en disk"
         },
         "alert": {
             "rip_title": "Et rip er i gang.",

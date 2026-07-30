@@ -461,7 +461,10 @@
             "docs": "freemkv 문서",
             "check_updates": "업데이트 확인…",
             "edit": "편집",
-            "open_disc": "디스크 열기…"
+            "open_disc": "디스크 열기…",
+            "exit": "끝내기",
+            "copy": "복사",
+            "select_all_text": "모두 선택"
         },
         "col": {
             "type": "유형",
@@ -514,7 +517,9 @@
             "log_verbose": "자세히",
             "log_debug": "디버그",
             "update_keydb": "지금 keydb 업데이트",
-            "test_connection": "연결 테스트"
+            "test_connection": "연결 테스트",
+            "keydb_no_url": "keydb 업데이트 URL이 설정되지 않았습니다. 위에 입력한 후 업데이트를 클릭하세요.",
+            "keydb_updating": "keydb 업데이트 중… 다운로드하고 있습니다. 잠시 기다려 주세요."
         },
         "btn": {
             "open_file": "파일 또는 ISO 열기…",
@@ -524,7 +529,8 @@
             "cancel": "취소",
             "ok": "확인",
             "close": "닫기",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "탐색기에서 표시"
         },
         "group": {
             "output": "출력",
@@ -586,7 +592,10 @@
             "folder_unsupported": "폴더 소스는 아직 지원되지 않습니다: {p}",
             "select_title_first": "추출할 타이틀을 하나 이상 선택하세요.",
             "video_only_warning": "오디오 또는 자막 트랙이 선택되지 않았습니다 — 출력에 비디오만 포함됩니다.",
-            "raw_iso_only": "“암호화 유지(raw)”는 전체 디스크 → ISO 이미지 출력에만 적용됩니다. 이 형식에서는 무시합니다."
+            "raw_iso_only": "“암호화 유지(raw)”는 전체 디스크 → ISO 이미지 출력에만 적용됩니다. 이 형식에서는 무시합니다.",
+            "no_drive": "광학 드라이브를 찾을 수 없습니다. 디스크가 있는 Blu-ray/DVD 드라이브를 연결하세요.",
+            "opening_drive": "{label}({device}) 열기 중",
+            "drives_found": "드라이브 {n}개 발견: {list} — 디스크가 있는 드라이브를 사용합니다"
         },
         "alert": {
             "rip_title": "추출이 진행 중입니다.",

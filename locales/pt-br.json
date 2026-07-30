@@ -461,7 +461,10 @@
             "docs": "Documentação do freemkv",
             "check_updates": "Verificar atualizações…",
             "edit": "Editar",
-            "open_disc": "Abrir disco…"
+            "open_disc": "Abrir disco…",
+            "exit": "Sair",
+            "copy": "Copiar",
+            "select_all_text": "Selecionar tudo"
         },
         "col": {
             "type": "Tipo",
@@ -514,7 +517,9 @@
             "log_verbose": "Detalhado",
             "log_debug": "Depuração",
             "update_keydb": "Atualizar keydb agora",
-            "test_connection": "Testar conexão"
+            "test_connection": "Testar conexão",
+            "keydb_no_url": "Nenhuma URL de atualização do keydb definida — adicione uma acima e clique em Atualizar.",
+            "keydb_updating": "Atualizando o keydb… baixando, aguarde."
         },
         "btn": {
             "open_file": "Abrir arquivo ou ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Cancelar",
             "ok": "OK",
             "close": "Fechar",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Mostrar no Explorador de Arquivos"
         },
         "group": {
             "output": "Saída",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Origens de pasta ainda não são suportadas: {p}",
             "select_title_first": "Selecione pelo menos um título para extrair.",
             "video_only_warning": "Nenhuma faixa de áudio ou legendas selecionada — a saída terá apenas vídeo.",
-            "raw_iso_only": "“Manter encriptado (raw)” aplica-se apenas à saída Disco completo → imagem ISO; será ignorado para este formato."
+            "raw_iso_only": "“Manter encriptado (raw)” aplica-se apenas à saída Disco completo → imagem ISO; será ignorado para este formato.",
+            "no_drive": "Nenhuma unidade óptica encontrada. Conecte uma unidade Blu-ray/DVD com um disco.",
+            "opening_drive": "Abrindo {label} ({device})",
+            "drives_found": "{n} unidades encontradas: {list} — usando a que tem um disco"
         },
         "alert": {
             "rip_title": "Uma extração está em andamento.",

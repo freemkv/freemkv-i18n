@@ -461,7 +461,10 @@
             "docs": "Dokumentácia freemkv",
             "check_updates": "Skontrolovať aktualizácie…",
             "edit": "Upraviť",
-            "open_disc": "Otvoriť disk…"
+            "open_disc": "Otvoriť disk…",
+            "exit": "Ukončiť",
+            "copy": "Kopírovať",
+            "select_all_text": "Vybrať všetko"
         },
         "col": {
             "type": "Typ",
@@ -514,7 +517,9 @@
             "log_verbose": "Podrobné",
             "log_debug": "Ladenie",
             "update_keydb": "Aktualizovať keydb teraz",
-            "test_connection": "Otestovať pripojenie"
+            "test_connection": "Otestovať pripojenie",
+            "keydb_no_url": "Nie je nastavená adresa URL na aktualizáciu keydb — zadajte ju vyššie a kliknite na Aktualizovať.",
+            "keydb_updating": "Aktualizuje sa keydb… prebieha preberanie, čakajte."
         },
         "btn": {
             "open_file": "Otvoriť súbor alebo ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Zrušiť",
             "ok": "OK",
             "close": "Zavrieť",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Zobraziť v Prieskumníkovi"
         },
         "group": {
             "output": "Výstup",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Priečinkové zdroje zatiaľ nie sú podporované: {p}",
             "select_title_first": "Vyberte aspoň jeden titul na kopírovanie.",
             "video_only_warning": "Nevybrali ste žiadne zvukové stopy ani titulky — výstup bude obsahovať iba video.",
-            "raw_iso_only": "„Ponechať zašifrované (raw)“ platí len pre výstup Celý disk → obraz ISO; pre tento formát sa ignoruje."
+            "raw_iso_only": "„Ponechať zašifrované (raw)“ platí len pre výstup Celý disk → obraz ISO; pre tento formát sa ignoruje.",
+            "no_drive": "Nenašla sa žiadna optická jednotka. Pripojte jednotku Blu-ray/DVD s diskom.",
+            "opening_drive": "Otvára sa {label} ({device})",
+            "drives_found": "Nájdených jednotiek: {n}: {list} — použije sa tá s diskom"
         },
         "alert": {
             "rip_title": "Prebieha kopírovanie.",

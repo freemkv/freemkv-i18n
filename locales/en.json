@@ -461,7 +461,10 @@
             "docs": "freemkv Documentation",
             "check_updates": "Check for updates…",
             "edit": "Edit",
-            "open_disc": "Open disc…"
+            "open_disc": "Open disc…",
+            "exit": "Exit",
+            "copy": "Copy",
+            "select_all_text": "Select All"
         },
         "col": {
             "type": "Type",
@@ -514,7 +517,9 @@
             "log_verbose": "Verbose",
             "log_debug": "Debug",
             "update_keydb": "Update keydb now",
-            "test_connection": "Test connection"
+            "test_connection": "Test connection",
+            "keydb_no_url": "No keydb update URL set — add one above, then click Update.",
+            "keydb_updating": "Updating keydb… downloading, please wait."
         },
         "btn": {
             "open_file": "Open file or ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Cancel",
             "ok": "OK",
             "close": "Close",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Show in Explorer"
         },
         "group": {
             "output": "Output",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Folder sources are not supported yet: {p}",
             "select_title_first": "Select at least one title to rip.",
             "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
-            "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format."
+            "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format.",
+            "no_drive": "No optical drive found. Connect a Blu-ray/DVD drive with a disc.",
+            "opening_drive": "Opening {label} ({device})",
+            "drives_found": "{n} drives found: {list} — using the one with a disc"
         },
         "alert": {
             "rip_title": "A rip is in progress.",

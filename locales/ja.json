@@ -461,7 +461,10 @@
             "docs": "freemkv ドキュメント",
             "check_updates": "アップデートを確認…",
             "edit": "編集",
-            "open_disc": "ディスクを開く…"
+            "open_disc": "ディスクを開く…",
+            "exit": "終了",
+            "copy": "コピー",
+            "select_all_text": "すべて選択"
         },
         "col": {
             "type": "種類",
@@ -514,7 +517,9 @@
             "log_verbose": "詳細",
             "log_debug": "デバッグ",
             "update_keydb": "今すぐ keydb を更新",
-            "test_connection": "接続をテスト"
+            "test_connection": "接続をテスト",
+            "keydb_no_url": "keydb 更新 URL が設定されていません。上に入力して「更新」をクリックしてください。",
+            "keydb_updating": "keydb を更新中… ダウンロードしています。お待ちください。"
         },
         "btn": {
             "open_file": "ファイルまたは ISO を開く…",
@@ -524,7 +529,8 @@
             "cancel": "キャンセル",
             "ok": "OK",
             "close": "閉じる",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "エクスプローラーで表示"
         },
         "group": {
             "output": "出力",
@@ -586,7 +592,10 @@
             "folder_unsupported": "フォルダソースはまだ対応していません: {p}",
             "select_title_first": "リッピングするタイトルを 1 つ以上選択してください。",
             "video_only_warning": "音声・字幕トラックが選択されていません — 出力は映像のみになります。",
-            "raw_iso_only": "「暗号化を保持 (raw)」はディスク全体 → ISO イメージ出力にのみ適用されます。この形式では無視します。"
+            "raw_iso_only": "「暗号化を保持 (raw)」はディスク全体 → ISO イメージ出力にのみ適用されます。この形式では無視します。",
+            "no_drive": "光学ドライブが見つかりません。ディスクを入れた Blu-ray/DVD ドライブを接続してください。",
+            "opening_drive": "{label} ({device}) を開いています",
+            "drives_found": "{n} 台のドライブが見つかりました: {list} — ディスクが入っているものを使用します"
         },
         "alert": {
             "rip_title": "リッピングが進行中です。",

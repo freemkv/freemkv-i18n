@@ -461,7 +461,10 @@
             "docs": "Documentació del freemkv",
             "check_updates": "Comprova si hi ha actualitzacions…",
             "edit": "Edita",
-            "open_disc": "Obre el disc…"
+            "open_disc": "Obre el disc…",
+            "exit": "Surt",
+            "copy": "Copia",
+            "select_all_text": "Selecciona-ho tot"
         },
         "col": {
             "type": "Tipus",
@@ -514,7 +517,9 @@
             "log_verbose": "Detallat",
             "log_debug": "Depuració",
             "update_keydb": "Actualitza el keydb ara",
-            "test_connection": "Prova la connexió"
+            "test_connection": "Prova la connexió",
+            "keydb_no_url": "No s'ha definit cap URL d'actualització de keydb — afegiu-ne una a dalt i feu clic a Actualitza.",
+            "keydb_updating": "S'està actualitzant el keydb… s'està baixant, espereu."
         },
         "btn": {
             "open_file": "Obre un fitxer o una ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Cancel·la",
             "ok": "D'acord",
             "close": "Tanca",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Mostra a l'Explorador"
         },
         "group": {
             "output": "Sortida",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Els orígens de carpeta encara no són compatibles: {p}",
             "select_title_first": "Seleccioneu almenys un títol per extreure.",
             "video_only_warning": "Cap pista d'àudio o de subtítols seleccionada — la sortida només contindrà vídeo.",
-            "raw_iso_only": "«Mantenir xifrat (raw)» només s'aplica a la sortida Disc sencer → imatge ISO; s'ignora per a aquest format."
+            "raw_iso_only": "«Mantenir xifrat (raw)» només s'aplica a la sortida Disc sencer → imatge ISO; s'ignora per a aquest format.",
+            "no_drive": "No s'ha trobat cap unitat òptica. Connecteu una unitat Blu-ray/DVD amb un disc.",
+            "opening_drive": "S'està obrint {label} ({device})",
+            "drives_found": "{n} unitats trobades: {list} — s'utilitza la que té un disc"
         },
         "alert": {
             "rip_title": "Hi ha una extracció en curs.",

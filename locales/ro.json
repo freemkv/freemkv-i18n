@@ -461,7 +461,10 @@
             "docs": "Documentație freemkv",
             "check_updates": "Verifică actualizări…",
             "edit": "Editare",
-            "open_disc": "Deschide discul…"
+            "open_disc": "Deschide discul…",
+            "exit": "Ieșire",
+            "copy": "Copiază",
+            "select_all_text": "Selectează tot"
         },
         "col": {
             "type": "Tip",
@@ -514,7 +517,9 @@
             "log_verbose": "Detaliat",
             "log_debug": "Depanare",
             "update_keydb": "Actualizează keydb acum",
-            "test_connection": "Testează conexiunea"
+            "test_connection": "Testează conexiunea",
+            "keydb_no_url": "Nu este setat niciun URL de actualizare keydb — adăugați unul mai sus, apoi faceți clic pe Actualizează.",
+            "keydb_updating": "Se actualizează keydb… se descarcă, așteptați."
         },
         "btn": {
             "open_file": "Deschide fișier sau ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Anulează",
             "ok": "OK",
             "close": "Închide",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Afișează în Explorer"
         },
         "group": {
             "output": "Ieșire",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Sursele de tip director nu sunt încă acceptate: {p}",
             "select_title_first": "Selectează cel puțin un titlu de copiat.",
             "video_only_warning": "Nicio pistă audio sau de subtitrare selectată — rezultatul va conține doar imagine.",
-            "raw_iso_only": "„Păstrează criptat (raw)” se aplică doar ieșirii Disc întreg → imagine ISO; va fi ignorat pentru acest format."
+            "raw_iso_only": "„Păstrează criptat (raw)” se aplică doar ieșirii Disc întreg → imagine ISO; va fi ignorat pentru acest format.",
+            "no_drive": "Nu a fost găsită nicio unitate optică. Conectați o unitate Blu-ray/DVD cu un disc.",
+            "opening_drive": "Se deschide {label} ({device})",
+            "drives_found": "{n} unități găsite: {list} — se folosește cea cu un disc"
         },
         "alert": {
             "rip_title": "O extragere este în curs.",

@@ -461,7 +461,10 @@
             "docs": "Documentazione di freemkv",
             "check_updates": "Verifica aggiornamenti…",
             "edit": "Modifica",
-            "open_disc": "Apri disco…"
+            "open_disc": "Apri disco…",
+            "exit": "Esci",
+            "copy": "Copia",
+            "select_all_text": "Seleziona tutto"
         },
         "col": {
             "type": "Tipo",
@@ -514,7 +517,9 @@
             "log_verbose": "Dettagliato",
             "log_debug": "Debug",
             "update_keydb": "Aggiorna keydb ora",
-            "test_connection": "Prova connessione"
+            "test_connection": "Prova connessione",
+            "keydb_no_url": "Nessun URL di aggiornamento keydb impostato: aggiungerne uno sopra, poi fare clic su Aggiorna.",
+            "keydb_updating": "Aggiornamento di keydb… download in corso, attendere."
         },
         "btn": {
             "open_file": "Apri file o ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Annulla",
             "ok": "OK",
             "close": "Chiudi",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Mostra in Esplora file"
         },
         "group": {
             "output": "Destinazione",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Le sorgenti cartella non sono ancora supportate: {p}",
             "select_title_first": "Seleziona almeno un titolo da copiare.",
             "video_only_warning": "Nessuna traccia audio o di sottotitoli selezionata — l'output conterrà solo video.",
-            "raw_iso_only": "«Mantieni cifrato (raw)» si applica solo all'output Disco intero → immagine ISO; verrà ignorato per questo formato."
+            "raw_iso_only": "«Mantieni cifrato (raw)» si applica solo all'output Disco intero → immagine ISO; verrà ignorato per questo formato.",
+            "no_drive": "Nessuna unità ottica trovata. Collegare un'unità Blu-ray/DVD con un disco.",
+            "opening_drive": "Apertura di {label} ({device})",
+            "drives_found": "{n} unità trovate: {list} — verrà usata quella con un disco"
         },
         "alert": {
             "rip_title": "È in corso un'estrazione.",

@@ -461,7 +461,10 @@
             "docs": "freemkv-dokumentasjon",
             "check_updates": "Se etter oppdateringer …",
             "edit": "Rediger",
-            "open_disc": "Åpne plate…"
+            "open_disc": "Åpne plate…",
+            "exit": "Avslutt",
+            "copy": "Kopier",
+            "select_all_text": "Merk alt"
         },
         "col": {
             "type": "Type",
@@ -514,7 +517,9 @@
             "log_verbose": "Detaljert",
             "log_debug": "Feilsøking",
             "update_keydb": "Oppdater keydb nå",
-            "test_connection": "Test tilkobling"
+            "test_connection": "Test tilkobling",
+            "keydb_no_url": "Ingen keydb-oppdaterings-URL angitt — legg til en ovenfor og klikk Oppdater.",
+            "keydb_updating": "Oppdaterer keydb… laster ned, vent litt."
         },
         "btn": {
             "open_file": "Åpne fil eller ISO …",
@@ -524,7 +529,8 @@
             "cancel": "Avbryt",
             "ok": "OK",
             "close": "Lukk",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Vis i Filutforsker"
         },
         "group": {
             "output": "Utdata",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Mappekilder støttes ikke ennå: {p}",
             "select_title_first": "Velg minst én tittel å rippe.",
             "video_only_warning": "Ingen lyd- eller undertekstspor valgt — utdataene inneholder bare video.",
-            "raw_iso_only": "«Behold kryptert (raw)» gjelder bare utdata Hele platen → ISO-bilde; ignoreres for dette formatet."
+            "raw_iso_only": "«Behold kryptert (raw)» gjelder bare utdata Hele platen → ISO-bilde; ignoreres for dette formatet.",
+            "no_drive": "Ingen optisk stasjon funnet. Koble til en Blu-ray-/DVD-stasjon med en plate.",
+            "opening_drive": "Åpner {label} ({device})",
+            "drives_found": "{n} stasjoner funnet: {list} — bruker den med en plate"
         },
         "alert": {
             "rip_title": "En ripping pågår.",

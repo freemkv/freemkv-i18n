@@ -461,7 +461,10 @@
             "docs": "Dokumentace freemkv",
             "check_updates": "Zkontrolovat aktualizace…",
             "edit": "Úpravy",
-            "open_disc": "Otevřít disk…"
+            "open_disc": "Otevřít disk…",
+            "exit": "Konec",
+            "copy": "Kopírovat",
+            "select_all_text": "Vybrat vše"
         },
         "col": {
             "type": "Typ",
@@ -514,7 +517,9 @@
             "log_verbose": "Podrobný",
             "log_debug": "Ladění",
             "update_keydb": "Aktualizovat keydb nyní",
-            "test_connection": "Otestovat připojení"
+            "test_connection": "Otestovat připojení",
+            "keydb_no_url": "Není nastavena adresa URL pro aktualizaci keydb — zadejte ji výše a klikněte na Aktualizovat.",
+            "keydb_updating": "Aktualizace keydb… stahování, čekejte prosím."
         },
         "btn": {
             "open_file": "Otevřít soubor nebo ISO…",
@@ -524,7 +529,8 @@
             "cancel": "Zrušit",
             "ok": "OK",
             "close": "Zavřít",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Zobrazit v Průzkumníku"
         },
         "group": {
             "output": "Výstup",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Zdroje ze složek zatím nejsou podporovány: {p}",
             "select_title_first": "Vyberte alespoň jeden titul ke kopírování.",
             "video_only_warning": "Nevybrány žádné zvukové stopy ani titulky — výstup bude obsahovat pouze video.",
-            "raw_iso_only": "„Ponechat zašifrované (raw)“ platí pouze pro výstup Celý disk → obraz ISO; pro tento formát bude ignorováno."
+            "raw_iso_only": "„Ponechat zašifrované (raw)“ platí pouze pro výstup Celý disk → obraz ISO; pro tento formát bude ignorováno.",
+            "no_drive": "Nebyla nalezena žádná optická jednotka. Připojte jednotku Blu-ray/DVD s diskem.",
+            "opening_drive": "Otevírání {label} ({device})",
+            "drives_found": "Nalezeno {n} jednotek: {list} — použije se ta s diskem"
         },
         "alert": {
             "rip_title": "Probíhá ripování.",

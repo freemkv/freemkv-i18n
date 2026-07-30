@@ -461,7 +461,10 @@
             "docs": "freemkv-Dokumentation",
             "check_updates": "Nach Updates suchen…",
             "edit": "Bearbeiten",
-            "open_disc": "Disc öffnen…"
+            "open_disc": "Disc öffnen…",
+            "exit": "Beenden",
+            "copy": "Kopieren",
+            "select_all_text": "Alles auswählen"
         },
         "col": {
             "type": "Typ",
@@ -514,7 +517,9 @@
             "log_verbose": "Ausführlich",
             "log_debug": "Debug",
             "update_keydb": "keydb jetzt aktualisieren",
-            "test_connection": "Verbindung testen"
+            "test_connection": "Verbindung testen",
+            "keydb_no_url": "Keine keydb-Update-URL festgelegt — oben eine hinzufügen und auf Aktualisieren klicken.",
+            "keydb_updating": "keydb wird aktualisiert… Download läuft, bitte warten."
         },
         "btn": {
             "open_file": "Datei oder ISO öffnen…",
@@ -524,7 +529,8 @@
             "cancel": "Abbrechen",
             "ok": "OK",
             "close": "Schließen",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Im Explorer anzeigen"
         },
         "group": {
             "output": "Ausgabe",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Ordnerquellen werden noch nicht unterstützt: {p}",
             "select_title_first": "Wählen Sie mindestens einen Titel zum Rippen aus.",
             "video_only_warning": "Keine Ton- oder Untertitelspuren ausgewählt — die Ausgabe enthält nur Video.",
-            "raw_iso_only": "„Verschlüsselt beibehalten (raw)“ gilt nur für die Ausgabe „Ganze Disc → ISO-Abbild“; für dieses Format wird es ignoriert."
+            "raw_iso_only": "„Verschlüsselt beibehalten (raw)“ gilt nur für die Ausgabe „Ganze Disc → ISO-Abbild“; für dieses Format wird es ignoriert.",
+            "no_drive": "Kein optisches Laufwerk gefunden. Schließen Sie ein Blu-ray-/DVD-Laufwerk mit einer Disc an.",
+            "opening_drive": "{label} ({device}) wird geöffnet",
+            "drives_found": "{n} Laufwerke gefunden: {list} — es wird das mit einer Disc verwendet"
         },
         "alert": {
             "rip_title": "Ein Rip läuft gerade.",

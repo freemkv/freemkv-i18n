@@ -461,7 +461,10 @@
             "docs": "freemkv-documentatie",
             "check_updates": "Controleren op updates…",
             "edit": "Bewerken",
-            "open_disc": "Schijf openen…"
+            "open_disc": "Schijf openen…",
+            "exit": "Afsluiten",
+            "copy": "Kopiëren",
+            "select_all_text": "Alles selecteren"
         },
         "col": {
             "type": "Type",
@@ -514,7 +517,9 @@
             "log_verbose": "Uitgebreid",
             "log_debug": "Debug",
             "update_keydb": "keydb nu bijwerken",
-            "test_connection": "Verbinding testen"
+            "test_connection": "Verbinding testen",
+            "keydb_no_url": "Geen keydb-update-URL ingesteld — voeg er hierboven een toe en klik op Bijwerken.",
+            "keydb_updating": "keydb wordt bijgewerkt… downloaden, even geduld."
         },
         "btn": {
             "open_file": "Bestand of ISO openen…",
@@ -524,7 +529,8 @@
             "cancel": "Annuleren",
             "ok": "OK",
             "close": "Sluiten",
-            "browse": "…"
+            "browse": "…",
+            "show_explorer": "Weergeven in Verkenner"
         },
         "group": {
             "output": "Uitvoer",
@@ -586,7 +592,10 @@
             "folder_unsupported": "Mapbronnen worden nog niet ondersteund: {p}",
             "select_title_first": "Selecteer minstens één titel om te rippen.",
             "video_only_warning": "Geen audio- of ondertitelsporen geselecteerd — de uitvoer bevat alleen video.",
-            "raw_iso_only": "“Versleuteld houden (raw)” geldt alleen voor de uitvoer Hele schijf → ISO-image; wordt genegeerd voor dit formaat."
+            "raw_iso_only": "“Versleuteld houden (raw)” geldt alleen voor de uitvoer Hele schijf → ISO-image; wordt genegeerd voor dit formaat.",
+            "no_drive": "Geen optisch station gevonden. Sluit een Blu-ray-/dvd-station met een schijf aan.",
+            "opening_drive": "{label} ({device}) wordt geopend",
+            "drives_found": "{n} stations gevonden: {list} — het station met een schijf wordt gebruikt"
         },
         "alert": {
             "rip_title": "Er is een rip bezig.",
