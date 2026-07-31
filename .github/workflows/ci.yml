@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    # `dev` is where work lands and where CI must be green. `main` only ever
+    # moves at release time, to the tagged commit, so a push to it is the
+    # release validation run rather than day-to-day feedback.
+    branches: [main, dev]
+  pull_request:
+
+# freemkv-i18n has no freemkv dependencies — it is a leaf the front-ends
+# (freemkv, autorip) consume — so no sibling checkout is needed. It carries a
+# build.rs that bakes the `locales/` tree into the binary, and that codegen is
+# the part most likely to behave differently per OS, so it gets the full matrix.
+#
+# Cargo.lock is gitignored (library convention), so `--locked` is deliberately
+# NOT used: with no committed lockfile it fails rather than resolves.
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@1.97.0
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: freemkv-i18n-ci
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets -- -D warnings
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@1.97.0
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: freemkv-i18n-ci
+      - run: cargo test --tests
+
+  # build.rs walks `locales/` and emits Rust source. Path handling in a build
+  # script is exactly the kind of thing that works on Linux and fails on
+  # Windows, so both other OSes compile the tests here rather than at tag time.
+  check-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@1.97.0
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: freemkv-i18n-ci
+      - run: cargo build --tests
+
+  check-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@1.97.0
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: freemkv-i18n-ci
+      - run: cargo build --tests
