@@ -2,6 +2,24 @@
 
 ## [1.6.0] — UNRELEASED
 
+### Added
+
+- **Strings for the three key-service failure codes** (`E7028` unreachable,
+  `E7029` token rejected, `E7030` rate limited), so an outage no longer reads
+  as "this disc has no key". Each ends by saying explicitly that it does not
+  mean the disc has no key.
+- **Strings for the three per-track-kind picker rows** (video / audio /
+  subtitle only). Translated for de, fr, es, it, nl and pt, reusing each
+  locale's own established wording for that family; the remaining catalogs
+  carry the English text, which is what a user sees anyway via the per-key
+  fallback, and gives a translator something to find.
+
+### Note
+
+- This release grew the bundled catalogs from seven locales to **29**. Entries
+  below that were written earlier in the cycle say "all seven locales" — read
+  those as "all locales bundled at the time", not as the shipped count.
+
 ### Fixed
 
 - **`usage.flag.title` (the live `-t` help line)** reworded in all seven bundled
