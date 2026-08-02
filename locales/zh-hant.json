@@ -615,7 +615,10 @@
             "folder": "整張光碟 → 已解密的資料夾",
             "chapters": "章節 → 檔案",
             "json": "標題資訊 → JSON",
-            "fvi": "影片索引 → .fvi"
+            "fvi": "影片索引 → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "freemkv 設定"

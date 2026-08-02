@@ -615,7 +615,10 @@
             "folder": "Disco completo → cartella decifrata",
             "chapters": "Capitoli → file",
             "json": "Info titolo → JSON",
-            "fvi": "Indice video → .fvi"
+            "fvi": "Indice video → .fvi",
+            "video_only": "Titoli selezionati → solo tracce video",
+            "audio_only": "Titoli selezionati → solo tracce audio",
+            "sub_only": "Titoli selezionati → solo tracce sottotitoli"
         },
         "win": {
             "settings": "Impostazioni freemkv"

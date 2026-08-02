@@ -615,7 +615,10 @@
             "folder": "Disc sencer → carpeta desxifrada",
             "chapters": "Capítols → fitxer",
             "json": "Informació del títol → JSON",
-            "fvi": "Índex de vídeo → .fvi"
+            "fvi": "Índex de vídeo → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "Configuració del freemkv"
