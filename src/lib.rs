@@ -612,6 +612,34 @@ mod tests {
         // An unknown code falls back to the key path (same miss behavior as get).
         assert_eq!(error_message(999_999), "error.E999999");
     }
+
+    /// The key-SOURCE failure codes must each render as their own message, and
+    /// none of them may render as E7022's "no key source has a key for this
+    /// disc". That sentence is what an operator read during a seven-hour HTTP 502
+    /// outage before going to hunt for a VUK that was never missing — the three
+    /// codes exist precisely so the outage does not borrow it.
+    #[test]
+    fn key_service_failure_codes_do_not_reuse_the_missing_key_wording() {
+        let missing_key = error_message(7022);
+        let mut seen = Vec::new();
+        for code in [7028u32, 7029, 7030] {
+            let msg = error_message(code);
+            assert_ne!(
+                msg,
+                format!("error.E{code}"),
+                "E{code} has no English string"
+            );
+            assert_ne!(
+                msg, missing_key,
+                "E{code} must not reuse E7022's missing-key wording"
+            );
+            assert!(
+                !seen.contains(&msg),
+                "E{code} duplicates another code's text"
+            );
+            seen.push(msg);
+        }
+    }
 }
 
 #[cfg(test)]
