@@ -615,7 +615,10 @@
             "folder": "Celý disk → dešifrovaný priečinok",
             "chapters": "Kapitoly → súbor",
             "json": "Informácie o titule → JSON",
-            "fvi": "Videoindex → .fvi"
+            "fvi": "Videoindex → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "Nastavenia freemkv"

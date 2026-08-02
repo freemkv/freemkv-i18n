@@ -615,7 +615,10 @@
             "folder": "Koko levy → salauksesta purettu kansio",
             "chapters": "Luvut → tiedosto",
             "json": "Nimikkeen tiedot → JSON",
-            "fvi": "Videoindeksi → .fvi"
+            "fvi": "Videoindeksi → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "freemkv-asetukset"

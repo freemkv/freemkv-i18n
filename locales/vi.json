@@ -615,7 +615,10 @@
             "folder": "Toàn đĩa → thư mục đã giải mã",
             "chapters": "Chương → tệp",
             "json": "Thông tin tiêu đề → JSON",
-            "fvi": "Chỉ mục video → .fvi"
+            "fvi": "Chỉ mục video → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "Cài đặt freemkv"

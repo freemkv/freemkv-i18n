@@ -615,7 +615,10 @@
             "folder": "Gesamte Disc → entschlüsselter Ordner",
             "chapters": "Kapitel → Datei",
             "json": "Titelinfo → JSON",
-            "fvi": "Videoindex → .fvi"
+            "fvi": "Videoindex → .fvi",
+            "video_only": "Ausgewählte Titel → nur Videospuren",
+            "audio_only": "Ausgewählte Titel → nur Audiospuren",
+            "sub_only": "Ausgewählte Titel → nur Untertitelspuren"
         },
         "win": {
             "settings": "freemkv-Einstellungen"

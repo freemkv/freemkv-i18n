@@ -615,7 +615,10 @@
             "folder": "Ολόκληρος ο δίσκος → αποκρυπτογραφημένος φάκελος",
             "chapters": "Κεφάλαια → αρχείο",
             "json": "Πληροφορίες τίτλου → JSON",
-            "fvi": "Ευρετήριο βίντεο → .fvi"
+            "fvi": "Ευρετήριο βίντεο → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "Ρυθμίσεις freemkv"

@@ -615,7 +615,10 @@
             "folder": "Cała płyta → odszyfrowany folder",
             "chapters": "Rozdziały → plik",
             "json": "Informacje o tytule → JSON",
-            "fvi": "Indeks wideo → .fvi"
+            "fvi": "Indeks wideo → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "Ustawienia freemkv"
