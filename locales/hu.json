@@ -615,7 +615,10 @@
             "folder": "Teljes lemez → visszafejtett mappa",
             "chapters": "Fejezetek → fájl",
             "json": "Címadatok → JSON",
-            "fvi": "Videóindex → .fvi"
+            "fvi": "Videóindex → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "freemkv beállítások"

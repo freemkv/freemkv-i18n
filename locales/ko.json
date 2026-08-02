@@ -615,7 +615,10 @@
             "folder": "전체 디스크 → 복호화된 폴더",
             "chapters": "챕터 → 파일",
             "json": "타이틀 정보 → JSON",
-            "fvi": "비디오 인덱스 → .fvi"
+            "fvi": "비디오 인덱스 → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "freemkv 설정"

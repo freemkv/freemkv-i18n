@@ -615,7 +615,10 @@
             "folder": "Hele disc → ontsleutelde map",
             "chapters": "Hoofdstukken → bestand",
             "json": "Titelinfo → JSON",
-            "fvi": "Video-index → .fvi"
+            "fvi": "Video-index → .fvi",
+            "video_only": "Geselecteerde titels → alleen videosporen",
+            "audio_only": "Geselecteerde titels → alleen audiosporen",
+            "sub_only": "Geselecteerde titels → alleen ondertitelsporen"
         },
         "win": {
             "settings": "freemkv-instellingen"

@@ -615,7 +615,10 @@
             "folder": "Disc întreg → director decriptat",
             "chapters": "Capitole → fișier",
             "json": "Informații titlu → JSON",
-            "fvi": "Index video → .fvi"
+            "fvi": "Index video → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "Setări freemkv"
