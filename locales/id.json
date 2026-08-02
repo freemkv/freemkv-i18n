@@ -615,7 +615,10 @@
             "folder": "Seluruh disc → folder terdekripsi",
             "chapters": "Bab → berkas",
             "json": "Info judul → JSON",
-            "fvi": "Indeks video → .fvi"
+            "fvi": "Indeks video → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "Pengaturan freemkv"

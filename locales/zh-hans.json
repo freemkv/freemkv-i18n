@@ -615,7 +615,10 @@
             "folder": "整张光盘 → 解密后的文件夹",
             "chapters": "章节 → 文件",
             "json": "标题信息 → JSON",
-            "fvi": "视频索引 → .fvi"
+            "fvi": "视频索引 → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "freemkv 设置"

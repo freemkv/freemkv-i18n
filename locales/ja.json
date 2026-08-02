@@ -615,7 +615,10 @@
             "folder": "ディスク全体 → 復号済みフォルダ",
             "chapters": "チャプター → ファイル",
             "json": "タイトル情報 → JSON",
-            "fvi": "映像インデックス → .fvi"
+            "fvi": "映像インデックス → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "freemkv 設定"

@@ -615,7 +615,10 @@
             "folder": "Весь диск → розшифрована тека",
             "chapters": "Розділи → файл",
             "json": "Інфо про розділи → JSON",
-            "fvi": "Відеоіндекс → .fvi"
+            "fvi": "Відеоіндекс → .fvi",
+            "video_only": "Selected titles → video tracks only",
+            "audio_only": "Selected titles → audio tracks only",
+            "sub_only": "Selected titles → subtitle tracks only"
         },
         "win": {
             "settings": "Налаштування freemkv"
