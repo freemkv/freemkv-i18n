@@ -363,7 +363,10 @@
         "title_out_of_range": "タイトル {num} は範囲外です（{count}）",
         "unknown_flag": "エラー: 不明なフラグ '{flag}' です。オプション一覧は 'freemkv help' を実行してください。",
         "usage_hint": "使い方: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\n詳細は 'freemkv help' を実行してください。",
-        "unknown_language": "不明な言語 '{tag}' です（このタイトルで利用可能: {available}）"
+        "unknown_language": "不明な言語 '{tag}' です（このタイトルで利用可能: {available}）",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "使い方: freemkv <source> <dest> [flags]",

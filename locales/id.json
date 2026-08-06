@@ -363,7 +363,10 @@
         "title_out_of_range": "Judul {num} di luar rentang ({count})",
         "unknown_flag": "Kesalahan: flag '{flag}' tidak dikenal. Coba 'freemkv help' untuk daftar opsi.",
         "usage_hint": "Penggunaan: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nCoba 'freemkv help' untuk selengkapnya.",
-        "unknown_language": "bahasa '{tag}' tidak dikenal (tersedia pada judul ini: {available})"
+        "unknown_language": "bahasa '{tag}' tidak dikenal (tersedia pada judul ini: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "Penggunaan: freemkv <source> <dest> [flags]",

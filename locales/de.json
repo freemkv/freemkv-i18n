@@ -340,7 +340,10 @@
         "title_out_of_range": "Titel {num} außerhalb des Bereichs ({count})",
         "unknown_flag": "Fehler: unbekannte Option '{flag}'. Mit 'freemkv help' werden alle Optionen angezeigt.",
         "usage_hint": "Verwendung: freemkv <quelle> <ziel> [optionen]\n       freemkv info <url>\n\nVerwenden Sie 'freemkv help' für weitere Informationen.",
-        "unknown_language": "unbekannte Sprache '{tag}' (auf diesem Titel verfügbar: {available})"
+        "unknown_language": "unbekannte Sprache '{tag}' (auf diesem Titel verfügbar: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "Verwendung: freemkv <quelle> <ziel> [optionen]",

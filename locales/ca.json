@@ -363,7 +363,10 @@
         "title_out_of_range": "El títol {num} és fora de rang ({count})",
         "unknown_flag": "Error: indicador desconegut «{flag}». Proveu «freemkv help» per veure la llista d'opcions.",
         "usage_hint": "Ús: freemkv <origen> <destinació> [indicadors]\n       freemkv info <url>\n\nProveu «freemkv help» per a més informació.",
-        "unknown_language": "idioma desconegut «{tag}» (disponibles en aquest títol: {available})"
+        "unknown_language": "idioma desconegut «{tag}» (disponibles en aquest títol: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "Ús: freemkv <origen> <destinació> [indicadors]",

@@ -363,7 +363,10 @@
         "title_out_of_range": "Ο τίτλος {num} είναι εκτός εύρους ({count})",
         "unknown_flag": "Σφάλμα: άγνωστη σημαία '{flag}'. Δοκιμάστε 'freemkv help' για μια λίστα επιλογών.",
         "usage_hint": "Χρήση: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nΔοκιμάστε 'freemkv help' για περισσότερα.",
-        "unknown_language": "άγνωστη γλώσσα '{tag}' (διαθέσιμες σε αυτόν τον τίτλο: {available})"
+        "unknown_language": "άγνωστη γλώσσα '{tag}' (διαθέσιμες σε αυτόν τον τίτλο: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "Χρήση: freemkv <source> <dest> [flags]",

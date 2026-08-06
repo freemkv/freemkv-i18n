@@ -363,7 +363,10 @@
         "title_out_of_range": "Titel {num} utanför intervallet ({count})",
         "unknown_flag": "Fel: okänd flagga '{flag}'. Prova 'freemkv help' för en lista över alternativ.",
         "usage_hint": "Användning: freemkv <källa> <mål> [flaggor]\n       freemkv info <url>\n\nProva 'freemkv help' för mer.",
-        "unknown_language": "okänt språk '{tag}' (tillgängliga på den här titeln: {available})"
+        "unknown_language": "okänt språk '{tag}' (tillgängliga på den här titeln: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "Användning: freemkv <källa> <mål> [flaggor]",
