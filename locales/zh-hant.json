@@ -363,7 +363,10 @@
         "title_out_of_range": "標題 {num} 超出範圍（{count}）",
         "unknown_flag": "錯誤：未知旗標 '{flag}'。請試試 'freemkv help' 以取得選項清單。",
         "usage_hint": "用法：freemkv <source> <dest> [flags]\n       freemkv info <url>\n\n請試試 'freemkv help' 以取得更多資訊。",
-        "unknown_language": "未知語言 '{tag}'（此標題可用：{available}）"
+        "unknown_language": "未知語言 '{tag}'（此標題可用：{available}）",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "用法：freemkv <source> <dest> [flags]",

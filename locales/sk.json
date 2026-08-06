@@ -363,7 +363,10 @@
         "title_out_of_range": "Titul {num} mimo rozsahu ({count})",
         "unknown_flag": "Chyba: neznámy prepínač '{flag}'. Skúste 'freemkv help' pre zoznam možností.",
         "usage_hint": "Použitie: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nSkúste 'freemkv help' pre viac.",
-        "unknown_language": "neznámy jazyk '{tag}' (dostupné pre tento titul: {available})"
+        "unknown_language": "neznámy jazyk '{tag}' (dostupné pre tento titul: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "Použitie: freemkv <source> <dest> [flags]",

@@ -363,7 +363,10 @@
         "title_out_of_range": "Тайтл {num} вне диапазона ({count})",
         "unknown_flag": "Ошибка: неизвестный флаг «{flag}». Выполните «freemkv help» для списка параметров.",
         "usage_hint": "Использование: freemkv <источник> <назначение> [флаги]\n       freemkv info <url>\n\nВыполните «freemkv help» для подробностей.",
-        "unknown_language": "неизвестный язык «{tag}» (доступно в этом тайтле: {available})"
+        "unknown_language": "неизвестный язык «{tag}» (доступно в этом тайтле: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "Использование: freemkv <источник> <назначение> [флаги]",

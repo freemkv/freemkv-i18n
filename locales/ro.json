@@ -363,7 +363,10 @@
         "title_out_of_range": "Titlul {num} este în afara intervalului ({count})",
         "unknown_flag": "Eroare: opțiune necunoscută '{flag}'. Încearcă 'freemkv help' pentru o listă de opțiuni.",
         "usage_hint": "Utilizare: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nÎncearcă 'freemkv help' pentru mai multe.",
-        "unknown_language": "limbă necunoscută '{tag}' (disponibile pe acest titlu: {available})"
+        "unknown_language": "limbă necunoscută '{tag}' (disponibile pe acest titlu: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "Utilizare: freemkv <source> <dest> [flags]",

@@ -363,7 +363,10 @@
         "title_out_of_range": "{num} numaralı başlık aralık dışında ({count})",
         "unknown_flag": "Hata: bilinmeyen bayrak '{flag}'. Seçenek listesi için 'freemkv help' deneyin.",
         "usage_hint": "Kullanım: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nDaha fazlası için 'freemkv help' deneyin.",
-        "unknown_language": "bilinmeyen dil '{tag}' (bu başlıkta mevcut: {available})"
+        "unknown_language": "bilinmeyen dil '{tag}' (bu başlıkta mevcut: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "Kullanım: freemkv <source> <dest> [flags]",

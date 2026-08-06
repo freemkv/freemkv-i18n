@@ -363,7 +363,10 @@
         "title_out_of_range": "타이틀 {num}이(가) 범위를 벗어남 ({count})",
         "unknown_flag": "오류: 알 수 없는 플래그 '{flag}'. 옵션 목록은 'freemkv help'를 실행하세요.",
         "usage_hint": "사용법: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\n자세한 내용은 'freemkv help'를 실행하세요.",
-        "unknown_language": "알 수 없는 언어 '{tag}' (이 타이틀에서 사용 가능: {available})"
+        "unknown_language": "알 수 없는 언어 '{tag}' (이 타이틀에서 사용 가능: {available})",
+        "dir_not_found": "Error: Folder input not found: '{path}'.",
+        "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
+        "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image."
     },
     "usage": {
         "synopsis_1": "사용법: freemkv <source> <dest> [flags]",
