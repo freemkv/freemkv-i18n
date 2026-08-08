@@ -234,6 +234,7 @@
         "E6012": "讀取光碟時發生內部錯誤。請回報此問題。",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "光碟映像比復原資料預期的還小，看起來被截斷或不完整。為避免回報從未真正讀取的資料，復原已停止 — 請重新開始製作副本。",
         "E7000": "此光碟需要 AACS 解密金鑰（Blu-ray/UHD），但找不到任何金鑰。請以下列指令下載金鑰資料庫：freemkv update-keys --url <keydb-url>",
         "E7001": "光碟的安全憑證過短或無效。",
         "E7002": "光碟機不願為此光碟啟動安全工作階段 — 它可能正被另一程式使用。請關閉其他使用該光碟的程式後再試一次。",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "開啟檔案或 ISO…",
+            "open_disc": "開啟光碟…",
             "show_finder": "在 Finder 中顯示",
             "done": "完成",
             "run_now": "立即執行",

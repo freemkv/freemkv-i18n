@@ -234,6 +234,7 @@
         "E6012": "Lỗi nội bộ khi đọc đĩa. Vui lòng báo cáo việc này.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "Tệp ảnh đĩa nhỏ hơn so với dữ liệu khôi phục mong đợi, nên nó có vẻ bị cắt bớt hoặc chưa hoàn chỉnh. Quá trình khôi phục đã dừng thay vì báo cáo dữ liệu chưa bao giờ được đọc — hãy sao chép lại từ đầu.",
         "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Tải cơ sở dữ liệu khóa bằng: freemkv update-keys --url <keydb-url>",
         "E7001": "Chứng chỉ bảo mật của đĩa quá ngắn hoặc không hợp lệ.",
         "E7002": "Ổ đĩa không khởi động phiên bảo mật cho đĩa này — có thể nó đang được chương trình khác sử dụng. Đóng mọi thứ khác đang dùng đĩa và thử lại.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Mở tệp hoặc ISO…",
+            "open_disc": "Mở đĩa…",
             "show_finder": "Hiện trong Finder",
             "done": "Xong",
             "run_now": "Chạy ngay",

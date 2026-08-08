@@ -234,6 +234,7 @@
         "E6012": "Sisäinen virhe levyä luettaessa. Ilmoita tästä.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "Levykuva on pienempi kuin palautustiedot odottavat, joten se vaikuttaa katkenneelta tai keskeneräiseltä. Palautus keskeytettiin sen sijaan, että olisi ilmoitettu tiedoista, joita ei koskaan luettu — aloita uusi rippaus.",
         "E7000": "Tämä levy tarvitsee AACS-salauksenpurkuavaimet (Blu-ray/UHD), mutta niitä ei löytynyt. Lataa avaintietokanta komennolla: freemkv update-keys --url <keydb-url>",
         "E7001": "Levyn suojausvarmenne on liian lyhyt tai virheellinen.",
         "E7002": "Asema ei käynnistänyt suojattua istuntoa tälle levylle — se voi olla toisen ohjelman käytössä. Sulje kaikki muu levyä käyttävä ja yritä uudelleen.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Avaa tiedosto tai ISO…",
+            "open_disc": "Avaa levy…",
             "show_finder": "Näytä Finderissa",
             "done": "Valmis",
             "run_now": "Suorita nyt",

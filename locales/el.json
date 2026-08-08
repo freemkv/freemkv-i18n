@@ -234,6 +234,7 @@
         "E6012": "Εσωτερικό σφάλμα κατά την ανάγνωση του δίσκου. Παρακαλούμε αναφέρετέ το.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "Η εικόνα δίσκου είναι μικρότερη από ό,τι αναμένουν τα δεδομένα ανάκτησης, οπότε φαίνεται αποκομμένη ή ατελής. Η ανάκτηση σταμάτησε αντί να αναφέρει δεδομένα που δεν διαβάστηκαν ποτέ — ξεκινήστε νέα αντιγραφή.",
         "E7000": "Αυτός ο δίσκος χρειάζεται κλειδιά αποκρυπτογράφησης AACS (Blu-ray/UHD), αλλά δεν βρέθηκε κανένα. Κατεβάστε μια βάση δεδομένων κλειδιών με: freemkv update-keys --url <keydb-url>",
         "E7001": "Το πιστοποιητικό ασφαλείας του δίσκου είναι πολύ μικρό ή μη έγκυρο.",
         "E7002": "Η μονάδα δεν ξεκίνησε ασφαλή συνεδρία για αυτόν τον δίσκο — μπορεί να χρησιμοποιείται από άλλο πρόγραμμα. Κλείστε οτιδήποτε άλλο χρησιμοποιεί τον δίσκο και δοκιμάστε ξανά.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Άνοιγμα αρχείου ή ISO…",
+            "open_disc": "Άνοιγμα δίσκου…",
             "show_finder": "Εμφάνιση στο Finder",
             "done": "Τέλος",
             "run_now": "Εκτέλεση τώρα",

@@ -211,6 +211,7 @@
         "E6012": "Interne fout bij het lezen van de disc. Meld dit alstublieft.",
         "E6013": "Dit bestand bevat geen Blu-ray- of dvd-bestandssysteem, dus er zijn geen titels om te lezen. Controleer of het een volledige schijfkopie is en geen afgebroken of onvolledige kopie.",
         "E6014": "Het gevraagde spoor (PID {detail}) komt niet voor in deze titel. Voer 'freemkv info' uit op de bron om de sporen op te sommen die er werkelijk in zitten, en kies daaruit.",
+        "E6015": "Het schijfimage is kleiner dan de herstelgegevens verwachten, dus het lijkt afgekapt of onvolledig. Het herstel is gestopt in plaats van gegevens te melden die nooit zijn gelezen — begin een nieuwe rip.",
         "E7000": "Deze schijf heeft AACS-ontsleutelingssleutels nodig, maar geen enkele sleutelbron heeft ze geleverd.",
         "E7001": "AACS-hostcertificaat te kort of ongeldig",
         "E7002": "AACS-handshake mislukt — kon geen AGID toewijzen",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Bestand of ISO openen…",
+            "open_disc": "Schijf openen…",
             "show_finder": "Toon in Finder",
             "done": "Gereed",
             "run_now": "Nu uitvoeren",

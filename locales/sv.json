@@ -234,6 +234,7 @@
         "E6012": "Internt fel vid läsning av skivan. Rapportera detta.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "Skivavbilden är mindre än vad återställningsdatan förväntar sig, så den ser avhuggen eller ofullständig ut. Återställningen stoppades i stället för att rapportera data som aldrig lästes — gör en ny rippning.",
         "E7000": "Den här skivan behöver AACS-dekrypteringsnycklar (Blu-ray/UHD), men inga hittades. Ladda ner en nyckeldatabas med: freemkv update-keys --url <keydb-url>",
         "E7001": "Skivans säkerhetscertifikat är för kort eller ogiltigt.",
         "E7002": "Enheten ville inte starta en säker session för den här skivan — den kan användas av ett annat program. Stäng allt annat som använder skivan och försök igen.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Öppna fil eller ISO…",
+            "open_disc": "Öppna skiva…",
             "show_finder": "Visa i Finder",
             "done": "Klar",
             "run_now": "Kör nu",

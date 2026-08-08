@@ -234,6 +234,7 @@
         "E6012": "Error interno al leer el disco. Por favor, repórtalo.",
         "E6013": "Este archivo no contiene un sistema de archivos Blu-ray o DVD, así que no hay títulos que leer. Comprueba que sea una imagen de disco completa y no una copia truncada o parcial.",
         "E6014": "La pista solicitada (PID {detail}) no está presente en este título. Ejecuta 'freemkv info' sobre el origen para listar las pistas que realmente contiene y elige entre ellas.",
+        "E6015": "La imagen de disco es más chica de lo que esperan los datos de recuperación, así que parece truncada o incompleta. La recuperación se detuvo en lugar de informar datos que nunca se leyeron: vuelva a empezar una extracción desde cero.",
         "E7000": "Este disco necesita claves de descifrado AACS (Blu-ray/UHD), pero no se encontró ninguna. Descarga una base de datos de claves con: freemkv update-keys --url <keydb-url>",
         "E7001": "El certificado de seguridad del disco es demasiado corto o inválido.",
         "E7002": "La unidad no iniciaría una sesión segura para este disco — puede estar en uso por otro programa. Cierra cualquier otra cosa que use el disco y vuelve a intentarlo.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Abrir archivo o ISO…",
+            "open_disc": "Abrir disco…",
             "show_finder": "Mostrar en Finder",
             "done": "Listo",
             "run_now": "Ejecutar ahora",

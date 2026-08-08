@@ -234,6 +234,7 @@
         "E6012": "디스크를 읽는 중 내부 오류가 발생했습니다. 이 문제를 신고해 주세요.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "디스크 이미지가 복구 데이터가 예상하는 크기보다 작아서 잘렸거나 불완전한 것으로 보입니다. 실제로 읽지 않은 데이터를 보고하는 대신 복구를 중단했습니다. 처음부터 다시 립하십시오.",
         "E7000": "이 디스크는 AACS 복호화 키(Blu-ray/UHD)가 필요하지만 찾을 수 없습니다. 다음 명령으로 키 데이터베이스를 다운로드하세요: freemkv update-keys --url <keydb-url>",
         "E7001": "디스크의 보안 인증서가 너무 짧거나 잘못되었습니다.",
         "E7002": "드라이브가 이 디스크에 대한 보안 세션을 시작하지 못했습니다 — 다른 프로그램이 사용 중일 수 있습니다. 디스크를 사용하는 다른 프로그램을 닫고 다시 시도하세요.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "파일 또는 ISO 열기…",
+            "open_disc": "디스크 열기…",
             "show_finder": "Finder에서 보기",
             "done": "완료",
             "run_now": "지금 실행",

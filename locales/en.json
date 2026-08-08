@@ -234,6 +234,7 @@
         "E6012": "Internal error reading the disc. Please report this.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "The disc image is smaller than the recovery data expects, so it looks truncated or incomplete. Recovery was stopped rather than report data that was never read — start a fresh rip.",
         "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Download a key database with: freemkv update-keys --url <keydb-url>",
         "E7001": "The disc's security certificate is too short or invalid.",
         "E7002": "The drive would not start a secure session for this disc — it may be in use by another program. Close anything else using the disc and try again.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Open file or ISO…",
+            "open_disc": "Open disc…",
             "show_finder": "Show in Finder",
             "done": "Done",
             "run_now": "Run Now",

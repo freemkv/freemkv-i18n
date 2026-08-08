@@ -234,6 +234,7 @@
         "E6012": "Внутрішня помилка читання диска. Будь ласка, повідомте про це.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "Образ диска менший, ніж очікують дані відновлення, тож він виглядає обрізаним або неповним. Відновлення зупинено, щоб не звітувати про дані, які ніколи не були прочитані — почніть копіювання заново.",
         "E7000": "Цей диск потребує ключів розшифрування AACS (Blu-ray/UHD), але жодного не знайдено. Завантажте базу ключів командою: freemkv update-keys --url <keydb-url>",
         "E7001": "Сертифікат безпеки диска надто короткий або недійсний.",
         "E7002": "Привід не зміг розпочати захищений сеанс для цього диска — він може використовуватися іншою програмою. Закрийте все інше, що використовує диск, і спробуйте знову.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Відкрити файл або ISO…",
+            "open_disc": "Відкрити диск…",
             "show_finder": "Показати у Finder",
             "done": "Готово",
             "run_now": "Запустити зараз",

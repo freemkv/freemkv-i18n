@@ -211,6 +211,7 @@
         "E6012": "Erro interno ao ler o disco. Por favor, relate isso.",
         "E6013": "Este arquivo não contém um sistema de arquivos Blu-ray ou DVD, portanto não há títulos para ler. Verifique se é uma imagem de disco completa e não uma cópia truncada ou parcial.",
         "E6014": "A faixa solicitada (PID {detail}) não está presente neste título. Execute 'freemkv info' na origem para listar as faixas que ela realmente contém e escolha entre elas.",
+        "E6015": "A imagem de disco é mais pequena do que os dados de recuperação esperam, pelo que parece truncada ou incompleta. A recuperação foi interrompida em vez de comunicar dados que nunca foram lidos — comece uma nova extração.",
         "E7000": "Este disco precisa de chaves de descriptografia AACS, mas nenhuma fonte de chaves as forneceu.",
         "E7001": "Certificado de host AACS muito curto ou invalido",
         "E7002": "Handshake AACS falhou — nao foi possivel alocar AGID",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Abrir ficheiro ou ISO…",
+            "open_disc": "Abrir disco…",
             "show_finder": "Mostrar no Finder",
             "done": "Concluído",
             "run_now": "Executar Agora",

@@ -234,6 +234,7 @@
         "E6012": "Interná chyba pri čítaní disku. Nahláste to, prosím.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "Obraz disku je menší, než očakávajú údaje na obnovu, takže vyzerá orezaný alebo neúplný. Obnova bola zastavená, namiesto toho aby hlásila údaje, ktoré sa nikdy nenačítali — začnite nové kopírovanie.",
         "E7000": "Tento disk potrebuje dešifrovacie kľúče AACS (Blu-ray/UHD), ale žiadne sa nenašli. Stiahnite databázu kľúčov pomocou: freemkv update-keys --url <keydb-url>",
         "E7001": "Bezpečnostný certifikát disku je príliš krátky alebo neplatný.",
         "E7002": "Mechanika by nezačala zabezpečenú reláciu pre tento disk — môže ho používať iný program. Zatvorte všetko ostatné, čo používa disk, a skúste to znova.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Otvoriť súbor alebo ISO…",
+            "open_disc": "Otvoriť disk…",
             "show_finder": "Zobraziť vo Finderi",
             "done": "Hotovo",
             "run_now": "Spustiť teraz",

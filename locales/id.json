@@ -234,6 +234,7 @@
         "E6012": "Kesalahan internal saat membaca disc. Harap laporkan ini.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "Image cakram lebih kecil daripada yang diharapkan data pemulihan, sehingga tampak terpotong atau tidak lengkap. Pemulihan dihentikan alih-alih melaporkan data yang tidak pernah dibaca — mulai penyalinan baru.",
         "E7000": "Disc ini memerlukan kunci dekripsi AACS (Blu-ray/UHD), tetapi tidak ada yang ditemukan. Unduh basis data kunci dengan: freemkv update-keys --url <keydb-url>",
         "E7001": "Sertifikat keamanan disc terlalu pendek atau tidak valid.",
         "E7002": "Drive tidak mau memulai sesi aman untuk disc ini — mungkin sedang digunakan oleh program lain. Tutup apa pun yang menggunakan disc dan coba lagi.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Buka berkas atau ISO…",
+            "open_disc": "Buka disc…",
             "show_finder": "Tampilkan di Finder",
             "done": "Selesai",
             "run_now": "Jalankan Sekarang",
