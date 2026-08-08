@@ -211,6 +211,7 @@
         "E6012": "Interner Fehler beim Lesen der Disc. Bitte melden Sie dies.",
         "E6013": "Diese Datei enthält kein Blu-ray- oder DVD-Dateisystem, es sind also keine Titel lesbar. Prüfen Sie, ob es ein vollständiges Disc-Abbild und keine abgebrochene oder unvollständige Kopie ist.",
         "E6014": "Die angeforderte Spur (PID {detail}) ist in diesem Titel nicht vorhanden. Führen Sie 'freemkv info' auf der Quelle aus, um die tatsächlich enthaltenen Spuren aufzulisten, und wählen Sie daraus.",
+        "E6015": "Das Disc-Abbild ist kleiner, als die Wiederherstellungsdaten erwarten — es wirkt abgeschnitten oder unvollständig. Die Wiederherstellung wurde gestoppt, statt Daten zu melden, die nie gelesen wurden. Starten Sie einen neuen Rip.",
         "E7000": "Diese Disc benötigt AACS-Entschlüsselungsschlüssel, aber keine Schlüsselquelle hat sie bereitgestellt.",
         "E7001": "AACS-Host-Zertifikat zu kurz oder ungueltig",
         "E7002": "AACS-Handshake fehlgeschlagen — AGID konnte nicht zugewiesen werden",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Datei oder ISO öffnen…",
+            "open_disc": "Disc öffnen…",
             "show_finder": "Im Finder anzeigen",
             "done": "Fertig",
             "run_now": "Jetzt ausführen",

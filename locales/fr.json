@@ -211,6 +211,7 @@
         "E6012": "Erreur interne lors de la lecture du disque. Veuillez le signaler.",
         "E6013": "Ce fichier ne contient pas de système de fichiers Blu-ray ou DVD ; il n'y a donc aucun titre à lire. Vérifiez qu'il s'agit d'une image de disque complète et non d'une copie tronquée ou partielle.",
         "E6014": "La piste demandée (PID {detail}) n'est pas présente dans ce titre. Exécutez 'freemkv info' sur la source pour lister les pistes réellement disponibles, puis choisissez parmi celles-ci.",
+        "E6015": "L'image disque est plus petite que ce que les données de récupération attendent : elle semble tronquée ou incomplète. La récupération a été arrêtée plutôt que de signaler des données jamais lues — relancez une extraction complète.",
         "E7000": "Ce disque nécessite des clés de déchiffrement AACS, mais aucune source de clés ne les a fournies.",
         "E7001": "Certificat hote AACS trop court ou invalide",
         "E7002": "Echec de la negociation AACS — impossible d'allouer un AGID",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Ouvrir un fichier ou une ISO…",
+            "open_disc": "Ouvrir un disque…",
             "show_finder": "Afficher dans le Finder",
             "done": "Terminé",
             "run_now": "Lancer maintenant",

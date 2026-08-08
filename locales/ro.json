@@ -234,6 +234,7 @@
         "E6012": "Eroare internă la citirea discului. Te rugăm să raportezi acest lucru.",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "Imaginea discului este mai mică decât se așteaptă datele de recuperare, deci pare trunchiată sau incompletă. Recuperarea a fost oprită în loc să raporteze date care nu au fost citite niciodată — începeți o extragere nouă.",
         "E7000": "Acest disc are nevoie de chei de decriptare AACS (Blu-ray/UHD), dar nu s-a găsit niciuna. Descarcă o bază de date de chei cu: freemkv update-keys --url <keydb-url>",
         "E7001": "Certificatul de securitate al discului este prea scurt sau invalid.",
         "E7002": "Unitatea nu a pornit o sesiune securizată pentru acest disc — poate fi folosită de un alt program. Închide orice altceva folosește discul și încearcă din nou.",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "Deschide fișier sau ISO…",
+            "open_disc": "Deschide discul…",
             "show_finder": "Afișează în Finder",
             "done": "Gata",
             "run_now": "Rulează acum",

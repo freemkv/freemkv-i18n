@@ -234,6 +234,7 @@
         "E6012": "读取光盘时发生内部错误。请报告此问题。",
         "E6013": "This file doesn't contain a Blu-ray or DVD filesystem, so there are no titles to read. Check that it is a complete disc image and not a truncated or partial copy.",
         "E6014": "The requested track (PID {detail}) isn't present in this title. Run 'freemkv info' on the source to list the tracks it actually contains, then choose from those.",
+        "E6015": "光盘镜像比恢复数据预期的更小，看起来被截断或不完整。为避免报告从未真正读取的数据，恢复已停止 — 请重新开始制作副本。",
         "E7000": "此光盘需要 AACS 解密密钥（Blu-ray/UHD），但未找到任何密钥。请使用以下命令下载密钥数据库：freemkv update-keys --url <keydb-url>",
         "E7001": "光盘的安全证书过短或无效。",
         "E7002": "驱动器未能为此光盘启动安全会话 —— 它可能正被另一程序使用。请关闭其他正在使用该光盘的程序并重试。",
@@ -532,6 +533,7 @@
         },
         "btn": {
             "open_file": "打开文件或 ISO……",
+            "open_disc": "打开光盘…",
             "show_finder": "在访达中显示",
             "done": "完成",
             "run_now": "立即运行",
