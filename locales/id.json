@@ -380,7 +380,8 @@
         "E9067": "Error: a file name is too long to store on a disc. Shorten it and try again: '{path}'.",
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
-        "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty."
+        "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
     },
     "usage": {
         "synopsis_1": "Penggunaan: freemkv <source> <dest> [flags]",
@@ -653,6 +654,7 @@
     },
     "warn": {
         "no_lang_match_audio": "peringatan: judul {num}: tidak ada trek audio yang cocok dengan '{requested}' (tersedia: {available}) — hanya video yang dipertahankan.",
-        "no_lang_match_subtitle": "peringatan: judul {num}: tidak ada trek subtitle yang cocok dengan '{requested}' (tersedia: {available}) — hanya video yang dipertahankan."
+        "no_lang_match_subtitle": "peringatan: judul {num}: tidak ada trek subtitle yang cocok dengan '{requested}' (tersedia: {available}) — hanya video yang dipertahankan.",
+        "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
     }
 }
