@@ -380,7 +380,8 @@
         "E9067": "Error: a file name is too long to store on a disc. Shorten it and try again: '{path}'.",
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
-        "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty."
+        "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
     },
     "usage": {
         "synopsis_1": "사용법: freemkv <source> <dest> [flags]",
@@ -653,6 +654,7 @@
     },
     "warn": {
         "no_lang_match_audio": "경고: 타이틀 {num}: '{requested}'과(와) 일치하는 오디오 트랙이 없습니다 (사용 가능: {available}) — 비디오만 유지합니다.",
-        "no_lang_match_subtitle": "경고: 타이틀 {num}: '{requested}'과(와) 일치하는 자막 트랙이 없습니다 (사용 가능: {available}) — 비디오만 유지합니다."
+        "no_lang_match_subtitle": "경고: 타이틀 {num}: '{requested}'과(와) 일치하는 자막 트랙이 없습니다 (사용 가능: {available}) — 비디오만 유지합니다.",
+        "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
     }
 }
