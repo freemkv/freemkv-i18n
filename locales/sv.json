@@ -503,7 +503,7 @@
             "audio_langs": "Föredragna ljudspråk :",
             "sub_langs": "Föredragna undertextspråk :",
             "forced_sub_langs": "Föredragna språk för tvingade undertexter :",
-            "lang_prefs_note": "ISO-koder eller engelska namn, separerade med komma — t.ex. de, es. Varje matchande spår kryssas i; ett tomt fält eller ett saknat språk kryssar i alla.",
+            "lang_prefs_note": "Välj de språk du vill ha. Alla matchande spår markeras; lämna tomt för att behålla alla.",
             "rip_mode": "Rippläge :",
             "mode_multi": "Flerpass",
             "mode_single": "Enpass",
@@ -534,7 +534,8 @@
             "update_keydb": "Uppdatera keydb nu",
             "test_connection": "Testa anslutning",
             "keydb_no_url": "Ingen URL för keydb-uppdatering angiven — lägg till en ovan och klicka på Uppdatera.",
-            "keydb_updating": "Uppdaterar keydb… hämtar, vänta."
+            "keydb_updating": "Uppdaterar keydb… hämtar, vänta.",
+            "lang_any": "Alla"
         },
         "btn": {
             "open_file": "Öppna fil eller ISO…",

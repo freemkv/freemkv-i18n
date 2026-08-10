@@ -503,7 +503,7 @@
             "audio_langs": "Voorkeurstalen voor audio:",
             "sub_langs": "Voorkeurstalen voor ondertiteling:",
             "forced_sub_langs": "Voorkeurstalen voor geforceerde ondertiteling:",
-            "lang_prefs_note": "ISO-codes of Engelse namen, door komma's gescheiden — bijv. de, es. Elk overeenkomend spoor wordt aangevinkt; een leeg veld of een ontbrekende taal vinkt alles aan.",
+            "lang_prefs_note": "Kies de gewenste talen. Elk overeenkomend spoor wordt aangevinkt; laat leeg om alles te behouden.",
             "rip_mode": "Ripmodus:",
             "mode_multi": "Multi-pass",
             "mode_single": "Enkele doorgang",
@@ -534,7 +534,8 @@
             "update_keydb": "keydb nu bijwerken",
             "test_connection": "Verbinding testen",
             "keydb_no_url": "Geen keydb-update-URL ingesteld — voeg er hierboven een toe en klik op Bijwerken.",
-            "keydb_updating": "keydb wordt bijgewerkt… downloaden, even geduld."
+            "keydb_updating": "keydb wordt bijgewerkt… downloaden, even geduld.",
+            "lang_any": "Alle"
         },
         "btn": {
             "open_file": "Bestand of ISO openen…",

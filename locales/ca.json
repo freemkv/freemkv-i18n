@@ -503,7 +503,7 @@
             "audio_langs": "Idiomes d'àudio preferits :",
             "sub_langs": "Idiomes de subtítols preferits :",
             "forced_sub_langs": "Idiomes de subtítols forçats preferits :",
-            "lang_prefs_note": "Codis ISO o noms en anglès, separats per comes — p. ex. de, es. Es marca cada pista coincident; una casella buida, o un idioma que el disc no té, les marca totes.",
+            "lang_prefs_note": "Tria els idiomes que vulguis. Es marca cada pista coincident; deixa-ho buit per conservar-les totes.",
             "rip_mode": "Mode d'extracció :",
             "mode_multi": "Multipassada",
             "mode_single": "Una sola passada",
@@ -534,7 +534,8 @@
             "update_keydb": "Actualitza el keydb ara",
             "test_connection": "Prova la connexió",
             "keydb_no_url": "No s'ha definit cap URL d'actualització de keydb — afegiu-ne una a dalt i feu clic a Actualitza.",
-            "keydb_updating": "S'està actualitzant el keydb… s'està baixant, espereu."
+            "keydb_updating": "S'està actualitzant el keydb… s'està baixant, espereu.",
+            "lang_any": "Qualsevol"
         },
         "btn": {
             "open_file": "Obre un fitxer o una ISO…",

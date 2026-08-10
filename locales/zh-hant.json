@@ -503,7 +503,7 @@
             "audio_langs": "首選音訊語言：",
             "sub_langs": "首選字幕語言：",
             "forced_sub_langs": "首選強制字幕語言：",
-            "lang_prefs_note": "以逗號分隔的 ISO 代碼或英文名稱 — 例如 de, es。所有符合的軌道都會勾選；留空或光碟沒有該語言時，會全部勾選。",
+            "lang_prefs_note": "選擇需要的語言。所有相符的軌道都會被勾選；留空則全部保留。",
             "rip_mode": "擷取模式：",
             "mode_multi": "多次擷取",
             "mode_single": "單次擷取",
@@ -534,7 +534,8 @@
             "update_keydb": "立即更新 keydb",
             "test_connection": "測試連線",
             "keydb_no_url": "未設定 keydb 更新網址 — 請在上方新增，然後按一下「更新」。",
-            "keydb_updating": "正在更新 keydb… 正在下載，請稍候。"
+            "keydb_updating": "正在更新 keydb… 正在下載，請稍候。",
+            "lang_any": "任意"
         },
         "btn": {
             "open_file": "開啟檔案或 ISO…",

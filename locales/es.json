@@ -503,7 +503,7 @@
             "audio_langs": "Idiomas de audio preferidos:",
             "sub_langs": "Idiomas de subtítulos preferidos:",
             "forced_sub_langs": "Idiomas de subtítulos forzados preferidos:",
-            "lang_prefs_note": "Códigos ISO o nombres en inglés, separados por comas — p. ej. de, es. Se marca cada pista coincidente; un campo vacío, o un idioma ausente, las marca todas.",
+            "lang_prefs_note": "Elige los idiomas que quieras. Se marca cada pista coincidente; déjalo vacío para conservarlas todas.",
             "rip_mode": "Modo de extracción:",
             "mode_multi": "Multipasada",
             "mode_single": "Pasada única",
@@ -534,7 +534,8 @@
             "update_keydb": "Actualizar keydb ahora",
             "test_connection": "Probar conexión",
             "keydb_no_url": "No se ha establecido ninguna URL de actualización de keydb: añada una arriba y haga clic en Actualizar.",
-            "keydb_updating": "Actualizando keydb… descargando, espere."
+            "keydb_updating": "Actualizando keydb… descargando, espere.",
+            "lang_any": "Cualquiera"
         },
         "btn": {
             "open_file": "Abrir archivo o ISO…",

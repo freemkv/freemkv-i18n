@@ -503,7 +503,7 @@
             "audio_langs": "Limbi audio preferate :",
             "sub_langs": "Limbi de subtitrare preferate :",
             "forced_sub_langs": "Limbi preferate pentru subtitrările forțate :",
-            "lang_prefs_note": "Coduri ISO sau denumiri în engleză, separate prin virgule — de ex. de, es. Se bifează fiecare pistă care se potrivește; un câmp gol sau o limbă absentă le bifează pe toate.",
+            "lang_prefs_note": "Alegeți limbile dorite. Fiecare pistă corespunzătoare este bifată; lăsați gol pentru a le păstra pe toate.",
             "rip_mode": "Mod de extragere :",
             "mode_multi": "Mai multe treceri",
             "mode_single": "O singură trecere",
@@ -534,7 +534,8 @@
             "update_keydb": "Actualizează keydb acum",
             "test_connection": "Testează conexiunea",
             "keydb_no_url": "Nu este setat niciun URL de actualizare keydb — adăugați unul mai sus, apoi faceți clic pe Actualizează.",
-            "keydb_updating": "Se actualizează keydb… se descarcă, așteptați."
+            "keydb_updating": "Se actualizează keydb… se descarcă, așteptați.",
+            "lang_any": "Oricare"
         },
         "btn": {
             "open_file": "Deschide fișier sau ISO…",

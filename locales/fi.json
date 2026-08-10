@@ -503,7 +503,7 @@
             "audio_langs": "Ensisijaiset äänen kielet :",
             "sub_langs": "Ensisijaiset tekstityskielet :",
             "forced_sub_langs": "Ensisijaiset pakotettujen tekstitysten kielet :",
-            "lang_prefs_note": "ISO-koodit tai englanninkieliset nimet pilkuilla — esim. de, es. Jokainen osuva raita valitaan; tyhjä kenttä tai puuttuva kieli valitsee ne kaikki.",
+            "lang_prefs_note": "Valitse haluamasi kielet. Jokainen vastaava raita valitaan; jätä tyhjäksi säilyttääksesi kaikki.",
             "rip_mode": "Rippaustila :",
             "mode_multi": "Monivaiheinen",
             "mode_single": "Yksivaiheinen",
@@ -534,7 +534,8 @@
             "update_keydb": "Päivitä keydb nyt",
             "test_connection": "Testaa yhteys",
             "keydb_no_url": "keydb-päivitysosoitetta ei ole asetettu — lisää se yllä ja napsauta Päivitä.",
-            "keydb_updating": "Päivitetään keydb… ladataan, odota."
+            "keydb_updating": "Päivitetään keydb… ladataan, odota.",
+            "lang_any": "Mikä tahansa"
         },
         "btn": {
             "open_file": "Avaa tiedosto tai ISO…",

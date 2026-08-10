@@ -503,7 +503,7 @@
             "audio_langs": "優先する音声言語 :",
             "sub_langs": "優先する字幕言語 :",
             "forced_sub_langs": "優先する強制字幕の言語 :",
-            "lang_prefs_note": "ISO コードまたは英語名をカンマ区切りで指定します（例：de, es）。一致するトラックはすべて選択されます。空欄やディスクにない言語の場合は、その種類をすべて選択します。",
+            "lang_prefs_note": "必要な言語を選びます。一致するトラックがすべて選択されます。空のままにするとすべて保持します。",
             "rip_mode": "リッピングモード :",
             "mode_multi": "マルチパス",
             "mode_single": "シングルパス",
@@ -534,7 +534,8 @@
             "update_keydb": "今すぐ keydb を更新",
             "test_connection": "接続をテスト",
             "keydb_no_url": "keydb 更新 URL が設定されていません。上に入力して「更新」をクリックしてください。",
-            "keydb_updating": "keydb を更新中… ダウンロードしています。お待ちください。"
+            "keydb_updating": "keydb を更新中… ダウンロードしています。お待ちください。",
+            "lang_any": "すべて"
         },
         "btn": {
             "open_file": "ファイルまたは ISO を開く…",
