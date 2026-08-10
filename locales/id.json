@@ -503,7 +503,7 @@
             "audio_langs": "Bahasa audio pilihan :",
             "sub_langs": "Bahasa subtitle pilihan :",
             "forced_sub_langs": "Bahasa subtitle paksa pilihan :",
-            "lang_prefs_note": "Kode ISO atau nama Inggris, dipisahkan koma — mis. de, es. Setiap trek yang cocok dicentang; kotak kosong, atau bahasa yang tak ada, mencentang semuanya.",
+            "lang_prefs_note": "Pilih bahasa yang Anda inginkan. Setiap trek yang cocok akan dicentang; kosongkan untuk menyimpan semuanya.",
             "rip_mode": "Mode rip :",
             "mode_multi": "Multi-lintasan",
             "mode_single": "Lintasan tunggal",
@@ -534,7 +534,8 @@
             "update_keydb": "Perbarui keydb sekarang",
             "test_connection": "Uji koneksi",
             "keydb_no_url": "URL pembaruan keydb belum diatur — tambahkan di atas, lalu klik Perbarui.",
-            "keydb_updating": "Memperbarui keydb… mengunduh, mohon tunggu."
+            "keydb_updating": "Memperbarui keydb… mengunduh, mohon tunggu.",
+            "lang_any": "Apa saja"
         },
         "btn": {
             "open_file": "Buka berkas atau ISO…",

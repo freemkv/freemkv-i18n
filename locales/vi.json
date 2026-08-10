@@ -503,7 +503,7 @@
             "audio_langs": "Ngôn ngữ âm thanh ưu tiên :",
             "sub_langs": "Ngôn ngữ phụ đề ưu tiên :",
             "forced_sub_langs": "Ngôn ngữ phụ đề bắt buộc ưu tiên :",
-            "lang_prefs_note": "Mã ISO hoặc tên tiếng Anh, phân tách bằng dấu phẩy — ví dụ: de, es. Mọi rãnh khớp đều được chọn; ô trống hoặc ngôn ngữ không có sẽ chọn tất cả.",
+            "lang_prefs_note": "Chọn các ngôn ngữ bạn muốn. Mọi bản nhạc khớp sẽ được đánh dấu; để trống để giữ tất cả.",
             "rip_mode": "Chế độ trích xuất :",
             "mode_multi": "Nhiều lượt",
             "mode_single": "Một lượt",
@@ -534,7 +534,8 @@
             "update_keydb": "Cập nhật keydb ngay",
             "test_connection": "Kiểm tra kết nối",
             "keydb_no_url": "Chưa đặt URL cập nhật keydb — hãy thêm ở trên rồi bấm Cập nhật.",
-            "keydb_updating": "Đang cập nhật keydb… đang tải xuống, vui lòng đợi."
+            "keydb_updating": "Đang cập nhật keydb… đang tải xuống, vui lòng đợi.",
+            "lang_any": "Bất kỳ"
         },
         "btn": {
             "open_file": "Mở tệp hoặc ISO…",

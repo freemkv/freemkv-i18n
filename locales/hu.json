@@ -503,7 +503,7 @@
             "audio_langs": "Előnyben részesített hangsávnyelvek:",
             "sub_langs": "Előnyben részesített feliratnyelvek:",
             "forced_sub_langs": "Előnyben részesített kényszerített feliratnyelvek:",
-            "lang_prefs_note": "Vesszővel elválasztott ISO-kódok vagy angol nevek — pl. de, es. Minden egyező sáv bejelölődik; üres mező vagy hiányzó nyelv esetén mind bejelölődik.",
+            "lang_prefs_note": "Válassza ki a kívánt nyelveket. Minden egyező sáv bejelölődik; hagyja üresen az összes megtartásához.",
             "rip_mode": "Másolási mód:",
             "mode_multi": "Többmenetes",
             "mode_single": "Egymenetes",
@@ -534,7 +534,8 @@
             "update_keydb": "keydb frissítése most",
             "test_connection": "Kapcsolat tesztelése",
             "keydb_no_url": "Nincs beállítva keydb frissítési URL — adjon meg egyet fent, majd kattintson a Frissítés gombra.",
-            "keydb_updating": "keydb frissítése… letöltés folyamatban, kérem várjon."
+            "keydb_updating": "keydb frissítése… letöltés folyamatban, kérem várjon.",
+            "lang_any": "Bármely"
         },
         "btn": {
             "open_file": "Fájl vagy ISO megnyitása…",

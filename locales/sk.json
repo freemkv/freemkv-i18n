@@ -503,7 +503,7 @@
             "audio_langs": "Preferované jazyky zvuku :",
             "sub_langs": "Preferované jazyky titulkov :",
             "forced_sub_langs": "Preferované jazyky vynútených titulkov :",
-            "lang_prefs_note": "Kódy ISO alebo anglické názvy, oddelené čiarkami — napr. de, es. Označí sa každá zodpovedajúca stopa; prázdne pole alebo chýbajúci jazyk označí všetky.",
+            "lang_prefs_note": "Vyberte požadované jazyky. Označí sa každá zodpovedajúca stopa; ponechajte prázdne na zachovanie všetkých.",
             "rip_mode": "Režim kopírovania :",
             "mode_multi": "Viacprechodový",
             "mode_single": "Jednoprechodový",
@@ -534,7 +534,8 @@
             "update_keydb": "Aktualizovať keydb teraz",
             "test_connection": "Otestovať pripojenie",
             "keydb_no_url": "Nie je nastavená adresa URL na aktualizáciu keydb — zadajte ju vyššie a kliknite na Aktualizovať.",
-            "keydb_updating": "Aktualizuje sa keydb… prebieha preberanie, čakajte."
+            "keydb_updating": "Aktualizuje sa keydb… prebieha preberanie, čakajte.",
+            "lang_any": "Ľubovoľný"
         },
         "btn": {
             "open_file": "Otvoriť súbor alebo ISO…",

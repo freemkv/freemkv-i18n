@@ -503,7 +503,7 @@
             "audio_langs": "Tercih edilen ses dilleri :",
             "sub_langs": "Tercih edilen altyazı dilleri :",
             "forced_sub_langs": "Tercih edilen zorunlu altyazı dilleri :",
-            "lang_prefs_note": "Virgülle ayrılmış ISO kodları veya İngilizce adlar — örn. de, es. Eşleşen her parça işaretlenir; boş kutu ya da diskte olmayan bir dil hepsini işaretler.",
+            "lang_prefs_note": "İstediğiniz dilleri seçin. Eşleşen her parça işaretlenir; tümünü korumak için boş bırakın.",
             "rip_mode": "Kopyalama modu :",
             "mode_multi": "Çok geçişli",
             "mode_single": "Tek geçişli",
@@ -534,7 +534,8 @@
             "update_keydb": "keydb'yi şimdi güncelle",
             "test_connection": "Bağlantıyı test et",
             "keydb_no_url": "keydb güncelleme adresi ayarlanmadı — yukarıya bir adres ekleyip Güncelle'ye tıklayın.",
-            "keydb_updating": "keydb güncelleniyor… indiriliyor, lütfen bekleyin."
+            "keydb_updating": "keydb güncelleniyor… indiriliyor, lütfen bekleyin.",
+            "lang_any": "Herhangi"
         },
         "btn": {
             "open_file": "Dosya veya ISO aç…",
