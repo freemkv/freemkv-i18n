@@ -369,6 +369,7 @@
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
         "dir_is_file": "Error: Folder input '{path}' is a file, not a folder. Use dir://<folder>/ for an extracted disc tree, or iso://<file> for a disc image.",
         "iso_unreadable": "Error: ISO input could not be read: '{path}'.",
+        "dest_is_source": "Eroare: imaginea de ieșire ar suprascrie sursa. Alege o altă destinație.",
         "E9059": "Error: the source returned fewer sectors than requested, so the image would be incomplete. Nothing was written.",
         "E9060": "Error: the source reports no sectors, so there is nothing to write.",
         "E9061": "Error: this folder holds a 3D disc (BDMV/STREAM/SSIF), which dir:// cannot read yet. Rip from the disc or an ISO instead.",
