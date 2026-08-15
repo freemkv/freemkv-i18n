@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.4] — UNRELEASED
+
+### Added
+
+- **The destination-is-source refusal message**, so the CLI can explain why it
+  will not decrypt an image over its own source file. Added to all 29 locales,
+  which the parity test requires.
+
 ## [1.6.3] — 2026-08-10
 
 ### Changed
