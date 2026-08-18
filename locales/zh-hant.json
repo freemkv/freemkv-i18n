@@ -25,6 +25,7 @@
         "device_desc": "指定裝置路徑",
         "captured": "已擷取：GET_CONFIG 0x{code} {name}（{bytes} 位元組）",
         "submit_header": "以下內容將被提交：",
+        "submit_prompt": "提交此設定檔以協助擴充光碟機支援？[Y/n] ",
         "submit_drive": "光碟機",
         "submit_serial": "序號",
         "submit_platform": "平台",
@@ -36,6 +37,9 @@
         "submit_saved": "設定檔已儲存至 {dir}/",
         "submit_zip": "Zip 封存檔：{path}",
         "submit_manual": "若要貢獻此設定檔，請開啟新的 issue 並貼上以下文字：",
+        "submit_thanks": "已提交 — 謝謝！",
+        "submit_auto_failed": "自動提交失敗；你仍可手動提交：",
+        "submit_declined": "未提交。如果願意，你仍可手動提交：",
         "submit_issue_title": "Issue 標題：{title}",
         "submit_issue_body": "Issue 內文（複製兩條線之間的所有內容）："
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "強制",
         "usage": "用法：freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "未知"
+        "format_unknown": "未知",
+        "file": "檔案"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level：值 0 超出範圍 (1–4)，已忽略",
+        "log_level_not_a_number": "--log-level：需要 1–4 的數字，收到 '{value}'，已忽略",
+        "log_level_needs_value": "--log-level：需要一個值 (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file：路徑 '{path}' 無效 — 未寫入診斷紀錄",
+        "language_needs_value": "{flag}：需要語言代碼（例如 --language de）"
     },
     "usage": {
         "synopsis_1": "用法：freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  執行 'freemkv <command> --help'（或 'freemkv help <command>'）以取得特定指令的說明。",
         "urls_header": "串流 URL：",
+        "tracks_header": "軌道輸出（僅作為目標）：",
         "url": {
             "disc_auto": "  disc://                  光碟機（自動偵測）",
             "disc_linux": "  disc:///dev/sg4          光碟機（Linux）",
             "disc_windows": "  disc://D:                光碟機（Windows）",
             "mkv": "  mkv://path.mkv           Matroska 檔案",
             "m2ts": "  m2ts://path.m2ts         BD 傳輸串流檔案",
+            "mp4": "  mp4://path.mp4           MP4 檔案",
+            "iso": "  iso://image.iso          Blu-ray ISO 映像檔",
+            "dir": "  dir://folder/            解密後的檔案樹輸出到資料夾",
             "network": "  network://host:port      TCP 串流",
             "stdio": "  stdio://                 Stdin/stdout 管道",
-            "iso": "  iso://image.iso          Blu-ray ISO 映像檔",
             "null": "  null://                  捨棄（效能測試）",
+            "demux": "  demux://folder/          每條軌道各自成檔",
+            "video": "  video://folder/          僅視訊軌",
+            "audio": "  audio://folder/          僅音訊軌",
+            "sub": "  sub://folder/            僅字幕軌",
+            "chapters": "  chapters://file.xml      章節清單 (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         以 JSON 輸出標題結構",
+            "fvi": "  fvi://file.fvi           逐格視訊索引",
             "scheme_note": "  所有 URL 皆需 scheme:// 前綴。",
             "path_note": "  檔案路徑接在協定之後：mkv://./Movie.mkv、m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      ./log.txt（回報錯誤時請用 3）。",
             "log_file": "      --log-file PATH 將診斷紀錄寫入 PATH，而非 ./log.txt。",
             "quiet": "  -q, --quiet         抑制輸出",
+            "language": "      --language CODE 介面語言（也可用 --lang）：如 de 或 pt-BR 的代碼，或 auto。",
             "raw": "      --raw           略過解密（原始加密輸出）",
             "multipass": "      --multipass    寫入／更新對應檔以進行多次復原",
             "share": "      --share         提交光碟機設定檔（僅限 info disc://；擷取時 -s 代表 --subtitles）",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb，然後線上",
             "keydb_path": "keydb.cfg 位置：",
             "keydb_url": "keydb 更新 URL：",
+            "keydb_busy": "keydb 更新已在進行中 — 請稍候。",
             "keyserver_url": "金鑰服務 URL：",
             "keyserver_token": "金鑰服務 token：",
             "language": "介面語言：",

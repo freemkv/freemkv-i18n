@@ -25,6 +25,7 @@
         "device_desc": "Apparaatpad opgeven",
         "captured": "Vastgelegd: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "Het volgende wordt verstuurd:",
+        "submit_prompt": "Dit profiel insturen om de stationsondersteuning uit te breiden? [Y/n] ",
         "submit_drive": "Drive",
         "submit_serial": "Serienummer",
         "submit_platform": "Platform",
@@ -36,6 +37,9 @@
         "submit_saved": "Profiel opgeslagen in {dir}/",
         "submit_zip": "Zip-archief: {path}",
         "submit_manual": "Open een nieuwe issue en plak de onderstaande tekst om dit profiel bij te dragen:",
+        "submit_thanks": "Ingestuurd — bedankt!",
+        "submit_auto_failed": "Automatisch insturen is mislukt; u kunt het nog steeds handmatig melden:",
+        "submit_declined": "Niet ingestuurd. U kunt het desgewenst nog steeds handmatig melden:",
         "submit_issue_title": "Issue-titel: {title}",
         "submit_issue_body": "Issue-tekst (kopieer alles tussen de lijnen):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "geforceerd",
         "usage": "Gebruik: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Onbekend"
+        "format_unknown": "Onbekend",
+        "file": "Bestand"
     },
     "stream": {
         "purpose": {
@@ -370,22 +375,37 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: waarde 0 valt buiten het bereik (1–4), genegeerd",
+        "log_level_not_a_number": "--log-level: getal 1–4 verwacht, '{value}' gekregen, genegeerd",
+        "log_level_needs_value": "--log-level: vereist een waarde (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: ongeldig pad '{path}' — geen diagnostisch logboek geschreven",
+        "language_needs_value": "{flag}: vereist een taalcode (bijv. --language de)"
     },
     "usage": {
         "synopsis_1": "Gebruik: freemkv <bron> <doel> [opties]",
         "synopsis_2": "         freemkv info <url> [opties]",
         "urls_header": "Stream-URL's:",
+        "tracks_header": "Spooruitvoer (alleen als bestemming):",
         "url": {
             "disc_auto": "  disc://                  Optisch station (automatisch detecteren)",
             "disc_linux": "  disc:///dev/sg4          Optisch station (Linux)",
             "disc_windows": "  disc://D:                Optisch station (Windows)",
             "mkv": "  mkv://pad.mkv            Matroska-bestand",
             "m2ts": "  m2ts://pad.m2ts          BD-transportstroom-bestand",
+            "mp4": "  mp4://path.mp4           MP4-bestand",
+            "iso": "  iso://image.iso          Blu-ray-ISO-image",
+            "dir": "  dir://folder/            Ontsleutelde bestandsboom in een map",
             "network": "  network://host:poort     TCP-stroom",
             "stdio": "  stdio://                 Stdin/stdout-pijp",
-            "iso": "  iso://image.iso          Blu-ray-ISO-image",
             "null": "  null://                  Verwerpen (benchmarking)",
+            "demux": "  demux://folder/          Elk spoor als apart bestand",
+            "video": "  video://folder/          Alleen videosporen",
+            "audio": "  audio://folder/          Alleen audiosporen",
+            "sub": "  sub://folder/            Alleen ondertitelsporen",
+            "chapters": "  chapters://file.xml      Hoofdstuklijst (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Titelstructuur als JSON",
+            "fvi": "  fvi://file.fvi           Video-index per frame",
             "scheme_note": "  Alle URL's vereisen een scheme://-voorvoegsel.",
             "path_note": "  Bestandspaden volgen het schema: mkv://./Film.mkv, m2ts://./Film.m2ts"
         },
@@ -423,6 +443,7 @@
             "log_level_3": "                      naar ./log.txt (gebruik 3 voor foutrapporten).",
             "log_file": "      --log-file PAD   Diagnoselogboek naar PAD schrijven in plaats van ./log.txt.",
             "quiet": "  -q, --quiet         Uitvoer onderdrukken",
+            "language": "      --language CODE Taal van de interface (ook --lang): een code zoals de of pt-BR, of auto.",
             "raw": "      --raw           Decodering overslaan (ruwe versleutelde uitvoer)",
             "multipass": "      --multipass    Mapfile schrijven/bijwerken voor multipass-herstel",
             "share": "      --share         Stationsprofiel indienen (alleen info disc://; bij een rip betekent -s --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, dan online",
             "keydb_path": "Locatie keydb.cfg:",
             "keydb_url": "Update-URL keydb:",
+            "keydb_busy": "Er loopt al een keydb-update — even geduld.",
             "keyserver_url": "URL sleuteldienst:",
             "keyserver_token": "Token sleuteldienst:",
             "language": "Interfacetaal:",

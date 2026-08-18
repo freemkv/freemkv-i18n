@@ -25,6 +25,7 @@
         "device_desc": "Eszköz elérési útjának megadása",
         "captured": "Rögzítve: GET_CONFIG 0x{code} {name} ({bytes} bájt)",
         "submit_header": "A következők kerülnek beküldésre:",
+        "submit_prompt": "Beküldi ezt a profilt a meghajtótámogatás bővítéséhez? [Y/n] ",
         "submit_drive": "Meghajtó",
         "submit_serial": "Sorozatszám",
         "submit_platform": "Platform",
@@ -36,6 +37,9 @@
         "submit_saved": "Profil elmentve ide: {dir}/",
         "submit_zip": "Zip archívum: {path}",
         "submit_manual": "A profil beküldéséhez nyiss egy új hibajegyet, és illeszd be az alábbi szöveget:",
+        "submit_thanks": "Beküldve — köszönjük!",
+        "submit_auto_failed": "Az automatikus beküldés nem sikerült; kézzel továbbra is bejelentheti:",
+        "submit_declined": "Nincs beküldve. Ha szeretné, kézzel továbbra is bejelentheti:",
         "submit_issue_title": "Hibajegy címe: {title}",
         "submit_issue_body": "Hibajegy törzse (másold be mindent a sorok közül):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "kényszerített",
         "usage": "Használat: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Ismeretlen"
+        "format_unknown": "Ismeretlen",
+        "file": "Fájl"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: a 0 érték a tartományon kívül esik (1–4), figyelmen kívül hagyva",
+        "log_level_not_a_number": "--log-level: 1–4 közötti szám várt, '{value}' érkezett, figyelmen kívül hagyva",
+        "log_level_needs_value": "--log-level: értéket igényel (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: érvénytelen útvonal: '{path}' — nem készült diagnosztikai napló",
+        "language_needs_value": "{flag}: nyelvkódot igényel (pl. --language de)"
     },
     "usage": {
         "synopsis_1": "Használat: freemkv <forrás> <cél> [kapcsolók]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Futtasd a „freemkv <parancs> --help” (vagy „freemkv help <parancs>”) parancsot parancsspecifikus súgóért.",
         "urls_header": "Adatfolyam-URL-ek:",
+        "tracks_header": "Sávkimenetek (csak célként):",
         "url": {
             "disc_auto": "  disc://                  Optikai meghajtó (automatikus felismerés)",
             "disc_linux": "  disc:///dev/sg4          Optikai meghajtó (Linux)",
             "disc_windows": "  disc://D:                Optikai meghajtó (Windows)",
             "mkv": "  mkv://path.mkv           Matroska fájl",
             "m2ts": "  m2ts://path.m2ts         BD transzportfolyam fájl",
+            "mp4": "  mp4://path.mp4           MP4-fájl",
+            "iso": "  iso://image.iso          Blu-ray ISO-képfájl",
+            "dir": "  dir://folder/            Visszafejtett fájlfa egy mappában",
             "network": "  network://host:port      TCP adatfolyam",
             "stdio": "  stdio://                 Stdin/stdout cső",
-            "iso": "  iso://image.iso          Blu-ray ISO-képfájl",
             "null": "  null://                  Eldobás (teljesítménymérés)",
+            "demux": "  demux://folder/          Minden sáv külön fájlba",
+            "video": "  video://folder/          Csak videosávok",
+            "audio": "  audio://folder/          Csak hangsávok",
+            "sub": "  sub://folder/            Csak feliratsávok",
+            "chapters": "  chapters://file.xml      Fejezetlista (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         A cím szerkezete JSON-ként",
+            "fvi": "  fvi://file.fvi           Képkockánkénti videóindex",
             "scheme_note": "  Minden URL scheme:// előtagot igényel.",
             "path_note": "  A fájlelérési utak követik a sémát: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      diagnosztikai napló ./log.txt fájlba írásához (hibajelentéshez használj 3-at).",
             "log_file": "      --log-file PATH A diagnosztikai naplót a PATH útra írja a ./log.txt helyett.",
             "quiet": "  -q, --quiet         Kimenet elnémítása",
+            "language": "      --language CODE A felület nyelve (--lang is): egy kód, például de vagy pt-BR, vagy auto.",
             "raw": "      --raw           Visszafejtés kihagyása (nyers titkosított kimenet)",
             "multipass": "      --multipass    Térképfájl írása/frissítése a többmenetes helyreállításhoz",
             "share": "      --share         Meghajtóprofil beküldése (csak info disc:// esetén; másolásnál a -s a --subtitles kapcsolót jelenti)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, majd online",
             "keydb_path": "keydb.cfg helye:",
             "keydb_url": "keydb frissítési URL:",
+            "keydb_busy": "Már fut egy keydb-frissítés — kérjük, várjon.",
             "keyserver_url": "Kulcsszolgáltatás URL-je:",
             "keyserver_token": "Kulcsszolgáltatás tokenje:",
             "language": "Felület nyelve:",

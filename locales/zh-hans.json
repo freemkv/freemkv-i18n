@@ -25,6 +25,7 @@
         "device_desc": "指定设备路径",
         "captured": "已采集：GET_CONFIG 0x{code} {name}（{bytes} 字节）",
         "submit_header": "将提交以下内容：",
+        "submit_prompt": "提交此配置以帮助扩展光驱支持？[Y/n] ",
         "submit_drive": "驱动器",
         "submit_serial": "序列号",
         "submit_platform": "平台",
@@ -36,6 +37,9 @@
         "submit_saved": "配置已保存至 {dir}/",
         "submit_zip": "Zip 压缩包：{path}",
         "submit_manual": "要贡献此配置，请新建一个 issue 并粘贴下方文本：",
+        "submit_thanks": "已提交 — 谢谢！",
+        "submit_auto_failed": "自动提交失败；你仍然可以手动提交：",
+        "submit_declined": "未提交。如果愿意，你仍然可以手动提交：",
         "submit_issue_title": "Issue 标题：{title}",
         "submit_issue_body": "Issue 正文（复制分割线之间的全部内容）："
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "强制",
         "usage": "用法：freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "未知"
+        "format_unknown": "未知",
+        "file": "文件"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level：值 0 超出范围 (1–4)，已忽略",
+        "log_level_not_a_number": "--log-level：需要 1–4 的数字，收到 '{value}'，已忽略",
+        "log_level_needs_value": "--log-level：需要一个值 (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file：路径 '{path}' 无效 — 未写入诊断日志",
+        "language_needs_value": "{flag}：需要语言代码（例如 --language de）"
     },
     "usage": {
         "synopsis_1": "用法：freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  运行 'freemkv <command> --help'（或 'freemkv help <command>'）获取特定命令的帮助。",
         "urls_header": "流 URL：",
+        "tracks_header": "轨道输出（仅作为目标）：",
         "url": {
             "disc_auto": "  disc://                  光驱（自动检测）",
             "disc_linux": "  disc:///dev/sg4          光驱（Linux）",
             "disc_windows": "  disc://D:                光驱（Windows）",
             "mkv": "  mkv://path.mkv           Matroska 文件",
             "m2ts": "  m2ts://path.m2ts         BD 传输流文件",
+            "mp4": "  mp4://path.mp4           MP4 文件",
+            "iso": "  iso://image.iso          Blu-ray ISO 映像",
+            "dir": "  dir://folder/            解密后的文件树输出到文件夹",
             "network": "  network://host:port      TCP 流",
             "stdio": "  stdio://                 标准输入/输出管道",
-            "iso": "  iso://image.iso          Blu-ray ISO 映像",
             "null": "  null://                  丢弃（基准测试）",
+            "demux": "  demux://folder/          每条轨道单独成文件",
+            "video": "  video://folder/          仅视频轨道",
+            "audio": "  audio://folder/          仅音频轨道",
+            "sub": "  sub://folder/            仅字幕轨道",
+            "chapters": "  chapters://file.xml      章节列表 (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         以 JSON 输出标题结构",
+            "fvi": "  fvi://file.fvi           逐帧视频索引",
             "scheme_note": "  所有 URL 都需要 scheme:// 前缀。",
             "path_note": "  文件路径跟随 scheme：mkv://./Movie.mkv、m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      ./log.txt（错误报告请用 3）。",
             "log_file": "      --log-file PATH 将诊断日志写入 PATH 而非 ./log.txt。",
             "quiet": "  -q, --quiet         抑制输出",
+            "language": "      --language CODE 界面语言（也可用 --lang）：如 de 或 pt-BR 的代码，或 auto。",
             "raw": "      --raw           跳过解密（原始加密输出）",
             "multipass": "      --multipass    写入/更新映射文件以进行多遍恢复",
             "share": "      --share         提交驱动器配置（仅 info disc://；在抓取时，-s 表示 --subtitles）",
@@ -532,6 +553,7 @@
             "key_src_both": "先 keydb，后在线",
             "keydb_path": "keydb.cfg 位置 ：",
             "keydb_url": "keydb 更新 URL ：",
+            "keydb_busy": "keydb 更新已在进行中 — 请稍候。",
             "keyserver_url": "密钥服务 URL ：",
             "keyserver_token": "密钥服务令牌 ：",
             "language": "界面语言 ：",

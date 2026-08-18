@@ -25,6 +25,7 @@
         "device_desc": "Specifică calea dispozitivului",
         "captured": "Capturat: GET_CONFIG 0x{code} {name} ({bytes} octeți)",
         "submit_header": "Următoarele vor fi trimise:",
+        "submit_prompt": "Trimiteți acest profil pentru a extinde suportul pentru unități? [Y/n] ",
         "submit_drive": "Unitate",
         "submit_serial": "Serie",
         "submit_platform": "Platformă",
@@ -36,6 +37,9 @@
         "submit_saved": "Profil salvat în {dir}/",
         "submit_zip": "Arhivă Zip: {path}",
         "submit_manual": "Pentru a contribui cu acest profil, deschide o problemă nouă și lipește textul de mai jos:",
+        "submit_thanks": "Trimis — mulțumim!",
+        "submit_auto_failed": "Trimiterea automată a eșuat; îl puteți raporta în continuare manual:",
+        "submit_declined": "Netrimis. Îl puteți raporta în continuare manual, dacă doriți:",
         "submit_issue_title": "Titlul problemei: {title}",
         "submit_issue_body": "Corpul problemei (copiază tot ce se află între linii):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "forțat",
         "usage": "Utilizare: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Necunoscut"
+        "format_unknown": "Necunoscut",
+        "file": "Fișier"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: valoarea 0 este în afara intervalului (1–4), ignorată",
+        "log_level_not_a_number": "--log-level: se aștepta un număr 1–4, s-a primit '{value}', ignorat",
+        "log_level_needs_value": "--log-level: necesită o valoare (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: cale nevalidă '{path}' — nu s-a scris niciun jurnal de diagnosticare",
+        "language_needs_value": "{flag}: necesită un cod de limbă (de ex. --language de)"
     },
     "usage": {
         "synopsis_1": "Utilizare: freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Rulează 'freemkv <command> --help' (sau 'freemkv help <command>') pentru ajutor specific comenzii.",
         "urls_header": "URL-uri de flux:",
+        "tracks_header": "Ieșiri pe pistă (doar ca destinație):",
         "url": {
             "disc_auto": "  disc://                  Unitate optică (detectare automată)",
             "disc_linux": "  disc:///dev/sg4          Unitate optică (Linux)",
             "disc_windows": "  disc://D:                Unitate optică (Windows)",
             "mkv": "  mkv://path.mkv           Fișier Matroska",
             "m2ts": "  m2ts://path.m2ts         Fișier de flux de transport BD",
+            "mp4": "  mp4://path.mp4           Fișier MP4",
+            "iso": "  iso://image.iso          Imagine ISO Blu-ray",
+            "dir": "  dir://folder/            Arbore de fișiere decriptat într-un folder",
             "network": "  network://host:port      Flux TCP",
             "stdio": "  stdio://                 Canal stdin/stdout",
-            "iso": "  iso://image.iso          Imagine ISO Blu-ray",
             "null": "  null://                  Renunță (evaluare comparativă)",
+            "demux": "  demux://folder/          Fiecare pistă ca fișier separat",
+            "video": "  video://folder/          Doar pistele video",
+            "audio": "  audio://folder/          Doar pistele audio",
+            "sub": "  sub://folder/            Doar pistele de subtitrare",
+            "chapters": "  chapters://file.xml      Listă de capitole (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Structura titlului în JSON",
+            "fvi": "  fvi://file.fvi           Index video pe cadre",
             "scheme_note": "  Toate URL-urile necesită un prefix scheme://.",
             "path_note": "  Căile de fișiere urmează schema: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      jurnal de diagnosticare în ./log.txt (folosește 3 pentru rapoarte de erori).",
             "log_file": "      --log-file PATH Scrie jurnalul de diagnosticare în PATH în loc de ./log.txt.",
             "quiet": "  -q, --quiet         Suprimă afișarea",
+            "language": "      --language CODE Limba interfeței (și --lang): un cod precum de sau pt-BR, ori auto.",
             "raw": "      --raw           Sari peste decriptare (ieșire brută criptată)",
             "multipass": "      --multipass    Scrie/actualizează fișierul de mapare pentru recuperare multipass",
             "share": "      --share         Trimite profilul unității (doar info disc://; la o extragere, -s înseamnă --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, apoi online",
             "keydb_path": "Locația keydb.cfg :",
             "keydb_url": "URL de actualizare keydb :",
+            "keydb_busy": "O actualizare keydb este deja în curs — așteptați.",
             "keyserver_url": "URL serviciu de chei :",
             "keyserver_token": "Token serviciu de chei :",
             "language": "Limba interfeței :",

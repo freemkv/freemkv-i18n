@@ -25,6 +25,7 @@
         "device_desc": "Angi enhetsbane",
         "captured": "Fanget opp: GET_CONFIG 0x{code} {name} ({bytes} byte)",
         "submit_header": "Følgende vil bli sendt inn:",
+        "submit_prompt": "Vil du sende inn denne profilen for å utvide stasjonsstøtten? [Y/n] ",
         "submit_drive": "Stasjon",
         "submit_serial": "Serienummer",
         "submit_platform": "Plattform",
@@ -36,6 +37,9 @@
         "submit_saved": "Profil lagret til {dir}/",
         "submit_zip": "Zip-arkiv: {path}",
         "submit_manual": "For å bidra med denne profilen, opprett en ny sak og lim inn teksten under:",
+        "submit_thanks": "Sendt inn — takk!",
+        "submit_auto_failed": "Automatisk innsending mislyktes; du kan fortsatt melde det inn manuelt:",
+        "submit_declined": "Ikke sendt inn. Du kan fortsatt melde det inn manuelt om du vil:",
         "submit_issue_title": "Sakstittel: {title}",
         "submit_issue_body": "Saksinnhold (kopier alt mellom linjene):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "tvunget",
         "usage": "Bruk: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Ukjent"
+        "format_unknown": "Ukjent",
+        "file": "Fil"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: verdien 0 er utenfor området (1–4), ignorert",
+        "log_level_not_a_number": "--log-level: forventet et tall 1–4, fikk '{value}', ignorert",
+        "log_level_needs_value": "--log-level: krever en verdi (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: ugyldig sti '{path}' — ingen diagnoselogg skrevet",
+        "language_needs_value": "{flag}: krever en språkkode (f.eks. --language de)"
     },
     "usage": {
         "synopsis_1": "Bruk: freemkv <source> <dest> [flagg]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Kjør «freemkv <command> --help» (eller «freemkv help <command>») for kommandospesifikk hjelp.",
         "urls_header": "Strøm-URL-er:",
+        "tracks_header": "Sporutganger (kun destinasjon):",
         "url": {
             "disc_auto": "  disc://                  Optisk stasjon (automatisk oppdaging)",
             "disc_linux": "  disc:///dev/sg4          Optisk stasjon (Linux)",
             "disc_windows": "  disc://D:                Optisk stasjon (Windows)",
             "mkv": "  mkv://path.mkv           Matroska-fil",
             "m2ts": "  m2ts://path.m2ts         BD-transportstrømfil",
+            "mp4": "  mp4://path.mp4           MP4-fil",
+            "iso": "  iso://image.iso          Blu-ray ISO-bilde",
+            "dir": "  dir://folder/            Dekryptert filtre i en mappe",
             "network": "  network://host:port      TCP-strøm",
             "stdio": "  stdio://                 Stdin/stdout-rør",
-            "iso": "  iso://image.iso          Blu-ray ISO-bilde",
             "null": "  null://                  Forkast (ytelsestesting)",
+            "demux": "  demux://folder/          Hvert spor som egen fil",
+            "video": "  video://folder/          Bare videospor",
+            "audio": "  audio://folder/          Bare lydspor",
+            "sub": "  sub://folder/            Bare undertekstspor",
+            "chapters": "  chapters://file.xml      Kapittelliste (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Titteltruktur som JSON",
+            "fvi": "  fvi://file.fvi           Videoindeks per bilde",
             "scheme_note": "  Alle URL-er krever et scheme://-prefiks.",
             "path_note": "  Filbaner følger ordningen: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      diagnostikklogg til ./log.txt (bruk 3 for feilrapporter).",
             "log_file": "      --log-file PATH Skriv diagnostikkloggen til PATH i stedet for ./log.txt.",
             "quiet": "  -q, --quiet         Undertrykk utdata",
+            "language": "      --language CODE Grensesnittspråk (også --lang): en kode som de eller pt-BR, eller auto.",
             "raw": "      --raw           Hopp over dekryptering (rå kryptert utdata)",
             "multipass": "      --multipass    Skriv/oppdater kartfil for gjenoppretting over flere pass",
             "share": "      --share         Send inn stasjonsprofil (kun info disc://; på en ripping betyr -s --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, deretter nettbasert",
             "keydb_path": "keydb.cfg-plassering:",
             "keydb_url": "keydb-oppdaterings-URL:",
+            "keydb_busy": "En keydb-oppdatering kjører allerede — vent litt.",
             "keyserver_url": "Nøkkeltjeneste-URL:",
             "keyserver_token": "Nøkkeltjeneste-token:",
             "language": "Grensesnittspråk:",

@@ -25,6 +25,7 @@
         "device_desc": "デバイスパスを指定する",
         "captured": "取得: GET_CONFIG 0x{code} {name}（{bytes} バイト）",
         "submit_header": "以下の内容が送信されます:",
+        "submit_prompt": "ドライブ対応を広げるため、このプロファイルを送信しますか? [Y/n] ",
         "submit_drive": "ドライブ",
         "submit_serial": "シリアル",
         "submit_platform": "プラットフォーム",
@@ -36,6 +37,9 @@
         "submit_saved": "プロファイルを {dir}/ に保存しました",
         "submit_zip": "Zip アーカイブ: {path}",
         "submit_manual": "このプロファイルを提供するには、新しい issue を作成して以下のテキストを貼り付けてください:",
+        "submit_thanks": "送信しました — ありがとうございます!",
+        "submit_auto_failed": "自動送信に失敗しました。手動で報告することもできます:",
+        "submit_declined": "送信しませんでした。必要であれば手動で報告できます:",
         "submit_issue_title": "Issue タイトル: {title}",
         "submit_issue_body": "Issue 本文（区切り線の間をすべてコピーしてください）:"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "強制",
         "usage": "使い方: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "不明"
+        "format_unknown": "不明",
+        "file": "ファイル"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: 値 0 は範囲外 (1–4) です。無視します",
+        "log_level_not_a_number": "--log-level: 1–4 の数値が必要ですが '{value}' が指定されました。無視します",
+        "log_level_needs_value": "--log-level: 値が必要です (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: パス '{path}' が無効です — 診断ログは書き込まれません",
+        "language_needs_value": "{flag}: 言語コードが必要です (例: --language de)"
     },
     "usage": {
         "synopsis_1": "使い方: freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  コマンド固有のヘルプは 'freemkv <command> --help'（または 'freemkv help <command>'）を実行してください。",
         "urls_header": "ストリーム URL:",
+        "tracks_header": "トラック出力 (出力先専用):",
         "url": {
             "disc_auto": "  disc://                  光学ドライブ（自動検出）",
             "disc_linux": "  disc:///dev/sg4          光学ドライブ（Linux）",
             "disc_windows": "  disc://D:                光学ドライブ（Windows）",
             "mkv": "  mkv://path.mkv           Matroska ファイル",
             "m2ts": "  m2ts://path.m2ts         BD トランスポートストリームファイル",
+            "mp4": "  mp4://path.mp4           MP4 ファイル",
+            "iso": "  iso://image.iso          Blu-ray ISO イメージ",
+            "dir": "  dir://folder/            復号済みファイルツリーをフォルダーに",
             "network": "  network://host:port      TCP ストリーム",
             "stdio": "  stdio://                 標準入出力パイプ",
-            "iso": "  iso://image.iso          Blu-ray ISO イメージ",
             "null": "  null://                  破棄（ベンチマーク用）",
+            "demux": "  demux://folder/          各トラックを個別のファイルに",
+            "video": "  video://folder/          映像トラックのみ",
+            "audio": "  audio://folder/          音声トラックのみ",
+            "sub": "  sub://folder/            字幕トラックのみ",
+            "chapters": "  chapters://file.xml      チャプター一覧 (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         タイトル構造を JSON で出力",
+            "fvi": "  fvi://file.fvi           フレーム単位の映像インデックス",
             "scheme_note": "  すべての URL には scheme:// プレフィックスが必要です。",
             "path_note": "  ファイルパスはスキームに続けます: mkv://./Movie.mkv、m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      ./log.txt に書き込みます（バグ報告には 3 を使用）。",
             "log_file": "      --log-file PATH 診断ログを ./log.txt ではなく PATH に書き込みます。",
             "quiet": "  -q, --quiet         出力を抑制する",
+            "language": "      --language CODE 表示言語 (--lang も可): de や pt-BR などのコード、または auto。",
             "raw": "      --raw           復号をスキップ（生の暗号化出力）",
             "multipass": "      --multipass    マルチパス復元用にマップファイルを書き込み/更新",
             "share": "      --share         ドライブプロファイルを送信（info disc:// のみ。リッピングでは -s は --subtitles を意味します）",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb、次にオンライン",
             "keydb_path": "keydb.cfg の場所 :",
             "keydb_url": "keydb 更新 URL :",
+            "keydb_busy": "keydb の更新がすでに実行中です — お待ちください。",
             "keyserver_url": "キーサービス URL :",
             "keyserver_token": "キーサービストークン :",
             "language": "インターフェース言語 :",

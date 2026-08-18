@@ -25,6 +25,7 @@
         "device_desc": "장치 경로 지정",
         "captured": "수집됨: GET_CONFIG 0x{code} {name} ({bytes} 바이트)",
         "submit_header": "다음 내용이 제출됩니다:",
+        "submit_prompt": "드라이브 지원 확대를 위해 이 프로필을 제출하시겠습니까? [Y/n] ",
         "submit_drive": "드라이브",
         "submit_serial": "일련번호",
         "submit_platform": "플랫폼",
@@ -36,6 +37,9 @@
         "submit_saved": "프로파일이 {dir}/에 저장되었습니다",
         "submit_zip": "Zip 아카이브: {path}",
         "submit_manual": "이 프로파일을 기여하려면 새 이슈를 열고 아래 텍스트를 붙여넣으세요:",
+        "submit_thanks": "제출했습니다 — 감사합니다!",
+        "submit_auto_failed": "자동 제출에 실패했습니다. 직접 신고하실 수도 있습니다:",
+        "submit_declined": "제출하지 않았습니다. 원하시면 직접 신고하실 수 있습니다:",
         "submit_issue_title": "이슈 제목: {title}",
         "submit_issue_body": "이슈 본문 (선과 선 사이의 모든 내용을 복사하세요):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "강제",
         "usage": "사용법: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "알 수 없음"
+        "format_unknown": "알 수 없음",
+        "file": "파일"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: 값 0은 범위(1–4)를 벗어났습니다. 무시합니다",
+        "log_level_not_a_number": "--log-level: 1–4 사이의 숫자가 필요하지만 '{value}'을(를) 받았습니다. 무시합니다",
+        "log_level_needs_value": "--log-level: 값이 필요합니다 (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: 잘못된 경로 '{path}' — 진단 로그를 기록하지 않았습니다",
+        "language_needs_value": "{flag}: 언어 코드가 필요합니다 (예: --language de)"
     },
     "usage": {
         "synopsis_1": "사용법: freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  명령별 도움말은 'freemkv <command> --help' (또는 'freemkv help <command>')를 실행하세요.",
         "urls_header": "스트림 URL:",
+        "tracks_header": "트랙 출력 (대상 전용):",
         "url": {
             "disc_auto": "  disc://                  광학 드라이브 (자동 감지)",
             "disc_linux": "  disc:///dev/sg4          광학 드라이브 (Linux)",
             "disc_windows": "  disc://D:                광학 드라이브 (Windows)",
             "mkv": "  mkv://path.mkv           Matroska 파일",
             "m2ts": "  m2ts://path.m2ts         BD 전송 스트림 파일",
+            "mp4": "  mp4://path.mp4           MP4 파일",
+            "iso": "  iso://image.iso          Blu-ray ISO 이미지",
+            "dir": "  dir://folder/            복호화된 파일 트리를 폴더에",
             "network": "  network://host:port      TCP 스트림",
             "stdio": "  stdio://                 표준 입출력 파이프",
-            "iso": "  iso://image.iso          Blu-ray ISO 이미지",
             "null": "  null://                  버림 (벤치마킹)",
+            "demux": "  demux://folder/          각 트랙을 개별 파일로",
+            "video": "  video://folder/          비디오 트랙만",
+            "audio": "  audio://folder/          오디오 트랙만",
+            "sub": "  sub://folder/            자막 트랙만",
+            "chapters": "  chapters://file.xml      챕터 목록 (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         타이틀 구조를 JSON으로",
+            "fvi": "  fvi://file.fvi           프레임 단위 비디오 인덱스",
             "scheme_note": "  모든 URL에는 scheme:// 접두사가 필요합니다.",
             "path_note": "  파일 경로는 스킴 뒤에 붙습니다: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      ./log.txt에 씁니다 (버그 신고에는 3 사용).",
             "log_file": "      --log-file PATH ./log.txt 대신 PATH에 진단 로그를 씁니다.",
             "quiet": "  -q, --quiet         출력 숨기기",
+            "language": "      --language CODE 인터페이스 언어 (--lang 도 가능): de 또는 pt-BR 같은 코드, 혹은 auto.",
             "raw": "      --raw           복호화 건너뛰기 (원본 암호화 출력)",
             "multipass": "      --multipass    멀티패스 복구를 위한 맵파일 쓰기/업데이트",
             "share": "      --share         드라이브 프로파일 제출 (info disc:// 전용; 추출에서 -s는 --subtitles를 의미)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb 후 온라인",
             "keydb_path": "keydb.cfg 위치 :",
             "keydb_url": "keydb 업데이트 URL :",
+            "keydb_busy": "keydb 업데이트가 이미 진행 중입니다 — 잠시 기다려 주세요.",
             "keyserver_url": "키 서비스 URL :",
             "keyserver_token": "키 서비스 토큰 :",
             "language": "인터페이스 언어 :",
