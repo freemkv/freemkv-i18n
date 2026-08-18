@@ -25,6 +25,7 @@
         "device_desc": "Указать путь к устройству",
         "captured": "Получено: GET_CONFIG 0x{code} {name} ({bytes} байт)",
         "submit_header": "Будет отправлено следующее:",
+        "submit_prompt": "Отправить этот профиль, чтобы расширить поддержку приводов? [Y/n] ",
         "submit_drive": "Привод",
         "submit_serial": "Серийный номер",
         "submit_platform": "Платформа",
@@ -36,6 +37,9 @@
         "submit_saved": "Профиль сохранён в {dir}/",
         "submit_zip": "Zip-архив: {path}",
         "submit_manual": "Чтобы внести этот профиль, откройте новую задачу (issue) и вставьте текст ниже:",
+        "submit_thanks": "Отправлено — спасибо!",
+        "submit_auto_failed": "Автоматическая отправка не удалась; вы всё ещё можете сообщить вручную:",
+        "submit_declined": "Не отправлено. При желании вы всё ещё можете сообщить вручную:",
         "submit_issue_title": "Заголовок задачи: {title}",
         "submit_issue_body": "Тело задачи (скопируйте всё между линиями):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "форсированные",
         "usage": "Использование: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Неизвестно"
+        "format_unknown": "Неизвестно",
+        "file": "Файл"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: значение 0 вне диапазона (1–4), игнорируется",
+        "log_level_not_a_number": "--log-level: ожидалось число 1–4, получено '{value}', игнорируется",
+        "log_level_needs_value": "--log-level: требуется значение (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: неверный путь '{path}' — диагностический журнал не записан",
+        "language_needs_value": "{flag}: требуется код языка (например, --language de)"
     },
     "usage": {
         "synopsis_1": "Использование: freemkv <источник> <назначение> [флаги]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Выполните «freemkv <команда> --help» (или «freemkv help <команда>») для справки по конкретной команде.",
         "urls_header": "URL-адреса потоков:",
+        "tracks_header": "Вывод по дорожкам (только назначение):",
         "url": {
             "disc_auto": "  disc://                  Оптический привод (автоопределение)",
             "disc_linux": "  disc:///dev/sg4          Оптический привод (Linux)",
             "disc_windows": "  disc://D:                Оптический привод (Windows)",
             "mkv": "  mkv://path.mkv           Файл Matroska",
             "m2ts": "  m2ts://path.m2ts         Файл транспортного потока BD",
+            "mp4": "  mp4://path.mp4           Файл MP4",
+            "iso": "  iso://image.iso          Образ ISO Blu-ray",
+            "dir": "  dir://folder/            Расшифрованное дерево файлов в папке",
             "network": "  network://host:port      Поток TCP",
             "stdio": "  stdio://                 Канал stdin/stdout",
-            "iso": "  iso://image.iso          Образ ISO Blu-ray",
             "null": "  null://                  Отбросить (бенчмаркинг)",
+            "demux": "  demux://folder/          Каждая дорожка отдельным файлом",
+            "video": "  video://folder/          Только видеодорожки",
+            "audio": "  audio://folder/          Только аудиодорожки",
+            "sub": "  sub://folder/            Только дорожки субтитров",
+            "chapters": "  chapters://file.xml      Список глав (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Структура тайтла в JSON",
+            "fvi": "  fvi://file.fvi           Покадровый индекс видео",
             "scheme_note": "  Все URL требуют префикса scheme://.",
             "path_note": "  Пути к файлам следуют за схемой: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      диагностический журнал в ./log.txt (используйте 3 для отчётов об ошибках).",
             "log_file": "      --log-file PATH Записывать диагностический журнал в PATH вместо ./log.txt.",
             "quiet": "  -q, --quiet         Подавить вывод",
+            "language": "      --language CODE Язык интерфейса (также --lang): код вида de или pt-BR, либо auto.",
             "raw": "      --raw           Пропустить расшифровку (сырой зашифрованный вывод)",
             "multipass": "      --multipass    Записать/обновить файл карты для многопроходного восстановления",
             "share": "      --share         Отправить профиль привода (только info disc://; при копировании -s означает --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, затем онлайн",
             "keydb_path": "Расположение keydb.cfg :",
             "keydb_url": "URL обновления keydb :",
+            "keydb_busy": "Обновление keydb уже выполняется — подождите.",
             "keyserver_url": "URL службы ключей :",
             "keyserver_token": "Токен службы ключей :",
             "language": "Язык интерфейса :",

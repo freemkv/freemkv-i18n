@@ -25,6 +25,7 @@
         "device_desc": "Specifier le chemin du peripherique",
         "captured": "Capture : GET_CONFIG 0x{code} {name} ({bytes} octets)",
         "submit_header": "Les informations suivantes seront soumises :",
+        "submit_prompt": "Envoyer ce profil pour élargir la prise en charge des lecteurs ? [Y/n] ",
         "submit_drive": "Lecteur",
         "submit_serial": "Serie",
         "submit_platform": "Plateforme",
@@ -36,6 +37,9 @@
         "submit_saved": "Profil enregistré dans {dir}/",
         "submit_zip": "Archive zip : {path}",
         "submit_manual": "Pour contribuer ce profil, ouvrez un nouveau ticket et collez le texte ci-dessous :",
+        "submit_thanks": "Envoyé — merci !",
+        "submit_auto_failed": "L'envoi automatique a échoué ; vous pouvez toujours le signaler à la main :",
+        "submit_declined": "Non envoyé. Vous pouvez toujours le signaler à la main si vous le souhaitez :",
         "submit_issue_title": "Titre du ticket : {title}",
         "submit_issue_body": "Corps du ticket (copiez tout ce qui se trouve entre les lignes) :"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "force",
         "usage": "Utilisation : freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Inconnu"
+        "format_unknown": "Inconnu",
+        "file": "Fichier"
     },
     "stream": {
         "purpose": {
@@ -370,22 +375,37 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level : la valeur 0 est hors plage (1–4), ignorée",
+        "log_level_not_a_number": "--log-level : nombre 1–4 attendu, '{value}' reçu, ignoré",
+        "log_level_needs_value": "--log-level : nécessite une valeur (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file : chemin invalide '{path}' — aucun journal de diagnostic écrit",
+        "language_needs_value": "{flag} : nécessite un code de langue (par ex. --language de)"
     },
     "usage": {
         "synopsis_1": "Utilisation : freemkv <source> <dest> [options]",
         "synopsis_2": "              freemkv info <url> [options]",
         "urls_header": "URLs de flux :",
+        "tracks_header": "Sorties par piste (destination uniquement) :",
         "url": {
             "disc_auto": "  disc://                  Lecteur optique (détection automatique)",
             "disc_linux": "  disc:///dev/sg4          Lecteur optique (Linux)",
             "disc_windows": "  disc://D:                Lecteur optique (Windows)",
             "mkv": "  mkv://chemin.mkv         Fichier Matroska",
             "m2ts": "  m2ts://chemin.m2ts       Fichier de flux de transport BD",
+            "mp4": "  mp4://path.mp4           Fichier MP4",
+            "iso": "  iso://image.iso          Image ISO Blu-ray",
+            "dir": "  dir://folder/            Arborescence déchiffrée dans un dossier",
             "network": "  network://hote:port      Flux TCP",
             "stdio": "  stdio://                 Tube stdin/stdout",
-            "iso": "  iso://image.iso          Image ISO Blu-ray",
             "null": "  null://                  Ignorer (benchmarking)",
+            "demux": "  demux://folder/          Chaque piste dans un fichier séparé",
+            "video": "  video://folder/          Pistes vidéo uniquement",
+            "audio": "  audio://folder/          Pistes audio uniquement",
+            "sub": "  sub://folder/            Pistes de sous-titres uniquement",
+            "chapters": "  chapters://file.xml      Liste des chapitres (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Structure du titre en JSON",
+            "fvi": "  fvi://file.fvi           Index vidéo image par image",
             "scheme_note": "  Toutes les URLs nécessitent un préfixe scheme://.",
             "path_note": "  Les chemins suivent le schéma : mkv://./Film.mkv, m2ts://./Film.m2ts"
         },
@@ -423,6 +443,7 @@
             "log_level_3": "                      diagnostic dans ./log.txt (utiliser 3 pour les rapports de bugs).",
             "log_file": "      --log-file CHEM  Écrire le journal de diagnostic dans CHEM plutôt que ./log.txt.",
             "quiet": "  -q, --quiet         Supprimer la sortie",
+            "language": "      --language CODE Langue de l'interface (aussi --lang) : un code comme de ou pt-BR, ou auto.",
             "raw": "      --raw           Ignorer le déchiffrement (sortie chiffrée brute)",
             "multipass": "      --multipass    Écrire/mettre à jour le mapfile pour la récupération multipasse",
             "share": "      --share         Soumettre le profil du lecteur (info disc:// uniquement ; lors d'un rip, -s signifie --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, puis en ligne",
             "keydb_path": "Emplacement de keydb.cfg :",
             "keydb_url": "URL de mise à jour du keydb :",
+            "keydb_busy": "Une mise à jour de la keydb est déjà en cours — veuillez patienter.",
             "keyserver_url": "URL du service de clés :",
             "keyserver_token": "Jeton du service de clés :",
             "language": "Langue de l'interface :",

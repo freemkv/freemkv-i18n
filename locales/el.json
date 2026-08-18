@@ -25,6 +25,7 @@
         "device_desc": "Καθορισμός διαδρομής συσκευής",
         "captured": "Καταγράφηκε: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "Θα υποβληθούν τα ακόλουθα:",
+        "submit_prompt": "Υποβολή αυτού του προφίλ για διεύρυνση της υποστήριξης μονάδων; [Y/n] ",
         "submit_drive": "Μονάδα",
         "submit_serial": "Σειριακός",
         "submit_platform": "Πλατφόρμα",
@@ -36,6 +37,9 @@
         "submit_saved": "Το προφίλ αποθηκεύτηκε στο {dir}/",
         "submit_zip": "Αρχείο zip: {path}",
         "submit_manual": "Για να συνεισφέρετε αυτό το προφίλ, ανοίξτε ένα νέο ζήτημα και επικολλήστε το παρακάτω κείμενο:",
+        "submit_thanks": "Υποβλήθηκε — ευχαριστούμε!",
+        "submit_auto_failed": "Η αυτόματη υποβολή απέτυχε· μπορείτε να την υποβάλετε χειροκίνητα:",
+        "submit_declined": "Δεν υποβλήθηκε. Μπορείτε να την υποβάλετε χειροκίνητα αν θέλετε:",
         "submit_issue_title": "Τίτλος ζητήματος: {title}",
         "submit_issue_body": "Σώμα ζητήματος (αντιγράψτε τα πάντα μεταξύ των γραμμών):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "εξαναγκασμένος",
         "usage": "Χρήση: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Άγνωστη"
+        "format_unknown": "Άγνωστη",
+        "file": "Αρχείο"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: η τιμή 0 είναι εκτός εύρους (1–4), αγνοήθηκε",
+        "log_level_not_a_number": "--log-level: αναμενόταν αριθμός 1–4, ελήφθη '{value}', αγνοήθηκε",
+        "log_level_needs_value": "--log-level: απαιτεί τιμή (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: μη έγκυρη διαδρομή '{path}' — δεν γράφτηκε αρχείο διαγνωστικών",
+        "language_needs_value": "{flag}: απαιτεί κωδικό γλώσσας (π.χ. --language de)"
     },
     "usage": {
         "synopsis_1": "Χρήση: freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Εκτελέστε 'freemkv <command> --help' (ή 'freemkv help <command>') για βοήθεια ανά εντολή.",
         "urls_header": "URL ροών:",
+        "tracks_header": "Έξοδοι ανά κομμάτι (μόνο προορισμός):",
         "url": {
             "disc_auto": "  disc://                  Οπτική μονάδα (αυτόματος εντοπισμός)",
             "disc_linux": "  disc:///dev/sg4          Οπτική μονάδα (Linux)",
             "disc_windows": "  disc://D:                Οπτική μονάδα (Windows)",
             "mkv": "  mkv://path.mkv           Αρχείο Matroska",
             "m2ts": "  m2ts://path.m2ts         Αρχείο ροής μεταφοράς BD",
+            "mp4": "  mp4://path.mp4           Αρχείο MP4",
+            "iso": "  iso://image.iso          Εικόνα ISO Blu-ray",
+            "dir": "  dir://folder/            Αποκρυπτογραφημένο δέντρο αρχείων σε φάκελο",
             "network": "  network://host:port      Ροή TCP",
             "stdio": "  stdio://                 Σωλήνωση stdin/stdout",
-            "iso": "  iso://image.iso          Εικόνα ISO Blu-ray",
             "null": "  null://                  Απόρριψη (benchmarking)",
+            "demux": "  demux://folder/          Κάθε κομμάτι ως ξεχωριστό αρχείο",
+            "video": "  video://folder/          Μόνο κομμάτια βίντεο",
+            "audio": "  audio://folder/          Μόνο κομμάτια ήχου",
+            "sub": "  sub://folder/            Μόνο κομμάτια υποτίτλων",
+            "chapters": "  chapters://file.xml      Λίστα κεφαλαίων (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Δομή τίτλου σε JSON",
+            "fvi": "  fvi://file.fvi           Ευρετήριο βίντεο ανά καρέ",
             "scheme_note": "  Όλα τα URL απαιτούν πρόθεμα scheme://.",
             "path_note": "  Οι διαδρομές αρχείων ακολουθούν το σχήμα: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      διαγνωστικό αρχείο στο ./log.txt (χρησιμοποιήστε 3 για αναφορές σφαλμάτων).",
             "log_file": "      --log-file PATH Εγγραφή του διαγνωστικού αρχείου στο PATH αντί για ./log.txt.",
             "quiet": "  -q, --quiet         Απόκρυψη εξόδου",
+            "language": "      --language CODE Γλώσσα διεπαφής (και --lang): κωδικός όπως de ή pt-BR, ή auto.",
             "raw": "      --raw           Παράλειψη αποκρυπτογράφησης (raw κρυπτογραφημένη έξοδος)",
             "multipass": "      --multipass    Εγγραφή/ενημέρωση αρχείου χάρτη για ανάκτηση πολλαπλών περασμάτων",
             "share": "      --share         Υποβολή προφίλ μονάδας (μόνο info disc://· σε εξαγωγή, -s σημαίνει --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, μετά διαδικτυακά",
             "keydb_path": "Τοποθεσία keydb.cfg :",
             "keydb_url": "URL ενημέρωσης keydb :",
+            "keydb_busy": "Μια ενημέρωση keydb εκτελείται ήδη — περιμένετε.",
             "keyserver_url": "URL υπηρεσίας κλειδιών :",
             "keyserver_token": "Token υπηρεσίας κλειδιών :",
             "language": "Γλώσσα διεπαφής :",

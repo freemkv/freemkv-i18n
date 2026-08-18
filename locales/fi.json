@@ -25,6 +25,7 @@
         "device_desc": "Määritä laitepolku",
         "captured": "Kaapattu: GET_CONFIG 0x{code} {name} ({bytes} tavua)",
         "submit_header": "Seuraavat tiedot lähetetään:",
+        "submit_prompt": "Lähetetäänkö tämä profiili asemien tuen laajentamiseksi? [Y/n] ",
         "submit_drive": "Asema",
         "submit_serial": "Sarjanumero",
         "submit_platform": "Alusta",
@@ -36,6 +37,9 @@
         "submit_saved": "Profiili tallennettu kohteeseen {dir}/",
         "submit_zip": "Zip-arkisto: {path}",
         "submit_manual": "Osallistuaksesi tähän profiiliin avaa uusi issue ja liitä alla oleva teksti:",
+        "submit_thanks": "Lähetetty — kiitos!",
+        "submit_auto_failed": "Automaattinen lähetys epäonnistui; voit silti ilmoittaa sen käsin:",
+        "submit_declined": "Ei lähetetty. Voit silti ilmoittaa sen käsin, jos haluat:",
         "submit_issue_title": "Issuen otsikko: {title}",
         "submit_issue_body": "Issuen sisältö (kopioi kaikki viivojen väliltä):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "pakotettu",
         "usage": "Käyttö: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Tuntematon"
+        "format_unknown": "Tuntematon",
+        "file": "Tiedosto"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: arvo 0 on sallitun välin ulkopuolella (1–4), ohitetaan",
+        "log_level_not_a_number": "--log-level: odotettiin lukua 1–4, saatiin '{value}', ohitetaan",
+        "log_level_needs_value": "--log-level: vaatii arvon (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: virheellinen polku '{path}' — diagnostiikkalokia ei kirjoitettu",
+        "language_needs_value": "{flag}: vaatii kielikoodin (esim. --language de)"
     },
     "usage": {
         "synopsis_1": "Käyttö: freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Suorita 'freemkv <command> --help' (tai 'freemkv help <command>') komentokohtaista ohjetta varten.",
         "urls_header": "Raita-URL:t:",
+        "tracks_header": "Raitakohtaiset tulosteet (vain kohde):",
         "url": {
             "disc_auto": "  disc://                  Optinen asema (automaattinen tunnistus)",
             "disc_linux": "  disc:///dev/sg4          Optinen asema (Linux)",
             "disc_windows": "  disc://D:                Optinen asema (Windows)",
             "mkv": "  mkv://path.mkv           Matroska-tiedosto",
             "m2ts": "  m2ts://path.m2ts         BD-siirtovirtatiedosto",
+            "mp4": "  mp4://path.mp4           MP4-tiedosto",
+            "iso": "  iso://image.iso          Blu-ray ISO -levykuva",
+            "dir": "  dir://folder/            Puretttu tiedostopuu kansiossa",
             "network": "  network://host:port      TCP-virta",
             "stdio": "  stdio://                 Stdin/stdout-putki",
-            "iso": "  iso://image.iso          Blu-ray ISO -levykuva",
             "null": "  null://                  Hylkää (suorituskykytesti)",
+            "demux": "  demux://folder/          Jokainen raita omana tiedostonaan",
+            "video": "  video://folder/          Vain videoraidat",
+            "audio": "  audio://folder/          Vain ääniraidat",
+            "sub": "  sub://folder/            Vain tekstitysraidat",
+            "chapters": "  chapters://file.xml      Lukuluettelo (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Nimikkeen rakenne JSON-muodossa",
+            "fvi": "  fvi://file.fvi           Ruutukohtainen videohakemisto",
             "scheme_note": "  Kaikki URL:t vaativat scheme://-etuliitteen.",
             "path_note": "  Tiedostopolut seuraavat skeemaa: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      diagnostiikkalokin kohteeseen ./log.txt (käytä 3 virheraportteihin).",
             "log_file": "      --log-file PATH Kirjoita diagnostiikkaloki kohteeseen PATH kohteen ./log.txt sijaan.",
             "quiet": "  -q, --quiet         Vaienna tuloste",
+            "language": "      --language CODE Käyttöliittymän kieli (myös --lang): koodi kuten de tai pt-BR, tai auto.",
             "raw": "      --raw           Ohita salauksen purku (raaka salattu tuloste)",
             "multipass": "      --multipass    Kirjoita/päivitä karttatiedosto monivaiheista palautusta varten",
             "share": "      --share         Lähetä aseman profiili (vain info disc://; rippauksessa -s tarkoittaa --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, sitten verkko",
             "keydb_path": "keydb.cfg-sijainti :",
             "keydb_url": "keydb-päivitys-URL :",
+            "keydb_busy": "keydb-päivitys on jo käynnissä — odota hetki.",
             "keyserver_url": "Avainpalvelun URL :",
             "keyserver_token": "Avainpalvelun token :",
             "language": "Käyttöliittymän kieli :",

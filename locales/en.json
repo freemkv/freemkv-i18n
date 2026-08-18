@@ -25,6 +25,7 @@
         "device_desc": "Specify device path",
         "captured": "Captured: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "The following will be submitted:",
+        "submit_prompt": "Submit this profile to help expand drive support? [Y/n] ",
         "submit_drive": "Drive",
         "submit_serial": "Serial",
         "submit_platform": "Platform",
@@ -36,6 +37,9 @@
         "submit_saved": "Profile saved to {dir}/",
         "submit_zip": "Zip archive: {path}",
         "submit_manual": "To contribute this profile, open a new issue and paste the text below:",
+        "submit_thanks": "Submitted — thank you!",
+        "submit_auto_failed": "Automated submission failed; you can still file it by hand:",
+        "submit_declined": "Not submitted. You can still file it by hand if you like:",
         "submit_issue_title": "Issue title: {title}",
         "submit_issue_body": "Issue body (copy everything between the lines):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "forced",
         "usage": "Usage: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Unknown"
+        "format_unknown": "Unknown",
+        "file": "File"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: value 0 is out of range (1–4), ignored",
+        "log_level_not_a_number": "--log-level: expected a number 1–4, got '{value}', ignored",
+        "log_level_needs_value": "--log-level: requires a value (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: invalid path '{path}' — no diagnostic log written",
+        "language_needs_value": "{flag}: requires a language code (e.g. --language de)"
     },
     "usage": {
         "synopsis_1": "Usage: freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
         "urls_header": "Stream URLs:",
+        "tracks_header": "Track outputs (destination only):",
         "url": {
             "disc_auto": "  disc://                  Optical drive (auto-detect)",
             "disc_linux": "  disc:///dev/sg4          Optical drive (Linux)",
             "disc_windows": "  disc://D:                Optical drive (Windows)",
             "mkv": "  mkv://path.mkv           Matroska file",
             "m2ts": "  m2ts://path.m2ts         BD transport stream file",
+            "mp4": "  mp4://path.mp4           MP4 file",
+            "iso": "  iso://image.iso          Blu-ray ISO image",
+            "dir": "  dir://folder/            Decrypted file tree in a folder",
             "network": "  network://host:port      TCP stream",
             "stdio": "  stdio://                 Stdin/stdout pipe",
-            "iso": "  iso://image.iso          Blu-ray ISO image",
             "null": "  null://                  Discard (benchmarking)",
+            "demux": "  demux://folder/          Every track as a separate file",
+            "video": "  video://folder/          Video tracks only",
+            "audio": "  audio://folder/          Audio tracks only",
+            "sub": "  sub://folder/            Subtitle tracks only",
+            "chapters": "  chapters://file.xml      Chapter list (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Title structure as JSON",
+            "fvi": "  fvi://file.fvi           Per-frame video index",
             "scheme_note": "  All URLs require a scheme:// prefix.",
             "path_note": "  File paths follow the scheme: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      diagnostic log to ./log.txt (use 3 for bug reports).",
             "log_file": "      --log-file PATH Write the diagnostic log to PATH instead of ./log.txt.",
             "quiet": "  -q, --quiet         Suppress output",
+            "language": "      --language CODE Interface language (also --lang): a code like de or pt-BR, or auto.",
             "raw": "      --raw           Skip decryption (raw encrypted output)",
             "multipass": "      --multipass    Write/update mapfile for multipass recovery",
             "share": "      --share         Submit drive profile (info disc:// only; on a rip, -s means --subtitles)",
@@ -533,6 +554,7 @@
             "key_src_both": "keydb, then online",
             "keydb_path": "keydb.cfg location :",
             "keydb_url": "keydb update URL :",
+            "keydb_busy": "A keydb update is already running — please wait.",
             "keyserver_url": "Key service URL :",
             "keyserver_token": "Key service token :",
             "language": "Interface language :",

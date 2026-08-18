@@ -25,6 +25,7 @@
         "device_desc": "Ange enhetssökväg",
         "captured": "Infångade: GET_CONFIG 0x{code} {name} ({bytes} byte)",
         "submit_header": "Följande kommer att skickas in:",
+        "submit_prompt": "Vill du skicka in den här profilen för att utöka enhetsstödet? [Y/n] ",
         "submit_drive": "Enhet",
         "submit_serial": "Serienummer",
         "submit_platform": "Plattform",
@@ -36,6 +37,9 @@
         "submit_saved": "Profil sparad till {dir}/",
         "submit_zip": "Zip-arkiv: {path}",
         "submit_manual": "För att bidra med den här profilen, öppna ett nytt ärende och klistra in texten nedan:",
+        "submit_thanks": "Inskickad — tack!",
+        "submit_auto_failed": "Automatisk inskickning misslyckades; du kan fortfarande rapportera den för hand:",
+        "submit_declined": "Inte inskickad. Du kan fortfarande rapportera den för hand om du vill:",
         "submit_issue_title": "Ärendetitel: {title}",
         "submit_issue_body": "Ärendetext (kopiera allt mellan linjerna):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "tvingad",
         "usage": "Användning: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Okänt"
+        "format_unknown": "Okänt",
+        "file": "Fil"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: värdet 0 ligger utanför intervallet (1–4), ignoreras",
+        "log_level_not_a_number": "--log-level: förväntade ett tal 1–4, fick '{value}', ignoreras",
+        "log_level_needs_value": "--log-level: kräver ett värde (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: ogiltig sökväg '{path}' — ingen diagnostiklogg skrevs",
+        "language_needs_value": "{flag}: kräver en språkkod (t.ex. --language de)"
     },
     "usage": {
         "synopsis_1": "Användning: freemkv <källa> <mål> [flaggor]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Kör 'freemkv <kommando> --help' (eller 'freemkv help <kommando>') för kommandospecifik hjälp.",
         "urls_header": "Ström-URL:er:",
+        "tracks_header": "Spårutgångar (endast som mål):",
         "url": {
             "disc_auto": "  disc://                  Optisk enhet (autoidentifiera)",
             "disc_linux": "  disc:///dev/sg4          Optisk enhet (Linux)",
             "disc_windows": "  disc://D:                Optisk enhet (Windows)",
             "mkv": "  mkv://path.mkv           Matroska-fil",
             "m2ts": "  m2ts://path.m2ts         BD-transportströmfil",
+            "mp4": "  mp4://path.mp4           MP4-fil",
+            "iso": "  iso://image.iso          Blu-ray ISO-avbild",
+            "dir": "  dir://folder/            Dekrypterat filträd i en mapp",
             "network": "  network://host:port      TCP-ström",
             "stdio": "  stdio://                 Stdin/stdout-rör",
-            "iso": "  iso://image.iso          Blu-ray ISO-avbild",
             "null": "  null://                  Kassera (prestandatest)",
+            "demux": "  demux://folder/          Varje spår som en egen fil",
+            "video": "  video://folder/          Endast videospår",
+            "audio": "  audio://folder/          Endast ljudspår",
+            "sub": "  sub://folder/            Endast undertextspår",
+            "chapters": "  chapters://file.xml      Kapitellista (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Titelstruktur som JSON",
+            "fvi": "  fvi://file.fvi           Videoindex per bildruta",
             "scheme_note": "  Alla URL:er kräver ett scheme://-prefix.",
             "path_note": "  Filsökvägar följer schemat: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      diagnostiklogg till ./log.txt (använd 3 för felrapporter).",
             "log_file": "      --log-file PATH Skriv diagnostikloggen till PATH istället för ./log.txt.",
             "quiet": "  -q, --quiet         Undertryck utdata",
+            "language": "      --language CODE Gränssnittsspråk (även --lang): en kod som de eller pt-BR, eller auto.",
             "raw": "      --raw           Hoppa över dekryptering (rå krypterad utdata)",
             "multipass": "      --multipass    Skriv/uppdatera kartfil för flerpass-återställning",
             "share": "      --share         Skicka in enhetsprofil (endast info disc://; vid en rippning betyder -s --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, sedan online",
             "keydb_path": "Plats för keydb.cfg :",
             "keydb_url": "URL för keydb-uppdatering :",
+            "keydb_busy": "En keydb-uppdatering pågår redan — vänta lite.",
             "keyserver_url": "URL för nyckeltjänst :",
             "keyserver_token": "Token för nyckeltjänst :",
             "language": "Gränssnittsspråk :",

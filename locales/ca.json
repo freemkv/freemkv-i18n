@@ -25,6 +25,7 @@
         "device_desc": "Especifica el camí del dispositiu",
         "captured": "Capturat: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "S'enviarà el següent:",
+        "submit_prompt": "Voleu enviar aquest perfil per ampliar la compatibilitat d'unitats? [Y/n] ",
         "submit_drive": "Unitat",
         "submit_serial": "Número de sèrie",
         "submit_platform": "Plataforma",
@@ -36,6 +37,9 @@
         "submit_saved": "Perfil desat a {dir}/",
         "submit_zip": "Arxiu zip: {path}",
         "submit_manual": "Per contribuir amb aquest perfil, obriu una incidència nova i enganxeu-hi el text següent:",
+        "submit_thanks": "Enviat: gràcies!",
+        "submit_auto_failed": "L'enviament automàtic ha fallat; encara podeu notificar-ho a mà:",
+        "submit_declined": "No s'ha enviat. Encara podeu notificar-ho a mà si voleu:",
         "submit_issue_title": "Títol de la incidència: {title}",
         "submit_issue_body": "Cos de la incidència (copieu-ho tot entre les línies):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "forçat",
         "usage": "Ús: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Desconegut"
+        "format_unknown": "Desconegut",
+        "file": "Fitxer"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: el valor 0 és fora d'interval (1–4), s'ignora",
+        "log_level_not_a_number": "--log-level: s'esperava un número 1–4, s'ha rebut '{value}', s'ignora",
+        "log_level_needs_value": "--log-level: requereix un valor (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: camí no vàlid '{path}' — no s'ha escrit cap registre de diagnòstic",
+        "language_needs_value": "{flag}: requereix un codi d'idioma (p. ex. --language de)"
     },
     "usage": {
         "synopsis_1": "Ús: freemkv <origen> <destinació> [indicadors]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Executeu «freemkv <ordre> --help» (o «freemkv help <ordre>») per obtenir ajuda específica de l'ordre.",
         "urls_header": "URL de flux:",
+        "tracks_header": "Sortides per pista (només destinació):",
         "url": {
             "disc_auto": "  disc://                  Unitat òptica (autodetecció)",
             "disc_linux": "  disc:///dev/sg4          Unitat òptica (Linux)",
             "disc_windows": "  disc://D:                Unitat òptica (Windows)",
             "mkv": "  mkv://path.mkv           Fitxer Matroska",
             "m2ts": "  m2ts://path.m2ts         Fitxer de flux de transport de BD",
+            "mp4": "  mp4://path.mp4           Fitxer MP4",
+            "iso": "  iso://image.iso          Imatge ISO de Blu-ray",
+            "dir": "  dir://folder/            Arbre de fitxers desxifrat en una carpeta",
             "network": "  network://host:port      Flux TCP",
             "stdio": "  stdio://                 Canonada d'entrada/sortida estàndard",
-            "iso": "  iso://image.iso          Imatge ISO de Blu-ray",
             "null": "  null://                  Descarta (per fer proves de rendiment)",
+            "demux": "  demux://folder/          Cada pista en un fitxer separat",
+            "video": "  video://folder/          Només pistes de vídeo",
+            "audio": "  audio://folder/          Només pistes d'àudio",
+            "sub": "  sub://folder/            Només pistes de subtítols",
+            "chapters": "  chapters://file.xml      Llista de capítols (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Estructura del títol en JSON",
+            "fvi": "  fvi://file.fvi           Índex de vídeo per fotograma",
             "scheme_note": "  Totes les URL requereixen un prefix esquema://.",
             "path_note": "  Els camins de fitxer segueixen l'esquema: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      registre de diagnòstic a ./log.txt (useu 3 per als informes d'errors).",
             "log_file": "      --log-file PATH Escriu el registre de diagnòstic a PATH en lloc de ./log.txt.",
             "quiet": "  -q, --quiet         Suprimeix la sortida",
+            "language": "      --language CODE Idioma de la interfície (també --lang): un codi com de o pt-BR, o auto.",
             "raw": "      --raw           Omet el desxifratge (sortida xifrada bruta)",
             "multipass": "      --multipass    Escriu/actualitza el fitxer de mapa per a recuperació multipassada",
             "share": "      --share         Envia el perfil de la unitat (només info disc://; en una extracció, -s vol dir --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, després en línia",
             "keydb_path": "Ubicació de keydb.cfg :",
             "keydb_url": "URL d'actualització del keydb :",
+            "keydb_busy": "Ja hi ha una actualització de keydb en curs: espereu.",
             "keyserver_url": "URL del servei de claus :",
             "keyserver_token": "Testimoni del servei de claus :",
             "language": "Idioma de la interfície :",

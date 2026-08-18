@@ -25,6 +25,7 @@
         "device_desc": "Zadať cestu k zariadeniu",
         "captured": "Zachytené: GET_CONFIG 0x{code} {name} ({bytes} bajtov)",
         "submit_header": "Odoslané bude nasledovné:",
+        "submit_prompt": "Odoslať tento profil a pomôcť rozšíriť podporu mechaník? [Y/n] ",
         "submit_drive": "Mechanika",
         "submit_serial": "Sériové číslo",
         "submit_platform": "Platforma",
@@ -36,6 +37,9 @@
         "submit_saved": "Profil uložený do {dir}/",
         "submit_zip": "Archív zip: {path}",
         "submit_manual": "Ak chcete prispieť týmto profilom, otvorte nové hlásenie a vložte text nižšie:",
+        "submit_thanks": "Odoslané — ďakujeme!",
+        "submit_auto_failed": "Automatické odoslanie zlyhalo; stále to môžete nahlásiť ručne:",
+        "submit_declined": "Neodoslané. Ak chcete, stále to môžete nahlásiť ručne:",
         "submit_issue_title": "Názov hlásenia: {title}",
         "submit_issue_body": "Telo hlásenia (skopírujte všetko medzi čiarami):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "vynútené",
         "usage": "Použitie: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Neznámy"
+        "format_unknown": "Neznámy",
+        "file": "Súbor"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: hodnota 0 je mimo rozsahu (1–4), ignoruje sa",
+        "log_level_not_a_number": "--log-level: očakávalo sa číslo 1–4, prijaté '{value}', ignoruje sa",
+        "log_level_needs_value": "--log-level: vyžaduje hodnotu (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: neplatná cesta '{path}' — diagnostický denník sa nezapísal",
+        "language_needs_value": "{flag}: vyžaduje kód jazyka (napr. --language de)"
     },
     "usage": {
         "synopsis_1": "Použitie: freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Spustite 'freemkv <command> --help' (alebo 'freemkv help <command>') pre pomoc ku konkrétnemu príkazu.",
         "urls_header": "URL stôp:",
+        "tracks_header": "Výstupy po stopách (iba cieľ):",
         "url": {
             "disc_auto": "  disc://                  Optická mechanika (automatické zistenie)",
             "disc_linux": "  disc:///dev/sg4          Optická mechanika (Linux)",
             "disc_windows": "  disc://D:                Optická mechanika (Windows)",
             "mkv": "  mkv://path.mkv           Súbor Matroska",
             "m2ts": "  m2ts://path.m2ts         Súbor transportného toku BD",
+            "mp4": "  mp4://path.mp4           Súbor MP4",
+            "iso": "  iso://image.iso          Obraz ISO Blu-ray",
+            "dir": "  dir://folder/            Dešifrovaný strom súborov v priečinku",
             "network": "  network://host:port      Tok TCP",
             "stdio": "  stdio://                 Rúra stdin/stdout",
-            "iso": "  iso://image.iso          Obraz ISO Blu-ray",
             "null": "  null://                  Zahodiť (benchmarking)",
+            "demux": "  demux://folder/          Každá stopa ako samostatný súbor",
+            "video": "  video://folder/          Iba obrazové stopy",
+            "audio": "  audio://folder/          Iba zvukové stopy",
+            "sub": "  sub://folder/            Iba titulkové stopy",
+            "chapters": "  chapters://file.xml      Zoznam kapitol (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Štruktúra titulu vo formáte JSON",
+            "fvi": "  fvi://file.fvi           Index videa po snímkach",
             "scheme_note": "  Všetky URL vyžadujú predponu scheme://.",
             "path_note": "  Cesty k súborom nasledujú za schémou: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      diagnostický záznam do ./log.txt (pre hlásenia chýb použite 3).",
             "log_file": "      --log-file PATH Zapísať diagnostický záznam do PATH namiesto ./log.txt.",
             "quiet": "  -q, --quiet         Potlačiť výstup",
+            "language": "      --language CODE Jazyk rozhrania (aj --lang): kód ako de alebo pt-BR, prípadne auto.",
             "raw": "      --raw           Preskočiť dešifrovanie (surový šifrovaný výstup)",
             "multipass": "      --multipass    Zapísať/aktualizovať mapovací súbor pre viacprechodovú obnovu",
             "share": "      --share         Odoslať profil mechaniky (iba info disc://; pri kopírovaní -s znamená --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, potom online",
             "keydb_path": "Umiestnenie keydb.cfg :",
             "keydb_url": "URL aktualizácie keydb :",
+            "keydb_busy": "Aktualizácia keydb už prebieha — počkajte, prosím.",
             "keyserver_url": "URL služby kľúčov :",
             "keyserver_token": "Token služby kľúčov :",
             "language": "Jazyk rozhrania :",

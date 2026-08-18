@@ -25,6 +25,7 @@
         "device_desc": "Chỉ định đường dẫn thiết bị",
         "captured": "Đã ghi lại: GET_CONFIG 0x{code} {name} ({bytes} byte)",
         "submit_header": "Nội dung sau đây sẽ được gửi:",
+        "submit_prompt": "Gửi hồ sơ này để mở rộng hỗ trợ ổ đĩa? [Y/n] ",
         "submit_drive": "Ổ đĩa",
         "submit_serial": "Sê-ri",
         "submit_platform": "Nền tảng",
@@ -36,6 +37,9 @@
         "submit_saved": "Đã lưu hồ sơ vào {dir}/",
         "submit_zip": "Tệp nén zip: {path}",
         "submit_manual": "Để đóng góp hồ sơ này, hãy mở một issue mới và dán văn bản bên dưới:",
+        "submit_thanks": "Đã gửi — cảm ơn bạn!",
+        "submit_auto_failed": "Gửi tự động thất bại; bạn vẫn có thể báo cáo thủ công:",
+        "submit_declined": "Chưa gửi. Bạn vẫn có thể báo cáo thủ công nếu muốn:",
         "submit_issue_title": "Tiêu đề issue: {title}",
         "submit_issue_body": "Nội dung issue (sao chép mọi thứ giữa các dòng):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "bắt buộc",
         "usage": "Cách dùng: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Không xác định"
+        "format_unknown": "Không xác định",
+        "file": "Tệp"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: giá trị 0 nằm ngoài phạm vi (1–4), bỏ qua",
+        "log_level_not_a_number": "--log-level: cần một số 1–4, nhận được '{value}', bỏ qua",
+        "log_level_needs_value": "--log-level: cần một giá trị (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: đường dẫn không hợp lệ '{path}' — không ghi nhật ký chẩn đoán",
+        "language_needs_value": "{flag}: cần một mã ngôn ngữ (ví dụ --language de)"
     },
     "usage": {
         "synopsis_1": "Cách dùng: freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Chạy 'freemkv <command> --help' (hoặc 'freemkv help <command>') để có trợ giúp riêng cho lệnh.",
         "urls_header": "URL luồng:",
+        "tracks_header": "Đầu ra theo rãnh (chỉ dùng làm đích):",
         "url": {
             "disc_auto": "  disc://                  Ổ đĩa quang (tự động phát hiện)",
             "disc_linux": "  disc:///dev/sg4          Ổ đĩa quang (Linux)",
             "disc_windows": "  disc://D:                Ổ đĩa quang (Windows)",
             "mkv": "  mkv://path.mkv           Tệp Matroska",
             "m2ts": "  m2ts://path.m2ts         Tệp luồng truyền tải BD",
+            "mp4": "  mp4://path.mp4           Tệp MP4",
+            "iso": "  iso://image.iso          Ảnh ISO Blu-ray",
+            "dir": "  dir://folder/            Cây tệp đã giải mã trong một thư mục",
             "network": "  network://host:port      Luồng TCP",
             "stdio": "  stdio://                 Đường ống stdin/stdout",
-            "iso": "  iso://image.iso          Ảnh ISO Blu-ray",
             "null": "  null://                  Loại bỏ (đo hiệu năng)",
+            "demux": "  demux://folder/          Mỗi rãnh thành một tệp riêng",
+            "video": "  video://folder/          Chỉ các rãnh video",
+            "audio": "  audio://folder/          Chỉ các rãnh âm thanh",
+            "sub": "  sub://folder/            Chỉ các rãnh phụ đề",
+            "chapters": "  chapters://file.xml      Danh sách chương (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Cấu trúc tựa đề dạng JSON",
+            "fvi": "  fvi://file.fvi           Chỉ mục video theo từng khung hình",
             "scheme_note": "  Tất cả URL đều cần tiền tố scheme://.",
             "path_note": "  Đường dẫn tệp theo sau scheme: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      nhật ký chẩn đoán vào ./log.txt (dùng 3 cho báo cáo lỗi).",
             "log_file": "      --log-file PATH Ghi nhật ký chẩn đoán vào PATH thay vì ./log.txt.",
             "quiet": "  -q, --quiet         Ẩn kết quả xuất ra",
+            "language": "      --language CODE Ngôn ngữ giao diện (cũng dùng --lang): mã như de hoặc pt-BR, hoặc auto.",
             "raw": "      --raw           Bỏ qua giải mã (đầu ra thô đã mã hóa)",
             "multipass": "      --multipass    Ghi/cập nhật tệp bản đồ cho khôi phục nhiều lượt",
             "share": "      --share         Gửi hồ sơ ổ đĩa (chỉ info disc://; khi trích xuất, -s nghĩa là --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, rồi trực tuyến",
             "keydb_path": "Vị trí keydb.cfg :",
             "keydb_url": "URL cập nhật keydb :",
+            "keydb_busy": "Một bản cập nhật keydb đang chạy — vui lòng đợi.",
             "keyserver_url": "URL dịch vụ khóa :",
             "keyserver_token": "Token dịch vụ khóa :",
             "language": "Ngôn ngữ giao diện :",

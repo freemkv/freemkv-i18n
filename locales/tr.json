@@ -25,6 +25,7 @@
         "device_desc": "Aygıt yolunu belirt",
         "captured": "Yakalandı: GET_CONFIG 0x{code} {name} ({bytes} bayt)",
         "submit_header": "Aşağıdakiler gönderilecek:",
+        "submit_prompt": "Sürücü desteğini genişletmek için bu profil gönderilsin mi? [Y/n] ",
         "submit_drive": "Sürücü",
         "submit_serial": "Seri",
         "submit_platform": "Platform",
@@ -36,6 +37,9 @@
         "submit_saved": "Profil {dir}/ konumuna kaydedildi",
         "submit_zip": "Zip arşivi: {path}",
         "submit_manual": "Bu profile katkıda bulunmak için yeni bir issue açın ve aşağıdaki metni yapıştırın:",
+        "submit_thanks": "Gönderildi — teşekkürler!",
+        "submit_auto_failed": "Otomatik gönderim başarısız oldu; yine de elle bildirebilirsiniz:",
+        "submit_declined": "Gönderilmedi. İsterseniz yine de elle bildirebilirsiniz:",
         "submit_issue_title": "Issue başlığı: {title}",
         "submit_issue_body": "Issue içeriği (satırların arasındaki her şeyi kopyalayın):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "zorlanmış",
         "usage": "Kullanım: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Bilinmiyor"
+        "format_unknown": "Bilinmiyor",
+        "file": "Dosya"
     },
     "stream": {
         "purpose": {
@@ -393,7 +398,12 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: 0 değeri aralık dışında (1–4), yok sayıldı",
+        "log_level_not_a_number": "--log-level: 1–4 arası bir sayı bekleniyordu, '{value}' alındı, yok sayıldı",
+        "log_level_needs_value": "--log-level: bir değer gerektirir (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: geçersiz yol '{path}' — tanılama günlüğü yazılmadı",
+        "language_needs_value": "{flag}: bir dil kodu gerektirir (ör. --language de)"
     },
     "usage": {
         "synopsis_1": "Kullanım: freemkv <source> <dest> [flags]",
@@ -408,16 +418,26 @@
         },
         "subcommands_note": "  Komuta özel yardım için 'freemkv <command> --help' (veya 'freemkv help <command>') çalıştırın.",
         "urls_header": "Akış URL'leri:",
+        "tracks_header": "İz çıktıları (yalnızca hedef):",
         "url": {
             "disc_auto": "  disc://                  Optik sürücü (otomatik algıla)",
             "disc_linux": "  disc:///dev/sg4          Optik sürücü (Linux)",
             "disc_windows": "  disc://D:                Optik sürücü (Windows)",
             "mkv": "  mkv://path.mkv           Matroska dosyası",
             "m2ts": "  m2ts://path.m2ts         BD taşıma akışı dosyası",
+            "mp4": "  mp4://path.mp4           MP4 dosyası",
+            "iso": "  iso://image.iso          Blu-ray ISO imajı",
+            "dir": "  dir://folder/            Bir klasörde şifresi çözülmüş dosya ağacı",
             "network": "  network://host:port      TCP akışı",
             "stdio": "  stdio://                 Stdin/stdout borusu",
-            "iso": "  iso://image.iso          Blu-ray ISO imajı",
             "null": "  null://                  At (kıyaslama)",
+            "demux": "  demux://folder/          Her iz ayrı bir dosya olarak",
+            "video": "  video://folder/          Yalnızca video izleri",
+            "audio": "  audio://folder/          Yalnızca ses izleri",
+            "sub": "  sub://folder/            Yalnızca altyazı izleri",
+            "chapters": "  chapters://file.xml      Bölüm listesi (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Başlık yapısı JSON olarak",
+            "fvi": "  fvi://file.fvi           Kare başına video dizini",
             "scheme_note": "  Tüm URL'ler bir scheme:// öneki gerektirir.",
             "path_note": "  Dosya yolları şemayı izler: mkv://./Movie.mkv, m2ts://./Movie.m2ts"
         },
@@ -455,6 +475,7 @@
             "log_level_3": "                      ./log.txt yazmak için ayarlayın (hata raporları için 3 kullanın).",
             "log_file": "      --log-file PATH Tanılama günlüğünü ./log.txt yerine PATH konumuna yaz.",
             "quiet": "  -q, --quiet         Çıktıyı gizle",
+            "language": "      --language CODE Arayüz dili (--lang de olur): de veya pt-BR gibi bir kod ya da auto.",
             "raw": "      --raw           Şifre çözmeyi atla (ham şifreli çıktı)",
             "multipass": "      --multipass    Çok geçişli kurtarma için harita dosyası yaz/güncelle",
             "share": "      --share         Sürücü profilini gönder (yalnızca info disc://; bir kopyalamada -s, --subtitles anlamına gelir)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, ardından çevrimiçi",
             "keydb_path": "keydb.cfg konumu :",
             "keydb_url": "keydb güncelleme URL'si :",
+            "keydb_busy": "Bir keydb güncellemesi zaten çalışıyor — lütfen bekleyin.",
             "keyserver_url": "Anahtar hizmeti URL'si :",
             "keyserver_token": "Anahtar hizmeti belirteci :",
             "language": "Arayüz dili :",

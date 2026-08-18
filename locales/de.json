@@ -25,6 +25,7 @@
         "device_desc": "Geraetepfad angeben",
         "captured": "Erfasst: GET_CONFIG 0x{code} {name} ({bytes} Bytes)",
         "submit_header": "Folgendes wird uebermittelt:",
+        "submit_prompt": "Dieses Profil einsenden, um die Laufwerksunterstützung zu erweitern? [Y/n] ",
         "submit_drive": "Laufwerk",
         "submit_serial": "Seriennummer",
         "submit_platform": "Plattform",
@@ -36,6 +37,9 @@
         "submit_saved": "Profil gespeichert unter {dir}/",
         "submit_zip": "Zip-Archiv: {path}",
         "submit_manual": "Um dieses Profil beizutragen, öffne ein neues Issue und füge den folgenden Text ein:",
+        "submit_thanks": "Gesendet — vielen Dank!",
+        "submit_auto_failed": "Automatisches Senden fehlgeschlagen; Sie können es weiterhin von Hand melden:",
+        "submit_declined": "Nicht gesendet. Sie können es bei Bedarf weiterhin von Hand melden:",
         "submit_issue_title": "Issue-Titel: {title}",
         "submit_issue_body": "Issue-Text (alles zwischen den Linien kopieren):"
     },
@@ -58,7 +62,8 @@
         "dolby_vision_el": "Dolby Vision EL",
         "forced": "erzwungen",
         "usage": "Verwendung: freemkv info disc:// [--full] [--basic] [--quiet]",
-        "format_unknown": "Unbekannt"
+        "format_unknown": "Unbekannt",
+        "file": "Datei"
     },
     "stream": {
         "purpose": {
@@ -370,22 +375,37 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
-        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none."
+        "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
+        "log_level_out_of_range": "--log-level: Wert 0 liegt außerhalb des Bereichs (1–4), ignoriert",
+        "log_level_not_a_number": "--log-level: Zahl 1–4 erwartet, '{value}' erhalten, ignoriert",
+        "log_level_needs_value": "--log-level: benötigt einen Wert (1=warn, 2=info, 3=debug, 4=trace)",
+        "log_file_invalid_path": "--log-file: ungültiger Pfad '{path}' — kein Diagnoseprotokoll geschrieben",
+        "language_needs_value": "{flag}: benötigt einen Sprachcode (z. B. --language de)"
     },
     "usage": {
         "synopsis_1": "Verwendung: freemkv <quelle> <ziel> [optionen]",
         "synopsis_2": "           freemkv info <url> [optionen]",
         "urls_header": "Stream-URLs:",
+        "tracks_header": "Spurausgaben (nur als Ziel):",
         "url": {
             "disc_auto": "  disc://                  Optisches Laufwerk (automatische Erkennung)",
             "disc_linux": "  disc:///dev/sg4          Optisches Laufwerk (Linux)",
             "disc_windows": "  disc://D:                Optisches Laufwerk (Windows)",
             "mkv": "  mkv://pfad.mkv          Matroska-Datei",
             "m2ts": "  m2ts://pfad.m2ts        BD-Transportstrom-Datei",
+            "mp4": "  mp4://path.mp4           MP4-Datei",
+            "iso": "  iso://abbild.iso         Blu-ray-ISO-Abbild",
+            "dir": "  dir://folder/            Entschlüsselter Dateibaum in einem Ordner",
             "network": "  network://host:port      TCP-Stream",
             "stdio": "  stdio://                 Stdin/Stdout-Pipe",
-            "iso": "  iso://abbild.iso         Blu-ray-ISO-Abbild",
             "null": "  null://                  Verwerfen (Benchmark)",
+            "demux": "  demux://folder/          Jede Spur als eigene Datei",
+            "video": "  video://folder/          Nur Videospuren",
+            "audio": "  audio://folder/          Nur Audiospuren",
+            "sub": "  sub://folder/            Nur Untertitelspuren",
+            "chapters": "  chapters://file.xml      Kapitelliste (.xml, .txt/.ogm, .vtt)",
+            "json": "  json://file.json         Titelstruktur als JSON",
+            "fvi": "  fvi://file.fvi           Videoindex je Einzelbild",
             "scheme_note": "  Alle URLs benötigen ein scheme://-Präfix.",
             "path_note": "  Dateipfade folgen dem Schema: mkv://./Film.mkv, m2ts://./Film.m2ts"
         },
@@ -423,6 +443,7 @@
             "log_level_3": "                      Diagnoseprotokoll in ./log.txt (3 für Fehlerberichte).",
             "log_file": "      --log-file PFAD  Diagnoseprotokoll in PFAD statt ./log.txt schreiben.",
             "quiet": "  -q, --quiet         Ausgabe unterdrücken",
+            "language": "      --language CODE Oberflächensprache (auch --lang): ein Code wie de oder pt-BR, oder auto.",
             "raw": "      --raw           Entschlüsselung überspringen (raw verschlüsselte Ausgabe)",
             "multipass": "      --multipass    Mapfile für Mehrpass-Wiederherstellung schreiben/aktualisieren",
             "share": "      --share         Laufwerkprofil einreichen (nur info disc://; bei einem Rip bedeutet -s --subtitles)",
@@ -532,6 +553,7 @@
             "key_src_both": "keydb, dann online",
             "keydb_path": "keydb.cfg-Speicherort:",
             "keydb_url": "keydb-Update-URL:",
+            "keydb_busy": "Eine keydb-Aktualisierung läuft bereits — bitte warten.",
             "keyserver_url": "Schlüsseldienst-URL:",
             "keyserver_token": "Schlüsseldienst-Token:",
             "language": "Sprache der Benutzeroberfläche:",
