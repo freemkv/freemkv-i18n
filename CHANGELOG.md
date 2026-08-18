@@ -1,5 +1,60 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+
+- **Simplified and Traditional Chinese were unreachable from the locale tag
+  macOS actually emits.** Resolution tried the full tag and then the FIRST
+  subtag, with no `lang-script` step in between: `zh-Hans-CN` became
+  `zh-hans-cn` (no catalog), then `zh` (no catalog — the crate ships
+  `zh-hans.json` and `zh-hant.json`, not `zh.json`), then English. Both Chinese
+  catalogs were compiled into every binary and could not be reached from a
+  standard BCP-47 tag. The chain now walks every prefix of the tag, longest
+  first, which also fixes `sr-Latn-RS` and any other three-subtag tag.
+- **`LC_ALL=C` no longer loses to `LC_MESSAGES`.** An explicitly-set `LC_ALL`
+  whose value was `C` or `POSIX` was treated as unset, so
+  `LC_ALL=C LC_MESSAGES=de_DE.UTF-8` printed German — the opposite of what
+  POSIX says, of what the code's own comment claimed, and of what a script
+  asking for parseable output wants.
+- **Eleven libfreemkv error codes had no English string** and rendered to the
+  user as the literal text `error.E9056`. Among them were the two codes that
+  report a rip could not be confirmed written to disk. The suite's code list is
+  now compared against the catalog mechanically.
+- **An operator's `locales/pt-BR.json` is found on Linux.** The loader built one
+  lowercase filename and read it exact-case, while `build.rs` accepted both
+  spellings when bundling; the two halves of the crate disagreed about the same
+  file. Both now share one derivation, which also stops a `zh_TW.json` from
+  being bundled under a code nothing can ask for.
+- **A locale file that exists but cannot be read is reported**, instead of
+  producing "locale not found" — a misleading message about a file the operator
+  is looking straight at.
+- **A translation served from English says so**, once per key. The per-key
+  fallback was completely silent, which is the shape this project treats as a
+  defect in its own right.
+- **Placeholder substitution is single-pass.** A disc label containing the
+  literal text `{size}` was being rewritten by the next argument's pass.
+- **The per-user locale directory exists on Windows** (`%USERPROFILE%`, and
+  `%PROGRAMDATA%` in place of `/usr/share`), delivering the cross-platform
+  search path the crate documents.
+- **A poisoned catalog lock no longer takes the process down**, a second
+  `--language` is reported rather than dropped, and the `--language` check and
+  the override write are no longer separated by a window an `init()` can land
+  in. Locale resolution no longer does file I/O while holding the write lock.
+
+### Changed
+
+- The locale parity test asserts against the RAW catalogs and compares
+  placeholders in BOTH directions. It previously read values through the
+  production accessor, whose per-key English fallback meant a locale value that
+  was blank, a number or an object silently returned English and passed every
+  assertion — the test could not fail on the class it exists to catch.
+- The English catalog is parsed once per process rather than on every missed
+  key, and is not consulted at all when English is already the active locale.
+- The runtime resolution path (`set_language`, `init`, `set_locale`, the disk
+  search, the fallback chain) has tests. It had none, which is causally why the
+  Chinese bug shipped unnoticed.
+
 ## [1.6.4] — 2026-08-15
 
 ### Added
