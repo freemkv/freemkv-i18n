@@ -244,6 +244,7 @@
         "E6016": "Error: a file on the disc has an allocation chain this reader cannot follow to its end, so part of the file is unknown. Reading it would have padded the rest with zeros and reported a complete file.",
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
+        "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
         "E7000": "此光碟需要 AACS 解密金鑰（Blu-ray/UHD），但找不到任何金鑰。請以下列指令下載金鑰資料庫：freemkv update-keys --url <keydb-url>",
         "E7001": "光碟的安全憑證過短或無效。",
         "E7002": "光碟機不願為此光碟啟動安全工作階段 — 它可能正被另一程式使用。請關閉其他使用該光碟的程式後再試一次。",
