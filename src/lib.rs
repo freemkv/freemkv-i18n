@@ -1102,7 +1102,7 @@ mod tests {
     fn search_dirs_are_ordered_and_survive_a_missing_home() {
         let dirs = locale_search_dirs_from(
             Some(PathBuf::from("/opt/freemkv/bin")),
-            Some(PathBuf::from("/home/u")),
+            Some(PathBuf::from("/opt/testhome")),
             Some(PathBuf::from("/usr/share/freemkv/locales")),
         );
         assert_eq!(
@@ -1110,7 +1110,7 @@ mod tests {
             [
                 PathBuf::from("/opt/freemkv/bin/locales"),
                 PathBuf::from("locales"),
-                PathBuf::from("/home/u/.config/freemkv/locales"),
+                PathBuf::from("/opt/testhome/.config/freemkv/locales"),
                 PathBuf::from("/usr/share/freemkv/locales"),
             ]
         );
