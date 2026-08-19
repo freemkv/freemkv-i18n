@@ -97,7 +97,25 @@ fn the_startup_and_live_switch_paths_select_the_right_catalog() {
     assert!(!out.contains("{opt}"), "placeholder left behind: {out}");
     let msg = freemkv_i18n::error_message(1000);
     assert_ne!(msg, "error.E1000", "E1000 rendered as its own key path");
-    assert_eq!(msg, bundled("de", "error.E1000"));
+    // E1000's string embeds `{detail}` (a device path). The detail-less entry
+    // point must NOT leak the literal placeholder; the detail-aware one fills it
+    // from the same installed `de` catalog.
+    let de_raw = bundled("de", "error.E1000");
+    assert!(
+        de_raw.contains("{detail}"),
+        "fixture drift: de E1000 should carry a {{detail}} placeholder, got {de_raw:?}"
+    );
+    assert!(
+        !msg.contains("{detail}"),
+        "error_message(1000) leaked a {{detail}} placeholder: {msg}"
+    );
+    let filled = freemkv_i18n::error_message_with(1000, "/dev/sr0");
+    assert_eq!(
+        filled,
+        de_raw.replace("{detail}", "/dev/sr0"),
+        "error_message_with must substitute the caller's detail into the catalog string"
+    );
+    assert!(!filled.contains("{detail}"));
 
     // ── 6. A locale with no catalog anywhere still returns a real message ──
     // Not the key path, and not a panic: the per-key English fallback covers

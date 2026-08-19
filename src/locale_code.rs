@@ -30,11 +30,34 @@
 pub(crate) fn normalize_code(s: &str) -> String {
     // Drop codeset/modifier (`.UTF-8`, `@euro`), keep language[_-subtags].
     let base = s.trim().split(['.', '@', ':']).next().unwrap_or("");
-    let mut parts = base.split(['_', '-']).filter(|p| !p.is_empty());
-    let lang = parts.next().unwrap_or("").to_ascii_lowercase();
+    let mut parts = base.split(['_', '-']).filter(|p| !p.is_empty()).peekable();
+    let mut lang = parts.next().unwrap_or("").to_ascii_lowercase();
     if !(2..=3).contains(&lang.len()) || !lang.chars().all(|c| c.is_ascii_alphabetic()) {
         return "en".to_string();
     }
+    // BCP-47 extended-language subtag: a THREE-letter subtag immediately after
+    // the primary language (`zh-yue` Cantonese, `zh-cmn` Mandarin) whose
+    // canonical form is that subtag standing alone — `zh-yue` IS `yue`. It used
+    // to be dropped silently (neither a 4-letter script nor a 2-letter/3-digit
+    // region, so the loop below ignored it), after which the Chinese script
+    // inference folded the bare `zh` onto the Simplified catalog: a Cantonese
+    // tag rendered as Simplified MANDARIN — a different language — with nothing
+    // logged. Promoting the extlang to the primary language makes `yue` fall
+    // through to English (no catalog ships) while `cmn` folds to `zh` like any
+    // other Mandarin tag. A 3-DIGIT subtag (`es-419`) is a region, not an
+    // extlang, so the alphabetic check is what keeps that case intact.
+    if let Some(next) = parts.peek()
+        && next.len() == 3
+        && next.chars().all(|c| c.is_ascii_alphabetic())
+    {
+        lang = parts.next().unwrap_or_default().to_ascii_lowercase();
+    }
+    // Fold ISO 639-2/639-3 three-letter codes and macrolanguage members onto
+    // the two-letter code the crate actually ships a catalog under, so
+    // `--language deu` reaches `de.json` and a glibc `nb_NO.UTF-8` reaches the
+    // Norwegian `no.json` instead of both silently falling through to English.
+    lang = fold_language(&lang);
+
     let mut script: Option<String> = None;
     let mut region: Option<String> = None;
     for p in parts {
@@ -66,6 +89,51 @@ pub(crate) fn normalize_code(s: &str) -> String {
         out.push_str(&rg);
     }
     out
+}
+
+/// Fold a primary-language subtag onto the two-letter code the crate ships a
+/// catalog under. Covers the ISO 639-2/B, 639-2/T and 639-3 three-letter codes
+/// for the shipped languages (`deu`/`ger` → `de`, `fra`/`fre` → `fr`, …), plus
+/// macrolanguage members and deprecated aliases that have no catalog of their
+/// own (`nb`/`nn` Norwegian Bokmål/Nynorsk → `no`, `cmn` Mandarin → `zh`, the
+/// legacy `mo` → `ro` and `in` → `id`). An unknown code is returned UNCHANGED,
+/// so a language the crate does not ship still resolves through the normal
+/// fallback chain to English rather than being mangled into a wrong catalog.
+fn fold_language(lang: &str) -> String {
+    match lang {
+        // Macrolanguage members / deprecated aliases → the shipped base code.
+        "nb" | "nn" | "nob" | "nno" | "nor" => "no",
+        "mo" => "ro",
+        "in" => "id",
+        // ISO 639-2/639-3 three-letter → two-letter, shipped languages only.
+        "cat" => "ca",
+        "ces" | "cze" => "cs",
+        "dan" => "da",
+        "deu" | "ger" => "de",
+        "ell" | "gre" => "el",
+        "eng" => "en",
+        "spa" => "es",
+        "fin" => "fi",
+        "fra" | "fre" => "fr",
+        "hun" => "hu",
+        "ind" => "id",
+        "ita" => "it",
+        "jpn" => "ja",
+        "kor" => "ko",
+        "nld" | "dut" => "nl",
+        "pol" => "pl",
+        "por" => "pt",
+        "ron" | "rum" => "ro",
+        "rus" => "ru",
+        "slk" | "slo" => "sk",
+        "swe" => "sv",
+        "tur" => "tr",
+        "ukr" => "uk",
+        "vie" => "vi",
+        "zho" | "chi" | "cmn" => "zh",
+        other => other,
+    }
+    .to_string()
 }
 
 /// The codes to try, most specific first, for an already-normalized tag.

@@ -42,6 +42,38 @@ jobs:
           shared-key: freemkv-i18n-ci
       - run: cargo test --tests
 
+  # src/error_codes.rs is a CHECKED-IN copy of libfreemkv's error-code
+  # constants: this crate must not DEPEND on libfreemkv (it git-deps the private
+  # freemkv-unlock, which would make freemkv-i18n unbuildable in its own CI), so
+  # the copy is kept in sync by hand via ci/sync-error-codes.sh. The
+  # `libfreemkv_code_list_has_not_drifted` test proves the copy is current, but
+  # only where a sibling libfreemkv checkout exists — which is NEVER this crate's
+  # own CI. That gap is exactly how E6019 shipped in libfreemkv while the copy
+  # here (and the 29 catalogs) stayed a code behind. This job closes it: it
+  # sparse-checks-out libfreemkv's single public `src/error.rs`, regenerates the
+  # registry, and fails the build if the checked-in copy differs — so a new
+  # libfreemkv code can no longer drift in silently. It reads ONE file and takes
+  # no dependency, so the "no sibling checkout" rule the rest of this workflow
+  # follows is preserved. (The durable fix is for libfreemkv to emit its code
+  # list from a build.rs `pub const`, letting this crate consume one authority
+  # instead of a copy — tracked upstream; until then, this diff guards it.)
+  error-code-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Fetch libfreemkv error.rs
+        uses: actions/checkout@v7
+        with:
+          repository: freemkv/libfreemkv
+          path: .libfreemkv-src
+          sparse-checkout: src/error.rs
+          sparse-checkout-cone-mode: false
+      - name: Regenerate the error-code registry and fail on drift
+        run: |
+          ci/sync-error-codes.sh .libfreemkv-src/src/error.rs
+          git diff --exit-code -- src/error_codes.rs \
+            || { echo "::error::src/error_codes.rs is out of date with libfreemkv/src/error.rs. Run ci/sync-error-codes.sh and add an English string (in all 29 locales) for any new code."; exit 1; }
+
   # build.rs walks `locales/` and emits Rust source. Path handling in a build
   # script is exactly the kind of thing that works on Linux and fails on
   # Windows, so both other OSes compile the tests here rather than at tag time.
