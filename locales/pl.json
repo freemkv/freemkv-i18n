@@ -25,7 +25,7 @@
         "device_desc": "Podaj ścieżkę urządzenia",
         "captured": "Przechwycono: GET_CONFIG 0x{code} {name} ({bytes} bajtów)",
         "submit_header": "Zostaną przesłane następujące dane:",
-        "submit_prompt": "Wysłać ten profil, aby poszerzyć obsługę napędów? [Y/n] ",
+        "submit_prompt": "Wysłać ten profil, aby poszerzyć obsługę napędów? [y/N] ",
         "submit_drive": "Napęd",
         "submit_serial": "Numer seryjny",
         "submit_platform": "Platforma",

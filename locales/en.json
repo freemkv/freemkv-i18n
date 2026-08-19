@@ -25,7 +25,7 @@
         "device_desc": "Specify device path",
         "captured": "Captured: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "The following will be submitted:",
-        "submit_prompt": "Submit this profile to help expand drive support? [Y/n] ",
+        "submit_prompt": "Submit this profile to help expand drive support? [y/N] ",
         "submit_drive": "Drive",
         "submit_serial": "Serial",
         "submit_platform": "Platform",

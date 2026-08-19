@@ -25,7 +25,7 @@
         "device_desc": "Määritä laitepolku",
         "captured": "Kaapattu: GET_CONFIG 0x{code} {name} ({bytes} tavua)",
         "submit_header": "Seuraavat tiedot lähetetään:",
-        "submit_prompt": "Lähetetäänkö tämä profiili asemien tuen laajentamiseksi? [Y/n] ",
+        "submit_prompt": "Lähetetäänkö tämä profiili asemien tuen laajentamiseksi? [y/N] ",
         "submit_drive": "Asema",
         "submit_serial": "Sarjanumero",
         "submit_platform": "Alusta",

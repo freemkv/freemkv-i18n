@@ -25,7 +25,7 @@
         "device_desc": "Especifica el camí del dispositiu",
         "captured": "Capturat: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "S'enviarà el següent:",
-        "submit_prompt": "Voleu enviar aquest perfil per ampliar la compatibilitat d'unitats? [Y/n] ",
+        "submit_prompt": "Voleu enviar aquest perfil per ampliar la compatibilitat d'unitats? [y/N] ",
         "submit_drive": "Unitat",
         "submit_serial": "Número de sèrie",
         "submit_platform": "Plataforma",

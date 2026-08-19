@@ -25,7 +25,7 @@
         "device_desc": "Apparaatpad opgeven",
         "captured": "Vastgelegd: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "Het volgende wordt verstuurd:",
-        "submit_prompt": "Dit profiel insturen om de stationsondersteuning uit te breiden? [Y/n] ",
+        "submit_prompt": "Dit profiel insturen om de stationsondersteuning uit te breiden? [y/N] ",
         "submit_drive": "Drive",
         "submit_serial": "Serienummer",
         "submit_platform": "Platform",

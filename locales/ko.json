@@ -25,7 +25,7 @@
         "device_desc": "장치 경로 지정",
         "captured": "수집됨: GET_CONFIG 0x{code} {name} ({bytes} 바이트)",
         "submit_header": "다음 내용이 제출됩니다:",
-        "submit_prompt": "드라이브 지원 확대를 위해 이 프로필을 제출하시겠습니까? [Y/n] ",
+        "submit_prompt": "드라이브 지원 확대를 위해 이 프로필을 제출하시겠습니까? [y/N] ",
         "submit_drive": "드라이브",
         "submit_serial": "일련번호",
         "submit_platform": "플랫폼",

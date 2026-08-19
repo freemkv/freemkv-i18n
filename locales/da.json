@@ -25,7 +25,7 @@
         "device_desc": "Angiv enhedssti",
         "captured": "Registreret: GET_CONFIG 0x{code} {name} ({bytes} byte)",
         "submit_header": "Følgende vil blive indsendt:",
-        "submit_prompt": "Vil du indsende denne profil for at udvide drevunderstøttelsen? [Y/n] ",
+        "submit_prompt": "Vil du indsende denne profil for at udvide drevunderstøttelsen? [y/N] ",
         "submit_drive": "Drev",
         "submit_serial": "Serienr.",
         "submit_platform": "Platform",

@@ -25,7 +25,7 @@
         "device_desc": "Especificar ruta del dispositivo",
         "captured": "Capturado: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "Se enviará lo siguiente:",
-        "submit_prompt": "¿Enviar este perfil para ampliar la compatibilidad de unidades? [Y/n] ",
+        "submit_prompt": "¿Enviar este perfil para ampliar la compatibilidad de unidades? [y/N] ",
         "submit_drive": "Unidad",
         "submit_serial": "Serie",
         "submit_platform": "Plataforma",

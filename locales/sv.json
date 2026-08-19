@@ -25,7 +25,7 @@
         "device_desc": "Ange enhetssökväg",
         "captured": "Infångade: GET_CONFIG 0x{code} {name} ({bytes} byte)",
         "submit_header": "Följande kommer att skickas in:",
-        "submit_prompt": "Vill du skicka in den här profilen för att utöka enhetsstödet? [Y/n] ",
+        "submit_prompt": "Vill du skicka in den här profilen för att utöka enhetsstödet? [y/N] ",
         "submit_drive": "Enhet",
         "submit_serial": "Serienummer",
         "submit_platform": "Plattform",

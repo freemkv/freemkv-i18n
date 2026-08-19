@@ -25,7 +25,7 @@
         "device_desc": "Specifică calea dispozitivului",
         "captured": "Capturat: GET_CONFIG 0x{code} {name} ({bytes} octeți)",
         "submit_header": "Următoarele vor fi trimise:",
-        "submit_prompt": "Trimiteți acest profil pentru a extinde suportul pentru unități? [Y/n] ",
+        "submit_prompt": "Trimiteți acest profil pentru a extinde suportul pentru unități? [y/N] ",
         "submit_drive": "Unitate",
         "submit_serial": "Serie",
         "submit_platform": "Platformă",

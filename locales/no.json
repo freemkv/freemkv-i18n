@@ -25,7 +25,7 @@
         "device_desc": "Angi enhetsbane",
         "captured": "Fanget opp: GET_CONFIG 0x{code} {name} ({bytes} byte)",
         "submit_header": "Følgende vil bli sendt inn:",
-        "submit_prompt": "Vil du sende inn denne profilen for å utvide stasjonsstøtten? [Y/n] ",
+        "submit_prompt": "Vil du sende inn denne profilen for å utvide stasjonsstøtten? [y/N] ",
         "submit_drive": "Stasjon",
         "submit_serial": "Serienummer",
         "submit_platform": "Plattform",

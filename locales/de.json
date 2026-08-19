@@ -25,7 +25,7 @@
         "device_desc": "Geraetepfad angeben",
         "captured": "Erfasst: GET_CONFIG 0x{code} {name} ({bytes} Bytes)",
         "submit_header": "Folgendes wird uebermittelt:",
-        "submit_prompt": "Dieses Profil einsenden, um die Laufwerksunterstützung zu erweitern? [Y/n] ",
+        "submit_prompt": "Dieses Profil einsenden, um die Laufwerksunterstützung zu erweitern? [y/N] ",
         "submit_drive": "Laufwerk",
         "submit_serial": "Seriennummer",
         "submit_platform": "Plattform",

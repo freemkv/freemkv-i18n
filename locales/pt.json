@@ -25,7 +25,7 @@
         "device_desc": "Especificar caminho do dispositivo",
         "captured": "Capturado: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "O seguinte sera enviado:",
-        "submit_prompt": "Enviar este perfil para alargar o suporte a unidades? [Y/n] ",
+        "submit_prompt": "Enviar este perfil para alargar o suporte a unidades? [y/N] ",
         "submit_drive": "Drive",
         "submit_serial": "Serie",
         "submit_platform": "Plataforma",
