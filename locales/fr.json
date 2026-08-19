@@ -25,7 +25,7 @@
         "device_desc": "Specifier le chemin du peripherique",
         "captured": "Capture : GET_CONFIG 0x{code} {name} ({bytes} octets)",
         "submit_header": "Les informations suivantes seront soumises :",
-        "submit_prompt": "Envoyer ce profil pour élargir la prise en charge des lecteurs ? [Y/n] ",
+        "submit_prompt": "Envoyer ce profil pour élargir la prise en charge des lecteurs ? [y/N] ",
         "submit_drive": "Lecteur",
         "submit_serial": "Serie",
         "submit_platform": "Plateforme",

@@ -25,7 +25,7 @@
         "device_desc": "指定裝置路徑",
         "captured": "已擷取：GET_CONFIG 0x{code} {name}（{bytes} 位元組）",
         "submit_header": "以下內容將被提交：",
-        "submit_prompt": "提交此設定檔以協助擴充光碟機支援？[Y/n] ",
+        "submit_prompt": "提交此設定檔以協助擴充光碟機支援？[y/N] ",
         "submit_drive": "光碟機",
         "submit_serial": "序號",
         "submit_platform": "平台",

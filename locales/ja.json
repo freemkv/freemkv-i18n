@@ -25,7 +25,7 @@
         "device_desc": "デバイスパスを指定する",
         "captured": "取得: GET_CONFIG 0x{code} {name}（{bytes} バイト）",
         "submit_header": "以下の内容が送信されます:",
-        "submit_prompt": "ドライブ対応を広げるため、このプロファイルを送信しますか? [Y/n] ",
+        "submit_prompt": "ドライブ対応を広げるため、このプロファイルを送信しますか? [y/N] ",
         "submit_drive": "ドライブ",
         "submit_serial": "シリアル",
         "submit_platform": "プラットフォーム",

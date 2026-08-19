@@ -25,7 +25,7 @@
         "device_desc": "Eszköz elérési útjának megadása",
         "captured": "Rögzítve: GET_CONFIG 0x{code} {name} ({bytes} bájt)",
         "submit_header": "A következők kerülnek beküldésre:",
-        "submit_prompt": "Beküldi ezt a profilt a meghajtótámogatás bővítéséhez? [Y/n] ",
+        "submit_prompt": "Beküldi ezt a profilt a meghajtótámogatás bővítéséhez? [y/N] ",
         "submit_drive": "Meghajtó",
         "submit_serial": "Sorozatszám",
         "submit_platform": "Platform",

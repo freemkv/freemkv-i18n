@@ -25,7 +25,7 @@
         "device_desc": "Aygıt yolunu belirt",
         "captured": "Yakalandı: GET_CONFIG 0x{code} {name} ({bytes} bayt)",
         "submit_header": "Aşağıdakiler gönderilecek:",
-        "submit_prompt": "Sürücü desteğini genişletmek için bu profil gönderilsin mi? [Y/n] ",
+        "submit_prompt": "Sürücü desteğini genişletmek için bu profil gönderilsin mi? [y/N] ",
         "submit_drive": "Sürücü",
         "submit_serial": "Seri",
         "submit_platform": "Platform",

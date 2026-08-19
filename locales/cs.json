@@ -25,7 +25,7 @@
         "device_desc": "Zadat cestu k zařízení",
         "captured": "Zachyceno: GET_CONFIG 0x{code} {name} ({bytes} bajtů)",
         "submit_header": "Odesláno bude následující:",
-        "submit_prompt": "Odeslat tento profil a pomoci rozšířit podporu mechanik? [Y/n] ",
+        "submit_prompt": "Odeslat tento profil a pomoci rozšířit podporu mechanik? [y/N] ",
         "submit_drive": "Mechanika",
         "submit_serial": "Sériové číslo",
         "submit_platform": "Platforma",

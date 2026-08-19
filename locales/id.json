@@ -25,7 +25,7 @@
         "device_desc": "Tentukan path perangkat",
         "captured": "Ditangkap: GET_CONFIG 0x{code} {name} ({bytes} byte)",
         "submit_header": "Berikut ini yang akan dikirim:",
-        "submit_prompt": "Kirim profil ini untuk memperluas dukungan drive? [Y/n] ",
+        "submit_prompt": "Kirim profil ini untuk memperluas dukungan drive? [y/N] ",
         "submit_drive": "Drive",
         "submit_serial": "Seri",
         "submit_platform": "Platform",

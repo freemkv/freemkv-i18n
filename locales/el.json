@@ -25,7 +25,7 @@
         "device_desc": "Καθορισμός διαδρομής συσκευής",
         "captured": "Καταγράφηκε: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
         "submit_header": "Θα υποβληθούν τα ακόλουθα:",
-        "submit_prompt": "Υποβολή αυτού του προφίλ για διεύρυνση της υποστήριξης μονάδων; [Y/n] ",
+        "submit_prompt": "Υποβολή αυτού του προφίλ για διεύρυνση της υποστήριξης μονάδων; [y/N] ",
         "submit_drive": "Μονάδα",
         "submit_serial": "Σειριακός",
         "submit_platform": "Πλατφόρμα",

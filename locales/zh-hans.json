@@ -25,7 +25,7 @@
         "device_desc": "指定设备路径",
         "captured": "已采集：GET_CONFIG 0x{code} {name}（{bytes} 字节）",
         "submit_header": "将提交以下内容：",
-        "submit_prompt": "提交此配置以帮助扩展光驱支持？[Y/n] ",
+        "submit_prompt": "提交此配置以帮助扩展光驱支持？[y/N] ",
         "submit_drive": "驱动器",
         "submit_serial": "序列号",
         "submit_platform": "平台",

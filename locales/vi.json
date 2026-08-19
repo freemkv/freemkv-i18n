@@ -25,7 +25,7 @@
         "device_desc": "Chỉ định đường dẫn thiết bị",
         "captured": "Đã ghi lại: GET_CONFIG 0x{code} {name} ({bytes} byte)",
         "submit_header": "Nội dung sau đây sẽ được gửi:",
-        "submit_prompt": "Gửi hồ sơ này để mở rộng hỗ trợ ổ đĩa? [Y/n] ",
+        "submit_prompt": "Gửi hồ sơ này để mở rộng hỗ trợ ổ đĩa? [y/N] ",
         "submit_drive": "Ổ đĩa",
         "submit_serial": "Sê-ri",
         "submit_platform": "Nền tảng",

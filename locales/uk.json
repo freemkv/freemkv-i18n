@@ -25,7 +25,7 @@
         "device_desc": "Вказати шлях до пристрою",
         "captured": "Зібрано: GET_CONFIG 0x{code} {name} ({bytes} байт)",
         "submit_header": "Буде надіслано наступне:",
-        "submit_prompt": "Надіслати цей профіль, щоб розширити підтримку приводів? [Y/n] ",
+        "submit_prompt": "Надіслати цей профіль, щоб розширити підтримку приводів? [y/N] ",
         "submit_drive": "Привід",
         "submit_serial": "Серійний номер",
         "submit_platform": "Платформа",
