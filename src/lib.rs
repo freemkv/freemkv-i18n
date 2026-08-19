@@ -15,11 +15,16 @@
 //
 // Language priority:
 //   1. --language flag (set via set_language() before init())
-//   2. LC_ALL / LC_MESSAGES / LANG env var (POSIX precedence: the FIRST of
+//   2. GNU `LANGUAGE` — a colon-separated priority LIST (`LANGUAGE=de:en`),
+//      each entry tried in turn until one has a catalog. It sits above the
+//      POSIX vars but is consulted ONLY when the POSIX selection names a real
+//      locale: with `LC_ALL=C` (or nothing set) it is ignored, so a script
+//      asking for parseable output still gets English.
+//   3. LC_ALL / LC_MESSAGES / LANG env var (POSIX precedence: the FIRST of
 //      those that is set and non-empty wins outright, even when its value is
 //      `C` or `POSIX` — both of which mean English. `LC_ALL=C` is how a script
 //      asks for parseable output and it must not be overridden by LC_MESSAGES.)
-//   3. English fallback
+//   4. English fallback
 //
 // Catalog resolution walks every prefix of the requested tag, longest first, so
 // a three-subtag tag still finds a two-subtag catalog:
@@ -77,6 +82,25 @@ static LANG_OVERRIDE: OnceLock<String> = OnceLock::new();
 // walk of the identical tree that cannot find anything the first walk did not.
 static ACTIVE_IS_EN: AtomicBool = AtomicBool::new(false);
 
+// Serializes the catalog-INSTALLING paths — lazy first-use `get`, `init`,
+// `set_locale` — with each other and with `set_language`. It is deliberately
+// NOT on the `get`/`fmt` fast path (a catalog already installed): a reader then
+// takes only the `STRINGS` read lock and never touches this. It exists to close
+// two windows the `STRINGS` lock alone cannot, because resolution reads the
+// environment / `--language` override OUTSIDE the `STRINGS` write lock:
+//   * a `set_language` override arriving WHILE another thread is mid-resolve —
+//     that thread would install an environment-derived catalog and the override
+//     would be silently dropped even though `set_language` reported success;
+//   * two `set_locale` calls whose resolves complete in the opposite order from
+//     which they were called, so the last WRITER wins rather than the last
+//     CALLER. Holding this lock across resolve-then-install makes the last
+//     caller to acquire it the last to install.
+static INIT_LOCK: Mutex<()> = Mutex::new(());
+
+fn init_lock() -> std::sync::MutexGuard<'static, ()> {
+    INIT_LOCK.lock().unwrap_or_else(|e| e.into_inner())
+}
+
 // ── Shipped languages (auto-generated from locales/*.json by build.rs) ─────
 include!(concat!(env!("OUT_DIR"), "/locales_generated.rs"));
 
@@ -107,12 +131,15 @@ fn write_strings() -> RwLockWriteGuard<'static, Option<Value>> {
 /// override is dead: the language is already chosen. A call at that point is a
 /// caller-ordering bug, so make it visible instead of silently no-opping.
 pub fn set_language(lang: &str) {
-    // The read guard is held ACROSS the override write, not dropped between the
-    // check and the set. Otherwise an `init()` on another thread can land in
-    // that gap: this call sees an uninitialized catalog, reports success, and
-    // the override is then ignored by an `init()` that already read the
-    // environment — the user passes `--language de` and gets their system
-    // locale with no warning that the flag was dropped.
+    // Take INIT_LOCK for the whole check-then-set. Every catalog-installing path
+    // (lazy `get`, `init`, `set_locale`) holds it across resolve-then-install,
+    // so this cannot interleave with an in-flight resolve: either the override
+    // is set BEFORE any resolve begins, or a catalog is already installed and
+    // the override is genuinely too late. A brief read guard alone did NOT close
+    // this — a `get()` that had already resolved from the environment (outside
+    // the lock) but not yet installed would still ignore the override, so the
+    // user passed `--language de`, got their system locale, and nothing warned.
+    let _init = init_lock();
     let guard = read_strings();
     if guard.is_some() {
         debug_assert!(
@@ -152,9 +179,19 @@ fn language_override_conflict(requested: &str, existing: Option<&str>) -> Option
 /// startup (full tag → language+script → base language → English). Safe to call
 /// repeatedly.
 pub fn set_locale(code: &str) {
-    // Resolve BEFORE taking the write lock: resolution stats up to four
-    // directories and may read and parse a file off disk, and every `get` in
-    // the process blocks for the whole of that if it happens under the writer.
+    // Hold INIT_LOCK across resolve-then-install so the LAST CALLER wins. Two
+    // concurrent `set_locale`s used to resolve outside any shared lock and race
+    // to the write lock, so whichever resolve happened to FINISH last installed
+    // last — last-writer-wins, not last-caller-wins, and a GUI that fired a `de`
+    // switch after an `fr` one could settle on French. With INIT_LOCK the caller
+    // that acquires it later also resolves and installs later.
+    //
+    // Resolution still runs off the `STRINGS` write lock: it stats up to four
+    // directories and may read and parse a file off disk, and every `get` in the
+    // process would block on that if it happened under the writer. INIT_LOCK is a
+    // separate mutex the read fast path never touches, so serializing switches
+    // here does not stall readers.
+    let _init = init_lock();
     let (resolved, is_english) = resolve_catalog_tagged(&normalize_code(code));
     let mut w = write_strings();
     ACTIVE_IS_EN.store(is_english, Ordering::Relaxed);
@@ -165,26 +202,46 @@ pub fn set_locale(code: &str) {
 /// (re)resolves from the environment / `--language` override and installs the
 /// catalog. `get`/`fmt` also initialize lazily, so calling this is optional.
 pub fn init() {
-    let (json, is_english) = resolve_catalog_tagged(&detect_language());
+    // Serialize with the other installing paths (see INIT_LOCK) so a concurrent
+    // `set_language` cannot land between this resolve and its install.
+    let _init = init_lock();
+    let (json, is_english) = resolve_catalog_for_candidates(&detect_languages());
     let mut w = write_strings();
     ACTIVE_IS_EN.store(is_english, Ordering::Relaxed);
     *w = Some(json);
 }
 
-/// Resolve a locale code to a catalog, walking every prefix of the tag from
-/// most to least specific and falling back to English (see [`fallback_chain`]),
-/// plus whether the catalog it returned is the English one. That flag is what
-/// lets `get` skip the per-key English fallback when English is already active.
+/// Resolve a SINGLE locale code to a catalog, walking every prefix of the tag
+/// from most to least specific and falling back to English (see
+/// [`fallback_chain`]), plus whether the catalog it returned is the English one.
+/// That flag is what lets `get` skip the per-key English fallback when English
+/// is already active. Used by `set_locale` (one explicit code) and the tests.
 fn resolve_catalog_tagged(code: &str) -> (Value, bool) {
-    for candidate in fallback_chain(code) {
-        if let Some(v) = load_for(&candidate) {
-            return (v, candidate == "en");
+    resolve_catalog_for_candidates(std::slice::from_ref(&code.to_string()))
+}
+
+/// Resolve an ORDERED list of candidate locale codes — a GNU `LANGUAGE`
+/// priority list, or a single code — to a catalog. Each candidate's whole
+/// prefix chain is tried in turn; English is the fallback only after EVERY
+/// candidate has failed. This is what makes `LANGUAGE=sw:de` reach German when
+/// Swahili does not ship, instead of stopping at the first miss and rendering
+/// English.
+fn resolve_catalog_for_candidates(candidates: &[String]) -> (Value, bool) {
+    for candidate in candidates {
+        for step in fallback_chain(candidate) {
+            if let Some(v) = load_for(&step) {
+                return (v, step == "en");
+            }
         }
     }
     // Notify the user when they explicitly requested a locale that isn't
-    // available (VAL-3). Plain English is intentional here.
-    if code != "en" {
-        eprintln!("freemkv: locale '{code}' not found, using English");
+    // available (VAL-3). Plain English is intentional here. The first candidate
+    // is the one the user most wanted, so it is the one worth naming.
+    match candidates.first() {
+        Some(first) if first != "en" => {
+            eprintln!("freemkv: locale '{first}' not found, using English");
+        }
+        _ => {}
     }
     (english_catalog().clone(), true)
 }
@@ -194,13 +251,32 @@ fn resolve_catalog_tagged(code: &str) -> (Value, bool) {
 /// less specific code in the fallback chain, then English).
 fn load_for(code: &str) -> Option<Value> {
     if let Some(data) = bundled_locale(code) {
-        return Some(serde_json::from_str(data).expect("invalid bundled locale"));
+        // A bundled catalog is validated at build time (build.rs `include_str!`s
+        // it) and re-parsed by the test suite, so a parse failure here is
+        // unreachable in a correctly built binary. `expect` still made it a
+        // landmine: it would abort the process in the one crate whose entire job
+        // is to render a message when something ELSE fails. Log and fall through
+        // to the disk search / next fallback candidate instead — the same
+        // degradation an absent catalog gets — so no data glitch can turn a
+        // string lookup into a crash.
+        return match serde_json::from_str(data) {
+            Ok(v) => Some(v),
+            Err(e) => {
+                eprintln!("freemkv: bundled locale '{code}' failed to parse ({e}); ignoring it");
+                None
+            }
+        };
     }
     load_locale_file(code)
 }
 
 /// Get a string by dotted path (e.g. "disc.scanning", "error.no_drive").
-/// Returns the path itself if not found — makes missing translations visible.
+///
+/// A key present in the active locale renders its value. A key present in
+/// English but missing (or blank) in the active locale falls back to the
+/// English string, reported once (see [`lookup_or_english`]). Only a key that
+/// exists in NO catalog renders as the dotted path itself, which keeps a truly
+/// missing translation visible rather than blank.
 pub fn get(path: &str) -> String {
     // Fast path: catalog already loaded — take the read lock and look up.
     {
@@ -210,19 +286,24 @@ pub fn get(path: &str) -> String {
         }
     }
     // First use with no explicit init(): resolve from the environment /
-    // --language override (honoring any pre-init set_language), install it, and
-    // look up. Resolution happens OUTSIDE the lock (it does file I/O; see
-    // `set_locale`), and the lookup happens while STILL holding the write guard
-    // so a `set_locale` cannot land between installing the catalog and reading
-    // from it and hand this caller a string in a language it never asked for.
-    let (json, is_english) = resolve_catalog_tagged(&detect_language());
-    let mut w = write_strings();
-    if w.is_none() {
-        // Lost-update check: another thread may have installed a catalog while
-        // we were resolving. Theirs wins; ours is discarded.
-        ACTIVE_IS_EN.store(is_english, Ordering::Relaxed);
-        *w = Some(json);
+    // --language override (honoring any pre-init set_language) and install it.
+    // INIT_LOCK serializes this whole resolve-then-install with `set_language`,
+    // `init` and `set_locale`, so a `--language` override cannot be resolved
+    // AROUND (set after we read the environment but before we install), and a
+    // concurrent `set_locale` cannot interleave its own resolve with ours.
+    let _init = init_lock();
+    // Another thread may have installed a catalog while we waited for INIT_LOCK;
+    // if so, use it rather than resolving and installing a second time.
+    {
+        let guard = read_strings();
+        if let Some(v) = guard.as_ref() {
+            return lookup_or_english(v, path, ACTIVE_IS_EN.load(Ordering::Relaxed));
+        }
     }
+    let (json, is_english) = resolve_catalog_for_candidates(&detect_languages());
+    let mut w = write_strings();
+    ACTIVE_IS_EN.store(is_english, Ordering::Relaxed);
+    *w = Some(json);
     let active = w.as_ref().unwrap_or_else(|| english_catalog());
     lookup_or_english(active, path, ACTIVE_IS_EN.load(Ordering::Relaxed))
 }
@@ -284,19 +365,149 @@ fn substitute<'a>(s: &str, mut resolve: impl FnMut(&str) -> Option<&'a str>) -> 
     out
 }
 
-/// Look up the localized message for a libfreemkv error code.
+/// Look up the localized message for a libfreemkv error code, WITHOUT any
+/// argument.
 ///
 /// Error strings live under the dotted path `error.E<code>` (e.g. code `7022`
 /// → key `error.E7022`), matching how `libfreemkv::Error::code()` values are
 /// keyed in the locale files. The crate stays free of any `libfreemkv`
 /// dependency by taking the bare numeric code rather than the `Error` type.
 ///
+/// Twenty-three of the codes have an English string that embeds a placeholder
+/// — `{detail}` (a device path, a sector, an HTTP status), `{hash}` (E7022's
+/// disc id) or `{path}` (E9067/E9068's file name) — that only a caller holding
+/// the originating error can fill. This entry point has none of those values,
+/// so a raw lookup would render the literal characters `{detail}`/`{hash}`/
+/// `{path}` to the user: exactly the "reads as benign / actually broken"
+/// failure this crate exists to prevent, and the one a bare-code caller such as
+/// autorip's `error_message(err.code())` hit. It therefore DROPS every unfilled
+/// placeholder (and tidies what that leaves), rendering a complete, brace-free
+/// message. The specific value is lost; a caller that HAS the detail must use
+/// [`error_message_with`] so it is preserved.
+///
 /// Falls back to the key path (`error.E<code>`) if the code has no string —
-/// same miss behavior as [`get`], so a missing translation is visible rather
-/// than silent. The `libfreemkv_error_codes_all_have_english_strings` test is
-/// what stops that from being the shipped state of a new code.
+/// same miss behavior as [`get`]. The
+/// `libfreemkv_error_codes_all_have_english_strings` test is what stops that
+/// from being the shipped state of a new code.
 pub fn error_message(code: u32) -> String {
-    get(&format!("error.E{code}"))
+    render_error_message(code, None)
+}
+
+/// Look up the localized message for a libfreemkv error code and substitute the
+/// `{detail}` placeholder with `detail`.
+///
+/// This is the detail-preserving companion to [`error_message`]. The error
+/// strings that embed `{detail}` (a device path, a failing sector, an HTTP
+/// status, a URL …) render their full, specific text through this entry point;
+/// a caller that holds the originating `libfreemkv::Error` — which carries that
+/// detail — should call this so the value reaches the user. A string with no
+/// `{detail}` ignores the argument. Any OTHER unfilled placeholder (`{hash}`,
+/// `{path}`) is dropped, exactly as in [`error_message`], so nothing leaks.
+pub fn error_message_with(code: u32, detail: &str) -> String {
+    render_error_message(code, Some(detail))
+}
+
+/// Render `error.E<code>`, substituting `{detail}` when `detail` is `Some` and
+/// DROPPING every other (or every, when `detail` is `None`) placeholder, then
+/// tidying the punctuation the drop leaves behind. A single substitution pass
+/// does the fill-or-drop, so a `detail` value that itself contains `{…}` is
+/// copied out verbatim and never rescanned.
+fn render_error_message(code: u32, detail: Option<&str>) -> String {
+    let raw = get(&format!("error.E{code}"));
+    if !raw.contains('{') {
+        // The common case (no placeholder, or the key-path miss) — nothing to
+        // fill, drop or tidy.
+        return raw;
+    }
+    let filled = substitute(&raw, |name| match (name, detail) {
+        ("detail", Some(d)) => Some(d),
+        // Every unfilled placeholder is removed rather than left to reach the
+        // user as literal `{name}` text.
+        _ => Some(""),
+    });
+    tidy_empty_slots(&filled)
+}
+
+/// Collapse the artifacts a dropped placeholder leaves behind so the message is
+/// clean and brace-free in every locale: an empty bracket or quote (`()`, `''`,
+/// and their full-width `（）` forms, which the CJK catalogs use), a label-only
+/// parenthetical like `(id:)` left when E7022's `{hash}` value goes, a space
+/// before `.,:;!?)`/`）`, a space after `(`/`（`, a dangling trailing `:`, and
+/// runs of spaces. Language-neutral — it only moves whitespace, brackets, quotes
+/// and punctuation, never letters — so it cannot corrupt a translation, and it
+/// covers the non-ASCII catalogs the unit tests could otherwise miss.
+fn tidy_empty_slots(s: &str) -> String {
+    // A parenthetical whose value was a placeholder now reads as a bare label
+    // and a colon (`(id:)`, `（id：）`) — drop the whole group. Done first, while
+    // the content is still recognizable, before the space rules reshuffle it.
+    let mut out = drop_colon_only_parentheticals(s);
+    // Drop an empty bracket or quote the removed value left, ASCII and
+    // full-width, with an ASCII or ideographic space inside (`(HTTP )` /
+    // `（HTTP　）` are reduced to `(HTTP)` / `（HTTP）` by the space-before-close
+    // rules below; `'{path}'` collapses to `''`).
+    for empty in ["( )", "()", "（）", "（ ）", "（\u{3000}）", "''", "\"\""] {
+        out = out.replace(empty, "");
+    }
+    // Remove a space (ASCII or ideographic) that now sits before closing
+    // punctuation, or after an opening bracket.
+    for (from, to) in [
+        (" .", "."),
+        (" ,", ","),
+        (" :", ":"),
+        (" ;", ";"),
+        (" !", "!"),
+        (" ?", "?"),
+        (" )", ")"),
+        ("( ", "("),
+        (":.", "."),
+        (" ）", "）"),
+        ("\u{3000}）", "）"),
+        ("（ ", "（"),
+        ("（\u{3000}", "（"),
+    ] {
+        while out.contains(from) {
+            out = out.replace(from, to);
+        }
+    }
+    // Collapse doubled spaces, then trim, then drop a now-dangling trailing
+    // colon (`Drive reset failed:` → `Drive reset failed`).
+    while out.contains("  ") {
+        out = out.replace("  ", " ");
+    }
+    let trimmed = out.trim();
+    trimmed.strip_suffix(':').unwrap_or(trimmed).to_string()
+}
+
+/// Remove every parenthetical — ASCII `( )` or full-width `（ ）` — whose visible
+/// content is a bare label ending in a colon (`(id:)`, `（id：）`). That shape is
+/// only ever produced by dropping a placeholder that WAS the parenthetical's
+/// value (E7022's `(id: {hash})` → `(id:)`); a real parenthetical carries a
+/// value after its colon, so this never touches legitimate text. Scans the
+/// innermost-plausible group (no nested opener in the content) and restarts
+/// after each removal.
+fn drop_colon_only_parentheticals(s: &str) -> String {
+    let mut out = s.to_string();
+    for (open, close) in [("(", ")"), ("（", "）")] {
+        let mut search = 0;
+        while let Some(rel_open) = out[search..].find(open) {
+            let o = search + rel_open;
+            let after = o + open.len();
+            if let Some(rel_close) = out[after..].find(close) {
+                let c = after + rel_close;
+                let content = out[after..c].trim();
+                if !content.is_empty()
+                    && !content.contains(open)
+                    && (content.ends_with(':') || content.ends_with('：'))
+                {
+                    out.replace_range(o..c + close.len(), "");
+                    search = 0;
+                    continue;
+                }
+            }
+            search = o + open.len();
+        }
+    }
+    out
 }
 
 /// Returns the bundled (compiled-in) locale JSON for `code`, if that language
@@ -321,11 +532,15 @@ fn english_catalog() -> &'static Value {
     EN.get_or_init(|| serde_json::from_str(LOCALE_EN).expect("invalid en.json"))
 }
 
-fn detect_language() -> String {
+/// The ordered list of catalog codes to try for the current environment, most
+/// preferred first — a GNU `LANGUAGE` priority list, or the single POSIX
+/// selection. `set_language`'s one-shot override, when present, is the whole
+/// list.
+fn detect_languages() -> Vec<String> {
     if let Some(lang) = LANG_OVERRIDE.get() {
-        return normalize_code(lang);
+        return vec![normalize_code(lang)];
     }
-    normalize_code(&locale_from_env(|var| std::env::var(var).ok()))
+    locale_candidates_from_env(|var| std::env::var(var).ok())
 }
 
 /// POSIX precedence: `LC_ALL` overrides every other locale variable, then the
@@ -341,14 +556,54 @@ fn detect_language() -> String {
 /// `normalize_code` maps `C` and `POSIX` to English on its own, because neither
 /// is a two- or three-letter language subtag.
 fn locale_from_env(get_var: impl Fn(&str) -> Option<String>) -> String {
-    for var in ["LC_ALL", "LC_MESSAGES", "LANG"] {
-        if let Some(val) = get_var(var)
-            && !val.is_empty()
-        {
-            return val;
+    ["LC_ALL", "LC_MESSAGES", "LANG"]
+        .iter()
+        .find_map(|var| get_var(var).filter(|v| !v.is_empty()))
+        .unwrap_or_else(|| "en".to_string())
+}
+
+/// The ordered candidate codes for the environment, applying GNU `LANGUAGE`
+/// precedence on top of the POSIX selection.
+///
+/// GNU `LANGUAGE` sits ABOVE the POSIX vars, but only for message translation
+/// and only when the selected locale is a real one. It is a colon-separated
+/// priority LIST (`LANGUAGE=de:en` means "German, then English"): every entry
+/// is a candidate, tried in order by the resolver until one has a catalog — so
+/// `LANGUAGE=sw:de` reaches German even though Swahili does not ship, rather
+/// than stopping at the first miss. It is IGNORED when the POSIX selection is
+/// the `C` / `POSIX` locale (or nothing is set at all) — that is how `LC_ALL=C`
+/// keeps demanding parseable output even with `LANGUAGE` exported. Without any
+/// of this, `LANGUAGE=de:en LANG=en_US.UTF-8` (the shape a German user's
+/// desktop sets) rendered English, because `LANGUAGE` was never consulted.
+fn locale_candidates_from_env(get_var: impl Fn(&str) -> Option<String>) -> Vec<String> {
+    let selected = ["LC_ALL", "LC_MESSAGES", "LANG"]
+        .iter()
+        .find_map(|var| get_var(var).filter(|v| !v.is_empty()));
+
+    if !is_posix_c_locale(selected.as_deref().unwrap_or("C"))
+        && let Some(language) = get_var("LANGUAGE").filter(|v| !v.is_empty())
+    {
+        let candidates: Vec<String> = language
+            .split(':')
+            .filter(|entry| !entry.is_empty())
+            .map(normalize_code)
+            .collect();
+        if !candidates.is_empty() {
+            return candidates;
         }
     }
-    "en".to_string()
+
+    vec![normalize_code(&locale_from_env(&get_var))]
+}
+
+/// Whether a locale VALUE names the POSIX `C` locale (`C`, `POSIX`, their
+/// codeset/modifier-suffixed forms, or empty). Used to decide when GNU
+/// `LANGUAGE` must be ignored. This is a check on the raw locale NAME, not on
+/// `normalize_code`'s output, because `en_US` also normalizes to English yet is
+/// a real locale over which `LANGUAGE` still takes precedence.
+fn is_posix_c_locale(val: &str) -> bool {
+    let base = val.trim().split(['.', '@']).next().unwrap_or("");
+    base.is_empty() || base.eq_ignore_ascii_case("C") || base.eq_ignore_ascii_case("POSIX")
 }
 
 /// The user's home directory, by whichever variable this platform sets.
@@ -497,22 +752,33 @@ fn report_missing_translation(path: &str) -> bool {
 
 /// Look up `path`, falling back to the English string for that key.
 ///
-/// The catalog-level fallback in `resolve_catalog` only chooses WHICH file to
-/// load; without this per-key one, a key present in en.json but missing from
-/// the active locale rendered as the raw path — a user running under `de` saw
-/// the literal text `error.E9053`.
+/// The catalog-level fallback in [`resolve_catalog_tagged`] only chooses WHICH
+/// file to load; without this per-key one, a key present in en.json but missing
+/// from the active locale rendered as the raw path — a user running under `de`
+/// saw the literal text `error.E9053`.
 ///
 /// That is strictly worse than English: it is not a message in any language,
 /// and it leaks an internal key into the UI. A translation gap should degrade
 /// to a language the user may not read, not to something nobody can.
 ///
+/// A BLANK value counts as a miss, not a hit. An override file whose key maps to
+/// `""` (or only whitespace) used to be a "successful" lookup that rendered as
+/// an empty message — which reads as success while saying nothing — with no
+/// diagnostic. It is now treated exactly like an absent key: report it and fall
+/// back to English (or to the path if English lacks it too).
+///
 /// `active_is_english` short-circuits the second walk when the catalog in hand
 /// IS the English one, where it can only miss again.
 fn lookup_or_english(strings: &Value, path: &str, active_is_english: bool) -> String {
-    if let Some(s) = lookup_in(strings, path) {
+    if let Some(s) = lookup_in(strings, path)
+        && !s.trim().is_empty()
+    {
         return s;
     }
-    if !active_is_english && let Some(s) = lookup_in(english_catalog(), path) {
+    if !active_is_english
+        && let Some(s) = lookup_in(english_catalog(), path)
+        && !s.trim().is_empty()
+    {
         report_missing_translation(path);
         return s;
     }
@@ -1025,6 +1291,206 @@ mod tests {
         let _: Value = serde_json::from_str(LOCALE_EN).expect("en.json invalid");
     }
 
+    /// The placeholder-leak fix. `error_message` (no argument) must DROP every
+    /// unfilled placeholder — `{detail}`, `{hash}`, `{path}` — and tidy the
+    /// punctuation and empty delimiters that leaves; `error_message_with` fills
+    /// `{detail}` and drops the rest. Nothing braces-shaped may reach the user.
+    ///
+    /// Mutation: reverting `error_message` to `get("error.E{code}")` renders the
+    /// literal `{detail}`/`{hash}`/`{path}` to the user and fails the leaks.
+    #[test]
+    fn error_message_drops_unfilled_placeholders_and_with_fills_detail() {
+        // The drop-all-then-tidy path, driven directly so the checks do not
+        // hinge on which catalog another test in this binary installed.
+        let drop = |s: &str| tidy_empty_slots(&substitute(s, |_| Some("")));
+        assert_eq!(
+            drop("Could not read the disc at sector {detail}. Clean it."),
+            "Could not read the disc at sector. Clean it."
+        );
+        assert_eq!(drop("Drive reset failed: {detail}"), "Drive reset failed");
+        assert_eq!(
+            drop("The drive is not ready ({detail}). Insert a disc."),
+            "The drive is not ready. Insert a disc."
+        );
+        assert_eq!(
+            drop("Title {detail} doesn't exist."),
+            "Title doesn't exist."
+        );
+        assert_eq!(
+            drop("Key database download failed (HTTP {detail}). Try again."),
+            "Key database download failed (HTTP). Try again."
+        );
+        // The sibling placeholders: E7022's `(id: {hash})` wrapper and
+        // E9067/E9068's quoted `'{path}'` must vanish cleanly, not leave `(id:)`
+        // or `''` behind.
+        assert_eq!(
+            drop("No key source has a decryption key for this disc (id: {hash})."),
+            "No key source has a decryption key for this disc."
+        );
+        assert_eq!(
+            drop("A file name is too long. Shorten it and try again: '{path}'."),
+            "A file name is too long. Shorten it and try again."
+        );
+        assert_eq!(drop("plain sentence."), "plain sentence.");
+
+        // Full-width CJK parentheses (ja/zh wrap the value in （）/（id：）, not
+        // ASCII parens). An ASCII-only tidy would leave a bare `（）`/`（id：）`.
+        assert_eq!(
+            drop("ドライブの準備ができていません（{detail}）。挿入してください。"),
+            "ドライブの準備ができていません。挿入してください。"
+        );
+        assert_eq!(
+            drop("ダウンロードに失敗しました（HTTP {detail}）。"),
+            "ダウンロードに失敗しました（HTTP）。"
+        );
+        assert_eq!(
+            drop("このディスクの復号キーを持つキーソースがありません（id：{hash}）。"),
+            "このディスクの復号キーを持つキーソースがありません。"
+        );
+
+        // Public entry points. error_message_with fills {detail}; error_message
+        // and the {hash}/{path} codes leak nothing.
+        let filled = error_message_with(1000, "/dev/sr0");
+        assert!(
+            filled.contains("/dev/sr0") && !filled.contains("{detail}"),
+            "error_message_with must substitute the detail: {filled}"
+        );
+        for code in [1000u32, 7022, 9067, 9068] {
+            let bare = error_message(code);
+            assert!(
+                !bare.contains('{'),
+                "error_message({code}) leaked a placeholder: {bare}"
+            );
+        }
+    }
+
+    /// Three-letter ISO 639-2/3 codes and macrolanguage members fold onto the
+    /// shipped two-letter catalog codes.
+    ///
+    /// Mutation: deleting the `fold_language` call sends `deu` and `nb` to
+    /// English despite `de.json`/`no.json` shipping.
+    #[test]
+    fn normalize_code_folds_three_letter_and_macrolanguage_codes() {
+        assert_eq!(normalize_code("deu"), "de");
+        assert_eq!(normalize_code("ger"), "de"); // 639-2/B alias
+        assert_eq!(normalize_code("fra"), "fr");
+        assert_eq!(normalize_code("fre"), "fr");
+        assert_eq!(normalize_code("spa"), "es");
+        assert_eq!(normalize_code("nld"), "nl");
+        assert_eq!(normalize_code("jpn"), "ja");
+        assert_eq!(normalize_code("rus"), "ru");
+        assert_eq!(normalize_code("deu_DE"), "de-de");
+        // Norwegian: nb/nn have no catalog of their own; the shipped one is `no`.
+        assert_eq!(normalize_code("nb"), "no");
+        assert_eq!(normalize_code("nn"), "no");
+        assert_eq!(normalize_code("nb_NO.UTF-8"), "no-no");
+        assert_eq!(normalize_code("mo"), "ro"); // deprecated Moldovan alias
+        // An unshipped 3-letter code is passed through untouched (→ English).
+        assert_eq!(normalize_code("swa"), "swa");
+    }
+
+    /// Extended-language subtags resolve to the extlang, not to the macro
+    /// language's default script.
+    ///
+    /// Mutation: dropping the extlang promotion lets Chinese inference fold the
+    /// bare `zh` onto Simplified, so `zh-yue` (Cantonese) silently becomes
+    /// Simplified Mandarin — a different language.
+    #[test]
+    fn normalize_code_handles_extended_language_subtags() {
+        assert_eq!(normalize_code("zh-yue"), "yue");
+        assert_eq!(normalize_code("zh_yue_HK"), "yue-hk");
+        // A Mandarin extlang folds to `zh` and picks up Simplified by default.
+        assert_eq!(normalize_code("zh-cmn"), "zh-hans");
+        assert_eq!(normalize_code("zh-cmn-Hant"), "zh-hant");
+        // A 3-DIGIT subtag is a region, never an extlang.
+        assert_eq!(normalize_code("es-419"), "es-419");
+    }
+
+    /// GNU `LANGUAGE` precedence: a colon-separated priority list that overrides
+    /// a real POSIX selection but is IGNORED for the C/POSIX locale.
+    ///
+    /// Mutation: the old body never read LANGUAGE, so `LANGUAGE=de LANG=en_US`
+    /// returned `en_US` (English) instead of German.
+    #[test]
+    fn gnu_language_overrides_a_real_locale_but_not_the_c_locale() {
+        let env = |pairs: &[(&str, &str)]| {
+            let owned: Vec<(String, String)> = pairs
+                .iter()
+                .map(|(k, v)| (k.to_string(), v.to_string()))
+                .collect();
+            move |var: &str| {
+                owned
+                    .iter()
+                    .find(|(k, _)| k == var)
+                    .map(|(_, v)| v.to_string())
+            }
+        };
+        // Headline: LANGUAGE overrides a real LANG, and the WHOLE colon list is
+        // preserved in order (a "first entry only" reading would drop `en`).
+        assert_eq!(
+            locale_candidates_from_env(env(&[("LANGUAGE", "de:en"), ("LANG", "en_US.UTF-8")])),
+            vec!["de", "en"]
+        );
+        // Empty entries are skipped; each entry is normalized.
+        assert_eq!(
+            locale_candidates_from_env(env(&[("LANGUAGE", ":fr:pt_BR"), ("LANG", "en_US.UTF-8")])),
+            vec!["fr", "pt-br"]
+        );
+        // LC_ALL=C must NOT be overridden — parseable-output contract.
+        assert_eq!(
+            locale_candidates_from_env(env(&[("LC_ALL", "C"), ("LANGUAGE", "de:en")])),
+            vec!["en"]
+        );
+        // LANGUAGE with no locale variable set is ignored (that is the C locale).
+        assert_eq!(
+            locale_candidates_from_env(env(&[("LANGUAGE", "de")])),
+            vec!["en"]
+        );
+        // An empty LANGUAGE falls back to the POSIX selection.
+        assert_eq!(
+            locale_candidates_from_env(env(&[("LANGUAGE", ""), ("LANG", "it_IT")])),
+            vec!["it-it"]
+        );
+    }
+
+    /// The GNU `LANGUAGE` list is tried entry by entry: a leading entry with no
+    /// catalog must not short-circuit to English before a later, shipped entry.
+    ///
+    /// Mutation: resolving only `candidates[0]` renders `sw:de` as English even
+    /// though `de.json` ships.
+    #[test]
+    fn language_priority_list_tries_each_entry_before_english() {
+        let de: Value = serde_json::from_str(bundled_locale_json("de").unwrap()).unwrap();
+        let (got, is_en) = resolve_catalog_for_candidates(&["sw".to_string(), "de".to_string()]);
+        assert_eq!(
+            got, de,
+            "sw:de must reach German, not stop at the first miss"
+        );
+        assert!(!is_en);
+        // Every candidate missing → English.
+        let (fallback, en_flag) =
+            resolve_catalog_for_candidates(&["sw".to_string(), "xx".to_string()]);
+        assert_eq!(fallback, *english_catalog());
+        assert!(en_flag);
+    }
+
+    /// A blank locale value is a translation hole that reads as success.
+    ///
+    /// Mutation: returning `lookup_in`'s `Some("")` unconditionally renders an
+    /// empty message under a non-English locale instead of the English text.
+    #[test]
+    fn a_blank_locale_value_is_treated_as_missing() {
+        let blank: Value = serde_json::json!({ "error": { "E9053": "   " } });
+        let got = lookup_or_english(&blank, "error.E9053", false);
+        assert!(
+            got.contains("mkv://"),
+            "a blank value must fall back to English, got {got:?}"
+        );
+        // Blank with English already active degrades to the path, not "".
+        let both: Value = serde_json::json!({ "x": "" });
+        assert_eq!(lookup_or_english(&both, "x", true), "x");
+    }
+
     #[test]
     fn open_failed_key_exists_and_fills_placeholders() {
         // Regression: `error.open_failed` was referenced by the drive-info /
@@ -1135,17 +1601,28 @@ mod tests {
     fn error_message_returns_real_string_not_key_path() {
         // E7022 ("no key source has a decryption key for this disc") is a known
         // code present in en.json. error_message must return its actual string,
-        // not the `error.E7022` miss sentinel, and must keep the {hash}
-        // placeholder so the caller can substitute the disc id.
+        // not the `error.E7022` miss sentinel. Its English string names the disc
+        // by `{hash}` — a value this bare-code entry point does not have — so the
+        // placeholder must be DROPPED (with its `(id: …)` wrapper), never leaked
+        // as literal `{hash}` the way it once was on autorip's code-only path.
+        // (This assertion used to require `{hash}` to be preserved; that pinned
+        // the very leak the round-2 audit removed.)
         let msg = error_message(7022);
         assert_ne!(
             msg, "error.E7022",
             "error_message(7022) returned the key path — the string is missing or the key format is wrong"
         );
         assert!(
-            msg.contains("{hash}"),
-            "error_message(7022) should preserve the {{hash}} placeholder, got: '{}'",
-            msg
+            !msg.contains('{'),
+            "error_message(7022) leaked a placeholder to the user, got: '{msg}'"
+        );
+        assert!(
+            !msg.contains("(id:)") && !msg.contains("（id：）"),
+            "error_message(7022) left an empty (id:) wrapper: '{msg}'"
+        );
+        assert!(
+            msg.contains("decryption key"),
+            "error_message(7022) lost its real wording: '{msg}'"
         );
 
         // E1000 (drive not found) is another known code; sanity-check it too.
