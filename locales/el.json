@@ -244,6 +244,7 @@
         "E6016": "Error: a file on the disc has an allocation chain this reader cannot follow to its end, so part of the file is unknown. Reading it would have padded the rest with zeros and reported a complete file.",
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
+        "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
         "E7000": "Αυτός ο δίσκος χρειάζεται κλειδιά αποκρυπτογράφησης AACS (Blu-ray/UHD), αλλά δεν βρέθηκε κανένα. Κατεβάστε μια βάση δεδομένων κλειδιών με: freemkv update-keys --url <keydb-url>",
         "E7001": "Το πιστοποιητικό ασφαλείας του δίσκου είναι πολύ μικρό ή μη έγκυρο.",
         "E7002": "Η μονάδα δεν ξεκίνησε ασφαλή συνεδρία για αυτόν τον δίσκο — μπορεί να χρησιμοποιείται από άλλο πρόγραμμα. Κλείστε οτιδήποτε άλλο χρησιμοποιεί τον δίσκο και δοκιμάστε ξανά.",
