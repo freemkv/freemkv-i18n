@@ -1,6 +1,29 @@
 # Changelog
 
-## [Unreleased]
+## [1.6.5] — 2026-08-20
+
+### Added
+
+- **Twenty-two strings the freemkv CLI was still printing in English**,
+  found by a frontend audit and added to all 29 locales (which the parity
+  test requires). They cover the nine `--help` URL-scheme lines and their
+  header, the `--language` flag's help line, the `info` "File:" label for
+  the container arm, the five argv pre-pass diagnostics that run before the
+  catalog is even loaded (bad `--log-level`, `--log-file` and `--language`
+  values), and a macOS keydb-busy note the Windows shell already read from
+  the catalog.
+
+- **The `--share` drive-profile submit prompt, now fail-closed.** The
+  consent flow gained its own keys and the prompt reads `[y/N]`: a bare
+  Enter DECLINES, so a drive profile — which carries the drive serial
+  unless `--mask` — is never posted to the public tracker on a stray
+  keypress. Every locale previously advertised `[Y/n]`, a default-YES the
+  parser no longer honours.
+
+- **A string for `E6019`** (a UDF file whose allocation descriptors resolve
+  but yield no usable extent). libfreemkv added the code this cycle; without
+  a string it would have rendered as the literal text `error.E6019`. Added
+  to all 29 locales.
 
 ### Fixed
 
