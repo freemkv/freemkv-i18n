@@ -924,7 +924,11 @@ mod tests {
         // Regression: byte-slicing `s[..2]` panicked on a leading multibyte
         // char (e.g. `--language あ`, `LC_ALL=€a`). Untrusted input must never
         // panic — it must fall back to English (or the ASCII language part).
-        for input in ["あx", "€a", "Ⓐb", "😀x", "あ", "", ".", "_", "@", "ñ"] {
+        // "de" is a real, valid ASCII tag mixed into the same loop so the
+        // `code.split('-').all(...)` arm of the assertion actually runs at
+        // least once — every other input here folds to "en" and short-circuits
+        // past it.
+        for input in ["あx", "€a", "Ⓐb", "😀x", "あ", "", ".", "_", "@", "ñ", "de"] {
             let code = normalize_code(input);
             // A malformed leading subtag must fall back to English; a valid one
             // yields a lowercase-ASCII tag (lang plus optional -script/-region).
@@ -1595,6 +1599,58 @@ mod tests {
         // nothing to warn about.
         assert_eq!(language_override_conflict("de", Some("de")), None);
         assert_eq!(language_override_conflict("de", None), None);
+    }
+
+    /// The empty-candidate-list edge of the "not found" diagnostic: when there
+    /// is no first candidate at all (as opposed to one that missed), the match
+    /// must fall through quietly rather than panic on `.first()` or print a
+    /// diagnostic naming nothing.
+    #[test]
+    fn resolve_catalog_for_candidates_with_no_candidates_falls_back_to_english_silently() {
+        let (got, is_en) = resolve_catalog_for_candidates(&[]);
+        assert_eq!(got, *english_catalog());
+        assert!(is_en);
+    }
+
+    /// A GNU `LANGUAGE` value that is present but resolves to no usable
+    /// candidates (every entry empty, e.g. a bare `:`) must fall through to the
+    /// POSIX selection instead of returning an empty candidate list.
+    #[test]
+    fn language_var_with_only_empty_entries_falls_through_to_posix_selection() {
+        let env = |pairs: &[(&str, &str)]| {
+            let owned: Vec<(String, String)> = pairs
+                .iter()
+                .map(|(k, v)| (k.to_string(), v.to_string()))
+                .collect();
+            move |var: &str| {
+                owned
+                    .iter()
+                    .find(|(k, _)| k == var)
+                    .map(|(_, v)| v.to_string())
+            }
+        };
+        assert_eq!(
+            locale_candidates_from_env(env(&[("LANGUAGE", ":"), ("LANG", "it_IT")])),
+            vec!["it-it"]
+        );
+    }
+
+    /// `load_locale_file` against the real, unmocked search path: it must find
+    /// and parse a catalog dropped in `./locales` (the working-directory search
+    /// path every consumer relies on), not just the bundled/compiled-in ones
+    /// the rest of the suite exercises.
+    #[test]
+    fn load_locale_file_finds_a_catalog_via_the_real_working_directory_search_path() {
+        let path = Path::new("locales/ztx.json");
+        std::fs::write(path, r#"{"app":{"opt_quiet":"disk-loaded"}}"#)
+            .expect("write test locale file");
+        let result = load_locale_file("ztx");
+        let _ = std::fs::remove_file(path);
+        let v = result.expect("must find the file just written under ./locales");
+        assert_eq!(
+            lookup_in(&v, "app.opt_quiet"),
+            Some("disk-loaded".to_string())
+        );
     }
 
     #[test]
