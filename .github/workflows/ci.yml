@@ -126,6 +126,30 @@ jobs:
           shared-key: freemkv-i18n-ci
       - run: cargo build --tests
 
+  # Additive, NON-REQUIRED coverage job: gathers line coverage with
+  # cargo-llvm-cov and uploads to Codecov (tokenless — public repo). It never
+  # gates a merge (codecov.yml marks the project status informational and
+  # fail_ci_if_error is false), and it is deliberately not wired into any
+  # release gate. Cargo.lock is gitignored here (see header), so --locked is
+  # intentionally omitted, matching the test/lint jobs.
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@1.90.0
+        with:
+          components: llvm-tools-preview
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: freemkv-i18n-coverage
+      - uses: taiki-e/install-action@cargo-llvm-cov
+      - run: cargo llvm-cov --workspace --lcov --output-path lcov.info
+      - uses: codecov/codecov-action@v5
+        with:
+          files: lcov.info
+          slug: freemkv/freemkv-i18n
+          fail_ci_if_error: false
+
   check-windows:
     # dev is the FAST lane: this job still runs, but on the release-candidate
     # branches rather than on every push to dev. Nothing is deleted and no
