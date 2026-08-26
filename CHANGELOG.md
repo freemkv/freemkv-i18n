@@ -2,11 +2,22 @@
 
 ## [Unreleased]
 
+## [1.6.11] — 2026-08-26
+
 ### Changed
 
 - MSRV lowered from 1.97 to 1.90. The crate's actual floor is let-chains
   (stabilized in Rust 1.88); 1.90 is the lowest toolchain in the probed ladder
   that builds, lints and tests clean, and CI/`rust-version` now match it.
+- Version aligned to 1.6.11 for the unified release. No further functional
+  changes to this crate; the release was driven by the libfreemkv
+  main-feature selection improvements and the autorip mux-quarantine fix
+  (see the libfreemkv and autorip 1.6.11 notes).
+
+### Added
+
+- Codecov coverage reporting and badge.
+- Substantially expanded unit-test coverage.
 
 ## [1.6.10] — 2026-08-23
 
