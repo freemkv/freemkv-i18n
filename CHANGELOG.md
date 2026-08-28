@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [1.6.13] — 2026-08-28
+
+### Changed
+
+- Version aligned to 1.6.13 for the unified release.
+
 ## [1.6.12] — 2026-08-27
 
 ### Changed
