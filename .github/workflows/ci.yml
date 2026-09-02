@@ -15,8 +15,10 @@ on:
 # build.rs that bakes the `locales/` tree into the binary, and that codegen is
 # the part most likely to behave differently per OS, so it gets the full matrix.
 #
-# Cargo.lock is gitignored (library convention), so `--locked` is deliberately
-# NOT used: with no committed lockfile it fails rather than resolves.
+# Cargo.lock is now committed (issue #15), so the resolved dependency graph is
+# recorded and the `deny` job audits it. `--locked` is still deliberately NOT
+# used, matching the binary crates' ci.yml: CI's sibling path-patch layout
+# resolves the freemkv crates as path packages, which `--locked` can't satisfy.
 
 jobs:
   # ── Single source of truth for the MSRV ─────────────────────────────────────
@@ -99,6 +101,16 @@ jobs:
           shared-key: freemkv-i18n-ci
       - run: cargo test --tests
 
+  deny:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: EmbarkStudios/cargo-deny-action@v2
+        with:
+          command: check advisories bans licenses sources
+          manifest-path: Cargo.toml
+
   # src/error_codes.rs is a CHECKED-IN copy of libfreemkv's error-code
   # constants: this crate must not DEPEND on libfreemkv (it git-deps the private
   # freemkv-unlock, which would make freemkv-i18n unbuildable in its own CI), so
@@ -164,8 +176,8 @@ jobs:
   # cargo-llvm-cov and uploads to Codecov (tokenless — public repo). It never
   # gates a merge (codecov.yml marks the project status informational and
   # fail_ci_if_error is false), and it is deliberately not wired into any
-  # release gate. Cargo.lock is gitignored here (see header), so --locked is
-  # intentionally omitted, matching the test/lint jobs.
+  # release gate. --locked is intentionally omitted (the path-patch layout can't
+  # satisfy it, see header), matching the test/lint jobs.
   coverage:
     needs: resolve-msrv
     runs-on: ubuntu-latest
