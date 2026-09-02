@@ -1,18 +1,6 @@
-// GENERATED FILE — do not edit by hand. Regenerate with:
-//
-//     ci/sync-error-codes.sh
-//
-// Every error code libfreemkv can raise, as (code, constant name). This is a
-// checked-in copy rather than a dependency: libfreemkv git-deps freemkv-unlock,
-// which is private and unpublished, so depending on it would make this crate
-// unbuildable in its own CI — and it would invert the layering, since
-// libfreemkv emits codes and this crate is what turns them into text.
-//
-// The copy is not trusted to stay correct on its own. See
-// `libfreemkv_error_codes_all_have_english_strings` (every listed code must
-// have an English string — runs in CI) and `libfreemkv_code_list_has_not_drifted`
-// (this list must equal the real one — runs wherever a sibling libfreemkv
-// checkout exists).
+// GENERATED FILE — do not edit by hand. Regenerate: ci/sync-error-codes.sh
+// A checked-in copy of libfreemkv's error codes (this crate cannot depend on
+// libfreemkv). See docs/error-codes.md for why, plus the drift/parity tests.
 pub const LIBFREEMKV_ERROR_CODES: &[(u32, &str)] = &[
     (1000, "E_DEVICE_NOT_FOUND"),
     (1001, "E_DEVICE_PERMISSION"),

@@ -1,18 +1,6 @@
 // The runtime locale-resolution path, driven through the public API.
-//
-// Nothing had ever called `set_language`, `set_locale` or `init`. The whole
-// startup path — the one that decides which language a user sees — was
-// reachable only by running the real binary, and every unit test in the crate
-// worked on catalogs it constructed by hand. That is causally why the
-// `zh-Hans-CN` fallback bug shipped: the catalogs were verified in exquisite
-// detail and the code that chooses between them was verified not at all.
-//
-// It lives in an integration test rather than beside the unit tests because
-// `STRINGS` and `LANG_OVERRIDE` are process-wide statics. An integration test
-// binary is its own process, and this file holds exactly ONE test, so the
-// sequence below is deterministic: no other test can install a catalog or claim
-// the one-shot `--language` override underneath it. Adding a second `#[test]`
-// here would reintroduce the race, so don't — extend this one.
+// One `#[test]` only: STRINGS/LANG_OVERRIDE are process-wide statics, so a
+// second test here would race it. See docs/runtime-test.md — rationale.
 
 use serde_json::Value;
 
@@ -50,11 +38,7 @@ fn the_startup_and_live_switch_paths_select_the_right_catalog() {
     );
 
     // ── 2. The bug a user actually felt ────────────────────────────────────
-    // macOS hands a process the full BCP-47 tag. `zh-Hans-CN` normalizes to
-    // `zh-hans-cn`, which no catalog matches; the fallback then has to try
-    // `zh-hans` — which IS compiled into this binary — before `zh` and English.
-    // It used to skip straight from the full tag to `zh`, and since no `zh.json`
-    // ships, a Simplified Chinese user got an English UI with nothing logged.
+    // See docs/runtime-test.md — the zh-Hans-CN fallback regression.
     let simplified = bundled("zh-hans", KEY);
     let traditional = bundled("zh-hant", KEY);
     for tag in ["zh-Hans-CN", "zh_Hans_SG.UTF-8", "zh-Hans"] {
