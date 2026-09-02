@@ -1,6 +1,6 @@
-// GENERATED FILE — do not edit by hand. Regenerate with ci/sync-error-codes.sh.
-// See docs/error-codes.md — why this is a checked-in copy of libfreemkv's
-// error codes, and how its correctness is checked in CI.
+// GENERATED FILE — do not edit by hand. Regenerate: ci/sync-error-codes.sh
+// A checked-in copy of libfreemkv's error codes (this crate cannot depend on
+// libfreemkv). See docs/error-codes.md for why, plus the drift/parity tests.
 pub const LIBFREEMKV_ERROR_CODES: &[(u32, &str)] = &[
     (1000, "E_DEVICE_NOT_FOUND"),
     (1001, "E_DEVICE_PERMISSION"),
