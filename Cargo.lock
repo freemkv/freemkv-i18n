@@ -4,7 +4,7 @@ version = 4
 
 [[package]]
 name = "freemkv-i18n"
-version = "1.6.14"
+version = "1.7.0"
 dependencies = [
  "serde_json",
 ]
@@ -106,16 +106,16 @@ checksum = "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b"
 
 [[patch.unused]]
 name = "freemkv-unlock"
-version = "1.6.14"
+version = "1.7.0"
 
 [[patch.unused]]
 name = "freemkv-engine"
-version = "1.6.14"
+version = "1.7.0"
 
 [[patch.unused]]
 name = "freemkv-keysources"
-version = "1.6.14"
+version = "1.7.0"
 
 [[patch.unused]]
 name = "libfreemkv"
-version = "1.6.14"
+version = "1.7.0"

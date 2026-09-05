@@ -101,7 +101,14 @@ pub fn set_locale(code: &str) {
     // INIT_LOCK across resolve-then-install so the last CALLER wins, not the
     // last resolve to finish; see docs/locking.md for why.
     let _init = init_lock();
-    let (resolved, is_english) = resolve_catalog_tagged(&normalize_code(code));
+    // "auto" re-detects from the environment, exactly like startup (init()),
+    // rather than normalizing the literal string "auto" (which resolves to
+    // nothing and would silently fall back to English).
+    let (resolved, is_english) = if code.eq_ignore_ascii_case("auto") {
+        resolve_catalog_for_candidates(&detect_languages())
+    } else {
+        resolve_catalog_tagged(&normalize_code(code))
+    };
     let mut w = write_strings();
     ACTIVE_IS_EN.store(is_english, Ordering::Relaxed);
     *w = Some(resolved);
@@ -472,13 +479,16 @@ fn locale_search_dirs_from(
     if let Some(dir) = exe_dir {
         dirs.push(dir.join("locales"));
     }
-    dirs.push(PathBuf::from("locales"));
     if let Some(home) = home {
         dirs.push(home.join(".config").join("freemkv").join("locales"));
     }
     if let Some(system) = system {
         dirs.push(system);
     }
+    // Lowest precedence: whatever a user/system catalog didn't cover falls
+    // back to cwd, but cwd must never override them (VAL-audit: launching
+    // from an arbitrary directory must not shadow the installed catalog).
+    dirs.push(PathBuf::from("locales"));
     dirs
 }
 
@@ -515,8 +525,29 @@ fn locale_read_diagnostic(path: &Path, error: &std::io::Error) -> Option<String>
     })
 }
 
+// A real catalog is tens of KB; refuse to buffer anything wildly larger.
+const MAX_LOCALE_FILE_BYTES: u64 = 8 * 1024 * 1024; // 8 MiB
+
+// Read `path` fully but refuse anything past `max_bytes` — a real catalog
+// is tens of KB; larger is corrupt or hostile input. Returns an
+// `InvalidData` error (never NotFound), reported like any unreadable file.
+fn read_capped(path: &Path, max_bytes: u64) -> std::io::Result<String> {
+    use std::io::Read;
+    let mut buf = Vec::new();
+    std::fs::File::open(path)?
+        .take(max_bytes + 1)
+        .read_to_end(&mut buf)?;
+    if buf.len() as u64 > max_bytes {
+        return Err(std::io::Error::new(
+            std::io::ErrorKind::InvalidData,
+            format!("locale file exceeds {max_bytes}-byte limit"),
+        ));
+    }
+    String::from_utf8(buf).map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, e))
+}
+
 fn try_load(path: &Path) -> Option<Value> {
-    let data = match std::fs::read_to_string(path) {
+    let data = match read_capped(path, MAX_LOCALE_FILE_BYTES) {
         Ok(data) => data,
         Err(e) => {
             if let Some(msg) = locale_read_diagnostic(path, &e) {
@@ -599,6 +630,22 @@ mod tests {
             None
         });
         found.into_inner()
+    }
+
+    // Build a `get_var`-shaped closure over explicit pairs, shared by every
+    // test that fakes the environment for locale_from_env /
+    // locale_candidates_from_env.
+    fn env(pairs: &[(&str, &str)]) -> impl Fn(&str) -> Option<String> {
+        let owned: Vec<(String, String)> = pairs
+            .iter()
+            .map(|(k, v)| (k.to_string(), v.to_string()))
+            .collect();
+        move |var: &str| {
+            owned
+                .iter()
+                .find(|(k, _)| k == var)
+                .map(|(_, v)| v.to_string())
+        }
     }
 
     /// Collect all dotted key paths from a JSON value (e.g. "disc.scanning", "error.E1000").
@@ -788,19 +835,6 @@ mod tests {
     // LANG must not be consulted at all.
     #[test]
     fn lc_all_overrides_every_other_locale_variable() {
-        let env = |pairs: &[(&str, &str)]| {
-            let owned: Vec<(String, String)> = pairs
-                .iter()
-                .map(|(k, v)| (k.to_string(), v.to_string()))
-                .collect();
-            move |var: &str| {
-                owned
-                    .iter()
-                    .find(|(k, _)| k == var)
-                    .map(|(_, v)| v.to_string())
-            }
-        };
-
         // The headline case: an explicit `LC_ALL=C` must win, and `C` means
         // English. It used to fall through and print German.
         assert_eq!(
@@ -859,8 +893,8 @@ mod tests {
         assert_eq!(locale_filenames("de"), ["de.json"]);
     }
 
-    // Catches search path 3 being gated on $HOME (unset on stock Windows) and
-    // path 4 being a hardcoded /usr/share that means nothing there.
+    // Catches search path 2 being gated on $HOME (unset on stock Windows) and
+    // path 3 being a hardcoded /usr/share that means nothing there.
     #[test]
     fn search_dirs_are_ordered_and_survive_a_missing_home() {
         let dirs = locale_search_dirs_from(
@@ -872,9 +906,9 @@ mod tests {
             dirs,
             [
                 PathBuf::from("/opt/freemkv/bin/locales"),
-                PathBuf::from("locales"),
                 PathBuf::from("/opt/testhome/.config/freemkv/locales"),
                 PathBuf::from("/usr/share/freemkv/locales"),
+                PathBuf::from("locales"),
             ]
         );
         // No home and no system dir must not drop the two that remain.
@@ -1161,18 +1195,6 @@ mod tests {
     // a real POSIX selection but is IGNORED for the C/POSIX locale.
     #[test]
     fn gnu_language_overrides_a_real_locale_but_not_the_c_locale() {
-        let env = |pairs: &[(&str, &str)]| {
-            let owned: Vec<(String, String)> = pairs
-                .iter()
-                .map(|(k, v)| (k.to_string(), v.to_string()))
-                .collect();
-            move |var: &str| {
-                owned
-                    .iter()
-                    .find(|(k, _)| k == var)
-                    .map(|(_, v)| v.to_string())
-            }
-        };
         // Headline: LANGUAGE overrides a real LANG, and the WHOLE colon list is
         // preserved in order (a "first entry only" reading would drop `en`).
         assert_eq!(
@@ -1343,18 +1365,6 @@ mod tests {
     /// POSIX selection instead of returning an empty candidate list.
     #[test]
     fn language_var_with_only_empty_entries_falls_through_to_posix_selection() {
-        let env = |pairs: &[(&str, &str)]| {
-            let owned: Vec<(String, String)> = pairs
-                .iter()
-                .map(|(k, v)| (k.to_string(), v.to_string()))
-                .collect();
-            move |var: &str| {
-                owned
-                    .iter()
-                    .find(|(k, _)| k == var)
-                    .map(|(_, v)| v.to_string())
-            }
-        };
         assert_eq!(
             locale_candidates_from_env(env(&[("LANGUAGE", ":"), ("LANG", "it_IT")])),
             vec!["it-it"]
