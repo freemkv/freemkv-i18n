@@ -632,6 +632,22 @@ mod tests {
         found.into_inner()
     }
 
+    // Build a `get_var`-shaped closure over explicit pairs, shared by every
+    // test that fakes the environment for locale_from_env /
+    // locale_candidates_from_env.
+    fn env(pairs: &[(&str, &str)]) -> impl Fn(&str) -> Option<String> {
+        let owned: Vec<(String, String)> = pairs
+            .iter()
+            .map(|(k, v)| (k.to_string(), v.to_string()))
+            .collect();
+        move |var: &str| {
+            owned
+                .iter()
+                .find(|(k, _)| k == var)
+                .map(|(_, v)| v.to_string())
+        }
+    }
+
     /// Collect all dotted key paths from a JSON value (e.g. "disc.scanning", "error.E1000").
     fn collect_keys(value: &Value, prefix: &str, out: &mut Vec<String>) {
         if let Some(obj) = value.as_object() {
@@ -819,19 +835,6 @@ mod tests {
     // LANG must not be consulted at all.
     #[test]
     fn lc_all_overrides_every_other_locale_variable() {
-        let env = |pairs: &[(&str, &str)]| {
-            let owned: Vec<(String, String)> = pairs
-                .iter()
-                .map(|(k, v)| (k.to_string(), v.to_string()))
-                .collect();
-            move |var: &str| {
-                owned
-                    .iter()
-                    .find(|(k, _)| k == var)
-                    .map(|(_, v)| v.to_string())
-            }
-        };
-
         // The headline case: an explicit `LC_ALL=C` must win, and `C` means
         // English. It used to fall through and print German.
         assert_eq!(
@@ -1222,18 +1225,6 @@ mod tests {
     // a real POSIX selection but is IGNORED for the C/POSIX locale.
     #[test]
     fn gnu_language_overrides_a_real_locale_but_not_the_c_locale() {
-        let env = |pairs: &[(&str, &str)]| {
-            let owned: Vec<(String, String)> = pairs
-                .iter()
-                .map(|(k, v)| (k.to_string(), v.to_string()))
-                .collect();
-            move |var: &str| {
-                owned
-                    .iter()
-                    .find(|(k, _)| k == var)
-                    .map(|(_, v)| v.to_string())
-            }
-        };
         // Headline: LANGUAGE overrides a real LANG, and the WHOLE colon list is
         // preserved in order (a "first entry only" reading would drop `en`).
         assert_eq!(
@@ -1404,18 +1395,6 @@ mod tests {
     /// POSIX selection instead of returning an empty candidate list.
     #[test]
     fn language_var_with_only_empty_entries_falls_through_to_posix_selection() {
-        let env = |pairs: &[(&str, &str)]| {
-            let owned: Vec<(String, String)> = pairs
-                .iter()
-                .map(|(k, v)| (k.to_string(), v.to_string()))
-                .collect();
-            move |var: &str| {
-                owned
-                    .iter()
-                    .find(|(k, _)| k == var)
-                    .map(|(_, v)| v.to_string())
-            }
-        };
         assert_eq!(
             locale_candidates_from_env(env(&[("LANGUAGE", ":"), ("LANG", "it_IT")])),
             vec!["it-it"]
