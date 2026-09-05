@@ -65,7 +65,7 @@ fn the_startup_and_live_switch_paths_select_the_right_catalog() {
     assert_eq!(freemkv_i18n::get(KEY), bundled("fr", KEY));
 
     // ── 4. Unknown tags, and the POSIX C locale, end at English ────────────
-    for tag in ["xx-YY", "C", "POSIX", "", "auto"] {
+    for tag in ["xx-YY", "C", "POSIX", ""] {
         freemkv_i18n::set_locale(tag);
         assert_eq!(
             freemkv_i18n::get(KEY),
@@ -73,6 +73,16 @@ fn the_startup_and_live_switch_paths_select_the_right_catalog() {
             "{tag:?} should have resolved to English"
         );
     }
+
+    // "auto" re-detects the same way startup does, not just landing on
+    // English: LANG_OVERRIDE was pinned to "de" in step 1 and never resets,
+    // so "auto" here must reach German, exactly like init() would.
+    freemkv_i18n::set_locale("auto");
+    assert_eq!(
+        freemkv_i18n::get(KEY),
+        bundled("de", KEY),
+        "auto did not re-detect through the same path as startup"
+    );
 
     // ── 5. fmt and error_message go through the same installed catalog ─────
     freemkv_i18n::set_locale("de");
