@@ -30,7 +30,47 @@ from pathlib import Path
 INLINE_CAP = 3
 DOC_CAP = 8
 
-_RAW_OPEN = re.compile(r'r(#*)"')  # raw string opener: r"…", r#"…"#, br##"…"## …
+_IDENT_CHAR = re.compile(r"[A-Za-z0-9_]")
+
+
+def _find_raw_open(raw):
+    """Return (end_index, hash_count) for a raw-string prefix (r"/r#.../
+    br"/br#...) that opens on this CODE line, or None. Walks the line
+    tracking ordinary "..." string state, so a literal that merely ends in
+    `r` (e.g. "fr", "pt-br") is never misread as a raw-string opener: the
+    prefix must sit at a token boundary (not preceded by an identifier
+    char) and must not be enclosed in an ordinary string.
+    """
+    i, n = 0, len(raw)
+    in_str = False
+    while i < n:
+        c = raw[i]
+        if in_str:
+            if c == "\\":
+                i += 2
+                continue
+            if c == '"':
+                in_str = False
+            i += 1
+            continue
+        if c == '"':
+            in_str = True
+            i += 1
+            continue
+        if c in "rb" and not (i > 0 and _IDENT_CHAR.match(raw[i - 1])):
+            j = i + 1
+            if c == "b":
+                if j >= n or raw[j] != "r":
+                    i += 1
+                    continue
+                j += 1
+            k = j
+            while k < n and raw[k] == "#":
+                k += 1
+            if k < n and raw[k] == '"':
+                return k + 1, k - j
+        i += 1
+    return None
 
 
 def _strip_line_comment(s):
@@ -99,9 +139,11 @@ def _classify(lines):
         rec["code"] = s != ""
         # A code line may OPEN a raw string that spans following lines. Detected
         # only on code (comments were handled above), so `// see r"x"` is safe.
-        m = _RAW_OPEN.search(raw)
-        if m and ('"' + "#" * len(m.group(1))) not in raw[m.end():]:
-            raw_hashes = len(m.group(1))
+        found = _find_raw_open(raw)
+        if found:
+            end, hashes = found
+            if ('"' + "#" * hashes) not in raw[end:]:
+                raw_hashes = hashes
         info.append(rec)
     return info
 
@@ -233,6 +275,22 @@ def _selftest():
         ("".join(f"//! l{k}\n" for k in range(40)) + "\npub fn m() {}\n", 0),
         # /*! block module doc may run long -> EXEMPT
         ("/*! l0\n" + "".join(f" l{k}\n" for k in range(30)) + "*/\nfn n() {}\n", 0),
+        # ordinary strings ending in `r` must NOT be misread as raw-string
+        # openers (issue: bare `r"` substring match). If misdetected, the
+        # parser would think it's inside a string for the rest of the file
+        # and the 4-line inline block below would go uncaught.
+        (
+            'let x = "fr";\nlet y = "pt-br";\n'
+            + "// a\n// b\n// c\n// d\nfn p() {}\n",
+            1,
+        ),
+        # a REAL raw string opened right after such literals still works.
+        (
+            'let x = "pt-br";\nconst H: &str = r"line\n'
+            + "".join("/* note */\n" for _ in range(6))
+            + '"; fn r() {}\n',
+            0,
+        ),
     ]
     ok = True
     with tempfile.TemporaryDirectory() as d:
