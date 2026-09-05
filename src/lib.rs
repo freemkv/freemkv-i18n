@@ -101,7 +101,14 @@ pub fn set_locale(code: &str) {
     // INIT_LOCK across resolve-then-install so the last CALLER wins, not the
     // last resolve to finish; see docs/locking.md for why.
     let _init = init_lock();
-    let (resolved, is_english) = resolve_catalog_tagged(&normalize_code(code));
+    // "auto" re-detects from the environment, exactly like startup (init()),
+    // rather than normalizing the literal string "auto" (which resolves to
+    // nothing and would silently fall back to English).
+    let (resolved, is_english) = if code.eq_ignore_ascii_case("auto") {
+        resolve_catalog_for_candidates(&detect_languages())
+    } else {
+        resolve_catalog_tagged(&normalize_code(code))
+    };
     let mut w = write_strings();
     ACTIVE_IS_EN.store(is_english, Ordering::Relaxed);
     *w = Some(resolved);
