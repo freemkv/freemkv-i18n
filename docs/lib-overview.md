@@ -44,11 +44,12 @@ lowercase name, the underscore form, and BCP-47 canonical case, so an
 operator's `pt-BR.json` is found on a case-sensitive filesystem):
 
 1. `<binary dir>/locales/xx.json` (next to the binary)
-2. `./locales/xx.json` (working directory)
-3. `<home>/.config/freemkv/locales/xx.json` (home is `$HOME`, or
+2. `<home>/.config/freemkv/locales/xx.json` (home is `$HOME`, or
    `%USERPROFILE%` on Windows)
-4. `/usr/share/freemkv/locales/xx.json` (`%PROGRAMDATA%\freemkv\locales` on
+3. `/usr/share/freemkv/locales/xx.json` (`%PROGRAMDATA%\freemkv\locales` on
    Windows)
+4. `./locales/xx.json` (working directory — lowest precedence, so launching
+   from an arbitrary directory can't shadow the installed/user catalog)
 
 To add a language: create `locales/xx.json` (copy `en.json` structure) and
 place it in any search path. No code changes needed.
