@@ -525,8 +525,29 @@ fn locale_read_diagnostic(path: &Path, error: &std::io::Error) -> Option<String>
     })
 }
 
+// A real catalog is tens of KB; refuse to buffer anything wildly larger.
+const MAX_LOCALE_FILE_BYTES: u64 = 8 * 1024 * 1024; // 8 MiB
+
+// Read `path` fully but refuse anything past `max_bytes` — a real catalog
+// is tens of KB; larger is corrupt or hostile input. Returns an
+// `InvalidData` error (never NotFound), reported like any unreadable file.
+fn read_capped(path: &Path, max_bytes: u64) -> std::io::Result<String> {
+    use std::io::Read;
+    let mut buf = Vec::new();
+    std::fs::File::open(path)?
+        .take(max_bytes + 1)
+        .read_to_end(&mut buf)?;
+    if buf.len() as u64 > max_bytes {
+        return Err(std::io::Error::new(
+            std::io::ErrorKind::InvalidData,
+            format!("locale file exceeds {max_bytes}-byte limit"),
+        ));
+    }
+    String::from_utf8(buf).map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, e))
+}
+
 fn try_load(path: &Path) -> Option<Value> {
-    let data = match std::fs::read_to_string(path) {
+    let data = match read_capped(path, MAX_LOCALE_FILE_BYTES) {
         Ok(data) => data,
         Err(e) => {
             if let Some(msg) = locale_read_diagnostic(path, &e) {
@@ -947,6 +968,36 @@ mod tests {
         std::fs::write(dir.join("zz.json"), "{ not json").unwrap();
         assert!(try_load(&dir.join("zz.json")).is_none());
         assert!(try_load(&dir.join("absent.json")).is_none());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    // The size cap rejects an oversized locale file as InvalidData (never
+    // NotFound), so try_load reports it rather than silently swallowing it or
+    // reading an unbounded file into memory. Tested with a tiny cap.
+    #[test]
+    fn an_oversized_locale_file_is_a_capped_read_error_not_a_miss() {
+        let dir = std::env::temp_dir().join("freemkv-i18n-cap-test");
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).expect("create test dir");
+        let path = dir.join("big.json");
+        std::fs::write(&path, vec![b'x'; 33]).unwrap();
+        assert_eq!(
+            read_capped(&path, 32).unwrap_err().kind(),
+            std::io::ErrorKind::InvalidData,
+            "a file over the cap must be an InvalidData read error"
+        );
+        std::fs::write(&path, vec![b'x'; 32]).unwrap();
+        assert!(
+            read_capped(&path, 32).is_ok(),
+            "exactly at the cap is accepted"
+        );
+        assert_eq!(
+            read_capped(&dir.join("absent.json"), 32)
+                .unwrap_err()
+                .kind(),
+            std::io::ErrorKind::NotFound,
+            "a missing file is NotFound, never the cap's InvalidData"
+        );
         let _ = std::fs::remove_dir_all(&dir);
     }
 
