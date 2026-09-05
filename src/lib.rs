@@ -479,13 +479,16 @@ fn locale_search_dirs_from(
     if let Some(dir) = exe_dir {
         dirs.push(dir.join("locales"));
     }
-    dirs.push(PathBuf::from("locales"));
     if let Some(home) = home {
         dirs.push(home.join(".config").join("freemkv").join("locales"));
     }
     if let Some(system) = system {
         dirs.push(system);
     }
+    // Lowest precedence: whatever a user/system catalog didn't cover falls
+    // back to cwd, but cwd must never override them (VAL-audit: launching
+    // from an arbitrary directory must not shadow the installed catalog).
+    dirs.push(PathBuf::from("locales"));
     dirs
 }
 
@@ -866,8 +869,8 @@ mod tests {
         assert_eq!(locale_filenames("de"), ["de.json"]);
     }
 
-    // Catches search path 3 being gated on $HOME (unset on stock Windows) and
-    // path 4 being a hardcoded /usr/share that means nothing there.
+    // Catches search path 2 being gated on $HOME (unset on stock Windows) and
+    // path 3 being a hardcoded /usr/share that means nothing there.
     #[test]
     fn search_dirs_are_ordered_and_survive_a_missing_home() {
         let dirs = locale_search_dirs_from(
@@ -879,9 +882,9 @@ mod tests {
             dirs,
             [
                 PathBuf::from("/opt/freemkv/bin/locales"),
-                PathBuf::from("locales"),
                 PathBuf::from("/opt/testhome/.config/freemkv/locales"),
                 PathBuf::from("/usr/share/freemkv/locales"),
+                PathBuf::from("locales"),
             ]
         );
         // No home and no system dir must not drop the two that remain.
