@@ -10,9 +10,8 @@ name: qa
 # that a commit is production worth: everything expensive that can run without
 # physical media. `main` only ever receives a qa that went green here.
 #
-# Sibling repos are checked out at `qa`, NOT `dev`. A qa run that resolved its
-# dependencies from dev tips would be validating a combination that is not the
-# one being released, which is the exact failure this branch exists to prevent.
+# freemkv-i18n is a leaf crate (no freemkv dependencies), so every job checks
+# out the crate at the workspace root — there are no siblings to resolve.
 #
 # What this gate CANNOT cover: `disc://` and real `iso://` need physical media,
 # and no hosted runner has an optical drive or the image hoard. Those run on a
@@ -23,6 +22,10 @@ on:
     branches: [qa]
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # Single source of truth for the MSRV — see ci.yml. Jobs that build/test AT
   # the MSRV read `needs.resolve-msrv.outputs.v` from Cargo.toml's rust-version;
@@ -32,7 +35,7 @@ jobs:
     outputs:
       v: ${{ steps.msrv.outputs.v }}
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v5
       - id: msrv
         shell: bash
         run: echo "v=$(grep -m1 '^rust-version' Cargo.toml | sed -E 's/.*\"([^\"]+)\".*/\1/')" >> "$GITHUB_OUTPUT"
@@ -56,7 +59,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Stamp the next rc
@@ -85,17 +88,12 @@ jobs:
         os: ['ubuntu-latest', 'macos-latest']
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v7
-        with:
-          path: freemkv-i18n
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ needs.resolve-msrv.outputs.v }}
       - uses: Swatinem/rust-cache@v2
-        with:
-          workspaces: freemkv-i18n
       - run: cargo test --release --tests
-        working-directory: freemkv-i18n
 
   # clippy's output is target-dependent: cfg-gated code only gets linted on
   # the target it compiles for. Linting solely on the dev machine's host
@@ -103,20 +101,15 @@ jobs:
   cross-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-        with:
-          path: freemkv-i18n
+      - uses: actions/checkout@v5
       # clippy runs on stable (matches ci.yml's lint job); build/test stay on
       # the MSRV pin. See ci.yml for why the lint toolchain need not be the MSRV.
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy
       - uses: Swatinem/rust-cache@v2
-        with:
-          workspaces: freemkv-i18n
       - run: rustup target add x86_64-unknown-linux-gnu
       - run: cargo clippy --all-targets --target x86_64-unknown-linux-gnu -- -D warnings
-        working-directory: freemkv-i18n
 
   # Windows compiles the tests but does not run them, matching the policy
   # ci.yml already set. The value here is codegen: the #[cfg(windows)] halves
@@ -126,14 +119,9 @@ jobs:
     needs: resolve-msrv
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v7
-        with:
-          path: freemkv-i18n
+      - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ needs.resolve-msrv.outputs.v }}
       - uses: Swatinem/rust-cache@v2
-        with:
-          workspaces: freemkv-i18n
       - run: cargo build --release --tests
-        working-directory: freemkv-i18n
