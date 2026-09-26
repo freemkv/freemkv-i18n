@@ -358,6 +358,7 @@
         "title_out_of_range": "Titel {num} buiten bereik ({count})",
         "unknown_flag": "Fout: onbekende optie '{flag}'. Gebruik 'freemkv help' voor een lijst met opties.",
         "usage_hint": "Gebruik: freemkv <bron> <doel> [opties]\n       freemkv info <url>\n\nGebruik 'freemkv help' voor meer informatie.",
+        "gui_not_in_build": "De desktop-app zit niet in deze build. Installeer de freemkv-app om hem te krijgen: https://freemkv.org/download",
         "unknown_language": "onbekende taal '{tag}' (beschikbaar op deze titel: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

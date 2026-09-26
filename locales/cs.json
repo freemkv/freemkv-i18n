@@ -381,6 +381,7 @@
         "title_out_of_range": "Titul {num} mimo rozsah ({count})",
         "unknown_flag": "Chyba: neznámý příznak '{flag}'. Seznam voleb zobrazíte pomocí 'freemkv help'.",
         "usage_hint": "Použití: freemkv <zdroj> <cíl> [příznaky]\n       freemkv info <url>\n\nZkuste 'freemkv help' pro více informací.",
+        "gui_not_in_build": "Tato verze neobsahuje desktopovou aplikaci. Nainstalujte si aplikaci freemkv: https://freemkv.org/download",
         "unknown_language": "neznámý jazyk '{tag}' (dostupné v tomto titulu: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

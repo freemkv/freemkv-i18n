@@ -381,6 +381,7 @@
         "title_out_of_range": "El títol {num} és fora de rang ({count})",
         "unknown_flag": "Error: indicador desconegut «{flag}». Proveu «freemkv help» per veure la llista d'opcions.",
         "usage_hint": "Ús: freemkv <origen> <destinació> [indicadors]\n       freemkv info <url>\n\nProveu «freemkv help» per a més informació.",
+        "gui_not_in_build": "Aquesta versió no inclou l'aplicació d'escriptori. Instal·leu l'aplicació freemkv per obtenir-la: https://freemkv.org/download",
         "unknown_language": "idioma desconegut «{tag}» (disponibles en aquest títol: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

@@ -381,6 +381,7 @@
         "title_out_of_range": "A(z) {num}. cím tartományon kívül esik ({count})",
         "unknown_flag": "Hiba: ismeretlen kapcsoló: „{flag}”. Próbáld a „freemkv help” parancsot a kapcsolók listájáért.",
         "usage_hint": "Használat: freemkv <forrás> <cél> [kapcsolók]\n       freemkv info <url>\n\nPróbáld a „freemkv help” parancsot további segítségért.",
+        "gui_not_in_build": "Az asztali alkalmazás nem része ennek a kiadásnak. Telepítsd a freemkv alkalmazást: https://freemkv.org/download",
         "unknown_language": "ismeretlen nyelv: „{tag}” (ezen a címen elérhető: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

@@ -358,6 +358,7 @@
         "title_out_of_range": "Título {num} fuera de rango ({count})",
         "unknown_flag": "Error: opcion desconocida '{flag}'. Use 'freemkv help' para ver las opciones.",
         "usage_hint": "Uso: freemkv <fuente> <destino> [opciones]\n       freemkv info <url>\n\nUse 'freemkv help' para más información.",
+        "gui_not_in_build": "La aplicación de escritorio no está incluida en esta versión. Instale la aplicación freemkv para obtenerla: https://freemkv.org/download",
         "unknown_language": "idioma desconocido '{tag}' (disponibles en este título: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

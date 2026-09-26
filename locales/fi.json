@@ -381,6 +381,7 @@
         "title_out_of_range": "Nimike {num} on alueen ulkopuolella ({count})",
         "unknown_flag": "Virhe: tuntematon valitsin '{flag}'. Kokeile 'freemkv help' saadaksesi luettelon valitsimista.",
         "usage_hint": "Käyttö: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nKokeile 'freemkv help' saadaksesi lisätietoja.",
+        "gui_not_in_build": "Työpöytäsovellus ei sisälly tähän versioon. Asenna freemkv-sovellus: https://freemkv.org/download",
         "unknown_language": "tuntematon kieli '{tag}' (saatavilla tässä nimikkeessä: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

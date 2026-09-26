@@ -381,6 +381,7 @@
         "title_out_of_range": "Tytuł {num} poza zakresem ({count})",
         "unknown_flag": "Błąd: nieznana flaga „{flag}”. Wpisz „freemkv help”, aby wyświetlić listę opcji.",
         "usage_hint": "Sposób użycia: freemkv <źródło> <cel> [flagi]\n       freemkv info <url>\n\nWpisz „freemkv help”, aby uzyskać więcej informacji.",
+        "gui_not_in_build": "Ta wersja nie zawiera aplikacji desktopowej. Zainstaluj aplikację freemkv: https://freemkv.org/download",
         "unknown_language": "nieznany język „{tag}” (dostępne w tym tytule: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

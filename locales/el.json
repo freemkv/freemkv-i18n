@@ -381,6 +381,7 @@
         "title_out_of_range": "Ο τίτλος {num} είναι εκτός εύρους ({count})",
         "unknown_flag": "Σφάλμα: άγνωστη σημαία '{flag}'. Δοκιμάστε 'freemkv help' για μια λίστα επιλογών.",
         "usage_hint": "Χρήση: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nΔοκιμάστε 'freemkv help' για περισσότερα.",
+        "gui_not_in_build": "Η εφαρμογή επιφάνειας εργασίας δεν περιλαμβάνεται σε αυτή την έκδοση. Εγκαταστήστε την εφαρμογή freemkv: https://freemkv.org/download",
         "unknown_language": "άγνωστη γλώσσα '{tag}' (διαθέσιμες σε αυτόν τον τίτλο: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

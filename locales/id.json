@@ -381,6 +381,7 @@
         "title_out_of_range": "Judul {num} di luar rentang ({count})",
         "unknown_flag": "Kesalahan: flag '{flag}' tidak dikenal. Coba 'freemkv help' untuk daftar opsi.",
         "usage_hint": "Penggunaan: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nCoba 'freemkv help' untuk selengkapnya.",
+        "gui_not_in_build": "Aplikasi desktop tidak disertakan dalam build ini. Pasang aplikasi freemkv untuk mendapatkannya: https://freemkv.org/download",
         "unknown_language": "bahasa '{tag}' tidak dikenal (tersedia pada judul ini: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

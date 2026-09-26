@@ -381,6 +381,7 @@
         "title_out_of_range": "Tiêu đề {num} nằm ngoài phạm vi ({count})",
         "unknown_flag": "Lỗi: cờ không xác định '{flag}'. Thử 'freemkv help' để xem danh sách tùy chọn.",
         "usage_hint": "Cách dùng: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nThử 'freemkv help' để biết thêm.",
+        "gui_not_in_build": "Bản dựng này không có ứng dụng máy tính. Hãy cài ứng dụng freemkv để sử dụng: https://freemkv.org/download",
         "unknown_language": "ngôn ngữ không xác định '{tag}' (có sẵn trên tiêu đề này: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

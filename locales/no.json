@@ -381,6 +381,7 @@
         "title_out_of_range": "Tittel {num} utenfor område ({count})",
         "unknown_flag": "Feil: ukjent flagg «{flag}». Prøv «freemkv help» for en liste over valg.",
         "usage_hint": "Bruk: freemkv <source> <dest> [flagg]\n       freemkv info <url>\n\nPrøv «freemkv help» for mer.",
+        "gui_not_in_build": "Skrivebordsappen er ikke med i denne versjonen. Installer freemkv-appen for å få den: https://freemkv.org/download",
         "unknown_language": "ukjent språk «{tag}» (tilgjengelig på denne tittelen: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

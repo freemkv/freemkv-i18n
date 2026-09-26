@@ -381,6 +381,7 @@
         "title_out_of_range": "Titlul {num} este în afara intervalului ({count})",
         "unknown_flag": "Eroare: opțiune necunoscută '{flag}'. Încearcă 'freemkv help' pentru o listă de opțiuni.",
         "usage_hint": "Utilizare: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nÎncearcă 'freemkv help' pentru mai multe.",
+        "gui_not_in_build": "Aplicația desktop nu este inclusă în această versiune. Instalează aplicația freemkv pentru a o obține: https://freemkv.org/download",
         "unknown_language": "limbă necunoscută '{tag}' (disponibile pe acest titlu: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
