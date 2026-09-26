@@ -1,6 +1,5 @@
-// The runtime locale-resolution path, driven through the public API.
-// One `#[test]` only: STRINGS/LANG_OVERRIDE are process-wide statics, so a
-// second test here would race it. See docs/runtime-test.md — rationale.
+// The runtime locale-resolution path, driven through the public API. One `#[test]` only:
+// STRINGS/LANG_OVERRIDE are process-wide statics, so a second test here would race it.
 
 use serde_json::Value;
 
@@ -37,8 +36,7 @@ fn the_startup_and_live_switch_paths_select_the_right_catalog() {
         "--language de did not select the German catalog"
     );
 
-    // ── 2. The bug a user actually felt ────────────────────────────────────
-    // See docs/runtime-test.md — the zh-Hans-CN fallback regression.
+    // ── 2. The bug a user actually felt ────────────────────────────────────.
     let simplified = bundled("zh-hans", KEY);
     let traditional = bundled("zh-hant", KEY);
     for tag in ["zh-Hans-CN", "zh_Hans_SG.UTF-8", "zh-Hans"] {

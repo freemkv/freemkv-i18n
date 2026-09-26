@@ -1,6 +1,4 @@
 // freemkv-i18n — i18n string loader, MIT, freemkv project.
-// See docs/lib-overview.md — language priority, catalog resolution, search
-// paths, and the set_language/set_locale/get/fmt API contract.
 
 use serde_json::Value;
 use std::collections::BTreeSet;
@@ -25,8 +23,6 @@ static LANG_OVERRIDE: OnceLock<String> = OnceLock::new();
 // redundant per-key English fallback walk. Written under the same write lock.
 static ACTIVE_IS_EN: AtomicBool = AtomicBool::new(false);
 
-// See docs/locking.md — serializes get/init/set_locale/set_language so an
-// override or a switch can never be silently lost or reordered.
 static INIT_LOCK: Mutex<()> = Mutex::new(());
 
 fn init_lock() -> std::sync::MutexGuard<'static, ()> {
@@ -36,8 +32,7 @@ fn init_lock() -> std::sync::MutexGuard<'static, ()> {
 // ── Shipped languages (auto-generated from locales/*.json by build.rs) ─────
 include!(concat!(env!("OUT_DIR"), "/locales_generated.rs"));
 
-// ── Lock access ────────────────────────────────────────────────────────────
-// See docs/locking.md — a poisoned RwLock must not take the process down.
+// ── Lock access ────────────────────────────────────────────────────────────.
 
 fn read_strings() -> RwLockReadGuard<'static, Option<Value>> {
     STRINGS.read().unwrap_or_else(|e| e.into_inner())
@@ -56,8 +51,7 @@ fn write_strings() -> RwLockWriteGuard<'static, Option<Value>> {
 /// override is dead: the language is already chosen. A call at that point is a
 /// caller-ordering bug, so make it visible instead of silently no-opping.
 pub fn set_language(lang: &str) {
-    // Whole check-then-set under INIT_LOCK, see docs/locking.md — a read guard
-    // alone let a not-yet-installed resolve ignore the override.
+    // Whole check-then-set under INIT_LOCK,.
     let _init = init_lock();
     let guard = read_strings();
     if guard.is_some() {
@@ -98,8 +92,8 @@ fn language_override_conflict(requested: &str, existing: Option<&str>) -> Option
 /// startup (full tag → language+script → base language → English). Safe to call
 /// repeatedly.
 pub fn set_locale(code: &str) {
-    // INIT_LOCK across resolve-then-install so the last CALLER wins, not the
-    // last resolve to finish; see docs/locking.md for why.
+    // INIT_LOCK across resolve-then-install so the last CALLER wins, not the last resolve to
+    // finish.
     let _init = init_lock();
     // "auto" re-detects from the environment, exactly like startup (init()),
     // rather than normalizing the literal string "auto" (which resolves to
@@ -190,8 +184,8 @@ pub fn get(path: &str) -> String {
             return lookup_or_english(v, path, ACTIVE_IS_EN.load(Ordering::Relaxed));
         }
     }
-    // First use with no explicit init(): resolve and install under INIT_LOCK
-    // (see docs/locking.md) so a concurrent set_language/set_locale can't race.
+    // First use with no explicit init(): resolve and install under INIT_LOCK  so a concurrent
+    // set_language/set_locale can't race.
     let _init = init_lock();
     // Another thread may have installed a catalog while we waited; use it
     // rather than resolving and installing a second time.
@@ -211,12 +205,10 @@ pub fn get(path: &str) -> String {
 
 /// Get a string and replace `{key}` placeholders with values.
 ///
-/// Substitution is a single pass over the catalog string, so a substituted
-/// value that itself looks like a placeholder is never rescanned. A `{` that
-/// does not open a well-formed `{name}` is a literal `{`, and a `{name}` with
-/// no matching argument is left in place (visible, so a caller that forgot an
-/// argument is caught). See docs/substitution.md for the single-pass
-/// rationale and why there is no `{{` escape.
+/// Substitution is a single pass over the catalog string, so a substituted value that itself
+/// looks like a placeholder is never rescanned. A `{` that does not open a well-formed `{name}`
+/// is a literal `{`, and a `{name}` with no matching argument is left in place (visible, so a
+/// caller that forgot an argument is caught).
 pub fn fmt(path: &str, args: &[(&str, &str)]) -> String {
     substitute(&get(path), |name| {
         args.iter().find(|(k, _)| *k == name).map(|(_, v)| *v)
@@ -260,11 +252,10 @@ fn substitute<'a>(s: &str, mut resolve: impl FnMut(&str) -> Option<&'a str>) -> 
 /// argument. Error strings live under `error.E<code>`, matching
 /// `libfreemkv::Error::code()`.
 ///
-/// Some codes have a placeholder (`{detail}`, `{hash}`, `{path}`) that only a
-/// caller holding the originating error can fill; this entry point DROPS
-/// every unfilled placeholder rather than leaking it (see
-/// docs/substitution.md). Use [`error_message_with`] when the detail is
-/// available. Falls back to the key path — same miss behavior as [`get`].
+/// Some codes have a placeholder (`{detail}`, `{hash}`, `{path}`) that only a caller holding
+/// the originating error can fill; this entry point DROPS every unfilled placeholder rather
+/// than leaking it. Use [`error_message_with`] when the detail is available. Falls back to the
+/// key path — same miss behavior as [`get`].
 pub fn error_message(code: u32) -> String {
     render_error_message(code, None)
 }
@@ -297,8 +288,6 @@ fn render_error_message(code: u32, detail: Option<&str>) -> String {
     tidy_empty_slots(&filled)
 }
 
-// See docs/substitution.md — collapses the empty brackets/quotes/spacing a
-// dropped placeholder leaves behind, ASCII and full-width (CJK) alike.
 fn tidy_empty_slots(s: &str) -> String {
     // A parenthetical whose value was a placeholder now reads as a bare label
     // and colon (`(id:)`, `（id：）`) — drop the whole group, before the space
@@ -395,9 +384,8 @@ fn detect_languages() -> Vec<String> {
     locale_candidates_from_env(|var| std::env::var(var).ok())
 }
 
-// POSIX precedence: LC_ALL, then LC_MESSAGES, then LANG — the first that is
-// set and non-empty wins outright, even when its value is C/POSIX. See
-// docs/env-resolution.md for why LC_ALL=C must not be skipped as "unset".
+// POSIX precedence: LC_ALL, then LC_MESSAGES, then LANG — the first that is set and non-empty
+// wins outright, even when its value is C/POSIX.
 fn locale_from_env(get_var: impl Fn(&str) -> Option<String>) -> String {
     ["LC_ALL", "LC_MESSAGES", "LANG"]
         .iter()
@@ -405,9 +393,8 @@ fn locale_from_env(get_var: impl Fn(&str) -> Option<String>) -> String {
         .unwrap_or_else(|| "en".to_string())
 }
 
-// Ordered candidate codes for the environment: GNU LANGUAGE (a colon-
-// separated priority list) applied on top of the POSIX selection, but
-// ignored for the C/POSIX locale. See docs/env-resolution.md.
+// Ordered candidate codes for the environment: GNU LANGUAGE (a colon- separated priority list)
+// applied on top of the POSIX selection, but ignored for the C/POSIX locale.
 fn locale_candidates_from_env(get_var: impl Fn(&str) -> Option<String>) -> Vec<String> {
     let selected = ["LC_ALL", "LC_MESSAGES", "LANG"]
         .iter()
@@ -429,9 +416,8 @@ fn locale_candidates_from_env(get_var: impl Fn(&str) -> Option<String>) -> Vec<S
     vec![normalize_code(&locale_from_env(&get_var))]
 }
 
-// Whether a locale VALUE names the POSIX C locale (C, POSIX, or empty) —
-// checks the raw NAME, not normalize_code's output, since en_US also
-// normalizes to English but is a real locale. See docs/env-resolution.md.
+// Whether a locale VALUE names the POSIX C locale (C, POSIX, or empty) — checks the raw NAME,
+// not normalize_code's output, since en_US also normalizes to English but is a real locale.
 fn is_posix_c_locale(val: &str) -> bool {
     let base = val.trim().split(['.', '@']).next().unwrap_or("");
     base.is_empty() || base.eq_ignore_ascii_case("C") || base.eq_ignore_ascii_case("POSIX")
@@ -512,9 +498,8 @@ fn load_locale_file(code: &str) -> Option<Value> {
     None
 }
 
-// The diagnostic for a locale file that could not be read, or None when it
-// simply doesn't exist. See docs/loader-diagnostics.md — NotFound must not
-// collapse with "exists but unreadable".
+// The diagnostic for a locale file that could not be read, or None when it simply doesn't
+// exist.
 fn locale_read_diagnostic(path: &Path, error: &std::io::Error) -> Option<String> {
     (error.kind() != std::io::ErrorKind::NotFound).then(|| {
         format!(
@@ -572,9 +557,8 @@ fn try_load(path: &Path) -> Option<Value> {
     }
 }
 
-// Report a key that had to be served from English, once per key (returns
-// whether it actually emitted). See docs/loader-diagnostics.md — the
-// substitution itself is silent otherwise, so nothing would record the gap.
+// Report a key that had to be served from English, once per key (returns whether it actually
+// emitted).
 fn report_missing_translation(path: &str) -> bool {
     static REPORTED: OnceLock<Mutex<BTreeSet<String>>> = OnceLock::new();
     let mut seen = REPORTED
@@ -588,8 +572,8 @@ fn report_missing_translation(path: &str) -> bool {
     false
 }
 
-// Look up path, falling back to English, then to the path itself. A blank
-// value counts as a miss. See docs/loader-diagnostics.md for why both matter.
+// Look up path, falling back to English, then to the path itself. A blank value counts as a
+// miss.
 fn lookup_or_english(strings: &Value, path: &str, active_is_english: bool) -> String {
     if let Some(s) = lookup_in(strings, path)
         && !s.trim().is_empty()
@@ -693,7 +677,6 @@ mod tests {
         );
 
         // ...and no key may exist in the locale that English does not have.
-        // See docs/testing-notes.md — parity used to be one-directional.
         let mut extra = Vec::new();
         for key in &locale_keys {
             if !en_keys.contains(key) {
@@ -708,9 +691,8 @@ mod tests {
             extra
         );
 
-        // Placeholders must match EXACTLY, in both directions, against the RAW
-        // catalogs (not through the production fallback). See
-        // docs/testing-notes.md for the two holes this closes.
+        // Placeholders must match EXACTLY, in both directions, against the RAW catalogs (not
+        // through the production fallback).
         for key in &en_keys {
             let en_val = lookup_in(en, key)
                 .unwrap_or_else(|| panic!("en.json key '{key}' is not a non-empty string"));
@@ -739,8 +721,7 @@ mod tests {
 
     #[test]
     fn normalize_code_does_not_panic_on_multibyte() {
-        // Regression: byte-slicing s[..2] panicked on a leading multibyte
-        // char. See docs/testing-notes.md for why "de" is mixed into the loop.
+        // Regression: byte-slicing s[..2] panicked on a leading multibyte char.
         for input in ["あx", "€a", "Ⓐb", "😀x", "あ", "", ".", "_", "@", "ñ", "de"] {
             let code = normalize_code(input);
             // A malformed leading subtag must fall back to English; a valid one
@@ -1346,8 +1327,7 @@ mod tests {
         }
     }
 
-    // Catches .unwrap() on the catalog lock. See docs/testing-notes.md — this
-    // deliberately poisons the process-wide lock and leaves it poisoned.
+    // Catches.unwrap() on the catalog lock.
     #[test]
     fn a_poisoned_catalog_lock_does_not_take_the_process_down() {
         let poisoner = std::thread::spawn(|| {
@@ -1478,8 +1458,8 @@ mod tests {
 mod fallback_tests {
     use super::*;
 
-    // A key present in English but missing from the active locale must render
-    // the ENGLISH text, never the raw path. See docs/testing-notes.md.
+    // A key present in English but missing from the active locale must render the ENGLISH text,
+    // never the raw path.
     #[test]
     fn a_key_missing_from_the_locale_falls_back_to_english() {
         // A catalog that deliberately lacks the key.
@@ -1507,8 +1487,7 @@ mod error_code_coverage {
     use super::error_codes::LIBFREEMKV_ERROR_CODES;
     use super::*;
 
-    // EVERY error code libfreemkv can raise must have a non-empty English
-    // string. See docs/testing-notes.md and docs/error-codes.md.
+    // EVERY error code libfreemkv can raise must have a non-empty English string.
     #[test]
     fn libfreemkv_error_codes_all_have_english_strings() {
         let en = english_catalog();
@@ -1550,9 +1529,8 @@ mod error_code_coverage {
         );
     }
 
-    // Catches the checked-in list going stale against real libfreemkv. Only
-    // runs where a sibling libfreemkv checkout exists (never this crate's own
-    // CI); see docs/error-codes.md for why it isn't a dependency instead.
+    // Catches the checked-in list going stale against real libfreemkv. Only runs where a
+    // sibling libfreemkv checkout exists (never this crate's own CI).
     #[test]
     fn libfreemkv_code_list_has_not_drifted() {
         let source = Path::new(env!("CARGO_MANIFEST_DIR"))

@@ -1,6 +1,5 @@
-// Locale-tag arithmetic shared by build.rs (`include!`, hence `std`-only, no
-// file-scope `use`) and lib.rs. Canonicalizes to `lang[-script][-region]`,
-// e.g. `pt_BR.UTF-8` -> `pt-br`. See docs/locale-code.md for full rationale.
+// Locale-tag arithmetic shared by build.rs (`include!`, hence `std`-only, no file-scope `use`)
+// and lib.rs. Canonicalizes to `lang[-script][-region]`, e.g. `pt_BR.UTF-8` -> `pt-br`.
 pub(crate) fn normalize_code(s: &str) -> String {
     // Drop codeset/modifier (`.UTF-8`, `@euro`), keep language[_-subtags].
     let base = s.trim().split(['.', '@', ':']).next().unwrap_or("");
@@ -9,9 +8,8 @@ pub(crate) fn normalize_code(s: &str) -> String {
     if !(2..=3).contains(&lang.len()) || !lang.chars().all(|c| c.is_ascii_alphabetic()) {
         return "en".to_string();
     }
-    // BCP-47 extended-language subtag (`zh-yue`, `zh-cmn`): promote to primary
-    // language so `yue` falls through to English, not `zh` Simplified.
-    // See docs/locale-code.md for the full incident writeup.
+    // BCP-47 extended-language subtag (`zh-yue`, `zh-cmn`): promote to primary language so
+    // `yue` falls through to English, not `zh` Simplified.
     if let Some(next) = parts.peek()
         && next.len() == 3
         && next.chars().all(|c| c.is_ascii_alphabetic())
@@ -55,9 +53,8 @@ pub(crate) fn normalize_code(s: &str) -> String {
     out
 }
 
-// Fold a primary-language subtag onto the two-letter code the crate ships a
-// catalog under (ISO 639-2/3, macrolanguage members, deprecated aliases).
-// Unknown codes pass through unchanged. See docs/locale-code.md for detail.
+// Fold a primary-language subtag onto the two-letter code the crate ships a catalog under (ISO
+// 639-2/3, macrolanguage members, deprecated aliases). Unknown codes pass through unchanged.
 fn fold_language(lang: &str) -> String {
     match lang {
         // Macrolanguage members / deprecated aliases → the shipped base code.
@@ -95,9 +92,9 @@ fn fold_language(lang: &str) -> String {
     .to_string()
 }
 
-// The codes to try, most specific first: every prefix of the tag, longest
-// first (`zh-hans-cn` -> `zh-hans` -> `zh`), so a `lang-script` catalog is
-// found whether or not a region is attached. See docs/locale-code.md.
+// The codes to try, most specific first: every prefix of the tag, longest first (`zh-hans-cn`
+// -> `zh-hans` -> `zh`), so a `lang-script` catalog is found whether or not a region is
+// attached.
 pub(crate) fn fallback_chain(code: &str) -> Vec<String> {
     let parts: Vec<&str> = code.split('-').filter(|p| !p.is_empty()).collect();
     let mut out = Vec::with_capacity(parts.len());
@@ -113,9 +110,8 @@ pub(crate) fn fallback_chain(code: &str) -> Vec<String> {
     out
 }
 
-// The on-disk filenames that may hold the catalog for an internal code:
-// the internal form, the underscore form, and BCP-47 canonical case, in
-// both separators (four names at worst). See docs/locale-code.md.
+// The on-disk filenames that may hold the catalog for an internal code: the internal form, the
+// underscore form, and BCP-47 canonical case, in both separators (four names at worst).
 pub(crate) fn locale_filenames(code: &str) -> Vec<String> {
     let parts: Vec<&str> = code.split('-').filter(|p| !p.is_empty()).collect();
     // BCP-47 canonical case: language lowercase, 4-letter script Titlecase,
