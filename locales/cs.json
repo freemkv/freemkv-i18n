@@ -20,7 +20,7 @@
         "unknown": "Neznámé",
         "share_hint": "Spuštěním 'freemkv info disc:// --share' pomůžete rozšířit podporu mechanik.",
         "share_usage": "Použití: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Zachytit a odeslat profil mechaniky pro rozšíření podpory mechanik",
+        "share_desc": "Zachytit a odeslat profil mechaniky a strukturu disku pro rozšíření podpory",
         "mask_desc": "Maskovat sériová čísla (písmena → A, číslice → 0)",
         "device_desc": "Zadat cestu k zařízení",
         "captured": "Zachyceno: GET_CONFIG 0x{code} {name} ({bytes} bajtů)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funkce",
         "submit_packaging": "Balení...",
-        "zip_failed": "zip selhal ({error}), odesílá se pouze text",
         "submit_saved": "Profil uložen do {dir}/",
         "submit_zip": "Archiv ZIP: {path}",
         "submit_manual": "Chcete-li přispět tímto profilem, otevřete nový issue a vložte níže uvedený text:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatické odeslání selhalo; stále to můžete nahlásit ručně:",
         "submit_declined": "Neodesláno. Pokud chcete, můžete to stále nahlásit ručně:",
         "submit_issue_title": "Název issue: {title}",
-        "submit_issue_body": "Tělo issue (zkopírujte vše mezi řádky):"
+        "submit_issue_body": "Tělo issue (zkopírujte vše mezi řádky):",
+        "share_image_note": "U zdrojů iso:// a dir:// zachytí --share strukturu disku; --mask a --verbose tam nemají žádný účinek (není zde mechanika).",
+        "structure_unreadable": "Struktura disku nebyla zachycena: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Prohledávání disku...",
@@ -63,7 +65,17 @@
         "forced": "vynucené",
         "usage": "Použití: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Neznámý",
-        "file": "Soubor"
+        "file": "Soubor",
+        "capture_aacs_failed": "Diagnostika AACS nebyla zachycena — krok AACS selhal: {error}",
+        "capture_aacs_hash": "Diagnostika AACS: hash disku {hash} (vyhledávací klíč v keydb) zapsán do aacs.json.",
+        "capture_aacs_no_hash": "Diagnostika AACS zapsána do aacs.json (hash disku není k dispozici).",
+        "capture_aacs_none": "Tento disk nemá AACS — žádná diagnostika AACS k zachycení.",
+        "capture_all_skipped": "Žádný z {count} souborů struktury disku nebylo možné uložit.",
+        "capture_mkdir_failed": "Nelze vytvořit {path}: {error}",
+        "capture_no_structure": "Nebyla nalezena žádná čitelná struktura disku (BDMV / VIDEO_TS); není co sdílet.",
+        "capture_skipped": "Přeskočen soubor disku {file}",
+        "capture_summary": "Zachycena struktura disku: {files} souborů ({bytes} bajtů).",
+        "capture_unsafe_name": "nebezpečný název souboru"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: očekáváno číslo 1–4, přijato '{value}', ignorováno",
         "log_level_needs_value": "--log-level: vyžaduje hodnotu (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: neplatná cesta '{path}' — diagnostický protokol nebyl zapsán",
-        "language_needs_value": "{flag}: vyžaduje kód jazyka (např. --language de)"
+        "language_needs_value": "{flag}: vyžaduje kód jazyka (např. --language de)",
+        "disc_scan_all_titles_failed": "Chyba: disk se nepodařilo prohledat a vypsat jeho tituly, takže `-t all` nemůže zjistit, které tituly ripovat. Nic nebylo ripováno — zkontrolujte disk a mechaniku a zkuste to znovu.",
+        "log_file_needs_value": "--log-file: vyžaduje cestu (např. --log-file freemkv.log)",
+        "mux_failed_generic": "Muxování selhalo (E{code}).",
+        "title_changed": "Titul {num} se mezi prohledáními změnil: očekáváno {expected}, mechanika nyní hlásí {found}. Seznam titulů na disku se během ripování změnil; pro tento titul nebylo nic zapsáno."
     },
     "usage": {
         "synopsis_1": "Použití: freemkv <zdroj> <cíl> [příznaky]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Jazyk rozhraní (také --lang): kód jako de nebo pt-BR, případně auto.",
             "raw": "      --raw           Přeskočit dešifrování (surový šifrovaný výstup)",
             "multipass": "      --multipass    Zapsat/aktualizovat mapfile pro víceprůchodovou obnovu",
-            "share": "      --share         Odeslat profil mechaniky (pouze info disc://; při ripování -s znamená --subtitles)",
+            "share": "      --share         Odeslat profil mechaniky a strukturu disku (info disc://, iso:// nebo dir://; při ripování -s znamená --subtitles)",
             "mask": "  -m, --mask          Maskovat sériová čísla (s --share)",
             "force": "      --force        Rozbalit do neprázdného cíle dir:// (přepsat)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Otevřít disk…",
             "exit": "Konec",
             "copy": "Kopírovat",
-            "select_all_text": "Vybrat vše"
+            "select_all_text": "Vybrat vše",
+            "cut": "Vyjmout",
+            "paste": "Vložit"
         },
         "col": {
             "type": "Typ",
@@ -574,7 +592,8 @@
             "test_connection": "Otestovat připojení",
             "keydb_no_url": "Není nastavena adresa URL pro aktualizaci keydb — zadejte ji výše a klikněte na Aktualizovat.",
             "keydb_updating": "Aktualizace keydb… stahování, čekejte prosím.",
-            "lang_any": "Libovolný"
+            "lang_any": "Libovolný",
+            "notify_when_rip_finished": "Upozornit po dokončení ripování"
         },
         "btn": {
             "open_file": "Otevřít soubor nebo ISO…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Zavřít",
             "browse": "…",
-            "show_explorer": "Zobrazit v Průzkumníku"
+            "show_explorer": "Zobrazit v Průzkumníku",
+            "show_folder": "Zobrazit ve složce"
         },
         "group": {
             "output": "Výstup",
@@ -651,7 +671,18 @@
             "raw_iso_only": "„Ponechat zašifrované (raw)“ platí pouze pro výstup Celý disk → obraz ISO; pro tento formát bude ignorováno.",
             "no_drive": "Nebyla nalezena žádná optická jednotka. Připojte jednotku Blu-ray/DVD s diskem.",
             "opening_drive": "Otevírání {label} ({device})",
-            "drives_found": "Nalezeno {n} jednotek: {list} — použije se ta s diskem"
+            "drives_found": "Nalezeno {n} jednotek: {list} — použije se ta s diskem",
+            "drop_unreadable": "Přetaženou položku nelze načíst: {e}",
+            "eject_failed": "Vysunutí selhalo: {error}",
+            "ejected": "Disk vysunut ({device}).",
+            "ejecting": "Vysouvání disku…",
+            "open_folder_failed": "Složku nelze otevřít: {e}",
+            "open_url_failed": "Nelze otevřít {url}: {e}",
+            "pick_failed": "Nelze otevřít dialog pro výběr souboru: {e}",
+            "pick_not_local": "Lze použít pouze místní soubory a složky: {p}",
+            "reveal_failed": "Složku nelze otevřít v Průzkumníku souborů: {e}",
+            "scan_not_started": "Nelze spustit prohledávání zdroje: {detail}",
+            "scan_worker_stopped": "Proces prohledávání zdroje se zastavil dříve, než vrátil výsledek."
         },
         "alert": {
             "rip_title": "Probíhá ripování.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "Nastavení freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Ripování dokončeno"
         }
     },
     "warn": {
         "no_lang_match_audio": "upozornění: titul {num}: žádná zvuková stopa neodpovídá '{requested}' (dostupné: {available}) — zachováno pouze video.",
         "no_lang_match_subtitle": "upozornění: titul {num}: žádná stopa titulků neodpovídá '{requested}' (dostupné: {available}) — zachováno pouze video.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Poznámka: {count} stop(y) nebylo možné zapsat a byly vynechány:"
+    },
+    "share": {
+        "attach_zip": "Archiv ZIP s profilem je pro text issue příliš velký — připojte k issue soubor {path}.",
+        "zip_failed": "Nelze vytvořit archiv ZIP s profilem: {error}"
     }
 }

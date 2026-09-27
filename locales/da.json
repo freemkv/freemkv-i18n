@@ -20,7 +20,7 @@
         "unknown": "Ukendt",
         "share_hint": "Kør 'freemkv info disc:// --share' for at hjælpe med at udvide drevunderstøttelsen.",
         "share_usage": "Brug: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Registrér og indsend drevprofil for at udvide drevunderstøttelsen",
+        "share_desc": "Registrér og indsend drevprofil og diskstruktur for at udvide understøttelsen",
         "mask_desc": "Maskér serienumre (bogstaver → A, cifre → 0)",
         "device_desc": "Angiv enhedssti",
         "captured": "Registreret: GET_CONFIG 0x{code} {name} ({bytes} byte)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funktioner",
         "submit_packaging": "Pakker...",
-        "zip_failed": "zip mislykkedes ({error}), indsender kun tekst",
         "submit_saved": "Profil gemt i {dir}/",
         "submit_zip": "Zip-arkiv: {path}",
         "submit_manual": "For at bidrage med denne profil skal du åbne et nyt issue og indsætte teksten nedenfor:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatisk indsendelse mislykkedes; du kan stadig indsende den manuelt:",
         "submit_declined": "Ikke indsendt. Du kan stadig indsende den manuelt, hvis du vil:",
         "submit_issue_title": "Issue-titel: {title}",
-        "submit_issue_body": "Issue-tekst (kopiér alt mellem linjerne):"
+        "submit_issue_body": "Issue-tekst (kopiér alt mellem linjerne):",
+        "share_image_note": "Ved iso://- og dir://-kilder registrerer --share diskstrukturen; --mask og --verbose har ingen effekt der (der er intet drev).",
+        "structure_unreadable": "Diskstruktur ikke registreret: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Scanner disk...",
@@ -63,7 +65,17 @@
         "forced": "tvungen",
         "usage": "Brug: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Ukendt",
-        "file": "Fil"
+        "file": "Fil",
+        "capture_aacs_failed": "AACS-diagnostik ikke registreret — AACS-trinnet mislykkedes: {error}",
+        "capture_aacs_hash": "AACS-diagnostik: disk-hash {hash} (opslagsnøgle i keydb) gemt i aacs.json.",
+        "capture_aacs_no_hash": "AACS-diagnostik gemt i aacs.json (disk-hash ikke tilgængelig).",
+        "capture_aacs_none": "Ingen AACS på denne disk — ingen AACS-diagnostik at registrere.",
+        "capture_all_skipped": "Ingen af de {count} diskstrukturfiler kunne gemmes.",
+        "capture_mkdir_failed": "Kunne ikke oprette {path}: {error}",
+        "capture_no_structure": "Der blev ikke fundet nogen læsbar diskstruktur (BDMV / VIDEO_TS); intet at dele.",
+        "capture_skipped": "Sprang diskfilen {file} over",
+        "capture_summary": "Diskstruktur registreret: {files} filer ({bytes} byte).",
+        "capture_unsafe_name": "usikkert filnavn"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: forventede et tal 1–4, fik '{value}', ignoreret",
         "log_level_needs_value": "--log-level: kræver en værdi (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ugyldig sti '{path}' — ingen diagnostiklog skrevet",
-        "language_needs_value": "{flag}: kræver en sprogkode (f.eks. --language de)"
+        "language_needs_value": "{flag}: kræver en sprogkode (f.eks. --language de)",
+        "disc_scan_all_titles_failed": "Fejl: disken kunne ikke scannes for at vise dens titler, så `-t all` kan ikke vide, hvilke titler der skal rippes. Intet blev rippet — kontrollér disken og drevet, og prøv igen.",
+        "log_file_needs_value": "--log-file: kræver en sti (f.eks. --log-file freemkv.log)",
+        "mux_failed_generic": "Muxing mislykkedes (E{code}).",
+        "title_changed": "Titel {num} ændrede sig mellem scanninger: forventede {expected}, men drevet rapporterer nu {found}. Diskens titelliste ændrede sig under rippet; intet blev skrevet for denne titel."
     },
     "usage": {
         "synopsis_1": "Brug: freemkv <kilde> <dest> [flag]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Sprog i brugerfladen (også --lang): en kode som de eller pt-BR, eller auto.",
             "raw": "      --raw           Spring dekryptering over (råt krypteret output)",
             "multipass": "      --multipass    Skriv/opdatér mapfile til multipass-gendannelse",
-            "share": "      --share         Indsend drevprofil (kun info disc://; ved et rip betyder -s --subtitles)",
+            "share": "      --share         Indsend drevprofil og diskstruktur (info disc://, iso:// eller dir://; ved et rip betyder -s --subtitles)",
             "mask": "  -m, --mask          Maskér serienumre (med --share)",
             "force": "      --force        Udpak ind i et ikke-tomt dir://-mål (overskriv)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Åbn disk…",
             "exit": "Afslut",
             "copy": "Kopiér",
-            "select_all_text": "Markér alt"
+            "select_all_text": "Markér alt",
+            "cut": "Klip",
+            "paste": "Sæt ind"
         },
         "col": {
             "type": "Type",
@@ -574,7 +592,8 @@
             "test_connection": "Test forbindelse",
             "keydb_no_url": "Ingen keydb-opdaterings-URL angivet — tilføj en ovenfor og klik på Opdater.",
             "keydb_updating": "Opdaterer keydb… downloader, vent venligst.",
-            "lang_any": "Alle"
+            "lang_any": "Alle",
+            "notify_when_rip_finished": "Giv besked, når et rip er færdigt"
         },
         "btn": {
             "open_file": "Åbn fil eller ISO…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Luk",
             "browse": "…",
-            "show_explorer": "Vis i Stifinder"
+            "show_explorer": "Vis i Stifinder",
+            "show_folder": "Vis i mappe"
         },
         "group": {
             "output": "Output",
@@ -651,7 +671,18 @@
             "raw_iso_only": "“Behold krypteret (raw)” gælder kun for output Hele disken → ISO-billede; ignoreres for dette format.",
             "no_drive": "Der blev ikke fundet noget optisk drev. Tilslut et Blu-ray/DVD-drev med en disk.",
             "opening_drive": "Åbner {label} ({device})",
-            "drives_found": "{n} drev fundet: {list} — bruger det med en disk"
+            "drives_found": "{n} drev fundet: {list} — bruger det med en disk",
+            "drop_unreadable": "Kunne ikke læse det slupne element: {e}",
+            "eject_failed": "Udskubning mislykkedes: {error}",
+            "ejected": "Disken blev skubbet ud ({device}).",
+            "ejecting": "Skubber disken ud…",
+            "open_folder_failed": "Kunne ikke åbne mappen: {e}",
+            "open_url_failed": "Kunne ikke åbne {url}: {e}",
+            "pick_failed": "Kunne ikke åbne filvælgeren: {e}",
+            "pick_not_local": "Kun lokale filer og mapper kan bruges: {p}",
+            "reveal_failed": "Kunne ikke åbne mappen i Stifinder: {e}",
+            "scan_not_started": "Kunne ikke starte scanning af kilden: {detail}",
+            "scan_worker_stopped": "Scanningsprocessen for kilden stoppede, før den returnerede et resultat."
         },
         "alert": {
             "rip_title": "Et rip er i gang.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "freemkv-indstillinger"
+        },
+        "notify": {
+            "rip_finished_title": "Rip færdigt"
         }
     },
     "warn": {
         "no_lang_match_audio": "advarsel: titel {num}: intet lydspor matcher '{requested}' (tilgængelige: {available}) — beholder kun video.",
         "no_lang_match_subtitle": "advarsel: titel {num}: intet undertekstspor matcher '{requested}' (tilgængelige: {available}) — beholder kun video.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Bemærk: {count} stream(s) kunne ikke leveres og blev udeladt:"
+    },
+    "share": {
+        "attach_zip": "Profil-zip'en er for stor til issue-teksten — vedhæft {path} til issuet.",
+        "zip_failed": "Kunne ikke oprette profil-zip'en: {error}"
     }
 }

@@ -20,7 +20,7 @@
         "unknown": "Ukjent",
         "share_hint": "Kjør «freemkv info disc:// --share» for å bidra til å utvide stasjonsstøtten.",
         "share_usage": "Bruk: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Fang opp og send inn stasjonsprofil for å utvide stasjonsstøtten",
+        "share_desc": "Fang opp og send inn stasjonsprofil og platestruktur for å utvide støtten",
         "mask_desc": "Masker serienumre (bokstaver → A, sifre → 0)",
         "device_desc": "Angi enhetsbane",
         "captured": "Fanget opp: GET_CONFIG 0x{code} {name} ({bytes} byte)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funksjoner",
         "submit_packaging": "Pakker …",
-        "zip_failed": "zip mislyktes ({error}), sender kun tekst",
         "submit_saved": "Profil lagret til {dir}/",
         "submit_zip": "Zip-arkiv: {path}",
         "submit_manual": "For å bidra med denne profilen, opprett en ny sak og lim inn teksten under:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatisk innsending mislyktes; du kan fortsatt melde det inn manuelt:",
         "submit_declined": "Ikke sendt inn. Du kan fortsatt melde det inn manuelt om du vil:",
         "submit_issue_title": "Sakstittel: {title}",
-        "submit_issue_body": "Saksinnhold (kopier alt mellom linjene):"
+        "submit_issue_body": "Saksinnhold (kopier alt mellom linjene):",
+        "share_image_note": "For iso://- og dir://-kilder fanger --share opp platestrukturen; --mask og --verbose har ingen effekt der (det finnes ingen stasjon).",
+        "structure_unreadable": "Platestrukturen ble ikke fanget opp: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Skanner plate …",
@@ -63,7 +65,17 @@
         "forced": "tvunget",
         "usage": "Bruk: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Ukjent",
-        "file": "Fil"
+        "file": "Fil",
+        "capture_aacs_failed": "AACS-diagnostikk ble ikke fanget opp — AACS-trinnet mislyktes: {error}",
+        "capture_aacs_hash": "AACS-diagnostikk: platehash {hash} (oppslagsnøkkel for keydb) lagret i aacs.json.",
+        "capture_aacs_no_hash": "AACS-diagnostikk lagret i aacs.json (platehash utilgjengelig).",
+        "capture_aacs_none": "Ingen AACS på denne platen — ingen AACS-diagnostikk å fange opp.",
+        "capture_all_skipped": "Ingen av de {count} filene i platestrukturen kunne lagres.",
+        "capture_mkdir_failed": "Kunne ikke opprette {path}: {error}",
+        "capture_no_structure": "Fant ingen lesbar platestruktur (BDMV / VIDEO_TS); ingenting å dele.",
+        "capture_skipped": "Hoppet over platefilen {file}",
+        "capture_summary": "Platestruktur fanget opp: {files} filer ({bytes} byte).",
+        "capture_unsafe_name": "utrygt filnavn"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: forventet et tall 1–4, fikk '{value}', ignorert",
         "log_level_needs_value": "--log-level: krever en verdi (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ugyldig sti '{path}' — ingen diagnoselogg skrevet",
-        "language_needs_value": "{flag}: krever en språkkode (f.eks. --language de)"
+        "language_needs_value": "{flag}: krever en språkkode (f.eks. --language de)",
+        "disc_scan_all_titles_failed": "Feil: kunne ikke skanne platen for å liste titlene, så `-t all` kan ikke vite hvilke titler som skal rippes. Ingenting ble rippet — sjekk platen og stasjonen og prøv igjen.",
+        "log_file_needs_value": "--log-file: krever en sti (f.eks. --log-file freemkv.log)",
+        "mux_failed_generic": "Muxing mislyktes (E{code}).",
+        "title_changed": "Tittel {num} endret seg mellom skanningene: forventet {expected}, stasjonen rapporterer nå {found}. Tittellisten på platen endret seg under rippingen; ingenting ble skrevet for denne tittelen."
     },
     "usage": {
         "synopsis_1": "Bruk: freemkv <source> <dest> [flagg]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Grensesnittspråk (også --lang): en kode som de eller pt-BR, eller auto.",
             "raw": "      --raw           Hopp over dekryptering (rå kryptert utdata)",
             "multipass": "      --multipass    Skriv/oppdater kartfil for gjenoppretting over flere pass",
-            "share": "      --share         Send inn stasjonsprofil (kun info disc://; på en ripping betyr -s --subtitles)",
+            "share": "      --share         Send inn stasjonsprofil og platestruktur (info disc://, iso:// eller dir://; på en ripping betyr -s --subtitles)",
             "mask": "  -m, --mask          Masker serienumre (med --share)",
             "force": "      --force        Pakk ut i et ikke-tomt dir://-mål (overskriv)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Åpne plate…",
             "exit": "Avslutt",
             "copy": "Kopier",
-            "select_all_text": "Merk alt"
+            "select_all_text": "Merk alt",
+            "cut": "Klipp ut",
+            "paste": "Lim inn"
         },
         "col": {
             "type": "Type",
@@ -574,7 +592,8 @@
             "test_connection": "Test tilkobling",
             "keydb_no_url": "Ingen keydb-oppdaterings-URL angitt — legg til en ovenfor og klikk Oppdater.",
             "keydb_updating": "Oppdaterer keydb… laster ned, vent litt.",
-            "lang_any": "Alle"
+            "lang_any": "Alle",
+            "notify_when_rip_finished": "Varsle når en ripping er ferdig"
         },
         "btn": {
             "open_file": "Åpne fil eller ISO …",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Lukk",
             "browse": "…",
-            "show_explorer": "Vis i Filutforsker"
+            "show_explorer": "Vis i Filutforsker",
+            "show_folder": "Vis i mappe"
         },
         "group": {
             "output": "Utdata",
@@ -651,7 +671,18 @@
             "raw_iso_only": "«Behold kryptert (raw)» gjelder bare utdata Hele platen → ISO-bilde; ignoreres for dette formatet.",
             "no_drive": "Ingen optisk stasjon funnet. Koble til en Blu-ray-/DVD-stasjon med en plate.",
             "opening_drive": "Åpner {label} ({device})",
-            "drives_found": "{n} stasjoner funnet: {list} — bruker den med en plate"
+            "drives_found": "{n} stasjoner funnet: {list} — bruker den med en plate",
+            "drop_unreadable": "Kunne ikke lese det slupne elementet: {e}",
+            "eject_failed": "Utløsing mislyktes: {error}",
+            "ejected": "Platen ble løst ut ({device}).",
+            "ejecting": "Løser ut platen…",
+            "open_folder_failed": "Kunne ikke åpne mappen: {e}",
+            "open_url_failed": "Kunne ikke åpne {url}: {e}",
+            "pick_failed": "Kunne ikke åpne filvelgeren: {e}",
+            "pick_not_local": "Bare lokale filer og mapper kan brukes: {p}",
+            "reveal_failed": "Kunne ikke åpne mappen i Filutforsker: {e}",
+            "scan_not_started": "Kunne ikke starte skanningen av kilden: {detail}",
+            "scan_worker_stopped": "Skanneprosessen for kilden stoppet før den returnerte et resultat."
         },
         "alert": {
             "rip_title": "En ripping pågår.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "freemkv-innstillinger"
+        },
+        "notify": {
+            "rip_finished_title": "Ripping fullført"
         }
     },
     "warn": {
         "no_lang_match_audio": "advarsel: tittel {num}: ingen lydspor samsvarer med '{requested}' (tilgjengelig: {available}) — beholder bare video.",
         "no_lang_match_subtitle": "advarsel: tittel {num}: ingen undertekstspor samsvarer med '{requested}' (tilgjengelig: {available}) — beholder bare video.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Merk: {count} strøm(mer) kunne ikke leveres og ble utelatt:"
+    },
+    "share": {
+        "attach_zip": "Profil-zip-filen er for stor for saksteksten — legg ved {path} i saken.",
+        "zip_failed": "Kunne ikke lage profil-zip-filen: {error}"
     }
 }

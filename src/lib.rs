@@ -1091,6 +1091,69 @@ mod tests {
         }
     }
 
+    // Keys freemkv looks up with a compiled-in English fallback (`get_or`/`fmt_or`); each must
+    // ship here so the full-coverage test makes every locale translate it.
+    const FREEMKV_KEYS: &[&str] = &[
+        "disc.capture_aacs_failed",
+        "disc.capture_aacs_hash",
+        "disc.capture_aacs_no_hash",
+        "disc.capture_aacs_none",
+        "disc.capture_all_skipped",
+        "disc.capture_mkdir_failed",
+        "disc.capture_no_structure",
+        "disc.capture_skipped",
+        "disc.capture_summary",
+        "disc.capture_unsafe_name",
+        "drive.share_image_note",
+        "drive.structure_unreadable",
+        "drive.submit_affirmative",
+        "error.disc_scan_all_titles_failed",
+        "error.log_file_needs_value",
+        "error.mux_failed_generic",
+        "error.title_changed",
+        "gui.btn.show_folder",
+        "gui.log.drop_unreadable",
+        "gui.log.eject_failed",
+        "gui.log.ejected",
+        "gui.log.ejecting",
+        "gui.log.open_folder_failed",
+        "gui.log.open_url_failed",
+        "gui.log.pick_failed",
+        "gui.log.pick_not_local",
+        "gui.log.reveal_failed",
+        "gui.log.scan_not_started",
+        "gui.log.scan_worker_stopped",
+        "gui.menu.cut",
+        "gui.menu.paste",
+        "gui.notify.rip_finished_title",
+        "gui.set.notify_when_rip_finished",
+        "mux.undelivered_header",
+        "share.attach_zip",
+        "share.zip_failed",
+    ];
+
+    #[test]
+    fn every_key_freemkv_looks_up_ships_in_english() {
+        let en = english_catalog();
+        let missing: Vec<_> = FREEMKV_KEYS
+            .iter()
+            .filter(|k| lookup_in(en, k).is_none())
+            .collect();
+        assert!(missing.is_empty(), "en.json lacks {missing:?}");
+        // Superseded by share.zip_failed, which does not promise a text-only fallback.
+        assert!(lookup_in(en, "drive.zip_failed").is_none());
+        // The consent token is compared to the answer of a prompt that shows [y/N] everywhere.
+        for code in SHIPPED_CODES {
+            let data = bundled_locale_json(code).expect("bundled");
+            let v: Value = serde_json::from_str(data).expect("json");
+            assert_eq!(
+                lookup_in(&v, "drive.submit_affirmative").as_deref(),
+                Some("y"),
+                "{code}"
+            );
+        }
+    }
+
     #[test]
     fn locale_en_loads() {
         let _: Value = serde_json::from_str(LOCALE_EN).expect("en.json invalid");

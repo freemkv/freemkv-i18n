@@ -20,7 +20,7 @@
         "unknown": "Necunoscut",
         "share_hint": "Rulează 'freemkv info disc:// --share' pentru a ajuta la extinderea compatibilității cu mai multe unități.",
         "share_usage": "Utilizare: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Capturează și trimite profilul unității pentru a extinde compatibilitatea cu mai multe unități",
+        "share_desc": "Capturează și trimite profilul unității și structura discului pentru a extinde compatibilitatea",
         "mask_desc": "Maschează numerele de serie (litere → A, cifre → 0)",
         "device_desc": "Specifică calea dispozitivului",
         "captured": "Capturat: GET_CONFIG 0x{code} {name} ({bytes} octeți)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funcții",
         "submit_packaging": "Se împachetează...",
-        "zip_failed": "zip a eșuat ({error}), se trimite doar textul",
         "submit_saved": "Profil salvat în {dir}/",
         "submit_zip": "Arhivă Zip: {path}",
         "submit_manual": "Pentru a contribui cu acest profil, deschide o problemă nouă și lipește textul de mai jos:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Trimiterea automată a eșuat; îl puteți raporta în continuare manual:",
         "submit_declined": "Netrimis. Îl puteți raporta în continuare manual, dacă doriți:",
         "submit_issue_title": "Titlul problemei: {title}",
-        "submit_issue_body": "Corpul problemei (copiază tot ce se află între linii):"
+        "submit_issue_body": "Corpul problemei (copiază tot ce se află între linii):",
+        "share_image_note": "Pentru sursele iso:// și dir://, --share capturează structura discului; --mask și --verbose nu au niciun efect acolo (nu există unitate).",
+        "structure_unreadable": "Structura discului nu a fost capturată: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Se scanează discul...",
@@ -63,7 +65,17 @@
         "forced": "forțat",
         "usage": "Utilizare: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Necunoscut",
-        "file": "Fișier"
+        "file": "Fișier",
+        "capture_aacs_failed": "Diagnosticul AACS nu a fost capturat — pasul AACS a eșuat: {error}",
+        "capture_aacs_hash": "Diagnostic AACS: hash-ul discului {hash} (cheia de căutare în keydb) a fost înregistrat în aacs.json.",
+        "capture_aacs_no_hash": "Diagnosticul AACS a fost înregistrat în aacs.json (hash-ul discului nu este disponibil).",
+        "capture_aacs_none": "Acest disc nu are AACS — nu există diagnostic AACS de capturat.",
+        "capture_all_skipped": "Niciunul dintre cele {count} fișiere ale structurii discului nu a putut fi salvat.",
+        "capture_mkdir_failed": "Nu s-a putut crea {path}: {error}",
+        "capture_no_structure": "Nu s-a găsit nicio structură de disc lizibilă (BDMV / VIDEO_TS); nu există nimic de partajat.",
+        "capture_skipped": "S-a omis fișierul de pe disc {file}",
+        "capture_summary": "Structura discului a fost capturată: {files} fișiere ({bytes} octeți).",
+        "capture_unsafe_name": "nume de fișier nesigur"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: se aștepta un număr 1–4, s-a primit '{value}', ignorat",
         "log_level_needs_value": "--log-level: necesită o valoare (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: cale nevalidă '{path}' — nu s-a scris niciun jurnal de diagnosticare",
-        "language_needs_value": "{flag}: necesită un cod de limbă (de ex. --language de)"
+        "language_needs_value": "{flag}: necesită un cod de limbă (de ex. --language de)",
+        "disc_scan_all_titles_failed": "Eroare: discul nu a putut fi scanat pentru a-i lista titlurile, așa că `-t all` nu poate ști ce titluri să extragă. Nu s-a extras nimic — verifică discul și unitatea și încearcă din nou.",
+        "log_file_needs_value": "--log-file: necesită o cale (de ex. --log-file freemkv.log)",
+        "mux_failed_generic": "Multiplexarea a eșuat (E{code}).",
+        "title_changed": "Titlul {num} s-a schimbat între scanări: se aștepta {expected}, iar unitatea raportează acum {found}. Lista de titluri a discului s-a modificat în timpul extragerii; nu s-a scris nimic pentru acest titlu."
     },
     "usage": {
         "synopsis_1": "Utilizare: freemkv <source> <dest> [flags]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Limba interfeței (și --lang): un cod precum de sau pt-BR, ori auto.",
             "raw": "      --raw           Sari peste decriptare (ieșire brută criptată)",
             "multipass": "      --multipass    Scrie/actualizează fișierul de mapare pentru recuperare multipass",
-            "share": "      --share         Trimite profilul unității (doar info disc://; la o extragere, -s înseamnă --subtitles)",
+            "share": "      --share         Trimite profilul unității și structura discului (info disc://, iso:// sau dir://; la o extragere, -s înseamnă --subtitles)",
             "mask": "  -m, --mask          Maschează numerele de serie (cu --share)",
             "force": "      --force        Extrage într-o țintă dir:// negoală (suprascrie)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Deschide discul…",
             "exit": "Ieșire",
             "copy": "Copiază",
-            "select_all_text": "Selectează tot"
+            "select_all_text": "Selectează tot",
+            "cut": "Decupează",
+            "paste": "Lipește"
         },
         "col": {
             "type": "Tip",
@@ -574,7 +592,8 @@
             "test_connection": "Testează conexiunea",
             "keydb_no_url": "Nu este setat niciun URL de actualizare keydb — adăugați unul mai sus, apoi faceți clic pe Actualizează.",
             "keydb_updating": "Se actualizează keydb… se descarcă, așteptați.",
-            "lang_any": "Oricare"
+            "lang_any": "Oricare",
+            "notify_when_rip_finished": "Notifică la finalizarea unei extrageri"
         },
         "btn": {
             "open_file": "Deschide fișier sau ISO…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Închide",
             "browse": "…",
-            "show_explorer": "Afișează în Explorer"
+            "show_explorer": "Afișează în Explorer",
+            "show_folder": "Afișează în dosar"
         },
         "group": {
             "output": "Ieșire",
@@ -651,7 +671,18 @@
             "raw_iso_only": "„Păstrează criptat (raw)” se aplică doar ieșirii Disc întreg → imagine ISO; va fi ignorat pentru acest format.",
             "no_drive": "Nu a fost găsită nicio unitate optică. Conectați o unitate Blu-ray/DVD cu un disc.",
             "opening_drive": "Se deschide {label} ({device})",
-            "drives_found": "{n} unități găsite: {list} — se folosește cea cu un disc"
+            "drives_found": "{n} unități găsite: {list} — se folosește cea cu un disc",
+            "drop_unreadable": "Elementul plasat nu a putut fi citit: {e}",
+            "eject_failed": "Scoaterea discului a eșuat: {error}",
+            "ejected": "Discul a fost scos ({device}).",
+            "ejecting": "Se scoate discul…",
+            "open_folder_failed": "Nu s-a putut deschide dosarul: {e}",
+            "open_url_failed": "Nu s-a putut deschide {url}: {e}",
+            "pick_failed": "Nu s-a putut deschide selectorul de fișiere: {e}",
+            "pick_not_local": "Se pot folosi doar fișiere și dosare locale: {p}",
+            "reveal_failed": "Nu s-a putut deschide dosarul în Explorer: {e}",
+            "scan_not_started": "Nu s-a putut porni scanarea sursei: {detail}",
+            "scan_worker_stopped": "Procesul de scanare a sursei s-a oprit înainte de a returna un rezultat."
         },
         "alert": {
             "rip_title": "O extragere este în curs.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "Setări freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Extragere finalizată"
         }
     },
     "warn": {
         "no_lang_match_audio": "avertisment: titlul {num}: nicio pistă audio nu corespunde cu '{requested}' (disponibile: {available}) — se păstrează doar imaginea.",
         "no_lang_match_subtitle": "avertisment: titlul {num}: nicio pistă de subtitrare nu corespunde cu '{requested}' (disponibile: {available}) — se păstrează doar imaginea.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Notă: {count} flux(uri) nu au putut fi livrate și au fost omise:"
+    },
+    "share": {
+        "attach_zip": "Arhiva zip a profilului este prea mare pentru textul problemei — atașează {path} la problemă.",
+        "zip_failed": "Nu s-a putut crea arhiva zip a profilului: {error}"
     }
 }

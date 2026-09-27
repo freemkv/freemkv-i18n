@@ -20,7 +20,7 @@
         "unknown": "Unbekannt",
         "share_hint": "Fuehren Sie 'freemkv info disc:// --share' aus, um die Laufwerk-Unterstuetzung zu erweitern.",
         "share_usage": "Verwendung: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Laufwerkprofil erfassen und einreichen, um die Laufwerk-Unterstuetzung zu erweitern",
+        "share_desc": "Laufwerkprofil und Disc-Struktur erfassen und einreichen, um die Unterstützung zu erweitern",
         "mask_desc": "Seriennummern maskieren (Buchstaben → A, Ziffern → 0)",
         "device_desc": "Geraetepfad angeben",
         "captured": "Erfasst: GET_CONFIG 0x{code} {name} ({bytes} Bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funktionen",
         "submit_packaging": "Wird verpackt...",
-        "zip_failed": "zip fehlgeschlagen ({error}), nur Text wird uebermittelt",
         "submit_saved": "Profil gespeichert unter {dir}/",
         "submit_zip": "Zip-Archiv: {path}",
         "submit_manual": "Um dieses Profil beizutragen, öffne ein neues Issue und füge den folgenden Text ein:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatisches Senden fehlgeschlagen; Sie können es weiterhin von Hand melden:",
         "submit_declined": "Nicht gesendet. Sie können es bei Bedarf weiterhin von Hand melden:",
         "submit_issue_title": "Issue-Titel: {title}",
-        "submit_issue_body": "Issue-Text (alles zwischen den Linien kopieren):"
+        "submit_issue_body": "Issue-Text (alles zwischen den Linien kopieren):",
+        "share_image_note": "Bei iso://- und dir://-Quellen erfasst --share die Disc-Struktur; --mask und --verbose haben dort keine Wirkung (es gibt kein Laufwerk).",
+        "structure_unreadable": "Disc-Struktur nicht erfasst: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Disc wird gescannt...",
@@ -63,7 +65,17 @@
         "forced": "erzwungen",
         "usage": "Verwendung: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Unbekannt",
-        "file": "Datei"
+        "file": "Datei",
+        "capture_aacs_failed": "AACS-Diagnose nicht erfasst — der AACS-Schritt ist fehlgeschlagen: {error}",
+        "capture_aacs_hash": "AACS-Diagnose: Disc-Hash {hash} (Suchschlüssel für keydb) in aacs.json gespeichert.",
+        "capture_aacs_no_hash": "AACS-Diagnose in aacs.json gespeichert (Disc-Hash nicht verfügbar).",
+        "capture_aacs_none": "Kein AACS auf dieser Disc — keine AACS-Diagnose zu erfassen.",
+        "capture_all_skipped": "Keine der {count} Disc-Strukturdateien konnte gespeichert werden.",
+        "capture_mkdir_failed": "{path} konnte nicht erstellt werden: {error}",
+        "capture_no_structure": "Keine lesbare Disc-Struktur (BDMV / VIDEO_TS) gefunden; nichts zu teilen.",
+        "capture_skipped": "Disc-Datei {file} übersprungen",
+        "capture_summary": "Disc-Struktur erfasst: {files} Dateien ({bytes} Bytes).",
+        "capture_unsafe_name": "unsicherer Dateiname"
     },
     "stream": {
         "purpose": {
@@ -385,7 +397,11 @@
         "log_level_not_a_number": "--log-level: Zahl 1–4 erwartet, '{value}' erhalten, ignoriert",
         "log_level_needs_value": "--log-level: benötigt einen Wert (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ungültiger Pfad '{path}' — kein Diagnoseprotokoll geschrieben",
-        "language_needs_value": "{flag}: benötigt einen Sprachcode (z. B. --language de)"
+        "language_needs_value": "{flag}: benötigt einen Sprachcode (z. B. --language de)",
+        "disc_scan_all_titles_failed": "Fehler: Die Disc konnte nicht gescannt werden, um ihre Titel aufzulisten, daher kann `-t all` nicht wissen, welche Titel gerippt werden sollen. Es wurde nichts gerippt — prüfen Sie Disc und Laufwerk und versuchen Sie es erneut.",
+        "log_file_needs_value": "--log-file: benötigt einen Pfad (z. B. --log-file freemkv.log)",
+        "mux_failed_generic": "Muxen fehlgeschlagen (E{code}).",
+        "title_changed": "Titel {num} hat sich zwischen den Scans geändert: erwartet {expected}, das Laufwerk meldet jetzt {found}. Die Titelliste der Disc hat sich während des Rips geändert; für diesen Titel wurde nichts geschrieben."
     },
     "usage": {
         "synopsis_1": "Verwendung: freemkv <quelle> <ziel> [optionen]",
@@ -451,7 +467,7 @@
             "language": "      --language CODE Oberflächensprache (auch --lang): ein Code wie de oder pt-BR, oder auto.",
             "raw": "      --raw           Entschlüsselung überspringen (raw verschlüsselte Ausgabe)",
             "multipass": "      --multipass    Mapfile für Mehrpass-Wiederherstellung schreiben/aktualisieren",
-            "share": "      --share         Laufwerkprofil einreichen (nur info disc://; bei einem Rip bedeutet -s --subtitles)",
+            "share": "      --share         Laufwerkprofil und Disc-Struktur einreichen (info disc://, iso:// oder dir://; bei einem Rip bedeutet -s --subtitles)",
             "mask": "  -m, --mask          Seriennummern maskieren (mit --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -513,7 +529,9 @@
             "open_disc": "Disc öffnen…",
             "exit": "Beenden",
             "copy": "Kopieren",
-            "select_all_text": "Alles auswählen"
+            "select_all_text": "Alles auswählen",
+            "cut": "Ausschneiden",
+            "paste": "Einfügen"
         },
         "col": {
             "type": "Typ",
@@ -574,7 +592,8 @@
             "test_connection": "Verbindung testen",
             "keydb_no_url": "Keine keydb-Update-URL festgelegt — oben eine hinzufügen und auf Aktualisieren klicken.",
             "keydb_updating": "keydb wird aktualisiert… Download läuft, bitte warten.",
-            "lang_any": "Beliebig"
+            "lang_any": "Beliebig",
+            "notify_when_rip_finished": "Benachrichtigen, wenn ein Rip abgeschlossen ist"
         },
         "btn": {
             "open_file": "Datei oder ISO öffnen…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Schließen",
             "browse": "…",
-            "show_explorer": "Im Explorer anzeigen"
+            "show_explorer": "Im Explorer anzeigen",
+            "show_folder": "Im Ordner anzeigen"
         },
         "group": {
             "output": "Ausgabe",
@@ -651,7 +671,18 @@
             "raw_iso_only": "„Verschlüsselt beibehalten (raw)“ gilt nur für die Ausgabe „Ganze Disc → ISO-Abbild“; für dieses Format wird es ignoriert.",
             "no_drive": "Kein optisches Laufwerk gefunden. Schließen Sie ein Blu-ray-/DVD-Laufwerk mit einer Disc an.",
             "opening_drive": "{label} ({device}) wird geöffnet",
-            "drives_found": "{n} Laufwerke gefunden: {list} — es wird das mit einer Disc verwendet"
+            "drives_found": "{n} Laufwerke gefunden: {list} — es wird das mit einer Disc verwendet",
+            "drop_unreadable": "Das abgelegte Element konnte nicht gelesen werden: {e}",
+            "eject_failed": "Auswerfen fehlgeschlagen: {error}",
+            "ejected": "Disc ausgeworfen ({device}).",
+            "ejecting": "Disc wird ausgeworfen…",
+            "open_folder_failed": "Der Ordner konnte nicht geöffnet werden: {e}",
+            "open_url_failed": "{url} konnte nicht geöffnet werden: {e}",
+            "pick_failed": "Die Dateiauswahl konnte nicht geöffnet werden: {e}",
+            "pick_not_local": "Nur lokale Dateien und Ordner können verwendet werden: {p}",
+            "reveal_failed": "Der Ordner konnte nicht im Explorer geöffnet werden: {e}",
+            "scan_not_started": "Scan der Quelle konnte nicht gestartet werden: {detail}",
+            "scan_worker_stopped": "Der Scan-Prozess für die Quelle wurde beendet, bevor er ein Ergebnis lieferte."
         },
         "alert": {
             "rip_title": "Ein Rip läuft gerade.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "freemkv-Einstellungen"
+        },
+        "notify": {
+            "rip_finished_title": "Rip abgeschlossen"
         }
     },
     "warn": {
         "no_lang_match_audio": "Warnung: Titel {num}: keine Tonspur entspricht '{requested}' (verfügbar: {available}) — nur Video wird beibehalten.",
         "no_lang_match_subtitle": "Warnung: Titel {num}: keine Untertitelspur entspricht '{requested}' (verfügbar: {available}) — nur Video wird beibehalten.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Hinweis: {count} Stream(s) konnten nicht übernommen werden und wurden ausgelassen:"
+    },
+    "share": {
+        "attach_zip": "Das Profil-Zip ist zu groß für den Issue-Text — hängen Sie {path} an das Issue an.",
+        "zip_failed": "Das Profil-Zip konnte nicht erstellt werden: {error}"
     }
 }

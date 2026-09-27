@@ -20,7 +20,7 @@
         "unknown": "Unknown",
         "share_hint": "Run 'freemkv info disc:// --share' to help expand drive support.",
         "share_usage": "Usage: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Capture and submit drive profile to expand drive support",
+        "share_desc": "Capture and submit the drive profile and disc structure to help expand support",
         "mask_desc": "Mask serial numbers (letters → A, digits → 0)",
         "device_desc": "Specify device path",
         "captured": "Captured: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profile",
         "submit_features": "Features",
         "submit_packaging": "Packaging...",
-        "zip_failed": "zip failed ({error}), submitting text only",
         "submit_saved": "Profile saved to {dir}/",
         "submit_zip": "Zip archive: {path}",
         "submit_manual": "To contribute this profile, open a new issue and paste the text below:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automated submission failed; you can still file it by hand:",
         "submit_declined": "Not submitted. You can still file it by hand if you like:",
         "submit_issue_title": "Issue title: {title}",
-        "submit_issue_body": "Issue body (copy everything between the lines):"
+        "submit_issue_body": "Issue body (copy everything between the lines):",
+        "share_image_note": "On iso:// and dir:// sources --share captures the disc structure; --mask and --verbose have no effect there (there is no drive).",
+        "structure_unreadable": "Disc structure not captured: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Scanning disc...",
@@ -63,7 +65,17 @@
         "forced": "forced",
         "usage": "Usage: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Unknown",
-        "file": "File"
+        "file": "File",
+        "capture_aacs_failed": "AACS diagnostics not captured — the AACS step failed: {error}",
+        "capture_aacs_hash": "AACS diagnostics: disc hash {hash} (keydb lookup key) recorded in aacs.json.",
+        "capture_aacs_no_hash": "AACS diagnostics recorded in aacs.json (disc hash unavailable).",
+        "capture_aacs_none": "No AACS on this disc — no AACS diagnostics to capture.",
+        "capture_all_skipped": "None of the {count} disc structure files could be saved.",
+        "capture_mkdir_failed": "Could not create {path}: {error}",
+        "capture_no_structure": "No readable disc structure (BDMV / VIDEO_TS) was found; nothing to share.",
+        "capture_skipped": "Skipped disc file {file}",
+        "capture_summary": "Captured disc structure: {files} files ({bytes} bytes).",
+        "capture_unsafe_name": "unsafe file name"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: expected a number 1–4, got '{value}', ignored",
         "log_level_needs_value": "--log-level: requires a value (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: invalid path '{path}' — no diagnostic log written",
-        "language_needs_value": "{flag}: requires a language code (e.g. --language de)"
+        "language_needs_value": "{flag}: requires a language code (e.g. --language de)",
+        "disc_scan_all_titles_failed": "Error: could not scan the disc to list its titles, so `-t all` cannot know which titles to rip. Nothing was ripped — check the disc and drive and try again.",
+        "log_file_needs_value": "--log-file: requires a path (e.g. --log-file freemkv.log)",
+        "mux_failed_generic": "Mux failed (E{code}).",
+        "title_changed": "Title {num} changed between scans: expected {expected}, the drive now reports {found}. The disc list moved under the rip; nothing was written for this title."
     },
     "usage": {
         "synopsis_1": "Usage: freemkv <source> <dest> [flags]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Interface language (also --lang): a code like de or pt-BR, or auto.",
             "raw": "      --raw           Skip decryption (raw encrypted output)",
             "multipass": "      --multipass    Write/update mapfile for multipass recovery",
-            "share": "      --share         Submit drive profile (info disc:// only; on a rip, -s means --subtitles)",
+            "share": "      --share         Submit the drive profile and disc structure (info disc://, iso:// or dir://; on a rip, -s means --subtitles)",
             "mask": "  -m, --mask          Mask serial numbers (with --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Open disc…",
             "exit": "Exit",
             "copy": "Copy",
-            "select_all_text": "Select All"
+            "select_all_text": "Select All",
+            "cut": "Cut",
+            "paste": "Paste"
         },
         "col": {
             "type": "Type",
@@ -574,7 +592,8 @@
             "update_keydb": "Update keydb now",
             "test_connection": "Test connection",
             "keydb_no_url": "No keydb update URL set — add one above, then click Update.",
-            "keydb_updating": "Updating keydb… downloading, please wait."
+            "keydb_updating": "Updating keydb… downloading, please wait.",
+            "notify_when_rip_finished": "Notify when a rip finishes"
         },
         "btn": {
             "open_file": "Open file or ISO…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Close",
             "browse": "…",
-            "show_explorer": "Show in Explorer"
+            "show_explorer": "Show in Explorer",
+            "show_folder": "Show in Folder"
         },
         "group": {
             "output": "Output",
@@ -651,7 +671,18 @@
             "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format.",
             "no_drive": "No optical drive found. Connect a Blu-ray/DVD drive with a disc.",
             "opening_drive": "Opening {label} ({device})",
-            "drives_found": "{n} drives found: {list} — using the one with a disc"
+            "drives_found": "{n} drives found: {list} — using the one with a disc",
+            "drop_unreadable": "Could not read the dropped item: {e}",
+            "eject_failed": "Eject failed: {error}",
+            "ejected": "Ejected the disc ({device}).",
+            "ejecting": "Ejecting the disc…",
+            "open_folder_failed": "Could not open the folder: {e}",
+            "open_url_failed": "Could not open {url}: {e}",
+            "pick_failed": "Could not open the file chooser: {e}",
+            "pick_not_local": "Only local files and folders can be used: {p}",
+            "reveal_failed": "Could not open the folder in Explorer: {e}",
+            "scan_not_started": "Could not start scanning the source: {detail}",
+            "scan_worker_stopped": "Source scan worker stopped before returning a result."
         },
         "alert": {
             "rip_title": "A rip is in progress.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "freemkv Settings"
+        },
+        "notify": {
+            "rip_finished_title": "Rip finished"
         }
     },
     "warn": {
         "no_lang_match_audio": "warning: title {num}: no audio track matches '{requested}' (available: {available}) — keeping video only.",
         "no_lang_match_subtitle": "warning: title {num}: no subtitle track matches '{requested}' (available: {available}) — keeping video only.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Note: {count} stream(s) could not be delivered and were left out:"
+    },
+    "share": {
+        "attach_zip": "The profile zip is too large for the issue text — attach {path} to the issue.",
+        "zip_failed": "Could not build the profile zip: {error}"
     }
 }

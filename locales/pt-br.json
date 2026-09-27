@@ -20,7 +20,7 @@
         "unknown": "Desconhecida",
         "share_hint": "Execute 'freemkv info disc:// --share' para ajudar a expandir o suporte a unidades.",
         "share_usage": "Uso: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Capturar e enviar o perfil da unidade para expandir o suporte a unidades",
+        "share_desc": "Capturar e enviar o perfil da unidade e a estrutura do disco para ampliar o suporte",
         "mask_desc": "Mascarar números de série (letras → A, dígitos → 0)",
         "device_desc": "Especificar o caminho do dispositivo",
         "captured": "Capturado: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Perfil",
         "submit_features": "Recursos",
         "submit_packaging": "Empacotando...",
-        "zip_failed": "falha no zip ({error}), enviando apenas o texto",
         "submit_saved": "Perfil salvo em {dir}/",
         "submit_zip": "Arquivo zip: {path}",
         "submit_manual": "Para contribuir com este perfil, abra uma nova issue e cole o texto abaixo:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "O envio automático falhou; você ainda pode relatá-lo manualmente:",
         "submit_declined": "Não enviado. Você ainda pode relatá-lo manualmente se quiser:",
         "submit_issue_title": "Título da issue: {title}",
-        "submit_issue_body": "Corpo da issue (copie tudo entre as linhas):"
+        "submit_issue_body": "Corpo da issue (copie tudo entre as linhas):",
+        "share_image_note": "Em fontes iso:// e dir://, --share captura a estrutura do disco; --mask e --verbose não têm efeito nelas (não há unidade).",
+        "structure_unreadable": "Estrutura do disco não capturada: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Escaneando o disco...",
@@ -63,7 +65,17 @@
         "forced": "forçada",
         "usage": "Uso: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Desconhecido",
-        "file": "Arquivo"
+        "file": "Arquivo",
+        "capture_aacs_failed": "Diagnóstico de AACS não capturado — a etapa de AACS falhou: {error}",
+        "capture_aacs_hash": "Diagnóstico de AACS: hash do disco {hash} (chave de busca na keydb) registrado em aacs.json.",
+        "capture_aacs_no_hash": "Diagnóstico de AACS registrado em aacs.json (hash do disco indisponível).",
+        "capture_aacs_none": "Este disco não tem AACS — não há diagnóstico de AACS para capturar.",
+        "capture_all_skipped": "Nenhum dos {count} arquivos da estrutura do disco pôde ser salvo.",
+        "capture_mkdir_failed": "Não foi possível criar {path}: {error}",
+        "capture_no_structure": "Nenhuma estrutura de disco legível (BDMV / VIDEO_TS) foi encontrada; nada para compartilhar.",
+        "capture_skipped": "Arquivo do disco ignorado: {file}",
+        "capture_summary": "Estrutura do disco capturada: {files} arquivos ({bytes} bytes).",
+        "capture_unsafe_name": "nome de arquivo inseguro"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: esperado um número 1–4, recebido '{value}', ignorado",
         "log_level_needs_value": "--log-level: requer um valor (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: caminho inválido '{path}' — nenhum log de diagnóstico gravado",
-        "language_needs_value": "{flag}: requer um código de idioma (por ex. --language de)"
+        "language_needs_value": "{flag}: requer um código de idioma (por ex. --language de)",
+        "disc_scan_all_titles_failed": "Erro: não foi possível escanear o disco para listar seus títulos, então `-t all` não tem como saber quais títulos extrair. Nada foi extraído — verifique o disco e a unidade e tente novamente.",
+        "log_file_needs_value": "--log-file: requer um caminho (por exemplo, --log-file freemkv.log)",
+        "mux_failed_generic": "Falha na multiplexação (E{code}).",
+        "title_changed": "O título {num} mudou entre os escaneamentos: esperado {expected}, a unidade agora informa {found}. A lista de títulos do disco mudou durante a extração; nada foi gravado para este título."
     },
     "usage": {
         "synopsis_1": "Uso: freemkv <origem> <destino> [flags]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Idioma da interface (também --lang): um código como de ou pt-BR, ou auto.",
             "raw": "      --raw           Pula a descriptografia (saída bruta criptografada)",
             "multipass": "      --multipass    Grava/atualiza o mapfile para recuperação em múltiplas passagens",
-            "share": "      --share         Envia o perfil da unidade (apenas info disc://; em uma extração, -s significa --subtitles)",
+            "share": "      --share         Envia o perfil da unidade e a estrutura do disco (info disc://, iso:// ou dir://; em uma extração, -s significa --subtitles)",
             "mask": "  -m, --mask          Mascara os números de série (com --share)",
             "force": "      --force        Extrai em um destino dir:// não vazio (sobrescreve)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Abrir disco…",
             "exit": "Sair",
             "copy": "Copiar",
-            "select_all_text": "Selecionar tudo"
+            "select_all_text": "Selecionar tudo",
+            "cut": "Recortar",
+            "paste": "Colar"
         },
         "col": {
             "type": "Tipo",
@@ -574,7 +592,8 @@
             "test_connection": "Testar conexão",
             "keydb_no_url": "Nenhuma URL de atualização do keydb definida — adicione uma acima e clique em Atualizar.",
             "keydb_updating": "Atualizando o keydb… baixando, aguarde.",
-            "lang_any": "Qualquer"
+            "lang_any": "Qualquer",
+            "notify_when_rip_finished": "Notificar quando uma extração terminar"
         },
         "btn": {
             "open_file": "Abrir arquivo ou ISO…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Fechar",
             "browse": "…",
-            "show_explorer": "Mostrar no Explorador de Arquivos"
+            "show_explorer": "Mostrar no Explorador de Arquivos",
+            "show_folder": "Mostrar na pasta"
         },
         "group": {
             "output": "Saída",
@@ -651,7 +671,18 @@
             "raw_iso_only": "“Manter encriptado (raw)” aplica-se apenas à saída Disco completo → imagem ISO; será ignorado para este formato.",
             "no_drive": "Nenhuma unidade óptica encontrada. Conecte uma unidade Blu-ray/DVD com um disco.",
             "opening_drive": "Abrindo {label} ({device})",
-            "drives_found": "{n} unidades encontradas: {list} — usando a que tem um disco"
+            "drives_found": "{n} unidades encontradas: {list} — usando a que tem um disco",
+            "drop_unreadable": "Não foi possível ler o item arrastado: {e}",
+            "eject_failed": "Falha ao ejetar: {error}",
+            "ejected": "Disco ejetado ({device}).",
+            "ejecting": "Ejetando o disco…",
+            "open_folder_failed": "Não foi possível abrir a pasta: {e}",
+            "open_url_failed": "Não foi possível abrir {url}: {e}",
+            "pick_failed": "Não foi possível abrir o seletor de arquivos: {e}",
+            "pick_not_local": "Somente arquivos e pastas locais podem ser usados: {p}",
+            "reveal_failed": "Não foi possível abrir a pasta no Explorador de Arquivos: {e}",
+            "scan_not_started": "Não foi possível iniciar o escaneamento da fonte: {detail}",
+            "scan_worker_stopped": "O processo de escaneamento da fonte parou antes de retornar um resultado."
         },
         "alert": {
             "rip_title": "Uma extração está em andamento.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "Configurações do freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Extração concluída"
         }
     },
     "warn": {
         "no_lang_match_audio": "aviso: título {num}: nenhuma faixa de áudio corresponde a '{requested}' (disponível: {available}) — a manter apenas o vídeo.",
         "no_lang_match_subtitle": "aviso: título {num}: nenhuma faixa de legendas corresponde a '{requested}' (disponível: {available}) — a manter apenas o vídeo.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Nota: {count} faixa(s) não puderam ser entregues e foram deixadas de fora:"
+    },
+    "share": {
+        "attach_zip": "O zip do perfil é grande demais para o texto da issue — anexe {path} à issue.",
+        "zip_failed": "Não foi possível criar o zip do perfil: {error}"
     }
 }

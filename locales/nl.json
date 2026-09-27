@@ -20,7 +20,7 @@
         "unknown": "Onbekend",
         "share_hint": "Voer 'freemkv info disc:// --share' uit om drive-ondersteuning uit te breiden.",
         "share_usage": "Gebruik: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Leg drive-profiel vast en stuur het in om drive-ondersteuning uit te breiden",
+        "share_desc": "Leg het stationsprofiel en de discstructuur vast en stuur ze in om de ondersteuning uit te breiden",
         "mask_desc": "Serienummers maskeren (letters → A, cijfers → 0)",
         "device_desc": "Apparaatpad opgeven",
         "captured": "Vastgelegd: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profiel",
         "submit_features": "Kenmerken",
         "submit_packaging": "Inpakken...",
-        "zip_failed": "zip mislukt ({error}), alleen tekst wordt verstuurd",
         "submit_saved": "Profiel opgeslagen in {dir}/",
         "submit_zip": "Zip-archief: {path}",
         "submit_manual": "Open een nieuwe issue en plak de onderstaande tekst om dit profiel bij te dragen:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatisch insturen is mislukt; u kunt het nog steeds handmatig melden:",
         "submit_declined": "Niet ingestuurd. U kunt het desgewenst nog steeds handmatig melden:",
         "submit_issue_title": "Issue-titel: {title}",
-        "submit_issue_body": "Issue-tekst (kopieer alles tussen de lijnen):"
+        "submit_issue_body": "Issue-tekst (kopieer alles tussen de lijnen):",
+        "share_image_note": "Bij iso://- en dir://-bronnen legt --share de discstructuur vast; --mask en --verbose hebben daar geen effect (er is geen station).",
+        "structure_unreadable": "Discstructuur niet vastgelegd: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Disc scannen...",
@@ -63,7 +65,17 @@
         "forced": "geforceerd",
         "usage": "Gebruik: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Onbekend",
-        "file": "Bestand"
+        "file": "Bestand",
+        "capture_aacs_failed": "AACS-diagnose niet vastgelegd — de AACS-stap is mislukt: {error}",
+        "capture_aacs_hash": "AACS-diagnose: disc-hash {hash} (opzoeksleutel voor keydb) vastgelegd in aacs.json.",
+        "capture_aacs_no_hash": "AACS-diagnose vastgelegd in aacs.json (disc-hash niet beschikbaar).",
+        "capture_aacs_none": "Geen AACS op deze disc — geen AACS-diagnose om vast te leggen.",
+        "capture_all_skipped": "Geen van de {count} bestanden van de discstructuur kon worden opgeslagen.",
+        "capture_mkdir_failed": "Kon {path} niet aanmaken: {error}",
+        "capture_no_structure": "Geen leesbare discstructuur (BDMV / VIDEO_TS) gevonden; niets om te delen.",
+        "capture_skipped": "Discbestand {file} overgeslagen",
+        "capture_summary": "Discstructuur vastgelegd: {files} bestanden ({bytes} bytes).",
+        "capture_unsafe_name": "onveilige bestandsnaam"
     },
     "stream": {
         "purpose": {
@@ -385,7 +397,11 @@
         "log_level_not_a_number": "--log-level: getal 1–4 verwacht, '{value}' gekregen, genegeerd",
         "log_level_needs_value": "--log-level: vereist een waarde (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ongeldig pad '{path}' — geen diagnostisch logboek geschreven",
-        "language_needs_value": "{flag}: vereist een taalcode (bijv. --language de)"
+        "language_needs_value": "{flag}: vereist een taalcode (bijv. --language de)",
+        "disc_scan_all_titles_failed": "Fout: kon de disc niet scannen om de titels op te sommen, dus `-t all` weet niet welke titels geript moeten worden. Er is niets geript — controleer de disc en het station en probeer het opnieuw.",
+        "log_file_needs_value": "--log-file: vereist een pad (bijv. --log-file freemkv.log)",
+        "mux_failed_generic": "Muxen mislukt (E{code}).",
+        "title_changed": "Titel {num} is tussen scans gewijzigd: verwacht {expected}, het station meldt nu {found}. De titellijst van de disc is tijdens het rippen veranderd; voor deze titel is niets geschreven."
     },
     "usage": {
         "synopsis_1": "Gebruik: freemkv <bron> <doel> [opties]",
@@ -451,7 +467,7 @@
             "language": "      --language CODE Taal van de interface (ook --lang): een code zoals de of pt-BR, of auto.",
             "raw": "      --raw           Decodering overslaan (ruwe versleutelde uitvoer)",
             "multipass": "      --multipass    Mapfile schrijven/bijwerken voor multipass-herstel",
-            "share": "      --share         Stationsprofiel indienen (alleen info disc://; bij een rip betekent -s --subtitles)",
+            "share": "      --share         Stationsprofiel en discstructuur indienen (info disc://, iso:// of dir://; bij een rip betekent -s --subtitles)",
             "mask": "  -m, --mask          Serienummers maskeren (met --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -513,7 +529,9 @@
             "open_disc": "Schijf openen…",
             "exit": "Afsluiten",
             "copy": "Kopiëren",
-            "select_all_text": "Alles selecteren"
+            "select_all_text": "Alles selecteren",
+            "cut": "Knippen",
+            "paste": "Plakken"
         },
         "col": {
             "type": "Type",
@@ -574,7 +592,8 @@
             "test_connection": "Verbinding testen",
             "keydb_no_url": "Geen keydb-update-URL ingesteld — voeg er hierboven een toe en klik op Bijwerken.",
             "keydb_updating": "keydb wordt bijgewerkt… downloaden, even geduld.",
-            "lang_any": "Alle"
+            "lang_any": "Alle",
+            "notify_when_rip_finished": "Melding geven als een rip klaar is"
         },
         "btn": {
             "open_file": "Bestand of ISO openen…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Sluiten",
             "browse": "…",
-            "show_explorer": "Weergeven in Verkenner"
+            "show_explorer": "Weergeven in Verkenner",
+            "show_folder": "Weergeven in map"
         },
         "group": {
             "output": "Uitvoer",
@@ -651,7 +671,18 @@
             "raw_iso_only": "“Versleuteld houden (raw)” geldt alleen voor de uitvoer Hele schijf → ISO-image; wordt genegeerd voor dit formaat.",
             "no_drive": "Geen optisch station gevonden. Sluit een Blu-ray-/dvd-station met een schijf aan.",
             "opening_drive": "{label} ({device}) wordt geopend",
-            "drives_found": "{n} stations gevonden: {list} — het station met een schijf wordt gebruikt"
+            "drives_found": "{n} stations gevonden: {list} — het station met een schijf wordt gebruikt",
+            "drop_unreadable": "Kon het neergezette item niet lezen: {e}",
+            "eject_failed": "Uitwerpen mislukt: {error}",
+            "ejected": "Disc uitgeworpen ({device}).",
+            "ejecting": "Disc wordt uitgeworpen…",
+            "open_folder_failed": "Kon de map niet openen: {e}",
+            "open_url_failed": "Kon {url} niet openen: {e}",
+            "pick_failed": "Kon de bestandskiezer niet openen: {e}",
+            "pick_not_local": "Alleen lokale bestanden en mappen kunnen worden gebruikt: {p}",
+            "reveal_failed": "Kon de map niet openen in Verkenner: {e}",
+            "scan_not_started": "Kon het scannen van de bron niet starten: {detail}",
+            "scan_worker_stopped": "Het scanproces voor de bron is gestopt voordat het een resultaat gaf."
         },
         "alert": {
             "rip_title": "Er is een rip bezig.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "freemkv-instellingen"
+        },
+        "notify": {
+            "rip_finished_title": "Rip voltooid"
         }
     },
     "warn": {
         "no_lang_match_audio": "waarschuwing: titel {num}: geen audiospoor komt overeen met '{requested}' (beschikbaar: {available}) — alleen video wordt behouden.",
         "no_lang_match_subtitle": "waarschuwing: titel {num}: geen ondertitelspoor komt overeen met '{requested}' (beschikbaar: {available}) — alleen video wordt behouden.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Let op: {count} stream(s) kon(den) niet worden geleverd en is/zijn weggelaten:"
+    },
+    "share": {
+        "attach_zip": "De profiel-zip is te groot voor de tekst van het issue — voeg {path} als bijlage toe aan het issue.",
+        "zip_failed": "Kon de profiel-zip niet maken: {error}"
     }
 }

@@ -20,7 +20,7 @@
         "unknown": "Невідомо",
         "share_hint": "Виконайте 'freemkv info disc:// --share', щоб допомогти розширити підтримку приводів.",
         "share_usage": "Використання: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Зібрати та надіслати профіль приводу для розширення підтримки приводів",
+        "share_desc": "Зібрати та надіслати профіль приводу й структуру диска для розширення підтримки",
         "mask_desc": "Маскувати серійні номери (літери → A, цифри → 0)",
         "device_desc": "Вказати шлях до пристрою",
         "captured": "Зібрано: GET_CONFIG 0x{code} {name} ({bytes} байт)",
@@ -33,7 +33,6 @@
         "submit_profile": "Профіль",
         "submit_features": "Можливості",
         "submit_packaging": "Пакування...",
-        "zip_failed": "zip не вдалося ({error}), надсилається лише текст",
         "submit_saved": "Профіль збережено до {dir}/",
         "submit_zip": "Zip-архів: {path}",
         "submit_manual": "Щоб долучити цей профіль, створіть нове issue та вставте текст нижче:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Автоматичне надсилання не вдалося; ви все ще можете повідомити вручну:",
         "submit_declined": "Не надіслано. За бажанням ви все ще можете повідомити вручну:",
         "submit_issue_title": "Заголовок issue: {title}",
-        "submit_issue_body": "Тіло issue (скопіюйте все між лініями):"
+        "submit_issue_body": "Тіло issue (скопіюйте все між лініями):",
+        "share_image_note": "Для джерел iso:// і dir:// --share збирає структуру диска; --mask і --verbose там не діють (приводу немає).",
+        "structure_unreadable": "Структуру диска не зібрано: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Сканування диска...",
@@ -63,7 +65,17 @@
         "forced": "примусові",
         "usage": "Використання: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Невідомо",
-        "file": "Файл"
+        "file": "Файл",
+        "capture_aacs_failed": "Діагностику AACS не зібрано — крок AACS не вдався: {error}",
+        "capture_aacs_hash": "Діагностика AACS: хеш диска {hash} (ключ пошуку в keydb) записано в aacs.json.",
+        "capture_aacs_no_hash": "Діагностику AACS записано в aacs.json (хеш диска недоступний).",
+        "capture_aacs_none": "На цьому диску немає AACS — немає діагностики AACS для збирання.",
+        "capture_all_skipped": "Не вдалося зберегти жодного з {count} файлів структури диска.",
+        "capture_mkdir_failed": "Не вдалося створити {path}: {error}",
+        "capture_no_structure": "Не знайдено читабельної структури диска (BDMV / VIDEO_TS); нічого надсилати.",
+        "capture_skipped": "Пропущено файл диска {file}",
+        "capture_summary": "Зібрано структуру диска: файлів — {files} ({bytes} байт).",
+        "capture_unsafe_name": "небезпечне ім’я файлу"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: очікувалося число 1–4, отримано '{value}', проігноровано",
         "log_level_needs_value": "--log-level: потребує значення (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: неприпустимий шлях '{path}' — діагностичний журнал не записано",
-        "language_needs_value": "{flag}: потребує код мови (наприклад, --language de)"
+        "language_needs_value": "{flag}: потребує код мови (наприклад, --language de)",
+        "disc_scan_all_titles_failed": "Помилка: не вдалося просканувати диск, щоб отримати список розділів, тому `-t all` не може визначити, які розділи копіювати. Нічого не скопійовано — перевірте диск і привід та спробуйте ще раз.",
+        "log_file_needs_value": "--log-file: потрібен шлях (напр., --log-file freemkv.log)",
+        "mux_failed_generic": "Помилка мультиплексування (E{code}).",
+        "title_changed": "Розділ {num} змінився між скануваннями: очікувалося {expected}, привід тепер повідомляє {found}. Список розділів змінився під час копіювання; для цього розділу нічого не записано."
     },
     "usage": {
         "synopsis_1": "Використання: freemkv <source> <dest> [flags]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Мова інтерфейсу (також --lang): код на кшталт de чи pt-BR, або auto.",
             "raw": "      --raw           Пропустити розшифрування (сирий зашифрований вивід)",
             "multipass": "      --multipass    Записати/оновити файл карти для багатопрохідного відновлення",
-            "share": "      --share         Надіслати профіль приводу (лише info disc://; при копіюванні -s означає --subtitles)",
+            "share": "      --share         Надіслати профіль приводу й структуру диска (info disc://, iso:// або dir://; при копіюванні -s означає --subtitles)",
             "mask": "  -m, --mask          Маскувати серійні номери (з --share)",
             "force": "      --force        Витягти в непорожню ціль dir:// (перезапис)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Відкрити диск…",
             "exit": "Вихід",
             "copy": "Копіювати",
-            "select_all_text": "Виділити все"
+            "select_all_text": "Виділити все",
+            "cut": "Вирізати",
+            "paste": "Вставити"
         },
         "col": {
             "type": "Тип",
@@ -574,7 +592,8 @@
             "test_connection": "Перевірити з'єднання",
             "keydb_no_url": "URL-адресу оновлення keydb не задано — вкажіть її вище та натисніть «Оновити».",
             "keydb_updating": "Оновлення keydb… завантаження, зачекайте.",
-            "lang_any": "Будь-яка"
+            "lang_any": "Будь-яка",
+            "notify_when_rip_finished": "Сповіщати про завершення копіювання"
         },
         "btn": {
             "open_file": "Відкрити файл або ISO…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Закрити",
             "browse": "…",
-            "show_explorer": "Показати в Проводнику"
+            "show_explorer": "Показати в Проводнику",
+            "show_folder": "Показати в теці"
         },
         "group": {
             "output": "Вивід",
@@ -651,7 +671,18 @@
             "raw_iso_only": "«Залишити зашифрованим (raw)» застосовується лише до виводу Весь диск → образ ISO; для цього формату буде проігноровано.",
             "no_drive": "Оптичний привід не знайдено. Підключіть привід Blu-ray/DVD з диском.",
             "opening_drive": "Відкривання {label} ({device})",
-            "drives_found": "Знайдено приводів: {n}: {list} — використовується той, у якому є диск"
+            "drives_found": "Знайдено приводів: {n}: {list} — використовується той, у якому є диск",
+            "drop_unreadable": "Не вдалося прочитати перетягнутий елемент: {e}",
+            "eject_failed": "Не вдалося витягти диск: {error}",
+            "ejected": "Диск витягнуто ({device}).",
+            "ejecting": "Витягування диска…",
+            "open_folder_failed": "Не вдалося відкрити теку: {e}",
+            "open_url_failed": "Не вдалося відкрити {url}: {e}",
+            "pick_failed": "Не вдалося відкрити вікно вибору файлів: {e}",
+            "pick_not_local": "Можна використовувати лише локальні файли й теки: {p}",
+            "reveal_failed": "Не вдалося відкрити теку в Провіднику: {e}",
+            "scan_not_started": "Не вдалося почати сканування джерела: {detail}",
+            "scan_worker_stopped": "Процес сканування джерела зупинився, не повернувши результату."
         },
         "alert": {
             "rip_title": "Триває копіювання.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "Налаштування freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Копіювання завершено"
         }
     },
     "warn": {
         "no_lang_match_audio": "попередження: розділ {num}: жодна звукова дорожка не відповідає '{requested}' (доступно: {available}) — зберігається лише відео.",
         "no_lang_match_subtitle": "попередження: розділ {num}: жодна дорожка субтитрів не відповідає '{requested}' (доступно: {available}) — зберігається лише відео.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Примітка: не вдалося записати доріжок: {count}; їх пропущено:"
+    },
+    "share": {
+        "attach_zip": "Zip-архів профілю завеликий для тексту issue — прикріпіть {path} до issue.",
+        "zip_failed": "Не вдалося створити zip-архів профілю: {error}"
     }
 }

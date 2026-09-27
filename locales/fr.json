@@ -20,7 +20,7 @@
         "unknown": "Inconnu",
         "share_hint": "Lancez 'freemkv info disc:// --share' pour aider a elargir la prise en charge des lecteurs.",
         "share_usage": "Utilisation : freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Capturer et soumettre le profil du lecteur pour elargir la prise en charge",
+        "share_desc": "Capturer et soumettre le profil du lecteur et la structure du disque pour élargir la prise en charge",
         "mask_desc": "Masquer les numeros de serie (lettres → A, chiffres → 0)",
         "device_desc": "Specifier le chemin du peripherique",
         "captured": "Capture : GET_CONFIG 0x{code} {name} ({bytes} octets)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Fonctionnalites",
         "submit_packaging": "Empaquetage...",
-        "zip_failed": "zip echoue ({error}), envoi du texte seul",
         "submit_saved": "Profil enregistré dans {dir}/",
         "submit_zip": "Archive zip : {path}",
         "submit_manual": "Pour contribuer ce profil, ouvrez un nouveau ticket et collez le texte ci-dessous :",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "L'envoi automatique a échoué ; vous pouvez toujours le signaler à la main :",
         "submit_declined": "Non envoyé. Vous pouvez toujours le signaler à la main si vous le souhaitez :",
         "submit_issue_title": "Titre du ticket : {title}",
-        "submit_issue_body": "Corps du ticket (copiez tout ce qui se trouve entre les lignes) :"
+        "submit_issue_body": "Corps du ticket (copiez tout ce qui se trouve entre les lignes) :",
+        "share_image_note": "Sur les sources iso:// et dir://, --share capture la structure du disque ; --mask et --verbose n'y ont aucun effet (il n'y a pas de lecteur).",
+        "structure_unreadable": "Structure du disque non capturée : {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Analyse du disque...",
@@ -63,7 +65,17 @@
         "forced": "force",
         "usage": "Utilisation : freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Inconnu",
-        "file": "Fichier"
+        "file": "Fichier",
+        "capture_aacs_failed": "Diagnostics AACS non capturés — l'étape AACS a échoué : {error}",
+        "capture_aacs_hash": "Diagnostics AACS : empreinte du disque {hash} (clé de recherche keydb) enregistrée dans aacs.json.",
+        "capture_aacs_no_hash": "Diagnostics AACS enregistrés dans aacs.json (empreinte du disque indisponible).",
+        "capture_aacs_none": "Pas d'AACS sur ce disque — aucun diagnostic AACS à capturer.",
+        "capture_all_skipped": "Aucun des {count} fichiers de structure du disque n'a pu être enregistré.",
+        "capture_mkdir_failed": "Impossible de créer {path} : {error}",
+        "capture_no_structure": "Aucune structure de disque lisible (BDMV / VIDEO_TS) trouvée ; rien à partager.",
+        "capture_skipped": "Fichier du disque ignoré : {file}",
+        "capture_summary": "Structure du disque capturée : {files} fichiers ({bytes} octets).",
+        "capture_unsafe_name": "nom de fichier non sûr"
     },
     "stream": {
         "purpose": {
@@ -385,7 +397,11 @@
         "log_level_not_a_number": "--log-level : nombre 1–4 attendu, '{value}' reçu, ignoré",
         "log_level_needs_value": "--log-level : nécessite une valeur (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file : chemin invalide '{path}' — aucun journal de diagnostic écrit",
-        "language_needs_value": "{flag} : nécessite un code de langue (par ex. --language de)"
+        "language_needs_value": "{flag} : nécessite un code de langue (par ex. --language de)",
+        "disc_scan_all_titles_failed": "Erreur : impossible d'analyser le disque pour lister ses titres, `-t all` ne peut donc pas savoir quels titres extraire. Rien n'a été extrait — vérifiez le disque et le lecteur, puis réessayez.",
+        "log_file_needs_value": "--log-file : nécessite un chemin (par ex. --log-file freemkv.log)",
+        "mux_failed_generic": "Échec du multiplexage (E{code}).",
+        "title_changed": "Le titre {num} a changé entre deux analyses : attendu {expected}, le lecteur indique maintenant {found}. La liste des titres du disque a changé pendant l'extraction ; rien n'a été écrit pour ce titre."
     },
     "usage": {
         "synopsis_1": "Utilisation : freemkv <source> <dest> [options]",
@@ -451,7 +467,7 @@
             "language": "      --language CODE Langue de l'interface (aussi --lang) : un code comme de ou pt-BR, ou auto.",
             "raw": "      --raw           Ignorer le déchiffrement (sortie chiffrée brute)",
             "multipass": "      --multipass    Écrire/mettre à jour le mapfile pour la récupération multipasse",
-            "share": "      --share         Soumettre le profil du lecteur (info disc:// uniquement ; lors d'un rip, -s signifie --subtitles)",
+            "share": "      --share         Soumettre le profil du lecteur et la structure du disque (info disc://, iso:// ou dir:// ; lors d'un rip, -s signifie --subtitles)",
             "mask": "  -m, --mask          Masquer les numéros de série (avec --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -513,7 +529,9 @@
             "open_disc": "Ouvrir un disque…",
             "exit": "Quitter",
             "copy": "Copier",
-            "select_all_text": "Tout sélectionner"
+            "select_all_text": "Tout sélectionner",
+            "cut": "Couper",
+            "paste": "Coller"
         },
         "col": {
             "type": "Type",
@@ -574,7 +592,8 @@
             "test_connection": "Tester la connexion",
             "keydb_no_url": "Aucune URL de mise à jour keydb définie — ajoutez-en une ci-dessus, puis cliquez sur Mettre à jour.",
             "keydb_updating": "Mise à jour de keydb… téléchargement en cours, veuillez patienter.",
-            "lang_any": "Toutes"
+            "lang_any": "Toutes",
+            "notify_when_rip_finished": "Notifier à la fin d'une extraction"
         },
         "btn": {
             "open_file": "Ouvrir un fichier ou une ISO…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Fermer",
             "browse": "…",
-            "show_explorer": "Afficher dans l'Explorateur"
+            "show_explorer": "Afficher dans l'Explorateur",
+            "show_folder": "Afficher dans le dossier"
         },
         "group": {
             "output": "Sortie",
@@ -651,7 +671,18 @@
             "raw_iso_only": "« Conserver chiffré (brut) » ne s'applique qu'à une sortie Disque entier → image ISO ; ignoré pour ce format.",
             "no_drive": "Aucun lecteur optique trouvé. Connectez un lecteur Blu-ray/DVD contenant un disque.",
             "opening_drive": "Ouverture de {label} ({device})",
-            "drives_found": "{n} lecteurs trouvés : {list} — utilisation de celui qui contient un disque"
+            "drives_found": "{n} lecteurs trouvés : {list} — utilisation de celui qui contient un disque",
+            "drop_unreadable": "Impossible de lire l'élément déposé : {e}",
+            "eject_failed": "Échec de l'éjection : {error}",
+            "ejected": "Disque éjecté ({device}).",
+            "ejecting": "Éjection du disque…",
+            "open_folder_failed": "Impossible d'ouvrir le dossier : {e}",
+            "open_url_failed": "Impossible d'ouvrir {url} : {e}",
+            "pick_failed": "Impossible d'ouvrir le sélecteur de fichiers : {e}",
+            "pick_not_local": "Seuls les fichiers et dossiers locaux peuvent être utilisés : {p}",
+            "reveal_failed": "Impossible d'ouvrir le dossier dans l'Explorateur de fichiers : {e}",
+            "scan_not_started": "Impossible de lancer l'analyse de la source : {detail}",
+            "scan_worker_stopped": "Le processus d'analyse de la source s'est arrêté avant de renvoyer un résultat."
         },
         "alert": {
             "rip_title": "Une extraction est en cours.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "Réglages de freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Extraction terminée"
         }
     },
     "warn": {
         "no_lang_match_audio": "avertissement : titre {num} : aucune piste audio ne correspond à '{requested}' (disponible : {available}) — conservation de la vidéo uniquement.",
         "no_lang_match_subtitle": "avertissement : titre {num} : aucune piste de sous-titres ne correspond à '{requested}' (disponible : {available}) — conservation de la vidéo uniquement.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Remarque : {count} flux n'ont pas pu être livrés et ont été omis :"
+    },
+    "share": {
+        "attach_zip": "Le zip du profil est trop volumineux pour le texte du ticket — joignez {path} au ticket.",
+        "zip_failed": "Impossible de créer le zip du profil : {error}"
     }
 }

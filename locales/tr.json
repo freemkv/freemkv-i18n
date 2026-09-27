@@ -20,7 +20,7 @@
         "unknown": "Bilinmiyor",
         "share_hint": "Sürücü desteğini genişletmeye yardımcı olmak için 'freemkv info disc:// --share' komutunu çalıştırın.",
         "share_usage": "Kullanım: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Sürücü desteğini genişletmek için sürücü profilini yakala ve gönder",
+        "share_desc": "Desteği genişletmek için sürücü profilini ve disk yapısını yakala ve gönder",
         "mask_desc": "Seri numaralarını maskele (harfler → A, rakamlar → 0)",
         "device_desc": "Aygıt yolunu belirt",
         "captured": "Yakalandı: GET_CONFIG 0x{code} {name} ({bytes} bayt)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Özellikler",
         "submit_packaging": "Paketleniyor...",
-        "zip_failed": "zip başarısız ({error}), yalnızca metin gönderiliyor",
         "submit_saved": "Profil {dir}/ konumuna kaydedildi",
         "submit_zip": "Zip arşivi: {path}",
         "submit_manual": "Bu profile katkıda bulunmak için yeni bir issue açın ve aşağıdaki metni yapıştırın:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Otomatik gönderim başarısız oldu; yine de elle bildirebilirsiniz:",
         "submit_declined": "Gönderilmedi. İsterseniz yine de elle bildirebilirsiniz:",
         "submit_issue_title": "Issue başlığı: {title}",
-        "submit_issue_body": "Issue içeriği (satırların arasındaki her şeyi kopyalayın):"
+        "submit_issue_body": "Issue içeriği (satırların arasındaki her şeyi kopyalayın):",
+        "share_image_note": "iso:// ve dir:// kaynaklarında --share disk yapısını yakalar; --mask ve --verbose orada etkisizdir (sürücü yoktur).",
+        "structure_unreadable": "Disk yapısı yakalanamadı: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Disk taranıyor...",
@@ -63,7 +65,17 @@
         "forced": "zorlanmış",
         "usage": "Kullanım: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Bilinmiyor",
-        "file": "Dosya"
+        "file": "Dosya",
+        "capture_aacs_failed": "AACS tanılama bilgileri yakalanmadı — AACS adımı başarısız oldu: {error}",
+        "capture_aacs_hash": "AACS tanılama: disk özeti {hash} (keydb arama anahtarı) aacs.json dosyasına kaydedildi.",
+        "capture_aacs_no_hash": "AACS tanılama bilgileri aacs.json dosyasına kaydedildi (disk özeti kullanılamıyor).",
+        "capture_aacs_none": "Bu diskte AACS yok — yakalanacak AACS tanılama bilgisi yok.",
+        "capture_all_skipped": "{count} disk yapısı dosyasının hiçbiri kaydedilemedi.",
+        "capture_mkdir_failed": "{path} oluşturulamadı: {error}",
+        "capture_no_structure": "Okunabilir disk yapısı (BDMV / VIDEO_TS) bulunamadı; paylaşılacak bir şey yok.",
+        "capture_skipped": "Disk dosyası atlandı: {file}",
+        "capture_summary": "Disk yapısı yakalandı: {files} dosya ({bytes} bayt).",
+        "capture_unsafe_name": "güvenli olmayan dosya adı"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: 1–4 arası bir sayı bekleniyordu, '{value}' alındı, yok sayıldı",
         "log_level_needs_value": "--log-level: bir değer gerektirir (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: geçersiz yol '{path}' — tanılama günlüğü yazılmadı",
-        "language_needs_value": "{flag}: bir dil kodu gerektirir (ör. --language de)"
+        "language_needs_value": "{flag}: bir dil kodu gerektirir (ör. --language de)",
+        "disc_scan_all_titles_failed": "Hata: başlıkları listelemek için disk taranamadı, bu yüzden `-t all` hangi başlıkların kopyalanacağını bilemiyor. Hiçbir şey kopyalanmadı — diski ve sürücüyü kontrol edip tekrar deneyin.",
+        "log_file_needs_value": "--log-file: bir yol gerektirir (örneğin --log-file freemkv.log)",
+        "mux_failed_generic": "Mux başarısız (E{code}).",
+        "title_changed": "Başlık {num} taramalar arasında değişti: beklenen {expected}, sürücü şimdi {found} bildiriyor. Başlık listesi kopyalama sırasında değişti; bu başlık için hiçbir şey yazılmadı."
     },
     "usage": {
         "synopsis_1": "Kullanım: freemkv <source> <dest> [flags]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Arayüz dili (--lang de olur): de veya pt-BR gibi bir kod ya da auto.",
             "raw": "      --raw           Şifre çözmeyi atla (ham şifreli çıktı)",
             "multipass": "      --multipass    Çok geçişli kurtarma için harita dosyası yaz/güncelle",
-            "share": "      --share         Sürücü profilini gönder (yalnızca info disc://; bir kopyalamada -s, --subtitles anlamına gelir)",
+            "share": "      --share         Sürücü profilini ve disk yapısını gönder (info disc://, iso:// veya dir://; bir kopyalamada -s, --subtitles anlamına gelir)",
             "mask": "  -m, --mask          Seri numaralarını maskele (--share ile)",
             "force": "      --force        Boş olmayan bir dir:// hedefine çıkar (üzerine yaz)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Disk aç…",
             "exit": "Çıkış",
             "copy": "Kopyala",
-            "select_all_text": "Tümünü Seç"
+            "select_all_text": "Tümünü Seç",
+            "cut": "Kes",
+            "paste": "Yapıştır"
         },
         "col": {
             "type": "Tür",
@@ -574,7 +592,8 @@
             "test_connection": "Bağlantıyı test et",
             "keydb_no_url": "keydb güncelleme adresi ayarlanmadı — yukarıya bir adres ekleyip Güncelle'ye tıklayın.",
             "keydb_updating": "keydb güncelleniyor… indiriliyor, lütfen bekleyin.",
-            "lang_any": "Herhangi"
+            "lang_any": "Herhangi",
+            "notify_when_rip_finished": "Kopyalama bitince bildir"
         },
         "btn": {
             "open_file": "Dosya veya ISO aç…",
@@ -586,7 +605,8 @@
             "ok": "Tamam",
             "close": "Kapat",
             "browse": "…",
-            "show_explorer": "Dosya Gezgini'nde Göster"
+            "show_explorer": "Dosya Gezgini'nde Göster",
+            "show_folder": "Klasörde Göster"
         },
         "group": {
             "output": "Çıktı",
@@ -651,7 +671,18 @@
             "raw_iso_only": "“Şifreli tut (raw)” yalnızca Tüm disk → ISO görüntüsü çıktısı için geçerlidir; bu biçimde yok sayılıyor.",
             "no_drive": "Optik sürücü bulunamadı. İçinde disk olan bir Blu-ray/DVD sürücüsü bağlayın.",
             "opening_drive": "{label} ({device}) açılıyor",
-            "drives_found": "{n} sürücü bulundu: {list} — disk bulunan sürücü kullanılıyor"
+            "drives_found": "{n} sürücü bulundu: {list} — disk bulunan sürücü kullanılıyor",
+            "drop_unreadable": "Bırakılan öğe okunamadı: {e}",
+            "eject_failed": "Çıkarma başarısız: {error}",
+            "ejected": "Disk çıkarıldı ({device}).",
+            "ejecting": "Disk çıkarılıyor…",
+            "open_folder_failed": "Klasör açılamadı: {e}",
+            "open_url_failed": "{url} açılamadı: {e}",
+            "pick_failed": "Dosya seçici açılamadı: {e}",
+            "pick_not_local": "Yalnızca yerel dosyalar ve klasörler kullanılabilir: {p}",
+            "reveal_failed": "Klasör Dosya Gezgini'nde açılamadı: {e}",
+            "scan_not_started": "Kaynak taraması başlatılamadı: {detail}",
+            "scan_worker_stopped": "Kaynak tarama işlemi bir sonuç döndürmeden durdu."
         },
         "alert": {
             "rip_title": "Bir kopyalama sürüyor.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "freemkv Ayarları"
+        },
+        "notify": {
+            "rip_finished_title": "Kopyalama tamamlandı"
         }
     },
     "warn": {
         "no_lang_match_audio": "uyarı: başlık {num}: '{requested}' ile eşleşen ses izi yok (mevcut: {available}) — yalnızca video korunuyor.",
         "no_lang_match_subtitle": "uyarı: başlık {num}: '{requested}' ile eşleşen altyazı izi yok (mevcut: {available}) — yalnızca video korunuyor.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Not: {count} iz çıktıya yazılamadı ve dışarıda bırakıldı:"
+    },
+    "share": {
+        "attach_zip": "Profil zip dosyası issue metni için çok büyük — {path} dosyasını issue'ya ekleyin.",
+        "zip_failed": "Profil zip dosyası oluşturulamadı: {error}"
     }
 }

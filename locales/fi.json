@@ -20,7 +20,7 @@
         "unknown": "Tuntematon",
         "share_hint": "Suorita 'freemkv info disc:// --share' laajentaaksesi asematukea.",
         "share_usage": "Käyttö: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Kaappaa ja lähetä aseman profiili laajentaaksesi asematukea",
+        "share_desc": "Kaappaa ja lähetä aseman profiili ja levyrakenne laajentaaksesi tukea",
         "mask_desc": "Peitä sarjanumerot (kirjaimet → A, numerot → 0)",
         "device_desc": "Määritä laitepolku",
         "captured": "Kaapattu: GET_CONFIG 0x{code} {name} ({bytes} tavua)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profiili",
         "submit_features": "Ominaisuudet",
         "submit_packaging": "Pakataan...",
-        "zip_failed": "zip epäonnistui ({error}), lähetetään vain teksti",
         "submit_saved": "Profiili tallennettu kohteeseen {dir}/",
         "submit_zip": "Zip-arkisto: {path}",
         "submit_manual": "Osallistuaksesi tähän profiiliin avaa uusi issue ja liitä alla oleva teksti:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automaattinen lähetys epäonnistui; voit silti ilmoittaa sen käsin:",
         "submit_declined": "Ei lähetetty. Voit silti ilmoittaa sen käsin, jos haluat:",
         "submit_issue_title": "Issuen otsikko: {title}",
-        "submit_issue_body": "Issuen sisältö (kopioi kaikki viivojen väliltä):"
+        "submit_issue_body": "Issuen sisältö (kopioi kaikki viivojen väliltä):",
+        "share_image_note": "iso://- ja dir://-lähteillä --share kaappaa levyrakenteen; --mask ja --verbose eivät vaikuta niihin (asemaa ei ole).",
+        "structure_unreadable": "Levyrakennetta ei kaapattu: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Skannataan levyä...",
@@ -63,7 +65,17 @@
         "forced": "pakotettu",
         "usage": "Käyttö: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Tuntematon",
-        "file": "Tiedosto"
+        "file": "Tiedosto",
+        "capture_aacs_failed": "AACS-diagnostiikkaa ei kaapattu — AACS-vaihe epäonnistui: {error}",
+        "capture_aacs_hash": "AACS-diagnostiikka: levyn tiiviste {hash} (keydb-hakuavain) tallennettu tiedostoon aacs.json.",
+        "capture_aacs_no_hash": "AACS-diagnostiikka tallennettu tiedostoon aacs.json (levyn tiiviste ei saatavilla).",
+        "capture_aacs_none": "Tällä levyllä ei ole AACS:ää — ei AACS-diagnostiikkaa kaapattavaksi.",
+        "capture_all_skipped": "Yhtäkään levyn {count} rakennetiedostosta ei voitu tallentaa.",
+        "capture_mkdir_failed": "Kohdetta {path} ei voitu luoda: {error}",
+        "capture_no_structure": "Luettavaa levyrakennetta (BDMV / VIDEO_TS) ei löytynyt; ei mitään jaettavaa.",
+        "capture_skipped": "Ohitettiin levyn tiedosto {file}",
+        "capture_summary": "Levyrakenne kaapattu: {files} tiedostoa ({bytes} tavua).",
+        "capture_unsafe_name": "vaarallinen tiedostonimi"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: odotettiin lukua 1–4, saatiin '{value}', ohitetaan",
         "log_level_needs_value": "--log-level: vaatii arvon (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: virheellinen polku '{path}' — diagnostiikkalokia ei kirjoitettu",
-        "language_needs_value": "{flag}: vaatii kielikoodin (esim. --language de)"
+        "language_needs_value": "{flag}: vaatii kielikoodin (esim. --language de)",
+        "disc_scan_all_titles_failed": "Virhe: levyä ei voitu skannata nimikkeiden luetteloimiseksi, joten `-t all` ei tiedä, mitkä nimikkeet ripataan. Mitään ei ripattu — tarkista levy ja asema ja yritä uudelleen.",
+        "log_file_needs_value": "--log-file: vaatii polun (esim. --log-file freemkv.log)",
+        "mux_failed_generic": "Muksaus epäonnistui (E{code}).",
+        "title_changed": "Nimike {num} muuttui skannausten välillä: odotettiin {expected}, asema ilmoittaa nyt {found}. Levyn nimikeluettelo muuttui rippauksen aikana; tälle nimikkeelle ei kirjoitettu mitään."
     },
     "usage": {
         "synopsis_1": "Käyttö: freemkv <source> <dest> [flags]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Käyttöliittymän kieli (myös --lang): koodi kuten de tai pt-BR, tai auto.",
             "raw": "      --raw           Ohita salauksen purku (raaka salattu tuloste)",
             "multipass": "      --multipass    Kirjoita/päivitä karttatiedosto monivaiheista palautusta varten",
-            "share": "      --share         Lähetä aseman profiili (vain info disc://; rippauksessa -s tarkoittaa --subtitles)",
+            "share": "      --share         Lähetä aseman profiili ja levyrakenne (info disc://, iso:// tai dir://; rippauksessa -s tarkoittaa --subtitles)",
             "mask": "  -m, --mask          Peitä sarjanumerot (--share:n kanssa)",
             "force": "      --force        Pura ei-tyhjään dir://-kohteeseen (ylikirjoita)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Avaa levy…",
             "exit": "Lopeta",
             "copy": "Kopioi",
-            "select_all_text": "Valitse kaikki"
+            "select_all_text": "Valitse kaikki",
+            "cut": "Leikkaa",
+            "paste": "Liitä"
         },
         "col": {
             "type": "Tyyppi",
@@ -574,7 +592,8 @@
             "test_connection": "Testaa yhteys",
             "keydb_no_url": "keydb-päivitysosoitetta ei ole asetettu — lisää se yllä ja napsauta Päivitä.",
             "keydb_updating": "Päivitetään keydb… ladataan, odota.",
-            "lang_any": "Mikä tahansa"
+            "lang_any": "Mikä tahansa",
+            "notify_when_rip_finished": "Ilmoita, kun rippaus valmistuu"
         },
         "btn": {
             "open_file": "Avaa tiedosto tai ISO…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Sulje",
             "browse": "…",
-            "show_explorer": "Näytä Resurssienhallinnassa"
+            "show_explorer": "Näytä Resurssienhallinnassa",
+            "show_folder": "Näytä kansiossa"
         },
         "group": {
             "output": "Tuloste",
@@ -651,7 +671,18 @@
             "raw_iso_only": "”Säilytä salattuna (raw)” koskee vain Koko levy → ISO-kuva -tulostetta; ohitetaan tässä muodossa.",
             "no_drive": "Optista asemaa ei löytynyt. Liitä Blu-ray-/DVD-asema, jossa on levy.",
             "opening_drive": "Avataan {label} ({device})",
-            "drives_found": "{n} asemaa löytyi: {list} — käytetään sitä, jossa on levy"
+            "drives_found": "{n} asemaa löytyi: {list} — käytetään sitä, jossa on levy",
+            "drop_unreadable": "Pudotettua kohdetta ei voitu lukea: {e}",
+            "eject_failed": "Levyn poisto epäonnistui: {error}",
+            "ejected": "Levy poistettu ({device}).",
+            "ejecting": "Poistetaan levyä…",
+            "open_folder_failed": "Kansiota ei voitu avata: {e}",
+            "open_url_failed": "Kohdetta {url} ei voitu avata: {e}",
+            "pick_failed": "Tiedostonvalitsinta ei voitu avata: {e}",
+            "pick_not_local": "Vain paikallisia tiedostoja ja kansioita voidaan käyttää: {p}",
+            "reveal_failed": "Kansiota ei voitu avata Resurssienhallinnassa: {e}",
+            "scan_not_started": "Lähteen skannausta ei voitu aloittaa: {detail}",
+            "scan_worker_stopped": "Lähteen skannaus pysähtyi ennen tuloksen palauttamista."
         },
         "alert": {
             "rip_title": "Rippaus on käynnissä.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "freemkv-asetukset"
+        },
+        "notify": {
+            "rip_finished_title": "Rippaus valmis"
         }
     },
     "warn": {
         "no_lang_match_audio": "varoitus: nimike {num}: yksikään ääniraita ei vastaa '{requested}' (saatavilla: {available}) — säilytetään vain video.",
         "no_lang_match_subtitle": "varoitus: nimike {num}: yksikään tekstitysraita ei vastaa '{requested}' (saatavilla: {available}) — säilytetään vain video.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Huomautus: {count} raitaa ei voitu toimittaa, ja ne jätettiin pois:"
+    },
+    "share": {
+        "attach_zip": "Profiilin zip-tiedosto on liian suuri ongelmaraportin tekstiin — liitä {path} ongelmaraporttiin.",
+        "zip_failed": "Profiilin zip-tiedostoa ei voitu luoda: {error}"
     }
 }

@@ -20,7 +20,7 @@
         "unknown": "Nieznany",
         "share_hint": "Uruchom polecenie „freemkv info disc:// --share”, aby pomóc rozszerzyć obsługę napędów.",
         "share_usage": "Sposób użycia: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Przechwyć i prześlij profil napędu, aby rozszerzyć obsługę napędów",
+        "share_desc": "Przechwyć i prześlij profil napędu oraz strukturę płyty, aby rozszerzyć obsługę",
         "mask_desc": "Maskuj numery seryjne (litery → A, cyfry → 0)",
         "device_desc": "Podaj ścieżkę urządzenia",
         "captured": "Przechwycono: GET_CONFIG 0x{code} {name} ({bytes} bajtów)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funkcje",
         "submit_packaging": "Pakowanie…",
-        "zip_failed": "kompresja zip nie powiodła się ({error}), przesyłanie samego tekstu",
         "submit_saved": "Profil zapisano w {dir}/",
         "submit_zip": "Archiwum zip: {path}",
         "submit_manual": "Aby przekazać ten profil, otwórz nowe zgłoszenie i wklej poniższy tekst:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatyczne wysłanie nie powiodło się; nadal możesz zgłosić to ręcznie:",
         "submit_declined": "Nie wysłano. Nadal możesz zgłosić to ręcznie, jeśli chcesz:",
         "submit_issue_title": "Tytuł zgłoszenia: {title}",
-        "submit_issue_body": "Treść zgłoszenia (skopiuj wszystko pomiędzy liniami):"
+        "submit_issue_body": "Treść zgłoszenia (skopiuj wszystko pomiędzy liniami):",
+        "share_image_note": "Dla źródeł iso:// i dir:// opcja --share przechwytuje strukturę płyty; --mask i --verbose nie mają tam żadnego wpływu (nie ma napędu).",
+        "structure_unreadable": "Nie przechwycono struktury płyty: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Skanowanie płyty…",
@@ -63,7 +65,17 @@
         "forced": "wymuszone",
         "usage": "Sposób użycia: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Nieznany",
-        "file": "Plik"
+        "file": "Plik",
+        "capture_aacs_failed": "Nie zebrano diagnostyki AACS — etap AACS nie powiódł się: {error}",
+        "capture_aacs_hash": "Diagnostyka AACS: skrót płyty {hash} (klucz wyszukiwania w keydb) zapisany w aacs.json.",
+        "capture_aacs_no_hash": "Diagnostykę AACS zapisano w aacs.json (skrót płyty niedostępny).",
+        "capture_aacs_none": "Ta płyta nie ma AACS — brak diagnostyki AACS do zebrania.",
+        "capture_all_skipped": "Nie udało się zapisać żadnego z plików struktury płyty (łącznie: {count}).",
+        "capture_mkdir_failed": "Nie można utworzyć {path}: {error}",
+        "capture_no_structure": "Nie znaleziono czytelnej struktury płyty (BDMV / VIDEO_TS); nie ma czego udostępnić.",
+        "capture_skipped": "Pominięto plik płyty {file}",
+        "capture_summary": "Przechwycono strukturę płyty — plików: {files}, bajtów: {bytes}.",
+        "capture_unsafe_name": "niebezpieczna nazwa pliku"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: oczekiwano liczby 1–4, otrzymano '{value}', zignorowano",
         "log_level_needs_value": "--log-level: wymaga wartości (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: nieprawidłowa ścieżka '{path}' — nie zapisano dziennika diagnostycznego",
-        "language_needs_value": "{flag}: wymaga kodu języka (np. --language de)"
+        "language_needs_value": "{flag}: wymaga kodu języka (np. --language de)",
+        "disc_scan_all_titles_failed": "Błąd: nie udało się przeskanować płyty, aby wyświetlić listę tytułów, więc `-t all` nie może ustalić, które tytuły zgrać. Nic nie zostało zgrane — sprawdź płytę i napęd, a następnie spróbuj ponownie.",
+        "log_file_needs_value": "--log-file: wymaga ścieżki (np. --log-file freemkv.log)",
+        "mux_failed_generic": "Multipleksowanie nie powiodło się (E{code}).",
+        "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano."
     },
     "usage": {
         "synopsis_1": "Sposób użycia: freemkv <źródło> <cel> [flagi]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE Język interfejsu (także --lang): kod taki jak de lub pt-BR, albo auto.",
             "raw": "      --raw           Pomiń deszyfrowanie (surowy zaszyfrowany wynik)",
             "multipass": "      --multipass    Zapisz/zaktualizuj plik mapy dla odzyskiwania wieloprzebiegowego",
-            "share": "      --share         Prześlij profil napędu (tylko info disc://; przy zgrywaniu -s oznacza --subtitles)",
+            "share": "      --share         Prześlij profil napędu i strukturę płyty (info disc://, iso:// lub dir://; przy zgrywaniu -s oznacza --subtitles)",
             "mask": "  -m, --mask          Maskuj numery seryjne (z --share)",
             "force": "      --force        Wyodrębnij do niepustego celu dir:// (nadpisanie)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Otwórz dysk…",
             "exit": "Zakończ",
             "copy": "Kopiuj",
-            "select_all_text": "Zaznacz wszystko"
+            "select_all_text": "Zaznacz wszystko",
+            "cut": "Wytnij",
+            "paste": "Wklej"
         },
         "col": {
             "type": "Typ",
@@ -574,7 +592,8 @@
             "test_connection": "Testuj połączenie",
             "keydb_no_url": "Nie ustawiono adresu URL aktualizacji keydb — dodaj go powyżej, a następnie kliknij Aktualizuj.",
             "keydb_updating": "Aktualizowanie keydb… pobieranie, proszę czekać.",
-            "lang_any": "Dowolny"
+            "lang_any": "Dowolny",
+            "notify_when_rip_finished": "Powiadom po zakończeniu zgrywania"
         },
         "btn": {
             "open_file": "Otwórz plik lub ISO…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Zamknij",
             "browse": "…",
-            "show_explorer": "Pokaż w Eksploratorze"
+            "show_explorer": "Pokaż w Eksploratorze",
+            "show_folder": "Pokaż w folderze"
         },
         "group": {
             "output": "Wyjście",
@@ -651,7 +671,18 @@
             "raw_iso_only": "„Zachowaj zaszyfrowane (raw)” dotyczy tylko wyjścia Cały dysk → obraz ISO; zostanie zignorowane dla tego formatu.",
             "no_drive": "Nie znaleziono napędu optycznego. Podłącz napęd Blu-ray/DVD z płytą.",
             "opening_drive": "Otwieranie {label} ({device})",
-            "drives_found": "Znaleziono {n} napędów: {list} — zostanie użyty ten z płytą"
+            "drives_found": "Znaleziono {n} napędów: {list} — zostanie użyty ten z płytą",
+            "drop_unreadable": "Nie można odczytać upuszczonego elementu: {e}",
+            "eject_failed": "Wysuwanie nie powiodło się: {error}",
+            "ejected": "Wysunięto płytę ({device}).",
+            "ejecting": "Wysuwanie płyty…",
+            "open_folder_failed": "Nie można otworzyć folderu: {e}",
+            "open_url_failed": "Nie można otworzyć {url}: {e}",
+            "pick_failed": "Nie można otworzyć okna wyboru plików: {e}",
+            "pick_not_local": "Można używać tylko lokalnych plików i folderów: {p}",
+            "reveal_failed": "Nie można otworzyć folderu w Eksploratorze plików: {e}",
+            "scan_not_started": "Nie można rozpocząć skanowania źródła: {detail}",
+            "scan_worker_stopped": "Proces skanowania źródła zatrzymał się przed zwróceniem wyniku."
         },
         "alert": {
             "rip_title": "Trwa zgrywanie.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "Ustawienia freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Zgrywanie zakończone"
         }
     },
     "warn": {
         "no_lang_match_audio": "ostrzeżenie: tytuł {num}: żadna ścieżka dźwiękowa nie odpowiada '{requested}' (dostępne: {available}) — zachowano tylko obraz.",
         "no_lang_match_subtitle": "ostrzeżenie: tytuł {num}: żadna ścieżka napisów nie odpowiada '{requested}' (dostępne: {available}) — zachowano tylko obraz.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Uwaga: nie udało się dostarczyć strumieni (liczba: {count}), więc zostały pominięte:"
+    },
+    "share": {
+        "attach_zip": "Archiwum zip z profilem jest za duże na treść zgłoszenia — dołącz {path} do zgłoszenia.",
+        "zip_failed": "Nie można utworzyć archiwum zip z profilem: {error}"
     }
 }

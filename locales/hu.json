@@ -20,7 +20,7 @@
         "unknown": "Ismeretlen",
         "share_hint": "Futtasd a „freemkv info disc:// --share” parancsot a meghajtótámogatás bővítéséhez.",
         "share_usage": "Használat: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Meghajtóprofil rögzítése és beküldése a meghajtótámogatás bővítéséhez",
+        "share_desc": "Meghajtóprofil és lemezszerkezet rögzítése és beküldése a támogatás bővítéséhez",
         "mask_desc": "Sorozatszámok elrejtése (betűk → A, számjegyek → 0)",
         "device_desc": "Eszköz elérési útjának megadása",
         "captured": "Rögzítve: GET_CONFIG 0x{code} {name} ({bytes} bájt)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funkciók",
         "submit_packaging": "Csomagolás…",
-        "zip_failed": "a zip sikertelen ({error}), csak a szöveg kerül beküldésre",
         "submit_saved": "Profil elmentve ide: {dir}/",
         "submit_zip": "Zip archívum: {path}",
         "submit_manual": "A profil beküldéséhez nyiss egy új hibajegyet, és illeszd be az alábbi szöveget:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Az automatikus beküldés nem sikerült; kézzel továbbra is bejelentheti:",
         "submit_declined": "Nincs beküldve. Ha szeretné, kézzel továbbra is bejelentheti:",
         "submit_issue_title": "Hibajegy címe: {title}",
-        "submit_issue_body": "Hibajegy törzse (másold be mindent a sorok közül):"
+        "submit_issue_body": "Hibajegy törzse (másold be mindent a sorok közül):",
+        "share_image_note": "iso:// és dir:// forrásoknál a --share a lemezszerkezetet rögzíti; a --mask és a --verbose ott hatástalan (nincs meghajtó).",
+        "structure_unreadable": "A lemezszerkezet nem került rögzítésre: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Lemez beolvasása…",
@@ -63,7 +65,17 @@
         "forced": "kényszerített",
         "usage": "Használat: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Ismeretlen",
-        "file": "Fájl"
+        "file": "Fájl",
+        "capture_aacs_failed": "Az AACS-diagnosztika nem került rögzítésre — az AACS-lépés sikertelen: {error}",
+        "capture_aacs_hash": "AACS-diagnosztika: a(z) {hash} lemezhash (keydb keresőkulcs) rögzítve az aacs.json fájlban.",
+        "capture_aacs_no_hash": "AACS-diagnosztika rögzítve az aacs.json fájlban (a lemezhash nem érhető el).",
+        "capture_aacs_none": "Ezen a lemezen nincs AACS — nincs rögzítendő AACS-diagnosztika.",
+        "capture_all_skipped": "A(z) {count} lemezszerkezeti fájl közül egyiket sem sikerült menteni.",
+        "capture_mkdir_failed": "Nem sikerült létrehozni: {path}: {error}",
+        "capture_no_structure": "Nem található olvasható lemezszerkezet (BDMV / VIDEO_TS); nincs mit megosztani.",
+        "capture_skipped": "Kihagyott lemezfájl: {file}",
+        "capture_summary": "Lemezszerkezet rögzítve: {files} fájl ({bytes} bájt).",
+        "capture_unsafe_name": "nem biztonságos fájlnév"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level: 1–4 közötti szám várt, '{value}' érkezett, figyelmen kívül hagyva",
         "log_level_needs_value": "--log-level: értéket igényel (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: érvénytelen útvonal: '{path}' — nem készült diagnosztikai napló",
-        "language_needs_value": "{flag}: nyelvkódot igényel (pl. --language de)"
+        "language_needs_value": "{flag}: nyelvkódot igényel (pl. --language de)",
+        "disc_scan_all_titles_failed": "Hiba: nem sikerült beolvasni a lemezt a címek listázásához, így a `-t all` nem tudja, mely címeket kell kimásolni. Semmi nem lett kimásolva — ellenőrizd a lemezt és a meghajtót, majd próbáld újra.",
+        "log_file_needs_value": "--log-file: elérési utat igényel (pl. --log-file freemkv.log)",
+        "mux_failed_generic": "A muxolás sikertelen (E{code}).",
+        "title_changed": "A(z) {num}. cím megváltozott a beolvasások között: várt {expected}, a meghajtó most ezt jelenti: {found}. A lemez címlistája megváltozott kimásolás közben; ehhez a címhez semmi nem lett kiírva."
     },
     "usage": {
         "synopsis_1": "Használat: freemkv <forrás> <cél> [kapcsolók]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE A felület nyelve (--lang is): egy kód, például de vagy pt-BR, vagy auto.",
             "raw": "      --raw           Visszafejtés kihagyása (nyers titkosított kimenet)",
             "multipass": "      --multipass    Térképfájl írása/frissítése a többmenetes helyreállításhoz",
-            "share": "      --share         Meghajtóprofil beküldése (csak info disc:// esetén; másolásnál a -s a --subtitles kapcsolót jelenti)",
+            "share": "      --share         Meghajtóprofil és lemezszerkezet beküldése (info disc://, iso:// vagy dir://; másolásnál a -s a --subtitles kapcsolót jelenti)",
             "mask": "  -m, --mask          Sorozatszámok elrejtése (a --share kapcsolóval)",
             "force": "      --force        Kibontás nem üres dir:// célba (felülírás)"
         }
@@ -513,7 +529,9 @@
             "open_disc": "Lemez megnyitása…",
             "exit": "Kilépés",
             "copy": "Másolás",
-            "select_all_text": "Az összes kijelölése"
+            "select_all_text": "Az összes kijelölése",
+            "cut": "Kivágás",
+            "paste": "Beillesztés"
         },
         "col": {
             "type": "Típus",
@@ -574,7 +592,8 @@
             "test_connection": "Kapcsolat tesztelése",
             "keydb_no_url": "Nincs beállítva keydb frissítési URL — adjon meg egyet fent, majd kattintson a Frissítés gombra.",
             "keydb_updating": "keydb frissítése… letöltés folyamatban, kérem várjon.",
-            "lang_any": "Bármely"
+            "lang_any": "Bármely",
+            "notify_when_rip_finished": "Értesítés a kimásolás befejezésekor"
         },
         "btn": {
             "open_file": "Fájl vagy ISO megnyitása…",
@@ -586,7 +605,8 @@
             "ok": "OK",
             "close": "Bezárás",
             "browse": "…",
-            "show_explorer": "Megjelenítés az Intézőben"
+            "show_explorer": "Megjelenítés az Intézőben",
+            "show_folder": "Megjelenítés mappában"
         },
         "group": {
             "output": "Kimenet",
@@ -651,7 +671,18 @@
             "raw_iso_only": "A „Titkosítva hagyás (raw)” csak a Teljes lemez → ISO-képfájl kimenetre érvényes; ennél a formátumnál figyelmen kívül marad.",
             "no_drive": "Nem található optikai meghajtó. Csatlakoztasson egy Blu-ray/DVD meghajtót lemezzel.",
             "opening_drive": "{label} ({device}) megnyitása",
-            "drives_found": "{n} meghajtó található: {list} — a lemezt tartalmazó lesz használva"
+            "drives_found": "{n} meghajtó található: {list} — a lemezt tartalmazó lesz használva",
+            "drop_unreadable": "Nem sikerült beolvasni a behúzott elemet: {e}",
+            "eject_failed": "A kiadás sikertelen: {error}",
+            "ejected": "Lemez kiadva ({device}).",
+            "ejecting": "Lemez kiadása…",
+            "open_folder_failed": "Nem sikerült megnyitni a mappát: {e}",
+            "open_url_failed": "Nem sikerült megnyitni: {url}: {e}",
+            "pick_failed": "Nem sikerült megnyitni a fájlválasztót: {e}",
+            "pick_not_local": "Csak helyi fájlok és mappák használhatók: {p}",
+            "reveal_failed": "Nem sikerült megnyitni a mappát az Intézőben: {e}",
+            "scan_not_started": "Nem sikerült elindítani a forrás beolvasását: {detail}",
+            "scan_worker_stopped": "A forrásbeolvasó folyamat leállt, mielőtt eredményt adott volna."
         },
         "alert": {
             "rip_title": "Kimásolás van folyamatban.",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "freemkv beállítások"
+        },
+        "notify": {
+            "rip_finished_title": "Kimásolás kész"
         }
     },
     "warn": {
         "no_lang_match_audio": "figyelmeztetés: {num}. cím: egyetlen hangsáv sem felel meg a következőnek: '{requested}' (elérhető: {available}) — csak a videó marad meg.",
         "no_lang_match_subtitle": "figyelmeztetés: {num}. cím: egyetlen feliratsáv sem felel meg a következőnek: '{requested}' (elérhető: {available}) — csak a videó marad meg.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Megjegyzés: {count} adatfolyamot nem sikerült kiírni, ezek kimaradtak:"
+    },
+    "share": {
+        "attach_zip": "A profil zip-fájlja túl nagy a hibajegy szövegéhez — csatold a(z) {path} fájlt a hibajegyhez.",
+        "zip_failed": "Nem sikerült létrehozni a profil zip-fájlját: {error}"
     }
 }

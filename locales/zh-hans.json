@@ -20,7 +20,7 @@
         "unknown": "未知",
         "share_hint": "运行 'freemkv info disc:// --share' 以帮助扩展驱动器支持。",
         "share_usage": "用法：freemkv info disc:// [--share] [--mask]",
-        "share_desc": "采集并提交驱动器配置以扩展驱动器支持",
+        "share_desc": "采集并提交驱动器配置和光盘结构以扩展支持",
         "mask_desc": "掩码序列号（字母 → A，数字 → 0）",
         "device_desc": "指定设备路径",
         "captured": "已采集：GET_CONFIG 0x{code} {name}（{bytes} 字节）",
@@ -33,7 +33,6 @@
         "submit_profile": "配置类型",
         "submit_features": "特性",
         "submit_packaging": "正在打包……",
-        "zip_failed": "zip 失败（{error}），仅提交文本",
         "submit_saved": "配置已保存至 {dir}/",
         "submit_zip": "Zip 压缩包：{path}",
         "submit_manual": "要贡献此配置，请新建一个 issue 并粘贴下方文本：",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "自动提交失败；你仍然可以手动提交：",
         "submit_declined": "未提交。如果愿意，你仍然可以手动提交：",
         "submit_issue_title": "Issue 标题：{title}",
-        "submit_issue_body": "Issue 正文（复制分割线之间的全部内容）："
+        "submit_issue_body": "Issue 正文（复制分割线之间的全部内容）：",
+        "share_image_note": "对于 iso:// 和 dir:// 源，--share 会采集光盘结构；--mask 和 --verbose 在此无效（没有驱动器）。",
+        "structure_unreadable": "未采集光盘结构：{err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "正在扫描光盘……",
@@ -63,7 +65,17 @@
         "forced": "强制",
         "usage": "用法：freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "未知",
-        "file": "文件"
+        "file": "文件",
+        "capture_aacs_failed": "未采集 AACS 诊断信息 —— AACS 步骤失败：{error}",
+        "capture_aacs_hash": "AACS 诊断：光盘哈希 {hash}（keydb 查找键）已记录到 aacs.json。",
+        "capture_aacs_no_hash": "AACS 诊断信息已记录到 aacs.json（光盘哈希不可用）。",
+        "capture_aacs_none": "此光盘没有 AACS —— 无 AACS 诊断信息可采集。",
+        "capture_all_skipped": "{count} 个光盘结构文件均无法保存。",
+        "capture_mkdir_failed": "无法创建 {path}：{error}",
+        "capture_no_structure": "未找到可读取的光盘结构（BDMV / VIDEO_TS）；没有可分享的内容。",
+        "capture_skipped": "已跳过光盘文件 {file}",
+        "capture_summary": "已采集光盘结构：{files} 个文件（{bytes} 字节）。",
+        "capture_unsafe_name": "不安全的文件名"
     },
     "stream": {
         "purpose": {
@@ -408,7 +420,11 @@
         "log_level_not_a_number": "--log-level：需要 1–4 的数字，收到 '{value}'，已忽略",
         "log_level_needs_value": "--log-level：需要一个值 (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file：路径 '{path}' 无效 — 未写入诊断日志",
-        "language_needs_value": "{flag}：需要语言代码（例如 --language de）"
+        "language_needs_value": "{flag}：需要语言代码（例如 --language de）",
+        "disc_scan_all_titles_failed": "错误：无法扫描光盘以列出其标题，因此 `-t all` 无法确定要抓取哪些标题。未抓取任何内容 —— 请检查光盘和驱动器后重试。",
+        "log_file_needs_value": "--log-file：需要一个路径（例如 --log-file freemkv.log）",
+        "mux_failed_generic": "复用失败（E{code}）。",
+        "title_changed": "标题 {num} 在两次扫描之间发生了变化：预期为 {expected}，驱动器现在报告 {found}。抓取期间标题列表发生了变化；此标题未写入任何内容。"
     },
     "usage": {
         "synopsis_1": "用法：freemkv <source> <dest> [flags]",
@@ -483,7 +499,7 @@
             "language": "      --language CODE 界面语言（也可用 --lang）：如 de 或 pt-BR 的代码，或 auto。",
             "raw": "      --raw           跳过解密（原始加密输出）",
             "multipass": "      --multipass    写入/更新映射文件以进行多遍恢复",
-            "share": "      --share         提交驱动器配置（仅 info disc://；在抓取时，-s 表示 --subtitles）",
+            "share": "      --share         提交驱动器配置和光盘结构（info disc://、iso:// 或 dir://；在抓取时，-s 表示 --subtitles）",
             "mask": "  -m, --mask          掩码序列号（配合 --share）",
             "force": "      --force        向非空的 dir:// 目标中提取（覆盖）"
         }
@@ -513,7 +529,9 @@
             "open_disc": "打开光盘…",
             "exit": "退出",
             "copy": "复制",
-            "select_all_text": "全选"
+            "select_all_text": "全选",
+            "cut": "剪切",
+            "paste": "粘贴"
         },
         "col": {
             "type": "类型",
@@ -574,7 +592,8 @@
             "test_connection": "测试连接",
             "keydb_no_url": "未设置 keydb 更新网址 — 请在上方添加，然后点击“更新”。",
             "keydb_updating": "正在更新 keydb… 正在下载，请稍候。",
-            "lang_any": "任意"
+            "lang_any": "任意",
+            "notify_when_rip_finished": "抓取完成时通知"
         },
         "btn": {
             "open_file": "打开文件或 ISO……",
@@ -586,7 +605,8 @@
             "ok": "确定",
             "close": "关闭",
             "browse": "……",
-            "show_explorer": "在文件资源管理器中显示"
+            "show_explorer": "在文件资源管理器中显示",
+            "show_folder": "在文件夹中显示"
         },
         "group": {
             "output": "输出",
@@ -651,7 +671,18 @@
             "raw_iso_only": "“保持加密（raw）”仅适用于“整盘 → ISO 映像”输出；此格式将忽略该选项。",
             "no_drive": "未找到光驱。请连接装有光盘的 Blu-ray/DVD 光驱。",
             "opening_drive": "正在打开 {label}（{device}）",
-            "drives_found": "找到 {n} 个光驱：{list} — 使用其中装有光盘的那个"
+            "drives_found": "找到 {n} 个光驱：{list} — 使用其中装有光盘的那个",
+            "drop_unreadable": "无法读取拖入的项目：{e}",
+            "eject_failed": "弹出失败：{error}",
+            "ejected": "已弹出光盘（{device}）。",
+            "ejecting": "正在弹出光盘……",
+            "open_folder_failed": "无法打开文件夹：{e}",
+            "open_url_failed": "无法打开 {url}：{e}",
+            "pick_failed": "无法打开文件选择器：{e}",
+            "pick_not_local": "只能使用本地文件和文件夹：{p}",
+            "reveal_failed": "无法在文件资源管理器中打开文件夹：{e}",
+            "scan_not_started": "无法开始扫描源：{detail}",
+            "scan_worker_stopped": "源扫描进程在返回结果之前已停止。"
         },
         "alert": {
             "rip_title": "抓取正在进行中。",
@@ -690,11 +721,21 @@
         },
         "win": {
             "settings": "freemkv 设置"
+        },
+        "notify": {
+            "rip_finished_title": "抓取完成"
         }
     },
     "warn": {
         "no_lang_match_audio": "警告：标题 {num}：没有与 '{requested}' 匹配的音频轨道（可用：{available}）——仅保留视频。",
         "no_lang_match_subtitle": "警告：标题 {num}：没有与 '{requested}' 匹配的字幕轨道（可用：{available}）——仅保留视频。",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "注意：{count} 条轨道无法写入输出，已被略去："
+    },
+    "share": {
+        "attach_zip": "配置 zip 文件过大，无法放入 issue 正文 —— 请将 {path} 附加到 issue。",
+        "zip_failed": "无法生成配置 zip 文件：{error}"
     }
 }
