@@ -148,6 +148,30 @@ jobs:
           git diff --exit-code -- src/error_codes.rs \
             || { echo "::error::src/error_codes.rs is out of date with libfreemkv/src/error.rs. Run ci/sync-error-codes.sh and add an English string (in all 29 locales) for any new code."; exit 1; }
 
+  # freemkv looks keys up with a compiled-in English fallback (get_or/fmt_or/PendingDiag); this
+  # fails when one is missing from en.json or its English differs. See tests/freemkv_keys.rs.
+  freemkv-key-drift:
+    needs: resolve-msrv
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Fetch freemkv src/
+        uses: actions/checkout@v5
+        with:
+          repository: freemkv/freemkv
+          ref: dev
+          path: .freemkv-src
+          sparse-checkout: src
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ needs.resolve-msrv.outputs.v }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: freemkv-i18n-ci
+      - run: cargo test --test freemkv_keys
+        env:
+          FREEMKV_SRC: .freemkv-src/src
+
   # build.rs walks `locales/` and emits Rust source. Path handling in a build
   # script is exactly the kind of thing that works on Linux and fails on
   # Windows, so both other OSes compile the tests here rather than at tag time.

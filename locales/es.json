@@ -398,10 +398,10 @@
         "log_level_needs_value": "--log-level: requiere un valor (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ruta no válida '{path}' — no se escribió ningún registro de diagnóstico",
         "language_needs_value": "{flag}: requiere un código de idioma (p. ej. --language de)",
-        "disc_scan_all_titles_failed": "Error: no se ha podido escanear el disco para obtener la lista de títulos, por lo que `-t all` no puede saber qué títulos ripear. No se ha ripeado nada: compruebe el disco y la unidad e inténtelo de nuevo.",
+        "disc_scan_all_titles_failed": "Error: no se ha podido escanear el disco para obtener la lista de títulos, por lo que `-t all` no puede saber qué títulos extraer. No se ha extraído nada: compruebe el disco y la unidad e inténtelo de nuevo.",
         "log_file_needs_value": "--log-file: requiere una ruta (p. ej. --log-file freemkv.log)",
         "mux_failed_generic": "Error de multiplexado (E{code}).",
-        "title_changed": "El título {num} ha cambiado entre escaneos: se esperaba {expected} y la unidad indica ahora {found}. La lista de títulos del disco ha cambiado durante el rip; no se ha escrito nada para este título."
+        "title_changed": "El título {num} ha cambiado entre escaneos: se esperaba {expected} y la unidad indica ahora {found}. La lista de títulos del disco ha cambiado durante la extracción; no se ha escrito nada para este título."
     },
     "usage": {
         "synopsis_1": "Uso: freemkv <origen> <destino> [opciones]",
@@ -467,7 +467,7 @@
             "language": "      --language CODE Idioma de la interfaz (también --lang): un código como de o pt-BR, o auto.",
             "raw": "      --raw           Omitir descifrado (salida cifrada sin procesar)",
             "multipass": "      --multipass    Escribir/actualizar mapfile para recuperación multipaso",
-            "share": "      --share         Enviar perfil de unidad y estructura del disco (info disc://, iso:// o dir://; en un rip, -s significa --subtitles)",
+            "share": "      --share         Enviar perfil de unidad y estructura del disco (info disc://, iso:// o dir://; en una extracción, -s significa --subtitles)",
             "mask": "  -m, --mask          Enmascarar números de serie (con --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -593,7 +593,7 @@
             "keydb_no_url": "No se ha establecido ninguna URL de actualización de keydb: añada una arriba y haga clic en Actualizar.",
             "keydb_updating": "Actualizando keydb… descargando, espere.",
             "lang_any": "Cualquiera",
-            "notify_when_rip_finished": "Avisar al terminar un rip"
+            "notify_when_rip_finished": "Avisar al terminar una extracción"
         },
         "btn": {
             "open_file": "Abrir archivo o ISO…",
@@ -723,7 +723,7 @@
             "settings": "Ajustes de freemkv"
         },
         "notify": {
-            "rip_finished_title": "Rip completado"
+            "rip_finished_title": "Extracción completada"
         }
     },
     "warn": {
