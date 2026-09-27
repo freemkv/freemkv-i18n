@@ -245,6 +245,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "光盘镜像文件在本次制作副本所需的扇区之前就已结束，镜像被截断或不完整。为避免用零填充缺失部分，读取已停止 — 请从光盘重新创建镜像。",
         "E7000": "此光盘需要 AACS 解密密钥（Blu-ray/UHD），但未找到任何密钥。请使用以下命令下载密钥数据库：freemkv update-keys --url <keydb-url>",
         "E7001": "光盘的安全证书过短或无效。",
         "E7002": "驱动器未能为此光盘启动安全会话 —— 它可能正被另一程序使用。请关闭其他正在使用该光盘的程序并重试。",

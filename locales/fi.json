@@ -245,6 +245,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Levykuvatiedosto päättyy ennen sektoria, jota tämä rippaus tarvitsee, joten levykuva on katkennut tai keskeneräinen. Lukeminen pysäytettiin sen sijaan, että puuttuva osa olisi täytetty nollilla — luo levykuva uudelleen levyltä.",
         "E7000": "Tämä levy tarvitsee AACS-salauksenpurkuavaimet (Blu-ray/UHD), mutta niitä ei löytynyt. Lataa avaintietokanta komennolla: freemkv update-keys --url <keydb-url>",
         "E7001": "Levyn suojausvarmenne on liian lyhyt tai virheellinen.",
         "E7002": "Asema ei käynnistänyt suojattua istuntoa tälle levylle — se voi olla toisen ohjelman käytössä. Sulje kaikki muu levyä käyttävä ja yritä uudelleen.",
