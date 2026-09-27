@@ -401,6 +401,8 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "출력이 이미 완료되었거나 실패한 뒤에 쓰기가 시도되어 데이터를 저장할 수 없습니다.",
+        "E9072": "출력 헤더가 이미 기록된 뒤에 트랙 정보가 설정되어 적용할 수 없습니다.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: 값 0은 범위(1–4)를 벗어났습니다. 무시합니다",
         "log_level_not_a_number": "--log-level: 1–4 사이의 숫자가 필요하지만 '{value}'을(를) 받았습니다. 무시합니다",

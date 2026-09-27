@@ -401,6 +401,8 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "出力がすでに完了または失敗した後に書き込みが行われたため、データを保存できませんでした。",
+        "E9072": "出力のヘッダーがすでに書き込まれた後にトラック情報が設定されたため、適用できませんでした。",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: 値 0 は範囲外 (1–4) です。無視します",
         "log_level_not_a_number": "--log-level: 1–4 の数値が必要ですが '{value}' が指定されました。無視します",

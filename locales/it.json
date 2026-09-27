@@ -378,6 +378,8 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Si è tentato di scrivere nell'output dopo che era già stato completato o era fallito, quindi i dati non sono stati salvati.",
+        "E9072": "I dati delle tracce sono stati impostati dopo che l'intestazione dell'output era già stata scritta, quindi non è stato possibile applicarli.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: il valore 0 è fuori intervallo (1–4), ignorato",
         "log_level_not_a_number": "--log-level: atteso un numero 1–4, ricevuto '{value}', ignorato",

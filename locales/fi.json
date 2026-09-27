@@ -401,6 +401,8 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Tulosteeseen kirjoitettiin sen jälkeen, kun se oli jo valmis tai epäonnistunut, joten tietoja ei voitu tallentaa.",
+        "E9072": "Raitojen tiedot asetettiin vasta sen jälkeen, kun tulosteen otsake oli jo kirjoitettu, joten niitä ei voitu ottaa käyttöön.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: arvo 0 on sallitun välin ulkopuolella (1–4), ohitetaan",
         "log_level_not_a_number": "--log-level: odotettiin lukua 1–4, saatiin '{value}', ohitetaan",

@@ -401,6 +401,8 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Đã có thao tác ghi vào đầu ra sau khi đầu ra đã hoàn tất hoặc bị lỗi, nên không thể lưu dữ liệu.",
+        "E9072": "Thông tin rãnh được đặt sau khi phần đầu (header) của đầu ra đã được ghi, nên không thể áp dụng.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: giá trị 0 nằm ngoài phạm vi (1–4), bỏ qua",
         "log_level_not_a_number": "--log-level: cần một số 1–4, nhận được '{value}', bỏ qua",
