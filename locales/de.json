@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Das Profil-Zip ist zu groß für den Issue-Text — hängen Sie {path} an das Issue an.",
         "zip_failed": "Das Profil-Zip konnte nicht erstellt werden: {error}"
+    },
+    "stop": {
+        "stopping": "Wird gestoppt …",
+        "waiting_for_drive": "Warten auf das Laufwerk …",
+        "progress_kept": "Fortschritt bleibt erhalten",
+        "finishing": "Wird abgeschlossen …",
+        "artifact_lock_failed": "Die Sperre für {name} konnte nicht übernommen werden; möglicherweise wird sie von einem anderen Prozess verwendet."
     }
 }

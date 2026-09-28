@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Lo zip del profilo è troppo grande per il testo della issue — allega {path} alla issue.",
         "zip_failed": "Impossibile creare lo zip del profilo: {error}"
+    },
+    "stop": {
+        "stopping": "Arresto …",
+        "waiting_for_drive": "Attesa dell'unità …",
+        "progress_kept": "L'avanzamento viene conservato",
+        "finishing": "Completamento …",
+        "artifact_lock_failed": "Impossibile acquisire il blocco su {name}; potrebbe essere in uso da un altro processo."
     }
 }

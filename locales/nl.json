@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "De profiel-zip is te groot voor de tekst van het issue — voeg {path} als bijlage toe aan het issue.",
         "zip_failed": "Kon de profiel-zip niet maken: {error}"
+    },
+    "stop": {
+        "stopping": "Bezig met stoppen …",
+        "waiting_for_drive": "Wachten op het station …",
+        "progress_kept": "Voortgang blijft behouden",
+        "finishing": "Bezig met afronden …",
+        "artifact_lock_failed": "Kon de vergrendeling op {name} niet verkrijgen; mogelijk wordt het door een ander proces gebruikt."
     }
 }

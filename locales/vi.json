@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Tệp zip hồ sơ quá lớn để đưa vào nội dung issue — hãy đính kèm {path} vào issue.",
         "zip_failed": "Không thể tạo tệp zip hồ sơ: {error}"
+    },
+    "stop": {
+        "stopping": "Đang dừng …",
+        "waiting_for_drive": "Đang chờ ổ đĩa …",
+        "progress_kept": "Tiến trình được giữ lại",
+        "finishing": "Đang hoàn tất …",
+        "artifact_lock_failed": "Không thể khóa {name}; có thể một tiến trình khác đang sử dụng nó."
     }
 }

@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Le zip du profil est trop volumineux pour le texte du ticket — joignez {path} au ticket.",
         "zip_failed": "Impossible de créer le zip du profil : {error}"
+    },
+    "stop": {
+        "stopping": "Arrêt …",
+        "waiting_for_drive": "Attente du lecteur …",
+        "progress_kept": "La progression est conservée",
+        "finishing": "Finalisation …",
+        "artifact_lock_failed": "Impossible d'obtenir le verrou sur {name} ; un autre processus l'utilise peut-être."
     }
 }

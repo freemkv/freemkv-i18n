@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "プロファイルの zip が Issue 本文には大きすぎます — {path} を Issue に添付してください。",
         "zip_failed": "プロファイルの zip を作成できませんでした: {error}"
+    },
+    "stop": {
+        "stopping": "停止中 …",
+        "waiting_for_drive": "ドライブを待機中 …",
+        "progress_kept": "進捗は保持されます",
+        "finishing": "終了処理中 …",
+        "artifact_lock_failed": "{name} のロックを取得できませんでした。別のプロセスが使用している可能性があります。"
     }
 }

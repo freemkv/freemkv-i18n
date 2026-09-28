@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "El zip del perfil es demasiado grande para el texto de la incidencia: adjunte {path} a la incidencia.",
         "zip_failed": "No se ha podido crear el zip del perfil: {error}"
+    },
+    "stop": {
+        "stopping": "Deteniendo …",
+        "waiting_for_drive": "Esperando la unidad …",
+        "progress_kept": "El progreso se conserva",
+        "finishing": "Finalizando …",
+        "artifact_lock_failed": "No se pudo obtener el bloqueo de {name}; es posible que otro proceso lo esté usando."
     }
 }

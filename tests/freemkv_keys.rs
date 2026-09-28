@@ -534,13 +534,35 @@ fn allowlist_check(file: &str, func: &str, actual_count: usize) -> Result<usize,
 }
 
 // I005 / N6 (IB1): a NEW allowlist, separate from the call-site ALLOWLIST above (X4-1).
-// Carries `keys.hddvd_unverified` (KU-I0) until freemkv's KU-F1 renders it and its
-// paired KU-F1i removes the entry. A now-used entry fails loudly (§8.1 R11).
+// Carries `keys.hddvd_unverified` (KU-I0) and the five ST-I2 `stop.*` keys until
+// freemkv's KU-F1 / ST-F1 render each and remove its entry (§8.1 R11).
 /// `(key, reason)` for every en.json key deliberately not (yet) used by freemkv.
-const ORPHAN_ALLOWLIST: &[(&str, &str)] = &[(
-    "keys.hddvd_unverified",
-    "added by KU-I0; rendered by freemkv only from KU-F1, which removes this entry (KU-F1i)",
-)];
+const ORPHAN_ALLOWLIST: &[(&str, &str)] = &[
+    (
+        "keys.hddvd_unverified",
+        "added by KU-I0; rendered by freemkv only from KU-F1, which removes this entry (KU-F1i)",
+    ),
+    (
+        "stop.stopping",
+        "added by ST-I2; rendered by freemkv only from ST-F1, which removes this entry",
+    ),
+    (
+        "stop.waiting_for_drive",
+        "added by ST-I2; rendered by freemkv only from ST-F1, which removes this entry",
+    ),
+    (
+        "stop.progress_kept",
+        "added by ST-I2; rendered by freemkv only from ST-F1, which removes this entry",
+    ),
+    (
+        "stop.finishing",
+        "added by ST-I2; rendered by freemkv only from ST-F1, which removes this entry",
+    ),
+    (
+        "stop.artifact_lock_failed",
+        "added by ST-I2 (ST4-3); rendered by freemkv only from ST-F1, which removes this entry",
+    ),
+];
 
 /// §8.1 R11's assumption, made real (review fixup): checking `checked` cannot prove an
 /// ORPHAN_ALLOWLIST key is unused, because freemkv renders `keys.*` through bare

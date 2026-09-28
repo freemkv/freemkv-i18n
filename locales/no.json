@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Profil-zip-filen er for stor for saksteksten — legg ved {path} i saken.",
         "zip_failed": "Kunne ikke lage profil-zip-filen: {error}"
+    },
+    "stop": {
+        "stopping": "Stopper …",
+        "waiting_for_drive": "Venter på stasjonen …",
+        "progress_kept": "Fremgangen beholdes",
+        "finishing": "Fullfører …",
+        "artifact_lock_failed": "Kunne ikke ta låsen på {name}; en annen prosess bruker den kanskje."
     }
 }

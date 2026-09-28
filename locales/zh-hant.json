@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "設定檔 zip 過大，無法放入 issue 內文 — 請將 {path} 附加至 issue。",
         "zip_failed": "無法建立設定檔 zip：{error}"
+    },
+    "stop": {
+        "stopping": "停止中…",
+        "waiting_for_drive": "等待光碟機中…",
+        "progress_kept": "進度已保留",
+        "finishing": "完成中…",
+        "artifact_lock_failed": "無法取得 {name} 的鎖定；可能有其他程序正在使用它。"
     }
 }

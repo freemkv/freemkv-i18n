@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "The profile zip is too large for the issue text — attach {path} to the issue.",
         "zip_failed": "Could not build the profile zip: {error}"
+    },
+    "stop": {
+        "stopping": "Stopping …",
+        "waiting_for_drive": "Waiting for the drive …",
+        "progress_kept": "Progress kept",
+        "finishing": "Finishing …",
+        "artifact_lock_failed": "Could not take the lock on {name}; another process may be using it."
     }
 }

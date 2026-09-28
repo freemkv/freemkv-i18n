@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Zip s profilom je príliš veľký pre text hlásenia — priložte {path} k hláseniu.",
         "zip_failed": "Nepodarilo sa vytvoriť zip s profilom: {error}"
+    },
+    "stop": {
+        "stopping": "Zastavovanie …",
+        "waiting_for_drive": "Čaká sa na jednotku …",
+        "progress_kept": "Postup je zachovaný",
+        "finishing": "Dokončovanie …",
+        "artifact_lock_failed": "Nepodarilo sa získať zámok na {name}; môže ho používať iný proces."
     }
 }

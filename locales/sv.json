@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Profilens zip-fil är för stor för ärendetexten — bifoga {path} till ärendet.",
         "zip_failed": "Kunde inte skapa profilens zip-fil: {error}"
+    },
+    "stop": {
+        "stopping": "Stoppar …",
+        "waiting_for_drive": "Väntar på enheten …",
+        "progress_kept": "Förloppet behålls",
+        "finishing": "Avslutar …",
+        "artifact_lock_failed": "Det gick inte att låsa {name}; en annan process kan använda den."
     }
 }

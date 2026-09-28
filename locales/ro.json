@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Arhiva zip a profilului este prea mare pentru textul problemei — atașează {path} la problemă.",
         "zip_failed": "Nu s-a putut crea arhiva zip a profilului: {error}"
+    },
+    "stop": {
+        "stopping": "Se oprește …",
+        "waiting_for_drive": "Se așteaptă unitatea …",
+        "progress_kept": "Progresul este păstrat",
+        "finishing": "Se finalizează …",
+        "artifact_lock_failed": "Nu s-a putut obține blocarea pentru {name}; este posibil să fie folosit de un alt proces."
     }
 }

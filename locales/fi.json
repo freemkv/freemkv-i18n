@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Profiilin zip-tiedosto on liian suuri ongelmaraportin tekstiin — liitä {path} ongelmaraporttiin.",
         "zip_failed": "Profiilin zip-tiedostoa ei voitu luoda: {error}"
+    },
+    "stop": {
+        "stopping": "Pysäytetään …",
+        "waiting_for_drive": "Odotetaan asemaa …",
+        "progress_kept": "Edistyminen säilyy",
+        "finishing": "Viimeistellään …",
+        "artifact_lock_failed": "Kohteen {name} lukitusta ei saatu; toinen prosessi saattaa käyttää sitä."
     }
 }

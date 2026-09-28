@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Zip profil terlalu besar untuk teks issue — lampirkan {path} ke issue.",
         "zip_failed": "Tidak dapat membuat zip profil: {error}"
+    },
+    "stop": {
+        "stopping": "Menghentikan …",
+        "waiting_for_drive": "Menunggu drive …",
+        "progress_kept": "Kemajuan tetap disimpan",
+        "finishing": "Menyelesaikan …",
+        "artifact_lock_failed": "Tidak dapat mengambil kunci pada {name}; mungkin sedang digunakan oleh proses lain."
     }
 }

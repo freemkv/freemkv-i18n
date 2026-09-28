@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Profil-zip'en er for stor til issue-teksten — vedhæft {path} til issuet.",
         "zip_failed": "Kunne ikke oprette profil-zip'en: {error}"
+    },
+    "stop": {
+        "stopping": "Stopper …",
+        "waiting_for_drive": "Venter på drevet …",
+        "progress_kept": "Fremskridt bevaret",
+        "finishing": "Afslutter …",
+        "artifact_lock_failed": "Kunne ikke tage låsen på {name}; en anden proces bruger den muligvis."
     }
 }

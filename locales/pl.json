@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Archiwum zip z profilem jest za duże na treść zgłoszenia — dołącz {path} do zgłoszenia.",
         "zip_failed": "Nie można utworzyć archiwum zip z profilem: {error}"
+    },
+    "stop": {
+        "stopping": "Zatrzymywanie…",
+        "waiting_for_drive": "Oczekiwanie na napęd…",
+        "progress_kept": "Postęp zostaje zachowany",
+        "finishing": "Kończenie…",
+        "artifact_lock_failed": "Nie udało się uzyskać blokady na {name}; może być używany przez inny proces."
     }
 }

@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Archiv ZIP s profilem je pro text issue příliš velký — připojte k issue soubor {path}.",
         "zip_failed": "Nelze vytvořit archiv ZIP s profilem: {error}"
+    },
+    "stop": {
+        "stopping": "Zastavování …",
+        "waiting_for_drive": "Čeká se na jednotku …",
+        "progress_kept": "Postup zachován",
+        "finishing": "Dokončování …",
+        "artifact_lock_failed": "Nepodařilo se získat zámek na {name}; může jej používat jiný proces."
     }
 }

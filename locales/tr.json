@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "Profil zip dosyası issue metni için çok büyük — {path} dosyasını issue'ya ekleyin.",
         "zip_failed": "Profil zip dosyası oluşturulamadı: {error}"
+    },
+    "stop": {
+        "stopping": "Durduruluyor …",
+        "waiting_for_drive": "Sürücü bekleniyor …",
+        "progress_kept": "İlerleme korunur",
+        "finishing": "Tamamlanıyor …",
+        "artifact_lock_failed": "{name} üzerindeki kilit alınamadı; başka bir işlem onu kullanıyor olabilir."
     }
 }

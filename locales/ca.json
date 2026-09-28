@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "El zip del perfil és massa gran per al text de la incidència — adjunteu {path} a la incidència.",
         "zip_failed": "No s'ha pogut crear el zip del perfil: {error}"
+    },
+    "stop": {
+        "stopping": "S'està aturant …",
+        "waiting_for_drive": "S'espera la unitat …",
+        "progress_kept": "El progrés es conserva",
+        "finishing": "S'està acabant …",
+        "artifact_lock_failed": "No s'ha pogut obtenir el bloqueig de {name}; és possible que un altre procés l'estigui utilitzant."
     }
 }

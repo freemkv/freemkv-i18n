@@ -768,5 +768,12 @@
     "share": {
         "attach_zip": "配置 zip 文件过大，无法放入 issue 正文 —— 请将 {path} 附加到 issue。",
         "zip_failed": "无法生成配置 zip 文件：{error}"
+    },
+    "stop": {
+        "stopping": "正在停止……",
+        "waiting_for_drive": "正在等待光驱……",
+        "progress_kept": "进度已保留",
+        "finishing": "正在完成……",
+        "artifact_lock_failed": "无法获取 {name} 的锁；可能有其他进程正在使用它。"
     }
 }
