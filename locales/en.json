@@ -298,7 +298,7 @@
         "E8003": "Cannot write the key database: {detail}",
         "E8004": "The key database could not be read. Re-download it with: freemkv update-keys --url <keydb-url>",
         "E8005": "Cannot load the key database: {detail}",
-        "E8006": "The key database URL uses an address type that isn't supported ({detail}).",
+        "E8006": "The key database URL uses an address type that isn't allowed ({detail}).",
         "E8007": "The key database download was redirected too many times. Check the URL and try again.",
         "E9000": "Stream is read-only.",
         "E9001": "Stream is write-only.",
