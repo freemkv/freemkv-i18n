@@ -289,7 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "Το αρχείο κλειδιών AACS αυτού του δίσκου (Unit_Key_RO.inf) λείπει ή δεν ήταν δυνατό να διαβαστεί. Καθαρίστε τον δίσκο και δοκιμάστε ξανά· αν εξακολουθεί να αποτυγχάνει, ο δίσκος μπορεί να είναι κατεστραμμένος.",
-        "E7032": "Βρέθηκαν πιστοποιητικά host, αλλά κανένα δεν είναι χρησιμοποιήσιμο για την ασφαλή χειραψία αυτής της μονάδας. Ενημερώστε τη βάση δεδομένων κλειδιών σας και δοκιμάστε ξανά.",
+        "E7033": "Βρέθηκαν πιστοποιητικά host, αλλά κανένα δεν είναι χρησιμοποιήσιμο για την ασφαλή χειραψία αυτής της μονάδας. Ενημερώστε τη βάση δεδομένων κλειδιών σας και δοκιμάστε ξανά.",
         "E8000": "Δεν είναι δυνατή η σύνδεση με τον διακομιστή βάσης δεδομένων κλειδιών: {detail}",
         "E8001": "Η λήψη της βάσης δεδομένων κλειδιών απέτυχε (HTTP {detail}). Δοκιμάστε ξανά ή εκτελέστε: freemkv update-keys --url <keydb-url>",
         "E8002": "Η βάση δεδομένων κλειδιών είναι κενή ή μη έγκυρη. Κατεβάστε την ξανά με: freemkv update-keys --url <keydb-url>",

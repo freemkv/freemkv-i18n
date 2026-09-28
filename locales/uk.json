@@ -289,7 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "Файл ключів AACS цього диска (Unit_Key_RO.inf) відсутній або його не вдалося прочитати. Очистіть диск і спробуйте ще раз; якщо помилка повторюється, диск може бути пошкоджений.",
-        "E7032": "Знайдено сертифікати хоста, але жоден з них не можна використати для захищеного рукостискання цього приводу. Оновіть базу даних ключів і спробуйте ще раз.",
+        "E7033": "Знайдено сертифікати хоста, але жоден з них не можна використати для захищеного рукостискання цього приводу. Оновіть базу даних ключів і спробуйте ще раз.",
         "E8000": "Неможливо з'єднатися із сервером бази ключів: {detail}",
         "E8001": "Завантаження бази ключів не вдалося (HTTP {detail}). Спробуйте знову або виконайте: freemkv update-keys --url <keydb-url>",
         "E8002": "База ключів порожня або недійсна. Перезавантажте її командою: freemkv update-keys --url <keydb-url>",

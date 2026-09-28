@@ -266,7 +266,7 @@
         "E7029": "De online-sleuteldienst heeft het toegangstoken geweigerd en gaf daarom geen antwoord. Corrigeer het token van de sleuteldienst in Instellingen (of --key-auth op de opdrachtregel) en probeer het opnieuw. Dit betekent niet dat de disc geen sleutel heeft.",
         "E7030": "De online-sleuteldienst beperkt het aantal verzoeken en gaf daarom geen antwoord. Wacht een paar minuten en probeer het opnieuw, of verwerk minder discs tegelijk. Dit betekent niet dat de disc geen sleutel heeft.",
         "E7031": "Het AACS-sleutelbestand van deze disc (Unit_Key_RO.inf) ontbreekt of kon niet worden gelezen. Maak de disc schoon en probeer het opnieuw; als het blijft mislukken, is de disc mogelijk beschadigd.",
-        "E7032": "Er zijn hostcertificaten gevonden, maar geen enkele is bruikbaar voor de beveiligde handshake van dit station. Werk uw sleuteldatabase bij en probeer het opnieuw.",
+        "E7033": "Er zijn hostcertificaten gevonden, maar geen enkele is bruikbaar voor de beveiligde handshake van dit station. Werk uw sleuteldatabase bij en probeer het opnieuw.",
         "E8000": "Kan geen verbinding maken met KEYDB-server: {detail}",
         "E8001": "KEYDB-download mislukt (HTTP {detail})",
         "E8002": "KEYDB is leeg of ongeldig",
