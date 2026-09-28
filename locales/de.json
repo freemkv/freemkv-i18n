@@ -582,7 +582,6 @@
             "keep_encrypted": "Verschlüsselt behalten (Raw-Durchleitung):",
             "raw_note": "Schreibt den Chiffretext unverändert — nur ISO-Ausgabe. Entspricht --raw der CLI.",
             "overwrite": "Vorhandene Dateien überschreiben:",
-            "capture_note": "Schreibt das noch verschlüsselte Abbild, damit es später entschlüsselt werden kann, sobald ein Schlüssel verfügbar ist.",
             "key_source": "Schlüsselquelle:",
             "key_src_local": "Nur lokale keydb",
             "key_src_online": "Nur Online-Schlüsseldienst",

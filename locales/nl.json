@@ -582,7 +582,6 @@
             "keep_encrypted": "Versleuteld behouden (ruwe doorvoer):",
             "raw_note": "Schrijft de cijfertekst ongewijzigd — alleen ISO-uitvoer. Komt overeen met --raw van de CLI.",
             "overwrite": "Bestaande bestanden overschrijven:",
-            "capture_note": "Schrijft de nog versleutelde image, zodat deze later kan worden ontsleuteld zodra er een sleutel beschikbaar is.",
             "key_source": "Sleutelbron:",
             "key_src_local": "Alleen lokale keydb",
             "key_src_online": "Alleen online sleuteldienst",

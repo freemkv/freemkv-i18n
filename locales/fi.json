@@ -582,7 +582,6 @@
             "keep_encrypted": "Säilytä salattuna (raaka läpivienti) :",
             "raw_note": "Kirjoittaa salatekstin koskemattomana — vain ISO-tuloste. Vastaa komentorivin --raw.",
             "overwrite": "Ylikirjoita olemassa olevat tiedostot :",
-            "capture_note": "Kirjoittaa yhä salatun levykuvan, jotta se voidaan purkaa myöhemmin avaimen ollessa saatavilla.",
             "key_source": "Avainlähde :",
             "key_src_local": "Vain paikallinen keydb",
             "key_src_online": "Vain verkkoavainpalvelu",

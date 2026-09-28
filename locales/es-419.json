@@ -582,7 +582,6 @@
             "keep_encrypted": "Conservar cifrado (passthrough sin procesar):",
             "raw_note": "Escribe el texto cifrado sin tocar — solo salida ISO. Equivale al --raw del CLI.",
             "overwrite": "Sobrescribir archivos existentes:",
-            "capture_note": "Escribe la imagen todavía cifrada para poder descifrarla más tarde cuando haya una clave disponible.",
             "key_source": "Fuente de claves:",
             "key_src_local": "Solo keydb local",
             "key_src_online": "Solo servicio de claves en línea",

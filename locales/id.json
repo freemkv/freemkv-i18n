@@ -582,7 +582,6 @@
             "keep_encrypted": "Simpan terenkripsi (passthrough mentah) :",
             "raw_note": "Menulis ciphertext apa adanya — keluaran ISO saja. Cocok dengan --raw pada CLI.",
             "overwrite": "Timpa berkas yang ada :",
-            "capture_note": "Menulis image yang masih terenkripsi sehingga dapat didekripsi nanti setelah kunci tersedia.",
             "key_source": "Sumber kunci :",
             "key_src_local": "keydb lokal saja",
             "key_src_online": "Layanan kunci daring saja",

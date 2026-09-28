@@ -582,7 +582,6 @@
             "keep_encrypted": "Conserver chiffré (passthrough brut) :",
             "raw_note": "Écrit le texte chiffré tel quel — sortie ISO uniquement. Équivaut à l'option --raw de la ligne de commande.",
             "overwrite": "Écraser les fichiers existants :",
-            "capture_note": "Écrit l'image encore chiffrée afin qu'elle puisse être déchiffrée plus tard, une fois une clé disponible.",
             "key_source": "Source des clés :",
             "key_src_local": "keydb local uniquement",
             "key_src_online": "Service de clés en ligne uniquement",

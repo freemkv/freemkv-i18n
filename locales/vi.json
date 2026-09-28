@@ -582,7 +582,6 @@
             "keep_encrypted": "Giữ mã hóa (chuyển thô nguyên vẹn) :",
             "raw_note": "Ghi nguyên vẹn dữ liệu đã mã hóa — chỉ đầu ra ISO. Khớp với --raw của CLI.",
             "overwrite": "Ghi đè tệp có sẵn :",
-            "capture_note": "Ghi ảnh vẫn mã hóa để có thể giải mã sau này khi có khóa.",
             "key_source": "Nguồn khóa :",
             "key_src_local": "Chỉ keydb cục bộ",
             "key_src_online": "Chỉ dịch vụ khóa trực tuyến",

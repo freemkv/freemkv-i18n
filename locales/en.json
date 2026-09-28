@@ -583,7 +583,6 @@
             "keep_encrypted": "Keep encrypted (raw passthrough) :",
             "raw_note": "Writes ciphertext untouched — ISO output only. Matches the CLI's --raw.",
             "overwrite": "Overwrite existing files :",
-            "capture_note": "Writes the still-encrypted image so it can be decrypted later once a key is available.",
             "key_source": "Key source :",
             "key_src_local": "Local keydb only",
             "key_src_online": "Online key service only",

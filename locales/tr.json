@@ -582,7 +582,6 @@
             "keep_encrypted": "Şifreli olarak koru (ham geçiş) :",
             "raw_note": "Şifreli metni dokunmadan yazar — yalnızca ISO çıktısı. CLI'nin --raw ile eşleşir.",
             "overwrite": "Var olan dosyaların üzerine yaz :",
-            "capture_note": "Hâlâ şifreli imajı yazar, böylece bir anahtar mevcut olduğunda daha sonra şifresi çözülebilir.",
             "key_source": "Anahtar kaynağı :",
             "key_src_local": "Yalnızca yerel keydb",
             "key_src_online": "Yalnızca çevrimiçi anahtar hizmeti",

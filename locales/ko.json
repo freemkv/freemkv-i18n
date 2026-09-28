@@ -582,7 +582,6 @@
             "keep_encrypted": "암호화 유지 (원본 패스스루) :",
             "raw_note": "암호문을 그대로 씁니다 — ISO 출력 전용. CLI의 --raw와 동일합니다.",
             "overwrite": "기존 파일 덮어쓰기 :",
-            "capture_note": "여전히 암호화된 이미지를 써서 나중에 키를 사용할 수 있을 때 복호화할 수 있게 합니다.",
             "key_source": "키 소스 :",
             "key_src_local": "로컬 keydb만",
             "key_src_online": "온라인 키 서비스만",

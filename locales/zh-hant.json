@@ -582,7 +582,6 @@
             "keep_encrypted": "保留加密（原始直通）：",
             "raw_note": "原封不動寫入密文 — 僅限 ISO 輸出。對應 CLI 的 --raw。",
             "overwrite": "覆寫既有檔案：",
-            "capture_note": "寫入仍加密的映像檔，以便日後有金鑰時再解密。",
             "key_source": "金鑰來源：",
             "key_src_local": "僅本機 keydb",
             "key_src_online": "僅線上金鑰服務",

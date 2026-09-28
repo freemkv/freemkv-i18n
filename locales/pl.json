@@ -582,7 +582,6 @@
             "keep_encrypted": "Zachowaj zaszyfrowane (surowe przepuszczanie):",
             "raw_note": "Zapisuje szyfrogram bez zmian — tylko wyjście ISO. Odpowiada opcji --raw z wiersza poleceń.",
             "overwrite": "Nadpisuj istniejące pliki:",
-            "capture_note": "Zapisuje wciąż zaszyfrowany obraz, aby można go było odszyfrować później, gdy klucz stanie się dostępny.",
             "key_source": "Źródło kluczy:",
             "key_src_local": "Tylko lokalna keydb",
             "key_src_online": "Tylko internetowa usługa kluczy",

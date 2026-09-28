@@ -582,7 +582,6 @@
             "keep_encrypted": "Conserva xifrat (pas directe en brut) :",
             "raw_note": "Escriu el text xifrat intacte — només sortida ISO. Coincideix amb --raw de la CLI.",
             "overwrite": "Sobreescriu els fitxers existents :",
-            "capture_note": "Escriu la imatge encara xifrada perquè es pugui desxifrar més endavant, quan hi hagi una clau disponible.",
             "key_source": "Font de claus :",
             "key_src_local": "Només keydb local",
             "key_src_online": "Només servei de claus en línia",

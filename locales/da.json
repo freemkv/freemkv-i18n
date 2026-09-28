@@ -582,7 +582,6 @@
             "keep_encrypted": "Behold krypteret (rå passthrough) :",
             "raw_note": "Skriver chiffertekst urørt — kun ISO-output. Svarer til CLI'ens --raw.",
             "overwrite": "Overskriv eksisterende filer :",
-            "capture_note": "Skriver det stadig krypterede image, så det kan dekrypteres senere, når en nøgle er tilgængelig.",
             "key_source": "Nøglekilde :",
             "key_src_local": "Kun lokal keydb",
             "key_src_online": "Kun online nøgletjeneste",

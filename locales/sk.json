@@ -582,7 +582,6 @@
             "keep_encrypted": "Ponechať šifrované (surový prechod) :",
             "raw_note": "Zapisuje nedotknutý šifrovaný text — iba výstup ISO. Zodpovedá voľbe --raw v CLI.",
             "overwrite": "Prepísať existujúce súbory :",
-            "capture_note": "Zapíše stále šifrovaný obraz, aby sa dal neskôr dešifrovať, keď bude dostupný kľúč.",
             "key_source": "Zdroj kľúčov :",
             "key_src_local": "Iba lokálny keydb",
             "key_src_online": "Iba online služba kľúčov",

@@ -582,7 +582,6 @@
             "keep_encrypted": "Titkosítva tartás (nyers átvitel):",
             "raw_note": "A titkosított adatot érintetlenül írja ki — csak ISO-kimenet. Megfelel a CLI --raw kapcsolójának.",
             "overwrite": "Meglévő fájlok felülírása:",
-            "capture_note": "Kiírja a még titkosított képet, hogy később, kulcs birtokában visszafejthető legyen.",
             "key_source": "Kulcsforrás:",
             "key_src_local": "Csak helyi keydb",
             "key_src_online": "Csak online kulcsszolgáltatás",

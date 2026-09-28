@@ -582,7 +582,6 @@
             "keep_encrypted": "Păstrează criptat (transfer brut) :",
             "raw_note": "Scrie textul cifrat neatins — doar ieșire ISO. Corespunde opțiunii --raw a CLI-ului.",
             "overwrite": "Suprascrie fișierele existente :",
-            "capture_note": "Scrie imaginea încă criptată, astfel încât să poată fi decriptată ulterior, odată ce o cheie devine disponibilă.",
             "key_source": "Sursă de chei :",
             "key_src_local": "Doar keydb local",
             "key_src_online": "Doar serviciu de chei online",
