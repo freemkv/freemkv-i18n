@@ -153,8 +153,7 @@
         "patch_done": "Korrigering klar: återställde {recovered} MB, {unreadable} MB oläsbara, {pending} MB väntande ({time}s, {speed} MB/s)",
         "multipass_ignored": "Obs: --multipass ignoreras för skiva->MKV/M2TS (enpass-mux). Använd en iso://-utdata för flerpass-återställning.",
         "title_skipped": "Hoppar över titel {num}: kopieringsskyddad, ingen nyckel kunde återställas.",
-        "title_skipped_empty": "Hoppar över titel {num}: tom (ingen video) — troligen en meny-/navigeringsstump.",
-        "vid_from_hint": "För att slutföra, sätt i skivan och kör samma kommando igen med --vid-from disc:// (eller --vid-from disc://DEVICE för att namnge enheten). Endast skivans Volym-ID läses; den rippas inte igen."
+        "title_skipped_empty": "Hoppar över titel {num}: tom (ingen video) — troligen en meny-/navigeringsstump."
     },
     "dir": {
         "extracting": "Extraherar dekrypterat filträd till {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Fel: kunde inte skanna skivan för att lista dess titlar, så `-t all` kan inte veta vilka titlar som ska rippas. Inget rippades — kontrollera skivan och enheten och försök igen.",
         "log_file_needs_value": "--log-file: kräver en sökväg (t.ex. --log-file freemkv.log)",
         "mux_failed_generic": "Muxning misslyckades (E{code}).",
-        "title_changed": "Titel {num} ändrades mellan skanningarna: förväntade {expected}, enheten rapporterar nu {found}. Titellistan ändrades under rippningen; inget skrevs för den här titeln.",
-        "vid_from_not_a_drive": "Fel: --vid-from behöver enheten som innehåller skivan: disc:// (eller disc://DEVICE), fick '{value}'.",
-        "vid_from_iso_only": "Fel: --vid-from gäller endast en iso://-avbildskälla, fick '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Den här skivan behöver AACS-dekrypteringsnycklar (Blu-ray/UHD), men inga hittades. Ladda ner en nyckeldatabas med: freemkv update-keys --url <keydb-url>",
-        "E7013": "Dekryptering misslyckades — den återställda nyckeln låste inte upp den här skivans data. Nyckeln kan vara felaktig eller föråldrad; uppdatera den med: freemkv update-keys --url <keydb-url>",
-        "E7026": "Den här skivan använder AACS 2.1 forensisk vattenmärkning (FMTS) och ingen variantnyckel är tillgänglig för den, så filmen kan inte återskapas utan luckor. Uppdatera din nyckeldatabas med: freemkv update-keys --url <keydb-url>. Om ingen nyckelkälla ännu känner till den här skivan kan du rippa den till en avbild med 'freemkv disc:// iso://Disc.iso' och konvertera avbilden när nycklarna publiceras.",
-        "E8001": "Nedladdning av nyckeldatabas misslyckades (HTTP {detail}). Försök igen, eller kör: freemkv update-keys --url <keydb-url>",
-        "E8002": "Nyckeldatabasen är tom eller ogiltig. Ladda ner den på nytt med: freemkv update-keys --url <keydb-url>",
-        "E8004": "Nyckeldatabasen kunde inte läsas. Ladda ner den på nytt med: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "Den här skivan behöver AACS-dekrypteringsnycklar (Blu-ray/UHD), men inga hittades. Ladda ner en nyckeldatabas via ”Inställningar…” → ”Uppdatera keydb nu”.",
-        "E7013": "Dekryptering misslyckades — den återställda nyckeln låste inte upp den här skivans data. Nyckeln kan vara felaktig eller föråldrad; uppdatera den via ”Inställningar…” → ”Uppdatera keydb nu”.",
-        "E7026": "Den här skivan använder AACS 2.1 forensisk vattenmärkning (FMTS) och ingen variantnyckel är tillgänglig för den, så filmen kan inte återskapas utan luckor. Uppdatera din nyckeldatabas via ”Inställningar…” → ”Uppdatera keydb nu”. Om ingen nyckelkälla ännu känner till den här skivan kan du rippa skivan till en ISO-avbild och konvertera avbilden när nycklarna publiceras.",
-        "E8001": "Nedladdning av nyckeldatabas misslyckades (HTTP {detail}). Försök igen via ”Inställningar…” → ”Uppdatera keydb nu”.",
-        "E8002": "Nyckeldatabasen är tom eller ogiltig. Ladda ner den på nytt via ”Inställningar…” → ”Uppdatera keydb nu”.",
-        "E8004": "Nyckeldatabasen kunde inte läsas. Ladda ner den på nytt via ”Inställningar…” → ”Uppdatera keydb nu”."
+        "title_changed": "Titel {num} ändrades mellan skanningarna: förväntade {expected}, enheten rapporterar nu {found}. Titellistan ändrades under rippningen; inget skrevs för den här titeln."
     },
     "usage": {
         "synopsis_1": "Användning: freemkv <källa> <mål> [flaggor]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      Med --keydb prövas keydb:n först (lokalt-",
             "key_url_3": "                      först); ensam är den den enda nyckelkällan.",
             "key_auth": "      --key-auth TOKEN Bearer-token som skickas till nyckeltjänsten (valfritt).",
-            "vid_from": "      --vid-from DRIVE För en iso://-avbild vars nycklar behöver skivans Volym-ID (Volume ID) (E7034): läs det från skivan i DRIVE (disc:// eller disc://DEVICE); inget rippas från den.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Av som standard —",
             "log_level_2": "                      terminalen förblir ren. Sätt den för att skriva en",
             "log_level_3": "                      diagnostiklogg till ./log.txt (använd 3 för felrapporter).",

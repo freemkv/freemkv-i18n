@@ -153,8 +153,7 @@
         "patch_done": "Oprava dokončená: obnovené: {recovered} MB, nečitateľné: {unreadable} MB, čakajúce: {pending} MB ({time}s, {speed} MB/s)",
         "multipass_ignored": "Poznámka: --multipass sa pri disc->MKV/M2TS ignoruje (jednoprechodový mux). Na viacprechodovú obnovu použite výstup iso://.",
         "title_skipped": "Preskakuje sa titul {num}: chránený proti kopírovaniu, nedá sa obnoviť kľúč.",
-        "title_skipped_empty": "Preskakuje sa titul {num}: prázdny (bez videa) — pravdepodobne útržok menu/navigácie.",
-        "vid_from_hint": "Ak chcete dokončiť, vložte disk a znova spustite ten istý príkaz s --vid-from disc:// (alebo --vid-from disc://DEVICE na určenie jednotky). Načíta sa iba ID zväzku disku; disk sa znova neskopíruje."
+        "title_skipped_empty": "Preskakuje sa titul {num}: prázdny (bez videa) — pravdepodobne útržok menu/navigácie."
     },
     "dir": {
         "extracting": "Extrahuje sa dešifrovaný strom súborov do {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Chyba: disk sa nepodarilo naskenovať a zistiť zoznam titulov, takže `-t all` nevie, ktoré tituly skopírovať. Nič sa neskopírovalo — skontrolujte disk a mechaniku a skúste to znova.",
         "log_file_needs_value": "--log-file: vyžaduje cestu (napr. --log-file freemkv.log)",
         "mux_failed_generic": "Mux zlyhal (E{code}).",
-        "title_changed": "Titul {num} sa medzi skenovaniami zmenil: očakávalo sa {expected}, mechanika teraz hlási {found}. Zoznam titulov sa počas kopírovania zmenil; pre tento titul sa nič nezapísalo.",
-        "vid_from_not_a_drive": "Chyba: --vid-from potrebuje jednotku obsahujúcu disk: disc:// (alebo disc://DEVICE), prijaté '{value}'.",
-        "vid_from_iso_only": "Chyba: --vid-from platí iba pre zdroj obrazu iso://, prijaté '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Tento disk potrebuje dešifrovacie kľúče AACS (Blu-ray/UHD), ale žiadne sa nenašli. Stiahnite databázu kľúčov pomocou: freemkv update-keys --url <keydb-url>",
-        "E7013": "Dešifrovanie zlyhalo — obnovený kľúč neodomkol dáta tohto disku. Kľúč môže byť nesprávny alebo zastaraný; obnovte ho pomocou: freemkv update-keys --url <keydb-url>",
-        "E7026": "Tento disk používa forenzné vodoznaky AACS 2.1 (FMTS) a nie je preň dostupný žiadny variantný kľúč, takže film sa nedá zrekonštruovať bez medzier. Aktualizujte svoju databázu kľúčov pomocou: freemkv update-keys --url <keydb-url>. Ak žiadny zdroj kľúčov zatiaľ nepozná tento disk, skopírujte ho do obrazu pomocou 'freemkv disc:// iso://Disc.iso' a po zverejnení kľúčov obraz skonvertujte.",
-        "E8001": "Sťahovanie databázy kľúčov zlyhalo (HTTP {detail}). Skúste to znova alebo spustite: freemkv update-keys --url <keydb-url>",
-        "E8002": "Databáza kľúčov je prázdna alebo neplatná. Znova ju stiahnite pomocou: freemkv update-keys --url <keydb-url>",
-        "E8004": "Databázu kľúčov sa nepodarilo prečítať. Znova ju stiahnite pomocou: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "Tento disk potrebuje dešifrovacie kľúče AACS (Blu-ray/UHD), ale žiadne sa nenašli. Stiahnite databázu kľúčov cez „Nastavenia…“ → „Aktualizovať keydb teraz“.",
-        "E7013": "Dešifrovanie zlyhalo — obnovený kľúč neodomkol dáta tohto disku. Kľúč môže byť nesprávny alebo zastaraný; obnovte ho cez „Nastavenia…“ → „Aktualizovať keydb teraz“.",
-        "E7026": "Tento disk používa forenzné vodoznaky AACS 2.1 (FMTS) a nie je preň dostupný žiadny variantný kľúč, takže film sa nedá zrekonštruovať bez medzier. Aktualizujte svoju databázu kľúčov cez „Nastavenia…“ → „Aktualizovať keydb teraz“. Ak žiadny zdroj kľúčov zatiaľ nepozná tento disk, skopírujte disk do obrazu ISO a po zverejnení kľúčov obraz skonvertujte.",
-        "E8001": "Sťahovanie databázy kľúčov zlyhalo (HTTP {detail}). Skúste to znova cez „Nastavenia…“ → „Aktualizovať keydb teraz“.",
-        "E8002": "Databáza kľúčov je prázdna alebo neplatná. Znova ju stiahnite cez „Nastavenia…“ → „Aktualizovať keydb teraz“.",
-        "E8004": "Databázu kľúčov sa nepodarilo prečítať. Znova ju stiahnite cez „Nastavenia…“ → „Aktualizovať keydb teraz“."
+        "title_changed": "Titul {num} sa medzi skenovaniami zmenil: očakávalo sa {expected}, mechanika teraz hlási {found}. Zoznam titulov sa počas kopírovania zmenil; pre tento titul sa nič nezapísalo."
     },
     "usage": {
         "synopsis_1": "Použitie: freemkv <source> <dest> [flags]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      S --keydb sa keydb skúša najprv (najprv",
             "key_url_3": "                      lokálne); samostatne je jediným zdrojom kľúčov.",
             "key_auth": "      --key-auth TOKEN Bearer token odoslaný službe kľúčov (voliteľné).",
-            "vid_from": "      --vid-from DRIVE Pre obraz iso://, ktorého kľúče potrebujú ID zväzku disku (Volume ID) (E7034): načítajte ho z disku v DRIVE (disc:// alebo disc://DEVICE); nič sa z neho neskopíruje.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Predvolene vypnuté —",
             "log_level_2": "                      terminál zostáva čistý. Nastavením zapíšete",
             "log_level_3": "                      diagnostický záznam do ./log.txt (pre hlásenia chýb použite 3).",

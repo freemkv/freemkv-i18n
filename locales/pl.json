@@ -153,8 +153,7 @@
         "patch_done": "Naprawianie ukończone — odzyskano: {recovered} MB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB ({time} s, {speed} MB/s)",
         "multipass_ignored": "Uwaga: opcja --multipass jest ignorowana przy zgrywaniu z płyty do MKV/M2TS (multipleksowanie jednoprzebiegowe). Dla odzyskiwania wieloprzebiegowego użyj wyjścia iso://.",
         "title_skipped": "Pomijanie tytułu {num}: zabezpieczony przed kopiowaniem, nie można odzyskać klucza.",
-        "title_skipped_empty": "Pomijanie tytułu {num}: pusty (brak wideo) — prawdopodobnie zaślepka menu/nawigacji.",
-        "vid_from_hint": "Aby zakończyć, włóż płytę i uruchom to samo polecenie ponownie z --vid-from disc:// (lub --vid-from disc://DEVICE, aby wskazać napęd). Odczytywany jest tylko identyfikator woluminu płyty; nie jest ona ponownie zgrywana."
+        "title_skipped_empty": "Pomijanie tytułu {num}: pusty (brak wideo) — prawdopodobnie zaślepka menu/nawigacji."
     },
     "dir": {
         "extracting": "Wyodrębnianie odszyfrowanego drzewa plików do {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Błąd: nie udało się przeskanować płyty, aby wyświetlić listę tytułów, więc `-t all` nie może ustalić, które tytuły zgrać. Nic nie zostało zgrane — sprawdź płytę i napęd, a następnie spróbuj ponownie.",
         "log_file_needs_value": "--log-file: wymaga ścieżki (np. --log-file freemkv.log)",
         "mux_failed_generic": "Multipleksowanie nie powiodło się (E{code}).",
-        "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano.",
-        "vid_from_not_a_drive": "Błąd: --vid-from wymaga napędu zawierającego płytę: disc:// (lub disc://DEVICE), otrzymano '{value}'.",
-        "vid_from_iso_only": "Błąd: --vid-from dotyczy tylko źródła obrazu iso://, otrzymano '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Ta płyta wymaga kluczy deszyfrujących AACS (Blu-ray/UHD), ale nie znaleziono żadnego. Pobierz bazę kluczy poleceniem: freemkv update-keys --url <adres-url-keydb>",
-        "E7013": "Deszyfrowanie nie powiodło się — odzyskany klucz nie odblokował danych tej płyty. Klucz może być błędny lub nieaktualny; odśwież go poleceniem: freemkv update-keys --url <adres-url-keydb>",
-        "E7026": "Ta płyta używa kryminalistycznego znaku wodnego AACS 2.1 (FMTS) i nie jest dostępny dla niej żaden klucz wariantowy, więc filmu nie da się odtworzyć bez luk. Zaktualizuj bazę kluczy poleceniem: freemkv update-keys --url <adres-url-keydb>. Jeśli żadne źródło kluczy nie obsługuje jeszcze tej płyty, zgraj ją do obrazu poleceniem 'freemkv disc:// iso://Disc.iso' i przekonwertuj obraz, gdy klucze zostaną opublikowane.",
-        "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie lub uruchom: freemkv update-keys --url <adres-url-keydb>",
-        "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>",
-        "E8004": "Nie udało się odczytać bazy kluczy. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>"
-    },
-    "error_gui": {
-        "E7000": "Ta płyta wymaga kluczy deszyfrujących AACS (Blu-ray/UHD), ale nie znaleziono żadnego. Pobierz bazę kluczy w „Ustawienia…” → „Zaktualizuj keydb teraz”.",
-        "E7013": "Deszyfrowanie nie powiodło się — odzyskany klucz nie odblokował danych tej płyty. Klucz może być błędny lub nieaktualny; odśwież go w „Ustawienia…” → „Zaktualizuj keydb teraz”.",
-        "E7026": "Ta płyta używa kryminalistycznego znaku wodnego AACS 2.1 (FMTS) i nie jest dostępny dla niej żaden klucz wariantowy, więc filmu nie da się odtworzyć bez luk. Odśwież bazę kluczy w „Ustawienia…” → „Zaktualizuj keydb teraz”. Jeśli żadne źródło kluczy nie obsługuje jeszcze tej płyty, zgraj płytę do obrazu ISO i przekonwertuj obraz, gdy klucze zostaną opublikowane.",
-        "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie w „Ustawienia…” → „Zaktualizuj keydb teraz”.",
-        "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie w „Ustawienia…” → „Zaktualizuj keydb teraz”.",
-        "E8004": "Nie udało się odczytać bazy kluczy. Pobierz ją ponownie w „Ustawienia…” → „Zaktualizuj keydb teraz”."
+        "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano."
     },
     "usage": {
         "synopsis_1": "Sposób użycia: freemkv <źródło> <cel> [flagi]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      Z --keydb keydb jest próbowany najpierw (najpierw",
             "key_url_3": "                      lokalnie); samodzielnie jest jedynym źródłem kluczy.",
             "key_auth": "      --key-auth TOKEN Token typu Bearer wysyłany do usługi kluczy (opcjonalny).",
-            "vid_from": "      --vid-from DRIVE Dla obrazu iso://, którego klucze wymagają identyfikatora woluminu płyty (Volume ID) (E7034): odczytaj go z płyty w DRIVE (disc:// lub disc://DEVICE); nic z niej nie jest zgrywane.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Domyślnie wyłączone —",
             "log_level_2": "                      terminal pozostaje czysty. Ustaw, aby zapisać",
             "log_level_3": "                      dziennik diagnostyczny do ./log.txt (użyj 3 do zgłoszeń błędów).",

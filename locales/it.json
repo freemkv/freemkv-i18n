@@ -153,8 +153,7 @@
         "damage_none": "0s",
         "multipass_ignored": "Nota: --multipass viene ignorato per disc->MKV/M2TS (mux a passaggio singolo). Usa un'uscita iso:// per il recupero multipassaggio.",
         "title_skipped": "Titolo {num} saltato: protetto da copia, nessuna chiave recuperabile.",
-        "title_skipped_empty": "Titolo {num} saltato: vuoto (nessun video) — probabilmente un menu o segmento di navigazione.",
-        "vid_from_hint": "Per terminare, inserisci il disco ed esegui di nuovo lo stesso comando con --vid-from disc:// (o --vid-from disc://DEVICE per indicare l'unità). Viene letto solo l'ID volume del disco; non viene eseguito nuovamente il rip."
+        "title_skipped_empty": "Titolo {num} saltato: vuoto (nessun video) — probabilmente un menu o segmento di navigazione."
     },
     "dir": {
         "extracting": "Estrazione dell'albero dei file decifrato in {path}",
@@ -414,25 +413,7 @@
         "disc_scan_all_titles_failed": "Errore: impossibile scansionare il disco per elencarne i titoli, quindi `-t all` non può sapere quali titoli estrarre. Non è stato estratto nulla — controlla il disco e il lettore e riprova.",
         "log_file_needs_value": "--log-file: richiede un percorso (ad es. --log-file freemkv.log)",
         "mux_failed_generic": "Mux non riuscito (E{code}).",
-        "title_changed": "Il titolo {num} è cambiato tra le scansioni: atteso {expected}, il lettore ora riporta {found}. L'elenco dei titoli del disco è cambiato durante l'estrazione; non è stato scritto nulla per questo titolo.",
-        "vid_from_not_a_drive": "Errore: --vid-from richiede l'unità che contiene il disco: disc:// (o disc://DEVICE), ricevuto '{value}'.",
-        "vid_from_iso_only": "Errore: --vid-from si applica solo a una sorgente immagine iso://, ricevuto '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Questo disco richiede chiavi di decifratura AACS (Blu-ray/UHD), ma non ne è stata trovata nessuna. Scarica un database delle chiavi con: freemkv update-keys --url <keydb-url>",
-        "E7013": "Decrittazione non riuscita — la chiave recuperata non ha sbloccato i dati di questo disco. La chiave potrebbe essere errata o non aggiornata; aggiornala con: freemkv update-keys --url <keydb-url>",
-        "E7026": "Questo disco utilizza la filigrana forense AACS 2.1 (FMTS) e non è disponibile alcuna chiave di variante, quindi il film non può essere ricostruito senza lacune. Aggiorna il tuo database delle chiavi con: freemkv update-keys --url <keydb-url>. Se nessuna sorgente di chiavi include ancora questo disco, copialo in un'immagine con 'freemkv disc:// iso://Disc.iso' e converti l'immagine quando le chiavi saranno pubblicate.",
-        "E8001": "Il download del database delle chiavi non è riuscito (HTTP {detail}). Riprova, oppure esegui: freemkv update-keys --url <keydb-url>",
-        "E8002": "Il database delle chiavi è vuoto o non valido. Scaricalo di nuovo con: freemkv update-keys --url <keydb-url>",
-        "E8004": "Impossibile leggere il database delle chiavi. Scaricalo di nuovo con: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "Questo disco richiede chiavi di decifratura AACS (Blu-ray/UHD), ma non ne è stata trovata nessuna. Scarica un database delle chiavi da «Impostazioni…» → «Aggiorna keydb ora».",
-        "E7013": "Decrittazione non riuscita — la chiave recuperata non ha sbloccato i dati di questo disco. La chiave potrebbe essere errata o non aggiornata; aggiornala da «Impostazioni…» → «Aggiorna keydb ora».",
-        "E7026": "Questo disco utilizza la filigrana forense AACS 2.1 (FMTS) e non è disponibile alcuna chiave di variante, quindi il film non può essere ricostruito senza lacune. Aggiorna il tuo database delle chiavi da «Impostazioni…» → «Aggiorna keydb ora». Se nessuna sorgente di chiavi include ancora questo disco, esegui il rip del disco in un'immagine ISO e convertila quando le chiavi saranno pubblicate.",
-        "E8001": "Il download del database delle chiavi non è riuscito (HTTP {detail}). Riprova da «Impostazioni…» → «Aggiorna keydb ora».",
-        "E8002": "Il database delle chiavi è vuoto o non valido. Scaricalo di nuovo da «Impostazioni…» → «Aggiorna keydb ora».",
-        "E8004": "Impossibile leggere il database delle chiavi. Scaricalo di nuovo da «Impostazioni…» → «Aggiorna keydb ora»."
+        "title_changed": "Il titolo {num} è cambiato tra le scansioni: atteso {expected}, il lettore ora riporta {found}. L'elenco dei titoli del disco è cambiato durante l'estrazione; non è stato scritto nulla per questo titolo."
     },
     "usage": {
         "synopsis_1": "Uso: freemkv <sorgente> <dest> [opzioni]",
@@ -491,7 +472,6 @@
             "key_url_2": "                      Con --keydb, il keydb viene provato prima (locale",
             "key_url_3": "                      prima); da solo è l'unica sorgente di chiavi.",
             "key_auth": "      --key-auth TOKEN Token bearer per il servizio chiavi (opzionale).",
-            "vid_from": "      --vid-from DRIVE Per un'immagine iso:// le cui chiavi richiedono l'ID volume del disco (Volume ID) (E7034): leggilo dal disco in DRIVE (disc:// o disc://DEVICE); non viene eseguito alcun rip da esso.",
             "log_level_1": "      --log-level N   1=avviso 2=info 3=debug 4=trace. Disattivato di default —",
             "log_level_2": "                      il terminale rimane pulito. Scrive un registro",
             "log_level_3": "                      diagnostico in ./log.txt (usare 3 per segnalazioni bug).",

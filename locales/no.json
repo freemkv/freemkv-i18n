@@ -153,8 +153,7 @@
         "patch_done": "Reparasjon fullført: gjenopprettet {recovered} MB, {unreadable} MB uleselige, {pending} MB ventende ({time}s, {speed} MB/s)",
         "multipass_ignored": "Merk: --multipass ignoreres for plate->MKV/M2TS (enkeltpass-muxing). Bruk en iso://-utdata for gjenoppretting over flere pass.",
         "title_skipped": "Hopper over tittel {num}: kopibeskyttet, ingen nøkkel kan gjenopprettes.",
-        "title_skipped_empty": "Hopper over tittel {num}: tom (ingen video) — trolig en meny-/navigasjonsstubb.",
-        "vid_from_hint": "For å fullføre, sett inn platen og kjør samme kommando igjen med --vid-from disc:// (eller --vid-from disc://DEVICE for å navngi stasjonen). Bare platens Volum-ID leses; den rippes ikke på nytt."
+        "title_skipped_empty": "Hopper over tittel {num}: tom (ingen video) — trolig en meny-/navigasjonsstubb."
     },
     "dir": {
         "extracting": "Pakker ut det dekrypterte filtreet til {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Feil: kunne ikke skanne platen for å liste titlene, så `-t all` kan ikke vite hvilke titler som skal rippes. Ingenting ble rippet — sjekk platen og stasjonen og prøv igjen.",
         "log_file_needs_value": "--log-file: krever en sti (f.eks. --log-file freemkv.log)",
         "mux_failed_generic": "Muxing mislyktes (E{code}).",
-        "title_changed": "Tittel {num} endret seg mellom skanningene: forventet {expected}, stasjonen rapporterer nå {found}. Tittellisten på platen endret seg under rippingen; ingenting ble skrevet for denne tittelen.",
-        "vid_from_not_a_drive": "Feil: --vid-from trenger stasjonen som inneholder platen: disc:// (eller disc://DEVICE), mottok '{value}'.",
-        "vid_from_iso_only": "Feil: --vid-from gjelder bare for en iso://-imagekilde, mottok '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Denne platen trenger AACS-dekrypteringsnøkler (Blu-ray/UHD), men ingen ble funnet. Last ned en nøkkeldatabase med: freemkv update-keys --url <keydb-url>",
-        "E7013": "Dekryptering mislyktes — den gjenopprettede nøkkelen låste ikke opp denne platens data. Nøkkelen kan være feil eller utdatert; oppdater den med: freemkv update-keys --url <keydb-url>",
-        "E7026": "Denne platen bruker AACS 2.1 forensisk vannmerking (FMTS), og ingen variantnøkkel er tilgjengelig for den, så filmen kan ikke bygges opp igjen uten hull. Oppdater nøkkeldatabasen din med: freemkv update-keys --url <keydb-url>. Hvis ingen nøkkelkilde ennå kjenner denne platen, kan du rippe den til et image med 'freemkv disc:// iso://Disc.iso' og konvertere imaget når nøklene blir publisert.",
-        "E8001": "Nedlasting av nøkkeldatabase mislyktes (HTTP {detail}). Prøv igjen, eller kjør: freemkv update-keys --url <keydb-url>",
-        "E8002": "Nøkkeldatabasen er tom eller ugyldig. Last den ned på nytt med: freemkv update-keys --url <keydb-url>",
-        "E8004": "Nøkkeldatabasen kunne ikke leses. Last den ned på nytt med: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "Denne platen trenger AACS-dekrypteringsnøkler (Blu-ray/UHD), men ingen ble funnet. Last ned en nøkkeldatabase via «Innstillinger …» → «Oppdater keydb nå».",
-        "E7013": "Dekryptering mislyktes — den gjenopprettede nøkkelen låste ikke opp denne platens data. Nøkkelen kan være feil eller utdatert; oppdater den via «Innstillinger …» → «Oppdater keydb nå».",
-        "E7026": "Denne platen bruker AACS 2.1 forensisk vannmerking (FMTS), og ingen variantnøkkel er tilgjengelig for den, så filmen kan ikke bygges opp igjen uten hull. Oppdater nøkkeldatabasen din via «Innstillinger …» → «Oppdater keydb nå». Hvis ingen nøkkelkilde ennå kjenner denne platen, kan du rippe platen til et ISO-image og konvertere imaget når nøklene blir publisert.",
-        "E8001": "Nedlasting av nøkkeldatabase mislyktes (HTTP {detail}). Prøv igjen via «Innstillinger …» → «Oppdater keydb nå».",
-        "E8002": "Nøkkeldatabasen er tom eller ugyldig. Last den ned på nytt via «Innstillinger …» → «Oppdater keydb nå».",
-        "E8004": "Nøkkeldatabasen kunne ikke leses. Last den ned på nytt via «Innstillinger …» → «Oppdater keydb nå»."
+        "title_changed": "Tittel {num} endret seg mellom skanningene: forventet {expected}, stasjonen rapporterer nå {found}. Tittellisten på platen endret seg under rippingen; ingenting ble skrevet for denne tittelen."
     },
     "usage": {
         "synopsis_1": "Bruk: freemkv <source> <dest> [flagg]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      Med --keydb prøves keydb først (lokal-",
             "key_url_3": "                      først); alene er den den eneste nøkkelkilden.",
             "key_auth": "      --key-auth TOKEN Bearer-token sendt til nøkkeltjenesten (valgfritt).",
-            "vid_from": "      --vid-from DRIVE For et iso://-image der nøklene trenger platens Volum-ID (Volume ID) (E7034): les den fra platen i DRIVE (disc:// eller disc://DEVICE); ingenting rippes fra den.",
             "log_level_1": "      --log-level N   1=advarsel 2=info 3=feilsøking 4=sporing. Av som standard —",
             "log_level_2": "                      terminalen holdes ren. Sett den for å skrive en",
             "log_level_3": "                      diagnostikklogg til ./log.txt (bruk 3 for feilrapporter).",

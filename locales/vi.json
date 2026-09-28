@@ -153,8 +153,7 @@
         "patch_done": "Vá xong: khôi phục {recovered} MB, {unreadable} MB không đọc được, {pending} MB đang chờ ({time}s, {speed} MB/s)",
         "multipass_ignored": "Lưu ý: --multipass bị bỏ qua với disc->MKV/M2TS (mux một lượt). Dùng đầu ra iso:// để khôi phục nhiều lượt.",
         "title_skipped": "Bỏ qua tiêu đề {num}: được bảo vệ chống sao chép, không khôi phục được khóa.",
-        "title_skipped_empty": "Bỏ qua tiêu đề {num}: trống (không có video) — có thể là menu/nav stub.",
-        "vid_from_hint": "Để hoàn tất, hãy lắp đĩa vào và chạy lại cùng lệnh đó với --vid-from disc:// (hoặc --vid-from disc://DEVICE để chỉ định ổ đĩa). Chỉ mã định danh tập đĩa của đĩa được đọc; đĩa không bị trích xuất lại."
+        "title_skipped_empty": "Bỏ qua tiêu đề {num}: trống (không có video) — có thể là menu/nav stub."
     },
     "dir": {
         "extracting": "Đang trích xuất cây tệp đã giải mã vào {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Lỗi: không thể quét đĩa để liệt kê các tiêu đề, nên `-t all` không biết cần trích xuất tiêu đề nào. Chưa trích xuất gì — hãy kiểm tra đĩa và ổ đĩa rồi thử lại.",
         "log_file_needs_value": "--log-file: cần một đường dẫn (ví dụ --log-file freemkv.log)",
         "mux_failed_generic": "Mux thất bại (E{code}).",
-        "title_changed": "Tiêu đề {num} đã thay đổi giữa các lần quét: dự kiến {expected}, ổ đĩa hiện báo {found}. Danh sách tiêu đề đã thay đổi trong khi trích xuất; không có gì được ghi cho tiêu đề này.",
-        "vid_from_not_a_drive": "Lỗi: --vid-from cần ổ đĩa chứa đĩa: disc:// (hoặc disc://DEVICE), nhận được '{value}'.",
-        "vid_from_iso_only": "Lỗi: --vid-from chỉ áp dụng cho nguồn tập tin ảnh iso://, nhận được '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Tải cơ sở dữ liệu khóa bằng: freemkv update-keys --url <keydb-url>",
-        "E7013": "Giải mã thất bại — khóa khôi phục không mở khóa được dữ liệu của đĩa này. Khóa có thể sai hoặc lỗi thời; làm mới bằng: freemkv update-keys --url <keydb-url>",
-        "E7026": "Đĩa này dùng thủy vân pháp y AACS 2.1 (FMTS) và không có khóa biến thể nào cho nó, nên không thể dựng lại phim mà không có khoảng trống. Cập nhật cơ sở dữ liệu khóa của bạn bằng: freemkv update-keys --url <keydb-url>. Nếu chưa có nguồn khóa nào chứa đĩa này, hãy trích xuất đĩa thành ảnh bằng 'freemkv disc:// iso://Disc.iso' rồi chuyển đổi tập tin ảnh đó khi khóa được công bố.",
-        "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Thử lại, hoặc chạy: freemkv update-keys --url <keydb-url>",
-        "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Tải lại bằng: freemkv update-keys --url <keydb-url>",
-        "E8004": "Không thể đọc cơ sở dữ liệu khóa. Tải lại bằng: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Hãy tải cơ sở dữ liệu khóa qua “Cài đặt…” → “Cập nhật keydb ngay”.",
-        "E7013": "Giải mã thất bại — khóa khôi phục không mở khóa được dữ liệu của đĩa này. Khóa có thể sai hoặc lỗi thời; hãy làm mới qua “Cài đặt…” → “Cập nhật keydb ngay”.",
-        "E7026": "Đĩa này dùng thủy vân pháp y AACS 2.1 (FMTS) và không có khóa biến thể nào cho nó, nên không thể dựng lại phim mà không có khoảng trống. Hãy làm mới cơ sở dữ liệu khóa của bạn qua “Cài đặt…” → “Cập nhật keydb ngay”. Nếu chưa có nguồn khóa nào chứa đĩa này, hãy trích xuất đĩa thành một tập tin ảnh ISO rồi chuyển đổi tập tin ảnh đó khi khóa được công bố.",
-        "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Hãy thử lại qua “Cài đặt…” → “Cập nhật keydb ngay”.",
-        "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Hãy tải lại qua “Cài đặt…” → “Cập nhật keydb ngay”.",
-        "E8004": "Không thể đọc cơ sở dữ liệu khóa. Hãy tải lại qua “Cài đặt…” → “Cập nhật keydb ngay”."
+        "title_changed": "Tiêu đề {num} đã thay đổi giữa các lần quét: dự kiến {expected}, ổ đĩa hiện báo {found}. Danh sách tiêu đề đã thay đổi trong khi trích xuất; không có gì được ghi cho tiêu đề này."
     },
     "usage": {
         "synopsis_1": "Cách dùng: freemkv <source> <dest> [flags]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      Với --keydb thì keydb được thử trước (ưu tiên",
             "key_url_3": "                      cục bộ); dùng một mình thì nó là nguồn khóa duy nhất.",
             "key_auth": "      --key-auth TOKEN Token bearer gửi tới dịch vụ khóa (tùy chọn).",
-            "vid_from": "      --vid-from DRIVE Đối với tập tin ảnh iso:// có khóa cần mã định danh tập đĩa (Volume ID) của đĩa (E7034): đọc mã này từ đĩa trong DRIVE (disc:// hoặc disc://DEVICE); không có gì được trích xuất từ đó.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Tắt theo mặc định —",
             "log_level_2": "                      terminal luôn sạch. Đặt nó để ghi một",
             "log_level_3": "                      nhật ký chẩn đoán vào ./log.txt (dùng 3 cho báo cáo lỗi).",

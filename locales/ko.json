@@ -153,8 +153,7 @@
         "patch_done": "패치 완료: {recovered} MB 복구, 읽기 불가 {unreadable} MB, 대기 {pending} MB ({time}초, {speed} MB/s)",
         "multipass_ignored": "참고: disc->MKV/M2TS(단일 패스 먹스)에서는 --multipass가 무시됩니다. 멀티패스 복구에는 iso:// 출력을 사용하세요.",
         "title_skipped": "타이틀 {num} 건너뜀: 복사 방지됨, 복구 가능한 키 없음.",
-        "title_skipped_empty": "타이틀 {num} 건너뜀: 비어 있음 (비디오 없음) — 메뉴/내비게이션 스텁일 가능성이 높음.",
-        "vid_from_hint": "완료하려면 디스크를 삽입하고 --vid-from disc://(드라이브를 지정하려면 --vid-from disc://DEVICE)를 붙여 동일한 명령을 다시 실행하세요. 디스크의 볼륨 ID만 읽으며 다시 추출되지 않습니다."
+        "title_skipped_empty": "타이틀 {num} 건너뜀: 비어 있음 (비디오 없음) — 메뉴/내비게이션 스텁일 가능성이 높음."
     },
     "dir": {
         "extracting": "복호화된 파일 트리를 {path}로 추출 중",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "오류: 타이틀 목록을 얻기 위해 디스크를 스캔할 수 없어 `-t all`이 추출할 타이틀을 알 수 없습니다. 아무것도 추출되지 않았습니다 — 디스크와 드라이브를 확인하고 다시 시도하세요.",
         "log_file_needs_value": "--log-file: 경로가 필요합니다(예: --log-file freemkv.log)",
         "mux_failed_generic": "먹싱 실패 (E{code}).",
-        "title_changed": "타이틀 {num}이(가) 스캔 사이에 변경되었습니다: 예상 {expected}, 드라이브의 현재 보고 {found}. 추출 중 디스크의 타이틀 목록이 바뀌었습니다. 이 타이틀에는 아무것도 기록되지 않았습니다.",
-        "vid_from_not_a_drive": "오류: --vid-from에는 디스크가 들어 있는 드라이브가 필요합니다: disc:// (또는 disc://DEVICE), 받은 값 '{value}'.",
-        "vid_from_iso_only": "오류: --vid-from은 iso:// 이미지 소스에만 적용됩니다. 받은 값 '{source}'."
-    },
-    "error_cli": {
-        "E7000": "이 디스크는 AACS 복호화 키(Blu-ray/UHD)가 필요하지만 찾을 수 없습니다. 다음 명령으로 키 데이터베이스를 다운로드하세요: freemkv update-keys --url <keydb-url>",
-        "E7013": "복호화 실패 — 복구된 키가 이 디스크의 데이터를 잠금 해제하지 못했습니다. 키가 잘못되었거나 오래되었을 수 있습니다. 다음 명령으로 갱신하세요: freemkv update-keys --url <keydb-url>",
-        "E7026": "이 디스크는 AACS 2.1 포렌식 워터마킹(FMTS)을 사용하며 사용 가능한 변형 키가 없어 영상을 빈 부분 없이 재구성할 수 없습니다. 다음 명령으로 키 데이터베이스를 업데이트하세요: freemkv update-keys --url <keydb-url>. 아직 어떤 키 소스도 이 디스크를 지원하지 않는다면, 'freemkv disc:// iso://Disc.iso'로 이미지로 추출한 후 키가 공개되면 그 이미지를 변환하세요.",
-        "E8001": "키 데이터베이스 다운로드 실패 (HTTP {detail}). 다시 시도하거나 다음을 실행하세요: freemkv update-keys --url <keydb-url>",
-        "E8002": "키 데이터베이스가 비어 있거나 잘못되었습니다. 다음 명령으로 다시 다운로드하세요: freemkv update-keys --url <keydb-url>",
-        "E8004": "키 데이터베이스를 읽을 수 없습니다. 다음 명령으로 다시 다운로드하세요: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "이 디스크는 AACS 복호화 키(Blu-ray/UHD)가 필요하지만 찾을 수 없습니다. “설정…” → “지금 keydb 업데이트”에서 키 데이터베이스를 다운로드하세요.",
-        "E7013": "복호화 실패 — 복구된 키가 이 디스크의 데이터를 잠금 해제하지 못했습니다. 키가 잘못되었거나 오래되었을 수 있습니다. “설정…” → “지금 keydb 업데이트”에서 갱신하세요.",
-        "E7026": "이 디스크는 AACS 2.1 포렌식 워터마킹(FMTS)을 사용하며 사용 가능한 변형 키가 없어 영상을 빈 부분 없이 재구성할 수 없습니다. “설정…” → “지금 keydb 업데이트”에서 키 데이터베이스를 업데이트하세요. 아직 어떤 키 소스도 이 디스크를 지원하지 않는다면, 디스크를 ISO 이미지로 추출한 후 키가 공개되면 그 이미지를 변환하세요.",
-        "E8001": "키 데이터베이스 다운로드 실패 (HTTP {detail}). “설정…” → “지금 keydb 업데이트”에서 다시 시도하세요.",
-        "E8002": "키 데이터베이스가 비어 있거나 잘못되었습니다. “설정…” → “지금 keydb 업데이트”에서 다시 다운로드하세요.",
-        "E8004": "키 데이터베이스를 읽을 수 없습니다. “설정…” → “지금 keydb 업데이트”에서 다시 다운로드하세요."
+        "title_changed": "타이틀 {num}이(가) 스캔 사이에 변경되었습니다: 예상 {expected}, 드라이브의 현재 보고 {found}. 추출 중 디스크의 타이틀 목록이 바뀌었습니다. 이 타이틀에는 아무것도 기록되지 않았습니다."
     },
     "usage": {
         "synopsis_1": "사용법: freemkv <source> <dest> [flags]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      --keydb와 함께 사용하면 keydb를 먼저 시도하고",
             "key_url_3": "                      (로컬 우선), 단독으로는 유일한 키 소스입니다.",
             "key_auth": "      --key-auth TOKEN 키 서비스에 전송되는 Bearer 토큰 (선택).",
-            "vid_from": "      --vid-from DRIVE 키가 디스크의 볼륨 ID(E7034)를 필요로 하는 iso:// 이미지의 경우: DRIVE(disc:// 또는 disc://DEVICE)에 있는 디스크에서 이를 읽습니다. 그로부터 아무것도 추출하지 않습니다.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. 기본적으로 꺼짐 —",
             "log_level_2": "                      터미널이 깨끗하게 유지됩니다. 설정하면 진단 로그를",
             "log_level_3": "                      ./log.txt에 씁니다 (버그 신고에는 3 사용).",

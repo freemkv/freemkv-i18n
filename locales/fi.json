@@ -153,8 +153,7 @@
         "patch_done": "Paikkaus valmis: palautettu {recovered} Mt, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa ({time} s, {speed} Mt/s)",
         "multipass_ignored": "Huomautus: --multipass ohitetaan levy->MKV/M2TS-muunnoksessa (yksivaiheinen muksaus). Käytä iso://-tulostetta monivaiheiseen palautukseen.",
         "title_skipped": "Ohitetaan nimike {num}: kopiosuojattu, avainta ei voi palauttaa.",
-        "title_skipped_empty": "Ohitetaan nimike {num}: tyhjä (ei videota) — todennäköisesti valikko-/navigointitynkä.",
-        "vid_from_hint": "Aseta levy paikalleen ja suorita sama komento uudelleen käyttäen --vid-from disc:// (tai --vid-from disc://DEVICE aseman nimeämiseksi). Vain levyn taltion tunnus luetaan; sitä ei ripata uudelleen."
+        "title_skipped_empty": "Ohitetaan nimike {num}: tyhjä (ei videota) — todennäköisesti valikko-/navigointitynkä."
     },
     "dir": {
         "extracting": "Kirjoitetaan salauksesta purettu tiedostopuu kohteeseen {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Virhe: levyä ei voitu skannata nimikkeiden luetteloimiseksi, joten `-t all` ei tiedä, mitkä nimikkeet ripataan. Mitään ei ripattu — tarkista levy ja asema ja yritä uudelleen.",
         "log_file_needs_value": "--log-file: vaatii polun (esim. --log-file freemkv.log)",
         "mux_failed_generic": "Muksaus epäonnistui (E{code}).",
-        "title_changed": "Nimike {num} muuttui skannausten välillä: odotettiin {expected}, asema ilmoittaa nyt {found}. Levyn nimikeluettelo muuttui rippauksen aikana; tälle nimikkeelle ei kirjoitettu mitään.",
-        "vid_from_not_a_drive": "Virhe: --vid-from tarvitsee levyn sisältävän aseman: disc:// (tai disc://DEVICE), saatiin '{value}'.",
-        "vid_from_iso_only": "Virhe: --vid-from koskee vain iso://-levykuvalähdettä, saatiin '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Tämä levy tarvitsee AACS-salauksenpurkuavaimet (Blu-ray/UHD), mutta niitä ei löytynyt. Lataa avaintietokanta komennolla: freemkv update-keys --url <keydb-url>",
-        "E7013": "Salauksen purku epäonnistui — palautettu avain ei avannut tämän levyn dataa. Avain voi olla väärä tai vanhentunut; päivitä se komennolla: freemkv update-keys --url <keydb-url>",
-        "E7026": "Tämä levy käyttää AACS 2.1 -forensista vesileimausta (FMTS) eikä sille ole saatavilla varianttiavainta, joten elokuvaa ei voi rakentaa uudelleen ilman aukkoja. Päivitä avaintietokantasi komennolla: freemkv update-keys --url <keydb-url>. Jos mikään avainlähde ei vielä tunne tätä levyä, rippaa se levykuvaksi komennolla 'freemkv disc:// iso://Disc.iso' ja muunna levykuva, kun avaimet julkaistaan.",
-        "E8001": "Avaintietokannan lataus epäonnistui (HTTP {detail}). Yritä uudelleen tai suorita: freemkv update-keys --url <keydb-url>",
-        "E8002": "Avaintietokanta on tyhjä tai virheellinen. Lataa se uudelleen komennolla: freemkv update-keys --url <keydb-url>",
-        "E8004": "Avaintietokantaa ei voitu lukea. Lataa se uudelleen komennolla: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "Tämä levy tarvitsee AACS-salauksenpurkuavaimet (Blu-ray/UHD), mutta niitä ei löytynyt. Lataa avaintietokanta kohdasta ”Asetukset…” → ”Päivitä keydb nyt”.",
-        "E7013": "Salauksen purku epäonnistui — palautettu avain ei avannut tämän levyn dataa. Avain voi olla väärä tai vanhentunut; päivitä se kohdasta ”Asetukset…” → ”Päivitä keydb nyt”.",
-        "E7026": "Tämä levy käyttää AACS 2.1 -forensista vesileimausta (FMTS) eikä sille ole saatavilla varianttiavainta, joten elokuvaa ei voi rakentaa uudelleen ilman aukkoja. Päivitä avaintietokantasi kohdasta ”Asetukset…” → ”Päivitä keydb nyt”. Jos mikään avainlähde ei vielä tunne tätä levyä, rippaa levy ISO-levykuvaksi ja muunna levykuva, kun avaimet julkaistaan.",
-        "E8001": "Avaintietokannan lataus epäonnistui (HTTP {detail}). Yritä uudelleen kohdasta ”Asetukset…” → ”Päivitä keydb nyt”.",
-        "E8002": "Avaintietokanta on tyhjä tai virheellinen. Lataa se uudelleen kohdasta ”Asetukset…” → ”Päivitä keydb nyt”.",
-        "E8004": "Avaintietokantaa ei voitu lukea. Lataa se uudelleen kohdasta ”Asetukset…” → ”Päivitä keydb nyt”."
+        "title_changed": "Nimike {num} muuttui skannausten välillä: odotettiin {expected}, asema ilmoittaa nyt {found}. Levyn nimikeluettelo muuttui rippauksen aikana; tälle nimikkeelle ei kirjoitettu mitään."
     },
     "usage": {
         "synopsis_1": "Käyttö: freemkv <source> <dest> [flags]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      --keydb:n kanssa keydb:tä kokeillaan ensin (paikallinen",
             "key_url_3": "                      ensin); yksinään se on ainoa avainlähde.",
             "key_auth": "      --key-auth TOKEN Avainpalvelulle lähetettävä Bearer-token (valinnainen).",
-            "vid_from": "      --vid-from DRIVE iso://-levykuvalle, jonka avaimet tarvitsevat levyn taltion tunnuksen (Volume ID) (E7034): lue se levyltä asemasta DRIVE (disc:// tai disc://DEVICE); siitä ei ripata mitään.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Pois oletuksena —",
             "log_level_2": "                      pääte pysyy siistinä. Aseta se kirjoittaaksesi",
             "log_level_3": "                      diagnostiikkalokin kohteeseen ./log.txt (käytä 3 virheraportteihin).",

@@ -153,8 +153,7 @@
         "patch_done": "Apedaçament fet: recuperats {recovered} MB, {unreadable} MB il·legibles, {pending} MB pendents ({time}s, {speed} MB/s)",
         "multipass_ignored": "Nota: --multipass s'ignora per a disc->MKV/M2TS (mux d'una sola passada). Useu una sortida iso:// per a la recuperació multipassada.",
         "title_skipped": "S'omet el títol {num}: protegit contra còpia, no s'ha pogut recuperar cap clau.",
-        "title_skipped_empty": "S'omet el títol {num}: buit (sense vídeo) — probablement un fragment de menú o navegació.",
-        "vid_from_hint": "Per acabar, inseriu el disc i torneu a executar la mateixa ordre amb --vid-from disc:// (o --vid-from disc://DEVICE per indicar la unitat). Només es llegeix l'ID del volum del disc; no es torna a extreure."
+        "title_skipped_empty": "S'omet el títol {num}: buit (sense vídeo) — probablement un fragment de menú o navegació."
     },
     "dir": {
         "extracting": "S'està extraient l'arbre de fitxers desxifrat a {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Error: no s'ha pogut analitzar el disc per llistar-ne els títols, de manera que `-t all` no pot saber quins títols cal extreure. No s'ha extret res — comproveu el disc i la unitat i torneu-ho a provar.",
         "log_file_needs_value": "--log-file: requereix un camí (p. ex. --log-file freemkv.log)",
         "mux_failed_generic": "El multiplexatge ha fallat (E{code}).",
-        "title_changed": "El títol {num} ha canviat entre anàlisis: s'esperava {expected}, però la unitat ara informa {found}. La llista de títols del disc ha canviat durant l'extracció; no s'ha escrit res per a aquest títol.",
-        "vid_from_not_a_drive": "Error: --vid-from necessita la unitat que conté el disc: disc:// (o disc://DEVICE), s'ha rebut '{value}'.",
-        "vid_from_iso_only": "Error: --vid-from només s'aplica a una font d'imatge iso://, s'ha rebut '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Aquest disc necessita claus de desxifratge AACS (Blu-ray/UHD), però no se n'ha trobat cap. Baixeu una base de dades de claus amb: freemkv update-keys --url <url-keydb>",
-        "E7013": "El desxifratge ha fallat — la clau recuperada no ha desbloquejat les dades d'aquest disc. La clau pot ser incorrecta o obsoleta; actualitzeu-la amb: freemkv update-keys --url <url-keydb>",
-        "E7026": "Aquest disc usa la marca d'aigua forense AACS 2.1 (FMTS) i no hi ha cap clau de variant disponible, així que la pel·lícula no es pot reconstruir sense buits. Actualitzeu la base de dades de claus amb: freemkv update-keys --url <url-keydb>. Si encara cap font de claus no inclou aquest disc, extraieu-lo a una imatge amb 'freemkv disc:// iso://Disc.iso' i convertiu-la quan es publiquin les claus.",
-        "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu-ho a provar, o executeu: freemkv update-keys --url <url-keydb>",
-        "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>",
-        "E8004": "No s'ha pogut llegir la base de dades de claus. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>"
-    },
-    "error_gui": {
-        "E7000": "Aquest disc necessita claus de desxifratge AACS (Blu-ray/UHD), però no se n'ha trobat cap. Baixeu una base de dades de claus des de «Configuració…» → «Actualitza el keydb ara».",
-        "E7013": "El desxifratge ha fallat — la clau recuperada no ha desbloquejat les dades d'aquest disc. La clau pot ser incorrecta o obsoleta; actualitzeu-la des de «Configuració…» → «Actualitza el keydb ara».",
-        "E7026": "Aquest disc usa la marca d'aigua forense AACS 2.1 (FMTS) i no hi ha cap clau de variant disponible, així que la pel·lícula no es pot reconstruir sense buits. Actualitzeu la base de dades de claus des de «Configuració…» → «Actualitza el keydb ara». Si encara cap font de claus no inclou aquest disc, extraieu el disc a una imatge ISO i convertiu-la quan es publiquin les claus.",
-        "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu-ho a provar des de «Configuració…» → «Actualitza el keydb ara».",
-        "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar des de «Configuració…» → «Actualitza el keydb ara».",
-        "E8004": "No s'ha pogut llegir la base de dades de claus. Torneu-la a baixar des de «Configuració…» → «Actualitza el keydb ara»."
+        "title_changed": "El títol {num} ha canviat entre anàlisis: s'esperava {expected}, però la unitat ara informa {found}. La llista de títols del disc ha canviat durant l'extracció; no s'ha escrit res per a aquest títol."
     },
     "usage": {
         "synopsis_1": "Ús: freemkv <origen> <destinació> [indicadors]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      Amb --keydb, el keydb es prova primer (local",
             "key_url_3": "                      primer); sol, és l'única font de claus.",
             "key_auth": "      --key-auth TOKEN Testimoni Bearer enviat al servei de claus (opcional).",
-            "vid_from": "      --vid-from DRIVE Per a una imatge iso:// les claus de la qual necessiten l'ID del volum (Volume ID) del disc (E7034): llegiu-lo des del disc a DRIVE (disc:// o disc://DEVICE); no se n'extreu res.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Desactivat per defecte —",
             "log_level_2": "                      el terminal es manté net. Establiu-lo per escriure un",
             "log_level_3": "                      registre de diagnòstic a ./log.txt (useu 3 per als informes d'errors).",

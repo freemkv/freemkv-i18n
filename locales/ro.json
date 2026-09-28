@@ -153,8 +153,7 @@
         "patch_done": "Corectare finalizată: recuperate {recovered} MB, {unreadable} MB ilizibili, {pending} MB în așteptare ({time}s, {speed} MB/s)",
         "multipass_ignored": "Notă: --multipass este ignorat pentru disc->MKV/M2TS (mux într-o singură trecere). Folosește o ieșire iso:// pentru recuperare multipass.",
         "title_skipped": "Se omite titlul {num}: protejat la copiere, nicio cheie recuperabilă.",
-        "title_skipped_empty": "Se omite titlul {num}: gol (fără video) — probabil un fragment de meniu/navigare.",
-        "vid_from_hint": "Pentru a finaliza, introdu discul și rulează din nou aceeași comandă cu --vid-from disc:// (sau --vid-from disc://DEVICE pentru a denumi unitatea). Se citește doar ID-ul de volum al discului; nu este extras din nou."
+        "title_skipped_empty": "Se omite titlul {num}: gol (fără video) — probabil un fragment de meniu/navigare."
     },
     "dir": {
         "extracting": "Se extrage arborele de fișiere decriptat în {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Eroare: discul nu a putut fi scanat pentru a-i lista titlurile, așa că `-t all` nu poate ști ce titluri să extragă. Nu s-a extras nimic — verifică discul și unitatea și încearcă din nou.",
         "log_file_needs_value": "--log-file: necesită o cale (de ex. --log-file freemkv.log)",
         "mux_failed_generic": "Multiplexarea a eșuat (E{code}).",
-        "title_changed": "Titlul {num} s-a schimbat între scanări: se aștepta {expected}, iar unitatea raportează acum {found}. Lista de titluri a discului s-a modificat în timpul extragerii; nu s-a scris nimic pentru acest titlu.",
-        "vid_from_not_a_drive": "Eroare: --vid-from necesită unitatea care conține discul: disc:// (sau disc://DEVICE), primit '{value}'.",
-        "vid_from_iso_only": "Eroare: --vid-from se aplică doar unei surse de imagine iso://, primit '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Acest disc are nevoie de chei de decriptare AACS (Blu-ray/UHD), dar nu s-a găsit niciuna. Descarcă o bază de date de chei cu: freemkv update-keys --url <keydb-url>",
-        "E7013": "Decriptare eșuată — cheia recuperată nu a deblocat datele acestui disc. Cheia poate fi greșită sau învechită; reîmprospăteaz-o cu: freemkv update-keys --url <keydb-url>",
-        "E7026": "Acest disc folosește filigranare criminalistică AACS 2.1 (FMTS) și nu este disponibilă nicio cheie de variantă pentru el, deci filmul nu poate fi reconstruit fără goluri. Actualizează baza de date de chei cu: freemkv update-keys --url <keydb-url>. Dacă nicio sursă de chei nu conține încă acest disc, extrage-l într-o imagine cu 'freemkv disc:// iso://Disc.iso' și convertește imaginea după ce cheile sunt publicate.",
-        "E8001": "Descărcarea bazei de date de chei a eșuat (HTTP {detail}). Încearcă din nou sau rulează: freemkv update-keys --url <keydb-url>",
-        "E8002": "Baza de date de chei este goală sau invalidă. Descarc-o din nou cu: freemkv update-keys --url <keydb-url>",
-        "E8004": "Baza de date de chei nu a putut fi citită. Descarc-o din nou cu: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "Acest disc are nevoie de chei de decriptare AACS (Blu-ray/UHD), dar nu s-a găsit niciuna. Descarcă o bază de date de chei din „Setări…” → „Actualizează keydb acum”.",
-        "E7013": "Decriptare eșuată — cheia recuperată nu a deblocat datele acestui disc. Cheia poate fi greșită sau învechită; reîmprospăteaz-o din „Setări…” → „Actualizează keydb acum”.",
-        "E7026": "Acest disc folosește filigranare criminalistică AACS 2.1 (FMTS) și nu este disponibilă nicio cheie de variantă pentru el, deci filmul nu poate fi reconstruit fără goluri. Reîmprospătează baza de date de chei din „Setări…” → „Actualizează keydb acum”. Dacă nicio sursă de chei nu conține încă acest disc, extrage discul într-o imagine ISO și convertește imaginea după ce cheile sunt publicate.",
-        "E8001": "Descărcarea bazei de date de chei a eșuat (HTTP {detail}). Încearcă din nou din „Setări…” → „Actualizează keydb acum”.",
-        "E8002": "Baza de date de chei este goală sau invalidă. Descarc-o din nou din „Setări…” → „Actualizează keydb acum”.",
-        "E8004": "Baza de date de chei nu a putut fi citită. Descarc-o din nou din „Setări…” → „Actualizează keydb acum”."
+        "title_changed": "Titlul {num} s-a schimbat între scanări: se aștepta {expected}, iar unitatea raportează acum {found}. Lista de titluri a discului s-a modificat în timpul extragerii; nu s-a scris nimic pentru acest titlu."
     },
     "usage": {
         "synopsis_1": "Utilizare: freemkv <source> <dest> [flags]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      Cu --keydb, keydb-ul este încercat primul (local-",
             "key_url_3": "                      întâi); singur, este singura sursă de chei.",
             "key_auth": "      --key-auth TOKEN Token Bearer trimis către serviciul de chei (opțional).",
-            "vid_from": "      --vid-from DRIVE Pentru o imagine iso:// ale cărei chei necesită ID-ul de volum al discului (Volume ID) (E7034): citește-l de pe disc în DRIVE (disc:// sau disc://DEVICE); nu se extrage nimic de pe el.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Dezactivat implicit —",
             "log_level_2": "                      terminalul rămâne curat. Setează-l pentru a scrie un",
             "log_level_3": "                      jurnal de diagnosticare în ./log.txt (folosește 3 pentru rapoarte de erori).",

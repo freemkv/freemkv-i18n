@@ -153,8 +153,7 @@
         "patch_done": "修补完成：恢复 {recovered} MB，{unreadable} MB 不可读，{pending} MB 待处理（{time} 秒，{speed} MB/s）",
         "multipass_ignored": "注意：disc->MKV/M2TS 会忽略 --multipass（单遍复用）。如需多遍恢复，请使用 iso:// 输出。",
         "title_skipped": "跳过标题 {num}：受复制保护，无可恢复的密钥。",
-        "title_skipped_empty": "跳过标题 {num}：为空（无视频）—— 很可能是菜单/导航桩。",
-        "vid_from_hint": "要完成操作，请插入光盘，并使用 --vid-from disc://（或使用 --vid-from disc://DEVICE 指定驱动器）再次运行相同命令。只会读取光盘的卷 ID；不会再次抓取。"
+        "title_skipped_empty": "跳过标题 {num}：为空（无视频）—— 很可能是菜单/导航桩。"
     },
     "dir": {
         "extracting": "正在将解密后的文件树提取至 {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "错误：无法扫描光盘以列出其标题，因此 `-t all` 无法确定要抓取哪些标题。未抓取任何内容 —— 请检查光盘和驱动器后重试。",
         "log_file_needs_value": "--log-file：需要一个路径（例如 --log-file freemkv.log）",
         "mux_failed_generic": "复用失败（E{code}）。",
-        "title_changed": "标题 {num} 在两次扫描之间发生了变化：预期为 {expected}，驱动器现在报告 {found}。抓取期间标题列表发生了变化；此标题未写入任何内容。",
-        "vid_from_not_a_drive": "错误：--vid-from 需要装有光盘的驱动器：disc://（或 disc://DEVICE），收到的是 '{value}'。",
-        "vid_from_iso_only": "错误：--vid-from 仅适用于 iso:// 镜像来源，收到的是 '{source}'。"
-    },
-    "error_cli": {
-        "E7000": "此光盘需要 AACS 解密密钥（Blu-ray/UHD），但未找到任何密钥。请使用以下命令下载密钥数据库：freemkv update-keys --url <keydb-url>",
-        "E7013": "解密失败 —— 恢复的密钥未能解锁此光盘的数据。密钥可能错误或已过时；请使用以下命令刷新：freemkv update-keys --url <keydb-url>",
-        "E7026": "此光盘使用 AACS 2.1 取证水印（FMTS），且没有可用的变体密钥，因此无法无缺口地重建影片。请使用以下命令更新你的密钥数据库：freemkv update-keys --url <keydb-url>。如果目前还没有密钥来源收录此光盘，请使用 'freemkv disc:// iso://Disc.iso' 将其抓取为镜像，待密钥发布后再转换该镜像。",
-        "E8001": "密钥数据库下载失败（HTTP {detail}）。请重试，或运行：freemkv update-keys --url <keydb-url>",
-        "E8002": "密钥数据库为空或无效。请使用以下命令重新下载：freemkv update-keys --url <keydb-url>",
-        "E8004": "无法读取密钥数据库。请使用以下命令重新下载：freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "此光盘需要 AACS 解密密钥（Blu-ray/UHD），但未找到任何密钥。请通过“设置……”→“立即更新 keydb”下载密钥数据库。",
-        "E7013": "解密失败 —— 恢复的密钥未能解锁此光盘的数据。密钥可能错误或已过时；请通过“设置……”→“立即更新 keydb”刷新。",
-        "E7026": "此光盘使用 AACS 2.1 取证水印（FMTS），且没有可用的变体密钥，因此无法无缺口地重建影片。请通过“设置……”→“立即更新 keydb”刷新你的密钥数据库。如果目前还没有密钥来源收录此光盘，请先将光盘抓取为 ISO 镜像，待密钥发布后再转换该镜像。",
-        "E8001": "密钥数据库下载失败（HTTP {detail}）。请通过“设置……”→“立即更新 keydb”重试。",
-        "E8002": "密钥数据库为空或无效。请通过“设置……”→“立即更新 keydb”重新下载。",
-        "E8004": "无法读取密钥数据库。请通过“设置……”→“立即更新 keydb”重新下载。"
+        "title_changed": "标题 {num} 在两次扫描之间发生了变化：预期为 {expected}，驱动器现在报告 {found}。抓取期间标题列表发生了变化；此标题未写入任何内容。"
     },
     "usage": {
         "synopsis_1": "用法：freemkv <source> <dest> [flags]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      与 --keydb 并用时，先尝试 keydb（本地",
             "key_url_3": "                      优先）；单独使用时它是唯一的密钥源。",
             "key_auth": "      --key-auth TOKEN 发送给密钥服务的 Bearer 令牌（可选）。",
-            "vid_from": "      --vid-from DRIVE 对于其密钥需要光盘卷 ID（Volume ID）的 iso:// 镜像（E7034）：从 DRIVE（disc:// 或 disc://DEVICE）中的光盘读取该 ID；不会从中抓取任何内容。",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace。默认关闭 ——",
             "log_level_2": "                      终端保持整洁。设置它可将诊断日志写入",
             "log_level_3": "                      ./log.txt（错误报告请用 3）。",

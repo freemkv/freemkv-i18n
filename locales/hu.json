@@ -153,8 +153,7 @@
         "patch_done": "Javítás kész: {recovered} MB helyreállítva, {unreadable} MB olvashatatlan, {pending} MB függőben ({time} mp, {speed} MB/s)",
         "multipass_ignored": "Megjegyzés: a --multipass figyelmen kívül marad lemez->MKV/M2TS esetén (egymenetes muxolás). Többmenetes helyreállításhoz használj iso:// kimenetet.",
         "title_skipped": "{num}. cím kihagyva: másolásvédett, nem állítható helyre kulcs.",
-        "title_skipped_empty": "{num}. cím kihagyva: üres (nincs videó) — valószínűleg menü/navigációs csonk.",
-        "vid_from_hint": "A befejezéshez helyezd be a lemezt, és futtasd újra ugyanazt a parancsot a --vid-from disc:// kapcsolóval (vagy --vid-from disc://DEVICE, ha meg akarod nevezni a meghajtót). Csak a lemez kötetazonosítója olvasódik be; nem másolódik ki újra."
+        "title_skipped_empty": "{num}. cím kihagyva: üres (nincs videó) — valószínűleg menü/navigációs csonk."
     },
     "dir": {
         "extracting": "Visszafejtett fájlfa kibontása ide: {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Hiba: nem sikerült beolvasni a lemezt a címek listázásához, így a `-t all` nem tudja, mely címeket kell kimásolni. Semmi nem lett kimásolva — ellenőrizd a lemezt és a meghajtót, majd próbáld újra.",
         "log_file_needs_value": "--log-file: elérési utat igényel (pl. --log-file freemkv.log)",
         "mux_failed_generic": "A muxolás sikertelen (E{code}).",
-        "title_changed": "A(z) {num}. cím megváltozott a beolvasások között: várt {expected}, a meghajtó most ezt jelenti: {found}. A lemez címlistája megváltozott kimásolás közben; ehhez a címhez semmi nem lett kiírva.",
-        "vid_from_not_a_drive": "Hiba: a --vid-from a lemezt tartalmazó meghajtót várja: disc:// (vagy disc://DEVICE), a kapott érték: '{value}'.",
-        "vid_from_iso_only": "Hiba: a --vid-from csak iso:// képforrásra érvényes, a kapott érték: '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Ehhez a lemezhez AACS-visszafejtési kulcsok kellenek (Blu-ray/UHD), de egy sem található. Tölts le egy kulcsadatbázist: freemkv update-keys --url <keydb-url>",
-        "E7013": "A visszafejtés sikertelen — a helyreállított kulcs nem oldotta fel a lemez adatait. A kulcs hibás vagy elavult lehet; frissítsd: freemkv update-keys --url <keydb-url>",
-        "E7026": "Ez a lemez AACS 2.1 kriminalisztikai vízjelezést (FMTS) használ, és nincs hozzá variánskulcs, ezért a film nem építhető újra hézagok nélkül. Frissítsd a kulcsadatbázisodat: freemkv update-keys --url <keydb-url>. Ha még egyetlen kulcsforrás sem ismeri ezt a lemezt, másold ki képfájlba a 'freemkv disc:// iso://Disc.iso' paranccsal, és alakítsd át a képfájlt, amint a kulcsok megjelennek.",
-        "E8001": "A kulcsadatbázis letöltése sikertelen (HTTP {detail}). Próbáld újra, vagy futtasd: freemkv update-keys --url <keydb-url>",
-        "E8002": "A kulcsadatbázis üres vagy érvénytelen. Töltsd le újra: freemkv update-keys --url <keydb-url>",
-        "E8004": "A kulcsadatbázist nem sikerült beolvasni. Töltsd le újra: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "Ehhez a lemezhez AACS-visszafejtési kulcsok kellenek (Blu-ray/UHD), de egy sem található. Töltsd le a kulcsadatbázist a „Beállítások…” → „keydb frissítése most” menüponttal.",
-        "E7013": "A visszafejtés sikertelen — a helyreállított kulcs nem oldotta fel a lemez adatait. A kulcs hibás vagy elavult lehet; frissítsd a „Beállítások…” → „keydb frissítése most” menüponttal.",
-        "E7026": "Ez a lemez AACS 2.1 kriminalisztikai vízjelezést (FMTS) használ, és nincs hozzá variánskulcs, ezért a film nem építhető újra hézagok nélkül. Frissítsd a kulcsadatbázisodat a „Beállítások…” → „keydb frissítése most” menüponttal. Ha még egyetlen kulcsforrás sem ismeri ezt a lemezt, másold ki a lemezt ISO-képfájlba, és alakítsd át a képfájlt, amint a kulcsok megjelennek.",
-        "E8001": "A kulcsadatbázis letöltése sikertelen (HTTP {detail}). Próbáld újra a „Beállítások…” → „keydb frissítése most” menüponttal.",
-        "E8002": "A kulcsadatbázis üres vagy érvénytelen. Töltsd le újra a „Beállítások…” → „keydb frissítése most” menüponttal.",
-        "E8004": "A kulcsadatbázist nem sikerült beolvasni. Töltsd le újra a „Beállítások…” → „keydb frissítése most” menüponttal."
+        "title_changed": "A(z) {num}. cím megváltozott a beolvasások között: várt {expected}, a meghajtó most ezt jelenti: {found}. A lemez címlistája megváltozott kimásolás közben; ehhez a címhez semmi nem lett kiírva."
     },
     "usage": {
         "synopsis_1": "Használat: freemkv <forrás> <cél> [kapcsolók]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      A --keydb kapcsolóval a keydb-t próbálja először (helyi-",
             "key_url_3": "                      elsőként); önmagában ez az egyetlen kulcsforrás.",
             "key_auth": "      --key-auth TOKEN A kulcsszolgáltatásnak küldött Bearer-token (opcionális).",
-            "vid_from": "      --vid-from DRIVE Egy iso:// képfájlhoz, amelynek kulcsaihoz a lemez kötetazonosítója (Volume ID) kell (E7034): olvasd be a lemezről a DRIVE eszközön (disc:// vagy disc://DEVICE); semmit nem másol ki róla.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Alapból ki —",
             "log_level_2": "                      a terminál tiszta marad. Állítsd be egy",
             "log_level_3": "                      diagnosztikai napló ./log.txt fájlba írásához (hibajelentéshez használj 3-at).",

@@ -153,8 +153,7 @@
         "patch_done": "Patch fuldført: gendannede {recovered} MB, {unreadable} MB ulæselige, {pending} MB afventer ({time}s, {speed} MB/s)",
         "multipass_ignored": "Bemærk: --multipass ignoreres for disk->MKV/M2TS (enkeltgennemløbs-mux). Brug et iso://-output til multipass-gendannelse.",
         "title_skipped": "Springer titel {num} over: kopibeskyttet, ingen nøgle kunne gendannes.",
-        "title_skipped_empty": "Springer titel {num} over: tom (ingen video) — sandsynligvis en menu-/nav-stub.",
-        "vid_from_hint": "For at fuldføre skal du indsætte disken og køre den samme kommando igen med --vid-from disc:// (eller --vid-from disc://DEVICE for at angive drevet). Kun diskens Volume ID læses; den rippes ikke igen."
+        "title_skipped_empty": "Springer titel {num} over: tom (ingen video) — sandsynligvis en menu-/nav-stub."
     },
     "dir": {
         "extracting": "Udpakker dekrypteret filtræ til {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Fejl: disken kunne ikke scannes for at vise dens titler, så `-t all` kan ikke vide, hvilke titler der skal rippes. Intet blev rippet — kontrollér disken og drevet, og prøv igen.",
         "log_file_needs_value": "--log-file: kræver en sti (f.eks. --log-file freemkv.log)",
         "mux_failed_generic": "Muxing mislykkedes (E{code}).",
-        "title_changed": "Titel {num} ændrede sig mellem scanninger: forventede {expected}, men drevet rapporterer nu {found}. Diskens titelliste ændrede sig under rippet; intet blev skrevet for denne titel.",
-        "vid_from_not_a_drive": "Fejl: --vid-from kræver drevet, der indeholder disken: disc:// (eller disc://DEVICE), modtog '{value}'.",
-        "vid_from_iso_only": "Fejl: --vid-from gælder kun for en iso://-imagekilde, modtog '{source}'."
-    },
-    "error_cli": {
-        "E7000": "Denne disk kræver AACS-dekrypteringsnøgler (Blu-ray/UHD), men ingen blev fundet. Download en nøgledatabase med: freemkv update-keys --url <keydb-url>",
-        "E7013": "Dekryptering mislykkedes — den gendannede nøgle låste ikke diskens data op. Nøglen kan være forkert eller forældet; opdatér den med: freemkv update-keys --url <keydb-url>",
-        "E7026": "Denne disk bruger AACS 2.1 forensisk vandmærkning (FMTS), og ingen variantnøgle er tilgængelig for den, så filmen kan ikke genopbygges uden huller. Opdatér din nøgledatabase med: freemkv update-keys --url <keydb-url>. Hvis ingen nøglekilde endnu kender denne disk, så rip den til et image med 'freemkv disc:// iso://Disc.iso', og konvertér imaget, når nøglerne bliver udgivet.",
-        "E8001": "Download af nøgledatabase mislykkedes (HTTP {detail}). Prøv igen, eller kør: freemkv update-keys --url <keydb-url>",
-        "E8002": "Nøgledatabasen er tom eller ugyldig. Download den igen med: freemkv update-keys --url <keydb-url>",
-        "E8004": "Nøgledatabasen kunne ikke læses. Download den igen med: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "Denne disk kræver AACS-dekrypteringsnøgler (Blu-ray/UHD), men ingen blev fundet. Download en nøgledatabase via „Indstillinger…“ → „Opdatér keydb nu“.",
-        "E7013": "Dekryptering mislykkedes — den gendannede nøgle låste ikke diskens data op. Nøglen kan være forkert eller forældet; opdatér den via „Indstillinger…“ → „Opdatér keydb nu“.",
-        "E7026": "Denne disk bruger AACS 2.1 forensisk vandmærkning (FMTS), og ingen variantnøgle er tilgængelig for den, så filmen kan ikke genopbygges uden huller. Opdatér din nøgledatabase via „Indstillinger…“ → „Opdatér keydb nu“. Hvis ingen nøglekilde endnu kender denne disk, så rip disken til et ISO-image, og konvertér imaget, når nøglerne bliver udgivet.",
-        "E8001": "Download af nøgledatabase mislykkedes (HTTP {detail}). Prøv igen via „Indstillinger…“ → „Opdatér keydb nu“.",
-        "E8002": "Nøgledatabasen er tom eller ugyldig. Download den igen via „Indstillinger…“ → „Opdatér keydb nu“.",
-        "E8004": "Nøgledatabasen kunne ikke læses. Download den igen via „Indstillinger…“ → „Opdatér keydb nu“."
+        "title_changed": "Titel {num} ændrede sig mellem scanninger: forventede {expected}, men drevet rapporterer nu {found}. Diskens titelliste ændrede sig under rippet; intet blev skrevet for denne titel."
     },
     "usage": {
         "synopsis_1": "Brug: freemkv <kilde> <dest> [flag]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      Med --keydb prøves keydb'en først (lokal-",
             "key_url_3": "                      først); alene er den den eneste nøglekilde.",
             "key_auth": "      --key-auth TOKEN Bearer-token sendt til nøgletjenesten (valgfrit).",
-            "vid_from": "      --vid-from DRIVE For et iso://-image, hvis nøgler kræver diskens Volume ID (E7034): læs det fra disken i DRIVE (disc:// eller disc://DEVICE); der rippes intet fra den.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Slået fra som standard —",
             "log_level_2": "                      terminalen forbliver ren. Sæt den for at skrive en",
             "log_level_3": "                      diagnostisk log til ./log.txt (brug 3 til fejlrapporter).",

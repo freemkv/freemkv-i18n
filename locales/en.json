@@ -153,8 +153,7 @@
         "patch_done": "Patch done: recovered {recovered} MB, {unreadable} MB unreadable, {pending} MB pending ({time}s, {speed} MB/s)",
         "multipass_ignored": "Note: --multipass is ignored for disc->MKV/M2TS (single-pass mux). Use an iso:// output for multipass recovery.",
         "title_skipped": "Skipping title {num}: copy-protected, no key recoverable.",
-        "title_skipped_empty": "Skipping title {num}: empty (no video) — likely a menu/nav stub.",
-        "vid_from_hint": "To finish, insert the disc and run the same command again with --vid-from disc:// (or --vid-from disc://DEVICE to name the drive). Only the disc's Volume ID is read; it is not ripped again."
+        "title_skipped_empty": "Skipping title {num}: empty (no video) — likely a menu/nav stub."
     },
     "dir": {
         "extracting": "Extracting decrypted file tree to {path}",
@@ -437,25 +436,7 @@
         "disc_scan_all_titles_failed": "Error: could not scan the disc to list its titles, so `-t all` cannot know which titles to rip. Nothing was ripped — check the disc and drive and try again.",
         "log_file_needs_value": "--log-file: requires a path (e.g. --log-file freemkv.log)",
         "mux_failed_generic": "Mux failed (E{code}).",
-        "title_changed": "Title {num} changed between scans: expected {expected}, the drive now reports {found}. The disc list moved under the rip; nothing was written for this title.",
-        "vid_from_not_a_drive": "Error: --vid-from needs the drive holding the disc: disc:// (or disc://DEVICE), got '{value}'.",
-        "vid_from_iso_only": "Error: --vid-from applies only to an iso:// image source, got '{source}'."
-    },
-    "error_cli": {
-        "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Download a key database with: freemkv update-keys --url <keydb-url>",
-        "E7013": "Decryption failed — the recovered key did not unlock this disc's data. The key may be wrong or outdated; refresh it with: freemkv update-keys --url <keydb-url>",
-        "E7026": "This disc uses AACS 2.1 forensic watermarking (FMTS) and no variant key is available for it, so the movie can't be rebuilt without gaps. Refresh your key database with: freemkv update-keys --url <keydb-url>. If no key source carries this disc yet, rip it to an image with 'freemkv disc:// iso://Disc.iso' and convert the image once the keys are published.",
-        "E8001": "Key database download failed (HTTP {detail}). Try again, or run: freemkv update-keys --url <keydb-url>",
-        "E8002": "The key database is empty or invalid. Re-download it with: freemkv update-keys --url <keydb-url>",
-        "E8004": "The key database could not be read. Re-download it with: freemkv update-keys --url <keydb-url>"
-    },
-    "error_gui": {
-        "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Download a key database with Settings… → “Update keydb now”.",
-        "E7013": "Decryption failed — the recovered key did not unlock this disc's data. The key may be wrong or outdated; refresh it with Settings… → “Update keydb now”.",
-        "E7026": "This disc uses AACS 2.1 forensic watermarking (FMTS) and no variant key is available for it, so the movie can't be rebuilt without gaps. Refresh your key database with Settings… → “Update keydb now”. If no key source carries this disc yet, rip the disc to an ISO image and convert the image once the keys are published.",
-        "E8001": "Key database download failed (HTTP {detail}). Try again with Settings… → “Update keydb now”.",
-        "E8002": "The key database is empty or invalid. Download it again with Settings… → “Update keydb now”.",
-        "E8004": "The key database could not be read. Download it again with Settings… → “Update keydb now”."
+        "title_changed": "Title {num} changed between scans: expected {expected}, the drive now reports {found}. The disc list moved under the rip; nothing was written for this title."
     },
     "usage": {
         "synopsis_1": "Usage: freemkv <source> <dest> [flags]",
@@ -523,7 +504,6 @@
             "key_url_2": "                      With --keydb the keydb is tried first (local-",
             "key_url_3": "                      first); alone it is the only key source.",
             "key_auth": "      --key-auth TOKEN Bearer token sent to the key service (optional).",
-            "vid_from": "      --vid-from DRIVE For an iso:// image whose keys need the disc's Volume ID (E7034): read it from the disc in DRIVE (disc:// or disc://DEVICE); nothing is ripped from it.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Off by default —",
             "log_level_2": "                      the terminal stays clean. Set it to write a",
             "log_level_3": "                      diagnostic log to ./log.txt (use 3 for bug reports).",
