@@ -289,6 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "Fișierul de chei AACS al acestui disc (Unit_Key_RO.inf) lipsește sau nu a putut fi citit. Curățați discul și încercați din nou; dacă eroarea persistă, discul poate fi deteriorat.",
+        "E7032": "Au fost găsite certificate gazdă, dar niciunul nu poate fi folosit pentru handshake-ul securizat al acestei unități. Actualizați baza de date de chei și încercați din nou.",
         "E8000": "Nu se poate conecta la serverul bazei de date de chei: {detail}",
         "E8001": "Descărcarea bazei de date de chei a eșuat (HTTP {detail}). Încearcă din nou sau rulează: freemkv update-keys --url <keydb-url>",
         "E8002": "Baza de date de chei este goală sau invalidă. Descarc-o din nou cu: freemkv update-keys --url <keydb-url>",

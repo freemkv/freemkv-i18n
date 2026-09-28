@@ -289,6 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "O arquivo de chaves AACS deste disco (Unit_Key_RO.inf) está ausente ou não pôde ser lido. Limpe o disco e tente novamente; se continuar falhando, o disco pode estar danificado.",
+        "E7032": "Certificados de host foram encontrados, mas nenhum pode ser usado no handshake seguro desta unidade. Atualize seu banco de dados de chaves e tente novamente.",
         "E8000": "Não é possível conectar ao servidor do banco de dados de chaves: {detail}",
         "E8001": "Falha ao baixar o banco de dados de chaves (HTTP {detail}). Tente novamente ou execute: freemkv update-keys --url <url-do-keydb>",
         "E8002": "O banco de dados de chaves está vazio ou inválido. Baixe-o novamente com: freemkv update-keys --url <url-do-keydb>",
