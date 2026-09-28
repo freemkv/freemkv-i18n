@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Frissítve: {entries} bejegyzés, {bytes} bájt",
         "saved": "Elmentve: {path}",
-        "usage": "Használat: freemkv update-keys --url <url>"
+        "usage": "Használat: freemkv update-keys --url <url>",
+        "hddvd_unverified": "A HD DVD visszafejtése nincs ellenőrizve – ellenőrizze a kimenetet."
     },
     "verify": {
         "only_disc": "Az ellenőrzés csak disc:// URL-ekkel működik.",
@@ -290,7 +291,7 @@
         "E7029": "Az online kulcsszolgáltatás elutasította a hozzáférési tokent, ezért nem válaszolt. Javítsd a kulcsszolgáltatás tokenjét a Beállításokban (vagy a --key-auth kapcsolóval a parancssorban), és próbáld újra. Ez nem jelenti azt, hogy a lemezhez nincs kulcs.",
         "E7030": "Az online kulcsszolgáltatás korlátozza a kérések számát, ezért nem válaszolt. Várj néhány percet, és próbáld újra, vagy másolj egyszerre kevesebb lemezt. Ez nem jelenti azt, hogy a lemezhez nincs kulcs.",
         "E7031": "A lemez AACS-kulcsfájlja hiányzik, vagy nem sikerült beolvasni. Tisztítsa meg a lemezt, és próbálja újra; ha a hiba továbbra is fennáll, a lemez sérült lehet.",
-        "E7032": "Visszafejtett lemezkép nem készíthető: a lemez egyik adatfolyama, amelyet egyetlen cím sem játszik le, titkosított, és egyik elérhető kulcs sem illik hozzá, így a lemezkép továbbra is titkosított részeket tartalmazna. Rippelje inkább MKV-ba a címeket, vagy tartson meg egy titkosított másolatot: másolja a lemezt nyersen (--raw a parancssorban, vagy „Titkosítva tartás (nyers átvitel)” az alkalmazásban), vagy tartsa meg a forrás lemezképet változatlanul.",
+        "E7032": "A teljes lemez visszafejtett másolata (lemezkép vagy mappa) nem készíthető el: a lemez egy része titkosított, és egyik elérhető kulcs sem nyitja meg, így a másolat továbbra is titkosított részeket tartalmazna. Rippelje inkább MKV-ba a címeket, vagy tartson meg egy titkosított másolatot: másolja a lemezt nyersen (--raw a parancssorban, vagy „Titkosítva tartás (nyers átvitel)” az alkalmazásban), vagy tartsa meg a forrás lemezképet változatlanul.",
         "E7033": "A kulcsforrásaiban gazdatanúsítványokat találtunk, de egyik sem használható (sérült vagy hiányos). Frissítse a kulcsadatbázist, és próbálja újra.",
         "E8000": "Nem sikerült csatlakozni a kulcsadatbázis-kiszolgálóhoz: {detail}",
         "E8001": "A kulcsadatbázis letöltése sikertelen (HTTP {detail}). Próbáld újra, vagy futtasd: freemkv update-keys --url <keydb-url>",

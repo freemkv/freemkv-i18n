@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Actualizado: {entries} entradas, {bytes} bytes",
         "saved": "Guardado: {path}",
-        "usage": "Uso: freemkv update-keys --url <url>"
+        "usage": "Uso: freemkv update-keys --url <url>",
+        "hddvd_unverified": "El descifrado de HD DVD no está verificado; revisa la salida."
     },
     "verify": {
         "only_disc": "Verify solo funciona con URLs disc://.",
@@ -290,7 +291,7 @@
         "E7029": "El servicio de claves en línea rechazó el token de acceso, así que no respondió. Corrige el token del servicio de claves en Configuración (o --key-auth en la línea de comandos) y vuelve a intentarlo. Esto no significa que el disco no tenga clave.",
         "E7030": "El servicio de claves en línea está limitando la frecuencia de solicitudes y no respondió. Espera unos minutos y vuelve a intentarlo, o extrae menos discos a la vez. Esto no significa que el disco no tenga clave.",
         "E7031": "Falta el archivo de claves AACS de este disco o no se pudo leer. Limpie el disco y vuelva a intentarlo; si sigue fallando, es posible que el disco esté dañado.",
-        "E7032": "No se puede crear una imagen de disco descifrada: un flujo de este disco que ningún título reproduce está cifrado y ninguna de las claves disponibles coincide con él, así que la imagen aún contendría partes cifradas. Extraiga los títulos a MKV o conserve una copia cifrada: copie el disco sin procesar (--raw en la línea de comandos, o “Conservar cifrado (passthrough sin procesar)” en la app), o conserve la imagen de origen tal como está.",
+        "E7032": "No se puede hacer una copia descifrada de todo el disco (una imagen o una carpeta): una parte del disco está cifrada y ninguna de las claves disponibles la abre, así que la copia aún contendría partes cifradas. Extraiga los títulos a MKV o conserve una copia cifrada: copie el disco sin procesar (--raw en la línea de comandos, o “Conservar cifrado (passthrough sin procesar)” en la app), o conserve la imagen de origen tal como está.",
         "E7033": "Se encontraron certificados de host en tus fuentes de claves, pero ninguno se puede usar (dañado o incompleto). Actualiza tu base de datos de claves y vuelve a intentarlo.",
         "E8000": "No se puede conectar al servidor de la base de datos de claves: {detail}",
         "E8001": "La descarga de la base de datos de claves falló (HTTP {detail}). Vuelve a intentarlo, o ejecuta: freemkv update-keys --url <keydb-url>",

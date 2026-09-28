@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Zaktualizowano (liczba wpisów: {entries}, {bytes} B)",
         "saved": "Zapisano: {path}",
-        "usage": "Sposób użycia: freemkv update-keys --url <url>"
+        "usage": "Sposób użycia: freemkv update-keys --url <url>",
+        "hddvd_unverified": "Odszyfrowanie HD DVD nie jest zweryfikowane — sprawdź wynik."
     },
     "verify": {
         "only_disc": "Weryfikacja działa tylko z adresami URL disc://.",
@@ -290,7 +291,7 @@
         "E7029": "Internetowa usługa kluczy odrzuciła token dostępu, więc nie odpowiedziała. Popraw token usługi kluczy w Ustawieniach (lub --key-auth w wierszu poleceń) i spróbuj ponownie. Nie oznacza to, że płyta nie ma klucza.",
         "E7030": "Internetowa usługa kluczy ogranicza liczbę żądań i nie odpowiedziała. Odczekaj kilka minut i spróbuj ponownie albo zgrywaj mniej płyt naraz. Nie oznacza to, że płyta nie ma klucza.",
         "E7031": "Brak pliku kluczy AACS tej płyty lub nie można go odczytać. Wyczyść płytę i spróbuj ponownie; jeśli błąd się powtarza, płyta może być uszkodzona.",
-        "E7032": "Nie można utworzyć odszyfrowanego obrazu płyty: strumień na tej płycie, którego nie odtwarza żaden tytuł, jest zaszyfrowany i żaden z dostępnych kluczy do niego nie pasuje, więc obraz nadal zawierałby zaszyfrowane części. Zamiast tego zgraj tytuły do MKV albo zachowaj zaszyfrowaną kopię: skopiuj płytę na surowo (--raw w wierszu poleceń lub „Zachowaj zaszyfrowane (surowe przepuszczanie)” w aplikacji) albo zachowaj obraz źródłowy bez zmian.",
+        "E7032": "Nie można utworzyć odszyfrowanej kopii całej płyty (obrazu lub folderu): część płyty jest zaszyfrowana i żaden z dostępnych kluczy jej nie otwiera, więc kopia nadal zawierałaby zaszyfrowane części. Zamiast tego zgraj tytuły do MKV albo zachowaj zaszyfrowaną kopię: skopiuj płytę na surowo (--raw w wierszu poleceń lub „Zachowaj zaszyfrowane (surowe przepuszczanie)” w aplikacji) albo zachowaj obraz źródłowy bez zmian.",
         "E7033": "W Twoich źródłach kluczy znaleziono certyfikaty hosta, ale żaden nie nadaje się do użycia (uszkodzony lub niekompletny). Odśwież bazę kluczy i spróbuj ponownie.",
         "E8000": "Nie można połączyć się z serwerem bazy kluczy: {detail}",
         "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie lub uruchom: freemkv update-keys --url <adres-url-keydb>",

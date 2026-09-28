@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Đã cập nhật: {entries} mục, {bytes} byte",
         "saved": "Đã lưu: {path}",
-        "usage": "Cách dùng: freemkv update-keys --url <url>"
+        "usage": "Cách dùng: freemkv update-keys --url <url>",
+        "hddvd_unverified": "Việc giải mã HD DVD chưa được xác minh — hãy kiểm tra kết quả đầu ra."
     },
     "verify": {
         "only_disc": "Chỉ có thể xác minh với URL disc://.",
@@ -290,7 +291,7 @@
         "E7029": "Dịch vụ khóa trực tuyến đã từ chối token truy cập, nên không phản hồi. Hãy sửa token dịch vụ khóa trong Cài đặt (hoặc --key-auth trên dòng lệnh) rồi thử lại. Điều này không có nghĩa là đĩa không có khóa.",
         "E7030": "Dịch vụ khóa trực tuyến đang giới hạn tần suất yêu cầu và không phản hồi. Hãy đợi vài phút rồi thử lại, hoặc sao chép ít đĩa hơn cùng lúc. Điều này không có nghĩa là đĩa không có khóa.",
         "E7031": "Tệp khóa AACS của đĩa này bị thiếu hoặc không đọc được. Hãy lau sạch đĩa rồi thử lại; nếu vẫn lỗi, đĩa có thể đã bị hỏng.",
-        "E7032": "Không thể tạo ảnh đĩa đã giải mã: một luồng trên đĩa này mà không tiêu đề nào phát đang được mã hóa và không khóa nào hiện có khớp với nó, nên ảnh đĩa vẫn sẽ chứa các phần bị mã hóa. Thay vào đó, hãy rip các tiêu đề sang MKV hoặc giữ một bản sao được mã hóa: sao chép thô đĩa (--raw trên dòng lệnh, hoặc “Giữ mã hóa (chuyển thô nguyên vẹn)” trong ứng dụng), hoặc giữ nguyên ảnh đĩa nguồn.",
+        "E7032": "Không thể tạo bản sao đã giải mã của toàn bộ đĩa (ảnh đĩa hoặc thư mục): một phần của đĩa đang được mã hóa và không khóa nào hiện có mở được phần đó, nên bản sao vẫn sẽ chứa các phần bị mã hóa. Thay vào đó, hãy rip các tiêu đề sang MKV hoặc giữ một bản sao được mã hóa: sao chép thô đĩa (--raw trên dòng lệnh, hoặc “Giữ mã hóa (chuyển thô nguyên vẹn)” trong ứng dụng), hoặc giữ nguyên ảnh đĩa nguồn.",
         "E7033": "Đã tìm thấy chứng chỉ host trong các nguồn khóa của bạn, nhưng không có chứng chỉ nào dùng được (bị hỏng hoặc không đầy đủ). Hãy làm mới cơ sở dữ liệu khóa rồi thử lại.",
         "E8000": "Không thể kết nối tới máy chủ cơ sở dữ liệu khóa: {detail}",
         "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Thử lại, hoặc chạy: freemkv update-keys --url <keydb-url>",

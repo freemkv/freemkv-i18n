@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Aktualizované (počet položiek: {entries}, {bytes} B)",
         "saved": "Uložené: {path}",
-        "usage": "Použitie: freemkv update-keys --url <url>"
+        "usage": "Použitie: freemkv update-keys --url <url>",
+        "hddvd_unverified": "Dešifrovanie HD DVD nie je overené – skontrolujte výstup."
     },
     "verify": {
         "only_disc": "Overenie funguje iba s URL disc://.",
@@ -290,7 +291,7 @@
         "E7029": "Online služba kľúčov odmietla prístupový token, a preto neodpovedala. Opravte token služby kľúčov v Nastaveniach (alebo --key-auth v príkazovom riadku) a skúste to znova. Neznamená to, že disk nemá kľúč.",
         "E7030": "Online služba kľúčov obmedzuje frekvenciu požiadaviek a neodpovedala. Počkajte niekoľko minút a skúste to znova alebo kopírujte menej diskov naraz. Neznamená to, že disk nemá kľúč.",
         "E7031": "Súbor kľúčov AACS tohto disku chýba alebo sa ho nepodarilo prečítať. Vyčistite disk a skúste to znova; ak to stále zlyháva, disk môže byť poškodený.",
-        "E7032": "Dešifrovaný obraz disku nie je možné vytvoriť: stream na tomto disku, ktorý neprehráva žiadny titul, je zašifrovaný a nehodí sa k nemu žiadny z dostupných kľúčov, takže obraz by stále obsahoval zašifrované časti. Namiesto toho preveďte tituly do MKV alebo si ponechajte šifrovanú kópiu: skopírujte disk surovo (--raw v príkazovom riadku alebo „Ponechať šifrované (surový prechod)“ v aplikácii), alebo si ponechajte zdrojový obraz tak, ako je.",
+        "E7032": "Dešifrovanú kópiu celého disku (obraz alebo priečinok) nie je možné vytvoriť: časť disku je zašifrovaná a žiadny z dostupných kľúčov ju neotvorí, takže kópia by stále obsahovala zašifrované časti. Namiesto toho preveďte tituly do MKV alebo si ponechajte šifrovanú kópiu: skopírujte disk surovo (--raw v príkazovom riadku alebo „Ponechať šifrované (surový prechod)“ v aplikácii), alebo si ponechajte zdrojový obraz tak, ako je.",
         "E7033": "Vo vašich zdrojoch kľúčov boli nájdené hostiteľské certifikáty, ale žiadny z nich nie je použiteľný (poškodený alebo neúplný). Aktualizujte databázu kľúčov a skúste to znova.",
         "E8000": "Nepodarilo sa pripojiť k serveru databázy kľúčov: {detail}",
         "E8001": "Sťahovanie databázy kľúčov zlyhalo (HTTP {detail}). Skúste to znova alebo spustite: freemkv update-keys --url <keydb-url>",

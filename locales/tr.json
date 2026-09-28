@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Güncellendi: {entries} girdi, {bytes} bayt",
         "saved": "Kaydedildi: {path}",
-        "usage": "Kullanım: freemkv update-keys --url <url>"
+        "usage": "Kullanım: freemkv update-keys --url <url>",
+        "hddvd_unverified": "HD DVD şifre çözümü doğrulanmadı — çıktıyı kontrol edin."
     },
     "verify": {
         "only_disc": "Doğrulama yalnızca disc:// URL'leriyle çalışır.",
@@ -290,7 +291,7 @@
         "E7029": "Çevrimiçi anahtar hizmeti erişim belirtecini reddetti, bu yüzden yanıt vermedi. Ayarlar'daki anahtar hizmeti belirtecini (veya komut satırında --key-auth) düzeltip tekrar deneyin. Bu, diskin anahtarı olmadığı anlamına gelmez.",
         "E7030": "Çevrimiçi anahtar hizmeti istekleri hız sınırlamasına tabi tutuyor ve yanıt vermedi. Birkaç dakika bekleyip tekrar deneyin veya aynı anda daha az disk kopyalayın. Bu, diskin anahtarı olmadığı anlamına gelmez.",
         "E7031": "Bu diskin AACS anahtar dosyası eksik veya okunamadı. Diski temizleyip yeniden deneyin; yine başarısız olursa disk hasarlı olabilir.",
-        "E7032": "Şifresi çözülmüş bir disk kalıbı oluşturulamıyor: bu diskte hiçbir başlığın oynatmadığı bir akış şifreli ve mevcut anahtarların hiçbiri ona uymuyor; bu yüzden kalıp hâlâ şifreli parçalar içerirdi. Bunun yerine başlıkları MKV olarak çıkarın ya da şifreli bir kopya saklayın: diski ham olarak kopyalayın (komut satırında --raw veya uygulamada “Şifreli olarak koru (ham geçiş)”) ya da kaynak kalıbı olduğu gibi saklayın.",
+        "E7032": "Diskin tamamının şifresi çözülmüş bir kopyası (bir kalıp ya da bir klasör) oluşturulamıyor: diskin bir bölümü şifreli ve mevcut anahtarların hiçbiri onu açmıyor; bu yüzden kopya hâlâ şifreli parçalar içerirdi. Bunun yerine başlıkları MKV olarak çıkarın ya da şifreli bir kopya saklayın: diski ham olarak kopyalayın (komut satırında --raw veya uygulamada “Şifreli olarak koru (ham geçiş)”) ya da kaynak kalıbı olduğu gibi saklayın.",
         "E7033": "Anahtar kaynaklarınızda ana bilgisayar sertifikaları bulundu, ancak hiçbiri kullanılabilir değil (hasarlı veya eksik). Anahtar veritabanınızı güncelleyip yeniden deneyin.",
         "E8000": "Anahtar veritabanı sunucusuna bağlanılamıyor: {detail}",
         "E8001": "Anahtar veritabanı indirmesi başarısız (HTTP {detail}). Tekrar deneyin veya şunu çalıştırın: freemkv update-keys --url <keydb-url>",
