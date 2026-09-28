@@ -1,25 +1,49 @@
-// ST-I0 (stop-design-v5.md §5.7), IT0: runs ci/pick-libfreemkv-ref.sh (a real
-// `git ls-remote` against github.com, so this needs network) under push and PR
-// environments and asserts what it writes to $GITHUB_OUTPUT.
+// ST-I0 (stop-design-v5.md §5.7), IT0: ci/pick-libfreemkv-ref.sh must not compare
+// against `github.ref_name`, which is `<n>/merge` on a `pull_request` run. Hermetic: a
+// fake `git` first on PATH stands in for the real `git ls-remote` network call.
 
-use std::io::Read;
+use std::io::{Read, Write};
+use std::os::unix::fs::PermissionsExt;
 use std::process::Command;
 
-fn run_picker(env: &[(&str, &str)]) -> String {
-    let out_file = std::env::temp_dir().join(format!(
-        "pick-libfreemkv-ref-test-{}-{}",
-        std::process::id(),
-        std::time::SystemTime::now()
-            .duration_since(std::time::UNIX_EPOCH)
-            .unwrap()
-            .as_nanos()
+/// A fake `git` that only understands `ls-remote --exit-code --heads <url> <ref>` and
+/// exits with `ls_remote_exit` every time, regardless of the ref asked about. Returns
+/// the directory holding it, to be put first on PATH.
+fn fake_git(dir: &std::path::Path, ls_remote_exit: i32) {
+    let path = dir.join("git");
+    let mut f = std::fs::File::create(&path).unwrap();
+    writeln!(
+        f,
+        "#!/bin/sh\nif [ \"$1\" = ls-remote ]; then exit {ls_remote_exit}; fi\necho \"fake git: unsupported: $*\" >&2\nexit 99"
+    )
+    .unwrap();
+    drop(f);
+    std::fs::set_permissions(&path, std::fs::Permissions::from_mode(0o755)).unwrap();
+}
+
+struct Run {
+    status: std::process::ExitStatus,
+    stderr: String,
+    output: Option<String>,
+}
+
+fn run_picker(ls_remote_exit: i32, env: &[(&str, &str)]) -> Run {
+    // A timestamp alone can collide between threads running concurrently (`cargo test`'s
+    // default); an atomic counter guarantees each call gets its own directory.
+    static COUNTER: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
+    let n = COUNTER.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+    let tmp = std::env::temp_dir().join(format!(
+        "pick-libfreemkv-ref-test-{}-{n}",
+        std::process::id()
     ));
+    std::fs::create_dir_all(&tmp).unwrap();
+    fake_git(&tmp, ls_remote_exit);
+    let out_file = tmp.join("github_output");
     let script = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("ci/pick-libfreemkv-ref.sh");
 
+    let real_path = std::env::var("PATH").unwrap_or_default();
     let mut cmd = Command::new(&script);
-    // Only GITHUB_HEAD_REF/GITHUB_BASE_REF/GITHUB_REF_NAME drive the script; clear
-    // whichever of the three this scenario does not set, so a real CI run's own
-    // (unrelated) values can't leak in and change the outcome.
+    cmd.env("PATH", format!("{}:{real_path}", tmp.display()));
     for var in ["GITHUB_HEAD_REF", "GITHUB_BASE_REF", "GITHUB_REF_NAME"] {
         if !env.iter().any(|(k, _)| *k == var) {
             cmd.env_remove(var);
@@ -29,40 +53,81 @@ fn run_picker(env: &[(&str, &str)]) -> String {
     for (k, v) in env {
         cmd.env(k, v);
     }
-    let status = cmd.status().expect("run ci/pick-libfreemkv-ref.sh");
-    assert!(status.success(), "picker script exited non-zero");
+    let out = cmd.output().expect("run ci/pick-libfreemkv-ref.sh");
 
-    let mut contents = String::new();
-    std::fs::File::open(&out_file)
-        .expect("script wrote $GITHUB_OUTPUT")
-        .read_to_string(&mut contents)
-        .unwrap();
-    std::fs::remove_file(&out_file).ok();
-    contents
+    let output = std::fs::File::open(&out_file).ok().map(|mut f| {
+        let mut s = String::new();
+        f.read_to_string(&mut s).unwrap();
+        s
+    });
+    std::fs::remove_dir_all(&tmp).ok();
+    Run {
+        status: out.status,
+        stderr: String::from_utf8_lossy(&out.stderr).into_owned(),
+        output,
+    }
 }
 
-/// GITHUB_HEAD_REF is set on `pull_request` runs; a feature branch with no libfreemkv
-/// pair must fall back to the PR's base branch (J-5.5-4), never the PR's own
-/// `<n>/merge` ref (GITHUB_REF_NAME here, as GitHub sets it on pull_request events).
+/// `ls-remote --exit-code` exits 0: the branch exists on libfreemkv, so a PR whose
+/// head branch is paired with one there uses that branch.
 #[test]
-fn drift_job_resolves_a_real_ref_on_push_and_pr() {
-    if std::env::var_os("FREEMKV_I18N_SKIP_NETWORK_TESTS").is_some() {
-        eprintln!("FREEMKV_I18N_SKIP_NETWORK_TESTS set; skipping (needs github.com)");
-        return;
-    }
+fn a_pr_with_a_paired_libfreemkv_branch_uses_it() {
+    let run = run_picker(
+        0,
+        &[
+            ("GITHUB_HEAD_REF", "feature-x"),
+            ("GITHUB_BASE_REF", "qa"),
+            ("GITHUB_REF_NAME", "5/merge"),
+        ],
+    );
+    assert!(run.status.success(), "{}", run.stderr);
+    assert_eq!(run.output.as_deref(), Some("ref=feature-x\n"));
+}
 
-    // Pull request: no `feature-x` branch on freemkv/libfreemkv, so it falls back to
-    // GITHUB_BASE_REF, never the pull_request `<n>/merge` value.
-    let pr_out = run_picker(&[
-        ("GITHUB_HEAD_REF", "feature-x"),
-        ("GITHUB_BASE_REF", "dev"),
-        ("GITHUB_REF_NAME", "5/merge"),
-    ]);
-    assert_eq!(pr_out, "ref=dev\n");
-    assert!(!pr_out.contains("5/merge"), "{pr_out:?}");
+/// `ls-remote --exit-code` exits 2: no such branch on libfreemkv (J-5.5-4). A PR falls
+/// back to its base branch, never the pull_request `<n>/merge` ref (GITHUB_REF_NAME).
+#[test]
+fn a_pr_with_no_pair_falls_back_to_its_base_branch() {
+    let run = run_picker(
+        2,
+        &[
+            ("GITHUB_HEAD_REF", "feature-x"),
+            ("GITHUB_BASE_REF", "qa"),
+            ("GITHUB_REF_NAME", "5/merge"),
+        ],
+    );
+    assert!(run.status.success(), "{}", run.stderr);
+    assert_eq!(run.output.as_deref(), Some("ref=qa\n"));
+}
 
-    // Push: GITHUB_HEAD_REF is unset, so `want` is GITHUB_REF_NAME itself; `dev` is a
-    // real libfreemkv branch, so it is used directly (the paired-branch case).
-    let push_out = run_picker(&[("GITHUB_REF_NAME", "dev")]);
-    assert_eq!(push_out, "ref=dev\n");
+/// A push run has no GITHUB_HEAD_REF/GITHUB_BASE_REF; `want` is GITHUB_REF_NAME itself.
+/// No pair on libfreemkv falls back to the plain `dev` default.
+#[test]
+fn a_push_with_no_pair_falls_back_to_dev() {
+    let run = run_picker(2, &[("GITHUB_REF_NAME", "some-feature")]);
+    assert!(run.status.success(), "{}", run.stderr);
+    assert_eq!(run.output.as_deref(), Some("ref=dev\n"));
+}
+
+/// Only exit 2 means "no such branch". Any other `ls-remote` failure (network down,
+/// rate-limited, ...) must fail the job loudly, not silently fall back to dev/base.
+#[test]
+fn a_real_ls_remote_failure_fails_loudly_instead_of_falling_back() {
+    let run = run_picker(
+        128,
+        &[("GITHUB_HEAD_REF", "feature-x"), ("GITHUB_BASE_REF", "qa")],
+    );
+    assert!(
+        !run.status.success(),
+        "a real ls-remote failure must not exit 0"
+    );
+    assert!(
+        run.stderr.contains("::error::") && run.stderr.contains("128"),
+        "expected a loud, explicit error message; got: {:?}",
+        run.stderr
+    );
+    assert!(
+        run.output.is_none_or(|o| !o.contains("ref=")),
+        "must not silently write a fallback ref"
+    );
 }
