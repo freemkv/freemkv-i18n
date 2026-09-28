@@ -155,11 +155,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      # Pair with freemkv's same-named branch so paired changes test together; else dev.
+      - name: Pick freemkv branch
+        id: fmref
+        run: |
+          want="${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"
+          if git ls-remote --exit-code --heads https://github.com/freemkv/freemkv.git "refs/heads/$want" >/dev/null 2>&1; then
+            ref="$want"
+          else
+            ref=dev
+          fi
+          echo "freemkv ref: $ref"
+          echo "ref=$ref" >> "$GITHUB_OUTPUT"
       - name: Fetch freemkv src/
         uses: actions/checkout@v5
         with:
           repository: freemkv/freemkv
-          ref: dev
+          ref: ${{ steps.fmref.outputs.ref }}
           path: .freemkv-src
           sparse-checkout: src
       - uses: dtolnay/rust-toolchain@master
