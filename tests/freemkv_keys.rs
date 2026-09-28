@@ -534,31 +534,10 @@ fn allowlist_check(file: &str, func: &str, actual_count: usize) -> Result<usize,
 }
 
 // I005 / N6 (IB1): a NEW allowlist, separate from the call-site ALLOWLIST above (X4-1).
-// Carries the five ST-I2 `stop.*` keys until freemkv's ST-F1 renders each and removes its
-// entry (§8.1 R11). KU-F1i removed `keys.hddvd_unverified`: freemkv's KU-F1 renders it.
+// Empty: KU-F1 rendered `keys.hddvd_unverified` and ST-F1 the five ST-I2 `stop.*` keys,
+// each removing its entry (§8.1 R11). A new en.json key freemkv does not render yet goes here.
 /// `(key, reason)` for every en.json key deliberately not (yet) used by freemkv.
-const ORPHAN_ALLOWLIST: &[(&str, &str)] = &[
-    (
-        "stop.stopping",
-        "added by ST-I2; rendered by freemkv only from ST-F1, which removes this entry",
-    ),
-    (
-        "stop.waiting_for_drive",
-        "added by ST-I2; rendered by freemkv only from ST-F1, which removes this entry",
-    ),
-    (
-        "stop.progress_kept",
-        "added by ST-I2; rendered by freemkv only from ST-F1, which removes this entry",
-    ),
-    (
-        "stop.finishing",
-        "added by ST-I2; rendered by freemkv only from ST-F1, which removes this entry",
-    ),
-    (
-        "stop.artifact_lock_failed",
-        "added by ST-I2 (ST4-3); rendered by freemkv only from ST-F1, which removes this entry",
-    ),
-];
+const ORPHAN_ALLOWLIST: &[(&str, &str)] = &[];
 
 /// §8.1 R11's assumption, made real (review fixup): checking `checked` cannot prove an
 /// ORPHAN_ALLOWLIST key is unused, because freemkv renders `keys.*` through bare
