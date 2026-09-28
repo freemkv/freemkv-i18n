@@ -174,7 +174,7 @@
         "updated": "Diperbarui: {entries} entri, {bytes} byte",
         "saved": "Disimpan: {path}",
         "usage": "Penggunaan: freemkv update-keys --url <url>",
-        "hddvd_unverified": "Dekripsi HD DVD tidak diverifikasi — periksa hasilnya."
+        "hddvd_unverified": "Dekripsi HD DVD belum diverifikasi — periksa hasilnya."
     },
     "verify": {
         "only_disc": "Verifikasi hanya bekerja dengan URL disc://.",

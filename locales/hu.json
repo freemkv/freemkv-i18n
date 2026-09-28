@@ -174,7 +174,7 @@
         "updated": "Frissítve: {entries} bejegyzés, {bytes} bájt",
         "saved": "Elmentve: {path}",
         "usage": "Használat: freemkv update-keys --url <url>",
-        "hddvd_unverified": "A HD DVD visszafejtése nincs ellenőrizve – ellenőrizze a kimenetet."
+        "hddvd_unverified": "A HD DVD visszafejtése nem ellenőrzött – nézze át a kimenetet."
     },
     "verify": {
         "only_disc": "Az ellenőrzés csak disc:// URL-ekkel működik.",

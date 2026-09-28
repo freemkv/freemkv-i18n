@@ -174,7 +174,7 @@
         "updated": "Atualizado: {entries} entradas, {bytes} bytes",
         "saved": "Salvo: {path}",
         "usage": "Uso: freemkv update-keys --url <url>",
-        "hddvd_unverified": "A descriptografia de HD DVD não é verificada — confira a saída."
+        "hddvd_unverified": "A descriptografia de HD DVD não foi verificada — confira a saída."
     },
     "verify": {
         "only_disc": "A verificação só funciona com URLs disc://.",

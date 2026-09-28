@@ -174,7 +174,7 @@
         "updated": "Actualizat: {entries} intrări, {bytes} octeți",
         "saved": "Salvat: {path}",
         "usage": "Utilizare: freemkv update-keys --url <url>",
-        "hddvd_unverified": "Decriptarea HD DVD nu este verificată — verificați rezultatul."
+        "hddvd_unverified": "Decriptarea HD DVD nu a fost verificată — examinați rezultatul."
     },
     "verify": {
         "only_disc": "Verificarea funcționează doar cu URL-uri disc://.",
