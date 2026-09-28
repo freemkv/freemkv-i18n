@@ -425,6 +425,7 @@
         "E9071": "출력이 이미 완료되었거나 실패한 뒤에 쓰기가 시도되어 데이터를 저장할 수 없습니다.",
         "E9072": "출력 헤더가 이미 기록된 뒤에 트랙 정보가 설정되어 적용할 수 없습니다.",
         "E9073": "오류: 너무 오랫동안 진행되지 않아 작업이 시간 초과되었습니다.",
+        "E9074": "MPG에 담을 수 있는 비디오 트랙(MPEG-1/2, H.264, HEVC 또는 VC-1)이 필요하지만 이 타이틀에는 없습니다. 대신 mkv://를 사용하세요.",
         "no_lang_match_subtitle_forced": "이 타이틀에 '{requested}'과(와) 일치하는 강제 자막이 없습니다 (사용 가능한 강제 자막: {available}). 언어를 수정하거나 all/none을 사용하세요.",
         "log_level_out_of_range": "--log-level: 값 0은 범위(1–4)를 벗어났습니다. 무시합니다",
         "log_level_not_a_number": "--log-level: 1–4 사이의 숫자가 필요하지만 '{value}'을(를) 받았습니다. 무시합니다",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska 파일",
             "m2ts": "  m2ts://path.m2ts         BD 전송 스트림 파일",
             "mp4": "  mp4://path.mp4           MP4 파일",
+            "mpg": "  mpg://path.mpg           MPEG 프로그램 스트림 파일",
             "iso": "  iso://image.iso          Blu-ray ISO 이미지",
             "dir": "  dir://folder/            복호화된 파일 트리를 폴더에",
             "network": "  network://host:port      TCP 스트림",
@@ -664,6 +666,7 @@
             "nothing_eject": "꺼낼 것 없음 — 소스가 드라이브가 아니라 파일입니다.",
             "checking_updates": "업데이트 확인 중 …",
             "mp4_mismatch": "MP4는 {codecs} 비디오를 저장할 수 없습니다. 모든 것을 유지하는 MKV를 선택하세요.",
+            "container_mismatch": "{container}에는 {codecs} 비디오를 저장할 수 없습니다. 대신 MKV를 선택하세요.",
             "opened_version": "freemkv {version}",
             "opened": "{label} 열림 — 타이틀 {n}개, 키: {keys}",
             "ready_convert": "변환 준비 완료",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "선택한 타이틀 → MKV",
             "mp4": "선택한 타이틀 → MP4",
+            "mpg": "선택한 타이틀 → MPG",
             "m2ts": "선택한 타이틀 → M2TS",
             "tracks": "선택한 타이틀 → 개별 트랙 파일",
             "iso": "전체 디스크 → ISO 이미지",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "경고: 타이틀 {num}: '{requested}'과(와) 일치하는 강제 자막이 없습니다 (사용 가능: {available}) — 비디오만 유지합니다."
     },
     "mux": {
-        "undelivered_header": "참고: 스트림 {count}개를 출력할 수 없어 제외했습니다:"
+        "undelivered_header": "참고: 스트림 {count}개를 출력할 수 없어 제외했습니다:",
+        "excluded_header": "참고: {count}개 트랙은 {container}에 저장할 수 없어 제외됩니다 (유지하려면 {keep}:// 사용):",
+        "reason": {
+            "subtitle": "자막 형식에 {container} 매핑이 없습니다",
+            "audio": "오디오 코덱에 {container} 매핑이 없습니다",
+            "video": "보조 비디오 뷰",
+            "video_unmappable": "비디오 코덱에 {container} 매핑이 없습니다",
+            "mp2_extension": "MPEG-2 멀티채널 확장 — {container}에 저장할 수 없습니다 (유지하려면 mpg:// 사용). 스테레오 기본 트랙은 유지됩니다",
+            "no_stream_id": "{container}에 이 트랙에 할당할 스트림 번호가 남아 있지 않습니다"
+        }
     },
     "share": {
         "attach_zip": "프로파일 zip이 이슈 본문에 넣기에는 너무 큽니다 — {path}을(를) 이슈에 첨부하세요.",

@@ -425,6 +425,7 @@
         "E9071": "S'ha intentat escriure a la sortida després que ja s'hagués finalitzat o hagués fallat, de manera que les dades no s'han pogut desar.",
         "E9072": "Les dades de les pistes s'han definit després que ja s'hagués escrit la capçalera de la sortida, de manera que no s'han pogut aplicar.",
         "E9073": "Error: l'operació ha excedit el temps d'espera en no progressar durant massa estona.",
+        "E9074": "L'MPG necessita una pista de vídeo que pugui contenir (MPEG-1/2, H.264, HEVC o VC-1); aquest títol no en té cap. Useu mkv:// al seu lloc.",
         "no_lang_match_subtitle_forced": "cap subtítol forçat d'aquest títol coincideix amb «{requested}» (subtítols forçats disponibles: {available}). Corregiu l'idioma, o useu all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 és fora d'interval (1–4), s'ignora",
         "log_level_not_a_number": "--log-level: s'esperava un número 1–4, s'ha rebut '{value}', s'ignora",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Fitxer Matroska",
             "m2ts": "  m2ts://path.m2ts         Fitxer de flux de transport de BD",
             "mp4": "  mp4://path.mp4           Fitxer MP4",
+            "mpg": "  mpg://path.mpg           Fitxer de flux de programa MPEG",
             "iso": "  iso://image.iso          Imatge ISO de Blu-ray",
             "dir": "  dir://folder/            Arbre de fitxers desxifrat en una carpeta",
             "network": "  network://host:port      Flux TCP",
@@ -664,6 +666,7 @@
             "nothing_eject": "Res a expulsar — l'origen és un fitxer, no una unitat.",
             "checking_updates": "S'estan comprovant les actualitzacions …",
             "mp4_mismatch": "MP4 no pot emmagatzemar vídeo {codecs}. Trieu MKV, que ho conserva tot.",
+            "container_mismatch": "{container} no pot emmagatzemar vídeo {codecs}. Trieu MKV al seu lloc.",
             "opened_version": "freemkv {version}",
             "opened": "{label} obert — {n} títol(s), claus: {keys}",
             "ready_convert": "A punt per convertir",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Títols seleccionats → MKV",
             "mp4": "Títols seleccionats → MP4",
+            "mpg": "Títols seleccionats → MPG",
             "m2ts": "Títols seleccionats → M2TS",
             "tracks": "Títols seleccionats → fitxers de pista separats",
             "iso": "Disc sencer → imatge ISO",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "avís: títol {num}: cap subtítol forçat coincideix amb «{requested}» (disponibles: {available}) — es conserva només el vídeo."
     },
     "mux": {
-        "undelivered_header": "Nota: no s'han pogut lliurar {count} flux(os) i s'han deixat fora:"
+        "undelivered_header": "Nota: no s'han pogut lliurar {count} flux(os) i s'han deixat fora:",
+        "excluded_header": "Nota: {count} pista(es) no es poden desar en {container} i s'ometran (useu {keep}:// per conservar-les):",
+        "reason": {
+            "subtitle": "el format de subtítol no té correspondència en {container}",
+            "audio": "el còdec d'àudio no té correspondència en {container}",
+            "video": "vista de vídeo secundària",
+            "video_unmappable": "el còdec de vídeo no té correspondència en {container}",
+            "mp2_extension": "extensió multicanal MPEG-2 — {container} no la pot desar (useu mpg:// per conservar-la); es conserva la base estèreo",
+            "no_stream_id": "{container} no té cap número de flux lliure per a aquesta pista"
+        }
     },
     "share": {
         "attach_zip": "El zip del perfil és massa gran per al text de la incidència — adjunteu {path} a la incidència.",

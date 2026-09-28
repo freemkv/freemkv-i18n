@@ -402,6 +402,7 @@
         "E9071": "Se intentó escribir en la salida después de que ya hubiera terminado o fallado, por lo que no se pudieron guardar los datos.",
         "E9072": "Los datos de las pistas se establecieron después de que ya se hubiera escrito la cabecera de la salida, por lo que no se pudieron aplicar.",
         "E9073": "Error: la operación ha superado el límite de tiempo por falta de progreso durante demasiado rato.",
+        "E9074": "MPG necesita una pista de vídeo que pueda contener (MPEG-1/2, H.264, HEVC o VC-1); este título no tiene ninguna. Use mkv:// en su lugar.",
         "no_lang_match_subtitle_forced": "ningún subtítulo forzado en este título coincide con '{requested}' (subtítulos forzados disponibles: {available}). Corrija el idioma, o use all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 está fuera de rango (1–4), ignorado",
         "log_level_not_a_number": "--log-level: se esperaba un número 1–4, se recibió '{value}', ignorado",
@@ -425,6 +426,7 @@
             "mkv": "  mkv://ruta.mkv           Archivo Matroska",
             "m2ts": "  m2ts://ruta.m2ts         Archivo de flujo de transporte BD",
             "mp4": "  mp4://path.mp4           Archivo MP4",
+            "mpg": "  mpg://path.mpg           Archivo de flujo de programa MPEG",
             "iso": "  iso://imagen.iso         Imagen ISO de Blu-ray",
             "dir": "  dir://folder/            Árbol de archivos descifrado en una carpeta",
             "network": "  network://host:puerto    Flujo TCP",
@@ -664,6 +666,7 @@
             "nothing_eject": "Nada que expulsar: el origen es un archivo, no una unidad.",
             "checking_updates": "Buscando actualizaciones …",
             "mp4_mismatch": "MP4 no puede almacenar vídeo {codecs}. Elija MKV, que lo conserva todo.",
+            "container_mismatch": "{container} no puede almacenar vídeo {codecs}. Elija MKV en su lugar.",
             "opened_version": "freemkv {version}",
             "opened": "{label} abierto — {n} título(s), claves: {keys}",
             "ready_convert": "Listo para convertir",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Títulos seleccionados → MKV",
             "mp4": "Títulos seleccionados → MP4",
+            "mpg": "Títulos seleccionados → MPG",
             "m2ts": "Títulos seleccionados → M2TS",
             "tracks": "Títulos seleccionados → archivos de pista separados",
             "iso": "Disco completo → imagen ISO",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "aviso: título {num}: ningún subtítulo forzado coincide con '{requested}' (disponible: {available}) — se conserva solo el vídeo."
     },
     "mux": {
-        "undelivered_header": "Nota: no se han podido entregar {count} pista(s) y se han omitido:"
+        "undelivered_header": "Nota: no se han podido entregar {count} pista(s) y se han omitido:",
+        "excluded_header": "Nota: {count} pista(s) no se pueden almacenar en {container} y se omitirán (use {keep}:// para conservarlas):",
+        "reason": {
+            "subtitle": "el formato de subtítulo no tiene equivalente en {container}",
+            "audio": "el códec de audio no tiene equivalente en {container}",
+            "video": "vista de vídeo secundaria",
+            "video_unmappable": "el códec de vídeo no tiene equivalente en {container}",
+            "mp2_extension": "extensión multicanal MPEG-2 — {container} no puede almacenarla (use mpg:// para conservarla); se conserva la base estéreo",
+            "no_stream_id": "{container} no tiene más números de flujo para esta pista"
+        }
     },
     "share": {
         "attach_zip": "El zip del perfil es demasiado grande para el texto de la incidencia: adjunte {path} a la incidencia.",

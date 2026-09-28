@@ -425,6 +425,7 @@
         "E9071": "Det ble skrevet til utdata etter at de allerede var fullført eller hadde feilet, så dataene kunne ikke lagres.",
         "E9072": "Sporopplysningene ble satt etter at utdataenes header allerede var skrevet, så de kunne ikke tas i bruk.",
         "E9073": "Feil: operasjonen fikk tidsavbrudd fordi det ikke var fremgang på for lenge.",
+        "E9074": "MPG trenger et videospor det kan inneholde (MPEG-1/2, H.264, HEVC eller VC-1); denne tittelen har ingen. Bruk mkv:// i stedet.",
         "no_lang_match_subtitle_forced": "ingen tvunget undertekst på denne tittelen samsvarer med «{requested}» (tilgjengelige tvungne undertekster: {available}). Rett språket, eller bruk all/none.",
         "log_level_out_of_range": "--log-level: verdien 0 er utenfor området (1–4), ignorert",
         "log_level_not_a_number": "--log-level: forventet et tall 1–4, fikk '{value}', ignorert",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska-fil",
             "m2ts": "  m2ts://path.m2ts         BD-transportstrømfil",
             "mp4": "  mp4://path.mp4           MP4-fil",
+            "mpg": "  mpg://path.mpg           MPEG-programstrømfil",
             "iso": "  iso://image.iso          Blu-ray ISO-bilde",
             "dir": "  dir://folder/            Dekryptert filtre i en mappe",
             "network": "  network://host:port      TCP-strøm",
@@ -664,6 +666,7 @@
             "nothing_eject": "Ingenting å løse ut — kilden er en fil, ikke en stasjon.",
             "checking_updates": "Ser etter oppdateringer …",
             "mp4_mismatch": "MP4 kan ikke lagre {codecs}-video. Velg MKV, som beholder alt.",
+            "container_mismatch": "{container} kan ikke lagre {codecs}-video. Velg MKV i stedet.",
             "opened_version": "freemkv {version}",
             "opened": "{label} åpnet — {n} tittel(er), nøkler: {keys}",
             "ready_convert": "Klar til å konvertere",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Valgte titler → MKV",
             "mp4": "Valgte titler → MP4",
+            "mpg": "Valgte titler → MPG",
             "m2ts": "Valgte titler → M2TS",
             "tracks": "Valgte titler → separate sporfiler",
             "iso": "Hele platen → ISO-bilde",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "advarsel: tittel {num}: ingen tvunget undertekst samsvarer med «{requested}» (tilgjengelig: {available}) — beholder bare video."
     },
     "mux": {
-        "undelivered_header": "Merk: {count} strøm(mer) kunne ikke leveres og ble utelatt:"
+        "undelivered_header": "Merk: {count} strøm(mer) kunne ikke leveres og ble utelatt:",
+        "excluded_header": "Merk: {count} spor kan ikke lagres i {container} og vil bli utelatt (bruk {keep}:// for å beholde dem):",
+        "reason": {
+            "subtitle": "undertekstformatet har ingen {container}-tilordning",
+            "audio": "lydkodeken har ingen {container}-tilordning",
+            "video": "sekundær videovisning",
+            "video_unmappable": "videokodeken har ingen {container}-tilordning",
+            "mp2_extension": "MPEG-2-flerkanalsutvidelse — {container} kan ikke lagre den (bruk mpg:// for å beholde den); stereobasen beholdes",
+            "no_stream_id": "{container} har ikke flere ledige strømnumre til dette sporet"
+        }
     },
     "share": {
         "attach_zip": "Profil-zip-filen er for stor for saksteksten — legg ved {path} i saken.",

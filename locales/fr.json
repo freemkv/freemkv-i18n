@@ -402,6 +402,7 @@
         "E9071": "Une écriture a visé la sortie alors qu'elle était déjà terminée ou en échec : les données n'ont pas pu être enregistrées.",
         "E9072": "Les informations des pistes ont été définies après l'écriture de l'en-tête de la sortie : elles n'ont pas pu être appliquées.",
         "E9073": "Erreur : l'opération a expiré car aucune progression n'a été constatée pendant trop longtemps.",
+        "E9074": "MPG a besoin d'une piste vidéo qu'il peut contenir (MPEG-1/2, H.264, HEVC ou VC-1) ; ce titre n'en a aucune. Utilisez plutôt mkv://.",
         "no_lang_match_subtitle_forced": "aucune piste de sous-titres forcés de ce titre ne correspond à '{requested}' (sous-titres forcés disponibles : {available}). Corrigez la langue ou utilisez all/none.",
         "log_level_out_of_range": "--log-level : la valeur 0 est hors plage (1–4), ignorée",
         "log_level_not_a_number": "--log-level : nombre 1–4 attendu, '{value}' reçu, ignoré",
@@ -425,6 +426,7 @@
             "mkv": "  mkv://chemin.mkv         Fichier Matroska",
             "m2ts": "  m2ts://chemin.m2ts       Fichier de flux de transport BD",
             "mp4": "  mp4://path.mp4           Fichier MP4",
+            "mpg": "  mpg://path.mpg           Fichier de flux de programme MPEG",
             "iso": "  iso://image.iso          Image ISO Blu-ray",
             "dir": "  dir://folder/            Arborescence déchiffrée dans un dossier",
             "network": "  network://hote:port      Flux TCP",
@@ -664,6 +666,7 @@
             "nothing_eject": "Rien à éjecter — la source est un fichier, pas un lecteur.",
             "checking_updates": "Recherche de mises à jour …",
             "mp4_mismatch": "Le MP4 ne peut pas stocker de vidéo {codecs}. Choisissez MKV, qui conserve tout.",
+            "container_mismatch": "{container} ne peut pas stocker de vidéo {codecs}. Choisissez plutôt MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} ouvert — {n} titre(s), clés : {keys}",
             "ready_convert": "Prêt à convertir",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Titres sélectionnés → MKV",
             "mp4": "Titres sélectionnés → MP4",
+            "mpg": "Titres sélectionnés → MPG",
             "m2ts": "Titres sélectionnés → M2TS",
             "tracks": "Titres sélectionnés → fichiers de pistes séparés",
             "iso": "Disque entier → image ISO",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "avertissement : titre {num} : aucun sous-titre forcé ne correspond à '{requested}' (disponible : {available}) — conservation de la vidéo uniquement."
     },
     "mux": {
-        "undelivered_header": "Remarque : {count} flux n'ont pas pu être livrés et ont été omis :"
+        "undelivered_header": "Remarque : {count} flux n'ont pas pu être livrés et ont été omis :",
+        "excluded_header": "Remarque : {count} piste(s) ne peuvent pas être stockées dans {container} et seront exclues (utilisez {keep}:// pour les conserver) :",
+        "reason": {
+            "subtitle": "le format de sous-titre n'a pas de correspondance {container}",
+            "audio": "le codec audio n'a pas de correspondance {container}",
+            "video": "vue vidéo secondaire",
+            "video_unmappable": "le codec vidéo n'a pas de correspondance {container}",
+            "mp2_extension": "extension multicanal MPEG-2 — {container} ne peut pas la stocker (utilisez mpg:// pour la conserver) ; la base stéréo est conservée",
+            "no_stream_id": "{container} n'a plus de numéro de flux libre pour cette piste"
+        }
     },
     "share": {
         "attach_zip": "Le zip du profil est trop volumineux pour le texte du ticket — joignez {path} au ticket.",

@@ -425,6 +425,7 @@
         "E9071": "Çıktı zaten tamamlandıktan ya da başarısız olduktan sonra ona yazılmaya çalışıldı; bu yüzden veriler kaydedilemedi.",
         "E9072": "Parça bilgileri, çıktının başlığı zaten yazıldıktan sonra ayarlandı; bu yüzden uygulanamadı.",
         "E9073": "Hata: işlem, çok uzun süre ilerleme kaydedilmediği için zaman aşımına uğradı.",
+        "E9074": "MPG'nin taşıyabileceği bir video izi (MPEG-1/2, H.264, HEVC veya VC-1) gerekir; bu başlıkta yok. Bunun yerine mkv:// kullanın.",
         "no_lang_match_subtitle_forced": "bu başlıkta '{requested}' ile eşleşen zorunlu altyazı yok (mevcut zorunlu altyazılar: {available}). Dili düzeltin veya all/none kullanın.",
         "log_level_out_of_range": "--log-level: 0 değeri aralık dışında (1–4), yok sayıldı",
         "log_level_not_a_number": "--log-level: 1–4 arası bir sayı bekleniyordu, '{value}' alındı, yok sayıldı",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska dosyası",
             "m2ts": "  m2ts://path.m2ts         BD taşıma akışı dosyası",
             "mp4": "  mp4://path.mp4           MP4 dosyası",
+            "mpg": "  mpg://path.mpg           MPEG program akışı dosyası",
             "iso": "  iso://image.iso          Blu-ray ISO imajı",
             "dir": "  dir://folder/            Bir klasörde şifresi çözülmüş dosya ağacı",
             "network": "  network://host:port      TCP akışı",
@@ -664,6 +666,7 @@
             "nothing_eject": "Çıkarılacak bir şey yok — kaynak bir dosya, sürücü değil.",
             "checking_updates": "Güncellemeler denetleniyor …",
             "mp4_mismatch": "MP4, {codecs} videoyu saklayamaz. Her şeyi koruyan MKV'yi seçin.",
+            "container_mismatch": "{container} biçimi {codecs} videoyu saklayamaz. Bunun yerine MKV'yi seçin.",
             "opened_version": "freemkv {version}",
             "opened": "{label} açıldı — {n} başlık, anahtarlar: {keys}",
             "ready_convert": "Dönüştürmeye hazır",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Seçili başlıklar → MKV",
             "mp4": "Seçili başlıklar → MP4",
+            "mpg": "Seçili başlıklar → MPG",
             "m2ts": "Seçili başlıklar → M2TS",
             "tracks": "Seçili başlıklar → ayrı iz dosyaları",
             "iso": "Tüm disk → ISO imajı",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "uyarı: başlık {num}: '{requested}' ile eşleşen zorunlu altyazı yok (mevcut: {available}) — yalnızca video korunuyor."
     },
     "mux": {
-        "undelivered_header": "Not: {count} iz çıktıya yazılamadı ve dışarıda bırakıldı:"
+        "undelivered_header": "Not: {count} iz çıktıya yazılamadı ve dışarıda bırakıldı:",
+        "excluded_header": "Not: {count} iz {container} biçiminde saklanamaz ve dışarıda bırakılacak (bunları korumak için {keep}:// kullanın):",
+        "reason": {
+            "subtitle": "altyazı biçiminin {container} karşılığı yok",
+            "audio": "ses codec'inin {container} karşılığı yok",
+            "video": "ikincil video görünümü",
+            "video_unmappable": "video codec'inin {container} karşılığı yok",
+            "mp2_extension": "MPEG-2 çok kanallı uzantı — {container} biçimi bunu saklayamaz (korumak için mpg:// kullanın); stereo taban korunur",
+            "no_stream_id": "{container} biçiminde bu iz için boş akış numarası kalmadı"
+        }
     },
     "share": {
         "attach_zip": "Profil zip dosyası issue metni için çok büyük — {path} dosyasını issue'ya ekleyin.",

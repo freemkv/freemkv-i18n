@@ -425,6 +425,7 @@
         "E9071": "输出在已完成或已失败之后仍被写入，因此数据无法保存。",
         "E9072": "轨道信息是在输出的文件头写入之后才设置的，因此无法应用。",
         "E9073": "错误：操作因长时间没有进展而超时。",
+        "E9074": "MPG 需要一条它能封装的视频轨道（MPEG-1/2、H.264、HEVC 或 VC-1），而此标题没有。请改用 mkv://。",
         "no_lang_match_subtitle_forced": "此标题中没有与 '{requested}' 匹配的强制字幕（可用的强制字幕：{available}）。请更正语言，或使用 all/none。",
         "log_level_out_of_range": "--log-level：值 0 超出范围 (1–4)，已忽略",
         "log_level_not_a_number": "--log-level：需要 1–4 的数字，收到 '{value}'，已忽略",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska 文件",
             "m2ts": "  m2ts://path.m2ts         BD 传输流文件",
             "mp4": "  mp4://path.mp4           MP4 文件",
+            "mpg": "  mpg://path.mpg           MPEG 节目流文件",
             "iso": "  iso://image.iso          Blu-ray ISO 镜像",
             "dir": "  dir://folder/            解密后的文件树输出到文件夹",
             "network": "  network://host:port      TCP 流",
@@ -664,6 +666,7 @@
             "nothing_eject": "无可弹出的内容 —— 源是文件，而非驱动器。",
             "checking_updates": "正在检查更新……",
             "mp4_mismatch": "MP4 无法存储 {codecs} 视频。请选择 MKV，它可保留全部内容。",
+            "container_mismatch": "{container} 无法存储 {codecs} 视频。请改选 MKV。",
             "opened_version": "freemkv {version}",
             "opened": "{label} 已打开 —— {n} 个标题，密钥：{keys}",
             "ready_convert": "准备转换",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "选定标题 → MKV",
             "mp4": "选定标题 → MP4",
+            "mpg": "选定标题 → MPG",
             "m2ts": "选定标题 → M2TS",
             "tracks": "选定标题 → 独立轨道文件",
             "iso": "整张光盘 → ISO 镜像",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "警告：标题 {num}：没有与 '{requested}' 匹配的强制字幕（可用：{available}）——仅保留视频。"
     },
     "mux": {
-        "undelivered_header": "注意：{count} 条轨道无法写入输出，已被略去："
+        "undelivered_header": "注意：{count} 条轨道无法写入输出，已被略去：",
+        "excluded_header": "注意：{count} 条轨道无法存入 {container}，将被略去（使用 {keep}:// 可保留它们）：",
+        "reason": {
+            "subtitle": "字幕格式无对应的 {container} 映射",
+            "audio": "音频编解码器无对应的 {container} 映射",
+            "video": "次要视频视图",
+            "video_unmappable": "视频编解码器无对应的 {container} 映射",
+            "mp2_extension": "MPEG-2 多声道扩展 —— {container} 无法存储（使用 mpg:// 可保留）；立体声基础轨道会保留",
+            "no_stream_id": "{container} 已没有可分配给此轨道的流编号"
+        }
     },
     "share": {
         "attach_zip": "配置 zip 文件过大，无法放入 issue 正文 —— 请将 {path} 附加到 issue。",

@@ -425,6 +425,7 @@
         "E9071": "Đã có thao tác ghi vào đầu ra sau khi đầu ra đã hoàn tất hoặc bị lỗi, nên không thể lưu dữ liệu.",
         "E9072": "Thông tin rãnh được đặt sau khi phần đầu (header) của đầu ra đã được ghi, nên không thể áp dụng.",
         "E9073": "Lỗi: thao tác đã hết thời gian chờ vì không có tiến triển trong thời gian quá dài.",
+        "E9074": "MPG cần một rãnh video mà nó có thể chứa (MPEG-1/2, H.264, HEVC hoặc VC-1); tiêu đề này không có. Hãy dùng mkv:// thay thế.",
         "no_lang_match_subtitle_forced": "không có phụ đề bắt buộc nào của tiêu đề này khớp với '{requested}' (phụ đề bắt buộc có sẵn: {available}). Hãy sửa ngôn ngữ, hoặc dùng all/none.",
         "log_level_out_of_range": "--log-level: giá trị 0 nằm ngoài phạm vi (1–4), bỏ qua",
         "log_level_not_a_number": "--log-level: cần một số 1–4, nhận được '{value}', bỏ qua",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Tệp Matroska",
             "m2ts": "  m2ts://path.m2ts         Tệp luồng truyền tải BD",
             "mp4": "  mp4://path.mp4           Tệp MP4",
+            "mpg": "  mpg://path.mpg           Tệp luồng chương trình MPEG",
             "iso": "  iso://image.iso          Ảnh ISO Blu-ray",
             "dir": "  dir://folder/            Cây tệp đã giải mã trong một thư mục",
             "network": "  network://host:port      Luồng TCP",
@@ -664,6 +666,7 @@
             "nothing_eject": "Không có gì để đẩy ra — nguồn là một tệp, không phải ổ đĩa.",
             "checking_updates": "Đang kiểm tra cập nhật …",
             "mp4_mismatch": "MP4 không thể lưu video {codecs}. Chọn MKV, giữ được mọi thứ.",
+            "container_mismatch": "{container} không thể lưu video {codecs}. Hãy chọn MKV thay thế.",
             "opened_version": "freemkv {version}",
             "opened": "{label} đã mở — {n} tiêu đề, khóa: {keys}",
             "ready_convert": "Sẵn sàng chuyển đổi",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Tiêu đề đã chọn → MKV",
             "mp4": "Tiêu đề đã chọn → MP4",
+            "mpg": "Tiêu đề đã chọn → MPG",
             "m2ts": "Tiêu đề đã chọn → M2TS",
             "tracks": "Tiêu đề đã chọn → tệp rãnh riêng biệt",
             "iso": "Toàn đĩa → ảnh ISO",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "cảnh báo: tiêu đề {num}: không có phụ đề bắt buộc nào khớp với '{requested}' (có sẵn: {available}) — chỉ giữ lại video."
     },
     "mux": {
-        "undelivered_header": "Lưu ý: {count} rãnh không thể ghi vào đầu ra và đã bị bỏ qua:"
+        "undelivered_header": "Lưu ý: {count} rãnh không thể ghi vào đầu ra và đã bị bỏ qua:",
+        "excluded_header": "Lưu ý: {count} rãnh không thể lưu trong {container} và sẽ bị bỏ qua (dùng {keep}:// để giữ chúng):",
+        "reason": {
+            "subtitle": "định dạng phụ đề không có ánh xạ {container}",
+            "audio": "codec âm thanh không có ánh xạ {container}",
+            "video": "chế độ xem video phụ",
+            "video_unmappable": "codec video không có ánh xạ {container}",
+            "mp2_extension": "phần mở rộng đa kênh MPEG-2 — {container} không thể lưu phần này (dùng mpg:// để giữ lại); phần nền stereo vẫn được giữ",
+            "no_stream_id": "{container} không còn số luồng trống cho rãnh này"
+        }
     },
     "share": {
         "attach_zip": "Tệp zip hồ sơ quá lớn để đưa vào nội dung issue — hãy đính kèm {path} vào issue.",

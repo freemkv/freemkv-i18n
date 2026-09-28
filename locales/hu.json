@@ -425,6 +425,7 @@
         "E9071": "A kimenetre azután történt írás, hogy az már lezárult vagy hibára futott, így az adatokat nem sikerült menteni.",
         "E9072": "A sávadatok beállítása azután történt, hogy a kimenet fejléce már ki lett írva, így nem sikerült alkalmazni őket.",
         "E9073": "Hiba: a művelet túllépte az időkorlátot, mert túl sokáig nem történt előrehaladás.",
+        "E9074": "Az MPG-hez olyan videósáv kell, amelyet tárolni tud (MPEG-1/2, H.264, HEVC vagy VC-1); ennek a címnek nincs ilyen. Használj helyette mkv://-t.",
         "no_lang_match_subtitle_forced": "ennek a címnek egyetlen kényszerített felirata sem felel meg a következőnek: '{requested}' (elérhető kényszerített feliratok: {available}). Javítsd a nyelvet, vagy használd az all/none értéket.",
         "log_level_out_of_range": "--log-level: a 0 érték a tartományon kívül esik (1–4), figyelmen kívül hagyva",
         "log_level_not_a_number": "--log-level: 1–4 közötti szám várt, '{value}' érkezett, figyelmen kívül hagyva",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska fájl",
             "m2ts": "  m2ts://path.m2ts         BD transzportfolyam fájl",
             "mp4": "  mp4://path.mp4           MP4-fájl",
+            "mpg": "  mpg://path.mpg           MPEG programfolyam-fájl",
             "iso": "  iso://image.iso          Blu-ray ISO-képfájl",
             "dir": "  dir://folder/            Visszafejtett fájlfa egy mappában",
             "network": "  network://host:port      TCP adatfolyam",
@@ -664,6 +666,7 @@
             "nothing_eject": "Nincs mit kiadni — a forrás egy fájl, nem meghajtó.",
             "checking_updates": "Frissítések keresése…",
             "mp4_mismatch": "Az MP4 nem tárolhat {codecs} videót. Válaszd az MKV-t, amely mindent megőriz.",
+            "container_mismatch": "A(z) {container} formátum nem tárolhat {codecs} videót. Válaszd helyette az MKV-t.",
             "opened_version": "freemkv {version}",
             "opened": "{label} megnyitva — {n} cím, kulcsok: {keys}",
             "ready_convert": "Kész az átalakításra",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Kiválasztott címek → MKV",
             "mp4": "Kiválasztott címek → MP4",
+            "mpg": "Kiválasztott címek → MPG",
             "m2ts": "Kiválasztott címek → M2TS",
             "tracks": "Kiválasztott címek → külön sávfájlok",
             "iso": "Teljes lemez → ISO-képfájl",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "figyelmeztetés: {num}. cím: egyetlen kényszerített felirat sem felel meg a következőnek: '{requested}' (elérhető: {available}) — csak a videó marad meg."
     },
     "mux": {
-        "undelivered_header": "Megjegyzés: {count} adatfolyamot nem sikerült kiírni, ezek kimaradtak:"
+        "undelivered_header": "Megjegyzés: {count} adatfolyamot nem sikerült kiírni, ezek kimaradtak:",
+        "excluded_header": "Megjegyzés: {count} sáv nem tárolható {container} formátumban, ezért kimarad (a megőrzésükhöz használd a {keep}:// formátumot):",
+        "reason": {
+            "subtitle": "a feliratformátumhoz nincs {container}-leképezés",
+            "audio": "a hangkodekhez nincs {container}-leképezés",
+            "video": "másodlagos videónézet",
+            "video_unmappable": "a videókodekhez nincs {container}-leképezés",
+            "mp2_extension": "MPEG-2 többcsatornás kiterjesztés — a(z) {container} formátum nem tudja tárolni (a megőrzéséhez használd az mpg:// formátumot); a sztereó alap megmarad",
+            "no_stream_id": "a(z) {container} formátumban nincs több szabad adatfolyam-szám ehhez a sávhoz"
+        }
     },
     "share": {
         "attach_zip": "A profil zip-fájlja túl nagy a hibajegy szövegéhez — csatold a(z) {path} fájlt a hibajegyhez.",

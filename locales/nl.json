@@ -402,6 +402,7 @@
         "E9071": "Er werd naar de uitvoer geschreven nadat die al was afgerond of mislukt, dus de gegevens konden niet worden opgeslagen.",
         "E9072": "De spoorgegevens werden ingesteld nadat de header van de uitvoer al was geschreven, dus ze konden niet worden toegepast.",
         "E9073": "Fout: de bewerking is verlopen omdat er te lang geen voortgang was.",
+        "E9074": "MPG heeft een videospoor nodig dat het kan bevatten (MPEG-1/2, H.264, HEVC of VC-1); deze titel heeft er geen. Gebruik in plaats daarvan mkv://.",
         "no_lang_match_subtitle_forced": "geen geforceerde ondertitel op deze titel komt overeen met '{requested}' (beschikbare geforceerde ondertitels: {available}). Corrigeer de taal, of gebruik all/none.",
         "log_level_out_of_range": "--log-level: waarde 0 valt buiten het bereik (1–4), genegeerd",
         "log_level_not_a_number": "--log-level: getal 1–4 verwacht, '{value}' gekregen, genegeerd",
@@ -425,6 +426,7 @@
             "mkv": "  mkv://pad.mkv            Matroska-bestand",
             "m2ts": "  m2ts://pad.m2ts          BD-transportstroom-bestand",
             "mp4": "  mp4://path.mp4           MP4-bestand",
+            "mpg": "  mpg://path.mpg           MPEG-programmastreambestand",
             "iso": "  iso://image.iso          Blu-ray-ISO-image",
             "dir": "  dir://folder/            Ontsleutelde bestandsboom in een map",
             "network": "  network://host:poort     TCP-stroom",
@@ -664,6 +666,7 @@
             "nothing_eject": "Niets om uit te werpen — de bron is een bestand, geen drive.",
             "checking_updates": "Controleren op updates …",
             "mp4_mismatch": "MP4 kan {codecs}-video niet opslaan. Kies MKV, dat alles behoudt.",
+            "container_mismatch": "{container} kan {codecs}-video niet opslaan. Kies in plaats daarvan MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} geopend — {n} titel(s), sleutels: {keys}",
             "ready_convert": "Klaar om te converteren",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Geselecteerde titels → MKV",
             "mp4": "Geselecteerde titels → MP4",
+            "mpg": "Geselecteerde titels → MPG",
             "m2ts": "Geselecteerde titels → M2TS",
             "tracks": "Geselecteerde titels → afzonderlijke spoorbestanden",
             "iso": "Hele disc → ISO-image",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "waarschuwing: titel {num}: geen geforceerde ondertitel komt overeen met '{requested}' (beschikbaar: {available}) — alleen video behouden."
     },
     "mux": {
-        "undelivered_header": "Let op: {count} stream(s) kon(den) niet worden geleverd en is/zijn weggelaten:"
+        "undelivered_header": "Let op: {count} stream(s) kon(den) niet worden geleverd en is/zijn weggelaten:",
+        "excluded_header": "Let op: {count} spo(o)r(en) kunnen niet in {container} worden opgeslagen en worden weggelaten (gebruik {keep}:// om ze te behouden):",
+        "reason": {
+            "subtitle": "ondertitelformaat heeft geen {container}-toewijzing",
+            "audio": "audiocodec heeft geen {container}-toewijzing",
+            "video": "secundaire videoweergave",
+            "video_unmappable": "videocodec heeft geen {container}-toewijzing",
+            "mp2_extension": "MPEG-2-meerkanaalsuitbreiding — {container} kan die niet opslaan (gebruik mpg:// om die te behouden); de stereobasis blijft behouden",
+            "no_stream_id": "{container} heeft geen vrij streamnummer meer voor dit spoor"
+        }
     },
     "share": {
         "attach_zip": "De profiel-zip is te groot voor de tekst van het issue — voeg {path} als bijlage toe aan het issue.",

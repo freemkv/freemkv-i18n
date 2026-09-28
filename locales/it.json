@@ -402,6 +402,7 @@
         "E9071": "Si è tentato di scrivere nell'output dopo che era già stato completato o era fallito, quindi i dati non sono stati salvati.",
         "E9072": "I dati delle tracce sono stati impostati dopo che l'intestazione dell'output era già stata scritta, quindi non è stato possibile applicarli.",
         "E9073": "Errore: l'operazione è scaduta perché non ha fatto progressi per troppo tempo.",
+        "E9074": "MPG richiede una traccia video che possa contenere (MPEG-1/2, H.264, HEVC o VC-1); questo titolo non ne ha. Usa invece mkv://.",
         "no_lang_match_subtitle_forced": "nessuna traccia di sottotitoli forzati di questo titolo corrisponde a '{requested}' (sottotitoli forzati disponibili: {available}). Correggi la lingua o usa all/none.",
         "log_level_out_of_range": "--log-level: il valore 0 è fuori intervallo (1–4), ignorato",
         "log_level_not_a_number": "--log-level: atteso un numero 1–4, ricevuto '{value}', ignorato",
@@ -425,6 +426,7 @@
             "mkv": "  mkv://percorso.mkv       File Matroska",
             "m2ts": "  m2ts://percorso.m2ts     File flusso di trasporto BD",
             "mp4": "  mp4://path.mp4           File MP4",
+            "mpg": "  mpg://path.mpg           File program stream MPEG",
             "iso": "  iso://immagine.iso       Immagine ISO Blu-ray",
             "dir": "  dir://folder/            Albero di file decifrato in una cartella",
             "network": "  network://host:porta     Flusso TCP",
@@ -664,6 +666,7 @@
             "nothing_eject": "Niente da espellere — la sorgente è un file, non un lettore.",
             "checking_updates": "Verifica aggiornamenti …",
             "mp4_mismatch": "MP4 non può contenere video {codecs}. Scegli MKV, che conserva tutto.",
+            "container_mismatch": "{container} non può contenere video {codecs}. Scegli invece MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} aperto — {n} titolo/i, chiavi: {keys}",
             "ready_convert": "Pronto per la conversione",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Titoli selezionati → MKV",
             "mp4": "Titoli selezionati → MP4",
+            "mpg": "Titoli selezionati → MPG",
             "m2ts": "Titoli selezionati → M2TS",
             "tracks": "Titoli selezionati → file di tracce separate",
             "iso": "Disco completo → immagine ISO",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "avviso: titolo {num}: nessun sottotitolo forzato corrisponde a '{requested}' (disponibili: {available}) — viene mantenuto solo il video."
     },
     "mux": {
-        "undelivered_header": "Nota: {count} flussi non sono stati scritti e sono stati esclusi:"
+        "undelivered_header": "Nota: {count} flussi non sono stati scritti e sono stati esclusi:",
+        "excluded_header": "Nota: {count} traccia/e non possono essere memorizzate in {container} e verranno escluse (usa {keep}:// per conservarle):",
+        "reason": {
+            "subtitle": "il formato dei sottotitoli non ha una mappatura {container}",
+            "audio": "il codec audio non ha una mappatura {container}",
+            "video": "vista video secondaria",
+            "video_unmappable": "il codec video non ha una mappatura {container}",
+            "mp2_extension": "estensione multicanale MPEG-2 — {container} non può memorizzarla (usa mpg:// per conservarla); la base stereo viene mantenuta",
+            "no_stream_id": "{container} non ha più numeri di flusso liberi per questa traccia"
+        }
     },
     "share": {
         "attach_zip": "Lo zip del profilo è troppo grande per il testo della issue — allega {path} alla issue.",

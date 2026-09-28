@@ -425,6 +425,7 @@
         "E9071": "Error: the output was written to after it had already been finished or had failed, so the data could not be saved.",
         "E9072": "Error: track details were set after the output's header had already been written, so they could not be applied.",
         "E9073": "Error: the operation timed out after making no progress for too long.",
+        "E9074": "MPG needs a video track it can carry (MPEG-1/2, H.264, HEVC or VC-1); this title has none. Use mkv:// instead.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: value 0 is out of range (1–4), ignored",
         "log_level_not_a_number": "--log-level: expected a number 1–4, got '{value}', ignored",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska file",
             "m2ts": "  m2ts://path.m2ts         BD transport stream file",
             "mp4": "  mp4://path.mp4           MP4 file",
+            "mpg": "  mpg://path.mpg           MPEG program stream file",
             "iso": "  iso://image.iso          Blu-ray ISO image",
             "dir": "  dir://folder/            Decrypted file tree in a folder",
             "network": "  network://host:port      TCP stream",
@@ -664,6 +666,7 @@
             "nothing_eject": "Nothing to eject — the source is a file, not a drive.",
             "checking_updates": "Checking for updates …",
             "mp4_mismatch": "MP4 cannot store {codecs} video. Choose MKV, which keeps everything.",
+            "container_mismatch": "{container} cannot store {codecs} video. Choose MKV instead.",
             "opened_version": "freemkv {version}",
             "opened": "{label} opened — {n} title(s), keys: {keys}",
             "ready_convert": "Ready to convert",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Selected titles → MKV",
             "mp4": "Selected titles → MP4",
+            "mpg": "Selected titles → MPG",
             "m2ts": "Selected titles → M2TS",
             "tracks": "Selected titles → separate track files",
             "video_only": "Selected titles → video tracks only",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
     },
     "mux": {
-        "undelivered_header": "Note: {count} stream(s) could not be delivered and were left out:"
+        "undelivered_header": "Note: {count} stream(s) could not be delivered and were left out:",
+        "excluded_header": "Note: {count} track(s) can't be stored in {container} and will be left out (use {keep}:// to keep them):",
+        "reason": {
+            "subtitle": "subtitle format has no {container} mapping",
+            "audio": "audio codec has no {container} mapping",
+            "video": "secondary video view",
+            "video_unmappable": "video codec has no {container} mapping",
+            "mp2_extension": "MPEG-2 multichannel extension — {container} cannot store it (use mpg:// to keep it); the stereo base is kept",
+            "no_stream_id": "{container} has no stream number left for this track"
+        }
     },
     "share": {
         "attach_zip": "The profile zip is too large for the issue text — attach {path} to the issue.",

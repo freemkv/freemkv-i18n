@@ -425,6 +425,7 @@
         "E9071": "Do výstupu sa zapisovalo po tom, ako už bol dokončený alebo zlyhal, takže údaje sa nepodarilo uložiť.",
         "E9072": "Údaje o stopách boli nastavené až po zapísaní hlavičky výstupu, takže ich nebolo možné použiť.",
         "E9073": "Chyba: operácii vypršal časový limit, pretože príliš dlho nedošlo k žiadnemu postupu.",
+        "E9074": "MPG potrebuje videostopu, ktorú dokáže obsiahnuť (MPEG-1/2, H.264, HEVC alebo VC-1); tento titul žiadnu nemá. Použite namiesto toho mkv://.",
         "no_lang_match_subtitle_forced": "žiadna stopa vynútených titulkov tohto titulu nezodpovedá '{requested}' (dostupné vynútené titulky: {available}). Opravte jazyk alebo použite all/none.",
         "log_level_out_of_range": "--log-level: hodnota 0 je mimo rozsahu (1–4), ignoruje sa",
         "log_level_not_a_number": "--log-level: očakávalo sa číslo 1–4, prijaté '{value}', ignoruje sa",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Súbor Matroska",
             "m2ts": "  m2ts://path.m2ts         Súbor transportného toku BD",
             "mp4": "  mp4://path.mp4           Súbor MP4",
+            "mpg": "  mpg://path.mpg           Súbor programového streamu MPEG",
             "iso": "  iso://image.iso          Obraz ISO Blu-ray",
             "dir": "  dir://folder/            Dešifrovaný strom súborov v priečinku",
             "network": "  network://host:port      Tok TCP",
@@ -664,6 +666,7 @@
             "nothing_eject": "Niet čo vysunúť — zdroj je súbor, nie mechanika.",
             "checking_updates": "Kontrolujú sa aktualizácie …",
             "mp4_mismatch": "MP4 nedokáže uložiť video {codecs}. Zvoľte MKV, ktoré zachová všetko.",
+            "container_mismatch": "{container} nedokáže uložiť video {codecs}. Zvoľte namiesto toho MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} otvorené — počet titulov: {n}, kľúče: {keys}",
             "ready_convert": "Pripravené na konverziu",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Vybrané tituly → MKV",
             "mp4": "Vybrané tituly → MP4",
+            "mpg": "Vybrané tituly → MPG",
             "m2ts": "Vybrané tituly → M2TS",
             "tracks": "Vybrané tituly → samostatné súbory stôp",
             "iso": "Celý disk → obraz ISO",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "upozornenie: titul {num}: žiadna stopa vynútených titulkov nezodpovedá '{requested}' (dostupné: {available}) — zachované je iba video."
     },
     "mux": {
-        "undelivered_header": "Poznámka: nasledujúce stopy (počet: {count}) sa nepodarilo zapísať a boli vynechané:"
+        "undelivered_header": "Poznámka: nasledujúce stopy (počet: {count}) sa nepodarilo zapísať a boli vynechané:",
+        "excluded_header": "Poznámka: nasledujúce stopy (počet: {count}) nemožno uložiť do formátu {container} a budú vynechané (na ich zachovanie použite {keep}://):",
+        "reason": {
+            "subtitle": "formát titulkov nemá mapovanie na {container}",
+            "audio": "zvukový kodek nemá mapovanie na {container}",
+            "video": "sekundárny videopohľad",
+            "video_unmappable": "videokodek nemá mapovanie na {container}",
+            "mp2_extension": "viackanálové rozšírenie MPEG-2 — {container} ho nedokáže uložiť (na jeho zachovanie použite mpg://); stereofónny základ zostane zachovaný",
+            "no_stream_id": "{container} už nemá pre túto stopu voľné číslo streamu"
+        }
     },
     "share": {
         "attach_zip": "Zip s profilom je príliš veľký pre text hlásenia — priložte {path} k hláseniu.",

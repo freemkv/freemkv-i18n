@@ -425,6 +425,7 @@
         "E9071": "Houve uma gravação na saída depois que ela já havia sido finalizada ou falhado, então os dados não puderam ser salvos.",
         "E9072": "Os detalhes das faixas foram definidos depois que o cabeçalho da saída já havia sido gravado, então não puderam ser aplicados.",
         "E9073": "Erro: a operação expirou por ficar tempo demais sem progresso.",
+        "E9074": "O MPG precisa de uma faixa de vídeo que consiga armazenar (MPEG-1/2, H.264, HEVC ou VC-1); este título não tem nenhuma. Use mkv:// em vez disso.",
         "no_lang_match_subtitle_forced": "nenhuma legenda forçada deste título corresponde a '{requested}' (legendas forçadas disponíveis: {available}). Corrija o idioma, ou use all/none.",
         "log_level_out_of_range": "--log-level: o valor 0 está fora do intervalo (1–4), ignorado",
         "log_level_not_a_number": "--log-level: esperado um número 1–4, recebido '{value}', ignorado",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Arquivo Matroska",
             "m2ts": "  m2ts://path.m2ts         Arquivo de transport stream de BD",
             "mp4": "  mp4://path.mp4           Arquivo MP4",
+            "mpg": "  mpg://path.mpg           Arquivo de fluxo de programa MPEG",
             "iso": "  iso://image.iso          Imagem ISO de Blu-ray",
             "dir": "  dir://folder/            Árvore de arquivos descriptografada em uma pasta",
             "network": "  network://host:port      Fluxo TCP",
@@ -664,6 +666,7 @@
             "nothing_eject": "Nada para ejetar — a origem é um arquivo, não uma unidade.",
             "checking_updates": "Verificando atualizações …",
             "mp4_mismatch": "O MP4 não pode armazenar vídeo {codecs}. Escolha MKV, que mantém tudo.",
+            "container_mismatch": "{container} não pode armazenar vídeo {codecs}. Escolha MKV em vez disso.",
             "opened_version": "freemkv {version}",
             "opened": "{label} aberto — {n} título(s), chaves: {keys}",
             "ready_convert": "Pronto para converter",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Títulos selecionados → MKV",
             "mp4": "Títulos selecionados → MP4",
+            "mpg": "Títulos selecionados → MPG",
             "m2ts": "Títulos selecionados → M2TS",
             "tracks": "Títulos selecionados → arquivos de faixa separados",
             "iso": "Disco inteiro → imagem ISO",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "aviso: título {num}: nenhuma legenda forçada corresponde a '{requested}' (disponíveis: {available}) — mantendo apenas o vídeo."
     },
     "mux": {
-        "undelivered_header": "Nota: {count} faixa(s) não puderam ser entregues e foram deixadas de fora:"
+        "undelivered_header": "Nota: {count} faixa(s) não puderam ser entregues e foram deixadas de fora:",
+        "excluded_header": "Nota: {count} faixa(s) não podem ser armazenadas em {container} e serão deixadas de fora (use {keep}:// para mantê-las):",
+        "reason": {
+            "subtitle": "o formato de legenda não tem mapeamento para {container}",
+            "audio": "o codec de áudio não tem mapeamento para {container}",
+            "video": "visão de vídeo secundária",
+            "video_unmappable": "o codec de vídeo não tem mapeamento para {container}",
+            "mp2_extension": "extensão multicanal MPEG-2 — {container} não pode armazená-la (use mpg:// para mantê-la); a base estéreo é mantida",
+            "no_stream_id": "{container} não tem mais números de fluxo livres para esta faixa"
+        }
     },
     "share": {
         "attach_zip": "O zip do perfil é grande demais para o texto da issue — anexe {path} à issue.",

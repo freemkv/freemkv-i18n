@@ -425,6 +425,7 @@
         "E9071": "Próbowano zapisać do wyjścia po tym, jak zostało już zakończone lub uległo awarii, więc nie udało się zapisać danych.",
         "E9072": "Dane ścieżek ustawiono po zapisaniu nagłówka wyjścia, więc nie można było ich zastosować.",
         "E9073": "Błąd: operacja przekroczyła limit czasu, ponieważ zbyt długo nie było żadnego postępu.",
+        "E9074": "MPG wymaga ścieżki wideo, którą potrafi przenieść (MPEG-1/2, H.264, HEVC lub VC-1); ten tytuł jej nie ma. Użyj zamiast tego mkv://.",
         "no_lang_match_subtitle_forced": "żadna ścieżka napisów wymuszonych tego tytułu nie odpowiada '{requested}' (dostępne napisy wymuszone: {available}). Popraw język lub użyj all/none.",
         "log_level_out_of_range": "--log-level: wartość 0 jest poza zakresem (1–4), zignorowano",
         "log_level_not_a_number": "--log-level: oczekiwano liczby 1–4, otrzymano '{value}', zignorowano",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Plik Matroska",
             "m2ts": "  m2ts://path.m2ts         Plik strumienia transportowego BD",
             "mp4": "  mp4://path.mp4           Plik MP4",
+            "mpg": "  mpg://path.mpg           Plik strumienia programowego MPEG",
             "iso": "  iso://image.iso          Obraz ISO Blu-ray",
             "dir": "  dir://folder/            Odszyfrowane drzewo plików w folderze",
             "network": "  network://host:port      Strumień TCP",
@@ -664,6 +666,7 @@
             "nothing_eject": "Nie ma czego wysunąć — źródło jest plikiem, a nie napędem.",
             "checking_updates": "Sprawdzanie aktualizacji…",
             "mp4_mismatch": "MP4 nie może przechowywać wideo {codecs}. Wybierz MKV, który zachowuje wszystko.",
+            "container_mismatch": "Format {container} nie może przechowywać wideo {codecs}. Wybierz zamiast tego MKV.",
             "opened_version": "freemkv {version}",
             "opened": "Otwarto {label} — liczba tytułów: {n}, klucze: {keys}",
             "ready_convert": "Gotowy do konwersji",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Wybrane tytuły → MKV",
             "mp4": "Wybrane tytuły → MP4",
+            "mpg": "Wybrane tytuły → MPG",
             "m2ts": "Wybrane tytuły → M2TS",
             "tracks": "Wybrane tytuły → osobne pliki ścieżek",
             "iso": "Cała płyta → obraz ISO",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "ostrzeżenie: tytuł {num}: żadna ścieżka napisów wymuszonych nie odpowiada '{requested}' (dostępne: {available}) — zachowano tylko obraz."
     },
     "mux": {
-        "undelivered_header": "Uwaga: nie udało się dostarczyć strumieni (liczba: {count}), więc zostały pominięte:"
+        "undelivered_header": "Uwaga: nie udało się dostarczyć strumieni (liczba: {count}), więc zostały pominięte:",
+        "excluded_header": "Uwaga: następujących ścieżek (liczba: {count}) nie można zapisać w formacie {container}, więc zostaną pominięte (użyj {keep}://, aby je zachować):",
+        "reason": {
+            "subtitle": "format napisów nie ma odpowiednika w formacie {container}",
+            "audio": "kodek dźwięku nie ma odpowiednika w formacie {container}",
+            "video": "dodatkowy widok wideo",
+            "video_unmappable": "kodek wideo nie ma odpowiednika w formacie {container}",
+            "mp2_extension": "wielokanałowe rozszerzenie MPEG-2 — format {container} nie może go przechować (użyj mpg://, aby je zachować); podstawa stereo zostaje zachowana",
+            "no_stream_id": "w formacie {container} nie ma już wolnego numeru strumienia dla tej ścieżki"
+        }
     },
     "share": {
         "attach_zip": "Archiwum zip z profilem jest za duże na treść zgłoszenia — dołącz {path} do zgłoszenia.",

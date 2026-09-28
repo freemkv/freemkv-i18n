@@ -425,6 +425,7 @@
         "E9071": "Keluaran ditulisi setelah sudah selesai atau gagal, sehingga data tidak dapat disimpan.",
         "E9072": "Detail trek ditetapkan setelah header keluaran sudah ditulis, sehingga tidak dapat diterapkan.",
         "E9073": "Kesalahan: operasi mengalami waktu habis karena tidak ada kemajuan dalam waktu yang terlalu lama.",
+        "E9074": "MPG memerlukan trek video yang dapat dimuatnya (MPEG-1/2, H.264, HEVC, atau VC-1); judul ini tidak memilikinya. Gunakan mkv:// sebagai gantinya.",
         "no_lang_match_subtitle_forced": "tidak ada subtitle paksa pada judul ini yang cocok dengan '{requested}' (subtitle paksa tersedia: {available}). Perbaiki bahasanya, atau gunakan all/none.",
         "log_level_out_of_range": "--log-level: nilai 0 di luar rentang (1–4), diabaikan",
         "log_level_not_a_number": "--log-level: diharapkan angka 1–4, diterima '{value}', diabaikan",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Berkas Matroska",
             "m2ts": "  m2ts://path.m2ts         Berkas transport stream BD",
             "mp4": "  mp4://path.mp4           Berkas MP4",
+            "mpg": "  mpg://path.mpg           Berkas program stream MPEG",
             "iso": "  iso://image.iso          Image ISO Blu-ray",
             "dir": "  dir://folder/            Pohon berkas terdekripsi dalam sebuah folder",
             "network": "  network://host:port      Stream TCP",
@@ -664,6 +666,7 @@
             "nothing_eject": "Tidak ada yang dikeluarkan — sumbernya adalah berkas, bukan drive.",
             "checking_updates": "Memeriksa pembaruan …",
             "mp4_mismatch": "MP4 tidak dapat menyimpan video {codecs}. Pilih MKV, yang menyimpan semuanya.",
+            "container_mismatch": "{container} tidak dapat menyimpan video {codecs}. Pilih MKV sebagai gantinya.",
             "opened_version": "freemkv {version}",
             "opened": "{label} dibuka — {n} judul, kunci: {keys}",
             "ready_convert": "Siap mengonversi",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Judul terpilih → MKV",
             "mp4": "Judul terpilih → MP4",
+            "mpg": "Judul terpilih → MPG",
             "m2ts": "Judul terpilih → M2TS",
             "tracks": "Judul terpilih → berkas trek terpisah",
             "iso": "Seluruh disc → image ISO",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "peringatan: judul {num}: tidak ada subtitle paksa yang cocok dengan '{requested}' (tersedia: {available}) — hanya video yang dipertahankan."
     },
     "mux": {
-        "undelivered_header": "Catatan: {count} stream tidak dapat dikirim dan dihilangkan:"
+        "undelivered_header": "Catatan: {count} stream tidak dapat dikirim dan dihilangkan:",
+        "excluded_header": "Catatan: {count} trek tidak dapat disimpan dalam {container} dan akan diabaikan (gunakan {keep}:// untuk menyimpannya):",
+        "reason": {
+            "subtitle": "format subtitle tidak dapat dipetakan ke {container}",
+            "audio": "codec audio tidak dapat dipetakan ke {container}",
+            "video": "tampilan video sekunder",
+            "video_unmappable": "codec video tidak dapat dipetakan ke {container}",
+            "mp2_extension": "ekstensi multikanal MPEG-2 — {container} tidak dapat menyimpannya (gunakan mpg:// untuk mempertahankannya); basis stereo tetap disimpan",
+            "no_stream_id": "{container} tidak memiliki nomor stream tersisa untuk trek ini"
+        }
     },
     "share": {
         "attach_zip": "Zip profil terlalu besar untuk teks issue — lampirkan {path} ke issue.",

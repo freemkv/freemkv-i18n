@@ -425,6 +425,7 @@
         "E9071": "Tulosteeseen kirjoitettiin sen jälkeen, kun se oli jo valmis tai epäonnistunut, joten tietoja ei voitu tallentaa.",
         "E9072": "Raitojen tiedot asetettiin vasta sen jälkeen, kun tulosteen otsake oli jo kirjoitettu, joten niitä ei voitu ottaa käyttöön.",
         "E9073": "Virhe: toiminto aikakatkaistiin, koska edistymistä ei tapahtunut liian pitkään aikaan.",
+        "E9074": "MPG tarvitsee videoraidan, jonka se voi sisältää (MPEG-1/2, H.264, HEVC tai VC-1); tässä nimikkeessä ei ole sellaista. Käytä sen sijaan mkv://.",
         "no_lang_match_subtitle_forced": "yksikään pakotettu tekstitys tässä nimikkeessä ei vastaa '{requested}' (saatavilla olevat pakotetut tekstitykset: {available}). Korjaa kieli tai käytä all/none.",
         "log_level_out_of_range": "--log-level: arvo 0 on sallitun välin ulkopuolella (1–4), ohitetaan",
         "log_level_not_a_number": "--log-level: odotettiin lukua 1–4, saatiin '{value}', ohitetaan",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska-tiedosto",
             "m2ts": "  m2ts://path.m2ts         BD-siirtovirtatiedosto",
             "mp4": "  mp4://path.mp4           MP4-tiedosto",
+            "mpg": "  mpg://path.mpg           MPEG-ohjelmavirtatiedosto",
             "iso": "  iso://image.iso          Blu-ray ISO -levykuva",
             "dir": "  dir://folder/            Puretttu tiedostopuu kansiossa",
             "network": "  network://host:port      TCP-virta",
@@ -664,6 +666,7 @@
             "nothing_eject": "Ei mitään poistettavaa — lähde on tiedosto, ei asema.",
             "checking_updates": "Tarkistetaan päivityksiä …",
             "mp4_mismatch": "MP4 ei voi tallentaa {codecs}-videota. Valitse MKV, joka säilyttää kaiken.",
+            "container_mismatch": "Muoto {container} ei voi tallentaa {codecs}-videota. Valitse sen sijaan MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} avattu — {n} nimikettä, avaimet: {keys}",
             "ready_convert": "Valmis muuntamaan",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Valitut nimikkeet → MKV",
             "mp4": "Valitut nimikkeet → MP4",
+            "mpg": "Valitut nimikkeet → MPG",
             "m2ts": "Valitut nimikkeet → M2TS",
             "tracks": "Valitut nimikkeet → erilliset raitatiedostot",
             "iso": "Koko levy → ISO-levykuva",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "varoitus: nimike {num}: yksikään pakotettu tekstitys ei vastaa '{requested}' (saatavilla: {available}) — säilytetään vain video."
     },
     "mux": {
-        "undelivered_header": "Huomautus: {count} raitaa ei voitu toimittaa, ja ne jätettiin pois:"
+        "undelivered_header": "Huomautus: {count} raitaa ei voitu toimittaa, ja ne jätettiin pois:",
+        "excluded_header": "Huomautus: {count} raitaa ei voi tallentaa muotoon {container}, joten ne jätetään pois (käytä {keep}:// säilyttääksesi ne):",
+        "reason": {
+            "subtitle": "tekstitysmuodolla ei ole vastaavuutta muodossa {container}",
+            "audio": "äänikoodekilla ei ole vastaavuutta muodossa {container}",
+            "video": "toissijainen videonäkymä",
+            "video_unmappable": "videokoodekilla ei ole vastaavuutta muodossa {container}",
+            "mp2_extension": "MPEG-2-monikanavalaajennus — muoto {container} ei voi tallentaa sitä (käytä mpg:// säilyttääksesi sen); stereoperusosa säilytetään",
+            "no_stream_id": "muodossa {container} ei ole enää vapaata virtanumeroa tälle raidalle"
+        }
     },
     "share": {
         "attach_zip": "Profiilin zip-tiedosto on liian suuri ongelmaraportin tekstiin — liitä {path} ongelmaraporttiin.",

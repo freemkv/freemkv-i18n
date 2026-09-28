@@ -139,4 +139,5 @@ pub const LIBFREEMKV_ERROR_CODES: &[(u32, &str)] = &[
     (9071, "E_STREAM_CLOSED"),
     (9072, "E_STREAM_HEADER_WRITTEN"),
     (9073, "E_TIMED_OUT"),
+    (9074, "E_MPG_NO_VIDEO_TRACK"),
 ];

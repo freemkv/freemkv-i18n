@@ -425,6 +425,7 @@
         "E9071": "出力がすでに完了または失敗した後に書き込みが行われたため、データを保存できませんでした。",
         "E9072": "出力のヘッダーがすでに書き込まれた後にトラック情報が設定されたため、適用できませんでした。",
         "E9073": "エラー: 進捗がない状態が長く続いたため、操作がタイムアウトしました。",
+        "E9074": "MPG が格納できる映像トラック (MPEG-1/2、H.264、HEVC または VC-1) が必要ですが、このタイトルにはありません。代わりに mkv:// を使用してください。",
         "no_lang_match_subtitle_forced": "このタイトルに '{requested}' に一致する強制字幕がありません (利用可能な強制字幕: {available})。言語を修正するか、all/none を使用してください。",
         "log_level_out_of_range": "--log-level: 値 0 は範囲外 (1–4) です。無視します",
         "log_level_not_a_number": "--log-level: 1–4 の数値が必要ですが '{value}' が指定されました。無視します",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska ファイル",
             "m2ts": "  m2ts://path.m2ts         BD トランスポートストリームファイル",
             "mp4": "  mp4://path.mp4           MP4 ファイル",
+            "mpg": "  mpg://path.mpg           MPEG プログラムストリームファイル",
             "iso": "  iso://image.iso          Blu-ray ISO イメージ",
             "dir": "  dir://folder/            復号済みファイルツリーをフォルダーに",
             "network": "  network://host:port      TCP ストリーム",
@@ -664,6 +666,7 @@
             "nothing_eject": "取り出すものがありません — ソースはドライブではなくファイルです。",
             "checking_updates": "アップデートを確認中 …",
             "mp4_mismatch": "MP4 は {codecs} 映像を格納できません。すべてを保持する MKV を選択してください。",
+            "container_mismatch": "{container} は {codecs} 映像を格納できません。代わりに MKV を選択してください。",
             "opened_version": "freemkv {version}",
             "opened": "{label} を開きました — {n} タイトル、キー: {keys}",
             "ready_convert": "変換の準備ができました",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "選択したタイトル → MKV",
             "mp4": "選択したタイトル → MP4",
+            "mpg": "選択したタイトル → MPG",
             "m2ts": "選択したタイトル → M2TS",
             "tracks": "選択したタイトル → 個別のトラックファイル",
             "iso": "ディスク全体 → ISO イメージ",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "警告: タイトル {num}: '{requested}' に一致する強制字幕がありません (利用可能: {available}) — 映像のみを保持します。"
     },
     "mux": {
-        "undelivered_header": "注意: {count} 個のストリームを出力できなかったため除外しました:"
+        "undelivered_header": "注意: {count} 個のストリームを出力できなかったため除外しました:",
+        "excluded_header": "注意: {count} 個のトラックは {container} に格納できないため除外されます（保持するには {keep}:// を使用）:",
+        "reason": {
+            "subtitle": "字幕形式に {container} へのマッピングがありません",
+            "audio": "音声コーデックに {container} へのマッピングがありません",
+            "video": "セカンダリ映像ビュー",
+            "video_unmappable": "映像コーデックに {container} へのマッピングがありません",
+            "mp2_extension": "MPEG-2 マルチチャンネル拡張 — {container} には格納できません（保持するには mpg:// を使用）。ステレオのベースは保持されます",
+            "no_stream_id": "{container} にはこのトラックに割り当てるストリーム番号が残っていません"
+        }
     },
     "share": {
         "attach_zip": "プロファイルの zip が Issue 本文には大きすぎます — {path} を Issue に添付してください。",

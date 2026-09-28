@@ -425,6 +425,7 @@
         "E9071": "Något skrevs till utdata efter att de redan hade avslutats eller misslyckats, så datan kunde inte sparas.",
         "E9072": "Spåruppgifterna angavs efter att utdatas huvud redan hade skrivits, så de kunde inte tillämpas.",
         "E9073": "Fel: åtgärden fick timeout eftersom inga framsteg gjordes under för lång tid.",
+        "E9074": "MPG behöver ett videospår som det kan innehålla (MPEG-1/2, H.264, HEVC eller VC-1); den här titeln har inget. Använd mkv:// i stället.",
         "no_lang_match_subtitle_forced": "ingen tvingad undertext på den här titeln matchar '{requested}' (tillgängliga tvingade undertexter: {available}). Rätta språket, eller använd all/none.",
         "log_level_out_of_range": "--log-level: värdet 0 ligger utanför intervallet (1–4), ignoreras",
         "log_level_not_a_number": "--log-level: förväntade ett tal 1–4, fick '{value}', ignoreras",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska-fil",
             "m2ts": "  m2ts://path.m2ts         BD-transportströmfil",
             "mp4": "  mp4://path.mp4           MP4-fil",
+            "mpg": "  mpg://path.mpg           MPEG-programströmsfil",
             "iso": "  iso://image.iso          Blu-ray ISO-avbild",
             "dir": "  dir://folder/            Dekrypterat filträd i en mapp",
             "network": "  network://host:port      TCP-ström",
@@ -664,6 +666,7 @@
             "nothing_eject": "Inget att mata ut — källan är en fil, inte en enhet.",
             "checking_updates": "Söker efter uppdateringar …",
             "mp4_mismatch": "MP4 kan inte lagra {codecs}-video. Välj MKV, som behåller allt.",
+            "container_mismatch": "{container} kan inte lagra {codecs}-video. Välj MKV i stället.",
             "opened_version": "freemkv {version}",
             "opened": "{label} öppnad — {n} titel/titlar, nycklar: {keys}",
             "ready_convert": "Redo att konvertera",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "Valda titlar → MKV",
             "mp4": "Valda titlar → MP4",
+            "mpg": "Valda titlar → MPG",
             "m2ts": "Valda titlar → M2TS",
             "tracks": "Valda titlar → separata spårfiler",
             "iso": "Hel skiva → ISO-avbild",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "varning: titel {num}: ingen tvingad undertext matchar '{requested}' (tillgängliga: {available}) — behåller endast video."
     },
     "mux": {
-        "undelivered_header": "Obs: {count} spår kunde inte levereras och utelämnades:"
+        "undelivered_header": "Obs: {count} spår kunde inte levereras och utelämnades:",
+        "excluded_header": "Obs: {count} spår kan inte lagras i {container} och kommer att utelämnas (använd {keep}:// för att behålla dem):",
+        "reason": {
+            "subtitle": "undertextformatet har ingen {container}-mappning",
+            "audio": "ljudkodeken har ingen {container}-mappning",
+            "video": "sekundär videovy",
+            "video_unmappable": "videokodeken har ingen {container}-mappning",
+            "mp2_extension": "MPEG-2-flerkanalstillägg — {container} kan inte lagra det (använd mpg:// för att behålla det); stereobasen behålls",
+            "no_stream_id": "{container} har inga lediga strömnummer kvar för det här spåret"
+        }
     },
     "share": {
         "attach_zip": "Profilens zip-fil är för stor för ärendetexten — bifoga {path} till ärendet.",

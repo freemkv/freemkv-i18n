@@ -425,6 +425,7 @@
         "E9071": "輸出在已完成或已失敗之後仍被寫入，因此資料無法儲存。",
         "E9072": "音軌資訊是在輸出的檔頭寫入之後才設定的，因此無法套用。",
         "E9073": "錯誤：操作因長時間沒有進展而逾時。",
+        "E9074": "MPG 需要一條它能封裝的影片軌道（MPEG-1/2、H.264、HEVC 或 VC-1），而此標題沒有。請改用 mkv://。",
         "no_lang_match_subtitle_forced": "此標題中沒有與 '{requested}' 相符的強制字幕（可用的強制字幕：{available}）。請更正語言，或使用 all/none。",
         "log_level_out_of_range": "--log-level：值 0 超出範圍 (1–4)，已忽略",
         "log_level_not_a_number": "--log-level：需要 1–4 的數字，收到 '{value}'，已忽略",
@@ -457,6 +458,7 @@
             "mkv": "  mkv://path.mkv           Matroska 檔案",
             "m2ts": "  m2ts://path.m2ts         BD 傳輸串流檔案",
             "mp4": "  mp4://path.mp4           MP4 檔案",
+            "mpg": "  mpg://path.mpg           MPEG 節目串流檔案",
             "iso": "  iso://image.iso          Blu-ray ISO 映像檔",
             "dir": "  dir://folder/            解密後的檔案樹輸出到資料夾",
             "network": "  network://host:port      TCP 串流",
@@ -664,6 +666,7 @@
             "nothing_eject": "無可退出的項目 — 來源是檔案，而非光碟機。",
             "checking_updates": "檢查更新中…",
             "mp4_mismatch": "MP4 無法儲存 {codecs} 影片。請選擇 MKV，它能保留所有內容。",
+            "container_mismatch": "{container} 無法儲存 {codecs} 影片。請改選 MKV。",
             "opened_version": "freemkv {version}",
             "opened": "已開啟 {label} — {n} 個標題，金鑰：{keys}",
             "ready_convert": "準備轉換",
@@ -726,6 +729,7 @@
         "format": {
             "mkv": "所選標題 → MKV",
             "mp4": "所選標題 → MP4",
+            "mpg": "所選標題 → MPG",
             "m2ts": "所選標題 → M2TS",
             "tracks": "所選標題 → 分離的軌道檔案",
             "iso": "整張光碟 → ISO 映像檔",
@@ -750,7 +754,16 @@
         "no_lang_match_subtitle_forced": "警告：標題 {num}：沒有與 '{requested}' 相符的強制字幕（可用：{available}）——僅保留影片。"
     },
     "mux": {
-        "undelivered_header": "注意：{count} 條軌道無法寫入輸出，已略過："
+        "undelivered_header": "注意：{count} 條軌道無法寫入輸出，已略過：",
+        "excluded_header": "注意：{count} 條軌道無法儲存於 {container} 中，將被略過（使用 {keep}:// 以保留它們）：",
+        "reason": {
+            "subtitle": "字幕格式無對應的 {container} 格式",
+            "audio": "音訊編碼無對應的 {container} 格式",
+            "video": "次要影片視角",
+            "video_unmappable": "影片編碼無對應的 {container} 格式",
+            "mp2_extension": "MPEG-2 多聲道延伸 — {container} 無法儲存（使用 mpg:// 以保留）；立體聲基礎軌道會保留",
+            "no_stream_id": "{container} 已無可分配給此軌道的串流編號"
+        }
     },
     "share": {
         "attach_zip": "設定檔 zip 過大，無法放入 issue 內文 — 請將 {path} 附加至 issue。",
