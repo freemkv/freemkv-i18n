@@ -288,6 +288,7 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "이 디스크의 AACS 키 파일(Unit_Key_RO.inf)이 없거나 읽을 수 없습니다. 디스크를 닦은 후 다시 시도하십시오. 계속 실패하면 디스크가 손상되었을 수 있습니다.",
         "E8000": "키 데이터베이스 서버에 연결할 수 없음: {detail}",
         "E8001": "키 데이터베이스 다운로드 실패 (HTTP {detail}). 다시 시도하거나 다음을 실행하세요: freemkv update-keys --url <keydb-url>",
         "E8002": "키 데이터베이스가 비어 있거나 잘못되었습니다. 다음 명령으로 다시 다운로드하세요: freemkv update-keys --url <keydb-url>",

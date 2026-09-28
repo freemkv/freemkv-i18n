@@ -265,6 +265,7 @@
         "E7028": "Non è stato possibile raggiungere il servizio di chiavi online, quindi non ha mai detto se questo disco ha una chiave. Di solito è temporaneo: attenda qualche minuto e riprovi. Non cerchi ancora una chiave mancante: era il servizio a essere fuori uso, non il disco.",
         "E7029": "Il servizio di chiavi online ha rifiutato il token di accesso e per questo non ha risposto. Corregga il token del servizio di chiavi nelle Impostazioni (o --key-auth da riga di comando) e riprovi. Questo non significa che il disco non abbia una chiave.",
         "E7030": "Il servizio di chiavi online sta limitando le richieste e per questo non ha risposto. Attenda qualche minuto e riprovi, oppure elabori meno dischi alla volta. Questo non significa che il disco non abbia una chiave.",
+        "E7031": "Il file delle chiavi AACS di questo disco (Unit_Key_RO.inf) manca o non è stato possibile leggerlo. Pulisca il disco e riprovi; se l'errore persiste, il disco potrebbe essere danneggiato.",
         "E8000": "Impossibile connettersi al server KEYDB: {detail}",
         "E8001": "Download KEYDB fallito (HTTP {detail})",
         "E8002": "KEYDB vuoto o non valido",

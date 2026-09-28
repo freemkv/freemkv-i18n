@@ -288,6 +288,7 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Súbor kľúčov AACS tohto disku (Unit_Key_RO.inf) chýba alebo sa ho nepodarilo prečítať. Vyčistite disk a skúste to znova; ak to stále zlyháva, disk môže byť poškodený.",
         "E8000": "Nepodarilo sa pripojiť k serveru databázy kľúčov: {detail}",
         "E8001": "Sťahovanie databázy kľúčov zlyhalo (HTTP {detail}). Skúste to znova alebo spustite: freemkv update-keys --url <keydb-url>",
         "E8002": "Databáza kľúčov je prázdna alebo neplatná. Znova ju stiahnite pomocou: freemkv update-keys --url <keydb-url>",

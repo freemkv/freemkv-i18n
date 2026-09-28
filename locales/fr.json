@@ -265,6 +265,7 @@
         "E7028": "Le service de clés en ligne était injoignable ; il n'a donc jamais indiqué si cette disque possède une clé. C'est généralement temporaire — patientez quelques minutes et réessayez. Ne cherchez pas encore une clé manquante : c'est le service qui était en panne, pas le disque.",
         "E7029": "Le service de clés en ligne a rejeté le jeton d'accès et n'a donc pas répondu. Corrigez le jeton du service de clés dans les Réglages (ou --key-auth en ligne de commande) puis réessayez. Cela ne signifie pas que le disque n'a pas de clé.",
         "E7030": "Le service de clés en ligne limite le débit des requêtes et n'a donc pas répondu. Patientez quelques minutes et réessayez, ou traitez moins de disques à la fois. Cela ne signifie pas que le disque n'a pas de clé.",
+        "E7031": "Le fichier de clés AACS de ce disque (Unit_Key_RO.inf) est absent ou illisible. Nettoyez le disque et réessayez ; si l'erreur persiste, le disque est peut-être endommagé.",
         "E8000": "Impossible de se connecter au serveur KEYDB : {detail}",
         "E8001": "Echec du telechargement KEYDB (HTTP {detail})",
         "E8002": "KEYDB vide ou invalide",
