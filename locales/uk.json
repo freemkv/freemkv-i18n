@@ -23,7 +23,7 @@
         "share_desc": "Зібрати та надіслати профіль приводу й структуру диска для розширення підтримки",
         "mask_desc": "Маскувати серійні номери (літери → A, цифри → 0)",
         "device_desc": "Вказати шлях до пристрою",
-        "captured": "Зібрано: GET_CONFIG 0x{code} {name} ({bytes} байт)",
+        "captured": "Зібрано: GET_CONFIG 0x{code} {name} ({bytes} Б)",
         "submit_header": "Буде надіслано таке:",
         "submit_prompt": "Надіслати цей профіль, щоб розширити підтримку приводів? [y/N] ",
         "submit_drive": "Привід",
@@ -70,11 +70,11 @@
         "capture_aacs_hash": "Діагностика AACS: хеш диска {hash} (ключ пошуку в keydb) записано в aacs.json.",
         "capture_aacs_no_hash": "Діагностику AACS записано в aacs.json (хеш диска недоступний).",
         "capture_aacs_none": "На цьому диску немає AACS — немає діагностики AACS для збирання.",
-        "capture_all_skipped": "Не вдалося зберегти жодного з {count} файлів структури диска.",
+        "capture_all_skipped": "Не вдалося зберегти жодного з файлів структури диска (загалом {count}).",
         "capture_mkdir_failed": "Не вдалося створити {path}: {error}",
         "capture_no_structure": "Не знайдено читабельної структури диска (BDMV / VIDEO_TS); нічого надсилати.",
         "capture_skipped": "Пропущено файл диска {file}",
-        "capture_summary": "Зібрано структуру диска: файлів — {files} ({bytes} байт).",
+        "capture_summary": "Зібрано структуру диска: файлів — {files} ({bytes} Б).",
         "capture_unsafe_name": "небезпечне ім’я файлу"
     },
     "stream": {
@@ -92,7 +92,7 @@
         }
     },
     "mp4": {
-        "excluded_header": "Примітка: {count} доріжок неможливо зберегти в MP4, і їх буде виключено (використайте mkv://, щоб зберегти все):",
+        "excluded_header": "Примітка: перелічені доріжки (кількість: {count}) неможливо зберегти в MP4, і їх буде виключено (використайте mkv://, щоб зберегти все):",
         "reason": {
             "subtitle": "растрові субтитри — MP4 підтримує лише текстові субтитри",
             "audio": "аудіокодек не має відповідника в MP4",
@@ -125,7 +125,7 @@
         "no_data": "Дані не відновлено — весь диск виявився нечитабельним ({unreadable} МБ). Вивід непридатний.",
         "drive": "Привід: {device}",
         "disc_label": "Диск: {name} ({size} ГБ)",
-        "disc_titles": "Диск: {name} ({count} розділів)",
+        "disc_titles": "Диск: {name} (розділів: {count})",
         "title_info": "Розділ {num} ({duration}, {size} ГБ)",
         "titles_summary": "Розділи ({total} всього, {selected} обрано):",
         "title_dest": "Розділ {num} → {dest}",
@@ -145,11 +145,11 @@
         "verbose_read_data_key": "Ключ читання даних",
         "verbose_handshake_error": "Рукостискання не вдалося",
         "verbose_handshake_hint": "Рукостискання, можливо, не вдалося — немає сертифіката хоста, або привід відхилив",
-        "mapfile_summary": "Файл карти: {good} ГБ добрих, {unreadable} МБ нечитабельних, {pending} МБ в очікуванні",
+        "mapfile_summary": "Файл карти: добрі: {good} ГБ, нечитабельні: {unreadable} МБ, в очікуванні: {pending} МБ",
         "retry_with_multipass": "Запустіть знову з --multipass, щоб спробувати прочитати більше; продовжить з mapfile.",
         "nothing_to_patch": "Немає чого латати — всі сектори добрі",
-        "patch_start": "Латання: {good} ГБ добрих, {unreadable} МБ нечитабельних, {pending} МБ в очікуванні",
-        "patch_done": "Латання завершено: відновлено {recovered} МБ, {unreadable} МБ нечитабельних, {pending} МБ в очікуванні ({time} с, {speed} МБ/с)",
+        "patch_start": "Латання: добрі: {good} ГБ, нечитабельні: {unreadable} МБ, в очікуванні: {pending} МБ",
+        "patch_done": "Латання завершено: відновлено: {recovered} МБ, нечитабельні: {unreadable} МБ, в очікуванні: {pending} МБ ({time} с, {speed} МБ/с)",
         "multipass_ignored": "Примітка: --multipass ігнорується для disc->MKV/M2TS (однопрохідне мультиплексування). Використайте вивід iso:// для багатопрохідного відновлення.",
         "title_skipped": "Пропуск розділу {num}: захищений від копіювання, ключ відновити неможливо.",
         "title_skipped_empty": "Пропуск розділу {num}: порожній (немає відео) — імовірно, заглушка меню/навігації."
@@ -157,8 +157,8 @@
     "dir": {
         "extracting": "Витягання розшифрованого дерева файлів до {path}",
         "file_lossy": "  {file}: {lost} МБ втрачено",
-        "complete": "Витягнуто {files} файлів ({size} МБ) — дерево повне",
-        "lossy": "Витягнуто {files} файлів, але {lost} МБ виявилися нечитабельними/нерозшифровними. Відновіть за допомогою disc->iso --multipass, потім iso->dir."
+        "complete": "Витягнуто файлів: {files} ({size} МБ) — дерево повне",
+        "lossy": "Витягнуто файлів: {files}, але {lost} МБ виявилися нечитабельними/нерозшифровними. Відновіть за допомогою disc->iso --multipass, потім iso->dir."
     },
     "remux": {
         "input": "Вхід",
@@ -171,7 +171,7 @@
         "remuxed": "Перемультиплексовано: {size} ГБ за {time} с ({speed} МБ/с)"
     },
     "keys": {
-        "updated": "Оновлено: {entries} записів, {bytes} байт",
+        "updated": "Оновлено: записів — {entries}, {bytes} Б",
         "saved": "Збережено: {path}",
         "usage": "Використання: freemkv update-keys --url <url>"
     },
@@ -182,9 +182,9 @@
         "warn": "УВАГА ({error})",
         "failed": "ЗБІЙ",
         "scanning": "Сканування...",
-        "disc_summary": "{name} ({size} ГБ, {sectors} секторів)",
+        "disc_summary": "{name} ({size} ГБ, секторів: {sectors})",
         "verifying": "Перевірка...",
-        "progress": "{pct}% · {speed} МБ/с · {done} / {total} секторів",
+        "progress": "{pct}% · {speed} МБ/с · сектори: {done} / {total}",
         "results": "Результати:",
         "good": "Добрі",
         "slow": "Повільні",
@@ -194,10 +194,10 @@
         "status_recovered": "ВІДНОВЛЕНІ",
         "status_bad": "ПОГАНІ",
         "chapter": "Розділ {num}, {min}:{sec}",
-        "range": "{status} сектори {start}-{end} ({size} ГБ{chapter}): {count} секторів",
+        "range": "{status} сектори {start}-{end} ({size} ГБ{chapter}): усього {count}",
         "verdict": "Вердикт: {pct}% читабельно за {min}:{sec}",
         "perfect": "Диск ідеальний.",
-        "unrecoverable": "{count} невідновних секторів у {clusters} кластерах."
+        "unrecoverable": "Невідновні сектори: {count} (кластерів: {clusters})."
     },
     "help": {
         "unknown_command": "Невідома команда '{cmd}'. Спробуйте 'freemkv help' для списку команд.",
@@ -660,14 +660,14 @@
             "checking_updates": "Перевірка оновлень …",
             "mp4_mismatch": "MP4 не може зберігати відео {codecs}. Оберіть MKV, який зберігає все.",
             "opened_version": "freemkv {version}",
-            "opened": "{label} відкрито — {n} розділів, ключі: {keys}",
+            "opened": "{label} відкрито — розділів: {n}, ключі: {keys}",
             "ready_convert": "Готово до конвертування",
             "ready_rip": "Готово до копіювання",
             "cannot_rip": "Неможливо скопіювати: {reasons}",
             "open_source_first": "Спершу відкрийте джерело.",
             "choose_folder_first": "Спершу оберіть теку виводу.",
             "starting_rip": "Початок копіювання → {dir}",
-            "unreadable": "{n} нечитабельних секторів наразі",
+            "unreadable": "Нечитабельні сектори наразі: {n}",
             "not_supported": "Непідтримуване джерело: {p}",
             "settings_saved": "Налаштування збережено",
             "settings_save_error": "Не вдалося зберегти налаштування: {e}",

@@ -23,7 +23,7 @@
         "share_desc": "Przechwyć i prześlij profil napędu oraz strukturę płyty, aby rozszerzyć obsługę",
         "mask_desc": "Maskuj numery seryjne (litery → A, cyfry → 0)",
         "device_desc": "Podaj ścieżkę urządzenia",
-        "captured": "Przechwycono: GET_CONFIG 0x{code} {name} ({bytes} bajtów)",
+        "captured": "Przechwycono: GET_CONFIG 0x{code} {name} ({bytes} B)",
         "submit_header": "Zostaną przesłane następujące dane:",
         "submit_prompt": "Wysłać ten profil, aby poszerzyć obsługę napędów? [y/N] ",
         "submit_drive": "Napęd",
@@ -92,7 +92,7 @@
         }
     },
     "mp4": {
-        "excluded_header": "Uwaga: {count} ścieżek nie można zapisać w pliku MP4 i zostaną pominięte (użyj mkv://, aby zachować wszystko):",
+        "excluded_header": "Uwaga: następujące ścieżki (liczba: {count}) nie można zapisać w pliku MP4 i zostaną pominięte (użyj mkv://, aby zachować wszystko):",
         "reason": {
             "subtitle": "napisy bitmapowe — MP4 obsługuje tylko napisy tekstowe",
             "audio": "kodek dźwięku nie ma odpowiednika w MP4",
@@ -125,7 +125,7 @@
         "no_data": "Nie odzyskano żadnych danych — cała płyta była nieczytelna ({unreadable} MB). Wynik nie nadaje się do użytku.",
         "drive": "Napęd: {device}",
         "disc_label": "Płyta: {name} ({size} GB)",
-        "disc_titles": "Płyta: {name} ({count} tytułów)",
+        "disc_titles": "Płyta: {name} (liczba tytułów: {count})",
         "title_info": "Tytuł {num} ({duration}, {size} GB)",
         "titles_summary": "Tytuły (łącznie {total}, wybrano {selected}):",
         "title_dest": "Tytuł {num} → {dest}",
@@ -145,11 +145,11 @@
         "verbose_read_data_key": "Klucz odczytu danych",
         "verbose_handshake_error": "Uzgadnianie nie powiodło się",
         "verbose_handshake_hint": "Uzgadnianie mogło się nie powieść — brak certyfikatu hosta lub napęd go odrzucił",
-        "mapfile_summary": "Plik mapy: {good} GB dobrych, {unreadable} MB nieczytelnych, {pending} MB oczekujących",
+        "mapfile_summary": "Plik mapy: dobre: {good} GB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB",
         "retry_with_multipass": "Uruchom ponownie z --multipass, aby spróbować odczytać więcej; wznawia od pliku mapy.",
         "nothing_to_patch": "Nic do naprawienia — wszystkie sektory są dobre",
-        "patch_start": "Naprawianie: {good} GB dobrych, {unreadable} MB nieczytelnych, {pending} MB oczekujących",
-        "patch_done": "Naprawianie ukończone: odzyskano {recovered} MB, {unreadable} MB nieczytelnych, {pending} MB oczekujących ({time} s, {speed} MB/s)",
+        "patch_start": "Naprawianie: dobre: {good} GB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB",
+        "patch_done": "Naprawianie ukończone: odzyskano: {recovered} MB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB ({time} s, {speed} MB/s)",
         "multipass_ignored": "Uwaga: opcja --multipass jest ignorowana przy zgrywaniu z płyty do MKV/M2TS (multipleksowanie jednoprzebiegowe). Dla odzyskiwania wieloprzebiegowego użyj wyjścia iso://.",
         "title_skipped": "Pomijanie tytułu {num}: zabezpieczony przed kopiowaniem, nie można odzyskać klucza.",
         "title_skipped_empty": "Pomijanie tytułu {num}: pusty (brak wideo) — prawdopodobnie zaślepka menu/nawigacji."
@@ -157,8 +157,8 @@
     "dir": {
         "extracting": "Wyodrębnianie odszyfrowanego drzewa plików do {path}",
         "file_lossy": "  {file}: utracono {lost} MB",
-        "complete": "Wyodrębniono {files} plików ({size} MB) — drzewo jest kompletne",
-        "lossy": "Wyodrębniono {files} plików, ale {lost} MB było nieczytelnych/niemożliwych do odszyfrowania. Odzyskaj za pomocą disc->iso --multipass, a następnie iso->dir."
+        "complete": "Wyodrębnionych plików: {files} ({size} MB) — drzewo jest kompletne",
+        "lossy": "Wyodrębnionych plików: {files}, ale nieczytelne/niemożliwe do odszyfrowania dane: {lost} MB. Odzyskaj za pomocą disc->iso --multipass, a następnie iso->dir."
     },
     "remux": {
         "input": "Wejście",
@@ -171,7 +171,7 @@
         "remuxed": "Zmultipleksowano: {size} GB w {time} s ({speed} MB/s)"
     },
     "keys": {
-        "updated": "Zaktualizowano: {entries} wpisów, {bytes} bajtów",
+        "updated": "Zaktualizowano (liczba wpisów: {entries}, {bytes} B)",
         "saved": "Zapisano: {path}",
         "usage": "Sposób użycia: freemkv update-keys --url <url>"
     },
@@ -182,9 +182,9 @@
         "warn": "OSTRZEŻENIE ({error})",
         "failed": "NIEPOWODZENIE",
         "scanning": "Skanowanie…",
-        "disc_summary": "{name} ({size} GB, {sectors} sektorów)",
+        "disc_summary": "{name} ({size} GB, liczba sektorów: {sectors})",
         "verifying": "Weryfikowanie…",
-        "progress": "{pct}% · {speed} MB/s · {done} / {total} sektorów",
+        "progress": "{pct}% · {speed} MB/s · sektory: {done} / {total}",
         "results": "Wyniki:",
         "good": "Dobre",
         "slow": "Wolne",
@@ -194,10 +194,10 @@
         "status_recovered": "ODZYSKANE",
         "status_bad": "USZKODZONE",
         "chapter": "Rozdział {num}, {min}:{sec}",
-        "range": "{status} sektory {start}-{end} ({size} GB{chapter}): {count} sektorów",
-        "verdict": "Werdykt: {pct}% czytelnych w {min}:{sec}",
+        "range": "{status} sektory {start}-{end} ({size} GB{chapter}): łącznie {count}",
+        "verdict": "Werdykt: czytelność {pct}% w {min}:{sec}",
         "perfect": "Płyta jest w idealnym stanie.",
-        "unrecoverable": "{count} nieodzyskiwalnych sektorów w {clusters} klastrach."
+        "unrecoverable": "Nieodzyskiwalne sektory: {count} (liczba klastrów: {clusters})."
     },
     "help": {
         "unknown_command": "Nieznane polecenie „{cmd}”. Wpisz „freemkv help”, aby wyświetlić listę poleceń.",
@@ -660,14 +660,14 @@
             "checking_updates": "Sprawdzanie aktualizacji…",
             "mp4_mismatch": "MP4 nie może przechowywać wideo {codecs}. Wybierz MKV, który zachowuje wszystko.",
             "opened_version": "freemkv {version}",
-            "opened": "Otwarto {label} — {n} tytułów, klucze: {keys}",
+            "opened": "Otwarto {label} — liczba tytułów: {n}, klucze: {keys}",
             "ready_convert": "Gotowy do konwersji",
             "ready_rip": "Gotowy do zgrywania",
             "cannot_rip": "Nie można zgrać: {reasons}",
             "open_source_first": "Najpierw otwórz źródło.",
             "choose_folder_first": "Najpierw wybierz folder wyjściowy.",
             "starting_rip": "Rozpoczynanie zgrywania → {dir}",
-            "unreadable": "{n} nieczytelnych sektorów jak dotąd",
+            "unreadable": "Nieczytelne sektory jak dotąd: {n}",
             "not_supported": "Nieobsługiwane źródło: {p}",
             "settings_saved": "Ustawienia zapisane",
             "settings_save_error": "Nie można zapisać ustawień: {e}",
@@ -684,7 +684,7 @@
             "raw_disc_only": "„Zachowaj zaszyfrowane (raw)” dotyczy tylko płyty w napędzie; zostanie zignorowane dla tego źródła.",
             "no_drive": "Nie znaleziono napędu optycznego. Podłącz napęd Blu-ray/DVD z płytą.",
             "opening_drive": "Otwieranie {label} ({device})",
-            "drives_found": "Znaleziono {n} napędów: {list} — zostanie użyty ten z płytą",
+            "drives_found": "Znalezione napędy ({n}): {list} — zostanie użyty ten z płytą",
             "drop_unreadable": "Nie można odczytać upuszczonego elementu: {e}",
             "eject_failed": "Wysuwanie nie powiodło się: {error}",
             "ejected": "Wysunięto płytę ({device}).",

@@ -23,7 +23,7 @@
         "share_desc": "Собрать и отправить профиль привода и структуру диска для расширения поддержки",
         "mask_desc": "Маскировать серийные номера (буквы → A, цифры → 0)",
         "device_desc": "Указать путь к устройству",
-        "captured": "Получено: GET_CONFIG 0x{code} {name} ({bytes} байт)",
+        "captured": "Получено: GET_CONFIG 0x{code} {name} ({bytes} Б)",
         "submit_header": "Будет отправлено следующее:",
         "submit_prompt": "Отправить этот профиль, чтобы расширить поддержку приводов? [y/N] ",
         "submit_drive": "Привод",
@@ -92,7 +92,7 @@
         }
     },
     "mp4": {
-        "excluded_header": "Примечание: {count} дорожк(и) невозможно сохранить в MP4, они будут пропущены (используйте mkv://, чтобы сохранить всё):",
+        "excluded_header": "Примечание: следующие дорожки (количество: {count}) невозможно сохранить в MP4, они будут пропущены (используйте mkv://, чтобы сохранить всё):",
         "reason": {
             "subtitle": "растровые субтитры — MP4 поддерживает только текстовые субтитры",
             "audio": "для аудиокодека нет соответствия в MP4",
@@ -125,7 +125,7 @@
         "no_data": "Данные не восстановлены — весь диск оказался нечитаемым ({unreadable} МБ). Результат непригоден.",
         "drive": "Привод: {device}",
         "disc_label": "Диск: {name} ({size} ГБ)",
-        "disc_titles": "Диск: {name} ({count} тайтлов)",
+        "disc_titles": "Диск: {name} (тайтлов: {count})",
         "title_info": "Тайтл {num} ({duration}, {size} ГБ)",
         "titles_summary": "Тайтлы (всего {total}, выбрано {selected}):",
         "title_dest": "Тайтл {num} → {dest}",
@@ -157,8 +157,8 @@
     "dir": {
         "extracting": "Извлечение расшифрованного дерева файлов в {path}",
         "file_lossy": "  {file}: потеряно {lost} МБ",
-        "complete": "Извлечено {files} файлов ({size} МБ) — дерево полное",
-        "lossy": "Извлечено {files} файлов, но {lost} МБ оказались нечитаемыми/нерасшифровываемыми. Восстановите через disc->iso --multipass, затем iso->dir."
+        "complete": "Извлечено файлов: {files} ({size} МБ) — дерево полное",
+        "lossy": "Извлечено файлов: {files}, но {lost} МБ оказались нечитаемыми/нерасшифровываемыми. Восстановите через disc->iso --multipass, затем iso->dir."
     },
     "remux": {
         "input": "Вход",
@@ -171,7 +171,7 @@
         "remuxed": "Ремультиплексировано: {size} ГБ за {time} с ({speed} МБ/с)"
     },
     "keys": {
-        "updated": "Обновлено: {entries} записей, {bytes} байт",
+        "updated": "Обновлено: записей — {entries}, байт — {bytes}",
         "saved": "Сохранено: {path}",
         "usage": "Использование: freemkv update-keys --url <url>"
     },
@@ -182,9 +182,9 @@
         "warn": "ПРЕДУПР ({error})",
         "failed": "СБОЙ",
         "scanning": "Сканирование…",
-        "disc_summary": "{name} ({size} ГБ, {sectors} секторов)",
+        "disc_summary": "{name} ({size} ГБ, секторов: {sectors})",
         "verifying": "Проверка…",
-        "progress": "{pct} % · {speed} МБ/с · {done} / {total} секторов",
+        "progress": "{pct} % · {speed} МБ/с · секторы: {done} / {total}",
         "results": "Результаты:",
         "good": "Пригодных",
         "slow": "Медленных",
@@ -194,10 +194,10 @@
         "status_recovered": "ВОССТАНОВЛЕНО",
         "status_bad": "СБОЙ",
         "chapter": "Глава {num}, {min}:{sec}",
-        "range": "{status} секторы {start}-{end} ({size} ГБ{chapter}): {count} секторов",
+        "range": "{status} секторы {start}-{end} ({size} ГБ{chapter}): всего {count}",
         "verdict": "Вердикт: {pct} % читаемо за {min}:{sec}",
         "perfect": "Диск идеален.",
-        "unrecoverable": "{count} невосстановимых секторов в {clusters} кластер(ах)."
+        "unrecoverable": "Невосстановимые секторы: {count} (кластеров: {clusters})."
     },
     "help": {
         "unknown_command": "Неизвестная команда «{cmd}». Выполните «freemkv help» для списка команд.",
