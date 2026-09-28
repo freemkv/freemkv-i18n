@@ -260,6 +260,7 @@
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
         "E6020": "Error: the disc image file ends before a sector this rip needs, so the image is truncated or incomplete. Reading stopped rather than fill the missing part with zeros — make a new image from the disc.",
+        "E6021": "A disc image can't be made: this disc uses AACS bus encryption, and the on-disc location of a stream file could not be read ({detail}), so that file can't be decrypted and the image would still contain encrypted data. Rip the titles to MKV or extract the disc to a folder instead (that file is reported as lost), or clean the disc and try again.",
         "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Download a key database with: freemkv update-keys --url <keydb-url>",
         "E7001": "The disc's security certificate is too short or invalid.",
         "E7002": "The drive would not start a secure session for this disc — it may be in use by another program. Close anything else using the disc and try again.",

@@ -237,6 +237,7 @@
         "E6018": "Eine Datei auf der Disc speichert ihren Inhalt inline statt in Sektoren, was dieser Lesepfad nicht einplanen kann. Beim Lesen hätte sie auf unzusammenhängende Sektoren gezeigt.",
         "E6019": "Eine Datei auf der Disc listet den von ihr belegten Speicherplatz auf, aber jeder Eintrag dieser Liste ist leer oder verweist ins Leere, sodass die Datei keinen lesbaren Inhalt hat. Beim Lesen wäre nichts entstanden, oder es wären unzusammenhängende Sektoren in den Rip eingefügt worden.",
         "E6020": "Die Disc-Abbilddatei endet vor einem Sektor, den dieser Rip benötigt — das Abbild ist abgeschnitten oder unvollständig. Das Lesen wurde gestoppt, statt den fehlenden Teil mit Nullen aufzufüllen. Erstellen Sie das Abbild neu von der Disc.",
+        "E6021": "Ein Disc-Image kann nicht erstellt werden: Diese Disc verwendet AACS-Busverschlüsselung, und die Position einer Stream-Datei auf der Disc konnte nicht gelesen werden ({detail}). Diese Datei kann daher nicht entschlüsselt werden, und das Image würde weiterhin verschlüsselte Daten enthalten. Rippen Sie stattdessen die Titel als MKV oder entpacken Sie die Disc in einen Ordner (die Datei wird als verloren gemeldet), oder reinigen Sie die Disc und versuchen Sie es erneut.",
         "E7000": "Diese Disc benötigt AACS-Entschlüsselungsschlüssel, aber keine Schlüsselquelle hat sie bereitgestellt.",
         "E7001": "AACS-Host-Zertifikat zu kurz oder ungültig",
         "E7002": "AACS-Handshake fehlgeschlagen — AGID konnte nicht zugewiesen werden",

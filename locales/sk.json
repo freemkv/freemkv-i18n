@@ -260,6 +260,7 @@
         "E6018": "Chyba: súbor na disku ukladá svoj obsah priamo vo svojom zázname namiesto v sektoroch, čo táto cesta čítania nevie naplánovať. Jeho čítanie by ukazovalo na nesúvisiace sektory.",
         "E6019": "Chyba: súbor na disku uvádza miesto, ktoré zaberá, ale každá časť tohto zoznamu je prázdna alebo nikam neukazuje, takže súbor nemá žiadny čitateľný obsah. Jeho čítanie by nevytvorilo nič alebo by do kópie vložilo nesúvisiace sektory.",
         "E6020": "Súbor obrazu disku končí pred sektorom, ktorý toto kopírovanie potrebuje, takže obraz je orezaný alebo neúplný. Čítanie bolo zastavené namiesto toho, aby chýbajúcu časť vyplnilo nulami — vytvorte obraz z disku znova.",
+        "E6021": "Obraz disku nie je možné vytvoriť: tento disk používa šifrovanie zbernice AACS a umiestnenie jedného súboru streamu na disku sa nepodarilo prečítať ({detail}), takže tento súbor nie je možné dešifrovať a obraz by stále obsahoval zašifrované dáta. Namiesto toho skopírujte tituly do MKV alebo rozbaľte disk do priečinka (tento súbor bude nahlásený ako stratený), prípadne disk vyčistite a skúste to znova.",
         "E7000": "Tento disk potrebuje dešifrovacie kľúče AACS (Blu-ray/UHD), ale žiadne sa nenašli. Stiahnite databázu kľúčov pomocou: freemkv update-keys --url <keydb-url>",
         "E7001": "Bezpečnostný certifikát disku je príliš krátky alebo neplatný.",
         "E7002": "Mechanika by nezačala zabezpečenú reláciu pre tento disk — môže ho používať iný program. Zatvorte všetko ostatné, čo používa disk, a skúste to znova.",

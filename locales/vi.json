@@ -260,6 +260,7 @@
         "E6018": "Lỗi: một tệp trên đĩa lưu nội dung trực tiếp bên trong mục mô tả thay vì trong các sector, điều mà đường đọc này không thể lập kế hoạch. Nếu đọc tệp này, nó sẽ trỏ tới các sector không liên quan.",
         "E6019": "Lỗi: một tệp trên đĩa liệt kê vùng mà nó chiếm, nhưng mọi phần của danh sách đó đều trống hoặc không trỏ tới đâu, nên tệp không có nội dung đọc được. Nếu đọc tệp này, sẽ không tạo ra gì cả, hoặc các sector không liên quan sẽ bị ghép vào bản sao.",
         "E6020": "Tệp ảnh đĩa kết thúc trước một sector mà lần sao chép này cần, nên ảnh đĩa bị cắt bớt hoặc chưa hoàn chỉnh. Quá trình đọc đã dừng thay vì điền số 0 vào phần bị thiếu — hãy tạo lại ảnh đĩa từ đĩa.",
+        "E6021": "Không thể tạo ảnh đĩa: đĩa này dùng mã hóa bus AACS và không đọc được vị trí trên đĩa của một tệp luồng ({detail}), nên không thể giải mã tệp đó và ảnh đĩa vẫn sẽ chứa dữ liệu bị mã hóa. Thay vào đó, hãy trích xuất các tiêu đề sang MKV hoặc giải nén đĩa vào một thư mục (tệp đó sẽ được báo là bị mất), hoặc lau sạch đĩa rồi thử lại.",
         "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Tải cơ sở dữ liệu khóa bằng: freemkv update-keys --url <keydb-url>",
         "E7001": "Chứng chỉ bảo mật của đĩa quá ngắn hoặc không hợp lệ.",
         "E7002": "Ổ đĩa không khởi động phiên bảo mật cho đĩa này — có thể nó đang được chương trình khác sử dụng. Đóng mọi thứ khác đang dùng đĩa và thử lại.",

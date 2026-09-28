@@ -237,6 +237,7 @@
         "E6018": "Un file sul disco memorizza il proprio contenuto in linea (inline) anziché nei settori, cosa che questo percorso di lettura non può pianificare. Leggerlo avrebbe puntato a settori non correlati.",
         "E6019": "Un file sul disco elenca lo spazio che occupa, ma ogni voce di quell'elenco è vuota o non punta a nulla, quindi il file non ha contenuto leggibile. Leggerlo non avrebbe prodotto nulla, oppure avrebbe inserito settori non correlati nel rip.",
         "E6020": "Il file immagine del disco termina prima di un settore necessario a questa estrazione, quindi l'immagine è troncata o incompleta. La lettura è stata interrotta invece di riempire di zeri la parte mancante: ricrea l'immagine a partire dal disco.",
+        "E6021": "Impossibile creare un'immagine disco: questo disco usa la cifratura del bus AACS e non è stato possibile leggere la posizione sul disco di un file di flusso ({detail}), quindi quel file non può essere decrittato e l'immagine conterrebbe ancora dati cifrati. Estragga invece i titoli in MKV o il disco in una cartella (quel file verrà segnalato come perso), oppure pulisca il disco e riprovi.",
         "E7000": "Questo disco richiede chiavi di decifratura AACS, ma nessuna sorgente di chiavi le ha fornite.",
         "E7001": "Certificato host AACS troppo corto o non valido",
         "E7002": "Handshake AACS fallito — impossibile allocare AGID",
