@@ -289,6 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "O arquivo de chaves AACS deste disco está ausente ou não pôde ser lido. Limpe o disco e tente novamente; se continuar falhando, o disco pode estar danificado.",
+        "E7032": "Não é possível criar uma imagem de disco descriptografada: um fluxo deste disco que nenhum título reproduz está criptografado e nenhuma das chaves disponíveis corresponde a ele, então a imagem ainda conteria partes criptografadas. Extraia os títulos para MKV ou faça uma cópia bruta (--raw na linha de comando, ou “Manter criptografado (passagem bruta)” no aplicativo).",
         "E7033": "Foram encontrados certificados de host em suas fontes de chaves, mas nenhum deles é utilizável (danificado ou incompleto). Atualize seu banco de dados de chaves e tente novamente.",
         "E8000": "Não é possível conectar ao servidor do banco de dados de chaves: {detail}",
         "E8001": "Falha ao baixar o banco de dados de chaves (HTTP {detail}). Tente novamente ou execute: freemkv update-keys --url <url-do-keydb>",

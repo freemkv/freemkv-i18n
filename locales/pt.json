@@ -266,6 +266,7 @@
         "E7029": "O serviço de chaves online rejeitou o token de acesso e por isso não respondeu. Corrija o token do serviço de chaves nas Definições (ou --key-auth na linha de comandos) e tente novamente. Isto não significa que o disco não tenha chave.",
         "E7030": "O serviço de chaves online está a limitar os pedidos e por isso não respondeu. Aguarde alguns minutos e tente novamente, ou processe menos discos de cada vez. Isto não significa que o disco não tenha chave.",
         "E7031": "O ficheiro de chaves AACS deste disco está em falta ou não foi possível lê-lo. Limpe o disco e tente novamente; se continuar a falhar, o disco pode estar danificado.",
+        "E7032": "Não é possível criar uma imagem de disco desencriptada: um fluxo deste disco que nenhum título reproduz está encriptado e nenhuma das chaves disponíveis lhe corresponde, pelo que a imagem continuaria a conter partes encriptadas. Extraia os títulos para MKV ou faça uma cópia em bruto (--raw na linha de comandos, ou «Manter encriptado (passagem bruta)» na aplicação).",
         "E7033": "Foram encontrados certificados de host nas suas fontes de chaves, mas nenhum deles é utilizável (danificado ou incompleto). Atualize a sua base de dados de chaves e tente novamente.",
         "E8000": "Nao foi possivel conectar ao servidor KEYDB: {detail}",
         "E8001": "Download do KEYDB falhou (HTTP {detail})",

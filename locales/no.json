@@ -289,6 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "Platens AACS-nøkkelfil mangler eller kunne ikke leses. Rengjør platen og prøv igjen; hvis det fortsatt mislykkes, kan platen være skadet.",
+        "E7032": "Et dekryptert platebilde kan ikke lages: en strøm på denne platen som ingen tittel spiller av, er kryptert, og ingen av de tilgjengelige nøklene passer til den, så bildet ville fortsatt inneholde krypterte deler. Ripp titlene til MKV i stedet, eller lag en rå kopi (--raw på kommandolinjen, eller «Behold kryptert (rå gjennomstrømming)» i appen).",
         "E7033": "Det ble funnet vertssertifikater i nøkkelkildene dine, men ingen av dem kan brukes (skadet eller ufullstendig). Oppdater nøkkeldatabasen din og prøv igjen.",
         "E8000": "Kan ikke koble til nøkkeldatabaseserveren: {detail}",
         "E8001": "Nedlasting av nøkkeldatabase mislyktes (HTTP {detail}). Prøv igjen, eller kjør: freemkv update-keys --url <keydb-url>",

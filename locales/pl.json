@@ -289,6 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "Brak pliku kluczy AACS tej płyty lub nie można go odczytać. Wyczyść płytę i spróbuj ponownie; jeśli błąd się powtarza, płyta może być uszkodzona.",
+        "E7032": "Nie można utworzyć odszyfrowanego obrazu płyty: strumień na tej płycie, którego nie odtwarza żaden tytuł, jest zaszyfrowany i żaden z dostępnych kluczy do niego nie pasuje, więc obraz nadal zawierałby zaszyfrowane części. Zamiast tego zgraj tytuły do MKV albo wykonaj surową kopię (--raw w wierszu poleceń lub „Zachowaj zaszyfrowane (surowe przepuszczanie)” w aplikacji).",
         "E7033": "W Twoich źródłach kluczy znaleziono certyfikaty hosta, ale żaden nie nadaje się do użycia (uszkodzony lub niekompletny). Odśwież bazę kluczy i spróbuj ponownie.",
         "E8000": "Nie można połączyć się z serwerem bazy kluczy: {detail}",
         "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie lub uruchom: freemkv update-keys --url <adres-url-keydb>",

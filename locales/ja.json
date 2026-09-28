@@ -289,6 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "このディスクの AACS キーファイルが見つからないか、読み取れませんでした。ディスクをクリーニングしてもう一度お試しください。それでも失敗する場合は、ディスクが損傷している可能性があります。",
+        "E7032": "復号済みのディスクイメージを作成できません。このディスクには、どのタイトルからも再生されない暗号化されたストリームがあり、利用可能なキーのいずれもそれに一致しないため、イメージに暗号化された部分が残ってしまいます。代わりにタイトルを MKV にリッピングするか、raw コピーを作成してください（コマンドラインでは --raw、アプリでは「暗号化のまま保持（生パススルー）」）。",
         "E7033": "キーソースにホスト証明書が見つかりましたが、いずれも使用できません（破損しているか不完全です）。キーデータベースを更新してもう一度お試しください。",
         "E8000": "キーデータベースサーバーに接続できません: {detail}",
         "E8001": "キーデータベースのダウンロードに失敗しました（HTTP {detail}）。再試行するか、次を実行してください: freemkv update-keys --url <keydb-url>",

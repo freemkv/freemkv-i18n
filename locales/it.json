@@ -266,6 +266,7 @@
         "E7029": "Il servizio di chiavi online ha rifiutato il token di accesso e per questo non ha risposto. Corregga il token del servizio di chiavi nelle Impostazioni (o --key-auth da riga di comando) e riprovi. Questo non significa che il disco non abbia una chiave.",
         "E7030": "Il servizio di chiavi online sta limitando le richieste e per questo non ha risposto. Attenda qualche minuto e riprovi, oppure elabori meno dischi alla volta. Questo non significa che il disco non abbia una chiave.",
         "E7031": "Il file delle chiavi AACS di questo disco manca o non è stato possibile leggerlo. Pulisca il disco e riprovi; se l'errore persiste, il disco potrebbe essere danneggiato.",
+        "E7032": "Impossibile creare un'immagine disco decrittata: un flusso di questo disco che nessun titolo riproduce è cifrato e nessuna delle chiavi disponibili gli corrisponde, quindi l'immagine conterrebbe ancora parti cifrate. Estragga invece i titoli in MKV, oppure faccia una copia grezza (--raw dalla riga di comando, o «Conserva cifrato (passthrough grezzo)» nell'app).",
         "E7033": "Sono stati trovati certificati host nelle sue sorgenti di chiavi, ma nessuno è utilizzabile (danneggiato o incompleto). Aggiorni il database delle chiavi e riprovi.",
         "E8000": "Impossibile connettersi al server KEYDB: {detail}",
         "E8001": "Download KEYDB fallito (HTTP {detail})",

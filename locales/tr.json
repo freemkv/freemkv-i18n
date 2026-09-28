@@ -289,6 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "Bu diskin AACS anahtar dosyası eksik veya okunamadı. Diski temizleyip yeniden deneyin; yine başarısız olursa disk hasarlı olabilir.",
+        "E7032": "Şifresi çözülmüş bir disk kalıbı oluşturulamıyor: bu diskte hiçbir başlığın oynatmadığı bir akış şifreli ve mevcut anahtarların hiçbiri ona uymuyor; bu yüzden kalıp hâlâ şifreli parçalar içerirdi. Bunun yerine başlıkları MKV olarak çıkarın ya da ham bir kopya alın (komut satırında --raw veya uygulamada “Şifreli olarak koru (ham geçiş)”).",
         "E7033": "Anahtar kaynaklarınızda ana bilgisayar sertifikaları bulundu, ancak hiçbiri kullanılabilir değil (hasarlı veya eksik). Anahtar veritabanınızı güncelleyip yeniden deneyin.",
         "E8000": "Anahtar veritabanı sunucusuna bağlanılamıyor: {detail}",
         "E8001": "Anahtar veritabanı indirmesi başarısız (HTTP {detail}). Tekrar deneyin veya şunu çalıştırın: freemkv update-keys --url <keydb-url>",
