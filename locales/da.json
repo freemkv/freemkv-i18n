@@ -289,7 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "Diskens AACS-nøglefil mangler eller kunne ikke læses. Rengør disken, og prøv igen; hvis det stadig mislykkes, kan disken være beskadiget.",
-        "E7032": "Et dekrypteret diskimage kan ikke laves: en stream på disken, som ingen titel afspiller, er krypteret, og ingen af de tilgængelige nøgler passer til den, så imaget ville stadig indeholde krypterede dele. Rip titlerne til MKV i stedet, eller lav en rå kopi (--raw på kommandolinjen eller “Behold krypteret (rå passthrough)” i appen).",
+        "E7032": "Et dekrypteret diskimage kan ikke laves: en stream på disken, som ingen titel afspiller, er krypteret, og ingen af de tilgængelige nøgler passer til den, så imaget ville stadig indeholde krypterede dele. Rip titlerne til MKV i stedet, eller behold en krypteret kopi: kopiér disken råt (--raw på kommandolinjen eller “Behold krypteret (rå passthrough)” i appen), eller behold kildeimaget, som det er.",
         "E7033": "Der blev fundet værtscertifikater i dine nøglekilder, men ingen af dem kan bruges (beskadiget eller ufuldstændigt). Opdater din nøgledatabase, og prøv igen.",
         "E8000": "Kan ikke oprette forbindelse til nøgledatabaseserveren: {detail}",
         "E8001": "Download af nøgledatabase mislykkedes (HTTP {detail}). Prøv igen, eller kør: freemkv update-keys --url <keydb-url>",

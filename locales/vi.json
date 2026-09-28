@@ -289,7 +289,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "Tệp khóa AACS của đĩa này bị thiếu hoặc không đọc được. Hãy lau sạch đĩa rồi thử lại; nếu vẫn lỗi, đĩa có thể đã bị hỏng.",
-        "E7032": "Không thể tạo ảnh đĩa đã giải mã: một luồng trên đĩa này mà không tiêu đề nào phát đang được mã hóa và không khóa nào hiện có khớp với nó, nên ảnh đĩa vẫn sẽ chứa các phần bị mã hóa. Thay vào đó, hãy rip các tiêu đề sang MKV hoặc tạo bản sao thô (--raw trên dòng lệnh, hoặc “Giữ mã hóa (chuyển thô nguyên vẹn)” trong ứng dụng).",
+        "E7032": "Không thể tạo ảnh đĩa đã giải mã: một luồng trên đĩa này mà không tiêu đề nào phát đang được mã hóa và không khóa nào hiện có khớp với nó, nên ảnh đĩa vẫn sẽ chứa các phần bị mã hóa. Thay vào đó, hãy rip các tiêu đề sang MKV hoặc giữ một bản sao được mã hóa: sao chép thô đĩa (--raw trên dòng lệnh, hoặc “Giữ mã hóa (chuyển thô nguyên vẹn)” trong ứng dụng), hoặc giữ nguyên ảnh đĩa nguồn.",
         "E7033": "Đã tìm thấy chứng chỉ host trong các nguồn khóa của bạn, nhưng không có chứng chỉ nào dùng được (bị hỏng hoặc không đầy đủ). Hãy làm mới cơ sở dữ liệu khóa rồi thử lại.",
         "E8000": "Không thể kết nối tới máy chủ cơ sở dữ liệu khóa: {detail}",
         "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Thử lại, hoặc chạy: freemkv update-keys --url <keydb-url>",
