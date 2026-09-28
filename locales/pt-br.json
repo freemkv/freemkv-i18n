@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Atualizado: {entries} entradas, {bytes} bytes",
         "saved": "Salvo: {path}",
-        "usage": "Uso: freemkv update-keys --url <url>"
+        "usage": "Uso: freemkv update-keys --url <url>",
+        "hddvd_unverified": "A descriptografia de HD DVD não foi verificada — confira a saída."
     },
     "verify": {
         "only_disc": "A verificação só funciona com URLs disc://.",
@@ -290,7 +291,7 @@
         "E7029": "O serviço de chaves on-line rejeitou o token de acesso, então não respondeu. Corrija o token do serviço de chaves em Configurações (ou --key-auth na linha de comando) e tente novamente. Isso não significa que o disco não tenha chave.",
         "E7030": "O serviço de chaves on-line está limitando a taxa de solicitações e não respondeu. Aguarde alguns minutos e tente novamente, ou extraia menos discos de uma vez. Isso não significa que o disco não tenha chave.",
         "E7031": "O arquivo de chaves AACS deste disco está ausente ou não pôde ser lido. Limpe o disco e tente novamente; se continuar falhando, o disco pode estar danificado.",
-        "E7032": "Não é possível criar uma imagem de disco descriptografada: um fluxo deste disco que nenhum título reproduz está criptografado e nenhuma das chaves disponíveis corresponde a ele, então a imagem ainda conteria partes criptografadas. Extraia os títulos para MKV ou mantenha uma cópia criptografada: copie o disco em modo bruto (--raw na linha de comando, ou “Manter criptografado (passagem bruta)” no aplicativo), ou mantenha a imagem de origem como está.",
+        "E7032": "Não é possível criar uma cópia descriptografada de todo o disco (uma imagem ou uma pasta): parte do disco está criptografada e nenhuma das chaves disponíveis a abre, então a cópia ainda conteria partes criptografadas. Extraia os títulos para MKV ou mantenha uma cópia criptografada: copie o disco em modo bruto (--raw na linha de comando, ou “Manter criptografado (passagem bruta)” no aplicativo), ou mantenha a imagem de origem como está.",
         "E7033": "Foram encontrados certificados de host em suas fontes de chaves, mas nenhum deles é utilizável (danificado ou incompleto). Atualize seu banco de dados de chaves e tente novamente.",
         "E8000": "Não é possível conectar ao servidor do banco de dados de chaves: {detail}",
         "E8001": "Falha ao baixar o banco de dados de chaves (HTTP {detail}). Tente novamente ou execute: freemkv update-keys --url <url-do-keydb>",
@@ -581,7 +582,6 @@
             "keep_encrypted": "Manter criptografado (passagem bruta):",
             "raw_note": "Grava o texto cifrado intacto — apenas saída ISO. Corresponde ao --raw da CLI.",
             "overwrite": "Sobrescrever arquivos existentes:",
-            "capture_note": "Grava a imagem ainda criptografada para que possa ser descriptografada mais tarde, quando uma chave estiver disponível.",
             "key_source": "Fonte de chaves:",
             "key_src_local": "Apenas keydb local",
             "key_src_online": "Apenas serviço de chaves online",

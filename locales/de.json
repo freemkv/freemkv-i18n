@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Aktualisiert: {entries} Einträge, {bytes} Bytes",
         "saved": "Gespeichert: {path}",
-        "usage": "Verwendung: freemkv update-keys --url <url>"
+        "usage": "Verwendung: freemkv update-keys --url <url>",
+        "hddvd_unverified": "Die HD-DVD-Entschlüsselung ist nicht verifiziert – prüfen Sie die Ausgabe."
     },
     "verify": {
         "only_disc": "Verify funktioniert nur mit disc://-URLs.",
@@ -267,7 +268,7 @@
         "E7029": "Der Online-Schlüsseldienst hat das Zugriffstoken abgelehnt und deshalb nicht geantwortet. Korrigieren Sie das Token des Schlüsseldienstes in den Einstellungen (oder --key-auth auf der Kommandozeile) und versuchen Sie es erneut. Das bedeutet nicht, dass die Disc keinen Schlüssel hat.",
         "E7030": "Der Online-Schlüsseldienst drosselt die Anfragen und hat deshalb nicht geantwortet. Warten Sie einige Minuten und versuchen Sie es erneut, oder verarbeiten Sie weniger Discs gleichzeitig. Das bedeutet nicht, dass die Disc keinen Schlüssel hat.",
         "E7031": "Die AACS-Schlüsseldatei dieser Disc fehlt oder konnte nicht gelesen werden. Reinigen Sie die Disc und versuchen Sie es erneut; schlägt es weiterhin fehl, ist die Disc möglicherweise beschädigt.",
-        "E7032": "Ein entschlüsseltes Disc-Image kann nicht erstellt werden: Ein Stream auf dieser Disc, den kein Titel abspielt, ist verschlüsselt, und keiner der verfügbaren Schlüssel passt dazu, sodass das Image noch verschlüsselte Teile enthielte. Rippen Sie die Titel stattdessen als MKV oder behalten Sie eine verschlüsselte Kopie: Kopieren Sie die Disc roh (--raw in der Befehlszeile oder „Verschlüsselt behalten (Raw-Durchleitung)“ in der App) oder behalten Sie das Quell-Image unverändert.",
+        "E7032": "Eine entschlüsselte Kopie der gesamten Disc (ein Image oder ein Ordner) kann nicht erstellt werden: Ein Teil der Disc ist verschlüsselt, und keiner der verfügbaren Schlüssel öffnet ihn, sodass die Kopie weiterhin verschlüsselte Teile enthielte. Rippen Sie die Titel stattdessen als MKV oder behalten Sie eine verschlüsselte Kopie: Kopieren Sie die Disc roh (--raw in der Befehlszeile oder „Verschlüsselt behalten (Raw-Durchleitung)“ in der App) oder behalten Sie das Quell-Image unverändert.",
         "E7033": "In Ihren Schlüsselquellen wurden Host-Zertifikate gefunden, aber keines davon ist verwendbar (beschädigt oder unvollständig). Aktualisieren Sie Ihre Schlüsseldatenbank und versuchen Sie es erneut.",
         "E8000": "Verbindung zum KEYDB-Server nicht möglich: {detail}",
         "E8001": "KEYDB-Download fehlgeschlagen (HTTP {detail})",
@@ -581,7 +582,6 @@
             "keep_encrypted": "Verschlüsselt behalten (Raw-Durchleitung):",
             "raw_note": "Schreibt den Chiffretext unverändert — nur ISO-Ausgabe. Entspricht --raw der CLI.",
             "overwrite": "Vorhandene Dateien überschreiben:",
-            "capture_note": "Schreibt das noch verschlüsselte Abbild, damit es später entschlüsselt werden kann, sobald ein Schlüssel verfügbar ist.",
             "key_source": "Schlüsselquelle:",
             "key_src_local": "Nur lokale keydb",
             "key_src_online": "Nur Online-Schlüsseldienst",

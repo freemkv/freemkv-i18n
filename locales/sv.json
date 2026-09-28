@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Uppdaterad: {entries} poster, {bytes} byte",
         "saved": "Sparad: {path}",
-        "usage": "Användning: freemkv update-keys --url <url>"
+        "usage": "Användning: freemkv update-keys --url <url>",
+        "hddvd_unverified": "HD DVD-dekryptering är overifierad — kontrollera resultatet."
     },
     "verify": {
         "only_disc": "Verifiering fungerar endast med disc://-URL:er.",
@@ -290,7 +291,7 @@
         "E7029": "Nyckeltjänsten online avvisade åtkomsttoken och svarade därför inte. Rätta till nyckeltjänstens token i Inställningar (eller --key-auth på kommandoraden) och försök igen. Det betyder inte att skivan saknar nyckel.",
         "E7030": "Nyckeltjänsten online begränsar antalet förfrågningar och svarade därför inte. Vänta några minuter och försök igen, eller rippa färre skivor åt gången. Det betyder inte att skivan saknar nyckel.",
         "E7031": "Skivans AACS-nyckelfil saknas eller kunde inte läsas. Rengör skivan och försök igen; om det fortfarande misslyckas kan skivan vara skadad.",
-        "E7032": "En dekrypterad skivavbild kan inte skapas: en ström på skivan som ingen titel spelar upp är krypterad och ingen av de tillgängliga nycklarna passar den, så avbilden skulle fortfarande innehålla krypterade delar. Rippa titlarna till MKV i stället, eller behåll en krypterad kopia: kopiera skivan rått (--raw på kommandoraden, eller ”Behåll krypterad (rå genomströmning)” i appen), eller behåll källavbilden som den är.",
+        "E7032": "En dekrypterad kopia av hela skivan (en avbild eller en mapp) kan inte skapas: en del av skivan är krypterad och ingen av de tillgängliga nycklarna öppnar den, så kopian skulle fortfarande innehålla krypterade delar. Rippa titlarna till MKV i stället, eller behåll en krypterad kopia: kopiera skivan rått (--raw på kommandoraden, eller ”Behåll krypterad (rå genomströmning)” i appen), eller behåll källavbilden som den är.",
         "E7033": "Värdcertifikat hittades i dina nyckelkällor, men inget av dem är användbart (skadat eller ofullständigt). Uppdatera din nyckeldatabas och försök igen.",
         "E8000": "Kan inte ansluta till nyckeldatabasservern: {detail}",
         "E8001": "Nedladdning av nyckeldatabas misslyckades (HTTP {detail}). Försök igen, eller kör: freemkv update-keys --url <keydb-url>",
@@ -581,7 +582,6 @@
             "keep_encrypted": "Behåll krypterad (rå genomströmning) :",
             "raw_note": "Skriver chiffertext orörd — endast ISO-utdata. Motsvarar CLI:ns --raw.",
             "overwrite": "Skriv över befintliga filer :",
-            "capture_note": "Skriver den fortfarande krypterade avbilden så att den kan dekrypteras senare när en nyckel är tillgänglig.",
             "key_source": "Nyckelkälla :",
             "key_src_local": "Endast lokal keydb",
             "key_src_online": "Endast online-nyckeltjänst",

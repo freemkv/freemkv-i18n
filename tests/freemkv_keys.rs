@@ -476,33 +476,99 @@ enum Covered {
     Forwarder,
 }
 
-/// `(file, enclosing fn, coverage, reason)` for every call site the extractor cannot resolve.
-const ALLOWLIST: &[(&str, &str, Covered, &str)] = &[
+// I005 (review fixup): (file, fn) alone let a second unparseable call in an allowlisted
+// fn hide under the first entry; an exact line was brittle (unrelated edits renumber it).
+// The fn's expected COUNT of unparseable call sites is the stable, still-tight signal.
+/// `(file, enclosing fn, expected unparsed-call-site count, coverage, reason)`.
+const ALLOWLIST: &[(&str, &str, usize, Covered, &str)] = &[
     (
         "cli_entry.rs",
         "usage",
+        1,
         Covered::PairTable("TRACK_SINK_URL_LINES"),
         "loops over the usage.url.* track-sink table",
     ),
     (
         "ui.rs",
         "format_label",
+        1,
         Covered::MatchTable("format_key"),
         "gui.format.* keys come from format_key's match",
     ),
     (
         "cli_entry.rs",
         "render",
+        1,
         Covered::Forwarder,
         "PendingDiag renders the key/english its ::new sites passed",
     ),
     (
         "strings.rs",
         "fmt_or",
+        1,
         Covered::Forwarder,
         "fmt_or delegates to get_or",
     ),
 ];
+
+/// The ALLOWLIST lookup (I005): matched on `(file, fn)`, then validated against the
+/// entry's expected unparsed-call-site COUNT. A second unparseable call added to an
+/// allowlisted fn changes the count, so it is not silently covered by the fn's entry.
+fn allowlist_check(file: &str, func: &str, actual_count: usize) -> Result<usize, String> {
+    let Some(n) = ALLOWLIST
+        .iter()
+        .position(|(f, fun, ..)| *f == file && *fun == func)
+    else {
+        return Err(format!(
+            "{file} fn {func}: {actual_count} unparseable call site(s), not allowlisted"
+        ));
+    };
+    let expected = ALLOWLIST[n].2;
+    if actual_count != expected {
+        return Err(format!(
+            "{file} fn {func}: {actual_count} unparseable call site(s) now, \
+             ALLOWLIST expects {expected}"
+        ));
+    }
+    Ok(n)
+}
+
+// I005 / N6 (IB1): a NEW allowlist, separate from the call-site ALLOWLIST above (X4-1).
+// Carries `keys.hddvd_unverified` (KU-I0) until freemkv's KU-F1 renders it and its
+// paired KU-F1i removes the entry. A now-used entry fails loudly (§8.1 R11).
+/// `(key, reason)` for every en.json key deliberately not (yet) used by freemkv.
+const ORPHAN_ALLOWLIST: &[(&str, &str)] = &[(
+    "keys.hddvd_unverified",
+    "added by KU-I0; rendered by freemkv only from KU-F1, which removes this entry (KU-F1i)",
+)];
+
+/// §8.1 R11's assumption, made real (review fixup): checking `checked` cannot prove an
+/// ORPHAN_ALLOWLIST key is unused, because freemkv renders `keys.*` through bare
+/// `strings::get(key)` calls that never land in `checked` (the extractor only recognizes
+/// the get_or/fmt_or/PendingDiag::new call shapes, plus its two allowlisted tables). So
+/// this searches the raw source text instead: any file containing the literal `"<key>"`
+/// renders that key by *some* call shape, extractor-parseable or not — the allowlist
+/// entry is stale, and that is a failure, not a warning.
+///
+/// `files` is `(display name, raw source text)` for every `.rs` file under FREEMKV_SRC.
+fn stale_orphan_allowlist_entries(files: &[(String, String)]) -> Vec<String> {
+    ORPHAN_ALLOWLIST
+        .iter()
+        .filter_map(|(key, why)| {
+            let quoted = format!("\"{key}\"");
+            let at = files.iter().find_map(|(name, text)| {
+                text.lines()
+                    .enumerate()
+                    .find(|(_, l)| l.contains(&quoted))
+                    .map(|(i, _)| format!("{name}:{}", i + 1))
+            })?;
+            Some(format!(
+                "stale orphan-allowlist entry {key}: literal {quoted} appears in \
+                 freemkv src at {at} ({why}); remove it"
+            ))
+        })
+        .collect()
+}
 
 fn lookup<'a>(catalog: &'a Value, key: &str) -> Option<&'a str> {
     key.split('.')
@@ -538,45 +604,56 @@ fn freemkv_fallback_keys_ship_in_english_with_the_same_text() {
     let mut checked: Vec<(String, String, String)> = Vec::new();
     let mut problems = Vec::new();
     let mut used = vec![false; ALLOWLIST.len()];
+    let mut raw_sources: Vec<(String, String)> = Vec::new();
     for file in &files {
         let name = file.file_name().unwrap().to_string_lossy().to_string();
-        let ex = match extract(&std::fs::read_to_string(file).unwrap()) {
+        let text = std::fs::read_to_string(file).unwrap();
+        let ex = match extract(&text) {
             Ok(ex) => ex,
             Err(e) => {
                 problems.push(format!("{}: {e}", file.display()));
+                raw_sources.push((name, text));
                 continue;
             }
         };
         for (k, e, line) in ex.pairs {
             checked.push((k, e, format!("{name}:{line}")));
         }
+        // Group by fn: ALLOWLIST now matches on (file, fn, expected COUNT), not a line.
+        let mut by_func: std::collections::BTreeMap<String, Vec<usize>> = Default::default();
         for (func, line) in ex.unparsed {
-            let Some(n) = ALLOWLIST
-                .iter()
-                .position(|(f, fun, ..)| *f == name && *fun == func)
-            else {
-                problems.push(format!(
-                    "{name}:{line} (fn {func}): call site not parseable and not allowlisted"
-                ));
-                continue;
-            };
-            used[n] = true;
-            let rows = match ALLOWLIST[n].2 {
-                Covered::PairTable(t) => ex.pair_tables.get(t),
-                Covered::MatchTable(f) => ex.match_tables.get(f),
-                Covered::Forwarder => continue,
-            };
-            match rows {
-                Some(rows) => {
-                    for (k, e) in rows {
-                        checked.push((k.clone(), e.clone(), format!("{name}:{line} table")));
+            by_func.entry(func).or_default().push(line);
+        }
+        for (func, lines) in by_func {
+            match allowlist_check(&name, &func, lines.len()) {
+                Err(e) => problems.push(e),
+                Ok(n) => {
+                    used[n] = true;
+                    let rows = match ALLOWLIST[n].3 {
+                        Covered::PairTable(t) => ex.pair_tables.get(t),
+                        Covered::MatchTable(f) => ex.match_tables.get(f),
+                        Covered::Forwarder => continue,
+                    };
+                    match rows {
+                        Some(rows) => {
+                            for (k, e) in rows {
+                                checked.push((
+                                    k.clone(),
+                                    e.clone(),
+                                    format!("{name} fn {func} table"),
+                                ));
+                            }
+                        }
+                        None => {
+                            problems.push(format!("{name} fn {func}: allowlisted table not found"))
+                        }
                     }
                 }
-                None => problems.push(format!("{name}:{line}: allowlisted table not found")),
             }
         }
+        raw_sources.push((name, text));
     }
-    for (n, (f, fun, _, why)) in ALLOWLIST.iter().enumerate() {
+    for (n, (f, fun, _, _, why)) in ALLOWLIST.iter().enumerate() {
         if !used[n] {
             problems.push(format!("stale allowlist entry {f} fn {fun} ({why})"));
         }
@@ -595,12 +672,53 @@ fn freemkv_fallback_keys_ship_in_english_with_the_same_text() {
             Some(_) => {}
         }
     }
+
+    // §8.1 R11: see stale_orphan_allowlist_entries' doc for why this greps raw source
+    // text instead of using `checked`.
+    for problem in stale_orphan_allowlist_entries(&raw_sources) {
+        problems.push(problem);
+    }
+
     assert!(
         problems.is_empty(),
         "{} freemkv fallback key problem(s):\n{}",
         problems.len(),
         problems.join("\n")
     );
+}
+
+// I005 guard, per spec (this file's ALLOWLIST doc comment); do not change without
+// re-widening the match back to a bare (file, fn). A fn's expected call-site COUNT is
+// the tight signal now; a second unparseable call raises the count and must still fail.
+#[test]
+fn allowlist_matches_by_expected_call_count_not_line() {
+    let (file, func, expected) = (ALLOWLIST[2].0, ALLOWLIST[2].1, ALLOWLIST[2].2);
+    assert_eq!((file, func, expected), ("cli_entry.rs", "render", 1));
+    assert_eq!(allowlist_check(file, func, expected), Ok(2));
+    // The I005 case: a second unparseable call site appears in the same fn.
+    assert!(allowlist_check(file, func, expected + 1).is_err());
+    // Not allowlisted at all.
+    assert!(allowlist_check(file, "no_such_fn", 1).is_err());
+}
+
+// §8.1 R11 guard (review fixup): `checked` never has a `keys.*` key (bare
+// `strings::get`, unparsed here), so the old check could never catch a real stale entry.
+#[test]
+fn a_literal_key_in_freemkv_src_fails_as_stale() {
+    let clean = [("other.rs".to_string(), "fn f() {}".to_string())];
+    assert!(
+        stale_orphan_allowlist_entries(&clean).is_empty(),
+        "not rendered anywhere: not stale"
+    );
+
+    let now_rendered = [(
+        "keys.rs".to_string(),
+        "fn open_image() {\n    strings::get(\"keys.hddvd_unverified\")\n}".to_string(),
+    )];
+    let stale = stale_orphan_allowlist_entries(&now_rendered);
+    assert_eq!(stale.len(), 1);
+    assert!(stale[0].contains("keys.hddvd_unverified"), "{stale:?}");
+    assert!(stale[0].contains("keys.rs:2"), "{stale:?}");
 }
 
 #[cfg(test)]

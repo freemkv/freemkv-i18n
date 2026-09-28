@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Päivitetty: {entries} merkintää, {bytes} tavua",
         "saved": "Tallennettu: {path}",
-        "usage": "Käyttö: freemkv update-keys --url <url>"
+        "usage": "Käyttö: freemkv update-keys --url <url>",
+        "hddvd_unverified": "HD DVD -salauksenpurkua ei ole varmennettu — tarkista tuloste."
     },
     "verify": {
         "only_disc": "Vahvistus toimii vain disc://-URL-osoitteiden kanssa.",
@@ -290,7 +291,7 @@
         "E7029": "Verkkoavainpalvelu hylkäsi käyttötunnuksen (tokenin), eikä siksi vastannut. Korjaa avainpalvelun token Asetuksissa (tai --key-auth komentorivillä) ja yritä uudelleen. Tämä ei tarkoita, ettei levyllä olisi avainta.",
         "E7030": "Verkkoavainpalvelu rajoittaa pyyntöjen määrää eikä siksi vastannut. Odota muutama minuutti ja yritä uudelleen, tai rippaa vähemmän levyjä kerralla. Tämä ei tarkoita, ettei levyllä olisi avainta.",
         "E7031": "Tämän levyn AACS-avaintiedosto puuttuu tai sitä ei voitu lukea. Puhdista levy ja yritä uudelleen; jos virhe toistuu, levy voi olla vaurioitunut.",
-        "E7032": "Purettua levykuvaa ei voi tehdä: levyllä on virta, jota mikään nimike ei toista, ja se on salattu eikä mikään käytettävissä olevista avaimista sovi siihen, joten levykuva sisältäisi yhä salattuja osia. Rippaa nimikkeet MKV-muotoon tai säilytä salattu kopio: kopioi levy raakana (--raw komentorivillä tai ”Säilytä salattuna (raaka läpivienti)” sovelluksessa) tai säilytä lähdelevykuva sellaisenaan.",
+        "E7032": "Puretun kopion koko levystä (levykuva tai kansio) ei voi tehdä: osa levystä on salattu, eikä mikään käytettävissä olevista avaimista avaa sitä, joten kopio sisältäisi yhä salattuja osia. Rippaa nimikkeet MKV-muotoon tai säilytä salattu kopio: kopioi levy raakana (--raw komentorivillä tai ”Säilytä salattuna (raaka läpivienti)” sovelluksessa) tai säilytä lähdelevykuva sellaisenaan.",
         "E7033": "Avainlähteistäsi löytyi isäntävarmenteita, mutta yksikään niistä ei kelpaa (vaurioitunut tai puutteellinen). Päivitä avaintietokantasi ja yritä uudelleen.",
         "E8000": "Avaintietokantapalvelimeen ei saada yhteyttä: {detail}",
         "E8001": "Avaintietokannan lataus epäonnistui (HTTP {detail}). Yritä uudelleen tai suorita: freemkv update-keys --url <keydb-url>",
@@ -581,7 +582,6 @@
             "keep_encrypted": "Säilytä salattuna (raaka läpivienti) :",
             "raw_note": "Kirjoittaa salatekstin koskemattomana — vain ISO-tuloste. Vastaa komentorivin --raw.",
             "overwrite": "Ylikirjoita olemassa olevat tiedostot :",
-            "capture_note": "Kirjoittaa yhä salatun levykuvan, jotta se voidaan purkaa myöhemmin avaimen ollessa saatavilla.",
             "key_source": "Avainlähde :",
             "key_src_local": "Vain paikallinen keydb",
             "key_src_online": "Vain verkkoavainpalvelu",

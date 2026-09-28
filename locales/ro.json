@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Actualizat: {entries} intrări, {bytes} octeți",
         "saved": "Salvat: {path}",
-        "usage": "Utilizare: freemkv update-keys --url <url>"
+        "usage": "Utilizare: freemkv update-keys --url <url>",
+        "hddvd_unverified": "Decriptarea HD DVD nu a fost verificată — examinați rezultatul."
     },
     "verify": {
         "only_disc": "Verificarea funcționează doar cu URL-uri disc://.",
@@ -290,7 +291,7 @@
         "E7029": "Serviciul de chei online a respins tokenul de acces, deci nu a răspuns. Corectează tokenul serviciului de chei din Setări (sau --key-auth în linia de comandă) și încearcă din nou. Asta nu înseamnă că discul nu are cheie.",
         "E7030": "Serviciul de chei online limitează frecvența cererilor și nu a răspuns. Așteaptă câteva minute și încearcă din nou, sau extrage mai puține discuri deodată. Asta nu înseamnă că discul nu are cheie.",
         "E7031": "Fișierul de chei AACS al acestui disc lipsește sau nu a putut fi citit. Curățați discul și încercați din nou; dacă eroarea persistă, discul poate fi deteriorat.",
-        "E7032": "Nu se poate crea o imagine de disc decriptată: un flux de pe acest disc pe care nu îl redă niciun titlu este criptat și niciuna dintre cheile disponibile nu i se potrivește, așa că imaginea ar conține în continuare părți criptate. Extrageți în schimb titlurile în MKV sau păstrați o copie criptată: copiați discul brut (--raw în linia de comandă sau „Păstrează criptat (transfer brut)” în aplicație) ori păstrați imaginea sursă așa cum este.",
+        "E7032": "Nu se poate crea o copie decriptată a întregului disc (o imagine sau un director): o parte a discului este criptată și niciuna dintre cheile disponibile nu o deschide, așa că respectiva copie ar conține în continuare părți criptate. Extrageți în schimb titlurile în MKV sau păstrați o copie criptată: copiați discul brut (--raw în linia de comandă sau „Păstrează criptat (transfer brut)” în aplicație) ori păstrați imaginea sursă așa cum este.",
         "E7033": "Au fost găsite certificate gazdă în sursele dvs. de chei, dar niciunul nu este utilizabil (deteriorat sau incomplet). Actualizați baza de date de chei și încercați din nou.",
         "E8000": "Nu se poate conecta la serverul bazei de date de chei: {detail}",
         "E8001": "Descărcarea bazei de date de chei a eșuat (HTTP {detail}). Încearcă din nou sau rulează: freemkv update-keys --url <keydb-url>",
@@ -581,7 +582,6 @@
             "keep_encrypted": "Păstrează criptat (transfer brut) :",
             "raw_note": "Scrie textul cifrat neatins — doar ieșire ISO. Corespunde opțiunii --raw a CLI-ului.",
             "overwrite": "Suprascrie fișierele existente :",
-            "capture_note": "Scrie imaginea încă criptată, astfel încât să poată fi decriptată ulterior, odată ce o cheie devine disponibilă.",
             "key_source": "Sursă de chei :",
             "key_src_local": "Doar keydb local",
             "key_src_online": "Doar serviciu de chei online",

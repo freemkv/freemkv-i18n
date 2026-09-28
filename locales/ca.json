@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Actualitzat: {entries} entrades, {bytes} bytes",
         "saved": "Desat: {path}",
-        "usage": "Ús: freemkv update-keys --url <url>"
+        "usage": "Ús: freemkv update-keys --url <url>",
+        "hddvd_unverified": "El desxifratge d'HD DVD no està verificat: comproveu la sortida."
     },
     "verify": {
         "only_disc": "La verificació només funciona amb URL disc://.",
@@ -290,7 +291,7 @@
         "E7029": "El servei de claus en línia ha rebutjat el testimoni d'accés, així que no ha respost. Corregiu el testimoni del servei de claus a Configuració (o --key-auth a la línia d'ordres) i torneu-ho a provar. Això no vol dir que el disc no tingui clau.",
         "E7030": "El servei de claus en línia està limitant la freqüència de sol·licituds i no ha respost. Espereu uns minuts i torneu-ho a provar, o extraieu menys discos alhora. Això no vol dir que el disc no tingui clau.",
         "E7031": "Falta el fitxer de claus AACS d'aquest disc o no s'ha pogut llegir. Netegeu el disc i torneu-ho a provar; si continua fallant, pot ser que el disc estigui malmès.",
-        "E7032": "No es pot crear una imatge de disc desxifrada: un flux d'aquest disc que cap títol reprodueix està xifrat i cap de les claus disponibles hi correspon, de manera que la imatge encara contindria parts xifrades. Extraieu els títols a MKV, o conserveu una còpia xifrada: copieu el disc en brut (--raw a la línia d'ordres, o «Conserva xifrat (pas directe en brut)» a l'aplicació), o conserveu la imatge d'origen tal com és.",
+        "E7032": "No es pot fer una còpia desxifrada de tot el disc (una imatge o una carpeta): una part del disc està xifrada i cap de les claus disponibles l'obre, de manera que la còpia encara contindria parts xifrades. Extraieu els títols a MKV, o conserveu una còpia xifrada: copieu el disc en brut (--raw a la línia d'ordres, o «Conserva xifrat (pas directe en brut)» a l'aplicació), o conserveu la imatge d'origen tal com és.",
         "E7033": "S'han trobat certificats d'amfitrió a les vostres fonts de claus, però cap és utilitzable (malmès o incomplet). Actualitzeu la vostra base de dades de claus i torneu-ho a provar.",
         "E8000": "No es pot connectar al servidor de la base de dades de claus: {detail}",
         "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu-ho a provar, o executeu: freemkv update-keys --url <url-keydb>",
@@ -581,7 +582,6 @@
             "keep_encrypted": "Conserva xifrat (pas directe en brut) :",
             "raw_note": "Escriu el text xifrat intacte — només sortida ISO. Coincideix amb --raw de la CLI.",
             "overwrite": "Sobreescriu els fitxers existents :",
-            "capture_note": "Escriu la imatge encara xifrada perquè es pugui desxifrar més endavant, quan hi hagi una clau disponible.",
             "key_source": "Font de claus :",
             "key_src_local": "Només keydb local",
             "key_src_online": "Només servei de claus en línia",

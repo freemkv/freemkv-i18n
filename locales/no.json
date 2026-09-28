@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Oppdatert: {entries} oppføringer, {bytes} byte",
         "saved": "Lagret: {path}",
-        "usage": "Bruk: freemkv update-keys --url <url>"
+        "usage": "Bruk: freemkv update-keys --url <url>",
+        "hddvd_unverified": "HD DVD-dekryptering er ikke verifisert – kontroller resultatet."
     },
     "verify": {
         "only_disc": "Verifisering fungerer bare med disc://-URL-er.",
@@ -290,7 +291,7 @@
         "E7029": "Nettbasert nøkkeltjeneste avviste tilgangstokenet og svarte derfor ikke. Rett nøkkeltjenestens token i Innstillinger (eller --key-auth på kommandolinjen) og prøv igjen. Dette betyr ikke at platen mangler nøkkel.",
         "E7030": "Nettbasert nøkkeltjeneste begrenser antall forespørsler og svarte derfor ikke. Vent noen minutter og prøv igjen, eller ripp færre plater om gangen. Dette betyr ikke at platen mangler nøkkel.",
         "E7031": "Platens AACS-nøkkelfil mangler eller kunne ikke leses. Rengjør platen og prøv igjen; hvis det fortsatt mislykkes, kan platen være skadet.",
-        "E7032": "Et dekryptert platebilde kan ikke lages: en strøm på denne platen som ingen tittel spiller av, er kryptert, og ingen av de tilgjengelige nøklene passer til den, så bildet ville fortsatt inneholde krypterte deler. Ripp titlene til MKV i stedet, eller behold en kryptert kopi: kopier platen rått (--raw på kommandolinjen, eller «Behold kryptert (rå gjennomstrømming)» i appen), eller behold kildebildet som det er.",
+        "E7032": "En dekryptert kopi av hele platen (et platebilde eller en mappe) kan ikke lages: en del av platen er kryptert, og ingen av de tilgjengelige nøklene åpner den, så kopien ville fortsatt inneholde krypterte deler. Ripp titlene til MKV i stedet, eller behold en kryptert kopi: kopier platen rått (--raw på kommandolinjen, eller «Behold kryptert (rå gjennomstrømming)» i appen), eller behold kildebildet som det er.",
         "E7033": "Det ble funnet vertssertifikater i nøkkelkildene dine, men ingen av dem kan brukes (skadet eller ufullstendig). Oppdater nøkkeldatabasen din og prøv igjen.",
         "E8000": "Kan ikke koble til nøkkeldatabaseserveren: {detail}",
         "E8001": "Nedlasting av nøkkeldatabase mislyktes (HTTP {detail}). Prøv igjen, eller kjør: freemkv update-keys --url <keydb-url>",
@@ -581,7 +582,6 @@
             "keep_encrypted": "Behold kryptert (rå gjennomstrømming):",
             "raw_note": "Skriver chifferteksten urørt — kun ISO-utdata. Samsvarer med CLI-ens --raw.",
             "overwrite": "Overskriv eksisterende filer:",
-            "capture_note": "Skriver det fortsatt krypterte bildet så det kan dekrypteres senere når en nøkkel er tilgjengelig.",
             "key_source": "Nøkkelkilde:",
             "key_src_local": "Kun lokal keydb",
             "key_src_online": "Kun nettbasert nøkkeltjeneste",

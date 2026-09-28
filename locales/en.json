@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Updated: {entries} entries, {bytes} bytes",
         "saved": "Saved: {path}",
-        "usage": "Usage: freemkv update-keys --url <url>"
+        "usage": "Usage: freemkv update-keys --url <url>",
+        "hddvd_unverified": "HD DVD decryption is unverified — check the output."
     },
     "verify": {
         "only_disc": "Verify only works with disc:// URLs.",
@@ -290,7 +291,7 @@
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
         "E7031": "This disc's AACS key file is missing or could not be read. Clean the disc and try again; if it still fails, the disc may be damaged.",
-        "E7032": "A decrypted disc image can't be made: a stream on this disc that no title plays is encrypted, and none of the available keys could be matched to it, so the image would still contain encrypted parts. Rip the titles to MKV instead, or keep an encrypted copy: copy the disc raw (--raw on the command line, or “Keep encrypted (raw passthrough)” in the app), or keep the source image as it is.",
+        "E7032": "A decrypted copy of the whole disc (an image or a folder) can't be made: part of the disc is encrypted and none of the available keys opens it, so the copy would still contain encrypted parts. Rip the titles to MKV instead, or keep an encrypted copy: copy the disc raw (--raw on the command line, or “Keep encrypted (raw passthrough)” in the app), or keep the source image as it is.",
         "E7033": "Host certificates were found in your key sources, but none of them is usable (damaged or incomplete). Refresh your key database and try again.",
         "E8000": "Cannot connect to the key database server: {detail}",
         "E8001": "Key database download failed (HTTP {detail}). Try again, or run: freemkv update-keys --url <keydb-url>",
@@ -582,7 +583,6 @@
             "keep_encrypted": "Keep encrypted (raw passthrough) :",
             "raw_note": "Writes ciphertext untouched — ISO output only. Matches the CLI's --raw.",
             "overwrite": "Overwrite existing files :",
-            "capture_note": "Writes the still-encrypted image so it can be decrypted later once a key is available.",
             "key_source": "Key source :",
             "key_src_local": "Local keydb only",
             "key_src_online": "Online key service only",

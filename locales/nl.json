@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Bijgewerkt: {entries} vermeldingen, {bytes} bytes",
         "saved": "Opgeslagen: {path}",
-        "usage": "Gebruik: freemkv update-keys --url <url>"
+        "usage": "Gebruik: freemkv update-keys --url <url>",
+        "hddvd_unverified": "HD DVD-ontsleuteling is niet geverifieerd — controleer de uitvoer."
     },
     "verify": {
         "only_disc": "Verify werkt alleen met disc://-URL's.",
@@ -267,7 +268,7 @@
         "E7029": "De online-sleuteldienst heeft het toegangstoken geweigerd en gaf daarom geen antwoord. Corrigeer het token van de sleuteldienst in Instellingen (of --key-auth op de opdrachtregel) en probeer het opnieuw. Dit betekent niet dat de disc geen sleutel heeft.",
         "E7030": "De online-sleuteldienst beperkt het aantal verzoeken en gaf daarom geen antwoord. Wacht een paar minuten en probeer het opnieuw, of verwerk minder discs tegelijk. Dit betekent niet dat de disc geen sleutel heeft.",
         "E7031": "Het AACS-sleutelbestand van deze disc ontbreekt of kon niet worden gelezen. Maak de disc schoon en probeer het opnieuw; als het blijft mislukken, is de disc mogelijk beschadigd.",
-        "E7032": "Er kan geen ontsleutelde disc-image worden gemaakt: een stream op deze disc die door geen enkele titel wordt afgespeeld, is versleuteld en geen van de beschikbare sleutels past erop, dus de image zou nog versleutelde delen bevatten. Rip de titels in plaats daarvan naar MKV, of bewaar een versleutelde kopie: kopieer de disc ruw (--raw op de opdrachtregel, of ‘Versleuteld behouden (ruwe doorvoer)’ in de app), of bewaar de bron-image zoals hij is.",
+        "E7032": "Er kan geen ontsleutelde kopie van de hele disc (een image of een map) worden gemaakt: een deel van de disc is versleuteld en geen van de beschikbare sleutels opent het, dus de kopie zou nog versleutelde delen bevatten. Rip de titels in plaats daarvan naar MKV, of bewaar een versleutelde kopie: kopieer de disc ruw (--raw op de opdrachtregel, of ‘Versleuteld behouden (ruwe doorvoer)’ in de app), of bewaar de bron-image zoals hij is.",
         "E7033": "Er zijn hostcertificaten gevonden in uw sleutelbronnen, maar geen enkele is bruikbaar (beschadigd of onvolledig). Werk uw sleuteldatabase bij en probeer het opnieuw.",
         "E8000": "Kan geen verbinding maken met KEYDB-server: {detail}",
         "E8001": "KEYDB-download mislukt (HTTP {detail})",
@@ -581,7 +582,6 @@
             "keep_encrypted": "Versleuteld behouden (ruwe doorvoer):",
             "raw_note": "Schrijft de cijfertekst ongewijzigd — alleen ISO-uitvoer. Komt overeen met --raw van de CLI.",
             "overwrite": "Bestaande bestanden overschrijven:",
-            "capture_note": "Schrijft de nog versleutelde image, zodat deze later kan worden ontsleuteld zodra er een sleutel beschikbaar is.",
             "key_source": "Sleutelbron:",
             "key_src_local": "Alleen lokale keydb",
             "key_src_online": "Alleen online sleuteldienst",

@@ -173,7 +173,8 @@
     "keys": {
         "updated": "Diperbarui: {entries} entri, {bytes} byte",
         "saved": "Disimpan: {path}",
-        "usage": "Penggunaan: freemkv update-keys --url <url>"
+        "usage": "Penggunaan: freemkv update-keys --url <url>",
+        "hddvd_unverified": "Dekripsi HD DVD belum diverifikasi — periksa hasilnya."
     },
     "verify": {
         "only_disc": "Verifikasi hanya bekerja dengan URL disc://.",
@@ -290,7 +291,7 @@
         "E7029": "Layanan kunci daring menolak token akses, sehingga tidak mau menjawab. Perbaiki token layanan kunci di Pengaturan (atau --key-auth di baris perintah) lalu coba lagi. Ini tidak berarti cakram tidak memiliki kunci.",
         "E7030": "Layanan kunci daring sedang membatasi laju permintaan dan tidak mau menjawab. Tunggu beberapa menit lalu coba lagi, atau rip lebih sedikit cakram sekaligus. Ini tidak berarti cakram tidak memiliki kunci.",
         "E7031": "Berkas kunci AACS cakram ini tidak ada atau tidak dapat dibaca. Bersihkan cakram lalu coba lagi; jika masih gagal, cakram mungkin rusak.",
-        "E7032": "Image cakram yang didekripsi tidak dapat dibuat: sebuah stream di cakram ini yang tidak diputar oleh judul mana pun terenkripsi, dan tidak ada kunci tersedia yang cocok dengannya, sehingga image masih akan berisi bagian terenkripsi. Rip judul ke MKV sebagai gantinya, atau simpan salinan terenkripsi: salin cakram secara mentah (--raw di baris perintah, atau “Simpan terenkripsi (passthrough mentah)” di aplikasi), atau simpan image sumber apa adanya.",
+        "E7032": "Salinan hasil dekripsi dari seluruh cakram (image atau folder) tidak dapat dibuat: sebagian cakram terenkripsi dan tidak ada kunci tersedia yang membukanya, sehingga salinan masih akan berisi bagian terenkripsi. Rip judul ke MKV sebagai gantinya, atau simpan salinan terenkripsi: salin cakram secara mentah (--raw di baris perintah, atau “Simpan terenkripsi (passthrough mentah)” di aplikasi), atau simpan image sumber apa adanya.",
         "E7033": "Sertifikat host ditemukan di sumber kunci Anda, tetapi tidak satu pun yang dapat digunakan (rusak atau tidak lengkap). Perbarui basis data kunci Anda lalu coba lagi.",
         "E8000": "Tidak dapat terhubung ke server basis data kunci: {detail}",
         "E8001": "Unduhan basis data kunci gagal (HTTP {detail}). Coba lagi, atau jalankan: freemkv update-keys --url <keydb-url>",
@@ -581,7 +582,6 @@
             "keep_encrypted": "Simpan terenkripsi (passthrough mentah) :",
             "raw_note": "Menulis ciphertext apa adanya — keluaran ISO saja. Cocok dengan --raw pada CLI.",
             "overwrite": "Timpa berkas yang ada :",
-            "capture_note": "Menulis image yang masih terenkripsi sehingga dapat didekripsi nanti setelah kunci tersedia.",
             "key_source": "Sumber kunci :",
             "key_src_local": "keydb lokal saja",
             "key_src_online": "Layanan kunci daring saja",
