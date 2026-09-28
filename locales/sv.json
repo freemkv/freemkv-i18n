@@ -425,7 +425,7 @@
         "E9071": "Något skrevs till utdata efter att de redan hade avslutats eller misslyckats, så datan kunde inte sparas.",
         "E9072": "Spåruppgifterna angavs efter att utdatas huvud redan hade skrivits, så de kunde inte tillämpas.",
         "E9073": "Fel: åtgärden fick timeout eftersom inga framsteg gjordes under för lång tid.",
-        "E9074": "MPG behöver ett videospår som det kan innehålla (MPEG-1/2, H.264, HEVC eller VC-1); den här titeln har inget. Använd mkv:// i stället.",
+        "E9074": "MPG behöver ett videospår som det kan innehålla (MPEG-1/2); den här titeln har inget. Använd mkv:// i stället.",
         "no_lang_match_subtitle_forced": "ingen tvingad undertext på den här titeln matchar '{requested}' (tillgängliga tvingade undertexter: {available}). Rätta språket, eller använd all/none.",
         "log_level_out_of_range": "--log-level: värdet 0 ligger utanför intervallet (1–4), ignoreras",
         "log_level_not_a_number": "--log-level: förväntade ett tal 1–4, fick '{value}', ignoreras",

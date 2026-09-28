@@ -425,7 +425,7 @@
         "E9071": "S-a încercat scrierea în ieșire după ce aceasta fusese deja finalizată sau eșuase, deci datele nu au putut fi salvate.",
         "E9072": "Detaliile pistelor au fost setate după ce antetul ieșirii fusese deja scris, deci nu au putut fi aplicate.",
         "E9073": "Eroare: operațiunea a expirat deoarece nu a înregistrat niciun progres timp îndelungat.",
-        "E9074": "MPG are nevoie de o pistă video pe care o poate stoca (MPEG-1/2, H.264, HEVC sau VC-1); acest titlu nu are niciuna. Folosește mkv:// în schimb.",
+        "E9074": "MPG are nevoie de o pistă video pe care o poate stoca (MPEG-1/2); acest titlu nu are niciuna. Folosește mkv:// în schimb.",
         "no_lang_match_subtitle_forced": "nicio subtitrare forțată din acest titlu nu se potrivește cu '{requested}' (subtitrări forțate disponibile: {available}). Corectează limba, sau folosește all/none.",
         "log_level_out_of_range": "--log-level: valoarea 0 este în afara intervalului (1–4), ignorată",
         "log_level_not_a_number": "--log-level: se aștepta un număr 1–4, s-a primit '{value}', ignorat",

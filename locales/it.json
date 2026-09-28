@@ -402,7 +402,7 @@
         "E9071": "Si è tentato di scrivere nell'output dopo che era già stato completato o era fallito, quindi i dati non sono stati salvati.",
         "E9072": "I dati delle tracce sono stati impostati dopo che l'intestazione dell'output era già stata scritta, quindi non è stato possibile applicarli.",
         "E9073": "Errore: l'operazione è scaduta perché non ha fatto progressi per troppo tempo.",
-        "E9074": "MPG richiede una traccia video che possa contenere (MPEG-1/2, H.264, HEVC o VC-1); questo titolo non ne ha. Usa invece mkv://.",
+        "E9074": "MPG richiede una traccia video che possa contenere (MPEG-1/2); questo titolo non ne ha. Usa invece mkv://.",
         "no_lang_match_subtitle_forced": "nessuna traccia di sottotitoli forzati di questo titolo corrisponde a '{requested}' (sottotitoli forzati disponibili: {available}). Correggi la lingua o usa all/none.",
         "log_level_out_of_range": "--log-level: il valore 0 è fuori intervallo (1–4), ignorato",
         "log_level_not_a_number": "--log-level: atteso un numero 1–4, ricevuto '{value}', ignorato",

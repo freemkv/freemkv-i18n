@@ -425,7 +425,7 @@
         "E9071": "Keluaran ditulisi setelah sudah selesai atau gagal, sehingga data tidak dapat disimpan.",
         "E9072": "Detail trek ditetapkan setelah header keluaran sudah ditulis, sehingga tidak dapat diterapkan.",
         "E9073": "Kesalahan: operasi mengalami waktu habis karena tidak ada kemajuan dalam waktu yang terlalu lama.",
-        "E9074": "MPG memerlukan trek video yang dapat dimuatnya (MPEG-1/2, H.264, HEVC, atau VC-1); judul ini tidak memilikinya. Gunakan mkv:// sebagai gantinya.",
+        "E9074": "MPG memerlukan trek video yang dapat dimuatnya (MPEG-1/2); judul ini tidak memilikinya. Gunakan mkv:// sebagai gantinya.",
         "no_lang_match_subtitle_forced": "tidak ada subtitle paksa pada judul ini yang cocok dengan '{requested}' (subtitle paksa tersedia: {available}). Perbaiki bahasanya, atau gunakan all/none.",
         "log_level_out_of_range": "--log-level: nilai 0 di luar rentang (1–4), diabaikan",
         "log_level_not_a_number": "--log-level: diharapkan angka 1–4, diterima '{value}', diabaikan",

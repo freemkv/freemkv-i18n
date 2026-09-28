@@ -425,7 +425,7 @@
         "E9071": "Çıktı zaten tamamlandıktan ya da başarısız olduktan sonra ona yazılmaya çalışıldı; bu yüzden veriler kaydedilemedi.",
         "E9072": "Parça bilgileri, çıktının başlığı zaten yazıldıktan sonra ayarlandı; bu yüzden uygulanamadı.",
         "E9073": "Hata: işlem, çok uzun süre ilerleme kaydedilmediği için zaman aşımına uğradı.",
-        "E9074": "MPG'nin taşıyabileceği bir video izi (MPEG-1/2, H.264, HEVC veya VC-1) gerekir; bu başlıkta yok. Bunun yerine mkv:// kullanın.",
+        "E9074": "MPG'nin taşıyabileceği bir video izi (MPEG-1/2) gerekir; bu başlıkta yok. Bunun yerine mkv:// kullanın.",
         "no_lang_match_subtitle_forced": "bu başlıkta '{requested}' ile eşleşen zorunlu altyazı yok (mevcut zorunlu altyazılar: {available}). Dili düzeltin veya all/none kullanın.",
         "log_level_out_of_range": "--log-level: 0 değeri aralık dışında (1–4), yok sayıldı",
         "log_level_not_a_number": "--log-level: 1–4 arası bir sayı bekleniyordu, '{value}' alındı, yok sayıldı",

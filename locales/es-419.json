@@ -425,7 +425,7 @@
         "E9071": "Se intentó escribir en la salida después de que ya había terminado o fallado, así que no se pudieron guardar los datos.",
         "E9072": "Los datos de las pistas se establecieron después de que ya se había escrito el encabezado de la salida, así que no se pudieron aplicar.",
         "E9073": "Error: la operación superó el límite de tiempo por falta de progreso durante demasiado rato.",
-        "E9074": "MPG necesita una pista de video que pueda contener (MPEG-1/2, H.264, HEVC o VC-1); este título no tiene ninguna. Usa mkv:// en su lugar.",
+        "E9074": "MPG necesita una pista de video que pueda contener (MPEG-1/2); este título no tiene ninguna. Usa mkv:// en su lugar.",
         "no_lang_match_subtitle_forced": "ningún subtítulo forzado de este título coincide con '{requested}' (subtítulos forzados disponibles: {available}). Corrige el idioma, o usa all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 está fuera de rango (1–4), se ignora",
         "log_level_not_a_number": "--log-level: se esperaba un número 1–4, se recibió '{value}', se ignora",

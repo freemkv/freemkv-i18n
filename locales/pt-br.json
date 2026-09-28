@@ -425,7 +425,7 @@
         "E9071": "Houve uma gravação na saída depois que ela já havia sido finalizada ou falhado, então os dados não puderam ser salvos.",
         "E9072": "Os detalhes das faixas foram definidos depois que o cabeçalho da saída já havia sido gravado, então não puderam ser aplicados.",
         "E9073": "Erro: a operação expirou por ficar tempo demais sem progresso.",
-        "E9074": "O MPG precisa de uma faixa de vídeo que consiga armazenar (MPEG-1/2, H.264, HEVC ou VC-1); este título não tem nenhuma. Use mkv:// em vez disso.",
+        "E9074": "O MPG precisa de uma faixa de vídeo que consiga armazenar (MPEG-1/2); este título não tem nenhuma. Use mkv:// em vez disso.",
         "no_lang_match_subtitle_forced": "nenhuma legenda forçada deste título corresponde a '{requested}' (legendas forçadas disponíveis: {available}). Corrija o idioma, ou use all/none.",
         "log_level_out_of_range": "--log-level: o valor 0 está fora do intervalo (1–4), ignorado",
         "log_level_not_a_number": "--log-level: esperado um número 1–4, recebido '{value}', ignorado",

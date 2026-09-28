@@ -425,7 +425,7 @@
         "E9071": "Error: the output was written to after it had already been finished or had failed, so the data could not be saved.",
         "E9072": "Error: track details were set after the output's header had already been written, so they could not be applied.",
         "E9073": "Error: the operation timed out after making no progress for too long.",
-        "E9074": "MPG needs a video track it can carry (MPEG-1/2, H.264, HEVC or VC-1); this title has none. Use mkv:// instead.",
+        "E9074": "MPG needs a video track it can carry (MPEG-1/2); this title has none. Use mkv:// instead.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: value 0 is out of range (1–4), ignored",
         "log_level_not_a_number": "--log-level: expected a number 1–4, got '{value}', ignored",

@@ -425,7 +425,7 @@
         "E9071": "Do výstupu se zapisovalo poté, co už byl dokončen nebo selhal, takže data nebylo možné uložit.",
         "E9072": "Údaje o stopách byly nastaveny až poté, co už byla zapsána hlavička výstupu, takže je nebylo možné použít.",
         "E9073": "Chyba: operaci vypršel časový limit, protože příliš dlouho nedošlo k žádnému postupu.",
-        "E9074": "MPG potřebuje videostopu, kterou umí přenést (MPEG-1/2, H.264, HEVC nebo VC-1); tento titul žádnou takovou nemá. Použijte místo toho mkv://.",
+        "E9074": "MPG potřebuje videostopu, kterou umí přenést (MPEG-1/2); tento titul žádnou takovou nemá. Použijte místo toho mkv://.",
         "no_lang_match_subtitle_forced": "žádná stopa vynucených titulků tohoto titulu neodpovídá '{requested}' (dostupné vynucené titulky: {available}). Opravte jazyk nebo použijte all/none.",
         "log_level_out_of_range": "--log-level: hodnota 0 je mimo rozsah (1–4), ignorováno",
         "log_level_not_a_number": "--log-level: očekáváno číslo 1–4, přijato '{value}', ignorováno",

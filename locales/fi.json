@@ -425,7 +425,7 @@
         "E9071": "Tulosteeseen kirjoitettiin sen jälkeen, kun se oli jo valmis tai epäonnistunut, joten tietoja ei voitu tallentaa.",
         "E9072": "Raitojen tiedot asetettiin vasta sen jälkeen, kun tulosteen otsake oli jo kirjoitettu, joten niitä ei voitu ottaa käyttöön.",
         "E9073": "Virhe: toiminto aikakatkaistiin, koska edistymistä ei tapahtunut liian pitkään aikaan.",
-        "E9074": "MPG tarvitsee videoraidan, jonka se voi sisältää (MPEG-1/2, H.264, HEVC tai VC-1); tässä nimikkeessä ei ole sellaista. Käytä sen sijaan mkv://.",
+        "E9074": "MPG tarvitsee videoraidan, jonka se voi sisältää (MPEG-1/2); tässä nimikkeessä ei ole sellaista. Käytä sen sijaan mkv://.",
         "no_lang_match_subtitle_forced": "yksikään pakotettu tekstitys tässä nimikkeessä ei vastaa '{requested}' (saatavilla olevat pakotetut tekstitykset: {available}). Korjaa kieli tai käytä all/none.",
         "log_level_out_of_range": "--log-level: arvo 0 on sallitun välin ulkopuolella (1–4), ohitetaan",
         "log_level_not_a_number": "--log-level: odotettiin lukua 1–4, saatiin '{value}', ohitetaan",

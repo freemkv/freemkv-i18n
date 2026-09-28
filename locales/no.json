@@ -425,7 +425,7 @@
         "E9071": "Det ble skrevet til utdata etter at de allerede var fullført eller hadde feilet, så dataene kunne ikke lagres.",
         "E9072": "Sporopplysningene ble satt etter at utdataenes header allerede var skrevet, så de kunne ikke tas i bruk.",
         "E9073": "Feil: operasjonen fikk tidsavbrudd fordi det ikke var fremgang på for lenge.",
-        "E9074": "MPG trenger et videospor det kan inneholde (MPEG-1/2, H.264, HEVC eller VC-1); denne tittelen har ingen. Bruk mkv:// i stedet.",
+        "E9074": "MPG trenger et videospor det kan inneholde (MPEG-1/2); denne tittelen har ingen. Bruk mkv:// i stedet.",
         "no_lang_match_subtitle_forced": "ingen tvunget undertekst på denne tittelen samsvarer med «{requested}» (tilgjengelige tvungne undertekster: {available}). Rett språket, eller bruk all/none.",
         "log_level_out_of_range": "--log-level: verdien 0 er utenfor området (1–4), ignorert",
         "log_level_not_a_number": "--log-level: forventet et tall 1–4, fikk '{value}', ignorert",
