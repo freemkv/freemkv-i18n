@@ -770,10 +770,10 @@
         "zip_failed": "Nepodarilo sa vytvoriť zip s profilom: {error}"
     },
     "stop": {
-        "stopping": "Zastavovanie …",
+        "stopping": "Zastavuje sa …",
         "waiting_for_drive": "Čaká sa na jednotku …",
         "progress_kept": "Postup je zachovaný",
-        "finishing": "Dokončovanie …",
+        "finishing": "Dokončuje sa …",
         "artifact_lock_failed": "Nepodarilo sa získať zámok na {name}; môže ho používať iný proces."
     }
 }

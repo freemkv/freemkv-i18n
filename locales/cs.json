@@ -771,7 +771,7 @@
     },
     "stop": {
         "stopping": "Zastavování …",
-        "waiting_for_drive": "Čeká se na jednotku …",
+        "waiting_for_drive": "Čekání na jednotku …",
         "progress_kept": "Postup zachován",
         "finishing": "Dokončování …",
         "artifact_lock_failed": "Nepodařilo se získat zámek na {name}; může jej používat jiný proces."

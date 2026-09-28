@@ -771,7 +771,7 @@
     },
     "stop": {
         "stopping": "S'està aturant …",
-        "waiting_for_drive": "S'espera la unitat …",
+        "waiting_for_drive": "S'està esperant la unitat …",
         "progress_kept": "El progrés es conserva",
         "finishing": "S'està acabant …",
         "artifact_lock_failed": "No s'ha pogut obtenir el bloqueig de {name}; és possible que un altre procés l'estigui utilitzant."

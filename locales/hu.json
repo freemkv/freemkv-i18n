@@ -772,8 +772,8 @@
     "stop": {
         "stopping": "Leállítás…",
         "waiting_for_drive": "Várakozás a meghajtóra…",
-        "progress_kept": "A folyamat megmarad",
+        "progress_kept": "A haladás megmarad",
         "finishing": "Befejezés…",
-        "artifact_lock_failed": "Nem sikerült megszerezni a zárolást ezen: {name}; lehet, hogy egy másik folyamat használja."
+        "artifact_lock_failed": "Nem sikerült zárolni a(z) {name} elemet; lehet, hogy egy másik folyamat használja."
     }
 }
