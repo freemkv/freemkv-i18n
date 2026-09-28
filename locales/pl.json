@@ -398,6 +398,7 @@
         "raw_disc_only": "Błąd: --raw dotyczy tylko źródła disc:// (kopiuje sektory z płyty bez ich odszyfrowywania). „{source}” nie jest płytą. Usuń --raw albo zgrywaj z płyty w napędzie.",
         "scan_failed": "Skanowanie nie powiodło się: {detail}",
         "source_needs_scheme": "Błąd: „{source}” nie jest użytecznym źródłowym adresem URL — użyj rozpoznawanego prefiksu schemat:// (np. iso://{source} dla obrazu ISO lub disc:// dla napędu optycznego).",
+        "source_needs_container_scheme": "Błąd: „{source}” nie jest użytecznym źródłowym adresem URL — wygląda na plik {container}, więc użyj {scheme}://{source} (lub iso:// dla obrazu ISO, disc:// dla napędu optycznego).",
         "stream_none": "brak",
         "selection_disc_only": "Błąd: wybór tytułów i ścieżek (-t / -a / -s) dotyczy tylko źródła disc:// lub iso://, które jest skanowane do listy tytułów. '{source}' to źródło strumienia/pliku bez tytułów — usuń -t/-a/-s lub zgrywaj ze źródła disc:// albo iso://.",
         "title_out_of_range": "Tytuł {num} poza zakresem ({count})",

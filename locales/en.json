@@ -398,6 +398,7 @@
         "raw_disc_only": "Error: --raw only applies to a disc:// source (it copies the sectors off the disc without decrypting them). '{source}' is not a disc. Drop --raw, or rip from the disc in a drive.",
         "scan_failed": "Scan failed: {detail}",
         "source_needs_scheme": "Error: '{source}' is not a usable source URL — use a recognized scheme:// prefix (e.g. iso://{source} for an ISO image, or disc:// for the optical drive).",
+        "source_needs_container_scheme": "Error: '{source}' is not a usable source URL — it looks like a {container} file, so use {scheme}://{source} (or iso:// for an ISO image, disc:// for the optical drive).",
         "stream_none": "none",
         "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source.",
         "title_out_of_range": "Title {num} out of range ({count})",

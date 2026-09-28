@@ -375,6 +375,7 @@
         "raw_disc_only": "--raw ne s'applique qu'à une source disc:// (il copie les secteurs du disque sans les déchiffrer). '{source}' n'est pas un disque. Retirez --raw, ou extrayez depuis le disque dans un lecteur.",
         "scan_failed": "Echec de l'analyse : {detail}",
         "source_needs_scheme": "'{source}' n'est pas une URL source utilisable — utilisez un préfixe scheme:// reconnu (par exemple iso://{source} pour une image ISO, ou disc:// pour le lecteur optique).",
+        "source_needs_container_scheme": "'{source}' n'est pas une URL source utilisable — cela ressemble à un fichier {container}, utilisez donc {scheme}://{source} (ou iso:// pour une image ISO, disc:// pour le lecteur optique).",
         "stream_none": "aucune",
         "selection_disc_only": "Erreur : la sélection de titres et de pistes (-t / -a / -s) ne s'applique qu'à une source disc:// ou iso://, analysée en liste de titres. '{source}' est une source flux/fichier sans titres — supprimez -t/-a/-s ou rippez depuis une source disc:// ou iso://.",
         "title_out_of_range": "Titre {num} hors limites ({count})",

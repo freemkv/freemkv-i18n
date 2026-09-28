@@ -375,6 +375,7 @@
         "raw_disc_only": "--raw gilt nur für eine disc://-Quelle (es kopiert die Sektoren von der Disc, ohne sie zu entschlüsseln). '{source}' ist keine Disc. Lassen Sie --raw weg, oder rippen Sie von der Disc in einem Laufwerk.",
         "scan_failed": "Scan fehlgeschlagen: {detail}",
         "source_needs_scheme": "'{source}' ist keine verwendbare Quell-URL — verwenden Sie ein erkanntes scheme://-Präfix (z. B. iso://{source} für ein ISO-Abbild, oder disc:// für das optische Laufwerk).",
+        "source_needs_container_scheme": "'{source}' ist keine verwendbare Quell-URL — das sieht nach einer {container}-Datei aus, verwenden Sie also {scheme}://{source} (oder iso:// für ein ISO-Abbild, disc:// für das optische Laufwerk).",
         "stream_none": "keine",
         "selection_disc_only": "Fehler: Titel- und Spurauswahl (-t / -a / -s) gilt nur für eine disc://- oder iso://-Quelle, die in eine Titelliste eingelesen wird. '{source}' ist eine Stream-/Dateiquelle ohne Titel — entfernen Sie -t/-a/-s oder rippen Sie von einer disc://- oder iso://-Quelle.",
         "title_out_of_range": "Titel {num} außerhalb des Bereichs ({count})",

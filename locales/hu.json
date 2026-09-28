@@ -398,6 +398,7 @@
         "raw_disc_only": "Hiba: a --raw csak disc:// forrásra vonatkozik (visszafejtés nélkül másolja le a szektorokat a lemezről). A(z) „{source}” nem lemez. Hagyd el a --raw kapcsolót, vagy másolj a meghajtóban lévő lemezről.",
         "scan_failed": "A beolvasás sikertelen: {detail}",
         "source_needs_scheme": "Hiba: a(z) „{source}” nem használható forrás-URL — használj felismert scheme:// előtagot (pl. iso://{source} egy ISO-képhez, vagy disc:// az optikai meghajtóhoz).",
+        "source_needs_container_scheme": "Hiba: a(z) „{source}” nem használható forrás-URL — ez egy {container} fájlnak tűnik, ezért használd a {scheme}://{source} formátumot (vagy iso:// egy ISO-képhez, disc:// az optikai meghajtóhoz).",
         "stream_none": "nincs",
         "selection_disc_only": "Hiba: a cím- és sávválasztás (-t / -a / -s) csak disc:// vagy iso:// forrásra érvényes, amelyet címlistába olvasunk be. A '{source}' cím nélküli stream-/fájlforrás — távolítsd el a -t/-a/-s kapcsolókat, vagy másolj disc:// vagy iso:// forrásból.",
         "title_out_of_range": "A(z) {num}. cím tartományon kívül esik ({count})",

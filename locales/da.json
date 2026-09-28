@@ -398,6 +398,7 @@
         "raw_disc_only": "Fejl: --raw gælder kun for en disc://-kilde (det kopierer sektorerne fra disken uden at dekryptere dem). '{source}' er ikke en disk. Fjern --raw, eller rip fra disken i et drev.",
         "scan_failed": "Scanning mislykkedes: {detail}",
         "source_needs_scheme": "Fejl: '{source}' er ikke en brugbar kilde-URL — brug et genkendt scheme://-præfiks (f.eks. iso://{source} for et ISO-image, eller disc:// for det optiske drev).",
+        "source_needs_container_scheme": "Fejl: '{source}' er ikke en brugbar kilde-URL — det ligner en {container}-fil, så brug {scheme}://{source} (eller iso:// for et ISO-image, disc:// for det optiske drev).",
         "stream_none": "ingen",
         "selection_disc_only": "Fejl: titel- og sporvalg (-t / -a / -s) gælder kun for en disc:// eller iso:// kilde, som scannes til en titelliste. '{source}' er en stream-/filkilde uden titler — fjern -t/-a/-s, eller rip fra en disc:// eller iso:// kilde.",
         "title_out_of_range": "Titel {num} uden for området ({count})",

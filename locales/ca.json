@@ -398,6 +398,7 @@
         "raw_disc_only": "Error: --raw només s'aplica a un origen disc:// (copia els sectors del disc sense desxifrar-los). «{source}» no és un disc. Traieu --raw, o extraieu des del disc en una unitat.",
         "scan_failed": "L'anàlisi ha fallat: {detail}",
         "source_needs_scheme": "Error: «{source}» no és una URL d'origen utilitzable — useu un prefix esquema:// reconegut (p. ex. iso://{source} per a una imatge ISO, o disc:// per a la unitat òptica).",
+        "source_needs_container_scheme": "Error: «{source}» no és una URL d'origen utilitzable — sembla un fitxer {container}, així que useu {scheme}://{source} (o iso:// per a una imatge ISO, disc:// per a la unitat òptica).",
         "stream_none": "cap",
         "selection_disc_only": "Error: la selecció de títols i pistes (-t / -a / -s) només s'aplica a una font disc:// o iso://, que s'analitza en una llista de títols. '{source}' és una font de flux/fitxer sense títols — elimineu -t/-a/-s o extraieu des d'una font disc:// o iso://.",
         "title_out_of_range": "El títol {num} és fora de rang ({count})",

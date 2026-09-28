@@ -375,6 +375,7 @@
         "raw_disc_only": "--raw só se aplica a uma origem disc:// (cópia os setores do disco sem os desencriptar). '{source}' não é um disco. Retire --raw, ou extraia a partir do disco numa unidade.",
         "scan_failed": "Escaneamento falhou: {detail}",
         "source_needs_scheme": "'{source}' não é um URL de origem utilizável — use um prefixo scheme:// reconhecido (por exemplo, iso://{source} para uma imagem ISO, ou disc:// para a unidade ótica).",
+        "source_needs_container_scheme": "'{source}' não é um URL de origem utilizável — parece um ficheiro {container}, por isso use {scheme}://{source} (ou iso:// para uma imagem ISO, disc:// para a unidade ótica).",
         "stream_none": "nenhum",
         "selection_disc_only": "Erro: a seleção de títulos e faixas (-t / -a / -s) aplica-se apenas a uma fonte disc:// ou iso://, que é analisada numa lista de títulos. '{source}' é uma fonte de stream/ficheiro sem títulos — remova -t/-a/-s ou extraia de uma fonte disc:// ou iso://.",
         "title_out_of_range": "Título {num} fora do intervalo ({count})",

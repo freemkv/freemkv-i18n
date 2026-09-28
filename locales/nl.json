@@ -375,6 +375,7 @@
         "raw_disc_only": "--raw is alleen van toepassing op een disc://-bron (het kopieert de sectoren van de schijf zonder ze te ontsleutelen). '{source}' is geen schijf. Laat --raw weg, of rip vanaf de schijf in een station.",
         "scan_failed": "Scannen mislukt: {detail}",
         "source_needs_scheme": "'{source}' is geen bruikbare bron-URL — gebruik een herkend scheme://-voorvoegsel (bijv. iso://{source} voor een ISO-image, of disc:// voor het optische station).",
+        "source_needs_container_scheme": "'{source}' is geen bruikbare bron-URL — dit lijkt een {container}-bestand te zijn, gebruik daarom {scheme}://{source} (of iso:// voor een ISO-image, disc:// voor het optische station).",
         "stream_none": "geen",
         "selection_disc_only": "Fout: titel- en sporenselectie (-t / -a / -s) geldt alleen voor een disc://- of iso://-bron, die in een titellijst wordt gescand. '{source}' is een stream-/bestandsbron zonder titels — verwijder -t/-a/-s of rip vanaf een disc://- of iso://-bron.",
         "title_out_of_range": "Titel {num} buiten bereik ({count})",

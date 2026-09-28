@@ -398,6 +398,7 @@
         "raw_disc_only": "오류: --raw는 disc:// 소스에만 적용됩니다(디스크의 섹터를 복호화하지 않고 그대로 복사합니다). '{source}'은(는) 디스크가 아닙니다. --raw를 빼거나 드라이브에 넣은 디스크에서 추출하세요.",
         "scan_failed": "스캔 실패: {detail}",
         "source_needs_scheme": "오류: '{source}'은(는) 사용할 수 있는 소스 URL이 아닙니다 — 인식되는 scheme:// 접두사를 사용하세요 (예: ISO 이미지는 iso://{source}, 광학 드라이브는 disc://).",
+        "source_needs_container_scheme": "오류: '{source}'은(는) 사용할 수 있는 소스 URL이 아닙니다 — {container} 파일로 보이므로 {scheme}://{source}를 사용하세요 (ISO 이미지는 iso://, 광학 드라이브는 disc://).",
         "stream_none": "없음",
         "selection_disc_only": "오류: 타이틀 및 트랙 선택(-t / -a / -s)은 타이틀 목록으로 스캔되는 disc:// 또는 iso:// 소스에만 적용됩니다. '{source}'은(는) 타이틀이 없는 스트림/파일 소스입니다 — -t/-a/-s를 제거하거나 disc:// 또는 iso:// 소스에서 추출하세요.",
         "title_out_of_range": "타이틀 {num}이(가) 범위를 벗어남 ({count})",

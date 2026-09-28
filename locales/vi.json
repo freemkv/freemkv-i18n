@@ -398,6 +398,7 @@
         "raw_disc_only": "Lỗi: --raw chỉ áp dụng cho nguồn disc:// (nó sao chép các sector ra khỏi đĩa mà không giải mã). '{source}' không phải là đĩa. Hãy bỏ --raw, hoặc trích xuất từ đĩa trong ổ đĩa.",
         "scan_failed": "Quét thất bại: {detail}",
         "source_needs_scheme": "Lỗi: '{source}' không phải URL nguồn dùng được — dùng tiền tố scheme:// được nhận dạng (ví dụ iso://{source} cho một ảnh ISO, hoặc disc:// cho ổ đĩa quang).",
+        "source_needs_container_scheme": "Lỗi: '{source}' không phải URL nguồn dùng được — có vẻ đây là tệp {container}, vì vậy hãy dùng {scheme}://{source} (hoặc iso:// cho ảnh ISO, disc:// cho ổ đĩa quang).",
         "stream_none": "không có",
         "selection_disc_only": "Lỗi: việc chọn tiêu đề và rãnh (-t / -a / -s) chỉ áp dụng cho nguồn disc:// hoặc iso://, vốn được quét thành danh sách tiêu đề. '{source}' là nguồn luồng/tệp không có tiêu đề — hãy bỏ -t/-a/-s, hoặc rip từ nguồn disc:// hay iso://.",
         "title_out_of_range": "Tiêu đề {num} nằm ngoài phạm vi ({count})",

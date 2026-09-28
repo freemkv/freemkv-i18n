@@ -398,6 +398,7 @@
         "raw_disc_only": "Feil: --raw gjelder bare en disc://-kilde (den kopierer sektorene fra platen uten å dekryptere dem). «{source}» er ikke en plate. Fjern --raw, eller ripp fra platen i en stasjon.",
         "scan_failed": "Skanning mislyktes: {detail}",
         "source_needs_scheme": "Feil: «{source}» er ikke en brukbar kilde-URL — bruk et gjenkjent scheme://-prefiks (f.eks. iso://{source} for et ISO-bilde, eller disc:// for den optiske stasjonen).",
+        "source_needs_container_scheme": "Feil: «{source}» er ikke en brukbar kilde-URL — dette ser ut som en {container}-fil, så bruk {scheme}://{source} (eller iso:// for et ISO-bilde, disc:// for den optiske stasjonen).",
         "stream_none": "ingen",
         "selection_disc_only": "Feil: valg av titler og spor (-t / -a / -s) gjelder bare en disc:// eller iso://-kilde, som leses inn som en tittelliste. '{source}' er en strøm-/filkilde uten titler — fjern -t/-a/-s, eller rip fra en disc:// eller iso://-kilde.",
         "title_out_of_range": "Tittel {num} utenfor område ({count})",

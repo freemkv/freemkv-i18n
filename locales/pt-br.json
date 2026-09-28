@@ -398,6 +398,7 @@
         "raw_disc_only": "Erro: --raw só se aplica a uma origem disc:// (ele copia os setores do disco sem descriptografá-los). '{source}' não é um disco. Remova --raw, ou extraia a partir do disco em uma unidade.",
         "scan_failed": "Falha no escaneamento: {detail}",
         "source_needs_scheme": "Erro: '{source}' não é uma URL de origem utilizável — use um prefixo esquema:// reconhecido (por exemplo, iso://{source} para uma imagem ISO ou disc:// para a unidade óptica).",
+        "source_needs_container_scheme": "Erro: '{source}' não é uma URL de origem utilizável — parece um arquivo {container}, então use {scheme}://{source} (ou iso:// para uma imagem ISO, disc:// para a unidade óptica).",
         "stream_none": "nenhum",
         "selection_disc_only": "Erro: a seleção de títulos e faixas (-t / -a / -s) aplica-se apenas a uma fonte disc:// ou iso://, que é analisada numa lista de títulos. '{source}' é uma fonte de stream/ficheiro sem títulos — remova -t/-a/-s ou extraia de uma fonte disc:// ou iso://.",
         "title_out_of_range": "Título {num} fora do intervalo ({count})",

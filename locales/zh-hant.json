@@ -398,6 +398,7 @@
         "raw_disc_only": "錯誤：--raw 僅適用於 disc:// 來源（它會直接複製光碟上的磁區而不解密）。'{source}' 不是光碟。請移除 --raw，或從光碟機中的光碟擷取。",
         "scan_failed": "掃描失敗：{detail}",
         "source_needs_scheme": "錯誤：'{source}' 不是可用的來源 URL — 請使用可辨識的 scheme:// 前綴（例如 ISO 映像檔用 iso://{source}，或光碟機用 disc://）。",
+        "source_needs_container_scheme": "錯誤：'{source}' 不是可用的來源 URL — 看起來是 {container} 檔案，因此請使用 {scheme}://{source}（或 ISO 映像檔用 iso://，光碟機用 disc://）。",
         "stream_none": "無",
         "selection_disc_only": "錯誤：標題與軌道選擇（-t / -a / -s）僅適用於會被掃描成標題清單的 disc:// 或 iso:// 來源。'{source}' 是沒有標題的串流/檔案來源——請移除 -t/-a/-s，或改從 disc:// 或 iso:// 來源轉換。",
         "title_out_of_range": "標題 {num} 超出範圍（{count}）",

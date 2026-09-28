@@ -398,6 +398,7 @@
         "raw_disc_only": "エラー: --raw は disc:// ソースにのみ適用されます（ディスクのセクターを復号せずにそのままコピーする機能です）。'{source}' はディスクではありません。--raw を外すか、ドライブに入れたディスクからリッピングしてください。",
         "scan_failed": "スキャンに失敗しました: {detail}",
         "source_needs_scheme": "エラー: '{source}' は使用可能なソース URL ではありません — 認識されている scheme:// プレフィックスを使用してください（例: ISO イメージなら iso://{source}、光学ドライブなら disc://）。",
+        "source_needs_container_scheme": "エラー: '{source}' は使用可能なソース URL ではありません — {container} ファイルのようなので、{scheme}://{source} を使用してください（ISO イメージなら iso://、光学ドライブなら disc://）。",
         "stream_none": "なし",
         "selection_disc_only": "エラー: タイトルとトラックの選択 (-t / -a / -s) は、タイトル一覧として読み込まれる disc:// または iso:// ソースにのみ適用されます。'{source}' はタイトルを持たないストリーム/ファイルソースです — -t/-a/-s を外すか、disc:// または iso:// ソースからリッピングしてください。",
         "title_out_of_range": "タイトル {num} は範囲外です（{count}）",

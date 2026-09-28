@@ -398,6 +398,7 @@
         "raw_disc_only": "Fel: --raw gäller bara en disc://-källa (det kopierar sektorerna från skivan utan att dekryptera dem). '{source}' är inte en skiva. Ta bort --raw, eller rippa från skivan i en enhet.",
         "scan_failed": "Skanning misslyckades: {detail}",
         "source_needs_scheme": "Fel: '{source}' är inte en användbar käll-URL — använd ett igenkänt scheme://-prefix (t.ex. iso://{source} för en ISO-avbild, eller disc:// för den optiska enheten).",
+        "source_needs_container_scheme": "Fel: '{source}' är inte en användbar käll-URL — det ser ut som en {container}-fil, så använd {scheme}://{source} (eller iso:// för en ISO-avbild, disc:// för den optiska enheten).",
         "stream_none": "inget",
         "selection_disc_only": "Fel: val av titlar och spår (-t / -a / -s) gäller endast en disc:// eller iso://-källa, som läses in till en titellista. '{source}' är en ström-/filkälla utan titlar — ta bort -t/-a/-s eller rippa från en disc:// eller iso://-källa.",
         "title_out_of_range": "Titel {num} utanför intervallet ({count})",

@@ -398,6 +398,7 @@
         "raw_disc_only": "Kesalahan: --raw hanya berlaku untuk sumber disc:// (opsi ini menyalin sektor dari cakram tanpa mendekripsinya). '{source}' bukan cakram. Hilangkan --raw, atau rip dari cakram di dalam drive.",
         "scan_failed": "Pemindaian gagal: {detail}",
         "source_needs_scheme": "Kesalahan: '{source}' bukan URL sumber yang dapat digunakan — gunakan prefiks scheme:// yang dikenali (mis. iso://{source} untuk image ISO, atau disc:// untuk drive optik).",
+        "source_needs_container_scheme": "Kesalahan: '{source}' bukan URL sumber yang dapat digunakan — ini tampaknya file {container}, jadi gunakan {scheme}://{source} (atau iso:// untuk image ISO, disc:// untuk drive optik).",
         "stream_none": "tidak ada",
         "selection_disc_only": "Kesalahan: pemilihan judul dan trek (-t / -a / -s) hanya berlaku untuk sumber disc:// atau iso://, yang dipindai menjadi daftar judul. '{source}' adalah sumber stream/berkas tanpa judul — hapus -t/-a/-s, atau rip dari sumber disc:// atau iso://.",
         "title_out_of_range": "Judul {num} di luar rentang ({count})",

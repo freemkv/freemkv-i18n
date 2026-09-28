@@ -398,6 +398,7 @@
         "raw_disc_only": "错误：--raw 仅适用于 disc:// 源（它会直接复制光盘上的扇区而不解密）。'{source}' 不是光盘。请去掉 --raw，或从驱动器中的光盘抓取。",
         "scan_failed": "扫描失败：{detail}",
         "source_needs_scheme": "错误：'{source}' 不是可用的源 URL —— 请使用已识别的 scheme:// 前缀（例如 ISO 镜像用 iso://{source}，或光驱用 disc://）。",
+        "source_needs_container_scheme": "错误：'{source}' 不是可用的源 URL —— 看起来是 {container} 文件，因此请使用 {scheme}://{source}（或 ISO 镜像用 iso://，光驱用 disc://）。",
         "stream_none": "无",
         "selection_disc_only": "错误：标题和轨道选择（-t / -a / -s）仅适用于会被扫描成标题列表的 disc:// 或 iso:// 源。'{source}' 是没有标题的流/文件源——请移除 -t/-a/-s，或改从 disc:// 或 iso:// 源转换。",
         "title_out_of_range": "标题 {num} 超出范围（{count}）",

@@ -398,6 +398,7 @@
         "raw_disc_only": "Virhe: --raw koskee vain disc://-lähdettä (se kopioi sektorit levyltä purkamatta niiden salausta). '{source}' ei ole levy. Poista --raw tai rippaa levyltä asemassa.",
         "scan_failed": "Skannaus epäonnistui: {detail}",
         "source_needs_scheme": "Virhe: '{source}' ei ole käyttökelpoinen lähde-URL — käytä tunnettua scheme://-etuliitettä (esim. iso://{source} ISO-levykuvalle tai disc:// optiselle asemalle).",
+        "source_needs_container_scheme": "Virhe: '{source}' ei ole käyttökelpoinen lähde-URL — se vaikuttaa {container}-tiedostolta, joten käytä osoitetta {scheme}://{source} (tai iso:// ISO-levykuvalle, disc:// optiselle asemalle).",
         "stream_none": "ei mitään",
         "selection_disc_only": "Virhe: nimikkeiden ja raitojen valinta (-t / -a / -s) koskee vain disc:// tai iso:// -lähdettä, joka luetaan nimikeluetteloksi. '{source}' on virta-/tiedostolähde ilman nimikkeitä — poista -t/-a/-s tai kopioi disc:// tai iso:// -lähteestä.",
         "title_out_of_range": "Nimike {num} on alueen ulkopuolella ({count})",

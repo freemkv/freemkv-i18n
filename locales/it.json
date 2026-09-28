@@ -375,6 +375,7 @@
         "raw_disc_only": "--raw si applica solo a una sorgente disc:// (copia i settori dal disco senza decifrarli). '{source}' non è un disco. Ometti --raw, oppure esegui il rip dal disco in un'unità.",
         "scan_failed": "Scansione fallita: {detail}",
         "source_needs_scheme": "'{source}' non è un URL sorgente utilizzabile — usa un prefisso scheme:// riconosciuto (ad es. iso://{source} per un'immagine ISO, oppure disc:// per l'unità ottica).",
+        "source_needs_container_scheme": "'{source}' non è un URL sorgente utilizzabile — sembra un file {container}, quindi usa {scheme}://{source} (oppure iso:// per un'immagine ISO, disc:// per l'unità ottica).",
         "stream_none": "nessuna",
         "selection_disc_only": "Errore: la selezione di titoli e tracce (-t / -a / -s) si applica solo a una sorgente disc:// o iso://, che viene analizzata in un elenco di titoli. '{source}' è una sorgente stream/file senza titoli — rimuovi -t/-a/-s oppure copia da una sorgente disc:// o iso://.",
         "title_out_of_range": "Titolo {num} fuori intervallo ({count})",

@@ -398,6 +398,7 @@
         "raw_disc_only": "Chyba: --raw platí iba pre zdroj disc:// (kopíruje sektory z disku bez dešifrovania). '{source}' nie je disk. Odstráňte --raw alebo kopírujte z disku v mechanike.",
         "scan_failed": "Skenovanie zlyhalo: {detail}",
         "source_needs_scheme": "Chyba: '{source}' nie je použiteľná zdrojová URL — použite rozpoznanú predponu scheme:// (napr. iso://{source} pre obraz ISO alebo disc:// pre optickú mechaniku).",
+        "source_needs_container_scheme": "Chyba: '{source}' nie je použiteľná zdrojová URL — vyzerá to ako súbor {container}, preto použite {scheme}://{source} (alebo iso:// pre obraz ISO, disc:// pre optickú mechaniku).",
         "stream_none": "žiadne",
         "selection_disc_only": "Chyba: výber titulov a stôp (-t / -a / -s) platí len pre zdroj disc:// alebo iso://, ktorý sa načíta do zoznamu titulov. '{source}' je zdroj streamu/súboru bez titulov — odstráňte -t/-a/-s alebo kopírujte zo zdroja disc:// či iso://.",
         "title_out_of_range": "Titul {num} mimo rozsahu ({count})",

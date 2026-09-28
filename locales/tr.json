@@ -398,6 +398,7 @@
         "raw_disc_only": "Hata: --raw yalnızca bir disc:// kaynağına uygulanır (sektörleri şifrelerini çözmeden diskten kopyalar). '{source}' bir disk değil. --raw'ı kaldırın veya sürücüdeki diskten kopyalayın.",
         "scan_failed": "Tarama başarısız: {detail}",
         "source_needs_scheme": "Hata: '{source}' kullanılabilir bir kaynak URL değil — tanınan bir scheme:// öneki kullanın (örneğin bir ISO imajı için iso://{source} veya optik sürücü için disc://).",
+        "source_needs_container_scheme": "Hata: '{source}' kullanılabilir bir kaynak URL değil — bu bir {container} dosyası gibi görünüyor, bu yüzden {scheme}://{source} kullanın (veya ISO imajı için iso://, optik sürücü için disc://).",
         "stream_none": "yok",
         "selection_disc_only": "Hata: başlık ve iz seçimi (-t / -a / -s) yalnızca başlık listesine taranan disc:// veya iso:// kaynağı için geçerlidir. '{source}' başlığı olmayan bir akış/dosya kaynağıdır — -t/-a/-s seçeneklerini kaldırın veya disc:// ya da iso:// kaynağından kopyalayın.",
         "title_out_of_range": "{num} numaralı başlık aralık dışında ({count})",

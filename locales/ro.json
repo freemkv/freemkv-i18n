@@ -398,6 +398,7 @@
         "raw_disc_only": "Eroare: --raw se aplică doar unei surse disc:// (copiază sectoarele de pe disc fără să le decripteze). '{source}' nu este un disc. Renunță la --raw, sau extrage de pe discul dintr-o unitate.",
         "scan_failed": "Scanare eșuată: {detail}",
         "source_needs_scheme": "Eroare: '{source}' nu este un URL sursă utilizabil — folosește un prefix scheme:// recunoscut (de ex. iso://{source} pentru o imagine ISO sau disc:// pentru unitatea optică).",
+        "source_needs_container_scheme": "Eroare: '{source}' nu este un URL sursă utilizabil — pare a fi un fișier {container}, așa că folosește {scheme}://{source} (sau iso:// pentru o imagine ISO, disc:// pentru unitatea optică).",
         "stream_none": "niciuna",
         "selection_disc_only": "Eroare: selecția titlurilor și pistelor (-t / -a / -s) se aplică doar unei surse disc:// sau iso://, care este scanată într-o listă de titluri. '{source}' este o sursă flux/fișier fără titluri — elimină -t/-a/-s sau copiază de la o sursă disc:// ori iso://.",
         "title_out_of_range": "Titlul {num} este în afara intervalului ({count})",
