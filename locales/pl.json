@@ -92,7 +92,7 @@
         }
     },
     "mp4": {
-        "excluded_header": "Uwaga: następujące ścieżki (liczba: {count}) nie można zapisać w pliku MP4 i zostaną pominięte (użyj mkv://, aby zachować wszystko):",
+        "excluded_header": "Uwaga: następujących ścieżek (liczba: {count}) nie można zapisać w pliku MP4, więc zostaną pominięte (użyj mkv://, aby zachować wszystko):",
         "reason": {
             "subtitle": "napisy bitmapowe — MP4 obsługuje tylko napisy tekstowe",
             "audio": "kodek dźwięku nie ma odpowiednika w MP4",
