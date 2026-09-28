@@ -91,15 +91,6 @@
             "descriptive_service": "Dịch vụ mô tả"
         }
     },
-    "mp4": {
-        "excluded_header": "Lưu ý: {count} rãnh không thể lưu trong MP4 và sẽ bị bỏ qua (dùng mkv:// để giữ mọi thứ):",
-        "reason": {
-            "subtitle": "phụ đề dạng ảnh — MP4 chỉ mang phụ đề văn bản",
-            "audio": "codec âm thanh không có ánh xạ MP4",
-            "video": "chế độ xem video phụ",
-            "video_unmappable": "codec video không có ánh xạ MP4"
-        }
-    },
     "rip": {
         "opening": "Đang mở {device}...",
         "waiting": "Đang chờ đĩa...",
@@ -666,7 +657,6 @@
             "cancelling": "Đang hủy …",
             "nothing_eject": "Không có gì để đẩy ra — nguồn là một tệp, không phải ổ đĩa.",
             "checking_updates": "Đang kiểm tra cập nhật …",
-            "mp4_mismatch": "MP4 không thể lưu video {codecs}. Chọn MKV, giữ được mọi thứ.",
             "container_mismatch": "{container} không thể lưu video {codecs}. Hãy chọn MKV thay thế.",
             "opened_version": "freemkv {version}",
             "opened": "{label} đã mở — {n} tiêu đề, khóa: {keys}",

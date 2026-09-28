@@ -91,15 +91,6 @@
             "descriptive_service": "Betimleme Hizmeti"
         }
     },
-    "mp4": {
-        "excluded_header": "Not: {count} iz bir MP4 içinde saklanamaz ve dışarıda bırakılacak (her şeyi korumak için mkv:// kullanın):",
-        "reason": {
-            "subtitle": "bit eşlem altyazı — MP4 yalnızca metin altyazı taşır",
-            "audio": "ses codec'inin MP4 karşılığı yok",
-            "video": "ikincil video görünümü",
-            "video_unmappable": "video codec'inin MP4 karşılığı yok"
-        }
-    },
     "rip": {
         "opening": "{device} açılıyor...",
         "waiting": "Disk bekleniyor...",
@@ -666,7 +657,6 @@
             "cancelling": "İptal ediliyor …",
             "nothing_eject": "Çıkarılacak bir şey yok — kaynak bir dosya, sürücü değil.",
             "checking_updates": "Güncellemeler denetleniyor …",
-            "mp4_mismatch": "MP4, {codecs} videoyu saklayamaz. Her şeyi koruyan MKV'yi seçin.",
             "container_mismatch": "{container} biçimi {codecs} videoyu saklayamaz. Bunun yerine MKV'yi seçin.",
             "opened_version": "freemkv {version}",
             "opened": "{label} açıldı — {n} başlık, anahtarlar: {keys}",

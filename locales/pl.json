@@ -91,15 +91,6 @@
             "descriptive_service": "Usługa audiodeskrypcji"
         }
     },
-    "mp4": {
-        "excluded_header": "Uwaga: następujących ścieżek (liczba: {count}) nie można zapisać w pliku MP4, więc zostaną pominięte (użyj mkv://, aby zachować wszystko):",
-        "reason": {
-            "subtitle": "napisy bitmapowe — MP4 obsługuje tylko napisy tekstowe",
-            "audio": "kodek dźwięku nie ma odpowiednika w MP4",
-            "video": "dodatkowy widok wideo",
-            "video_unmappable": "kodek wideo nie ma odpowiednika w MP4"
-        }
-    },
     "rip": {
         "opening": "Otwieranie {device}…",
         "waiting": "Oczekiwanie na płytę…",
@@ -666,7 +657,6 @@
             "cancelling": "Anulowanie…",
             "nothing_eject": "Nie ma czego wysunąć — źródło jest plikiem, a nie napędem.",
             "checking_updates": "Sprawdzanie aktualizacji…",
-            "mp4_mismatch": "MP4 nie może przechowywać wideo {codecs}. Wybierz MKV, który zachowuje wszystko.",
             "container_mismatch": "Format {container} nie może przechowywać wideo {codecs}. Wybierz zamiast tego MKV.",
             "opened_version": "freemkv {version}",
             "opened": "Otwarto {label} — liczba tytułów: {n}, klucze: {keys}",

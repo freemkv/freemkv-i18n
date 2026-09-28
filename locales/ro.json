@@ -91,15 +91,6 @@
             "descriptive_service": "Serviciu descriptiv"
         }
     },
-    "mp4": {
-        "excluded_header": "Notă: {count} pistă/piste nu pot fi stocate într-un MP4 și vor fi omise (folosește mkv:// pentru a păstra totul):",
-        "reason": {
-            "subtitle": "subtitrare de tip imagine — MP4 acceptă doar subtitrări text",
-            "audio": "codecul audio nu are corespondent MP4",
-            "video": "vizualizare video secundară",
-            "video_unmappable": "codecul video nu are corespondent MP4"
-        }
-    },
     "rip": {
         "opening": "Se deschide {device}...",
         "waiting": "Se așteaptă discul...",
@@ -666,7 +657,6 @@
             "cancelling": "Se anulează …",
             "nothing_eject": "Nimic de scos — sursa este un fișier, nu o unitate.",
             "checking_updates": "Se verifică actualizări …",
-            "mp4_mismatch": "MP4 nu poate stoca video {codecs}. Alege MKV, care păstrează totul.",
             "container_mismatch": "{container} nu poate stoca video {codecs}. Alege MKV în schimb.",
             "opened_version": "freemkv {version}",
             "opened": "{label} deschis — {n} titlu(ri), chei: {keys}",

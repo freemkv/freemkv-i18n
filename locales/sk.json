@@ -91,15 +91,6 @@
             "descriptive_service": "Opisná služba"
         }
     },
-    "mp4": {
-        "excluded_header": "Poznámka: nasledujúce stopy (počet: {count}) nemožno uložiť do MP4 a budú vynechané (použite mkv:// na zachovanie všetkého):",
-        "reason": {
-            "subtitle": "bitmapové titulky — MP4 podporuje iba textové titulky",
-            "audio": "zvukový kodek nemá mapovanie na MP4",
-            "video": "sekundárny videopohľad",
-            "video_unmappable": "videokodek nemá mapovanie na MP4"
-        }
-    },
     "rip": {
         "opening": "Otvára sa {device}...",
         "waiting": "Čaká sa na disk...",
@@ -666,7 +657,6 @@
             "cancelling": "Ruší sa …",
             "nothing_eject": "Niet čo vysunúť — zdroj je súbor, nie mechanika.",
             "checking_updates": "Kontrolujú sa aktualizácie …",
-            "mp4_mismatch": "MP4 nedokáže uložiť video {codecs}. Zvoľte MKV, ktoré zachová všetko.",
             "container_mismatch": "{container} nedokáže uložiť video {codecs}. Zvoľte namiesto toho MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} otvorené — počet titulov: {n}, kľúče: {keys}",

@@ -91,15 +91,6 @@
             "descriptive_service": "Descriptive Service"
         }
     },
-    "mp4": {
-        "excluded_header": "Note: {count} track(s) can't be stored in an MP4 and will be left out (use mkv:// to keep everything):",
-        "reason": {
-            "subtitle": "bitmap subtitle — MP4 carries text subtitles only",
-            "audio": "audio codec has no MP4 mapping",
-            "video": "secondary video view",
-            "video_unmappable": "video codec has no MP4 mapping"
-        }
-    },
     "rip": {
         "opening": "Opening {device}...",
         "waiting": "Waiting for disc...",
@@ -666,7 +657,6 @@
             "cancelling": "Cancelling …",
             "nothing_eject": "Nothing to eject — the source is a file, not a drive.",
             "checking_updates": "Checking for updates …",
-            "mp4_mismatch": "MP4 cannot store {codecs} video. Choose MKV, which keeps everything.",
             "container_mismatch": "{container} cannot store {codecs} video. Choose MKV instead.",
             "opened_version": "freemkv {version}",
             "opened": "{label} opened — {n} title(s), keys: {keys}",

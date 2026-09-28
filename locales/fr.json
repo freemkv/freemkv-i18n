@@ -91,15 +91,6 @@
         },
         "track": "Piste"
     },
-    "mp4": {
-        "excluded_header": "Remarque : {count} piste(s) ne peuvent pas être stockées dans un MP4 et seront exclues (utilisez mkv:// pour tout conserver) :",
-        "reason": {
-            "subtitle": "sous-titre bitmap — MP4 ne gère que les sous-titres texte",
-            "audio": "le codec audio n'a pas de correspondance MP4",
-            "video": "vue vidéo secondaire",
-            "video_unmappable": "le codec vidéo n'a pas de correspondance MP4"
-        }
-    },
     "rip": {
         "opening": "Ouverture de {device}...",
         "waiting": "En attente du disque...",
@@ -666,7 +657,6 @@
             "cancelling": "Annulation …",
             "nothing_eject": "Rien à éjecter — la source est un fichier, pas un lecteur.",
             "checking_updates": "Recherche de mises à jour …",
-            "mp4_mismatch": "Le MP4 ne peut pas stocker de vidéo {codecs}. Choisissez MKV, qui conserve tout.",
             "container_mismatch": "{container} ne peut pas stocker de vidéo {codecs}. Choisissez plutôt MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} ouvert — {n} titre(s), clés : {keys}",

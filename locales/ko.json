@@ -91,15 +91,6 @@
             "descriptive_service": "화면 해설 서비스"
         }
     },
-    "mp4": {
-        "excluded_header": "참고: {count}개 트랙은 MP4에 저장할 수 없어 제외됩니다 (모두 유지하려면 mkv:// 사용):",
-        "reason": {
-            "subtitle": "비트맵 자막 — MP4는 텍스트 자막만 지원합니다",
-            "audio": "오디오 코덱에 MP4 매핑이 없습니다",
-            "video": "보조 비디오 뷰",
-            "video_unmappable": "비디오 코덱에 MP4 매핑이 없습니다"
-        }
-    },
     "rip": {
         "opening": "{device} 여는 중...",
         "waiting": "디스크 대기 중...",
@@ -666,7 +657,6 @@
             "cancelling": "취소 중 …",
             "nothing_eject": "꺼낼 것 없음 — 소스가 드라이브가 아니라 파일입니다.",
             "checking_updates": "업데이트 확인 중 …",
-            "mp4_mismatch": "MP4는 {codecs} 비디오를 저장할 수 없습니다. 모든 것을 유지하는 MKV를 선택하세요.",
             "container_mismatch": "{container}에는 {codecs} 비디오를 저장할 수 없습니다. 대신 MKV를 선택하세요.",
             "opened_version": "freemkv {version}",
             "opened": "{label} 열림 — 타이틀 {n}개, 키: {keys}",

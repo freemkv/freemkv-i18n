@@ -91,15 +91,6 @@
         },
         "track": "Spur"
     },
-    "mp4": {
-        "excluded_header": "Hinweis: {count} Spur(en) können nicht in einer MP4 gespeichert werden und werden ausgelassen (mit mkv:// bleibt alles erhalten):",
-        "reason": {
-            "subtitle": "Bitmap-Untertitel – MP4 unterstützt nur Text-Untertitel",
-            "audio": "Audio-Codec hat keine MP4-Zuordnung",
-            "video": "sekundäre Videospur",
-            "video_unmappable": "Video-Codec hat keine MP4-Zuordnung"
-        }
-    },
     "rip": {
         "opening": "{device} wird geöffnet...",
         "waiting": "Warte auf Disc...",
@@ -666,7 +657,6 @@
             "cancelling": "Wird abgebrochen …",
             "nothing_eject": "Nichts auszuwerfen — die Quelle ist eine Datei, kein Laufwerk.",
             "checking_updates": "Suche nach Updates …",
-            "mp4_mismatch": "MP4 kann {codecs}-Video nicht speichern. Wählen Sie MKV, das alles behält.",
             "container_mismatch": "{container} kann {codecs}-Video nicht speichern. Wählen Sie stattdessen MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} geöffnet — {n} Titel, Schlüssel: {keys}",

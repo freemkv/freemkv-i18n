@@ -91,15 +91,6 @@
             "descriptive_service": "Layanan Deskriptif"
         }
     },
-    "mp4": {
-        "excluded_header": "Catatan: {count} trek tidak dapat disimpan dalam MP4 dan akan diabaikan (gunakan mkv:// untuk menyimpan semuanya):",
-        "reason": {
-            "subtitle": "subtitle bitmap — MP4 hanya membawa subtitle teks",
-            "audio": "codec audio tidak dapat dipetakan ke MP4",
-            "video": "tampilan video sekunder",
-            "video_unmappable": "codec video tidak dapat dipetakan ke MP4"
-        }
-    },
     "rip": {
         "opening": "Membuka {device}...",
         "waiting": "Menunggu disc...",
@@ -666,7 +657,6 @@
             "cancelling": "Membatalkan …",
             "nothing_eject": "Tidak ada yang dikeluarkan — sumbernya adalah berkas, bukan drive.",
             "checking_updates": "Memeriksa pembaruan …",
-            "mp4_mismatch": "MP4 tidak dapat menyimpan video {codecs}. Pilih MKV, yang menyimpan semuanya.",
             "container_mismatch": "{container} tidak dapat menyimpan video {codecs}. Pilih MKV sebagai gantinya.",
             "opened_version": "freemkv {version}",
             "opened": "{label} dibuka — {n} judul, kunci: {keys}",

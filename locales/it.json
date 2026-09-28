@@ -91,15 +91,6 @@
         },
         "track": "Traccia"
     },
-    "mp4": {
-        "excluded_header": "Nota: {count} traccia/e non possono essere memorizzate in un MP4 e verranno escluse (usa mkv:// per conservare tutto):",
-        "reason": {
-            "subtitle": "sottotitolo bitmap — MP4 supporta solo sottotitoli di testo",
-            "audio": "il codec audio non ha una mappatura MP4",
-            "video": "vista video secondaria",
-            "video_unmappable": "il codec video non ha una mappatura MP4"
-        }
-    },
     "rip": {
         "opening": "Apertura di {device}...",
         "waiting": "In attesa del disco...",
@@ -666,7 +657,6 @@
             "cancelling": "Annullamento …",
             "nothing_eject": "Niente da espellere — la sorgente è un file, non un lettore.",
             "checking_updates": "Verifica aggiornamenti …",
-            "mp4_mismatch": "MP4 non può contenere video {codecs}. Scegli MKV, che conserva tutto.",
             "container_mismatch": "{container} non può contenere video {codecs}. Scegli invece MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} aperto — {n} titolo/i, chiavi: {keys}",

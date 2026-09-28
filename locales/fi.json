@@ -91,15 +91,6 @@
             "descriptive_service": "Kuvailupalvelu"
         }
     },
-    "mp4": {
-        "excluded_header": "Huomautus: {count} raitaa ei voi tallentaa MP4-tiedostoon ja ne jätetään pois (käytä mkv:// säilyttääksesi kaiken):",
-        "reason": {
-            "subtitle": "bittikarttatekstitys — MP4 tukee vain tekstitekstityksiä",
-            "audio": "äänikoodekilla ei ole MP4-vastaavuutta",
-            "video": "toissijainen videonäkymä",
-            "video_unmappable": "videokoodekilla ei ole MP4-vastaavuutta"
-        }
-    },
     "rip": {
         "opening": "Avataan {device}...",
         "waiting": "Odotetaan levyä...",
@@ -666,7 +657,6 @@
             "cancelling": "Peruutetaan …",
             "nothing_eject": "Ei mitään poistettavaa — lähde on tiedosto, ei asema.",
             "checking_updates": "Tarkistetaan päivityksiä …",
-            "mp4_mismatch": "MP4 ei voi tallentaa {codecs}-videota. Valitse MKV, joka säilyttää kaiken.",
             "container_mismatch": "Muoto {container} ei voi tallentaa {codecs}-videota. Valitse sen sijaan MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} avattu — {n} nimikettä, avaimet: {keys}",

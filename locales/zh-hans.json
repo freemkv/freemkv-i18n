@@ -91,15 +91,6 @@
             "descriptive_service": "描述性服务"
         }
     },
-    "mp4": {
-        "excluded_header": "注意：{count} 条轨道无法存入 MP4，将被略去（使用 mkv:// 可保留全部内容）：",
-        "reason": {
-            "subtitle": "位图字幕 —— MP4 仅支持文本字幕",
-            "audio": "音频编解码器无对应的 MP4 映射",
-            "video": "次要视频视图",
-            "video_unmappable": "视频编解码器无对应的 MP4 映射"
-        }
-    },
     "rip": {
         "opening": "正在打开 {device}……",
         "waiting": "正在等待光盘……",
@@ -666,7 +657,6 @@
             "cancelling": "正在取消……",
             "nothing_eject": "无可弹出的内容 —— 源是文件，而非驱动器。",
             "checking_updates": "正在检查更新……",
-            "mp4_mismatch": "MP4 无法存储 {codecs} 视频。请选择 MKV，它可保留全部内容。",
             "container_mismatch": "{container} 无法存储 {codecs} 视频。请改选 MKV。",
             "opened_version": "freemkv {version}",
             "opened": "{label} 已打开 —— {n} 个标题，密钥：{keys}",

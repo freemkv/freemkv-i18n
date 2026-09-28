@@ -91,15 +91,6 @@
             "descriptive_service": "解説サービス"
         }
     },
-    "mp4": {
-        "excluded_header": "注意: {count} 個のトラックは MP4 に格納できないため除外されます（すべて保持するには mkv:// を使用）:",
-        "reason": {
-            "subtitle": "ビットマップ字幕 — MP4 はテキスト字幕のみ対応",
-            "audio": "音声コーデックに MP4 へのマッピングがありません",
-            "video": "セカンダリ映像ビュー",
-            "video_unmappable": "映像コーデックに MP4 へのマッピングがありません"
-        }
-    },
     "rip": {
         "opening": "{device} を開いています...",
         "waiting": "ディスクを待機中...",
@@ -666,7 +657,6 @@
             "cancelling": "キャンセル中 …",
             "nothing_eject": "取り出すものがありません — ソースはドライブではなくファイルです。",
             "checking_updates": "アップデートを確認中 …",
-            "mp4_mismatch": "MP4 は {codecs} 映像を格納できません。すべてを保持する MKV を選択してください。",
             "container_mismatch": "{container} は {codecs} 映像を格納できません。代わりに MKV を選択してください。",
             "opened_version": "freemkv {version}",
             "opened": "{label} を開きました — {n} タイトル、キー: {keys}",

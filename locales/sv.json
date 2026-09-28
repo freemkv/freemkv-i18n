@@ -91,15 +91,6 @@
             "descriptive_service": "Beskrivande tjänst"
         }
     },
-    "mp4": {
-        "excluded_header": "Obs: {count} spår kan inte lagras i en MP4 och kommer att utelämnas (använd mkv:// för att behålla allt):",
-        "reason": {
-            "subtitle": "bitmappsundertext — MP4 stöder endast textbaserade undertexter",
-            "audio": "ljudkodeken har ingen MP4-mappning",
-            "video": "sekundär videovy",
-            "video_unmappable": "videokodeken har ingen MP4-mappning"
-        }
-    },
     "rip": {
         "opening": "Öppnar {device}...",
         "waiting": "Väntar på skiva...",
@@ -666,7 +657,6 @@
             "cancelling": "Avbryter …",
             "nothing_eject": "Inget att mata ut — källan är en fil, inte en enhet.",
             "checking_updates": "Söker efter uppdateringar …",
-            "mp4_mismatch": "MP4 kan inte lagra {codecs}-video. Välj MKV, som behåller allt.",
             "container_mismatch": "{container} kan inte lagra {codecs}-video. Välj MKV i stället.",
             "opened_version": "freemkv {version}",
             "opened": "{label} öppnad — {n} titel/titlar, nycklar: {keys}",

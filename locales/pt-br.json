@@ -91,15 +91,6 @@
             "descriptive_service": "Serviço Descritivo"
         }
     },
-    "mp4": {
-        "excluded_header": "Nota: {count} faixa(s) não podem ser armazenadas em um MP4 e serão deixadas de fora (use mkv:// para manter tudo):",
-        "reason": {
-            "subtitle": "legenda em bitmap — o MP4 só carrega legendas de texto",
-            "audio": "o codec de áudio não tem mapeamento para MP4",
-            "video": "visão de vídeo secundária",
-            "video_unmappable": "o codec de vídeo não tem mapeamento para MP4"
-        }
-    },
     "rip": {
         "opening": "Abrindo {device}...",
         "waiting": "Aguardando o disco...",
@@ -666,7 +657,6 @@
             "cancelling": "Cancelando …",
             "nothing_eject": "Nada para ejetar — a origem é um arquivo, não uma unidade.",
             "checking_updates": "Verificando atualizações …",
-            "mp4_mismatch": "O MP4 não pode armazenar vídeo {codecs}. Escolha MKV, que mantém tudo.",
             "container_mismatch": "{container} não pode armazenar vídeo {codecs}. Escolha MKV em vez disso.",
             "opened_version": "freemkv {version}",
             "opened": "{label} aberto — {n} título(s), chaves: {keys}",

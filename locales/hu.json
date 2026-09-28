@@ -91,15 +91,6 @@
             "descriptive_service": "Hangalámondás-szolgáltatás"
         }
     },
-    "mp4": {
-        "excluded_header": "Megjegyzés: {count} sáv nem tárolható MP4-ben, ezért kimarad (a teljes megőrzéshez használd az mkv:// formátumot):",
-        "reason": {
-            "subtitle": "képalapú felirat — az MP4 csak szöveges feliratot kezel",
-            "audio": "a hangkodekhez nincs MP4-leképezés",
-            "video": "másodlagos videónézet",
-            "video_unmappable": "a videókodekhez nincs MP4-leképezés"
-        }
-    },
     "rip": {
         "opening": "{device} megnyitása…",
         "waiting": "Várakozás a lemezre…",
@@ -666,7 +657,6 @@
             "cancelling": "Megszakítás…",
             "nothing_eject": "Nincs mit kiadni — a forrás egy fájl, nem meghajtó.",
             "checking_updates": "Frissítések keresése…",
-            "mp4_mismatch": "Az MP4 nem tárolhat {codecs} videót. Válaszd az MKV-t, amely mindent megőriz.",
             "container_mismatch": "A(z) {container} formátum nem tárolhat {codecs} videót. Válaszd helyette az MKV-t.",
             "opened_version": "freemkv {version}",
             "opened": "{label} megnyitva — {n} cím, kulcsok: {keys}",

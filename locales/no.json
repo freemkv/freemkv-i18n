@@ -91,15 +91,6 @@
             "descriptive_service": "Beskrivende tjeneste"
         }
     },
-    "mp4": {
-        "excluded_header": "Merk: {count} spor kan ikke lagres i en MP4 og vil bli utelatt (bruk mkv:// for å beholde alt):",
-        "reason": {
-            "subtitle": "punktgrafikk-undertekst — MP4 bærer kun tekstundertekster",
-            "audio": "lydkodeken har ingen MP4-tilordning",
-            "video": "sekundær videovisning",
-            "video_unmappable": "videokodeken har ingen MP4-tilordning"
-        }
-    },
     "rip": {
         "opening": "Åpner {device} …",
         "waiting": "Venter på plate …",
@@ -666,7 +657,6 @@
             "cancelling": "Avbryter …",
             "nothing_eject": "Ingenting å løse ut — kilden er en fil, ikke en stasjon.",
             "checking_updates": "Ser etter oppdateringer …",
-            "mp4_mismatch": "MP4 kan ikke lagre {codecs}-video. Velg MKV, som beholder alt.",
             "container_mismatch": "{container} kan ikke lagre {codecs}-video. Velg MKV i stedet.",
             "opened_version": "freemkv {version}",
             "opened": "{label} åpnet — {n} tittel(er), nøkler: {keys}",

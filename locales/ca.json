@@ -91,15 +91,6 @@
             "descriptive_service": "Servei descriptiu"
         }
     },
-    "mp4": {
-        "excluded_header": "Nota: {count} pista(es) no es poden desar en un MP4 i s'ometran (useu mkv:// per conservar-ho tot):",
-        "reason": {
-            "subtitle": "subtítol de mapa de bits — MP4 només admet subtítols de text",
-            "audio": "el còdec d'àudio no té correspondència en MP4",
-            "video": "vista de vídeo secundària",
-            "video_unmappable": "el còdec de vídeo no té correspondència en MP4"
-        }
-    },
     "rip": {
         "opening": "S'està obrint {device}...",
         "waiting": "S'està esperant el disc...",
@@ -666,7 +657,6 @@
             "cancelling": "S'està cancel·lant …",
             "nothing_eject": "Res a expulsar — l'origen és un fitxer, no una unitat.",
             "checking_updates": "S'estan comprovant les actualitzacions …",
-            "mp4_mismatch": "MP4 no pot emmagatzemar vídeo {codecs}. Trieu MKV, que ho conserva tot.",
             "container_mismatch": "{container} no pot emmagatzemar vídeo {codecs}. Trieu MKV al seu lloc.",
             "opened_version": "freemkv {version}",
             "opened": "{label} obert — {n} títol(s), claus: {keys}",

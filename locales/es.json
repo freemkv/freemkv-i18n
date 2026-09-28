@@ -91,15 +91,6 @@
         },
         "track": "Pista"
     },
-    "mp4": {
-        "excluded_header": "Nota: {count} pista(s) no se pueden almacenar en un MP4 y se omitirán (use mkv:// para conservarlo todo):",
-        "reason": {
-            "subtitle": "subtítulo de mapa de bits — MP4 solo admite subtítulos de texto",
-            "audio": "el códec de audio no tiene equivalente en MP4",
-            "video": "vista de vídeo secundaria",
-            "video_unmappable": "el códec de vídeo no tiene equivalente en MP4"
-        }
-    },
     "rip": {
         "opening": "Abriendo {device}...",
         "waiting": "Esperando disco...",
@@ -666,7 +657,6 @@
             "cancelling": "Cancelando …",
             "nothing_eject": "Nada que expulsar: el origen es un archivo, no una unidad.",
             "checking_updates": "Buscando actualizaciones …",
-            "mp4_mismatch": "MP4 no puede almacenar vídeo {codecs}. Elija MKV, que lo conserva todo.",
             "container_mismatch": "{container} no puede almacenar vídeo {codecs}. Elija MKV en su lugar.",
             "opened_version": "freemkv {version}",
             "opened": "{label} abierto — {n} título(s), claves: {keys}",

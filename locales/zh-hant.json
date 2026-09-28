@@ -91,15 +91,6 @@
             "descriptive_service": "描述性服務"
         }
     },
-    "mp4": {
-        "excluded_header": "注意：{count} 條軌道無法儲存於 MP4 中，將被略過（使用 mkv:// 以保留所有內容）：",
-        "reason": {
-            "subtitle": "點陣圖字幕 — MP4 僅支援文字字幕",
-            "audio": "音訊編碼無對應的 MP4 格式",
-            "video": "次要影片視角",
-            "video_unmappable": "影片編碼無對應的 MP4 格式"
-        }
-    },
     "rip": {
         "opening": "開啟 {device} 中…",
         "waiting": "等待光碟中…",
@@ -666,7 +657,6 @@
             "cancelling": "取消中…",
             "nothing_eject": "無可退出的項目 — 來源是檔案，而非光碟機。",
             "checking_updates": "檢查更新中…",
-            "mp4_mismatch": "MP4 無法儲存 {codecs} 影片。請選擇 MKV，它能保留所有內容。",
             "container_mismatch": "{container} 無法儲存 {codecs} 影片。請改選 MKV。",
             "opened_version": "freemkv {version}",
             "opened": "已開啟 {label} — {n} 個標題，金鑰：{keys}",

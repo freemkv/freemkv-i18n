@@ -91,15 +91,6 @@
             "descriptive_service": "Beskrivende tjeneste"
         }
     },
-    "mp4": {
-        "excluded_header": "Bemærk: {count} spor kan ikke gemmes i en MP4 og udelades (brug mkv:// for at beholde alt):",
-        "reason": {
-            "subtitle": "bitmap-undertekst — MP4 understøtter kun tekstundertekster",
-            "audio": "lydcodec har ingen MP4-tilknytning",
-            "video": "sekundær videovisning",
-            "video_unmappable": "videocodec har ingen MP4-tilknytning"
-        }
-    },
     "rip": {
         "opening": "Åbner {device}...",
         "waiting": "Venter på disk...",
@@ -666,7 +657,6 @@
             "cancelling": "Annullerer …",
             "nothing_eject": "Intet at skubbe ud — kilden er en fil, ikke et drev.",
             "checking_updates": "Søger efter opdateringer …",
-            "mp4_mismatch": "MP4 kan ikke gemme {codecs}-video. Vælg MKV, som beholder alt.",
             "container_mismatch": "{container} kan ikke gemme {codecs}-video. Vælg MKV i stedet.",
             "opened_version": "freemkv {version}",
             "opened": "{label} åbnet — {n} titel/titler, nøgler: {keys}",
