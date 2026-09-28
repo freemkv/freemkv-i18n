@@ -298,7 +298,7 @@
         "E8003": "Không thể ghi cơ sở dữ liệu khóa: {detail}",
         "E8004": "Không thể đọc cơ sở dữ liệu khóa. Tải lại bằng: freemkv update-keys --url <keydb-url>",
         "E8005": "Không thể tải cơ sở dữ liệu khóa: {detail}",
-        "E8006": "URL cơ sở dữ liệu khóa dùng loại địa chỉ không được hỗ trợ ({detail}).",
+        "E8006": "URL cơ sở dữ liệu khóa dùng loại địa chỉ không được phép ({detail}).",
         "E8007": "Việc tải cơ sở dữ liệu khóa bị chuyển hướng quá nhiều lần. Kiểm tra URL và thử lại.",
         "E9000": "Luồng chỉ đọc.",
         "E9001": "Luồng chỉ ghi.",

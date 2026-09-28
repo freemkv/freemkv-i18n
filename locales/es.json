@@ -275,7 +275,7 @@
         "E8003": "No se puede escribir KEYDB: {detail}",
         "E8004": "Error al analizar KEYDB",
         "E8005": "No se puede cargar KEYDB: {detail}",
-        "E8006": "La URL de la base de datos de claves usa un tipo de dirección no compatible ({detail}).",
+        "E8006": "La URL de la base de datos de claves usa un tipo de dirección no permitido ({detail}).",
         "E8007": "La descarga de la base de datos de claves se redirigió demasiadas veces. Compruebe la URL e inténtelo de nuevo.",
         "E9000": "Flujo es solo lectura",
         "E9001": "Flujo es solo escritura",

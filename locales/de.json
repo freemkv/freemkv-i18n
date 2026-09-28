@@ -275,7 +275,7 @@
         "E8003": "KEYDB kann nicht geschrieben werden: {detail}",
         "E8004": "KEYDB-Analysefehler",
         "E8005": "KEYDB kann nicht geladen werden: {detail}",
-        "E8006": "Die URL der Schlüsseldatenbank verwendet einen nicht unterstützten Adresstyp ({detail}).",
+        "E8006": "Die URL der Schlüsseldatenbank verwendet einen nicht zulässigen Adresstyp ({detail}).",
         "E8007": "Der Download der Schlüsseldatenbank wurde zu oft umgeleitet. Prüfen Sie die URL und versuchen Sie es erneut.",
         "E9000": "Stream ist schreibgeschützt",
         "E9001": "Stream ist nur beschreibbar",

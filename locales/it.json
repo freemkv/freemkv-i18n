@@ -275,7 +275,7 @@
         "E8003": "Impossibile scrivere KEYDB: {detail}",
         "E8004": "Errore di parsing KEYDB",
         "E8005": "Impossibile caricare KEYDB: {detail}",
-        "E8006": "L'URL del database delle chiavi usa un tipo di indirizzo non supportato ({detail}).",
+        "E8006": "L'URL del database delle chiavi usa un tipo di indirizzo non consentito ({detail}).",
         "E8007": "Il download del database delle chiavi è stato reindirizzato troppe volte. Controlla l'URL e riprova.",
         "E9000": "Il flusso e' in sola lettura",
         "E9001": "Il flusso e' in sola scrittura",

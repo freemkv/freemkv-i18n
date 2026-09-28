@@ -298,7 +298,7 @@
         "E8003": "No es pot escriure la base de dades de claus: {detail}",
         "E8004": "No s'ha pogut llegir la base de dades de claus. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>",
         "E8005": "No es pot carregar la base de dades de claus: {detail}",
-        "E8006": "L'URL de la base de dades de claus usa un tipus d'adreça no compatible ({detail}).",
+        "E8006": "L'URL de la base de dades de claus usa un tipus d'adreça no permès ({detail}).",
         "E8007": "La baixada de la base de dades de claus s'ha redirigit massa vegades. Comproveu l'URL i proveu-ho de nou.",
         "E9000": "El flux és de només lectura.",
         "E9001": "El flux és de només escriptura.",

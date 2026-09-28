@@ -298,7 +298,7 @@
         "E8003": "Nu se poate scrie baza de date de chei: {detail}",
         "E8004": "Baza de date de chei nu a putut fi citită. Descarc-o din nou cu: freemkv update-keys --url <keydb-url>",
         "E8005": "Nu se poate încărca baza de date de chei: {detail}",
-        "E8006": "URL-ul bazei de date de chei folosește un tip de adresă neacceptat ({detail}).",
+        "E8006": "URL-ul bazei de date de chei folosește un tip de adresă neautorizat ({detail}).",
         "E8007": "Descărcarea bazei de date de chei a fost redirecționată de prea multe ori. Verifică URL-ul și încearcă din nou.",
         "E9000": "Fluxul este doar pentru citire.",
         "E9001": "Fluxul este doar pentru scriere.",

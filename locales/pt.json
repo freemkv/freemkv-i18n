@@ -275,7 +275,7 @@
         "E8003": "Não foi possível gravar KEYDB: {detail}",
         "E8004": "Erro de análise do KEYDB",
         "E8005": "Não foi possível carregar KEYDB: {detail}",
-        "E8006": "A URL do banco de dados de chaves usa um tipo de endereço não suportado ({detail}).",
+        "E8006": "A URL do banco de dados de chaves usa um tipo de endereço não permitido ({detail}).",
         "E8007": "O download do banco de dados de chaves foi redirecionado vezes demais. Verifique a URL e tente novamente.",
         "E9000": "Stream e somente leitura",
         "E9001": "Stream e somente escrita",

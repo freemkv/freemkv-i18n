@@ -298,7 +298,7 @@
         "E8003": "Nie można zapisać bazy kluczy: {detail}",
         "E8004": "Nie udało się odczytać bazy kluczy. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>",
         "E8005": "Nie można wczytać bazy kluczy: {detail}",
-        "E8006": "Adres URL bazy kluczy używa nieobsługiwanego typu adresu ({detail}).",
+        "E8006": "Adres URL bazy kluczy używa niedozwolonego typu adresu ({detail}).",
         "E8007": "Pobieranie bazy kluczy zostało przekierowane zbyt wiele razy. Sprawdź adres URL i spróbuj ponownie.",
         "E9000": "Strumień jest tylko do odczytu.",
         "E9001": "Strumień jest tylko do zapisu.",

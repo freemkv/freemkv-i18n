@@ -298,7 +298,7 @@
         "E8003": "Tidak dapat menulis basis data kunci: {detail}",
         "E8004": "Basis data kunci tidak dapat dibaca. Unduh ulang dengan: freemkv update-keys --url <keydb-url>",
         "E8005": "Tidak dapat memuat basis data kunci: {detail}",
-        "E8006": "URL basis data kunci menggunakan jenis alamat yang tidak didukung ({detail}).",
+        "E8006": "URL basis data kunci menggunakan jenis alamat yang tidak diizinkan ({detail}).",
         "E8007": "Unduhan basis data kunci dialihkan terlalu banyak kali. Periksa URL dan coba lagi.",
         "E9000": "Stream hanya-baca.",
         "E9001": "Stream hanya-tulis.",

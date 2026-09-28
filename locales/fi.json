@@ -298,7 +298,7 @@
         "E8003": "Avaintietokantaa ei voi kirjoittaa: {detail}",
         "E8004": "Avaintietokantaa ei voitu lukea. Lataa se uudelleen komennolla: freemkv update-keys --url <keydb-url>",
         "E8005": "Avaintietokantaa ei voi ladata: {detail}",
-        "E8006": "Avaintietokannan URL käyttää osoitetyyppiä, jota ei tueta ({detail}).",
+        "E8006": "Avaintietokannan URL käyttää osoitetyyppiä, jota ei sallita ({detail}).",
         "E8007": "Avaintietokannan lataus ohjattiin liian monta kertaa. Tarkista URL ja yritä uudelleen.",
         "E9000": "Raita on vain luku -tilassa.",
         "E9001": "Raita on vain kirjoitus -tilassa.",

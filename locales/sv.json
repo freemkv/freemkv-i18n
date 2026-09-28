@@ -298,7 +298,7 @@
         "E8003": "Kan inte skriva nyckeldatabasen: {detail}",
         "E8004": "Nyckeldatabasen kunde inte läsas. Ladda ner den på nytt med: freemkv update-keys --url <keydb-url>",
         "E8005": "Kan inte läsa in nyckeldatabasen: {detail}",
-        "E8006": "Nyckeldatabasens URL använder en adresstyp som inte stöds ({detail}).",
+        "E8006": "Nyckeldatabasens URL använder en adresstyp som inte är tillåten ({detail}).",
         "E8007": "Nedladdningen av nyckeldatabasen omdirigerades för många gånger. Kontrollera URL:en och försök igen.",
         "E9000": "Strömmen är skrivskyddad.",
         "E9001": "Strömmen är endast skrivbar.",

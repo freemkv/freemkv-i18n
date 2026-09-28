@@ -298,7 +298,7 @@
         "E8003": "Nem sikerült írni a kulcsadatbázist: {detail}",
         "E8004": "A kulcsadatbázist nem sikerült beolvasni. Töltsd le újra: freemkv update-keys --url <keydb-url>",
         "E8005": "Nem sikerült betölteni a kulcsadatbázist: {detail}",
-        "E8006": "A kulcsadatbázis URL-je nem támogatott címtípust használ ({detail}).",
+        "E8006": "A kulcsadatbázis URL-je nem engedélyezett címtípust használ ({detail}).",
         "E8007": "A kulcsadatbázis letöltését túl sokszor irányították át. Ellenőrizd az URL-t, és próbáld újra.",
         "E9000": "Az adatfolyam csak olvasható.",
         "E9001": "Az adatfolyam csak írható.",

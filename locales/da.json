@@ -298,7 +298,7 @@
         "E8003": "Kan ikke skrive nøgledatabasen: {detail}",
         "E8004": "Nøgledatabasen kunne ikke læses. Download den igen med: freemkv update-keys --url <keydb-url>",
         "E8005": "Kan ikke indlæse nøgledatabasen: {detail}",
-        "E8006": "Nøgledatabasens URL bruger en adressetype, der ikke understøttes ({detail}).",
+        "E8006": "Nøgledatabasens URL bruger en adressetype, der ikke er tilladt ({detail}).",
         "E8007": "Download af nøgledatabasen blev omdirigeret for mange gange. Kontrollér URL'en og prøv igen.",
         "E9000": "Stream er skrivebeskyttet.",
         "E9001": "Stream er kun til skrivning.",

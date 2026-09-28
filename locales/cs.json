@@ -298,7 +298,7 @@
         "E8003": "Nelze zapsat databázi klíčů: {detail}",
         "E8004": "Databázi klíčů nelze přečíst. Stáhněte ji znovu pomocí: freemkv update-keys --url <keydb-url>",
         "E8005": "Nelze načíst databázi klíčů: {detail}",
-        "E8006": "URL databáze klíčů používá nepodporovaný typ adresy ({detail}).",
+        "E8006": "URL databáze klíčů používá nepovolený typ adresy ({detail}).",
         "E8007": "Stahování databáze klíčů bylo příliš mnohokrát přesměrováno. Zkontrolujte URL a zkuste to znovu.",
         "E9000": "Stopa je pouze pro čtení.",
         "E9001": "Stopa je pouze pro zápis.",

@@ -298,7 +298,7 @@
         "E8003": "Anahtar veritabanı yazılamıyor: {detail}",
         "E8004": "Anahtar veritabanı okunamadı. Şununla yeniden indirin: freemkv update-keys --url <keydb-url>",
         "E8005": "Anahtar veritabanı yüklenemiyor: {detail}",
-        "E8006": "Anahtar veritabanı URL'si desteklenmeyen bir adres türü kullanıyor ({detail}).",
+        "E8006": "Anahtar veritabanı URL'si izin verilmeyen bir adres türü kullanıyor ({detail}).",
         "E8007": "Anahtar veritabanı indirmesi çok fazla yönlendirildi. URL'yi kontrol edin ve tekrar deneyin.",
         "E9000": "Akış salt okunur.",
         "E9001": "Akış salt yazılır.",

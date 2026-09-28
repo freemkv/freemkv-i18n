@@ -298,7 +298,7 @@
         "E8003": "No se puede escribir la base de datos de claves: {detail}",
         "E8004": "No se pudo leer la base de datos de claves. Vuelve a descargarla con: freemkv update-keys --url <keydb-url>",
         "E8005": "No se puede cargar la base de datos de claves: {detail}",
-        "E8006": "La URL de la base de datos de claves usa un tipo de dirección que no es compatible ({detail}).",
+        "E8006": "La URL de la base de datos de claves usa un tipo de dirección que no está permitido ({detail}).",
         "E8007": "La descarga de la base de datos de claves fue redirigida demasiadas veces. Verifica la URL y vuelve a intentarlo.",
         "E9000": "La pista es de solo lectura.",
         "E9001": "La pista es de solo escritura.",

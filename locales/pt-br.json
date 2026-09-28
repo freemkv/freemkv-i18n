@@ -298,7 +298,7 @@
         "E8003": "Não é possível gravar o banco de dados de chaves: {detail}",
         "E8004": "Não foi possível ler o banco de dados de chaves. Baixe-o novamente com: freemkv update-keys --url <url-do-keydb>",
         "E8005": "Não é possível carregar o banco de dados de chaves: {detail}",
-        "E8006": "A URL do banco de dados de chaves usa um tipo de endereço que não é suportado ({detail}).",
+        "E8006": "A URL do banco de dados de chaves usa um tipo de endereço que não é permitido ({detail}).",
         "E8007": "O download do banco de dados de chaves foi redirecionado vezes demais. Verifique a URL e tente novamente.",
         "E9000": "A faixa é somente leitura.",
         "E9001": "A faixa é somente gravação.",

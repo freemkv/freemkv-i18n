@@ -275,7 +275,7 @@
         "E8003": "Kan KEYDB niet schrijven: {detail}",
         "E8004": "KEYDB-parseerfout",
         "E8005": "Kan KEYDB niet laden: {detail}",
-        "E8006": "De URL van de sleuteldatabase gebruikt een niet-ondersteund adrestype ({detail}).",
+        "E8006": "De URL van de sleuteldatabase gebruikt een niet-toegestaan adrestype ({detail}).",
         "E8007": "De download van de sleuteldatabase werd te vaak omgeleid. Controleer de URL en probeer het opnieuw.",
         "E9000": "Stream is alleen-lezen",
         "E9001": "Stream is alleen-schrijven",

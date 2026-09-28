@@ -275,7 +275,7 @@
         "E8003": "Impossible d'ecrire KEYDB : {detail}",
         "E8004": "Erreur d'analyse KEYDB",
         "E8005": "Impossible de charger KEYDB : {detail}",
-        "E8006": "L'URL de la base de clés utilise un type d'adresse non pris en charge ({detail}).",
+        "E8006": "L'URL de la base de clés utilise un type d'adresse non autorisé ({detail}).",
         "E8007": "Le téléchargement de la base de clés a été redirigé trop de fois. Vérifiez l'URL et réessayez.",
         "E9000": "Le flux est en lecture seule",
         "E9001": "Le flux est en ecriture seule",
