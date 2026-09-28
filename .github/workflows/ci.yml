@@ -135,10 +135,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      # ST-I0: `ref: github.ref_name` is `<n>/merge` on a pull_request run, which would
+      # break this fetch on every i18n PR. Pair with libfreemkv's same-named branch so
+      # paired changes (e.g. CC-I1) test together; else the PR's base branch, else dev.
+      - name: Pick libfreemkv branch
+        id: lfref
+        run: ci/pick-libfreemkv-ref.sh
       - name: Fetch libfreemkv error.rs
         uses: actions/checkout@v5
         with:
           repository: freemkv/libfreemkv
+          ref: ${{ steps.lfref.outputs.ref }}
           path: .libfreemkv-src
           sparse-checkout: src/error.rs
           sparse-checkout-cone-mode: false
