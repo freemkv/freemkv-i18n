@@ -153,7 +153,8 @@
         "patch_done": "Apedaçament fet: recuperats {recovered} MB, {unreadable} MB il·legibles, {pending} MB pendents ({time}s, {speed} MB/s)",
         "multipass_ignored": "Nota: --multipass s'ignora per a disc->MKV/M2TS (mux d'una sola passada). Useu una sortida iso:// per a la recuperació multipassada.",
         "title_skipped": "S'omet el títol {num}: protegit contra còpia, no s'ha pogut recuperar cap clau.",
-        "title_skipped_empty": "S'omet el títol {num}: buit (sense vídeo) — probablement un fragment de menú o navegació."
+        "title_skipped_empty": "S'omet el títol {num}: buit (sense vídeo) — probablement un fragment de menú o navegació.",
+        "vid_from_hint": "Per acabar, inseriu el disc i torneu a executar la mateixa ordre amb --vid-from disc:// (o --vid-from disc://DEVICE per indicar la unitat). Només es llegeix l'ID del volum del disc; no es torna a extreure."
     },
     "dir": {
         "extracting": "S'està extraient l'arbre de fitxers desxifrat a {path}",
@@ -263,7 +264,7 @@
         "E6020": "El fitxer d'imatge de disc s'acaba abans d'un sector que necessita aquesta extracció, de manera que la imatge està truncada o incompleta. La lectura s'ha aturat en lloc d'omplir amb zeros la part que falta: torneu a crear la imatge a partir del disc.",
         "E6021": "No es pot crear una imatge del disc: aquest disc fa servir el xifratge de bus AACS i no s'ha pogut llegir la ubicació d'un fitxer de flux al disc ({detail}), de manera que aquest fitxer no es pot desxifrar i la imatge encara contindria dades xifrades. Els títols que no facin servir aquest fitxer encara es poden extreure a MKV, o es pot extreure el disc a una carpeta (aquest fitxer es notifica com a malmès). Netejar el disc i tornar-ho a provar pot ajudar.",
         "E6022": "Aquesta imatge ({detail}) es va preparar per a una extracció MKV i només conté els títols per als quals es va preparar, no tot el disc, de manera que no es pot fer servir com a imatge de disc ni extreure a una carpeta. Extraieu aquests títols a MKV o creeu una imatge nova a partir del disc.",
-        "E7000": "Aquest disc necessita claus de desxifratge AACS (Blu-ray/UHD), però no se n'ha trobat cap. Baixeu una base de dades de claus amb: freemkv update-keys --url <url-keydb>",
+        "E7000": "Aquest disc necessita claus de desxifratge AACS (Blu-ray/UHD), però no se n'ha trobat cap. Instal·leu o actualitzeu una base de dades de claus i torneu-ho a provar.",
         "E7001": "El certificat de seguretat del disc és massa curt o no és vàlid.",
         "E7002": "La unitat no ha volgut iniciar una sessió segura per a aquest disc — pot ser que l'estigui usant un altre programa. Tanqueu qualsevol altra cosa que estigui usant el disc i proveu-ho de nou.",
         "E7003": "La unitat ha rebutjat el certificat de seguretat d'aquest disc.",
@@ -275,7 +276,7 @@
         "E7009": "No s'ha pogut llegir l'identificador del disc. El disc pot estar brut o danyat.",
         "E7010": "No s'ha pogut verificar l'identificador del disc. El disc pot estar danyat o no ser compatible.",
         "E7011": "No s'ha pogut preparar la clau de desxifratge d'aquest disc.",
-        "E7013": "El desxifratge ha fallat — la clau recuperada no ha desbloquejat les dades d'aquest disc. La clau pot ser incorrecta o obsoleta; actualitzeu-la amb: freemkv update-keys --url <url-keydb>",
+        "E7013": "El desxifratge ha fallat — la clau recuperada no ha desbloquejat les dades d'aquest disc. La clau pot ser incorrecta o obsoleta; actualitzeu la base de dades de claus i torneu-ho a provar.",
         "E7014": "L'autenticació CSS ha fallat: la unitat no ha pogut establir l'intercanvi de claus necessari per desxifrar aquest DVD. Proveu de netejar el disc i tornar-lo a inserir. Si el problema persisteix, pot ser que la unitat no admeti del tot el desxifratge CSS.",
         "E7015": "La unitat ha rebutjat el certificat d'amfitrió AACS, i aquesta unitat no es pot desbloquejar d'una altra manera.",
         "E7016": "Aquesta unitat no pot llegir el disc en el mode necessari per desxifrar-lo, i la sessió segura s'ha rebutjat. No queda cap manera de desxifrar aquest disc en aquesta unitat.",
@@ -288,7 +289,7 @@
         "E7023": "Aquest disc està protegit contra còpia i no s'ha pogut recuperar cap clau per a aquest títol, així que no es pot desxifrar (la sortida seria il·legible).",
         "E7024": "No hi ha cap certificat d'amfitrió disponible en cap font de claus per a la negociació segura de la unitat.",
         "E7025": "Aquest disc usa xifratge de bus AACS, però no s'ha pogut obtenir cap clau de bus de la negociació segura de la unitat, així que les seves dades no es poden desxifrar (la sortida seria il·legible).",
-        "E7026": "Aquest disc usa la marca d'aigua forense AACS 2.1 (FMTS) i no hi ha cap clau de variant disponible, així que la pel·lícula no es pot reconstruir sense buits. Actualitzeu la base de dades de claus.",
+        "E7026": "Aquest disc usa la marca d'aigua forense AACS 2.1 (FMTS) i no hi ha cap clau de variant disponible, així que la pel·lícula no es pot reconstruir sense buits. Actualitzeu la base de dades de claus. Si encara cap font de claus no inclou aquest disc, extraieu-lo a una imatge i convertiu-la quan es publiquin les claus.",
         "E7027": "No s'ha pogut desbloquejar la protecció contra còpia d'aquest DVD, així que no es pot llegir cap títol seu. Pot ser que el disc estigui malmès, o que usi una variant que aquesta versió no gestiona.",
         "E7028": "No s'ha pogut contactar el servei de claus en línia, així que mai ha indicat si aquest disc té clau. Això sol ser temporal — espereu uns minuts i torneu-ho a provar. No busqueu encara una clau que falta; el servei estava caigut, no el disc.",
         "E7029": "El servei de claus en línia ha rebutjat el testimoni d'accés, així que no ha respost. Corregiu el testimoni del servei de claus a Configuració (o --key-auth a la línia d'ordres) i torneu-ho a provar. Això no vol dir que el disc no tingui clau.",
@@ -298,10 +299,10 @@
         "E7033": "S'han trobat certificats d'amfitrió a les vostres fonts de claus, però cap és utilitzable (malmès o incomplet). Actualitzeu la vostra base de dades de claus i torneu-ho a provar.",
         "E7034": "Les claus d'aquest disc necessiten el seu ID del volum (Volume ID), que només es pot llegir des del disc mateix. Inseriu el disc per acabar; no es tornarà a extreure.",
         "E8000": "No es pot connectar al servidor de la base de dades de claus: {detail}",
-        "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu-ho a provar, o executeu: freemkv update-keys --url <url-keydb>",
-        "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>",
+        "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu a provar l'actualització.",
+        "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar.",
         "E8003": "No es pot escriure la base de dades de claus: {detail}",
-        "E8004": "No s'ha pogut llegir la base de dades de claus. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>",
+        "E8004": "No s'ha pogut llegir la base de dades de claus. Torneu-la a baixar.",
         "E8005": "No es pot carregar la base de dades de claus: {detail}",
         "E8006": "L'URL de la base de dades de claus usa un tipus d'adreça no permès ({detail}).",
         "E8007": "La baixada de la base de dades de claus s'ha redirigit massa vegades. Comproveu l'URL i proveu-ho de nou.",
@@ -436,7 +437,25 @@
         "disc_scan_all_titles_failed": "Error: no s'ha pogut analitzar el disc per llistar-ne els títols, de manera que `-t all` no pot saber quins títols cal extreure. No s'ha extret res — comproveu el disc i la unitat i torneu-ho a provar.",
         "log_file_needs_value": "--log-file: requereix un camí (p. ex. --log-file freemkv.log)",
         "mux_failed_generic": "El multiplexatge ha fallat (E{code}).",
-        "title_changed": "El títol {num} ha canviat entre anàlisis: s'esperava {expected}, però la unitat ara informa {found}. La llista de títols del disc ha canviat durant l'extracció; no s'ha escrit res per a aquest títol."
+        "title_changed": "El títol {num} ha canviat entre anàlisis: s'esperava {expected}, però la unitat ara informa {found}. La llista de títols del disc ha canviat durant l'extracció; no s'ha escrit res per a aquest títol.",
+        "vid_from_not_a_drive": "Error: --vid-from necessita la unitat que conté el disc: disc:// (o disc://DEVICE), s'ha rebut '{value}'.",
+        "vid_from_iso_only": "Error: --vid-from només s'aplica a una font d'imatge iso://, s'ha rebut '{source}'."
+    },
+    "error_cli": {
+        "E7000": "Aquest disc necessita claus de desxifratge AACS (Blu-ray/UHD), però no se n'ha trobat cap. Baixeu una base de dades de claus amb: freemkv update-keys --url <url-keydb>",
+        "E7013": "El desxifratge ha fallat — la clau recuperada no ha desbloquejat les dades d'aquest disc. La clau pot ser incorrecta o obsoleta; actualitzeu-la amb: freemkv update-keys --url <url-keydb>",
+        "E7026": "Aquest disc usa la marca d'aigua forense AACS 2.1 (FMTS) i no hi ha cap clau de variant disponible, així que la pel·lícula no es pot reconstruir sense buits. Actualitzeu la base de dades de claus amb: freemkv update-keys --url <url-keydb>. Si encara cap font de claus no inclou aquest disc, extraieu-lo a una imatge amb 'freemkv disc:// iso://Disc.iso' i convertiu-la quan es publiquin les claus.",
+        "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu-ho a provar, o executeu: freemkv update-keys --url <url-keydb>",
+        "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>",
+        "E8004": "No s'ha pogut llegir la base de dades de claus. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>"
+    },
+    "error_gui": {
+        "E7000": "Aquest disc necessita claus de desxifratge AACS (Blu-ray/UHD), però no se n'ha trobat cap. Baixeu una base de dades de claus des de «Configuració…» → «Actualitza el keydb ara».",
+        "E7013": "El desxifratge ha fallat — la clau recuperada no ha desbloquejat les dades d'aquest disc. La clau pot ser incorrecta o obsoleta; actualitzeu-la des de «Configuració…» → «Actualitza el keydb ara».",
+        "E7026": "Aquest disc usa la marca d'aigua forense AACS 2.1 (FMTS) i no hi ha cap clau de variant disponible, així que la pel·lícula no es pot reconstruir sense buits. Actualitzeu la base de dades de claus des de «Configuració…» → «Actualitza el keydb ara». Si encara cap font de claus no inclou aquest disc, extraieu el disc a una imatge ISO i convertiu-la quan es publiquin les claus.",
+        "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu-ho a provar des de «Configuració…» → «Actualitza el keydb ara».",
+        "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar des de «Configuració…» → «Actualitza el keydb ara».",
+        "E8004": "No s'ha pogut llegir la base de dades de claus. Torneu-la a baixar des de «Configuració…» → «Actualitza el keydb ara»."
     },
     "usage": {
         "synopsis_1": "Ús: freemkv <origen> <destinació> [indicadors]",
@@ -504,6 +523,7 @@
             "key_url_2": "                      Amb --keydb, el keydb es prova primer (local",
             "key_url_3": "                      primer); sol, és l'única font de claus.",
             "key_auth": "      --key-auth TOKEN Testimoni Bearer enviat al servei de claus (opcional).",
+            "vid_from": "      --vid-from DRIVE Per a una imatge iso:// les claus de la qual necessiten l'ID del volum (Volume ID) del disc (E7034): llegiu-lo des del disc a DRIVE (disc:// o disc://DEVICE); no se n'extreu res.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Desactivat per defecte —",
             "log_level_2": "                      el terminal es manté net. Establiu-lo per escriure un",
             "log_level_3": "                      registre de diagnòstic a ./log.txt (useu 3 per als informes d'errors).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Només es poden fer servir fitxers i carpetes locals: {p}",
             "reveal_failed": "No s'ha pogut obrir la carpeta a l'Explorador de fitxers: {e}",
             "scan_not_started": "No s'ha pogut iniciar l'anàlisi de l'origen: {detail}",
-            "scan_worker_stopped": "El procés d'anàlisi de l'origen s'ha aturat abans de retornar un resultat."
+            "scan_worker_stopped": "El procés d'anàlisi de l'origen s'ha aturat abans de retornar un resultat.",
+            "insert_disc_retry": "Inseriu el disc en una unitat i torneu a triar «Inicia l'extracció». Només se'n llegeix l'ID del volum; no es torna a extreure."
         },
         "alert": {
             "rip_title": "Hi ha una extracció en curs.",

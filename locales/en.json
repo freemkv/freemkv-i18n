@@ -153,7 +153,8 @@
         "patch_done": "Patch done: recovered {recovered} MB, {unreadable} MB unreadable, {pending} MB pending ({time}s, {speed} MB/s)",
         "multipass_ignored": "Note: --multipass is ignored for disc->MKV/M2TS (single-pass mux). Use an iso:// output for multipass recovery.",
         "title_skipped": "Skipping title {num}: copy-protected, no key recoverable.",
-        "title_skipped_empty": "Skipping title {num}: empty (no video) — likely a menu/nav stub."
+        "title_skipped_empty": "Skipping title {num}: empty (no video) — likely a menu/nav stub.",
+        "vid_from_hint": "To finish, insert the disc and run the same command again with --vid-from disc:// (or --vid-from disc://DEVICE to name the drive). Only the disc's Volume ID is read; it is not ripped again."
     },
     "dir": {
         "extracting": "Extracting decrypted file tree to {path}",
@@ -263,7 +264,7 @@
         "E6020": "Error: the disc image file ends before a sector this rip needs, so the image is truncated or incomplete. Reading stopped rather than fill the missing part with zeros — make a new image from the disc.",
         "E6021": "A disc image can't be made: this disc uses AACS bus encryption, and the location of a stream file on the disc couldn't be read ({detail}), so that file can't be decrypted and the image would still hold encrypted data. Titles that don't use that file can still be ripped to MKV, or the disc can be extracted to a folder (that file is reported as damaged). Cleaning the disc and trying again may help.",
         "E6022": "This image ({detail}) was staged for an MKV rip and holds only the titles it was staged for, not the whole disc, so it can't be used as a disc image or extracted to a folder. Rip those titles to MKV, or make a new image from the disc.",
-        "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Download a key database with: freemkv update-keys --url <keydb-url>",
+        "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Install or update a key database, then try again.",
         "E7001": "The disc's security certificate is too short or invalid.",
         "E7002": "The drive would not start a secure session for this disc — it may be in use by another program. Close anything else using the disc and try again.",
         "E7003": "The drive rejected this disc's security certificate.",
@@ -275,7 +276,7 @@
         "E7009": "Could not read the disc's identifier. The disc may be dirty or damaged.",
         "E7010": "The disc's identifier could not be verified. The disc may be damaged or unsupported.",
         "E7011": "Could not prepare this disc's decryption key.",
-        "E7013": "Decryption failed — the recovered key did not unlock this disc's data. The key may be wrong or outdated; refresh it with: freemkv update-keys --url <keydb-url>",
+        "E7013": "Decryption failed — the recovered key did not unlock this disc's data. The key may be wrong or outdated; update your key database and try again.",
         "E7014": "CSS authentication failed: the drive could not establish the key exchange needed to decrypt this DVD. Try cleaning the disc and reinserting it. If the problem persists, your drive may not fully support CSS decryption.",
         "E7015": "The drive rejected the AACS host certificate, and this drive can't be unlocked another way.",
         "E7016": "This drive can't read the disc in the mode needed to decrypt it, and the secure session was refused. No way to decrypt this disc remains on this drive.",
@@ -288,7 +289,7 @@
         "E7023": "This disc is copy-protected and no key could be recovered for this title, so it can't be decrypted (the output would be unreadable).",
         "E7024": "No host certificate is available from any key source for the drive's secure handshake.",
         "E7025": "This disc uses AACS bus encryption, but no bus key could be obtained from the drive's secure handshake, so its data can't be decrypted (the output would be unreadable).",
-        "E7026": "This disc uses AACS 2.1 forensic watermarking (FMTS) and no variant key is available for it, so the movie can't be rebuilt without gaps. Refresh your key database with: freemkv update-keys --url <keydb-url>. If no key source carries this disc yet, rip it to an image with 'freemkv disc:// iso://Disc.iso' and convert the image once the keys are published.",
+        "E7026": "This disc uses AACS 2.1 forensic watermarking (FMTS) and no variant key is available for it, so the movie can't be rebuilt without gaps. Update your key database. If no key source carries this disc yet, rip the disc to an image and convert the image once the keys are published.",
         "E7027": "This DVD's copy protection could not be unlocked, so no title on it can be read. The disc may be damaged, or use a variant this version does not handle.",
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
@@ -298,10 +299,10 @@
         "E7033": "Host certificates were found in your key sources, but none of them is usable (damaged or incomplete). Refresh your key database and try again.",
         "E7034": "This disc's keys need its Volume ID, which can only be read from the disc itself. Insert the disc to finish; it will not be ripped again.",
         "E8000": "Cannot connect to the key database server: {detail}",
-        "E8001": "Key database download failed (HTTP {detail}). Try again, or run: freemkv update-keys --url <keydb-url>",
-        "E8002": "The key database is empty or invalid. Re-download it with: freemkv update-keys --url <keydb-url>",
+        "E8001": "Key database download failed (HTTP {detail}). Try the update again.",
+        "E8002": "The key database is empty or invalid. Download it again.",
         "E8003": "Cannot write the key database: {detail}",
-        "E8004": "The key database could not be read. Re-download it with: freemkv update-keys --url <keydb-url>",
+        "E8004": "The key database could not be read. Download it again.",
         "E8005": "Cannot load the key database: {detail}",
         "E8006": "The key database URL uses an address type that isn't allowed ({detail}).",
         "E8007": "The key database download was redirected too many times. Check the URL and try again.",
@@ -436,7 +437,25 @@
         "disc_scan_all_titles_failed": "Error: could not scan the disc to list its titles, so `-t all` cannot know which titles to rip. Nothing was ripped — check the disc and drive and try again.",
         "log_file_needs_value": "--log-file: requires a path (e.g. --log-file freemkv.log)",
         "mux_failed_generic": "Mux failed (E{code}).",
-        "title_changed": "Title {num} changed between scans: expected {expected}, the drive now reports {found}. The disc list moved under the rip; nothing was written for this title."
+        "title_changed": "Title {num} changed between scans: expected {expected}, the drive now reports {found}. The disc list moved under the rip; nothing was written for this title.",
+        "vid_from_not_a_drive": "Error: --vid-from needs the drive holding the disc: disc:// (or disc://DEVICE), got '{value}'.",
+        "vid_from_iso_only": "Error: --vid-from applies only to an iso:// image source, got '{source}'."
+    },
+    "error_cli": {
+        "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Download a key database with: freemkv update-keys --url <keydb-url>",
+        "E7013": "Decryption failed — the recovered key did not unlock this disc's data. The key may be wrong or outdated; refresh it with: freemkv update-keys --url <keydb-url>",
+        "E7026": "This disc uses AACS 2.1 forensic watermarking (FMTS) and no variant key is available for it, so the movie can't be rebuilt without gaps. Refresh your key database with: freemkv update-keys --url <keydb-url>. If no key source carries this disc yet, rip it to an image with 'freemkv disc:// iso://Disc.iso' and convert the image once the keys are published.",
+        "E8001": "Key database download failed (HTTP {detail}). Try again, or run: freemkv update-keys --url <keydb-url>",
+        "E8002": "The key database is empty or invalid. Re-download it with: freemkv update-keys --url <keydb-url>",
+        "E8004": "The key database could not be read. Re-download it with: freemkv update-keys --url <keydb-url>"
+    },
+    "error_gui": {
+        "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Download a key database with Settings… → “Update keydb now”.",
+        "E7013": "Decryption failed — the recovered key did not unlock this disc's data. The key may be wrong or outdated; refresh it with Settings… → “Update keydb now”.",
+        "E7026": "This disc uses AACS 2.1 forensic watermarking (FMTS) and no variant key is available for it, so the movie can't be rebuilt without gaps. Refresh your key database with Settings… → “Update keydb now”. If no key source carries this disc yet, rip the disc to an ISO image and convert the image once the keys are published.",
+        "E8001": "Key database download failed (HTTP {detail}). Try again with Settings… → “Update keydb now”.",
+        "E8002": "The key database is empty or invalid. Download it again with Settings… → “Update keydb now”.",
+        "E8004": "The key database could not be read. Download it again with Settings… → “Update keydb now”."
     },
     "usage": {
         "synopsis_1": "Usage: freemkv <source> <dest> [flags]",
@@ -504,6 +523,7 @@
             "key_url_2": "                      With --keydb the keydb is tried first (local-",
             "key_url_3": "                      first); alone it is the only key source.",
             "key_auth": "      --key-auth TOKEN Bearer token sent to the key service (optional).",
+            "vid_from": "      --vid-from DRIVE For an iso:// image whose keys need the disc's Volume ID (E7034): read it from the disc in DRIVE (disc:// or disc://DEVICE); nothing is ripped from it.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Off by default —",
             "log_level_2": "                      the terminal stays clean. Set it to write a",
             "log_level_3": "                      diagnostic log to ./log.txt (use 3 for bug reports).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Only local files and folders can be used: {p}",
             "reveal_failed": "Could not open the folder in Explorer: {e}",
             "scan_not_started": "Could not start scanning the source: {detail}",
-            "scan_worker_stopped": "Source scan worker stopped before returning a result."
+            "scan_worker_stopped": "Source scan worker stopped before returning a result.",
+            "insert_disc_retry": "Insert the disc into a drive, then choose “Start rip” again. Only its Volume ID is read; it is not ripped again."
         },
         "alert": {
             "rip_title": "A rip is in progress.",

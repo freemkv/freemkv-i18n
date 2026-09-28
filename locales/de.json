@@ -153,7 +153,8 @@
         "damage_none": "0s",
         "multipass_ignored": "Hinweis: --multipass wird bei disc->MKV/M2TS ignoriert (Einzeldurchlauf-Mux). Verwende eine iso://-Ausgabe für Mehrpass-Wiederherstellung.",
         "title_skipped": "Titel {num} wird übersprungen: kopiergeschützt, kein Schlüssel wiederherstellbar.",
-        "title_skipped_empty": "Titel {num} wird übersprungen: leer (kein Video) — vermutlich ein Menü-/Navigations-Stub."
+        "title_skipped_empty": "Titel {num} wird übersprungen: leer (kein Video) — vermutlich ein Menü-/Navigations-Stub.",
+        "vid_from_hint": "Legen Sie zum Abschluss die Disc ein und führen Sie denselben Befehl erneut mit --vid-from disc:// aus (oder --vid-from disc://DEVICE, um das Laufwerk zu benennen). Es wird nur die Volume-ID der Disc gelesen; sie wird nicht erneut gerippt."
     },
     "dir": {
         "extracting": "Entschlüsselter Dateibaum wird nach {path} extrahiert",
@@ -240,7 +241,7 @@
         "E6020": "Die Disc-Abbilddatei endet vor einem Sektor, den dieser Rip benötigt — das Abbild ist abgeschnitten oder unvollständig. Das Lesen wurde gestoppt, statt den fehlenden Teil mit Nullen aufzufüllen. Erstellen Sie das Abbild neu von der Disc.",
         "E6021": "Ein Disc-Image kann nicht erstellt werden: Diese Disc verwendet AACS-Busverschlüsselung, und die Position einer Stream-Datei auf der Disc konnte nicht gelesen werden ({detail}). Diese Datei kann daher nicht entschlüsselt werden, und das Image würde weiterhin verschlüsselte Daten enthalten. Titel, die diese Datei nicht verwenden, können weiterhin als MKV gerippt werden, oder die Disc kann in einen Ordner entpackt werden (die Datei wird als beschädigt gemeldet). Die Disc zu reinigen und es erneut zu versuchen kann helfen.",
         "E6022": "Dieses Image ({detail}) wurde für einen MKV-Rip vorbereitet und enthält nur die Titel, für die es vorbereitet wurde, nicht die ganze Disc. Es kann daher weder als Disc-Image verwendet noch in einen Ordner entpackt werden. Rippen Sie diese Titel als MKV oder erstellen Sie ein neues Image von der Disc.",
-        "E7000": "Diese Disc benötigt AACS-Entschlüsselungsschlüssel, aber keine Schlüsselquelle hat sie bereitgestellt.",
+        "E7000": "Diese Disc benötigt AACS-Entschlüsselungsschlüssel (Blu-ray/UHD), aber es wurde keiner gefunden. Installieren oder aktualisieren Sie eine Schlüsseldatenbank und versuchen Sie es erneut.",
         "E7001": "AACS-Host-Zertifikat zu kurz oder ungültig",
         "E7002": "AACS-Handshake fehlgeschlagen — AGID konnte nicht zugewiesen werden",
         "E7003": "Das Laufwerk hat das Sicherheitszertifikat dieser Disc abgelehnt.",
@@ -252,7 +253,7 @@
         "E7009": "Die Kennung der Disc konnte nicht gelesen werden. Die Disc ist möglicherweise verschmutzt oder beschädigt.",
         "E7010": "Die Kennung der Disc konnte nicht verifiziert werden. Die Disc ist möglicherweise beschädigt oder nicht unterstützt.",
         "E7011": "Der Entschlüsselungsschlüssel dieser Disc konnte nicht vorbereitet werden.",
-        "E7013": "Entschlüsselung fehlgeschlagen",
+        "E7013": "Entschlüsselung fehlgeschlagen — der wiederhergestellte Schlüssel hat die Daten dieser Disc nicht entsperrt. Der Schlüssel ist möglicherweise falsch oder veraltet; aktualisieren Sie Ihre Schlüsseldatenbank und versuchen Sie es erneut.",
         "E7014": "CSS-Authentifizierung fehlgeschlagen: Das Laufwerk konnte den für die Entschlüsselung dieser DVD erforderlichen Schlüsselaustausch nicht herstellen. Versuchen Sie, die Disc zu reinigen und neu einzulegen. Sollte das Problem weiterhin bestehen, unterstützt Ihr Laufwerk möglicherweise die CSS-Entschlüsselung nicht vollständig.",
         "E7015": "Das Laufwerk hat das AACS-Host-Zertifikat abgelehnt, und dieses Laufwerk kann nicht auf andere Weise entsperrt werden.",
         "E7016": "Dieses Laufwerk kann die Disc nicht im für die Entschlüsselung nötigen Modus lesen, und die sichere Sitzung wurde abgelehnt. Es bleibt kein Weg, diese Disc auf diesem Laufwerk zu entschlüsseln.",
@@ -265,7 +266,7 @@
         "E7023": "Diese Disc ist kopiergeschützt und für diesen Titel konnte kein Schlüssel gewonnen werden, daher kann sie nicht entschlüsselt werden (die Ausgabe wäre unbrauchbar).",
         "E7024": "Von keiner Schlüsselquelle ist ein Host-Zertifikat für den sicheren Handshake des Laufwerks verfügbar.",
         "E7025": "Diese Disc verwendet AACS-Busverschlüsselung, aber aus dem sicheren Handshake des Laufwerks konnte kein Busschlüssel gewonnen werden, sodass ihre Daten nicht entschlüsselt werden können (die Ausgabe wäre unlesbar).",
-        "E7026": "Diese Disc verwendet forensische AACS-2.1-Wasserzeichen (FMTS) und es ist kein Variantenschlüssel dafür verfügbar, sodass der Film nicht lückenlos rekonstruiert werden kann. Aktualisieren Sie Ihre Schlüsseldatenbank mit: freemkv update-keys --url <keydb-url>. Falls noch keine Schlüsselquelle diese Disc führt, sichern Sie sie mit 'freemkv disc:// iso://Disc.iso' als Abbild und konvertieren Sie das Abbild, sobald die Schlüssel veröffentlicht sind.",
+        "E7026": "Diese Disc verwendet forensische Wasserzeichen nach AACS 2.1 (FMTS), und es ist kein Variantenschlüssel dafür verfügbar, sodass der Film nicht lückenlos rekonstruiert werden kann. Aktualisieren Sie Ihre Schlüsseldatenbank. Falls noch keine Schlüsselquelle diese Disc führt, sichern Sie die Disc als Abbild und konvertieren Sie das Abbild, sobald die Schlüssel veröffentlicht sind.",
         "E7027": "Der Kopierschutz dieser DVD konnte nicht entschlüsselt werden, daher lässt sich kein Titel lesen. Die Disc ist möglicherweise beschädigt oder verwendet eine nicht unterstützte Variante.",
         "E7028": "Der Online-Schlüsseldienst war nicht erreichbar und hat daher nie beantwortet, ob es für diese Disc einen Schlüssel gibt. Das ist meist vorübergehend — warten Sie einige Minuten und versuchen Sie es erneut. Suchen Sie noch nicht nach einem fehlenden Schlüssel: der Dienst war ausgefallen, nicht die Disc.",
         "E7029": "Der Online-Schlüsseldienst hat das Zugriffstoken abgelehnt und deshalb nicht geantwortet. Korrigieren Sie das Token des Schlüsseldienstes in den Einstellungen (oder --key-auth auf der Kommandozeile) und versuchen Sie es erneut. Das bedeutet nicht, dass die Disc keinen Schlüssel hat.",
@@ -275,10 +276,10 @@
         "E7033": "In Ihren Schlüsselquellen wurden Host-Zertifikate gefunden, aber keines davon ist verwendbar (beschädigt oder unvollständig). Aktualisieren Sie Ihre Schlüsseldatenbank und versuchen Sie es erneut.",
         "E7034": "Die Schlüssel dieser Disc benötigen ihre Volume-ID, die nur von der Disc selbst gelesen werden kann. Legen Sie die Disc ein, um den Vorgang abzuschließen; sie wird nicht erneut gerippt.",
         "E8000": "Verbindung zum KEYDB-Server nicht möglich: {detail}",
-        "E8001": "KEYDB-Download fehlgeschlagen (HTTP {detail})",
-        "E8002": "KEYDB ist leer oder ungültig",
+        "E8001": "Der Download der Schlüsseldatenbank ist fehlgeschlagen (HTTP {detail}). Versuchen Sie die Aktualisierung erneut.",
+        "E8002": "Die Schlüsseldatenbank ist leer oder ungültig. Laden Sie sie erneut herunter.",
         "E8003": "KEYDB kann nicht geschrieben werden: {detail}",
-        "E8004": "KEYDB-Analysefehler",
+        "E8004": "Die Schlüsseldatenbank konnte nicht gelesen werden. Laden Sie sie erneut herunter.",
         "E8005": "KEYDB kann nicht geladen werden: {detail}",
         "E8006": "Die URL der Schlüsseldatenbank verwendet einen nicht zulässigen Adresstyp ({detail}).",
         "E8007": "Der Download der Schlüsseldatenbank wurde zu oft umgeleitet. Prüfen Sie die URL und versuchen Sie es erneut.",
@@ -413,7 +414,25 @@
         "disc_scan_all_titles_failed": "Fehler: Die Disc konnte nicht gescannt werden, um ihre Titel aufzulisten, daher kann `-t all` nicht wissen, welche Titel gerippt werden sollen. Es wurde nichts gerippt — prüfen Sie Disc und Laufwerk und versuchen Sie es erneut.",
         "log_file_needs_value": "--log-file: benötigt einen Pfad (z. B. --log-file freemkv.log)",
         "mux_failed_generic": "Muxen fehlgeschlagen (E{code}).",
-        "title_changed": "Titel {num} hat sich zwischen den Scans geändert: erwartet {expected}, das Laufwerk meldet jetzt {found}. Die Titelliste der Disc hat sich während des Rips geändert; für diesen Titel wurde nichts geschrieben."
+        "title_changed": "Titel {num} hat sich zwischen den Scans geändert: erwartet {expected}, das Laufwerk meldet jetzt {found}. Die Titelliste der Disc hat sich während des Rips geändert; für diesen Titel wurde nichts geschrieben.",
+        "vid_from_not_a_drive": "Fehler: --vid-from benötigt das Laufwerk mit der Disc: disc:// (oder disc://DEVICE), erhalten '{value}'.",
+        "vid_from_iso_only": "Fehler: --vid-from gilt nur für eine iso://-Abbildquelle, erhalten '{source}'."
+    },
+    "error_cli": {
+        "E7000": "Diese Disc benötigt AACS-Entschlüsselungsschlüssel (Blu-ray/UHD), aber es wurde keiner gefunden. Laden Sie eine Schlüsseldatenbank herunter mit: freemkv update-keys --url <keydb-url>",
+        "E7013": "Entschlüsselung fehlgeschlagen — der wiederhergestellte Schlüssel hat die Daten dieser Disc nicht entsperrt. Der Schlüssel ist möglicherweise falsch oder veraltet; aktualisieren Sie ihn mit: freemkv update-keys --url <keydb-url>",
+        "E7026": "Diese Disc verwendet forensische Wasserzeichen nach AACS 2.1 (FMTS) und es ist kein Variantenschlüssel dafür verfügbar, sodass der Film nicht lückenlos rekonstruiert werden kann. Aktualisieren Sie Ihre Schlüsseldatenbank mit: freemkv update-keys --url <keydb-url>. Falls noch keine Schlüsselquelle diese Disc führt, sichern Sie sie mit 'freemkv disc:// iso://Disc.iso' als Abbild und konvertieren Sie das Abbild, sobald die Schlüssel veröffentlicht sind.",
+        "E8001": "Der Download der Schlüsseldatenbank ist fehlgeschlagen (HTTP {detail}). Versuchen Sie es erneut, oder führen Sie aus: freemkv update-keys --url <keydb-url>",
+        "E8002": "Die Schlüsseldatenbank ist leer oder ungültig. Laden Sie sie erneut herunter mit: freemkv update-keys --url <keydb-url>",
+        "E8004": "Die Schlüsseldatenbank konnte nicht gelesen werden. Laden Sie sie erneut herunter mit: freemkv update-keys --url <keydb-url>"
+    },
+    "error_gui": {
+        "E7000": "Diese Disc benötigt AACS-Entschlüsselungsschlüssel (Blu-ray/UHD), aber es wurde keiner gefunden. Laden Sie eine Schlüsseldatenbank über „Einstellungen…“ → „keydb jetzt aktualisieren“ herunter.",
+        "E7013": "Entschlüsselung fehlgeschlagen — der wiederhergestellte Schlüssel hat die Daten dieser Disc nicht entsperrt. Der Schlüssel ist möglicherweise falsch oder veraltet; aktualisieren Sie ihn über „Einstellungen…“ → „keydb jetzt aktualisieren“.",
+        "E7026": "Diese Disc verwendet forensische Wasserzeichen nach AACS 2.1 (FMTS), und es ist kein Variantenschlüssel dafür verfügbar, sodass der Film nicht lückenlos rekonstruiert werden kann. Aktualisieren Sie Ihre Schlüsseldatenbank über „Einstellungen…“ → „keydb jetzt aktualisieren“. Falls noch keine Schlüsselquelle diese Disc führt, sichern Sie die Disc als ISO-Abbild und konvertieren Sie das Abbild, sobald die Schlüssel veröffentlicht sind.",
+        "E8001": "Der Download der Schlüsseldatenbank ist fehlgeschlagen (HTTP {detail}). Versuchen Sie es erneut über „Einstellungen…“ → „keydb jetzt aktualisieren“.",
+        "E8002": "Die Schlüsseldatenbank ist leer oder ungültig. Laden Sie sie erneut herunter über „Einstellungen…“ → „keydb jetzt aktualisieren“.",
+        "E8004": "Die Schlüsseldatenbank konnte nicht gelesen werden. Laden Sie sie erneut herunter über „Einstellungen…“ → „keydb jetzt aktualisieren“."
     },
     "usage": {
         "synopsis_1": "Verwendung: freemkv <quelle> <ziel> [optionen]",
@@ -472,6 +491,7 @@
             "key_url_2": "                      Mit --keydb wird keydb zuerst versucht (lokal-",
             "key_url_3": "                      zuerst); allein ist es die einzige Schlüsselquelle.",
             "key_auth": "      --key-auth TOKEN Träger-Token für den Schlüsseldienst (optional).",
+            "vid_from": "      --vid-from DRIVE Für ein iso://-Abbild, dessen Schlüssel die Volume-ID der Disc benötigen (E7034): sie von der Disc in DRIVE lesen (disc:// oder disc://DEVICE); dabei wird nichts von ihr gerippt.",
             "log_level_1": "      --log-level N   1=Warnung 2=Info 3=Debug 4=Trace. Standard: aus —",
             "log_level_2": "                      das Terminal bleibt sauber. Schreibt ein",
             "log_level_3": "                      Diagnoseprotokoll in ./log.txt (3 für Fehlerberichte).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Nur lokale Dateien und Ordner können verwendet werden: {p}",
             "reveal_failed": "Der Ordner konnte nicht im Explorer geöffnet werden: {e}",
             "scan_not_started": "Scan der Quelle konnte nicht gestartet werden: {detail}",
-            "scan_worker_stopped": "Der Scan-Prozess für die Quelle wurde beendet, bevor er ein Ergebnis lieferte."
+            "scan_worker_stopped": "Der Scan-Prozess für die Quelle wurde beendet, bevor er ein Ergebnis lieferte.",
+            "insert_disc_retry": "Legen Sie die Disc in ein Laufwerk ein und wählen Sie erneut „Rip starten“. Es wird nur deren Volume-ID gelesen; sie wird nicht erneut gerippt."
         },
         "alert": {
             "rip_title": "Ein Rip läuft gerade.",

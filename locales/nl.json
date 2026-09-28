@@ -153,7 +153,8 @@
         "damage_none": "0s",
         "multipass_ignored": "Let op: --multipass wordt genegeerd voor disc->MKV/M2TS (mux in één doorgang). Gebruik een iso://-uitvoer voor multipass-herstel.",
         "title_skipped": "Titel {num} overgeslagen: kopieerbeveiligd, geen sleutel herstelbaar.",
-        "title_skipped_empty": "Titel {num} overgeslagen: leeg (geen video) — waarschijnlijk een menu-/navigatiestub."
+        "title_skipped_empty": "Titel {num} overgeslagen: leeg (geen video) — waarschijnlijk een menu-/navigatiestub.",
+        "vid_from_hint": "Plaats de schijf om te voltooien en voer dezelfde opdracht opnieuw uit met --vid-from disc:// (of --vid-from disc://DEVICE om het station te benoemen). Alleen het Volume ID van de schijf wordt gelezen; deze wordt niet opnieuw geript."
     },
     "dir": {
         "extracting": "Ontsleutelde bestandsboom wordt uitgepakt naar {path}",
@@ -240,7 +241,7 @@
         "E6020": "Het schijfimagebestand eindigt vóór een sector die deze rip nodig heeft, dus het image is afgekapt of onvolledig. Het lezen is gestopt in plaats van het ontbrekende deel met nullen op te vullen — maak het image opnieuw van de schijf.",
         "E6021": "Er kan geen disc-image worden gemaakt: deze disc gebruikt AACS-busversleuteling en de locatie van een streambestand op de disc kon niet worden gelezen ({detail}), dus dat bestand kan niet worden ontsleuteld en de image zou nog versleutelde gegevens bevatten. Titels die dat bestand niet gebruiken, kunnen nog steeds naar MKV worden geript, of de disc kan naar een map worden uitgepakt (dat bestand wordt als beschadigd gemeld). De disc schoonmaken en het opnieuw proberen kan helpen.",
         "E6022": "Deze image ({detail}) is voorbereid voor een MKV-rip en bevat alleen de titels waarvoor hij is voorbereid, niet de hele disc, dus hij kan niet als disc-image worden gebruikt of naar een map worden uitgepakt. Rip die titels naar MKV, of maak een nieuwe image van de disc.",
-        "E7000": "Deze schijf heeft AACS-ontsleutelingssleutels nodig, maar geen enkele sleutelbron heeft ze geleverd.",
+        "E7000": "Deze schijf heeft AACS-ontsleutelingssleutels nodig (Blu-ray/UHD), maar er is er geen gevonden. Installeer of werk een sleuteldatabase bij en probeer het opnieuw.",
         "E7001": "AACS-hostcertificaat te kort of ongeldig",
         "E7002": "AACS-handshake mislukt — kon geen AGID toewijzen",
         "E7003": "Het station heeft het beveiligingscertificaat van deze schijf geweigerd.",
@@ -252,7 +253,7 @@
         "E7009": "Kon de identificatie van de disc niet lezen. De disc is mogelijk vuil of beschadigd.",
         "E7010": "De identificatie van de disc kon niet worden geverifieerd. De disc is mogelijk beschadigd of niet ondersteund.",
         "E7011": "Kan de ontsleutelingssleutel van deze schijf niet voorbereiden.",
-        "E7013": "Decodering mislukt",
+        "E7013": "Ontsleuteling mislukt — de herstelde sleutel heeft de gegevens van deze schijf niet ontgrendeld. De sleutel is mogelijk onjuist of verouderd; werk uw sleuteldatabase bij en probeer het opnieuw.",
         "E7014": "CSS-authenticatie mislukt: het station kon de sleuteluitwisseling die nodig is om deze dvd te ontsleutelen niet tot stand brengen. Probeer de disc te reinigen en opnieuw te plaatsen. Als het probleem aanhoudt, ondersteunt uw station mogelijk CSS-ontsleuteling niet volledig.",
         "E7015": "Het station heeft het AACS-hostcertificaat geweigerd en dit station kan niet op een andere manier worden ontgrendeld.",
         "E7016": "Dit station kan de disc niet lezen in de modus die nodig is om hem te ontsleutelen, en de beveiligde sessie werd geweigerd. Er blijft geen manier over om deze disc op dit station te ontsleutelen.",
@@ -265,7 +266,7 @@
         "E7023": "Deze disc is kopieerbeveiligd en er kon geen sleutel worden hersteld voor deze titel, dus hij kan niet worden ontsleuteld (de uitvoer zou onleesbaar zijn).",
         "E7024": "Geen enkele sleutelbron biedt een hostcertificaat voor de beveiligde handshake van het station.",
         "E7025": "Deze schijf gebruikt AACS-busversleuteling, maar uit de beveiligde handshake van het station kon geen bussleutel worden verkregen, waardoor de gegevens niet kunnen worden ontsleuteld (de uitvoer zou onleesbaar zijn).",
-        "E7026": "Deze schijf gebruikt forensische AACS 2.1-watermerken (FMTS) en er is geen variantsleutel voor beschikbaar, waardoor de film niet zonder gaten kan worden gereconstrueerd. Werk uw sleuteldatabase bij met: freemkv update-keys --url <keydb-url>. Als nog geen enkele sleutelbron deze schijf bevat, kopieer hem dan naar een image met 'freemkv disc:// iso://Disc.iso' en converteer het image zodra de sleutels beschikbaar zijn.",
+        "E7026": "Deze schijf gebruikt forensische AACS 2.1-watermerken (FMTS) en er is geen variantsleutel voor beschikbaar, waardoor de film niet zonder gaten kan worden gereconstrueerd. Werk uw sleuteldatabase bij. Als nog geen enkele sleutelbron deze schijf bevat, rip de schijf naar een image en converteer het image zodra de sleutels beschikbaar zijn.",
         "E7027": "De kopieerbeveiliging van deze dvd kon niet worden ontgrendeld, waardoor geen enkele titel gelezen kan worden. De schijf is mogelijk beschadigd of gebruikt een niet-ondersteunde variant.",
         "E7028": "De online-sleuteldienst was niet bereikbaar en heeft dus nooit gezegd of deze disc een sleutel heeft. Dit is meestal tijdelijk — wacht een paar minuten en probeer het opnieuw. Ga nog niet op zoek naar een ontbrekende sleutel: de dienst lag eruit, niet de disc.",
         "E7029": "De online-sleuteldienst heeft het toegangstoken geweigerd en gaf daarom geen antwoord. Corrigeer het token van de sleuteldienst in Instellingen (of --key-auth op de opdrachtregel) en probeer het opnieuw. Dit betekent niet dat de disc geen sleutel heeft.",
@@ -275,10 +276,10 @@
         "E7033": "Er zijn hostcertificaten gevonden in uw sleutelbronnen, maar geen enkele is bruikbaar (beschadigd of onvolledig). Werk uw sleuteldatabase bij en probeer het opnieuw.",
         "E7034": "De sleutels van deze schijf hebben het Volume ID nodig, dat alleen van de schijf zelf gelezen kan worden. Plaats de schijf om te voltooien; deze wordt niet opnieuw geript.",
         "E8000": "Kan geen verbinding maken met KEYDB-server: {detail}",
-        "E8001": "KEYDB-download mislukt (HTTP {detail})",
-        "E8002": "KEYDB is leeg of ongeldig",
+        "E8001": "Downloaden van de sleuteldatabase is mislukt (HTTP {detail}). Probeer de update opnieuw.",
+        "E8002": "De sleuteldatabase is leeg of ongeldig. Download hem opnieuw.",
         "E8003": "Kan KEYDB niet schrijven: {detail}",
-        "E8004": "KEYDB-parseerfout",
+        "E8004": "De sleuteldatabase kon niet worden gelezen. Download hem opnieuw.",
         "E8005": "Kan KEYDB niet laden: {detail}",
         "E8006": "De URL van de sleuteldatabase gebruikt een niet-toegestaan adrestype ({detail}).",
         "E8007": "De download van de sleuteldatabase werd te vaak omgeleid. Controleer de URL en probeer het opnieuw.",
@@ -413,7 +414,25 @@
         "disc_scan_all_titles_failed": "Fout: kon de disc niet scannen om de titels op te sommen, dus `-t all` weet niet welke titels geript moeten worden. Er is niets geript — controleer de disc en het station en probeer het opnieuw.",
         "log_file_needs_value": "--log-file: vereist een pad (bijv. --log-file freemkv.log)",
         "mux_failed_generic": "Muxen mislukt (E{code}).",
-        "title_changed": "Titel {num} is tussen scans gewijzigd: verwacht {expected}, het station meldt nu {found}. De titellijst van de disc is tijdens het rippen veranderd; voor deze titel is niets geschreven."
+        "title_changed": "Titel {num} is tussen scans gewijzigd: verwacht {expected}, het station meldt nu {found}. De titellijst van de disc is tijdens het rippen veranderd; voor deze titel is niets geschreven.",
+        "vid_from_not_a_drive": "Fout: --vid-from vereist het station met de schijf: disc:// (of disc://DEVICE), ontvangen '{value}'.",
+        "vid_from_iso_only": "Fout: --vid-from geldt alleen voor een iso://-imagebron, ontvangen '{source}'."
+    },
+    "error_cli": {
+        "E7000": "Deze schijf heeft AACS-ontsleutelingssleutels nodig (Blu-ray/UHD), maar er is er geen gevonden. Download een sleuteldatabase met: freemkv update-keys --url <keydb-url>",
+        "E7013": "Ontsleuteling mislukt — de herstelde sleutel heeft de gegevens van deze schijf niet ontgrendeld. De sleutel is mogelijk onjuist of verouderd; werk hem bij met: freemkv update-keys --url <keydb-url>",
+        "E7026": "Deze schijf gebruikt forensische AACS 2.1-watermerken (FMTS) en er is geen variantsleutel voor beschikbaar, waardoor de film niet zonder gaten kan worden gereconstrueerd. Werk uw sleuteldatabase bij met: freemkv update-keys --url <keydb-url>. Als nog geen enkele sleutelbron deze schijf bevat, kopieer hem dan naar een image met 'freemkv disc:// iso://Disc.iso' en converteer het image zodra de sleutels beschikbaar zijn.",
+        "E8001": "Downloaden van de sleuteldatabase is mislukt (HTTP {detail}). Probeer het opnieuw, of voer uit: freemkv update-keys --url <keydb-url>",
+        "E8002": "De sleuteldatabase is leeg of ongeldig. Download hem opnieuw met: freemkv update-keys --url <keydb-url>",
+        "E8004": "De sleuteldatabase kon niet worden gelezen. Download hem opnieuw met: freemkv update-keys --url <keydb-url>"
+    },
+    "error_gui": {
+        "E7000": "Deze schijf heeft AACS-ontsleutelingssleutels nodig (Blu-ray/UHD), maar er is er geen gevonden. Download een sleuteldatabase via “Instellingen…” → “keydb nu bijwerken”.",
+        "E7013": "Ontsleuteling mislukt — de herstelde sleutel heeft de gegevens van deze schijf niet ontgrendeld. De sleutel is mogelijk onjuist of verouderd; werk hem bij via “Instellingen…” → “keydb nu bijwerken”.",
+        "E7026": "Deze schijf gebruikt forensische AACS 2.1-watermerken (FMTS) en er is geen variantsleutel voor beschikbaar, waardoor de film niet zonder gaten kan worden gereconstrueerd. Werk uw sleuteldatabase bij via “Instellingen…” → “keydb nu bijwerken”. Als nog geen enkele sleutelbron deze schijf bevat, rip de schijf naar een ISO-image en converteer het image zodra de sleutels beschikbaar zijn.",
+        "E8001": "Downloaden van de sleuteldatabase is mislukt (HTTP {detail}). Probeer het opnieuw via “Instellingen…” → “keydb nu bijwerken”.",
+        "E8002": "De sleuteldatabase is leeg of ongeldig. Download hem opnieuw via “Instellingen…” → “keydb nu bijwerken”.",
+        "E8004": "De sleuteldatabase kon niet worden gelezen. Download hem opnieuw via “Instellingen…” → “keydb nu bijwerken”."
     },
     "usage": {
         "synopsis_1": "Gebruik: freemkv <bron> <doel> [opties]",
@@ -472,6 +491,7 @@
             "key_url_2": "                      Met --keydb wordt keydb eerst geprobeerd (lokaal-",
             "key_url_3": "                      eerst); alleen is het de enige sleutelbron.",
             "key_auth": "      --key-auth TOKEN Bearer-token voor sleuteldienst (optioneel).",
+            "vid_from": "      --vid-from DRIVE Voor een iso://-image waarvan de sleutels het Volume ID van de schijf nodig hebben (E7034): lees dit van de schijf in DRIVE (disc:// of disc://DEVICE); er wordt niets van gerippt.",
             "log_level_1": "      --log-level N   1=waarsch 2=info 3=debug 4=trace. Standaard uit —",
             "log_level_2": "                      de terminal blijft schoon. Schrijft een diagnoselogboek",
             "log_level_3": "                      naar ./log.txt (gebruik 3 voor foutrapporten).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Alleen lokale bestanden en mappen kunnen worden gebruikt: {p}",
             "reveal_failed": "Kon de map niet openen in Verkenner: {e}",
             "scan_not_started": "Kon het scannen van de bron niet starten: {detail}",
-            "scan_worker_stopped": "Het scanproces voor de bron is gestopt voordat het een resultaat gaf."
+            "scan_worker_stopped": "Het scanproces voor de bron is gestopt voordat het een resultaat gaf.",
+            "insert_disc_retry": "Plaats de schijf in een station en kies opnieuw “Rip starten”. Alleen het Volume ID wordt gelezen; deze wordt niet opnieuw geript."
         },
         "alert": {
             "rip_title": "Er is een rip bezig.",

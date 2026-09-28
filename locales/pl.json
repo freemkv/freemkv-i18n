@@ -153,7 +153,8 @@
         "patch_done": "Naprawianie ukończone — odzyskano: {recovered} MB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB ({time} s, {speed} MB/s)",
         "multipass_ignored": "Uwaga: opcja --multipass jest ignorowana przy zgrywaniu z płyty do MKV/M2TS (multipleksowanie jednoprzebiegowe). Dla odzyskiwania wieloprzebiegowego użyj wyjścia iso://.",
         "title_skipped": "Pomijanie tytułu {num}: zabezpieczony przed kopiowaniem, nie można odzyskać klucza.",
-        "title_skipped_empty": "Pomijanie tytułu {num}: pusty (brak wideo) — prawdopodobnie zaślepka menu/nawigacji."
+        "title_skipped_empty": "Pomijanie tytułu {num}: pusty (brak wideo) — prawdopodobnie zaślepka menu/nawigacji.",
+        "vid_from_hint": "Aby zakończyć, włóż płytę i uruchom to samo polecenie ponownie z --vid-from disc:// (lub --vid-from disc://DEVICE, aby wskazać napęd). Odczytywany jest tylko identyfikator woluminu płyty; nie jest ona ponownie zgrywana."
     },
     "dir": {
         "extracting": "Wyodrębnianie odszyfrowanego drzewa plików do {path}",
@@ -263,7 +264,7 @@
         "E6020": "Plik obrazu płyty kończy się przed sektorem, którego potrzebuje to zgrywanie, więc obraz jest obcięty lub niekompletny. Odczyt zatrzymano, zamiast wypełniać brakującą część zerami — utwórz obraz z płyty ponownie.",
         "E6021": "Nie można utworzyć obrazu płyty: ta płyta używa szyfrowania magistrali AACS, a położenia pliku strumienia na płycie nie udało się odczytać ({detail}), więc tego pliku nie da się odszyfrować, a obraz nadal zawierałby zaszyfrowane dane. Tytuły, które nie używają tego pliku, nadal można zgrać do MKV, albo płytę można wypakować do folderu (ten plik jest zgłaszany jako uszkodzony). Może pomóc wyczyszczenie płyty i ponowna próba.",
         "E6022": "Ten obraz ({detail}) przygotowano do zgrania do MKV i zawiera tylko tytuły, dla których go przygotowano, a nie całą płytę, więc nie można go użyć jako obrazu płyty ani wypakować do folderu. Zgraj te tytuły do MKV albo utwórz nowy obraz z płyty.",
-        "E7000": "Ta płyta wymaga kluczy deszyfrujących AACS (Blu-ray/UHD), ale nie znaleziono żadnego. Pobierz bazę kluczy poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E7000": "Ta płyta wymaga kluczy deszyfrujących AACS (Blu-ray/UHD), ale nie znaleziono żadnego. Zainstaluj lub zaktualizuj bazę kluczy i spróbuj ponownie.",
         "E7001": "Certyfikat bezpieczeństwa płyty jest zbyt krótki lub nieprawidłowy.",
         "E7002": "Napęd nie rozpoczął bezpiecznej sesji dla tej płyty — może być używany przez inny program. Zamknij wszystko inne korzystające z płyty i spróbuj ponownie.",
         "E7003": "Napęd odrzucił certyfikat bezpieczeństwa tej płyty.",
@@ -275,7 +276,7 @@
         "E7009": "Nie można odczytać identyfikatora płyty. Płyta może być brudna lub uszkodzona.",
         "E7010": "Nie udało się zweryfikować identyfikatora płyty. Płyta może być uszkodzona lub nieobsługiwana.",
         "E7011": "Nie można przygotować klucza deszyfrującego tej płyty.",
-        "E7013": "Deszyfrowanie nie powiodło się — odzyskany klucz nie odblokował danych tej płyty. Klucz może być błędny lub nieaktualny; odśwież go poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E7013": "Deszyfrowanie nie powiodło się — odzyskany klucz nie odblokował danych tej płyty. Klucz może być błędny lub nieaktualny; zaktualizuj bazę kluczy i spróbuj ponownie.",
         "E7014": "Uwierzytelnianie CSS nie powiodło się: napęd nie mógł nawiązać wymiany kluczy potrzebnej do odszyfrowania tego DVD. Spróbuj wyczyścić płytę i włożyć ją ponownie. Jeśli problem będzie się powtarzać, Twój napęd może nie w pełni obsługiwać deszyfrowanie CSS.",
         "E7015": "Napęd odrzucił certyfikat hosta AACS i tego napędu nie da się odblokować w inny sposób.",
         "E7016": "Ten napęd nie potrafi odczytać płyty w trybie potrzebnym do jej odszyfrowania, a bezpieczna sesja została odrzucona. Na tym napędzie nie ma już sposobu na odszyfrowanie tej płyty.",
@@ -288,7 +289,7 @@
         "E7023": "Ta płyta jest zabezpieczona przed kopiowaniem i nie udało się odzyskać klucza dla tego tytułu, więc nie da się go odszyfrować (wynik byłby nieczytelny).",
         "E7024": "Żadne źródło kluczy nie udostępnia certyfikatu hosta do bezpiecznego uzgadniania napędu.",
         "E7025": "Ta płyta używa szyfrowania magistrali AACS, ale nie udało się uzyskać klucza magistrali z bezpiecznego uzgadniania napędu, więc jej danych nie da się odszyfrować (wynik byłby nieczytelny).",
-        "E7026": "Ta płyta używa kryminalistycznego znaku wodnego AACS 2.1 (FMTS) i nie jest dostępny dla niej żaden klucz wariantowy, więc filmu nie da się odtworzyć bez luk. Zaktualizuj bazę kluczy.",
+        "E7026": "Ta płyta używa kryminalistycznego znaku wodnego AACS 2.1 (FMTS) i nie jest dostępny dla niej żaden klucz wariantowy, więc filmu nie da się odtworzyć bez luk. Zaktualizuj bazę kluczy. Jeśli żadne źródło kluczy nie obsługuje jeszcze tej płyty, zgraj płytę do obrazu i przekonwertuj obraz, gdy klucze zostaną opublikowane.",
         "E7027": "Nie udało się odblokować zabezpieczenia przed kopiowaniem tego DVD, więc nie można odczytać z niego żadnego tytułu. Płyta może być uszkodzona albo używa wariantu, którego ta wersja nie obsługuje.",
         "E7028": "Nie udało się połączyć z internetową usługą kluczy, więc nie odpowiedziała, czy ta płyta ma klucz. Zwykle jest to stan przejściowy — odczekaj kilka minut i spróbuj ponownie. Nie szukaj jeszcze brakującego klucza; niedostępna była usługa, a nie płyta.",
         "E7029": "Internetowa usługa kluczy odrzuciła token dostępu, więc nie odpowiedziała. Popraw token usługi kluczy w Ustawieniach (lub --key-auth w wierszu poleceń) i spróbuj ponownie. Nie oznacza to, że płyta nie ma klucza.",
@@ -298,10 +299,10 @@
         "E7033": "W Twoich źródłach kluczy znaleziono certyfikaty hosta, ale żaden nie nadaje się do użycia (uszkodzony lub niekompletny). Odśwież bazę kluczy i spróbuj ponownie.",
         "E7034": "Klucze tej płyty wymagają jej identyfikatora woluminu (Volume ID), który można odczytać tylko z samej płyty. Włóż płytę, aby zakończyć; nie zostanie ona ponownie zgrana.",
         "E8000": "Nie można połączyć się z serwerem bazy kluczy: {detail}",
-        "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie lub uruchom: freemkv update-keys --url <adres-url-keydb>",
-        "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie zaktualizować.",
+        "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie.",
         "E8003": "Nie można zapisać bazy kluczy: {detail}",
-        "E8004": "Nie udało się odczytać bazy kluczy. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E8004": "Nie udało się odczytać bazy kluczy. Pobierz ją ponownie.",
         "E8005": "Nie można wczytać bazy kluczy: {detail}",
         "E8006": "Adres URL bazy kluczy używa niedozwolonego typu adresu ({detail}).",
         "E8007": "Pobieranie bazy kluczy zostało przekierowane zbyt wiele razy. Sprawdź adres URL i spróbuj ponownie.",
@@ -436,7 +437,25 @@
         "disc_scan_all_titles_failed": "Błąd: nie udało się przeskanować płyty, aby wyświetlić listę tytułów, więc `-t all` nie może ustalić, które tytuły zgrać. Nic nie zostało zgrane — sprawdź płytę i napęd, a następnie spróbuj ponownie.",
         "log_file_needs_value": "--log-file: wymaga ścieżki (np. --log-file freemkv.log)",
         "mux_failed_generic": "Multipleksowanie nie powiodło się (E{code}).",
-        "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano."
+        "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano.",
+        "vid_from_not_a_drive": "Błąd: --vid-from wymaga napędu zawierającego płytę: disc:// (lub disc://DEVICE), otrzymano '{value}'.",
+        "vid_from_iso_only": "Błąd: --vid-from dotyczy tylko źródła obrazu iso://, otrzymano '{source}'."
+    },
+    "error_cli": {
+        "E7000": "Ta płyta wymaga kluczy deszyfrujących AACS (Blu-ray/UHD), ale nie znaleziono żadnego. Pobierz bazę kluczy poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E7013": "Deszyfrowanie nie powiodło się — odzyskany klucz nie odblokował danych tej płyty. Klucz może być błędny lub nieaktualny; odśwież go poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E7026": "Ta płyta używa kryminalistycznego znaku wodnego AACS 2.1 (FMTS) i nie jest dostępny dla niej żaden klucz wariantowy, więc filmu nie da się odtworzyć bez luk. Zaktualizuj bazę kluczy poleceniem: freemkv update-keys --url <adres-url-keydb>. Jeśli żadne źródło kluczy nie obsługuje jeszcze tej płyty, zgraj ją do obrazu poleceniem 'freemkv disc:// iso://Disc.iso' i przekonwertuj obraz, gdy klucze zostaną opublikowane.",
+        "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie lub uruchom: freemkv update-keys --url <adres-url-keydb>",
+        "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E8004": "Nie udało się odczytać bazy kluczy. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>"
+    },
+    "error_gui": {
+        "E7000": "Ta płyta wymaga kluczy deszyfrujących AACS (Blu-ray/UHD), ale nie znaleziono żadnego. Pobierz bazę kluczy w „Ustawienia…” → „Zaktualizuj keydb teraz”.",
+        "E7013": "Deszyfrowanie nie powiodło się — odzyskany klucz nie odblokował danych tej płyty. Klucz może być błędny lub nieaktualny; odśwież go w „Ustawienia…” → „Zaktualizuj keydb teraz”.",
+        "E7026": "Ta płyta używa kryminalistycznego znaku wodnego AACS 2.1 (FMTS) i nie jest dostępny dla niej żaden klucz wariantowy, więc filmu nie da się odtworzyć bez luk. Odśwież bazę kluczy w „Ustawienia…” → „Zaktualizuj keydb teraz”. Jeśli żadne źródło kluczy nie obsługuje jeszcze tej płyty, zgraj płytę do obrazu ISO i przekonwertuj obraz, gdy klucze zostaną opublikowane.",
+        "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie w „Ustawienia…” → „Zaktualizuj keydb teraz”.",
+        "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie w „Ustawienia…” → „Zaktualizuj keydb teraz”.",
+        "E8004": "Nie udało się odczytać bazy kluczy. Pobierz ją ponownie w „Ustawienia…” → „Zaktualizuj keydb teraz”."
     },
     "usage": {
         "synopsis_1": "Sposób użycia: freemkv <źródło> <cel> [flagi]",
@@ -504,6 +523,7 @@
             "key_url_2": "                      Z --keydb keydb jest próbowany najpierw (najpierw",
             "key_url_3": "                      lokalnie); samodzielnie jest jedynym źródłem kluczy.",
             "key_auth": "      --key-auth TOKEN Token typu Bearer wysyłany do usługi kluczy (opcjonalny).",
+            "vid_from": "      --vid-from DRIVE Dla obrazu iso://, którego klucze wymagają identyfikatora woluminu płyty (Volume ID) (E7034): odczytaj go z płyty w DRIVE (disc:// lub disc://DEVICE); nic z niej nie jest zgrywane.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Domyślnie wyłączone —",
             "log_level_2": "                      terminal pozostaje czysty. Ustaw, aby zapisać",
             "log_level_3": "                      dziennik diagnostyczny do ./log.txt (użyj 3 do zgłoszeń błędów).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Można używać tylko lokalnych plików i folderów: {p}",
             "reveal_failed": "Nie można otworzyć folderu w Eksploratorze plików: {e}",
             "scan_not_started": "Nie można rozpocząć skanowania źródła: {detail}",
-            "scan_worker_stopped": "Proces skanowania źródła zatrzymał się przed zwróceniem wyniku."
+            "scan_worker_stopped": "Proces skanowania źródła zatrzymał się przed zwróceniem wyniku.",
+            "insert_disc_retry": "Włóż płytę do napędu, a następnie ponownie wybierz „Rozpocznij zgrywanie”. Odczytywany jest tylko jej identyfikator woluminu; nie jest ona ponownie zgrywana."
         },
         "alert": {
             "rip_title": "Trwa zgrywanie.",

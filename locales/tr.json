@@ -153,7 +153,8 @@
         "patch_done": "Yama tamamlandı: {recovered} MB kurtarıldı, {unreadable} MB okunamaz, {pending} MB beklemede ({time}sn, {speed} MB/sn)",
         "multipass_ignored": "Not: --multipass, disk->MKV/M2TS için yok sayılır (tek geçişli mux). Çok geçişli kurtarma için iso:// çıktısı kullanın.",
         "title_skipped": "{num} numaralı başlık atlanıyor: kopya korumalı, kurtarılabilir anahtar yok.",
-        "title_skipped_empty": "{num} numaralı başlık atlanıyor: boş (video yok) — muhtemelen menü/gezinme parçası."
+        "title_skipped_empty": "{num} numaralı başlık atlanıyor: boş (video yok) — muhtemelen menü/gezinme parçası.",
+        "vid_from_hint": "Tamamlamak için diski takın ve aynı komutu --vid-from disc:// ile (sürücüyü adlandırmak için --vid-from disc://DEVICE) tekrar çalıştırın. Yalnızca diskin birim kimliği okunur; tekrar kopyalanmaz."
     },
     "dir": {
         "extracting": "Şifresi çözülmüş dosya ağacı {path} konumuna çıkarılıyor",
@@ -263,7 +264,7 @@
         "E6020": "Disk kalıbı dosyası, bu kopyalamanın ihtiyaç duyduğu bir sektörden önce bitiyor; yani kalıp kırpılmış ya da eksik. Eksik kısım sıfırlarla doldurulmak yerine okuma durduruldu — kalıbı diskten yeniden oluşturun.",
         "E6021": "Disk kalıbı oluşturulamıyor: bu disk AACS veri yolu şifrelemesi kullanıyor ve bir akış dosyasının diskteki konumu okunamadı ({detail}); bu yüzden o dosyanın şifresi çözülemiyor ve kalıp hâlâ şifreli veri içerirdi. O dosyayı kullanmayan başlıklar yine de MKV'ye aktarılabilir ya da disk bir klasöre çıkarılabilir (o dosya hasarlı olarak bildirilir). Diski temizleyip yeniden denemek yardımcı olabilir.",
         "E6022": "Bu kalıp ({detail}) bir MKV aktarımı için hazırlandı ve tüm diski değil, yalnızca hazırlandığı başlıkları içeriyor; bu yüzden disk kalıbı olarak kullanılamaz veya bir klasöre çıkarılamaz. Bu başlıkları MKV'ye aktarın ya da diskten yeni bir kalıp oluşturun.",
-        "E7000": "Bu disk AACS şifre çözme anahtarlarına ihtiyaç duyuyor (Blu-ray/UHD), ancak hiçbiri bulunamadı. Şu komutla bir anahtar veritabanı indirin: freemkv update-keys --url <keydb-url>",
+        "E7000": "Bu disk AACS şifre çözme anahtarlarına ihtiyaç duyuyor (Blu-ray/UHD), ancak hiçbiri bulunamadı. Bir anahtar veritabanı kurun veya güncelleyin, ardından tekrar deneyin.",
         "E7001": "Diskin güvenlik sertifikası çok kısa veya geçersiz.",
         "E7002": "Sürücü bu disk için güvenli bir oturum başlatmadı — başka bir program tarafından kullanılıyor olabilir. Diski kullanan diğer her şeyi kapatın ve tekrar deneyin.",
         "E7003": "Sürücü bu diskin güvenlik sertifikasını reddetti.",
@@ -275,7 +276,7 @@
         "E7009": "Diskin tanımlayıcısı okunamadı. Disk kirli veya hasarlı olabilir.",
         "E7010": "Diskin tanımlayıcısı doğrulanamadı. Disk hasarlı veya desteklenmeyen olabilir.",
         "E7011": "Bu diskin şifre çözme anahtarı hazırlanamadı.",
-        "E7013": "Şifre çözme başarısız — kurtarılan anahtar bu diskin verisini açmadı. Anahtar yanlış veya güncel olmayabilir; şununla yenileyin: freemkv update-keys --url <keydb-url>",
+        "E7013": "Şifre çözme başarısız — kurtarılan anahtar bu diskin verisini açmadı. Anahtar yanlış veya güncel olmayabilir; anahtar veritabanınızı güncelleyin ve tekrar deneyin.",
         "E7014": "CSS kimlik doğrulaması başarısız: sürücü bu DVD'nin şifresini çözmek için gereken anahtar değişimini kuramadı. Diski temizleyip yeniden takmayı deneyin. Sorun devam ederse sürücünüz CSS şifre çözmeyi tam olarak desteklemiyor olabilir.",
         "E7015": "Sürücü AACS ana bilgisayar sertifikasını reddetti ve bu sürücünün kilidi başka bir yolla açılamıyor.",
         "E7016": "Bu sürücü diski şifresini çözmek için gereken modda okuyamıyor ve güvenli oturum reddedildi. Bu sürücüde bu diskin şifresini çözmenin bir yolu kalmadı.",
@@ -288,7 +289,7 @@
         "E7023": "Bu disk kopya korumalı ve bu başlık için hiçbir anahtar kurtarılamadı, bu yüzden şifresi çözülemiyor (çıktı okunamaz olurdu).",
         "E7024": "Sürücünün güvenli el sıkışması için hiçbir anahtar kaynağından ana bilgisayar sertifikası mevcut değil.",
         "E7025": "Bu disk AACS veri yolu şifrelemesi kullanıyor, ancak sürücünün güvenli el sıkışmasından hiçbir veri yolu anahtarı alınamadı, bu yüzden verisinin şifresi çözülemez (çıktı okunamaz olurdu).",
-        "E7026": "Bu disk AACS 2.1 adli filigran (FMTS) kullanıyor ve bunun için hiçbir varyant anahtarı mevcut değil, bu yüzden film boşluklar olmadan yeniden oluşturulamaz. Anahtar veritabanınızı güncelleyin.",
+        "E7026": "Bu disk AACS 2.1 adli filigran (FMTS) kullanıyor ve bunun için hiçbir varyant anahtarı mevcut değil, bu yüzden film boşluklar olmadan yeniden oluşturulamaz. Anahtar veritabanınızı güncelleyin. Henüz hiçbir anahtar kaynağı bu diski içermiyorsa, diski bir kalıba kopyalayın ve anahtarlar yayımlandığında kalıbı dönüştürün.",
         "E7027": "Bu DVD'nin kopya koruması açılamadı, bu yüzden üzerindeki hiçbir başlık okunamıyor. Disk hasarlı olabilir veya bu sürümün desteklemediği bir varyant kullanıyor olabilir.",
         "E7028": "Çevrimiçi anahtar hizmetine ulaşılamadı, bu yüzden bu disk için anahtar olup olmadığı öğrenilemedi. Bu genellikle geçicidir — birkaç dakika bekleyip tekrar deneyin. Henüz eksik bir anahtar aramaya kalkmayın; sorun diskte değil, hizmetteydi.",
         "E7029": "Çevrimiçi anahtar hizmeti erişim belirtecini reddetti, bu yüzden yanıt vermedi. Ayarlar'daki anahtar hizmeti belirtecini (veya komut satırında --key-auth) düzeltip tekrar deneyin. Bu, diskin anahtarı olmadığı anlamına gelmez.",
@@ -298,10 +299,10 @@
         "E7033": "Anahtar kaynaklarınızda ana bilgisayar sertifikaları bulundu, ancak hiçbiri kullanılabilir değil (hasarlı veya eksik). Anahtar veritabanınızı güncelleyip yeniden deneyin.",
         "E7034": "Bu diskin anahtarları, yalnızca diskin kendisinden okunabilen birim kimliğini (Volume ID) gerektiriyor. Tamamlamak için diski takın; tekrar kopyalanmayacaktır.",
         "E8000": "Anahtar veritabanı sunucusuna bağlanılamıyor: {detail}",
-        "E8001": "Anahtar veritabanı indirmesi başarısız (HTTP {detail}). Tekrar deneyin veya şunu çalıştırın: freemkv update-keys --url <keydb-url>",
-        "E8002": "Anahtar veritabanı boş veya geçersiz. Şununla yeniden indirin: freemkv update-keys --url <keydb-url>",
+        "E8001": "Anahtar veritabanı indirmesi başarısız (HTTP {detail}). Güncellemeyi tekrar deneyin.",
+        "E8002": "Anahtar veritabanı boş veya geçersiz. Yeniden indirin.",
         "E8003": "Anahtar veritabanı yazılamıyor: {detail}",
-        "E8004": "Anahtar veritabanı okunamadı. Şununla yeniden indirin: freemkv update-keys --url <keydb-url>",
+        "E8004": "Anahtar veritabanı okunamadı. Yeniden indirin.",
         "E8005": "Anahtar veritabanı yüklenemiyor: {detail}",
         "E8006": "Anahtar veritabanı URL'si izin verilmeyen bir adres türü kullanıyor ({detail}).",
         "E8007": "Anahtar veritabanı indirmesi çok fazla yönlendirildi. URL'yi kontrol edin ve tekrar deneyin.",
@@ -436,7 +437,25 @@
         "disc_scan_all_titles_failed": "Hata: başlıkları listelemek için disk taranamadı, bu yüzden `-t all` hangi başlıkların kopyalanacağını bilemiyor. Hiçbir şey kopyalanmadı — diski ve sürücüyü kontrol edip tekrar deneyin.",
         "log_file_needs_value": "--log-file: bir yol gerektirir (örneğin --log-file freemkv.log)",
         "mux_failed_generic": "Mux başarısız (E{code}).",
-        "title_changed": "Başlık {num} taramalar arasında değişti: beklenen {expected}, sürücü şimdi {found} bildiriyor. Başlık listesi kopyalama sırasında değişti; bu başlık için hiçbir şey yazılmadı."
+        "title_changed": "Başlık {num} taramalar arasında değişti: beklenen {expected}, sürücü şimdi {found} bildiriyor. Başlık listesi kopyalama sırasında değişti; bu başlık için hiçbir şey yazılmadı.",
+        "vid_from_not_a_drive": "Hata: --vid-from diski içeren sürücüyü gerektirir: disc:// (veya disc://DEVICE), alınan '{value}'.",
+        "vid_from_iso_only": "Hata: --vid-from yalnızca bir iso:// kalıp kaynağı için geçerlidir, alınan '{source}'."
+    },
+    "error_cli": {
+        "E7000": "Bu disk AACS şifre çözme anahtarlarına ihtiyaç duyuyor (Blu-ray/UHD), ancak hiçbiri bulunamadı. Şu komutla bir anahtar veritabanı indirin: freemkv update-keys --url <keydb-url>",
+        "E7013": "Şifre çözme başarısız — kurtarılan anahtar bu diskin verisini açmadı. Anahtar yanlış veya güncel olmayabilir; şununla yenileyin: freemkv update-keys --url <keydb-url>",
+        "E7026": "Bu disk AACS 2.1 adli filigran (FMTS) kullanıyor ve bunun için hiçbir varyant anahtarı mevcut değil, bu yüzden film boşluklar olmadan yeniden oluşturulamaz. Anahtar veritabanınızı şu komutla güncelleyin: freemkv update-keys --url <keydb-url>. Henüz hiçbir anahtar kaynağı bu diski içermiyorsa, 'freemkv disc:// iso://Disc.iso' komutuyla bir kalıba kopyalayın ve anahtarlar yayımlandığında kalıbı dönüştürün.",
+        "E8001": "Anahtar veritabanı indirmesi başarısız (HTTP {detail}). Tekrar deneyin veya şunu çalıştırın: freemkv update-keys --url <keydb-url>",
+        "E8002": "Anahtar veritabanı boş veya geçersiz. Şununla yeniden indirin: freemkv update-keys --url <keydb-url>",
+        "E8004": "Anahtar veritabanı okunamadı. Şununla yeniden indirin: freemkv update-keys --url <keydb-url>"
+    },
+    "error_gui": {
+        "E7000": "Bu disk AACS şifre çözme anahtarlarına ihtiyaç duyuyor (Blu-ray/UHD), ancak hiçbiri bulunamadı. “Ayarlar…” → “keydb'yi şimdi güncelle” ile bir anahtar veritabanı indirin.",
+        "E7013": "Şifre çözme başarısız — kurtarılan anahtar bu diskin verisini açmadı. Anahtar yanlış veya güncel olmayabilir; “Ayarlar…” → “keydb'yi şimdi güncelle” ile yenileyin.",
+        "E7026": "Bu disk AACS 2.1 adli filigran (FMTS) kullanıyor ve bunun için hiçbir varyant anahtarı mevcut değil, bu yüzden film boşluklar olmadan yeniden oluşturulamaz. Anahtar veritabanınızı “Ayarlar…” → “keydb'yi şimdi güncelle” ile yenileyin. Henüz hiçbir anahtar kaynağı bu diski içermiyorsa, diski bir ISO kalıbına kopyalayın ve anahtarlar yayımlandığında kalıbı dönüştürün.",
+        "E8001": "Anahtar veritabanı indirmesi başarısız (HTTP {detail}). “Ayarlar…” → “keydb'yi şimdi güncelle” ile tekrar deneyin.",
+        "E8002": "Anahtar veritabanı boş veya geçersiz. “Ayarlar…” → “keydb'yi şimdi güncelle” ile yeniden indirin.",
+        "E8004": "Anahtar veritabanı okunamadı. “Ayarlar…” → “keydb'yi şimdi güncelle” ile yeniden indirin."
     },
     "usage": {
         "synopsis_1": "Kullanım: freemkv <source> <dest> [flags]",
@@ -504,6 +523,7 @@
             "key_url_2": "                      --keydb ile keydb önce denenir (önce",
             "key_url_3": "                      yerel); tek başına ise tek anahtar kaynağıdır.",
             "key_auth": "      --key-auth TOKEN Anahtar hizmetine gönderilen Bearer belirteci (isteğe bağlı).",
+            "vid_from": "      --vid-from DRIVE Anahtarları diskin birim kimliğine (Volume ID) ihtiyaç duyan bir iso:// kalıbı için (E7034): bunu DRIVE (disc:// veya disc://DEVICE) içindeki diskten okuyun; ondan hiçbir şey kopyalanmaz.",
             "log_level_1": "      --log-level N   1=uyarı 2=bilgi 3=hata ayıklama 4=izleme. Varsayılan olarak kapalı —",
             "log_level_2": "                      terminal temiz kalır. Bir tanılama günlüğü",
             "log_level_3": "                      ./log.txt yazmak için ayarlayın (hata raporları için 3 kullanın).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Yalnızca yerel dosyalar ve klasörler kullanılabilir: {p}",
             "reveal_failed": "Klasör Dosya Gezgini'nde açılamadı: {e}",
             "scan_not_started": "Kaynak taraması başlatılamadı: {detail}",
-            "scan_worker_stopped": "Kaynak tarama işlemi bir sonuç döndürmeden durdu."
+            "scan_worker_stopped": "Kaynak tarama işlemi bir sonuç döndürmeden durdu.",
+            "insert_disc_retry": "Diski bir sürücüye takın, ardından tekrar “Kopyalamayı başlat”ı seçin. Yalnızca birim kimliği okunur; tekrar kopyalanmaz."
         },
         "alert": {
             "rip_title": "Bir kopyalama sürüyor.",

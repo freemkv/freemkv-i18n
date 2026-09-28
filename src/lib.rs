@@ -1107,7 +1107,10 @@ mod tests {
                     "{code} error.{err} names a CLI command: {shared}"
                 );
                 let cli = get("error_cli");
-                assert!(cli.contains("freemkv update-keys"), "{code} error_cli.{err}: {cli}");
+                assert!(
+                    cli.contains("freemkv update-keys"),
+                    "{code} error_cli.{err}: {cli}"
+                );
                 let gui = get("error_gui");
                 assert!(
                     gui.contains(&button) && !gui.contains("update-keys"),

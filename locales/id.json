@@ -153,7 +153,8 @@
         "patch_done": "Penambalan selesai: memulihkan {recovered} MB, {unreadable} MB tidak terbaca, {pending} MB tertunda ({time} detik, {speed} MB/s)",
         "multipass_ignored": "Catatan: --multipass diabaikan untuk disc->MKV/M2TS (mux satu lintasan). Gunakan keluaran iso:// untuk pemulihan multipass.",
         "title_skipped": "Melewati judul {num}: dilindungi salinan, tidak ada kunci yang dapat dipulihkan.",
-        "title_skipped_empty": "Melewati judul {num}: kosong (tidak ada video) — kemungkinan stub menu/navigasi."
+        "title_skipped_empty": "Melewati judul {num}: kosong (tidak ada video) — kemungkinan stub menu/navigasi.",
+        "vid_from_hint": "Untuk menyelesaikan, masukkan disc dan jalankan kembali perintah yang sama dengan --vid-from disc:// (atau --vid-from disc://DEVICE untuk menamai drive). Hanya Volume ID disc yang dibaca; disc tidak dirip lagi."
     },
     "dir": {
         "extracting": "Mengekstrak pohon berkas terdekripsi ke {path}",
@@ -263,7 +264,7 @@
         "E6020": "Berkas image cakram berakhir sebelum sektor yang dibutuhkan penyalinan ini, sehingga image terpotong atau tidak lengkap. Pembacaan dihentikan alih-alih mengisi bagian yang hilang dengan nol — buat ulang image dari cakram.",
         "E6021": "Image cakram tidak dapat dibuat: cakram ini memakai enkripsi bus AACS, dan lokasi sebuah berkas stream di cakram tidak dapat dibaca ({detail}), sehingga berkas itu tidak dapat didekripsi dan image masih akan berisi data terenkripsi. Judul yang tidak memakai berkas itu masih dapat disalin ke MKV, atau cakram dapat diekstrak ke folder (berkas itu dilaporkan sebagai rusak). Membersihkan cakram lalu mencoba lagi mungkin membantu.",
         "E6022": "Image ini ({detail}) disiapkan untuk penyalinan MKV dan hanya berisi judul yang dipilih saat itu, bukan seluruh cakram, sehingga tidak dapat dipakai sebagai image cakram atau diekstrak ke folder. Salin judul-judul itu ke MKV, atau buat image baru dari cakram.",
-        "E7000": "Disc ini memerlukan kunci dekripsi AACS (Blu-ray/UHD), tetapi tidak ada yang ditemukan. Unduh basis data kunci dengan: freemkv update-keys --url <keydb-url>",
+        "E7000": "Disc ini memerlukan kunci dekripsi AACS (Blu-ray/UHD), tetapi tidak ada yang ditemukan. Pasang atau perbarui basis data kunci, lalu coba lagi.",
         "E7001": "Sertifikat keamanan disc terlalu pendek atau tidak valid.",
         "E7002": "Drive tidak mau memulai sesi aman untuk disc ini — mungkin sedang digunakan oleh program lain. Tutup apa pun yang menggunakan disc dan coba lagi.",
         "E7003": "Drive menolak sertifikat keamanan disc ini.",
@@ -275,7 +276,7 @@
         "E7009": "Tidak dapat membaca pengenal disc. Disc mungkin kotor atau rusak.",
         "E7010": "Pengenal disc tidak dapat diverifikasi. Disc mungkin rusak atau tidak didukung.",
         "E7011": "Tidak dapat menyiapkan kunci dekripsi disc ini.",
-        "E7013": "Dekripsi gagal — kunci yang dipulihkan tidak membuka data disc ini. Kunci mungkin salah atau usang; perbarui dengan: freemkv update-keys --url <keydb-url>",
+        "E7013": "Dekripsi gagal — kunci yang dipulihkan tidak membuka data disc ini. Kunci mungkin salah atau usang; perbarui basis data kunci Anda, lalu coba lagi.",
         "E7014": "Autentikasi CSS gagal: drive tidak dapat membangun pertukaran kunci yang diperlukan untuk mendekripsi DVD ini. Coba bersihkan disc dan masukkan kembali. Jika masalah berlanjut, drive Anda mungkin tidak sepenuhnya mendukung dekripsi CSS.",
         "E7015": "Drive menolak sertifikat host AACS, dan drive ini tidak dapat dibuka kuncinya dengan cara lain.",
         "E7016": "Drive ini tidak dapat membaca disc dalam mode yang diperlukan untuk mendekripsinya, dan sesi aman ditolak. Tidak ada cara tersisa untuk mendekripsi disc ini pada drive ini.",
@@ -288,7 +289,7 @@
         "E7023": "Disc ini dilindungi salinan dan tidak ada kunci yang dapat dipulihkan untuk judul ini, sehingga tidak dapat didekripsi (keluaran akan tidak terbaca).",
         "E7024": "Tidak ada sertifikat host tersedia dari sumber kunci mana pun untuk handshake aman drive.",
         "E7025": "Disc ini menggunakan enkripsi bus AACS, tetapi tidak ada kunci bus yang dapat diperoleh dari handshake aman drive, sehingga datanya tidak dapat didekripsi (keluaran akan tidak terbaca).",
-        "E7026": "Disc ini menggunakan watermark forensik AACS 2.1 (FMTS) dan tidak ada kunci varian yang tersedia untuknya, sehingga film tidak dapat direkonstruksi tanpa celah. Perbarui basis data kunci Anda.",
+        "E7026": "Disc ini menggunakan watermark forensik AACS 2.1 (FMTS) dan tidak ada kunci varian yang tersedia untuknya, sehingga film tidak dapat direkonstruksi tanpa celah. Perbarui basis data kunci Anda. Jika belum ada sumber kunci yang mencakup disc ini, rip disc ke image, lalu konversikan image tersebut setelah kunci dipublikasikan.",
         "E7027": "Perlindungan salinan DVD ini tidak dapat dibuka, sehingga tidak ada judul di dalamnya yang dapat dibaca. Cakram mungkin rusak, atau menggunakan varian yang tidak ditangani versi ini.",
         "E7028": "Layanan kunci daring tidak dapat dihubungi, sehingga layanan itu tidak pernah menjawab apakah cakram ini memiliki kunci. Ini biasanya sementara — tunggu beberapa menit lalu coba lagi. Jangan mencari kunci yang hilang dulu; yang bermasalah adalah layanannya, bukan cakramnya.",
         "E7029": "Layanan kunci daring menolak token akses, sehingga tidak mau menjawab. Perbaiki token layanan kunci di Pengaturan (atau --key-auth di baris perintah) lalu coba lagi. Ini tidak berarti cakram tidak memiliki kunci.",
@@ -298,10 +299,10 @@
         "E7033": "Sertifikat host ditemukan di sumber kunci Anda, tetapi tidak satu pun yang dapat digunakan (rusak atau tidak lengkap). Perbarui basis data kunci Anda lalu coba lagi.",
         "E7034": "Kunci disc ini memerlukan Volume ID-nya, yang hanya dapat dibaca dari disc itu sendiri. Masukkan disc untuk menyelesaikan; disc tidak akan dirip lagi.",
         "E8000": "Tidak dapat terhubung ke server basis data kunci: {detail}",
-        "E8001": "Unduhan basis data kunci gagal (HTTP {detail}). Coba lagi, atau jalankan: freemkv update-keys --url <keydb-url>",
-        "E8002": "Basis data kunci kosong atau tidak valid. Unduh ulang dengan: freemkv update-keys --url <keydb-url>",
+        "E8001": "Unduhan basis data kunci gagal (HTTP {detail}). Coba lagi pembaruannya.",
+        "E8002": "Basis data kunci kosong atau tidak valid. Unduh ulang.",
         "E8003": "Tidak dapat menulis basis data kunci: {detail}",
-        "E8004": "Basis data kunci tidak dapat dibaca. Unduh ulang dengan: freemkv update-keys --url <keydb-url>",
+        "E8004": "Basis data kunci tidak dapat dibaca. Unduh ulang.",
         "E8005": "Tidak dapat memuat basis data kunci: {detail}",
         "E8006": "URL basis data kunci menggunakan jenis alamat yang tidak diizinkan ({detail}).",
         "E8007": "Unduhan basis data kunci dialihkan terlalu banyak kali. Periksa URL dan coba lagi.",
@@ -436,7 +437,25 @@
         "disc_scan_all_titles_failed": "Kesalahan: tidak dapat memindai disc untuk mendaftar judulnya, sehingga `-t all` tidak dapat mengetahui judul mana yang harus dirip. Tidak ada yang dirip — periksa disc dan drive lalu coba lagi.",
         "log_file_needs_value": "--log-file: memerlukan path (mis. --log-file freemkv.log)",
         "mux_failed_generic": "Mux gagal (E{code}).",
-        "title_changed": "Judul {num} berubah di antara pemindaian: diharapkan {expected}, drive sekarang melaporkan {found}. Daftar judul disc berubah selama rip; tidak ada yang ditulis untuk judul ini."
+        "title_changed": "Judul {num} berubah di antara pemindaian: diharapkan {expected}, drive sekarang melaporkan {found}. Daftar judul disc berubah selama rip; tidak ada yang ditulis untuk judul ini.",
+        "vid_from_not_a_drive": "Kesalahan: --vid-from memerlukan drive yang berisi disc: disc:// (atau disc://DEVICE), menerima '{value}'.",
+        "vid_from_iso_only": "Kesalahan: --vid-from hanya berlaku untuk sumber image iso://, menerima '{source}'."
+    },
+    "error_cli": {
+        "E7000": "Disc ini memerlukan kunci dekripsi AACS (Blu-ray/UHD), tetapi tidak ada yang ditemukan. Unduh basis data kunci dengan: freemkv update-keys --url <keydb-url>",
+        "E7013": "Dekripsi gagal — kunci yang dipulihkan tidak membuka data disc ini. Kunci mungkin salah atau usang; perbarui dengan: freemkv update-keys --url <keydb-url>",
+        "E7026": "Disc ini menggunakan watermark forensik AACS 2.1 (FMTS) dan tidak ada kunci varian yang tersedia untuknya, sehingga film tidak dapat direkonstruksi tanpa celah. Perbarui basis data kunci Anda dengan: freemkv update-keys --url <keydb-url>. Jika belum ada sumber kunci yang mencakup disc ini, rip ke image dengan 'freemkv disc:// iso://Disc.iso' lalu konversikan image tersebut setelah kunci dipublikasikan.",
+        "E8001": "Unduhan basis data kunci gagal (HTTP {detail}). Coba lagi, atau jalankan: freemkv update-keys --url <keydb-url>",
+        "E8002": "Basis data kunci kosong atau tidak valid. Unduh ulang dengan: freemkv update-keys --url <keydb-url>",
+        "E8004": "Basis data kunci tidak dapat dibaca. Unduh ulang dengan: freemkv update-keys --url <keydb-url>"
+    },
+    "error_gui": {
+        "E7000": "Disc ini memerlukan kunci dekripsi AACS (Blu-ray/UHD), tetapi tidak ada yang ditemukan. Unduh basis data kunci melalui “Pengaturan…” → “Perbarui keydb sekarang”.",
+        "E7013": "Dekripsi gagal — kunci yang dipulihkan tidak membuka data disc ini. Kunci mungkin salah atau usang; perbarui melalui “Pengaturan…” → “Perbarui keydb sekarang”.",
+        "E7026": "Disc ini menggunakan watermark forensik AACS 2.1 (FMTS) dan tidak ada kunci varian yang tersedia untuknya, sehingga film tidak dapat direkonstruksi tanpa celah. Perbarui basis data kunci Anda melalui “Pengaturan…” → “Perbarui keydb sekarang”. Jika belum ada sumber kunci yang mencakup disc ini, rip disc ke image ISO, lalu konversikan image tersebut setelah kunci dipublikasikan.",
+        "E8001": "Unduhan basis data kunci gagal (HTTP {detail}). Coba lagi melalui “Pengaturan…” → “Perbarui keydb sekarang”.",
+        "E8002": "Basis data kunci kosong atau tidak valid. Unduh ulang melalui “Pengaturan…” → “Perbarui keydb sekarang”.",
+        "E8004": "Basis data kunci tidak dapat dibaca. Unduh ulang melalui “Pengaturan…” → “Perbarui keydb sekarang”."
     },
     "usage": {
         "synopsis_1": "Penggunaan: freemkv <source> <dest> [flags]",
@@ -504,6 +523,7 @@
             "key_url_2": "                      Dengan --keydb keydb dicoba terlebih dahulu (lokal-",
             "key_url_3": "                      dahulu); bila sendiri, ia jadi satu-satunya sumber kunci.",
             "key_auth": "      --key-auth TOKEN Token bearer yang dikirim ke layanan kunci (opsional).",
+            "vid_from": "      --vid-from DRIVE Untuk image iso:// yang kuncinya memerlukan Volume ID disc (E7034): baca dari disc di DRIVE (disc:// atau disc://DEVICE); tidak ada yang dirip darinya.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Nonaktif secara default —",
             "log_level_2": "                      terminal tetap bersih. Setel untuk menulis",
             "log_level_3": "                      log diagnostik ke ./log.txt (gunakan 3 untuk laporan bug).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Hanya berkas dan folder lokal yang dapat digunakan: {p}",
             "reveal_failed": "Tidak dapat membuka folder di File Explorer: {e}",
             "scan_not_started": "Tidak dapat memulai pemindaian sumber: {detail}",
-            "scan_worker_stopped": "Proses pemindaian sumber berhenti sebelum mengembalikan hasil."
+            "scan_worker_stopped": "Proses pemindaian sumber berhenti sebelum mengembalikan hasil.",
+            "insert_disc_retry": "Masukkan disc ke drive, lalu pilih “Mulai rip” lagi. Hanya Volume ID-nya yang dibaca; disc tidak dirip lagi."
         },
         "alert": {
             "rip_title": "Rip sedang berlangsung.",

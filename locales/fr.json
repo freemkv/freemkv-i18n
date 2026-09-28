@@ -153,7 +153,8 @@
         "damage_none": "0s",
         "multipass_ignored": "Remarque : --multipass est ignoré pour disc->MKV/M2TS (mux en une passe). Utilisez une sortie iso:// pour la récupération multipasse.",
         "title_skipped": "Titre {num} ignoré : protégé contre la copie, aucune clé récupérable.",
-        "title_skipped_empty": "Titre {num} ignoré : vide (aucune vidéo) — probablement un menu ou un segment de navigation."
+        "title_skipped_empty": "Titre {num} ignoré : vide (aucune vidéo) — probablement un menu ou un segment de navigation.",
+        "vid_from_hint": "Pour terminer, insérez le disque et relancez la même commande avec --vid-from disc:// (ou --vid-from disc://DEVICE pour nommer le lecteur). Seul l'identifiant de volume du disque est lu ; il n'est pas extrait à nouveau."
     },
     "dir": {
         "extracting": "Extraction de l'arborescence de fichiers déchiffrée vers {path}",
@@ -240,7 +241,7 @@
         "E6020": "Le fichier image disque se termine avant un secteur dont cette extraction a besoin : l'image est tronquée ou incomplète. La lecture a été arrêtée plutôt que de combler la partie manquante avec des zéros — recréez l'image à partir du disque.",
         "E6021": "Impossible de créer une image disque : ce disque utilise le chiffrement de bus AACS et l'emplacement d'un fichier de flux sur le disque n'a pas pu être lu ({detail}) ; ce fichier ne peut donc pas être déchiffré et l'image contiendrait encore des données chiffrées. Les titres qui n'utilisent pas ce fichier peuvent encore être extraits en MKV, ou le disque peut être extrait dans un dossier (ce fichier est signalé comme endommagé). Nettoyer le disque et réessayer peut aider.",
         "E6022": "Cette image ({detail}) a été préparée pour une extraction en MKV et ne contient que les titres pour lesquels elle a été préparée, pas le disque entier ; elle ne peut donc pas servir d'image disque ni être extraite dans un dossier. Extrayez ces titres en MKV ou créez une nouvelle image à partir du disque.",
-        "E7000": "Ce disque nécessite des clés de déchiffrement AACS, mais aucune source de clés ne les a fournies.",
+        "E7000": "Ce disque nécessite des clés de déchiffrement AACS (Blu-ray/UHD), mais aucune n'a été trouvée. Installez ou mettez à jour une base de clés, puis réessayez.",
         "E7001": "Certificat hote AACS trop court ou invalide",
         "E7002": "Echec de la negociation AACS — impossible d'allouer un AGID",
         "E7003": "Le lecteur a rejeté le certificat de sécurité de ce disque.",
@@ -252,7 +253,7 @@
         "E7009": "Impossible de lire l'identifiant du disque. Le disque est peut-être sale ou endommagé.",
         "E7010": "L'identifiant du disque n'a pas pu être vérifié. Le disque est peut-être endommagé ou non pris en charge.",
         "E7011": "Impossible de préparer la clé de déchiffrement de ce disque.",
-        "E7013": "Echec du dechiffrement",
+        "E7013": "Échec du déchiffrement — la clé récupérée n'a pas déverrouillé les données de ce disque. La clé est peut-être incorrecte ou obsolète ; mettez à jour votre base de clés, puis réessayez.",
         "E7014": "Échec de l'authentification CSS : le lecteur n'a pas pu établir l'échange de clés nécessaire pour déchiffrer ce DVD. Essayez de nettoyer le disque et de le réinsérer. Si le problème persiste, votre lecteur ne prend peut-être pas entièrement en charge le déchiffrement CSS.",
         "E7015": "Le lecteur a rejeté le certificat hôte AACS, et ce lecteur ne peut pas être déverrouillé autrement.",
         "E7016": "Ce lecteur ne peut pas lire le disque dans le mode nécessaire au déchiffrement, et la session sécurisée a été refusée. Aucun moyen de déchiffrer ce disque ne subsiste sur ce lecteur.",
@@ -265,7 +266,7 @@
         "E7023": "Ce disque est protégé contre la copie et aucune clé n'a pu être récupérée pour ce titre, il ne peut donc pas être déchiffré (la sortie serait illisible).",
         "E7024": "Aucune source de clés ne fournit de certificat hôte pour la liaison sécurisée du lecteur.",
         "E7025": "Ce disque utilise le chiffrement de bus AACS, mais aucune clé de bus n'a pu être obtenue lors de la liaison sécurisée du lecteur, de sorte que ses données ne peuvent pas être déchiffrées (la sortie serait illisible).",
-        "E7026": "Ce disque utilise le tatouage numérique forensique AACS 2.1 (FMTS) et aucune clé de variante n'est disponible, de sorte que le film ne peut pas être reconstruit sans lacunes. Mettez à jour votre base de clés avec : freemkv update-keys --url <keydb-url>. Si aucune source de clés ne référence encore ce disque, copiez-le en image avec 'freemkv disc:// iso://Disc.iso' et convertissez l'image dès que les clés sont publiées.",
+        "E7026": "Ce disque utilise le tatouage numérique forensique AACS 2.1 (FMTS) et aucune clé de variante n'est disponible, de sorte que le film ne peut pas être reconstruit sans lacunes. Mettez à jour votre base de clés. Si aucune source de clés ne référence encore ce disque, extrayez-le en image, puis convertissez l'image dès que les clés sont publiées.",
         "E7027": "La protection anti-copie de ce DVD n'a pas pu être déverrouillée ; aucun titre ne peut donc être lu. Le disque est peut-être endommagé ou utilise une variante non prise en charge.",
         "E7028": "Le service de clés en ligne était injoignable ; il n'a donc jamais indiqué si cette disque possède une clé. C'est généralement temporaire — patientez quelques minutes et réessayez. Ne cherchez pas encore une clé manquante : c'est le service qui était en panne, pas le disque.",
         "E7029": "Le service de clés en ligne a rejeté le jeton d'accès et n'a donc pas répondu. Corrigez le jeton du service de clés dans les Réglages (ou --key-auth en ligne de commande) puis réessayez. Cela ne signifie pas que le disque n'a pas de clé.",
@@ -275,10 +276,10 @@
         "E7033": "Des certificats hôte ont été trouvés dans vos sources de clés, mais aucun n'est utilisable (endommagé ou incomplet). Actualisez votre base de données de clés et réessayez.",
         "E7034": "Les clés de ce disque nécessitent son identifiant de volume (Volume ID), qui ne peut être lu que depuis le disque lui-même. Insérez le disque pour terminer ; il ne sera pas extrait à nouveau.",
         "E8000": "Impossible de se connecter au serveur KEYDB : {detail}",
-        "E8001": "Echec du telechargement KEYDB (HTTP {detail})",
-        "E8002": "KEYDB vide ou invalide",
+        "E8001": "Le téléchargement de la base de clés a échoué (HTTP {detail}). Réessayez la mise à jour.",
+        "E8002": "La base de clés est vide ou invalide. Retéléchargez-la.",
         "E8003": "Impossible d'ecrire KEYDB : {detail}",
-        "E8004": "Erreur d'analyse KEYDB",
+        "E8004": "La base de clés n'a pas pu être lue. Retéléchargez-la.",
         "E8005": "Impossible de charger KEYDB : {detail}",
         "E8006": "L'URL de la base de clés utilise un type d'adresse non autorisé ({detail}).",
         "E8007": "Le téléchargement de la base de clés a été redirigé trop de fois. Vérifiez l'URL et réessayez.",
@@ -413,7 +414,25 @@
         "disc_scan_all_titles_failed": "Erreur : impossible d'analyser le disque pour lister ses titres, `-t all` ne peut donc pas savoir quels titres extraire. Rien n'a été extrait — vérifiez le disque et le lecteur, puis réessayez.",
         "log_file_needs_value": "--log-file : nécessite un chemin (par ex. --log-file freemkv.log)",
         "mux_failed_generic": "Échec du multiplexage (E{code}).",
-        "title_changed": "Le titre {num} a changé entre deux analyses : attendu {expected}, le lecteur indique maintenant {found}. La liste des titres du disque a changé pendant l'extraction ; rien n'a été écrit pour ce titre."
+        "title_changed": "Le titre {num} a changé entre deux analyses : attendu {expected}, le lecteur indique maintenant {found}. La liste des titres du disque a changé pendant l'extraction ; rien n'a été écrit pour ce titre.",
+        "vid_from_not_a_drive": "Erreur : --vid-from nécessite le lecteur contenant le disque : disc:// (ou disc://DEVICE), reçu '{value}'.",
+        "vid_from_iso_only": "Erreur : --vid-from s'applique uniquement à une source d'image iso://, reçu '{source}'."
+    },
+    "error_cli": {
+        "E7000": "Ce disque nécessite des clés de déchiffrement AACS (Blu-ray/UHD), mais aucune n'a été trouvée. Téléchargez une base de clés avec : freemkv update-keys --url <keydb-url>",
+        "E7013": "Échec du déchiffrement — la clé récupérée n'a pas déverrouillé les données de ce disque. La clé est peut-être incorrecte ou obsolète ; actualisez-la avec : freemkv update-keys --url <keydb-url>",
+        "E7026": "Ce disque utilise le tatouage numérique forensique AACS 2.1 (FMTS) et aucune clé de variante n'est disponible, de sorte que le film ne peut pas être reconstruit sans lacunes. Mettez à jour votre base de clés avec : freemkv update-keys --url <keydb-url>. Si aucune source de clés ne référence encore ce disque, copiez-le en image avec 'freemkv disc:// iso://Disc.iso' et convertissez l'image dès que les clés sont publiées.",
+        "E8001": "Le téléchargement de la base de clés a échoué (HTTP {detail}). Réessayez, ou exécutez : freemkv update-keys --url <keydb-url>",
+        "E8002": "La base de clés est vide ou invalide. Retéléchargez-la avec : freemkv update-keys --url <keydb-url>",
+        "E8004": "La base de clés n'a pas pu être lue. Retéléchargez-la avec : freemkv update-keys --url <keydb-url>"
+    },
+    "error_gui": {
+        "E7000": "Ce disque nécessite des clés de déchiffrement AACS (Blu-ray/UHD), mais aucune n'a été trouvée. Téléchargez une base de clés via « Réglages… » → « Mettre à jour le keydb maintenant ».",
+        "E7013": "Échec du déchiffrement — la clé récupérée n'a pas déverrouillé les données de ce disque. La clé est peut-être incorrecte ou obsolète ; actualisez-la via « Réglages… » → « Mettre à jour le keydb maintenant ».",
+        "E7026": "Ce disque utilise le tatouage numérique forensique AACS 2.1 (FMTS) et aucune clé de variante n'est disponible, de sorte que le film ne peut pas être reconstruit sans lacunes. Actualisez votre base de clés via « Réglages… » → « Mettre à jour le keydb maintenant ». Si aucune source de clés ne référence encore ce disque, extrayez le disque en image ISO, puis convertissez l'image dès que les clés sont publiées.",
+        "E8001": "Le téléchargement de la base de clés a échoué (HTTP {detail}). Réessayez via « Réglages… » → « Mettre à jour le keydb maintenant ».",
+        "E8002": "La base de clés est vide ou invalide. Retéléchargez-la via « Réglages… » → « Mettre à jour le keydb maintenant ».",
+        "E8004": "La base de clés n'a pas pu être lue. Retéléchargez-la via « Réglages… » → « Mettre à jour le keydb maintenant »."
     },
     "usage": {
         "synopsis_1": "Utilisation : freemkv <source> <dest> [options]",
@@ -472,6 +491,7 @@
             "key_url_2": "                      Avec --keydb, le keydb est essayé en premier (local",
             "key_url_3": "                      d'abord) ; seul, c'est l'unique source de clés.",
             "key_auth": "      --key-auth TOKEN Token bearer pour le service de clés (optionnel).",
+            "vid_from": "      --vid-from DRIVE Pour une image iso:// dont les clés nécessitent l'identifiant de volume du disque (Volume ID) (E7034) : le lire depuis le disque dans DRIVE (disc:// ou disc://DEVICE) ; rien n'en est extrait.",
             "log_level_1": "      --log-level N   1=avert 2=info 3=debug 4=trace. Désactivé par défaut —",
             "log_level_2": "                      le terminal reste propre. Écrit un journal de",
             "log_level_3": "                      diagnostic dans ./log.txt (utiliser 3 pour les rapports de bugs).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Seuls les fichiers et dossiers locaux peuvent être utilisés : {p}",
             "reveal_failed": "Impossible d'ouvrir le dossier dans l'Explorateur de fichiers : {e}",
             "scan_not_started": "Impossible de lancer l'analyse de la source : {detail}",
-            "scan_worker_stopped": "Le processus d'analyse de la source s'est arrêté avant de renvoyer un résultat."
+            "scan_worker_stopped": "Le processus d'analyse de la source s'est arrêté avant de renvoyer un résultat.",
+            "insert_disc_retry": "Insérez le disque dans un lecteur, puis choisissez à nouveau « Démarrer l'extraction ». Seul son identifiant de volume est lu ; il n'est pas extrait à nouveau."
         },
         "alert": {
             "rip_title": "Une extraction est en cours.",

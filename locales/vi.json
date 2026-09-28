@@ -153,7 +153,8 @@
         "patch_done": "Vá xong: khôi phục {recovered} MB, {unreadable} MB không đọc được, {pending} MB đang chờ ({time}s, {speed} MB/s)",
         "multipass_ignored": "Lưu ý: --multipass bị bỏ qua với disc->MKV/M2TS (mux một lượt). Dùng đầu ra iso:// để khôi phục nhiều lượt.",
         "title_skipped": "Bỏ qua tiêu đề {num}: được bảo vệ chống sao chép, không khôi phục được khóa.",
-        "title_skipped_empty": "Bỏ qua tiêu đề {num}: trống (không có video) — có thể là menu/nav stub."
+        "title_skipped_empty": "Bỏ qua tiêu đề {num}: trống (không có video) — có thể là menu/nav stub.",
+        "vid_from_hint": "Để hoàn tất, hãy lắp đĩa vào và chạy lại cùng lệnh đó với --vid-from disc:// (hoặc --vid-from disc://DEVICE để chỉ định ổ đĩa). Chỉ mã định danh tập đĩa của đĩa được đọc; đĩa không bị trích xuất lại."
     },
     "dir": {
         "extracting": "Đang trích xuất cây tệp đã giải mã vào {path}",
@@ -263,7 +264,7 @@
         "E6020": "Tệp ảnh đĩa kết thúc trước một sector mà lần sao chép này cần, nên ảnh đĩa bị cắt bớt hoặc chưa hoàn chỉnh. Quá trình đọc đã dừng thay vì điền số 0 vào phần bị thiếu — hãy tạo lại ảnh đĩa từ đĩa.",
         "E6021": "Không thể tạo ảnh đĩa: đĩa này dùng mã hóa bus AACS và không đọc được vị trí của một tệp luồng trên đĩa ({detail}), nên không thể giải mã tệp đó và ảnh đĩa vẫn sẽ chứa dữ liệu bị mã hóa. Các tiêu đề không dùng tệp đó vẫn có thể trích xuất sang MKV, hoặc có thể giải nén đĩa vào một thư mục (tệp đó được báo là bị hỏng). Lau sạch đĩa rồi thử lại có thể khắc phục.",
         "E6022": "Ảnh này ({detail}) được chuẩn bị cho một lần trích xuất MKV và chỉ chứa các tiêu đề đã chọn khi chuẩn bị, không phải toàn bộ đĩa, nên không thể dùng làm ảnh đĩa hoặc giải nén vào thư mục. Hãy trích xuất các tiêu đề đó sang MKV, hoặc tạo ảnh mới từ đĩa.",
-        "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Tải cơ sở dữ liệu khóa bằng: freemkv update-keys --url <keydb-url>",
+        "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Hãy cài đặt hoặc cập nhật cơ sở dữ liệu khóa rồi thử lại.",
         "E7001": "Chứng chỉ bảo mật của đĩa quá ngắn hoặc không hợp lệ.",
         "E7002": "Ổ đĩa không khởi động phiên bảo mật cho đĩa này — có thể nó đang được chương trình khác sử dụng. Đóng mọi thứ khác đang dùng đĩa và thử lại.",
         "E7003": "Ổ đĩa từ chối chứng chỉ bảo mật của đĩa này.",
@@ -275,7 +276,7 @@
         "E7009": "Không thể đọc mã định danh của đĩa. Đĩa có thể bẩn hoặc hỏng.",
         "E7010": "Không thể xác minh mã định danh của đĩa. Đĩa có thể bị hỏng hoặc không được hỗ trợ.",
         "E7011": "Không thể chuẩn bị khóa giải mã của đĩa này.",
-        "E7013": "Giải mã thất bại — khóa khôi phục không mở khóa được dữ liệu của đĩa này. Khóa có thể sai hoặc lỗi thời; làm mới bằng: freemkv update-keys --url <keydb-url>",
+        "E7013": "Giải mã thất bại — khóa khôi phục không mở khóa được dữ liệu của đĩa này. Khóa có thể sai hoặc lỗi thời; hãy cập nhật cơ sở dữ liệu khóa của bạn rồi thử lại.",
         "E7014": "Xác thực CSS thất bại: ổ đĩa không thiết lập được trao đổi khóa cần để giải mã DVD này. Thử làm sạch đĩa và đưa lại vào. Nếu vẫn còn, ổ đĩa của bạn có thể không hỗ trợ đầy đủ giải mã CSS.",
         "E7015": "Ổ đĩa từ chối chứng chỉ host AACS, và ổ đĩa này không thể mở khóa bằng cách khác.",
         "E7016": "Ổ đĩa này không thể đọc đĩa ở chế độ cần để giải mã nó, và phiên bảo mật bị từ chối. Không còn cách nào giải mã đĩa này trên ổ đĩa này.",
@@ -288,7 +289,7 @@
         "E7023": "Đĩa này được bảo vệ chống sao chép và không khôi phục được khóa nào cho tiêu đề này, nên không thể giải mã (đầu ra sẽ không đọc được).",
         "E7024": "Không có chứng chỉ host nào khả dụng từ bất kỳ nguồn khóa nào cho bắt tay bảo mật của ổ đĩa.",
         "E7025": "Đĩa này dùng mã hóa bus AACS, nhưng không lấy được khóa bus nào từ bắt tay bảo mật của ổ đĩa, nên dữ liệu của nó không thể giải mã (đầu ra sẽ không đọc được).",
-        "E7026": "Đĩa này dùng thủy vân pháp y AACS 2.1 (FMTS) và không có khóa biến thể nào cho nó, nên không thể dựng lại phim mà không có khoảng trống. Cập nhật cơ sở dữ liệu khóa của bạn.",
+        "E7026": "Đĩa này dùng thủy vân pháp y AACS 2.1 (FMTS) và không có khóa biến thể nào cho nó, nên không thể dựng lại phim mà không có khoảng trống. Hãy cập nhật cơ sở dữ liệu khóa của bạn. Nếu chưa có nguồn khóa nào chứa đĩa này, hãy trích xuất đĩa thành một tập tin ảnh rồi chuyển đổi tập tin ảnh đó khi khóa được công bố.",
         "E7027": "Không thể mở khóa cơ chế chống sao chép của DVD này, nên không tiêu đề nào trên đĩa đọc được. Đĩa có thể bị hỏng, hoặc dùng một biến thể mà phiên bản này không hỗ trợ.",
         "E7028": "Không thể kết nối tới dịch vụ khóa trực tuyến, nên dịch vụ chưa hề cho biết đĩa này có khóa hay không. Việc này thường chỉ là tạm thời — hãy đợi vài phút rồi thử lại. Đừng vội đi tìm khóa bị thiếu; dịch vụ gặp sự cố chứ không phải đĩa.",
         "E7029": "Dịch vụ khóa trực tuyến đã từ chối token truy cập, nên không phản hồi. Hãy sửa token dịch vụ khóa trong Cài đặt (hoặc --key-auth trên dòng lệnh) rồi thử lại. Điều này không có nghĩa là đĩa không có khóa.",
@@ -298,10 +299,10 @@
         "E7033": "Đã tìm thấy chứng chỉ host trong các nguồn khóa của bạn, nhưng không có chứng chỉ nào dùng được (bị hỏng hoặc không đầy đủ). Hãy làm mới cơ sở dữ liệu khóa rồi thử lại.",
         "E7034": "Khóa của đĩa này cần mã định danh tập đĩa (Volume ID) của nó, chỉ có thể đọc được từ chính đĩa. Hãy lắp đĩa vào để hoàn tất; đĩa sẽ không bị trích xuất lại.",
         "E8000": "Không thể kết nối tới máy chủ cơ sở dữ liệu khóa: {detail}",
-        "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Thử lại, hoặc chạy: freemkv update-keys --url <keydb-url>",
-        "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Tải lại bằng: freemkv update-keys --url <keydb-url>",
+        "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Hãy thử cập nhật lại.",
+        "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Hãy tải lại.",
         "E8003": "Không thể ghi cơ sở dữ liệu khóa: {detail}",
-        "E8004": "Không thể đọc cơ sở dữ liệu khóa. Tải lại bằng: freemkv update-keys --url <keydb-url>",
+        "E8004": "Không thể đọc cơ sở dữ liệu khóa. Hãy tải lại.",
         "E8005": "Không thể tải cơ sở dữ liệu khóa: {detail}",
         "E8006": "URL cơ sở dữ liệu khóa dùng loại địa chỉ không được phép ({detail}).",
         "E8007": "Việc tải cơ sở dữ liệu khóa bị chuyển hướng quá nhiều lần. Kiểm tra URL và thử lại.",
@@ -436,7 +437,25 @@
         "disc_scan_all_titles_failed": "Lỗi: không thể quét đĩa để liệt kê các tiêu đề, nên `-t all` không biết cần trích xuất tiêu đề nào. Chưa trích xuất gì — hãy kiểm tra đĩa và ổ đĩa rồi thử lại.",
         "log_file_needs_value": "--log-file: cần một đường dẫn (ví dụ --log-file freemkv.log)",
         "mux_failed_generic": "Mux thất bại (E{code}).",
-        "title_changed": "Tiêu đề {num} đã thay đổi giữa các lần quét: dự kiến {expected}, ổ đĩa hiện báo {found}. Danh sách tiêu đề đã thay đổi trong khi trích xuất; không có gì được ghi cho tiêu đề này."
+        "title_changed": "Tiêu đề {num} đã thay đổi giữa các lần quét: dự kiến {expected}, ổ đĩa hiện báo {found}. Danh sách tiêu đề đã thay đổi trong khi trích xuất; không có gì được ghi cho tiêu đề này.",
+        "vid_from_not_a_drive": "Lỗi: --vid-from cần ổ đĩa chứa đĩa: disc:// (hoặc disc://DEVICE), nhận được '{value}'.",
+        "vid_from_iso_only": "Lỗi: --vid-from chỉ áp dụng cho nguồn tập tin ảnh iso://, nhận được '{source}'."
+    },
+    "error_cli": {
+        "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Tải cơ sở dữ liệu khóa bằng: freemkv update-keys --url <keydb-url>",
+        "E7013": "Giải mã thất bại — khóa khôi phục không mở khóa được dữ liệu của đĩa này. Khóa có thể sai hoặc lỗi thời; làm mới bằng: freemkv update-keys --url <keydb-url>",
+        "E7026": "Đĩa này dùng thủy vân pháp y AACS 2.1 (FMTS) và không có khóa biến thể nào cho nó, nên không thể dựng lại phim mà không có khoảng trống. Cập nhật cơ sở dữ liệu khóa của bạn bằng: freemkv update-keys --url <keydb-url>. Nếu chưa có nguồn khóa nào chứa đĩa này, hãy trích xuất đĩa thành ảnh bằng 'freemkv disc:// iso://Disc.iso' rồi chuyển đổi tập tin ảnh đó khi khóa được công bố.",
+        "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Thử lại, hoặc chạy: freemkv update-keys --url <keydb-url>",
+        "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Tải lại bằng: freemkv update-keys --url <keydb-url>",
+        "E8004": "Không thể đọc cơ sở dữ liệu khóa. Tải lại bằng: freemkv update-keys --url <keydb-url>"
+    },
+    "error_gui": {
+        "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Hãy tải cơ sở dữ liệu khóa qua “Cài đặt…” → “Cập nhật keydb ngay”.",
+        "E7013": "Giải mã thất bại — khóa khôi phục không mở khóa được dữ liệu của đĩa này. Khóa có thể sai hoặc lỗi thời; hãy làm mới qua “Cài đặt…” → “Cập nhật keydb ngay”.",
+        "E7026": "Đĩa này dùng thủy vân pháp y AACS 2.1 (FMTS) và không có khóa biến thể nào cho nó, nên không thể dựng lại phim mà không có khoảng trống. Hãy làm mới cơ sở dữ liệu khóa của bạn qua “Cài đặt…” → “Cập nhật keydb ngay”. Nếu chưa có nguồn khóa nào chứa đĩa này, hãy trích xuất đĩa thành một tập tin ảnh ISO rồi chuyển đổi tập tin ảnh đó khi khóa được công bố.",
+        "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Hãy thử lại qua “Cài đặt…” → “Cập nhật keydb ngay”.",
+        "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Hãy tải lại qua “Cài đặt…” → “Cập nhật keydb ngay”.",
+        "E8004": "Không thể đọc cơ sở dữ liệu khóa. Hãy tải lại qua “Cài đặt…” → “Cập nhật keydb ngay”."
     },
     "usage": {
         "synopsis_1": "Cách dùng: freemkv <source> <dest> [flags]",
@@ -504,6 +523,7 @@
             "key_url_2": "                      Với --keydb thì keydb được thử trước (ưu tiên",
             "key_url_3": "                      cục bộ); dùng một mình thì nó là nguồn khóa duy nhất.",
             "key_auth": "      --key-auth TOKEN Token bearer gửi tới dịch vụ khóa (tùy chọn).",
+            "vid_from": "      --vid-from DRIVE Đối với tập tin ảnh iso:// có khóa cần mã định danh tập đĩa (Volume ID) của đĩa (E7034): đọc mã này từ đĩa trong DRIVE (disc:// hoặc disc://DEVICE); không có gì được trích xuất từ đó.",
             "log_level_1": "      --log-level N   1=warn 2=info 3=debug 4=trace. Tắt theo mặc định —",
             "log_level_2": "                      terminal luôn sạch. Đặt nó để ghi một",
             "log_level_3": "                      nhật ký chẩn đoán vào ./log.txt (dùng 3 cho báo cáo lỗi).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Chỉ có thể dùng tệp và thư mục cục bộ: {p}",
             "reveal_failed": "Không thể mở thư mục trong File Explorer: {e}",
             "scan_not_started": "Không thể bắt đầu quét nguồn: {detail}",
-            "scan_worker_stopped": "Tiến trình quét nguồn đã dừng trước khi trả về kết quả."
+            "scan_worker_stopped": "Tiến trình quét nguồn đã dừng trước khi trả về kết quả.",
+            "insert_disc_retry": "Hãy lắp đĩa vào ổ đĩa, rồi chọn lại “Bắt đầu trích xuất”. Chỉ mã định danh tập đĩa của đĩa được đọc; đĩa không bị trích xuất lại."
         },
         "alert": {
             "rip_title": "Quá trình trích xuất đang diễn ra.",

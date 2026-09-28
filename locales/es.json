@@ -153,7 +153,8 @@
         "damage_none": "0s",
         "multipass_ignored": "Nota: --multipass se ignora en disc->MKV/M2TS (muxado de una sola pasada). Usa una salida iso:// para la recuperación multipasada.",
         "title_skipped": "Omitiendo el título {num}: protegido contra copia, no se pudo recuperar ninguna clave.",
-        "title_skipped_empty": "Omitiendo el título {num}: vacío (sin vídeo), probablemente un menú o fragmento de navegación."
+        "title_skipped_empty": "Omitiendo el título {num}: vacío (sin vídeo), probablemente un menú o fragmento de navegación.",
+        "vid_from_hint": "Para terminar, inserte el disco y ejecute de nuevo el mismo comando con --vid-from disc:// (o --vid-from disc://DEVICE para indicar la unidad). Solo se lee el ID de volumen del disco; no se vuelve a extraer."
     },
     "dir": {
         "extracting": "Extrayendo el árbol de archivos descifrado a {path}",
@@ -240,7 +241,7 @@
         "E6020": "El archivo de imagen de disco termina antes de un sector que necesita esta extracción, por lo que la imagen está truncada o incompleta. La lectura se detuvo en lugar de rellenar con ceros la parte que falta: vuelva a crear la imagen a partir del disco.",
         "E6021": "No se puede crear una imagen del disco: este disco usa cifrado de bus AACS y no se ha podido leer la ubicación de un archivo de flujo en el disco ({detail}), por lo que ese archivo no se puede descifrar y la imagen seguiría conteniendo datos cifrados. Los títulos que no usan ese archivo aún se pueden extraer a MKV, o se puede extraer el disco a una carpeta (ese archivo se indica como dañado). Limpiar el disco y volver a intentarlo puede ayudar.",
         "E6022": "Esta imagen ({detail}) se preparó para una extracción a MKV y solo contiene los títulos para los que se preparó, no todo el disco, por lo que no se puede usar como imagen de disco ni extraer a una carpeta. Extraiga esos títulos a MKV o cree una nueva imagen a partir del disco.",
-        "E7000": "Este disco necesita claves de descifrado AACS, pero ninguna fuente de claves las proporcionó.",
+        "E7000": "Este disco necesita claves de descifrado AACS (Blu-ray/UHD), pero no se encontró ninguna. Instale o actualice una base de datos de claves y vuelva a intentarlo.",
         "E7001": "Certificado de host AACS demasiado corto o inválido",
         "E7002": "Autenticación AACS falló — no se pudo asignar AGID",
         "E7003": "La unidad rechazó el certificado de seguridad de este disco.",
@@ -252,7 +253,7 @@
         "E7009": "No se pudo leer el identificador del disco. El disco puede estar sucio o dañado.",
         "E7010": "No se pudo verificar el identificador del disco. El disco puede estar dañado o no ser compatible.",
         "E7011": "No se pudo preparar la clave de descifrado de este disco.",
-        "E7013": "Descifrado falló",
+        "E7013": "El descifrado falló — la clave recuperada no desbloqueó los datos de este disco. La clave puede ser incorrecta o estar desactualizada; actualice su base de datos de claves y vuelva a intentarlo.",
         "E7014": "Autenticación CSS fallida: la unidad no pudo establecer el intercambio de claves necesario para descifrar este DVD. Intente limpiar el disco y volver a insertarlo. Si el problema persiste, es posible que su unidad no sea totalmente compatible con el descifrado CSS.",
         "E7015": "La unidad rechazó el certificado de host AACS y esta unidad no se puede desbloquear de otra forma.",
         "E7016": "Esta unidad no puede leer el disco en el modo necesario para descifrarlo, y la sesión segura fue rechazada. No queda forma de descifrar este disco en esta unidad.",
@@ -265,7 +266,7 @@
         "E7023": "Este disco está protegido contra copia y no se pudo recuperar ninguna clave para este título, por lo que no se puede descifrar (la salida sería ilegible).",
         "E7024": "Ninguna fuente de claves ofrece un certificado de host para el protocolo de enlace seguro de la unidad.",
         "E7025": "Este disco usa cifrado de bus AACS, pero no se pudo obtener ninguna clave de bus del protocolo de enlace seguro de la unidad, por lo que sus datos no se pueden descifrar (la salida sería ilegible).",
-        "E7026": "Este disco usa marca de agua forense AACS 2.1 (FMTS) y no hay ninguna clave de variante disponible, por lo que la película no se puede reconstruir sin huecos. Actualice su base de datos de claves con: freemkv update-keys --url <keydb-url>. Si ninguna fuente de claves incluye todavía este disco, cópielo a una imagen con 'freemkv disc:// iso://Disc.iso' y convierta la imagen cuando se publiquen las claves.",
+        "E7026": "Este disco usa marca de agua forense AACS 2.1 (FMTS) y no hay ninguna clave de variante disponible, por lo que la película no se puede reconstruir sin huecos. Actualice su base de datos de claves. Si ninguna fuente de claves incluye todavía este disco, extráigalo a una imagen y convierta la imagen cuando se publiquen las claves.",
         "E7027": "No se pudo desbloquear la protección anticopia de este DVD, por lo que no se puede leer ningún título. Puede que el disco esté dañado o use una variante no compatible.",
         "E7028": "No se pudo contactar con el servicio de claves en línea, por lo que nunca dijo si este disco tiene clave. Suele ser algo temporal: espere unos minutos y vuelva a intentarlo. Todavía no busque una clave que falte; lo que estaba caído era el servicio, no el disco.",
         "E7029": "El servicio de claves en línea rechazó el token de acceso y por eso no respondió. Corrija el token del servicio de claves en los Ajustes (o --key-auth en la línea de comandos) y vuelva a intentarlo. Esto no significa que el disco no tenga clave.",
@@ -275,10 +276,10 @@
         "E7033": "Se encontraron certificados de host en sus fuentes de claves, pero ninguno es utilizable (dañado o incompleto). Actualice su base de datos de claves y vuelva a intentarlo.",
         "E7034": "Las claves de este disco necesitan su ID de volumen, que solo se puede leer desde el propio disco. Inserte el disco para finalizar; no se volverá a extraer.",
         "E8000": "No se puede conectar al servidor KEYDB: {detail}",
-        "E8001": "Descarga de KEYDB falló (HTTP {detail})",
-        "E8002": "KEYDB está vacío o es inválido",
+        "E8001": "La descarga de la base de datos de claves falló (HTTP {detail}). Vuelva a intentar la actualización.",
+        "E8002": "La base de datos de claves está vacía o no es válida. Vuelva a descargarla.",
         "E8003": "No se puede escribir KEYDB: {detail}",
-        "E8004": "Error al analizar KEYDB",
+        "E8004": "No se pudo leer la base de datos de claves. Vuelva a descargarla.",
         "E8005": "No se puede cargar KEYDB: {detail}",
         "E8006": "La URL de la base de datos de claves usa un tipo de dirección no permitido ({detail}).",
         "E8007": "La descarga de la base de datos de claves se redirigió demasiadas veces. Compruebe la URL e inténtelo de nuevo.",
@@ -413,7 +414,25 @@
         "disc_scan_all_titles_failed": "Error: no se ha podido escanear el disco para obtener la lista de títulos, por lo que `-t all` no puede saber qué títulos extraer. No se ha extraído nada: compruebe el disco y la unidad e inténtelo de nuevo.",
         "log_file_needs_value": "--log-file: requiere una ruta (p. ej. --log-file freemkv.log)",
         "mux_failed_generic": "Error de multiplexado (E{code}).",
-        "title_changed": "El título {num} ha cambiado entre escaneos: se esperaba {expected} y la unidad indica ahora {found}. La lista de títulos del disco ha cambiado durante la extracción; no se ha escrito nada para este título."
+        "title_changed": "El título {num} ha cambiado entre escaneos: se esperaba {expected} y la unidad indica ahora {found}. La lista de títulos del disco ha cambiado durante la extracción; no se ha escrito nada para este título.",
+        "vid_from_not_a_drive": "Error: --vid-from necesita la unidad que contiene el disco: disc:// (o disc://DEVICE), se recibió '{value}'.",
+        "vid_from_iso_only": "Error: --vid-from solo se aplica a una fuente de imagen iso://, se recibió '{source}'."
+    },
+    "error_cli": {
+        "E7000": "Este disco necesita claves de descifrado AACS (Blu-ray/UHD), pero no se encontró ninguna. Descargue una base de datos de claves con: freemkv update-keys --url <keydb-url>",
+        "E7013": "El descifrado falló — la clave recuperada no desbloqueó los datos de este disco. La clave puede ser incorrecta o estar desactualizada; actualícela con: freemkv update-keys --url <keydb-url>",
+        "E7026": "Este disco usa marca de agua forense AACS 2.1 (FMTS) y no hay ninguna clave de variante disponible, por lo que la película no se puede reconstruir sin huecos. Actualice su base de datos de claves con: freemkv update-keys --url <keydb-url>. Si ninguna fuente de claves incluye todavía este disco, cópielo a una imagen con 'freemkv disc:// iso://Disc.iso' y convierta la imagen cuando se publiquen las claves.",
+        "E8001": "La descarga de la base de datos de claves falló (HTTP {detail}). Vuelva a intentarlo, o ejecute: freemkv update-keys --url <keydb-url>",
+        "E8002": "La base de datos de claves está vacía o no es válida. Vuelva a descargarla con: freemkv update-keys --url <keydb-url>",
+        "E8004": "No se pudo leer la base de datos de claves. Vuelva a descargarla con: freemkv update-keys --url <keydb-url>"
+    },
+    "error_gui": {
+        "E7000": "Este disco necesita claves de descifrado AACS (Blu-ray/UHD), pero no se encontró ninguna. Descargue una base de datos de claves desde «Ajustes…» → «Actualizar keydb ahora».",
+        "E7013": "El descifrado falló — la clave recuperada no desbloqueó los datos de este disco. La clave puede ser incorrecta o estar desactualizada; actualícela desde «Ajustes…» → «Actualizar keydb ahora».",
+        "E7026": "Este disco usa marca de agua forense AACS 2.1 (FMTS) y no hay ninguna clave de variante disponible, por lo que la película no se puede reconstruir sin huecos. Actualice su base de datos de claves desde «Ajustes…» → «Actualizar keydb ahora». Si ninguna fuente de claves incluye todavía este disco, extraiga el disco a una imagen ISO y convierta la imagen cuando se publiquen las claves.",
+        "E8001": "La descarga de la base de datos de claves falló (HTTP {detail}). Vuelva a intentarlo desde «Ajustes…» → «Actualizar keydb ahora».",
+        "E8002": "La base de datos de claves está vacía o no es válida. Vuelva a descargarla desde «Ajustes…» → «Actualizar keydb ahora».",
+        "E8004": "No se pudo leer la base de datos de claves. Vuelva a descargarla desde «Ajustes…» → «Actualizar keydb ahora»."
     },
     "usage": {
         "synopsis_1": "Uso: freemkv <origen> <destino> [opciones]",
@@ -472,6 +491,7 @@
             "key_url_2": "                      Con --keydb se intenta primero el keydb (local",
             "key_url_3": "                      primero); sin él, es la única fuente de claves.",
             "key_auth": "      --key-auth TOKEN Token bearer para el servicio de claves (opcional).",
+            "vid_from": "      --vid-from DRIVE Para una imagen iso:// cuyas claves necesitan el ID de volumen del disco (E7034): léalo desde el disco en DRIVE (disc:// o disc://DEVICE); no se extrae nada de él.",
             "log_level_1": "      --log-level N   1=aviso 2=info 3=debug 4=trace. Desactivado por defecto —",
             "log_level_2": "                      el terminal permanece limpio. Escribe un registro",
             "log_level_3": "                      de diagnóstico en ./log.txt (usar 3 para informes de error).",
@@ -704,7 +724,8 @@
             "pick_not_local": "Solo se pueden usar archivos y carpetas locales: {p}",
             "reveal_failed": "No se ha podido abrir la carpeta en el Explorador de archivos: {e}",
             "scan_not_started": "No se ha podido iniciar el escaneo del origen: {detail}",
-            "scan_worker_stopped": "El proceso de escaneo del origen se ha detenido antes de devolver un resultado."
+            "scan_worker_stopped": "El proceso de escaneo del origen se ha detenido antes de devolver un resultado.",
+            "insert_disc_retry": "Inserte el disco en una unidad y vuelva a elegir «Iniciar extracción». Solo se lee su ID de volumen; no se vuelve a extraer."
         },
         "alert": {
             "rip_title": "Hay una extracción en curso.",
