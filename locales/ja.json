@@ -20,7 +20,7 @@
         "unknown": "不明",
         "share_hint": "'freemkv info disc:// --share' を実行してドライブ対応の拡充にご協力ください。",
         "share_usage": "使い方: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "ドライブプロファイルを取得・送信してドライブ対応を拡充する",
+        "share_desc": "ドライブプロファイルとディスク構造を取得・送信して対応を拡充する",
         "mask_desc": "シリアル番号をマスクする（英字 → A、数字 → 0）",
         "device_desc": "デバイスパスを指定する",
         "captured": "取得: GET_CONFIG 0x{code} {name}（{bytes} バイト）",
@@ -33,7 +33,6 @@
         "submit_profile": "プロファイル",
         "submit_features": "機能",
         "submit_packaging": "パッケージ化中...",
-        "zip_failed": "zip に失敗しました（{error}）。テキストのみ送信します",
         "submit_saved": "プロファイルを {dir}/ に保存しました",
         "submit_zip": "Zip アーカイブ: {path}",
         "submit_manual": "このプロファイルを提供するには、新しい issue を作成して以下のテキストを貼り付けてください:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "自動送信に失敗しました。手動で報告することもできます:",
         "submit_declined": "送信しませんでした。必要であれば手動で報告できます:",
         "submit_issue_title": "Issue タイトル: {title}",
-        "submit_issue_body": "Issue 本文（区切り線の間をすべてコピーしてください）:"
+        "submit_issue_body": "Issue 本文（区切り線の間をすべてコピーしてください）:",
+        "share_image_note": "iso:// および dir:// ソースでは --share はディスク構造を取得します。--mask と --verbose はそこでは効果がありません（ドライブがないため）。",
+        "structure_unreadable": "ディスク構造を取得できませんでした: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "ディスクをスキャン中...",
@@ -63,7 +65,17 @@
         "forced": "強制",
         "usage": "使い方: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "不明",
-        "file": "ファイル"
+        "file": "ファイル",
+        "capture_aacs_failed": "AACS 診断情報を取得できませんでした — AACS の処理に失敗しました: {error}",
+        "capture_aacs_hash": "AACS 診断情報: ディスクハッシュ {hash}（keydb の検索キー）を aacs.json に記録しました。",
+        "capture_aacs_no_hash": "AACS 診断情報を aacs.json に記録しました（ディスクハッシュは取得できません）。",
+        "capture_aacs_none": "このディスクには AACS がありません — 取得する AACS 診断情報はありません。",
+        "capture_all_skipped": "{count} 個のディスク構造ファイルをいずれも保存できませんでした。",
+        "capture_mkdir_failed": "{path} を作成できませんでした: {error}",
+        "capture_no_structure": "読み取り可能なディスク構造（BDMV / VIDEO_TS）が見つかりませんでした。共有するものはありません。",
+        "capture_skipped": "ディスクファイル {file} をスキップしました",
+        "capture_summary": "ディスク構造を取得しました: {files} ファイル（{bytes} バイト）。",
+        "capture_unsafe_name": "安全でないファイル名"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "ハンドシェイクに失敗しました",
         "verbose_handshake_hint": "ハンドシェイクに失敗した可能性があります — ホスト証明書がない、またはドライブが拒否しました",
         "mapfile_summary": "マップファイル: 良好 {good} GB、読み取り不能 {unreadable} MB、保留 {pending} MB",
+        "retry_with_multipass": "--multipass を付けて再実行するとさらに読み取りを試みます。マップファイルから再開します。",
         "nothing_to_patch": "パッチ対象がありません — すべてのセクタが良好です",
         "patch_start": "パッチ中: 良好 {good} GB、読み取り不能 {unreadable} MB、保留 {pending} MB",
         "patch_done": "パッチ完了: {recovered} MB を復元、読み取り不能 {unreadable} MB、保留 {pending} MB（{time} 秒、{speed} MB/s）",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "ディスクイメージファイルが、この取り込みに必要なセクターより手前で終わっているため、イメージが途中で切れているか不完全です。欠けている部分をゼロで埋める代わりに、読み取りを中止しました。ディスクからイメージを作り直してください。",
         "E7000": "このディスクには AACS 復号キー（Blu-ray/UHD）が必要ですが、見つかりませんでした。次のコマンドでキーデータベースをダウンロードしてください: freemkv update-keys --url <keydb-url>",
         "E7001": "ディスクのセキュリティ証明書が短すぎるか無効です。",
         "E7002": "ドライブがこのディスクのセキュアセッションを開始できませんでした — 別のプログラムが使用中の可能性があります。ディスクを使用している他のプログラムを閉じて再試行してください。",
@@ -273,8 +287,11 @@
         "E7026": "このディスクは AACS 2.1 のフォレンジック電子透かし（FMTS）を使用しており、対応するバリアントキーが利用できないため、映像を隙間なく再構築できません。キーデータベースを更新してください。",
         "E7027": "This DVD's copy protection could not be unlocked, so no title on it can be read. The disc may be damaged, or use a variant this version does not handle.",
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
-        "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
-        "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7029": "オンラインキーサービスがアクセストークンを拒否したため、応答がありませんでした。設定（またはコマンドラインの --key-auth）でキーサービスのトークンを修正して、もう一度お試しください。これはディスクにキーがないという意味ではありません。",
+        "E7030": "オンラインキーサービスがリクエスト数を制限しているため、応答がありませんでした。数分待ってからもう一度お試しいただくか、同時にリッピングするディスクの数を減らしてください。これはディスクにキーがないという意味ではありません。",
+        "E7031": "このディスクの AACS キーファイルが見つからないか、読み取れませんでした。ディスクをクリーニングしてもう一度お試しください。それでも失敗する場合は、ディスクが損傷している可能性があります。",
+        "E7032": "復号済みのディスクイメージを作成できません。このディスクには、どのタイトルからも再生されない暗号化されたストリームがあり、利用可能なキーのいずれもそれに一致しないため、イメージに暗号化された部分が残ってしまいます。代わりにタイトルを MKV にリッピングするか、暗号化されたコピーを保持してください。ディスクを raw コピーする（コマンドラインでは --raw、アプリでは「暗号化のまま保持（生パススルー）」）か、元のイメージをそのまま保持します。",
+        "E7033": "キーソースにホスト証明書が見つかりましたが、いずれも使用できません（破損しているか不完全です）。キーデータベースを更新してもう一度お試しください。",
         "E8000": "キーデータベースサーバーに接続できません: {detail}",
         "E8001": "キーデータベースのダウンロードに失敗しました（HTTP {detail}）。再試行するか、次を実行してください: freemkv update-keys --url <keydb-url>",
         "E8002": "キーデータベースが空または無効です。次のコマンドで再ダウンロードしてください: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "タイトル {num} は範囲外です（{count}）",
         "unknown_flag": "エラー: 不明なフラグ '{flag}' です。オプション一覧は 'freemkv help' を実行してください。",
         "usage_hint": "使い方: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\n詳細は 'freemkv help' を実行してください。",
+        "gui_not_in_build": "このビルドにはデスクトップアプリが含まれていません。freemkv アプリをインストールしてください: https://freemkv.org/download",
         "unknown_language": "不明な言語 '{tag}' です（このタイトルで利用可能: {available}）",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "出力がすでに完了または失敗した後に書き込みが行われたため、データを保存できませんでした。",
+        "E9072": "出力のヘッダーがすでに書き込まれた後にトラック情報が設定されたため、適用できませんでした。",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: 値 0 は範囲外 (1–4) です。無視します",
         "log_level_not_a_number": "--log-level: 1–4 の数値が必要ですが '{value}' が指定されました。無視します",
         "log_level_needs_value": "--log-level: 値が必要です (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: パス '{path}' が無効です — 診断ログは書き込まれません",
-        "language_needs_value": "{flag}: 言語コードが必要です (例: --language de)"
+        "language_needs_value": "{flag}: 言語コードが必要です (例: --language de)",
+        "disc_scan_all_titles_failed": "エラー: タイトル一覧を取得するためのディスクのスキャンができなかったため、`-t all` はどのタイトルをリッピングすべきか判断できません。何もリッピングされていません — ディスクとドライブを確認して再試行してください。",
+        "log_file_needs_value": "--log-file: パスが必要です（例: --log-file freemkv.log）",
+        "mux_failed_generic": "多重化に失敗しました（E{code}）。",
+        "title_changed": "タイトル {num} がスキャン間で変化しました: 期待値 {expected}、ドライブの現在の報告 {found}。リッピング中にディスクのタイトル一覧が変わりました。このタイトルには何も書き込まれていません。"
     },
     "usage": {
         "synopsis_1": "使い方: freemkv <source> <dest> [flags]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE 表示言語 (--lang も可): de や pt-BR などのコード、または auto。",
             "raw": "      --raw           復号をスキップ（生の暗号化出力）",
             "multipass": "      --multipass    マルチパス復元用にマップファイルを書き込み/更新",
-            "share": "      --share         ドライブプロファイルを送信（info disc:// のみ。リッピングでは -s は --subtitles を意味します）",
+            "share": "      --share         ドライブプロファイルとディスク構造を送信（info disc://、iso:// または dir://。リッピングでは -s は --subtitles を意味します）",
             "mask": "  -m, --mask          シリアル番号をマスク（--share と併用）",
             "force": "      --force        空でない dir:// ターゲットに展開（上書き）"
+        },
+        "exit_codes_header": "終了コード:",
+        "exit_code": {
+            "ok": "  0    成功。",
+            "failed": "  1    失敗: 使用可能な出力がない、またはその他のエラー。",
+            "usage": "  2    使用方法: コマンドまたはフラグが不正です（このテキストも表示されました）。",
+            "damaged": "  3    損傷（disc:// -> iso:// または disc:// -> null:// のみ）: 保持され使用可能ですが、一部のセクタが不足しています — 再実行 (--multipass) してさらに回復を試みてください。",
+            "interrupted": "  130  2 回目の Ctrl-C により即座に終了しました。"
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "ディスクを開く…",
             "exit": "終了",
             "copy": "コピー",
-            "select_all_text": "すべて選択"
+            "select_all_text": "すべて選択",
+            "cut": "切り取り",
+            "paste": "貼り付け"
         },
         "col": {
             "type": "種類",
@@ -570,7 +604,8 @@
             "test_connection": "接続をテスト",
             "keydb_no_url": "keydb 更新 URL が設定されていません。上に入力して「更新」をクリックしてください。",
             "keydb_updating": "keydb を更新中… ダウンロードしています。お待ちください。",
-            "lang_any": "すべて"
+            "lang_any": "すべて",
+            "notify_when_rip_finished": "リッピング完了時に通知する"
         },
         "btn": {
             "open_file": "ファイルまたは ISO を開く…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "閉じる",
             "browse": "…",
-            "show_explorer": "エクスプローラーで表示"
+            "show_explorer": "エクスプローラーで表示",
+            "show_folder": "フォルダに表示"
         },
         "group": {
             "output": "出力",
@@ -645,9 +681,21 @@
             "select_title_first": "リッピングするタイトルを 1 つ以上選択してください。",
             "video_only_warning": "音声・字幕トラックが選択されていません — 出力は映像のみになります。",
             "raw_iso_only": "「暗号化を保持 (raw)」はディスク全体 → ISO イメージ出力にのみ適用されます。この形式では無視します。",
+            "raw_disc_only": "「暗号化を保持 (raw)」はドライブ内のディスクにのみ適用されます。このソースでは無視します。",
             "no_drive": "光学ドライブが見つかりません。ディスクを入れた Blu-ray/DVD ドライブを接続してください。",
             "opening_drive": "{label} ({device}) を開いています",
-            "drives_found": "{n} 台のドライブが見つかりました: {list} — ディスクが入っているものを使用します"
+            "drives_found": "{n} 台のドライブが見つかりました: {list} — ディスクが入っているものを使用します",
+            "drop_unreadable": "ドロップされた項目を読み取れませんでした: {e}",
+            "eject_failed": "取り出しに失敗しました: {error}",
+            "ejected": "ディスクを取り出しました（{device}）。",
+            "ejecting": "ディスクを取り出しています…",
+            "open_folder_failed": "フォルダを開けませんでした: {e}",
+            "open_url_failed": "{url} を開けませんでした: {e}",
+            "pick_failed": "ファイル選択ダイアログを開けませんでした: {e}",
+            "pick_not_local": "ローカルのファイルとフォルダのみ使用できます: {p}",
+            "reveal_failed": "エクスプローラーでフォルダを開けませんでした: {e}",
+            "scan_not_started": "ソースのスキャンを開始できませんでした: {detail}",
+            "scan_worker_stopped": "ソースのスキャン処理が結果を返す前に停止しました。"
         },
         "alert": {
             "rip_title": "リッピングが進行中です。",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv 設定"
+        },
+        "notify": {
+            "rip_finished_title": "リッピング完了"
         }
     },
     "warn": {
         "no_lang_match_audio": "警告: タイトル {num}: '{requested}' に一致する音声トラックがありません (利用可能: {available}) — 映像のみを保持します。",
         "no_lang_match_subtitle": "警告: タイトル {num}: '{requested}' に一致する字幕トラックがありません (利用可能: {available}) — 映像のみを保持します。",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "注意: {count} 個のストリームを出力できなかったため除外しました:"
+    },
+    "share": {
+        "attach_zip": "プロファイルの zip が Issue 本文には大きすぎます — {path} を Issue に添付してください。",
+        "zip_failed": "プロファイルの zip を作成できませんでした: {error}"
     }
 }

@@ -1,5 +1,20 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- 36 keys freemkv looked up with an English fallback, translated in all 29 locales: `gui.log.*` (eject, folder/URL/file-chooser and scan failures), `gui.menu.cut`/`paste`, `gui.btn.show_folder`, `gui.notify.rip_finished_title`, `gui.set.notify_when_rip_finished`, `disc.capture_*`, `drive.share_image_note`/`structure_unreadable`/`submit_affirmative`, four `error.*`, `mux.undelivered_header`, `share.*`.
+- CI `freemkv-key-drift`: fails when a freemkv fallback key is missing from en.json or its English differs.
+
+### Changed
+
+- `drive.share_desc` and `usage.flag.share` describe `--share` on disc://, iso:// and dir:// (no longer disc:// only).
+
+### Removed
+
+- `drive.zip_failed`; freemkv uses `share.zip_failed`.
+
 ## [1.7.7] — 2026-09-26
 
 ### Maintenance

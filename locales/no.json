@@ -20,7 +20,7 @@
         "unknown": "Ukjent",
         "share_hint": "Kjør «freemkv info disc:// --share» for å bidra til å utvide stasjonsstøtten.",
         "share_usage": "Bruk: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Fang opp og send inn stasjonsprofil for å utvide stasjonsstøtten",
+        "share_desc": "Fang opp og send inn stasjonsprofil og platestruktur for å utvide støtten",
         "mask_desc": "Masker serienumre (bokstaver → A, sifre → 0)",
         "device_desc": "Angi enhetsbane",
         "captured": "Fanget opp: GET_CONFIG 0x{code} {name} ({bytes} byte)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funksjoner",
         "submit_packaging": "Pakker …",
-        "zip_failed": "zip mislyktes ({error}), sender kun tekst",
         "submit_saved": "Profil lagret til {dir}/",
         "submit_zip": "Zip-arkiv: {path}",
         "submit_manual": "For å bidra med denne profilen, opprett en ny sak og lim inn teksten under:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatisk innsending mislyktes; du kan fortsatt melde det inn manuelt:",
         "submit_declined": "Ikke sendt inn. Du kan fortsatt melde det inn manuelt om du vil:",
         "submit_issue_title": "Sakstittel: {title}",
-        "submit_issue_body": "Saksinnhold (kopier alt mellom linjene):"
+        "submit_issue_body": "Saksinnhold (kopier alt mellom linjene):",
+        "share_image_note": "For iso://- og dir://-kilder fanger --share opp platestrukturen; --mask og --verbose har ingen effekt der (det finnes ingen stasjon).",
+        "structure_unreadable": "Platestrukturen ble ikke fanget opp: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Skanner plate …",
@@ -63,7 +65,17 @@
         "forced": "tvunget",
         "usage": "Bruk: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Ukjent",
-        "file": "Fil"
+        "file": "Fil",
+        "capture_aacs_failed": "AACS-diagnostikk ble ikke fanget opp — AACS-trinnet mislyktes: {error}",
+        "capture_aacs_hash": "AACS-diagnostikk: platehash {hash} (oppslagsnøkkel for keydb) lagret i aacs.json.",
+        "capture_aacs_no_hash": "AACS-diagnostikk lagret i aacs.json (platehash utilgjengelig).",
+        "capture_aacs_none": "Ingen AACS på denne platen — ingen AACS-diagnostikk å fange opp.",
+        "capture_all_skipped": "Ingen av de {count} filene i platestrukturen kunne lagres.",
+        "capture_mkdir_failed": "Kunne ikke opprette {path}: {error}",
+        "capture_no_structure": "Fant ingen lesbar platestruktur (BDMV / VIDEO_TS); ingenting å dele.",
+        "capture_skipped": "Hoppet over platefilen {file}",
+        "capture_summary": "Platestruktur fanget opp: {files} filer ({bytes} byte).",
+        "capture_unsafe_name": "utrygt filnavn"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Håndtrykk mislyktes",
         "verbose_handshake_hint": "Håndtrykket kan ha mislyktes — ingen vertssertifikat, eller stasjonen avviste det",
         "mapfile_summary": "Kartfil: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
+        "retry_with_multipass": "Kjør på nytt med --multipass for å prøve å lese mer; det gjenopptar fra mapfilen.",
         "nothing_to_patch": "Ingenting å reparere — alle sektorer er gode",
         "patch_start": "Reparerer: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
         "patch_done": "Reparasjon fullført: gjenopprettet {recovered} MB, {unreadable} MB uleselige, {pending} MB ventende ({time}s, {speed} MB/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Diskbildefilen slutter før en sektor denne rippingen trenger, så bildet er avkortet eller ufullstendig. Lesingen ble stoppet i stedet for å fylle den manglende delen med nuller — lag et nytt diskbilde fra platen.",
         "E7000": "Denne platen trenger AACS-dekrypteringsnøkler (Blu-ray/UHD), men ingen ble funnet. Last ned en nøkkeldatabase med: freemkv update-keys --url <keydb-url>",
         "E7001": "Platens sikkerhetssertifikat er for kort eller ugyldig.",
         "E7002": "Stasjonen ville ikke starte en sikker økt for denne platen — den kan være i bruk av et annet program. Lukk alt annet som bruker platen, og prøv igjen.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Platens AACS-nøkkelfil mangler eller kunne ikke leses. Rengjør platen og prøv igjen; hvis det fortsatt mislykkes, kan platen være skadet.",
+        "E7032": "Et dekryptert platebilde kan ikke lages: en strøm på denne platen som ingen tittel spiller av, er kryptert, og ingen av de tilgjengelige nøklene passer til den, så bildet ville fortsatt inneholde krypterte deler. Ripp titlene til MKV i stedet, eller behold en kryptert kopi: kopier platen rått (--raw på kommandolinjen, eller «Behold kryptert (rå gjennomstrømming)» i appen), eller behold kildebildet som det er.",
+        "E7033": "Det ble funnet vertssertifikater i nøkkelkildene dine, men ingen av dem kan brukes (skadet eller ufullstendig). Oppdater nøkkeldatabasen din og prøv igjen.",
         "E8000": "Kan ikke koble til nøkkeldatabaseserveren: {detail}",
         "E8001": "Nedlasting av nøkkeldatabase mislyktes (HTTP {detail}). Prøv igjen, eller kjør: freemkv update-keys --url <keydb-url>",
         "E8002": "Nøkkeldatabasen er tom eller ugyldig. Last den ned på nytt med: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "Tittel {num} utenfor område ({count})",
         "unknown_flag": "Feil: ukjent flagg «{flag}». Prøv «freemkv help» for en liste over valg.",
         "usage_hint": "Bruk: freemkv <source> <dest> [flagg]\n       freemkv info <url>\n\nPrøv «freemkv help» for mer.",
+        "gui_not_in_build": "Skrivebordsappen er ikke med i denne versjonen. Installer freemkv-appen for å få den: https://freemkv.org/download",
         "unknown_language": "ukjent språk «{tag}» (tilgjengelig på denne tittelen: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Det ble skrevet til utdata etter at de allerede var fullført eller hadde feilet, så dataene kunne ikke lagres.",
+        "E9072": "Sporopplysningene ble satt etter at utdataenes header allerede var skrevet, så de kunne ikke tas i bruk.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: verdien 0 er utenfor området (1–4), ignorert",
         "log_level_not_a_number": "--log-level: forventet et tall 1–4, fikk '{value}', ignorert",
         "log_level_needs_value": "--log-level: krever en verdi (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ugyldig sti '{path}' — ingen diagnoselogg skrevet",
-        "language_needs_value": "{flag}: krever en språkkode (f.eks. --language de)"
+        "language_needs_value": "{flag}: krever en språkkode (f.eks. --language de)",
+        "disc_scan_all_titles_failed": "Feil: kunne ikke skanne platen for å liste titlene, så `-t all` kan ikke vite hvilke titler som skal rippes. Ingenting ble rippet — sjekk platen og stasjonen og prøv igjen.",
+        "log_file_needs_value": "--log-file: krever en sti (f.eks. --log-file freemkv.log)",
+        "mux_failed_generic": "Muxing mislyktes (E{code}).",
+        "title_changed": "Tittel {num} endret seg mellom skanningene: forventet {expected}, stasjonen rapporterer nå {found}. Tittellisten på platen endret seg under rippingen; ingenting ble skrevet for denne tittelen."
     },
     "usage": {
         "synopsis_1": "Bruk: freemkv <source> <dest> [flagg]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Grensesnittspråk (også --lang): en kode som de eller pt-BR, eller auto.",
             "raw": "      --raw           Hopp over dekryptering (rå kryptert utdata)",
             "multipass": "      --multipass    Skriv/oppdater kartfil for gjenoppretting over flere pass",
-            "share": "      --share         Send inn stasjonsprofil (kun info disc://; på en ripping betyr -s --subtitles)",
+            "share": "      --share         Send inn stasjonsprofil og platestruktur (info disc://, iso:// eller dir://; på en ripping betyr -s --subtitles)",
             "mask": "  -m, --mask          Masker serienumre (med --share)",
             "force": "      --force        Pakk ut i et ikke-tomt dir://-mål (overskriv)"
+        },
+        "exit_codes_header": "Avslutningskoder:",
+        "exit_code": {
+            "ok": "  0    Vellykket.",
+            "failed": "  1    Mislyktes: ingen brukbar utdata, eller en annen feil.",
+            "usage": "  2    Bruk: feil kommando eller flagg (denne teksten ble også skrevet ut).",
+            "damaged": "  3    Skadet (kun disc:// -> iso:// eller disc:// -> null://): beholdt og brukbar, men mangler noen sektorer — kjør på nytt (--multipass) for å prøve å hente mer.",
+            "interrupted": "  130  En andre Ctrl-C tvang frem en umiddelbar avslutning."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Åpne plate…",
             "exit": "Avslutt",
             "copy": "Kopier",
-            "select_all_text": "Merk alt"
+            "select_all_text": "Merk alt",
+            "cut": "Klipp ut",
+            "paste": "Lim inn"
         },
         "col": {
             "type": "Type",
@@ -570,7 +604,8 @@
             "test_connection": "Test tilkobling",
             "keydb_no_url": "Ingen keydb-oppdaterings-URL angitt — legg til en ovenfor og klikk Oppdater.",
             "keydb_updating": "Oppdaterer keydb… laster ned, vent litt.",
-            "lang_any": "Alle"
+            "lang_any": "Alle",
+            "notify_when_rip_finished": "Varsle når en ripping er ferdig"
         },
         "btn": {
             "open_file": "Åpne fil eller ISO …",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Lukk",
             "browse": "…",
-            "show_explorer": "Vis i Filutforsker"
+            "show_explorer": "Vis i Filutforsker",
+            "show_folder": "Vis i mappe"
         },
         "group": {
             "output": "Utdata",
@@ -645,9 +681,21 @@
             "select_title_first": "Velg minst én tittel å rippe.",
             "video_only_warning": "Ingen lyd- eller undertekstspor valgt — utdataene inneholder bare video.",
             "raw_iso_only": "«Behold kryptert (raw)» gjelder bare utdata Hele platen → ISO-bilde; ignoreres for dette formatet.",
+            "raw_disc_only": "«Behold kryptert (raw)» gjelder bare for en plate i stasjonen; ignoreres for denne kilden.",
             "no_drive": "Ingen optisk stasjon funnet. Koble til en Blu-ray-/DVD-stasjon med en plate.",
             "opening_drive": "Åpner {label} ({device})",
-            "drives_found": "{n} stasjoner funnet: {list} — bruker den med en plate"
+            "drives_found": "{n} stasjoner funnet: {list} — bruker den med en plate",
+            "drop_unreadable": "Kunne ikke lese det slupne elementet: {e}",
+            "eject_failed": "Utløsing mislyktes: {error}",
+            "ejected": "Platen ble løst ut ({device}).",
+            "ejecting": "Løser ut platen…",
+            "open_folder_failed": "Kunne ikke åpne mappen: {e}",
+            "open_url_failed": "Kunne ikke åpne {url}: {e}",
+            "pick_failed": "Kunne ikke åpne filvelgeren: {e}",
+            "pick_not_local": "Bare lokale filer og mapper kan brukes: {p}",
+            "reveal_failed": "Kunne ikke åpne mappen i Filutforsker: {e}",
+            "scan_not_started": "Kunne ikke starte skanningen av kilden: {detail}",
+            "scan_worker_stopped": "Skanneprosessen for kilden stoppet før den returnerte et resultat."
         },
         "alert": {
             "rip_title": "En ripping pågår.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv-innstillinger"
+        },
+        "notify": {
+            "rip_finished_title": "Ripping fullført"
         }
     },
     "warn": {
         "no_lang_match_audio": "advarsel: tittel {num}: ingen lydspor samsvarer med '{requested}' (tilgjengelig: {available}) — beholder bare video.",
         "no_lang_match_subtitle": "advarsel: tittel {num}: ingen undertekstspor samsvarer med '{requested}' (tilgjengelig: {available}) — beholder bare video.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Merk: {count} strøm(mer) kunne ikke leveres og ble utelatt:"
+    },
+    "share": {
+        "attach_zip": "Profil-zip-filen er for stor for saksteksten — legg ved {path} i saken.",
+        "zip_failed": "Kunne ikke lage profil-zip-filen: {error}"
     }
 }

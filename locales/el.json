@@ -20,7 +20,7 @@
         "unknown": "Άγνωστο",
         "share_hint": "Εκτελέστε 'freemkv info disc:// --share' για να βοηθήσετε στην επέκταση της υποστήριξης μονάδων.",
         "share_usage": "Χρήση: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Καταγραφή και υποβολή προφίλ μονάδας για επέκταση της υποστήριξης μονάδων",
+        "share_desc": "Καταγραφή και υποβολή προφίλ μονάδας και δομής δίσκου για επέκταση της υποστήριξης",
         "mask_desc": "Απόκρυψη σειριακών αριθμών (γράμματα → A, ψηφία → 0)",
         "device_desc": "Καθορισμός διαδρομής συσκευής",
         "captured": "Καταγράφηκε: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Προφίλ",
         "submit_features": "Λειτουργίες",
         "submit_packaging": "Δημιουργία πακέτου...",
-        "zip_failed": "Το zip απέτυχε ({error}), υποβάλλεται μόνο κείμενο",
         "submit_saved": "Το προφίλ αποθηκεύτηκε στο {dir}/",
         "submit_zip": "Αρχείο zip: {path}",
         "submit_manual": "Για να συνεισφέρετε αυτό το προφίλ, ανοίξτε ένα νέο ζήτημα και επικολλήστε το παρακάτω κείμενο:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Η αυτόματη υποβολή απέτυχε· μπορείτε να την υποβάλετε χειροκίνητα:",
         "submit_declined": "Δεν υποβλήθηκε. Μπορείτε να την υποβάλετε χειροκίνητα αν θέλετε:",
         "submit_issue_title": "Τίτλος ζητήματος: {title}",
-        "submit_issue_body": "Σώμα ζητήματος (αντιγράψτε τα πάντα μεταξύ των γραμμών):"
+        "submit_issue_body": "Σώμα ζητήματος (αντιγράψτε τα πάντα μεταξύ των γραμμών):",
+        "share_image_note": "Σε πηγές iso:// και dir:// το --share καταγράφει τη δομή του δίσκου· τα --mask και --verbose δεν έχουν καμία επίδραση εκεί (δεν υπάρχει μονάδα).",
+        "structure_unreadable": "Η δομή δίσκου δεν καταγράφηκε: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Σάρωση δίσκου...",
@@ -63,7 +65,17 @@
         "forced": "εξαναγκασμένος",
         "usage": "Χρήση: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Άγνωστη",
-        "file": "Αρχείο"
+        "file": "Αρχείο",
+        "capture_aacs_failed": "Τα διαγνωστικά AACS δεν καταγράφηκαν — το βήμα AACS απέτυχε: {error}",
+        "capture_aacs_hash": "Διαγνωστικά AACS: το hash δίσκου {hash} (κλειδί αναζήτησης στο keydb) καταγράφηκε στο aacs.json.",
+        "capture_aacs_no_hash": "Τα διαγνωστικά AACS καταγράφηκαν στο aacs.json (το hash δίσκου δεν είναι διαθέσιμο).",
+        "capture_aacs_none": "Δεν υπάρχει AACS σε αυτόν τον δίσκο — δεν υπάρχουν διαγνωστικά AACS για καταγραφή.",
+        "capture_all_skipped": "Κανένα από τα {count} αρχεία δομής δίσκου δεν ήταν δυνατό να αποθηκευτεί.",
+        "capture_mkdir_failed": "Δεν ήταν δυνατή η δημιουργία του {path}: {error}",
+        "capture_no_structure": "Δεν βρέθηκε αναγνώσιμη δομή δίσκου (BDMV / VIDEO_TS)· δεν υπάρχει τίποτα για κοινοποίηση.",
+        "capture_skipped": "Παραλείφθηκε το αρχείο δίσκου {file}",
+        "capture_summary": "Καταγράφηκε η δομή δίσκου: {files} αρχεία ({bytes} byte).",
+        "capture_unsafe_name": "μη ασφαλές όνομα αρχείου"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Η χειραψία απέτυχε",
         "verbose_handshake_hint": "Η χειραψία μπορεί να απέτυχε — χωρίς πιστοποιητικό host ή η μονάδα το απέρριψε",
         "mapfile_summary": "Αρχείο χάρτη: {good} GB καλά, {unreadable} MB μη αναγνώσιμα, {pending} MB σε εκκρεμότητα",
+        "retry_with_multipass": "Εκτελέστε ξανά με --multipass για να διαβάσετε περισσότερα· συνεχίζει από το αρχείο χάρτη.",
         "nothing_to_patch": "Τίποτα προς επιδιόρθωση — όλοι οι τομείς είναι καλοί",
         "patch_start": "Επιδιόρθωση: {good} GB καλά, {unreadable} MB μη αναγνώσιμα, {pending} MB σε εκκρεμότητα",
         "patch_done": "Η επιδιόρθωση ολοκληρώθηκε: ανακτήθηκαν {recovered} MB, {unreadable} MB μη αναγνώσιμα, {pending} MB σε εκκρεμότητα ({time}s, {speed} MB/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Το αρχείο εικόνας δίσκου τελειώνει πριν από έναν τομέα που χρειάζεται αυτή η αντιγραφή, οπότε η εικόνα είναι αποκομμένη ή ατελής. Η ανάγνωση σταμάτησε αντί να γεμίσει το τμήμα που λείπει με μηδενικά — δημιουργήστε νέα εικόνα από τον δίσκο.",
         "E7000": "Αυτός ο δίσκος χρειάζεται κλειδιά αποκρυπτογράφησης AACS (Blu-ray/UHD), αλλά δεν βρέθηκε κανένα. Κατεβάστε μια βάση δεδομένων κλειδιών με: freemkv update-keys --url <keydb-url>",
         "E7001": "Το πιστοποιητικό ασφαλείας του δίσκου είναι πολύ μικρό ή μη έγκυρο.",
         "E7002": "Η μονάδα δεν ξεκίνησε ασφαλή συνεδρία για αυτόν τον δίσκο — μπορεί να χρησιμοποιείται από άλλο πρόγραμμα. Κλείστε οτιδήποτε άλλο χρησιμοποιεί τον δίσκο και δοκιμάστε ξανά.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Το αρχείο κλειδιών AACS αυτού του δίσκου λείπει ή δεν ήταν δυνατό να διαβαστεί. Καθαρίστε τον δίσκο και δοκιμάστε ξανά· αν εξακολουθεί να αποτυγχάνει, ο δίσκος μπορεί να είναι κατεστραμμένος.",
+        "E7032": "Δεν είναι δυνατή η δημιουργία αποκρυπτογραφημένου ειδώλου δίσκου: μια ροή αυτού του δίσκου που δεν αναπαράγει κανένας τίτλος είναι κρυπτογραφημένη και κανένα από τα διαθέσιμα κλειδιά δεν ταιριάζει σε αυτήν, οπότε το είδωλο θα περιείχε ακόμη κρυπτογραφημένα τμήματα. Εξαγάγετε τους τίτλους σε MKV ή κρατήστε ένα κρυπτογραφημένο αντίγραφο: αντιγράψτε τον δίσκο ακατέργαστα (--raw στη γραμμή εντολών ή «Διατήρηση κρυπτογραφημένου (raw passthrough)» στην εφαρμογή) ή κρατήστε το είδωλο προέλευσης ως έχει.",
+        "E7033": "Βρέθηκαν πιστοποιητικά host στις πηγές κλειδιών σας, αλλά κανένα δεν είναι χρησιμοποιήσιμο (κατεστραμμένο ή ελλιπές). Ενημερώστε τη βάση δεδομένων κλειδιών σας και δοκιμάστε ξανά.",
         "E8000": "Δεν είναι δυνατή η σύνδεση με τον διακομιστή βάσης δεδομένων κλειδιών: {detail}",
         "E8001": "Η λήψη της βάσης δεδομένων κλειδιών απέτυχε (HTTP {detail}). Δοκιμάστε ξανά ή εκτελέστε: freemkv update-keys --url <keydb-url>",
         "E8002": "Η βάση δεδομένων κλειδιών είναι κενή ή μη έγκυρη. Κατεβάστε την ξανά με: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "Ο τίτλος {num} είναι εκτός εύρους ({count})",
         "unknown_flag": "Σφάλμα: άγνωστη σημαία '{flag}'. Δοκιμάστε 'freemkv help' για μια λίστα επιλογών.",
         "usage_hint": "Χρήση: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nΔοκιμάστε 'freemkv help' για περισσότερα.",
+        "gui_not_in_build": "Η εφαρμογή επιφάνειας εργασίας δεν περιλαμβάνεται σε αυτή την έκδοση. Εγκαταστήστε την εφαρμογή freemkv: https://freemkv.org/download",
         "unknown_language": "άγνωστη γλώσσα '{tag}' (διαθέσιμες σε αυτόν τον τίτλο: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Έγινε εγγραφή στην έξοδο αφού είχε ήδη ολοκληρωθεί ή αποτύχει, οπότε τα δεδομένα δεν ήταν δυνατό να αποθηκευτούν.",
+        "E9072": "Τα στοιχεία των κομματιών ορίστηκαν αφού είχε ήδη γραφτεί η κεφαλίδα της εξόδου, οπότε δεν ήταν δυνατό να εφαρμοστούν.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: η τιμή 0 είναι εκτός εύρους (1–4), αγνοήθηκε",
         "log_level_not_a_number": "--log-level: αναμενόταν αριθμός 1–4, ελήφθη '{value}', αγνοήθηκε",
         "log_level_needs_value": "--log-level: απαιτεί τιμή (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: μη έγκυρη διαδρομή '{path}' — δεν γράφτηκε αρχείο διαγνωστικών",
-        "language_needs_value": "{flag}: απαιτεί κωδικό γλώσσας (π.χ. --language de)"
+        "language_needs_value": "{flag}: απαιτεί κωδικό γλώσσας (π.χ. --language de)",
+        "disc_scan_all_titles_failed": "Σφάλμα: δεν ήταν δυνατή η σάρωση του δίσκου για την εμφάνιση των τίτλων του, οπότε το `-t all` δεν μπορεί να γνωρίζει ποιους τίτλους να εξαγάγει. Δεν εξήχθη τίποτα — ελέγξτε τον δίσκο και τη μονάδα και δοκιμάστε ξανά.",
+        "log_file_needs_value": "--log-file: απαιτεί διαδρομή (π.χ. --log-file freemkv.log)",
+        "mux_failed_generic": "Η πολυπλεξία απέτυχε (E{code}).",
+        "title_changed": "Ο τίτλος {num} άλλαξε μεταξύ σαρώσεων: αναμενόταν {expected}, η μονάδα αναφέρει τώρα {found}. Η λίστα τίτλων του δίσκου άλλαξε κατά την εξαγωγή· δεν γράφτηκε τίποτα για αυτόν τον τίτλο."
     },
     "usage": {
         "synopsis_1": "Χρήση: freemkv <source> <dest> [flags]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Γλώσσα διεπαφής (και --lang): κωδικός όπως de ή pt-BR, ή auto.",
             "raw": "      --raw           Παράλειψη αποκρυπτογράφησης (raw κρυπτογραφημένη έξοδος)",
             "multipass": "      --multipass    Εγγραφή/ενημέρωση αρχείου χάρτη για ανάκτηση πολλαπλών περασμάτων",
-            "share": "      --share         Υποβολή προφίλ μονάδας (μόνο info disc://· σε εξαγωγή, -s σημαίνει --subtitles)",
+            "share": "      --share         Υποβολή προφίλ μονάδας και δομής δίσκου (info disc://, iso:// ή dir://· σε εξαγωγή, -s σημαίνει --subtitles)",
             "mask": "  -m, --mask          Απόκρυψη σειριακών αριθμών (με --share)",
             "force": "      --force        Εξαγωγή σε μη κενό προορισμό dir:// (αντικατάσταση)"
+        },
+        "exit_codes_header": "Κωδικοί εξόδου:",
+        "exit_code": {
+            "ok": "  0    Επιτυχία.",
+            "failed": "  1    Απέτυχε: καμία χρησιμοποιήσιμη έξοδος, ή κάποιο άλλο σφάλμα.",
+            "usage": "  2    Χρήση: εσφαλμένη εντολή ή παράμετροι (αυτό το κείμενο εμφανίστηκε επίσης).",
+            "damaged": "  3    Κατεστραμμένο (μόνο disc:// -> iso:// ή disc:// -> null://): διατηρήθηκε και είναι χρησιμοποιήσιμο, αλλά λείπουν κάποιοι τομείς — εκτελέστε ξανά (--multipass) για να ανακτήσετε περισσότερα.",
+            "interrupted": "  130  Ένα δεύτερο Ctrl-C ανάγκασε άμεση έξοδο."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Άνοιγμα δίσκου…",
             "exit": "Έξοδος",
             "copy": "Αντιγραφή",
-            "select_all_text": "Επιλογή όλων"
+            "select_all_text": "Επιλογή όλων",
+            "cut": "Αποκοπή",
+            "paste": "Επικόλληση"
         },
         "col": {
             "type": "Τύπος",
@@ -570,7 +604,8 @@
             "test_connection": "Δοκιμή σύνδεσης",
             "keydb_no_url": "Δεν έχει οριστεί URL ενημέρωσης keydb — προσθέστε ένα παραπάνω και κάντε κλικ στην Ενημέρωση.",
             "keydb_updating": "Ενημέρωση keydb… γίνεται λήψη, περιμένετε.",
-            "lang_any": "Οποιαδήποτε"
+            "lang_any": "Οποιαδήποτε",
+            "notify_when_rip_finished": "Ειδοποίηση όταν ολοκληρωθεί μια εξαγωγή"
         },
         "btn": {
             "open_file": "Άνοιγμα αρχείου ή ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Κλείσιμο",
             "browse": "…",
-            "show_explorer": "Εμφάνιση στην Εξερεύνηση"
+            "show_explorer": "Εμφάνιση στην Εξερεύνηση",
+            "show_folder": "Εμφάνιση στον φάκελο"
         },
         "group": {
             "output": "Έξοδος",
@@ -645,9 +681,21 @@
             "select_title_first": "Επιλέξτε τουλάχιστον έναν τίτλο για αντιγραφή.",
             "video_only_warning": "Δεν επιλέχθηκαν κομμάτια ήχου ή υποτίτλων — η έξοδος θα περιέχει μόνο βίντεο.",
             "raw_iso_only": "Το «Διατήρηση κρυπτογραφημένου (raw)» ισχύει μόνο για έξοδο Ολόκληρος δίσκος → εικόνα ISO· θα αγνοηθεί για αυτή τη μορφή.",
+            "raw_disc_only": "Το «Διατήρηση κρυπτογραφημένου (raw)» ισχύει μόνο για δίσκο μέσα στη μονάδα· θα αγνοηθεί για αυτήν την πηγή.",
             "no_drive": "Δεν βρέθηκε οπτικός δίσκος. Συνδέστε μια μονάδα Blu-ray/DVD με δίσκο.",
             "opening_drive": "Άνοιγμα {label} ({device})",
-            "drives_found": "Βρέθηκαν {n} μονάδες: {list} — χρησιμοποιείται αυτή με δίσκο"
+            "drives_found": "Βρέθηκαν {n} μονάδες: {list} — χρησιμοποιείται αυτή με δίσκο",
+            "drop_unreadable": "Δεν ήταν δυνατή η ανάγνωση του στοιχείου που αποθέσατε: {e}",
+            "eject_failed": "Η εξαγωγή του δίσκου απέτυχε: {error}",
+            "ejected": "Ο δίσκος εξήχθη ({device}).",
+            "ejecting": "Εξαγωγή δίσκου…",
+            "open_folder_failed": "Δεν ήταν δυνατό το άνοιγμα του φακέλου: {e}",
+            "open_url_failed": "Δεν ήταν δυνατό το άνοιγμα του {url}: {e}",
+            "pick_failed": "Δεν ήταν δυνατό το άνοιγμα του παραθύρου επιλογής αρχείων: {e}",
+            "pick_not_local": "Μπορούν να χρησιμοποιηθούν μόνο τοπικά αρχεία και φάκελοι: {p}",
+            "reveal_failed": "Δεν ήταν δυνατό το άνοιγμα του φακέλου στην Εξερεύνηση αρχείων: {e}",
+            "scan_not_started": "Δεν ήταν δυνατή η έναρξη σάρωσης της πηγής: {detail}",
+            "scan_worker_stopped": "Η διεργασία σάρωσης της πηγής σταμάτησε πριν επιστρέψει αποτέλεσμα."
         },
         "alert": {
             "rip_title": "Μια εξαγωγή βρίσκεται σε εξέλιξη.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "Ρυθμίσεις freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Η εξαγωγή ολοκληρώθηκε"
         }
     },
     "warn": {
         "no_lang_match_audio": "προειδοποίηση: τίτλος {num}: κανένα κομμάτι ήχου δεν αντιστοιχεί στο '{requested}' (διαθέσιμα: {available}) — διατηρείται μόνο το βίντεο.",
         "no_lang_match_subtitle": "προειδοποίηση: τίτλος {num}: κανένα κομμάτι υποτίτλων δεν αντιστοιχεί στο '{requested}' (διαθέσιμα: {available}) — διατηρείται μόνο το βίντεο.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Σημείωση: {count} ροή(ές) δεν ήταν δυνατό να παραδοθούν και παραλείφθηκαν:"
+    },
+    "share": {
+        "attach_zip": "Το zip του προφίλ είναι πολύ μεγάλο για το κείμενο του ζητήματος — επισυνάψτε το {path} στο ζήτημα.",
+        "zip_failed": "Δεν ήταν δυνατή η δημιουργία του zip του προφίλ: {error}"
     }
 }

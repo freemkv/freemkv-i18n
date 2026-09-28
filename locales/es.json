@@ -20,7 +20,7 @@
         "unknown": "Desconocido",
         "share_hint": "Ejecute 'freemkv info disc:// --share' para ayudar a ampliar el soporte de unidades.",
         "share_usage": "Uso: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Capturar y enviar perfil de unidad para ampliar el soporte",
+        "share_desc": "Capturar y enviar perfil de unidad y estructura del disco para ampliar el soporte",
         "mask_desc": "Enmascarar números de serie (letras → A, dígitos → 0)",
         "device_desc": "Especificar ruta del dispositivo",
         "captured": "Capturado: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Perfil",
         "submit_features": "Características",
         "submit_packaging": "Empaquetando...",
-        "zip_failed": "zip falló ({error}), enviando solo texto",
         "submit_saved": "Perfil guardado en {dir}/",
         "submit_zip": "Archivo zip: {path}",
         "submit_manual": "Para aportar este perfil, abre una incidencia nueva y pega el texto siguiente:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Falló el envío automático; aún puede notificarlo a mano:",
         "submit_declined": "No enviado. Aún puede notificarlo a mano si lo desea:",
         "submit_issue_title": "Título de la incidencia: {title}",
-        "submit_issue_body": "Cuerpo de la incidencia (copia todo lo que hay entre las líneas):"
+        "submit_issue_body": "Cuerpo de la incidencia (copia todo lo que hay entre las líneas):",
+        "share_image_note": "Con orígenes iso:// y dir://, --share captura la estructura del disco; --mask y --verbose no tienen efecto en ellos (no hay unidad).",
+        "structure_unreadable": "Estructura del disco no capturada: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Escaneando disco...",
@@ -63,7 +65,17 @@
         "forced": "forzado",
         "usage": "Uso: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Desconocido",
-        "file": "Archivo"
+        "file": "Archivo",
+        "capture_aacs_failed": "Diagnóstico AACS no capturado (ha fallado el paso AACS): {error}",
+        "capture_aacs_hash": "Diagnóstico AACS: hash del disco {hash} (clave de búsqueda en keydb) guardado en aacs.json.",
+        "capture_aacs_no_hash": "Diagnóstico AACS guardado en aacs.json (hash del disco no disponible).",
+        "capture_aacs_none": "Este disco no tiene AACS: no hay diagnóstico AACS que capturar.",
+        "capture_all_skipped": "No se ha podido guardar ninguno de los {count} archivos de estructura del disco.",
+        "capture_mkdir_failed": "No se ha podido crear {path}: {error}",
+        "capture_no_structure": "No se ha encontrado ninguna estructura de disco legible (BDMV / VIDEO_TS); no hay nada que compartir.",
+        "capture_skipped": "Se ha omitido el archivo del disco {file}",
+        "capture_summary": "Estructura del disco capturada: {files} archivos ({bytes} bytes).",
+        "capture_unsafe_name": "nombre de archivo no seguro"
     },
     "stream": {
         "purpose": {
@@ -130,6 +142,7 @@
         "verbose_handshake_error": "Autenticación falló",
         "verbose_handshake_hint": "La autenticación pudo haber fallado — sin certificado host, o unidad rechazó",
         "mapfile_summary": "Mapfile: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
+        "retry_with_multipass": "Vuelva a ejecutarlo con --multipass para intentar leer más; se reanuda desde el mapfile.",
         "nothing_to_patch": "Nada que reparar — todos los sectores están buenos",
         "patch_start": "Reparando: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
         "patch_done": "Reparación: recuperados {recovered} MB, {unreadable} MB ilegibles, {pending} MB pendientes ({time}s, {speed} MB/s)",
@@ -222,6 +235,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "El archivo de imagen de disco termina antes de un sector que necesita esta extracción, por lo que la imagen está truncada o incompleta. La lectura se detuvo en lugar de rellenar con ceros la parte que falta: vuelva a crear la imagen a partir del disco.",
         "E7000": "Este disco necesita claves de descifrado AACS, pero ninguna fuente de claves las proporcionó.",
         "E7001": "Certificado de host AACS demasiado corto o inválido",
         "E7002": "Autenticación AACS falló — no se pudo asignar AGID",
@@ -252,6 +266,9 @@
         "E7028": "No se pudo contactar con el servicio de claves en línea, por lo que nunca dijo si este disco tiene clave. Suele ser algo temporal: espere unos minutos y vuelva a intentarlo. Todavía no busque una clave que falte; lo que estaba caído era el servicio, no el disco.",
         "E7029": "El servicio de claves en línea rechazó el token de acceso y por eso no respondió. Corrija el token del servicio de claves en los Ajustes (o --key-auth en la línea de comandos) y vuelva a intentarlo. Esto no significa que el disco no tenga clave.",
         "E7030": "El servicio de claves en línea está limitando las peticiones y por eso no respondió. Espere unos minutos y vuelva a intentarlo, o procese menos discos a la vez. Esto no significa que el disco no tenga clave.",
+        "E7031": "Falta el archivo de claves AACS de este disco o no se ha podido leer. Limpie el disco y vuelva a intentarlo; si sigue fallando, es posible que el disco esté dañado.",
+        "E7032": "No se puede crear una imagen de disco descifrada: un flujo de este disco que ningún título reproduce está cifrado y ninguna de las claves disponibles le corresponde, por lo que la imagen seguiría conteniendo partes cifradas. Extraiga los títulos a MKV o conserve una copia cifrada: copie el disco sin procesar (--raw en la línea de órdenes, o «Conservar cifrado (paso directo sin procesar)» en la aplicación), o conserve la imagen de origen tal cual.",
+        "E7033": "Se encontraron certificados de host en sus fuentes de claves, pero ninguno es utilizable (dañado o incompleto). Actualice su base de datos de claves y vuelva a intentarlo.",
         "E8000": "No se puede conectar al servidor KEYDB: {detail}",
         "E8001": "Descarga de KEYDB falló (HTTP {detail})",
         "E8002": "KEYDB está vacío o es inválido",
@@ -358,6 +375,7 @@
         "title_out_of_range": "Título {num} fuera de rango ({count})",
         "unknown_flag": "Error: opcion desconocida '{flag}'. Use 'freemkv help' para ver las opciones.",
         "usage_hint": "Uso: freemkv <fuente> <destino> [opciones]\n       freemkv info <url>\n\nUse 'freemkv help' para más información.",
+        "gui_not_in_build": "La aplicación de escritorio no está incluida en esta versión. Instale la aplicación freemkv para obtenerla: https://freemkv.org/download",
         "unknown_language": "idioma desconocido '{tag}' (disponibles en este título: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -376,12 +394,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Se intentó escribir en la salida después de que ya hubiera terminado o fallado, por lo que no se pudieron guardar los datos.",
+        "E9072": "Los datos de las pistas se establecieron después de que ya se hubiera escrito la cabecera de la salida, por lo que no se pudieron aplicar.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 está fuera de rango (1–4), ignorado",
         "log_level_not_a_number": "--log-level: se esperaba un número 1–4, se recibió '{value}', ignorado",
         "log_level_needs_value": "--log-level: requiere un valor (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ruta no válida '{path}' — no se escribió ningún registro de diagnóstico",
-        "language_needs_value": "{flag}: requiere un código de idioma (p. ej. --language de)"
+        "language_needs_value": "{flag}: requiere un código de idioma (p. ej. --language de)",
+        "disc_scan_all_titles_failed": "Error: no se ha podido escanear el disco para obtener la lista de títulos, por lo que `-t all` no puede saber qué títulos extraer. No se ha extraído nada: compruebe el disco y la unidad e inténtelo de nuevo.",
+        "log_file_needs_value": "--log-file: requiere una ruta (p. ej. --log-file freemkv.log)",
+        "mux_failed_generic": "Error de multiplexado (E{code}).",
+        "title_changed": "El título {num} ha cambiado entre escaneos: se esperaba {expected} y la unidad indica ahora {found}. La lista de títulos del disco ha cambiado durante la extracción; no se ha escrito nada para este título."
     },
     "usage": {
         "synopsis_1": "Uso: freemkv <origen> <destino> [opciones]",
@@ -447,7 +471,7 @@
             "language": "      --language CODE Idioma de la interfaz (también --lang): un código como de o pt-BR, o auto.",
             "raw": "      --raw           Omitir descifrado (salida cifrada sin procesar)",
             "multipass": "      --multipass    Escribir/actualizar mapfile para recuperación multipaso",
-            "share": "      --share         Enviar perfil de unidad (solo info disc://; en un rip, -s significa --subtitles)",
+            "share": "      --share         Enviar perfil de unidad y estructura del disco (info disc://, iso:// o dir://; en una extracción, -s significa --subtitles)",
             "mask": "  -m, --mask          Enmascarar números de serie (con --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -459,7 +483,15 @@
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
         },
-        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help."
+        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
+        "exit_codes_header": "Códigos de salida:",
+        "exit_code": {
+            "ok": "  0    Éxito.",
+            "failed": "  1    Fallido: ninguna salida utilizable, u otro error.",
+            "usage": "  2    Uso: comando o indicadores incorrectos (este texto también se imprimió).",
+            "damaged": "  3    Dañado (solo disc:// -> iso:// o disc:// -> null://): se conserva y es utilizable, pero faltan algunos sectores — vuelva a ejecutarlo (--multipass) para intentar recuperar más.",
+            "interrupted": "  130  Un segundo Ctrl-C forzó una salida inmediata."
+        }
     },
     "help": {
         "unknown_command": "Unknown command '{cmd}'. Try 'freemkv help' for a list of commands.",
@@ -509,7 +541,9 @@
             "open_disc": "Abrir disco…",
             "exit": "Salir",
             "copy": "Copiar",
-            "select_all_text": "Seleccionar todo"
+            "select_all_text": "Seleccionar todo",
+            "cut": "Cortar",
+            "paste": "Pegar"
         },
         "col": {
             "type": "Tipo",
@@ -570,7 +604,8 @@
             "test_connection": "Probar conexión",
             "keydb_no_url": "No se ha establecido ninguna URL de actualización de keydb: añada una arriba y haga clic en Actualizar.",
             "keydb_updating": "Actualizando keydb… descargando, espere.",
-            "lang_any": "Cualquiera"
+            "lang_any": "Cualquiera",
+            "notify_when_rip_finished": "Avisar al terminar una extracción"
         },
         "btn": {
             "open_file": "Abrir archivo o ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Cerrar",
             "browse": "…",
-            "show_explorer": "Mostrar en el Explorador"
+            "show_explorer": "Mostrar en el Explorador",
+            "show_folder": "Mostrar en la carpeta"
         },
         "group": {
             "output": "Salida",
@@ -645,9 +681,21 @@
             "select_title_first": "Seleccione al menos un título para extraer.",
             "video_only_warning": "No hay pistas de audio ni subtítulos seleccionadas — la salida solo contendrá vídeo.",
             "raw_iso_only": "«Mantener cifrado (raw)» solo se aplica a la salida Disco completo → imagen ISO; se ignora para este formato.",
+            "raw_disc_only": "«Mantener cifrado (raw)» solo se aplica a un disco en la unidad; se ignora para esta fuente.",
             "no_drive": "No se encontró ninguna unidad óptica. Conecte una unidad Blu-ray/DVD con un disco.",
             "opening_drive": "Abriendo {label} ({device})",
-            "drives_found": "{n} unidades encontradas: {list} — se usará la que tiene un disco"
+            "drives_found": "{n} unidades encontradas: {list} — se usará la que tiene un disco",
+            "drop_unreadable": "No se ha podido leer el elemento soltado: {e}",
+            "eject_failed": "Error al expulsar: {error}",
+            "ejected": "Disco expulsado ({device}).",
+            "ejecting": "Expulsando el disco…",
+            "open_folder_failed": "No se ha podido abrir la carpeta: {e}",
+            "open_url_failed": "No se ha podido abrir {url}: {e}",
+            "pick_failed": "No se ha podido abrir el selector de archivos: {e}",
+            "pick_not_local": "Solo se pueden usar archivos y carpetas locales: {p}",
+            "reveal_failed": "No se ha podido abrir la carpeta en el Explorador de archivos: {e}",
+            "scan_not_started": "No se ha podido iniciar el escaneo del origen: {detail}",
+            "scan_worker_stopped": "El proceso de escaneo del origen se ha detenido antes de devolver un resultado."
         },
         "alert": {
             "rip_title": "Hay una extracción en curso.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "Ajustes de freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Extracción completada"
         }
     },
     "warn": {
         "no_lang_match_audio": "advertencia: título {num}: ninguna pista de audio coincide con '{requested}' (disponible: {available}) — se conserva solo el vídeo.",
         "no_lang_match_subtitle": "advertencia: título {num}: ninguna pista de subtítulos coincide con '{requested}' (disponible: {available}) — se conserva solo el vídeo.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Nota: no se han podido entregar {count} pista(s) y se han omitido:"
+    },
+    "share": {
+        "attach_zip": "El zip del perfil es demasiado grande para el texto de la incidencia: adjunte {path} a la incidencia.",
+        "zip_failed": "No se ha podido crear el zip del perfil: {error}"
     }
 }

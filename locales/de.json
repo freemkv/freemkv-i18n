@@ -20,7 +20,7 @@
         "unknown": "Unbekannt",
         "share_hint": "Fuehren Sie 'freemkv info disc:// --share' aus, um die Laufwerk-Unterstuetzung zu erweitern.",
         "share_usage": "Verwendung: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Laufwerkprofil erfassen und einreichen, um die Laufwerk-Unterstuetzung zu erweitern",
+        "share_desc": "Laufwerkprofil und Disc-Struktur erfassen und einreichen, um die Unterstützung zu erweitern",
         "mask_desc": "Seriennummern maskieren (Buchstaben → A, Ziffern → 0)",
         "device_desc": "Geraetepfad angeben",
         "captured": "Erfasst: GET_CONFIG 0x{code} {name} ({bytes} Bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funktionen",
         "submit_packaging": "Wird verpackt...",
-        "zip_failed": "zip fehlgeschlagen ({error}), nur Text wird uebermittelt",
         "submit_saved": "Profil gespeichert unter {dir}/",
         "submit_zip": "Zip-Archiv: {path}",
         "submit_manual": "Um dieses Profil beizutragen, öffne ein neues Issue und füge den folgenden Text ein:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatisches Senden fehlgeschlagen; Sie können es weiterhin von Hand melden:",
         "submit_declined": "Nicht gesendet. Sie können es bei Bedarf weiterhin von Hand melden:",
         "submit_issue_title": "Issue-Titel: {title}",
-        "submit_issue_body": "Issue-Text (alles zwischen den Linien kopieren):"
+        "submit_issue_body": "Issue-Text (alles zwischen den Linien kopieren):",
+        "share_image_note": "Bei iso://- und dir://-Quellen erfasst --share die Disc-Struktur; --mask und --verbose haben dort keine Wirkung (es gibt kein Laufwerk).",
+        "structure_unreadable": "Disc-Struktur nicht erfasst: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Disc wird gescannt...",
@@ -63,7 +65,17 @@
         "forced": "erzwungen",
         "usage": "Verwendung: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Unbekannt",
-        "file": "Datei"
+        "file": "Datei",
+        "capture_aacs_failed": "AACS-Diagnose nicht erfasst — der AACS-Schritt ist fehlgeschlagen: {error}",
+        "capture_aacs_hash": "AACS-Diagnose: Disc-Hash {hash} (Suchschlüssel für keydb) in aacs.json gespeichert.",
+        "capture_aacs_no_hash": "AACS-Diagnose in aacs.json gespeichert (Disc-Hash nicht verfügbar).",
+        "capture_aacs_none": "Kein AACS auf dieser Disc — keine AACS-Diagnose zu erfassen.",
+        "capture_all_skipped": "Keine der {count} Disc-Strukturdateien konnte gespeichert werden.",
+        "capture_mkdir_failed": "{path} konnte nicht erstellt werden: {error}",
+        "capture_no_structure": "Keine lesbare Disc-Struktur (BDMV / VIDEO_TS) gefunden; nichts zu teilen.",
+        "capture_skipped": "Disc-Datei {file} übersprungen",
+        "capture_summary": "Disc-Struktur erfasst: {files} Dateien ({bytes} Bytes).",
+        "capture_unsafe_name": "unsicherer Dateiname"
     },
     "stream": {
         "purpose": {
@@ -130,6 +142,7 @@
         "verbose_handshake_error": "Handshake fehlgeschlagen",
         "verbose_handshake_hint": "Handshake moeglicherweise fehlgeschlagen — kein Host-Zertifikat, oder Laufwerk hat abgelehnt",
         "mapfile_summary": "Mapfile: {good} GB gut, {unreadable} MB unlesbar, {pending} MB ausstehend",
+        "retry_with_multipass": "Erneut mit --multipass ausführen, um mehr zu lesen; es setzt anhand der Mapfile fort.",
         "nothing_to_patch": "Nichts zu patchen — alle Sektoren sind gut",
         "patch_start": "Patchen: {good} GB gut, {unreadable} MB unlesbar, {pending} MB ausstehend",
         "patch_done": "Patch fertig: {recovered} MB wiederhergestellt, {unreadable} MB unlesbar, {pending} MB ausstehend ({time}s, {speed} MB/s)",
@@ -222,6 +235,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Die Disc-Abbilddatei endet vor einem Sektor, den dieser Rip benötigt — das Abbild ist abgeschnitten oder unvollständig. Das Lesen wurde gestoppt, statt den fehlenden Teil mit Nullen aufzufüllen. Erstellen Sie das Abbild neu von der Disc.",
         "E7000": "Diese Disc benötigt AACS-Entschlüsselungsschlüssel, aber keine Schlüsselquelle hat sie bereitgestellt.",
         "E7001": "AACS-Host-Zertifikat zu kurz oder ungueltig",
         "E7002": "AACS-Handshake fehlgeschlagen — AGID konnte nicht zugewiesen werden",
@@ -252,6 +266,9 @@
         "E7028": "Der Online-Schlüsseldienst war nicht erreichbar und hat daher nie beantwortet, ob es für diese Disc einen Schlüssel gibt. Das ist meist vorübergehend — warten Sie einige Minuten und versuchen Sie es erneut. Suchen Sie noch nicht nach einem fehlenden Schlüssel: der Dienst war ausgefallen, nicht die Disc.",
         "E7029": "Der Online-Schlüsseldienst hat das Zugriffstoken abgelehnt und deshalb nicht geantwortet. Korrigieren Sie das Token des Schlüsseldienstes in den Einstellungen (oder --key-auth auf der Kommandozeile) und versuchen Sie es erneut. Das bedeutet nicht, dass die Disc keinen Schlüssel hat.",
         "E7030": "Der Online-Schlüsseldienst drosselt die Anfragen und hat deshalb nicht geantwortet. Warten Sie einige Minuten und versuchen Sie es erneut, oder verarbeiten Sie weniger Discs gleichzeitig. Das bedeutet nicht, dass die Disc keinen Schlüssel hat.",
+        "E7031": "Die AACS-Schlüsseldatei dieser Disc fehlt oder konnte nicht gelesen werden. Reinigen Sie die Disc und versuchen Sie es erneut; schlägt es weiterhin fehl, ist die Disc möglicherweise beschädigt.",
+        "E7032": "Ein entschlüsseltes Disc-Image kann nicht erstellt werden: Ein Stream auf dieser Disc, den kein Titel abspielt, ist verschlüsselt, und keiner der verfügbaren Schlüssel passt dazu, sodass das Image noch verschlüsselte Teile enthielte. Rippen Sie die Titel stattdessen als MKV oder behalten Sie eine verschlüsselte Kopie: Kopieren Sie die Disc roh (--raw in der Befehlszeile oder „Verschlüsselt behalten (Raw-Durchleitung)“ in der App) oder behalten Sie das Quell-Image unverändert.",
+        "E7033": "In Ihren Schlüsselquellen wurden Host-Zertifikate gefunden, aber keines davon ist verwendbar (beschädigt oder unvollständig). Aktualisieren Sie Ihre Schlüsseldatenbank und versuchen Sie es erneut.",
         "E8000": "Verbindung zum KEYDB-Server nicht moeglich: {detail}",
         "E8001": "KEYDB-Download fehlgeschlagen (HTTP {detail})",
         "E8002": "KEYDB ist leer oder ungueltig",
@@ -358,6 +375,7 @@
         "title_out_of_range": "Titel {num} außerhalb des Bereichs ({count})",
         "unknown_flag": "Fehler: unbekannte Option '{flag}'. Mit 'freemkv help' werden alle Optionen angezeigt.",
         "usage_hint": "Verwendung: freemkv <quelle> <ziel> [optionen]\n       freemkv info <url>\n\nVerwenden Sie 'freemkv help' für weitere Informationen.",
+        "gui_not_in_build": "Die Desktop-App ist in diesem Build nicht enthalten. Installieren Sie die freemkv-App: https://freemkv.org/download",
         "unknown_language": "unbekannte Sprache '{tag}' (auf diesem Titel verfügbar: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -376,12 +394,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "In die Ausgabe wurde geschrieben, nachdem sie bereits abgeschlossen oder fehlgeschlagen war — die Daten konnten nicht gespeichert werden.",
+        "E9072": "Spurangaben wurden gesetzt, nachdem der Header der Ausgabe bereits geschrieben war — sie konnten nicht übernommen werden.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: Wert 0 liegt außerhalb des Bereichs (1–4), ignoriert",
         "log_level_not_a_number": "--log-level: Zahl 1–4 erwartet, '{value}' erhalten, ignoriert",
         "log_level_needs_value": "--log-level: benötigt einen Wert (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ungültiger Pfad '{path}' — kein Diagnoseprotokoll geschrieben",
-        "language_needs_value": "{flag}: benötigt einen Sprachcode (z. B. --language de)"
+        "language_needs_value": "{flag}: benötigt einen Sprachcode (z. B. --language de)",
+        "disc_scan_all_titles_failed": "Fehler: Die Disc konnte nicht gescannt werden, um ihre Titel aufzulisten, daher kann `-t all` nicht wissen, welche Titel gerippt werden sollen. Es wurde nichts gerippt — prüfen Sie Disc und Laufwerk und versuchen Sie es erneut.",
+        "log_file_needs_value": "--log-file: benötigt einen Pfad (z. B. --log-file freemkv.log)",
+        "mux_failed_generic": "Muxen fehlgeschlagen (E{code}).",
+        "title_changed": "Titel {num} hat sich zwischen den Scans geändert: erwartet {expected}, das Laufwerk meldet jetzt {found}. Die Titelliste der Disc hat sich während des Rips geändert; für diesen Titel wurde nichts geschrieben."
     },
     "usage": {
         "synopsis_1": "Verwendung: freemkv <quelle> <ziel> [optionen]",
@@ -447,7 +471,7 @@
             "language": "      --language CODE Oberflächensprache (auch --lang): ein Code wie de oder pt-BR, oder auto.",
             "raw": "      --raw           Entschlüsselung überspringen (raw verschlüsselte Ausgabe)",
             "multipass": "      --multipass    Mapfile für Mehrpass-Wiederherstellung schreiben/aktualisieren",
-            "share": "      --share         Laufwerkprofil einreichen (nur info disc://; bei einem Rip bedeutet -s --subtitles)",
+            "share": "      --share         Laufwerkprofil und Disc-Struktur einreichen (info disc://, iso:// oder dir://; bei einem Rip bedeutet -s --subtitles)",
             "mask": "  -m, --mask          Seriennummern maskieren (mit --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -459,7 +483,15 @@
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
         },
-        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help."
+        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
+        "exit_codes_header": "Exit-Codes:",
+        "exit_code": {
+            "ok": "  0    Erfolg.",
+            "failed": "  1    Fehlgeschlagen: keine nutzbare Ausgabe, oder ein anderer Fehler.",
+            "usage": "  2    Verwendung: falscher Befehl oder falsche Flags (dieser Text wurde auch ausgegeben).",
+            "damaged": "  3    Beschädigt (nur disc:// -> iso:// oder disc:// -> null://): behalten und nutzbar, aber einige Sektoren fehlen — erneut ausführen (--multipass), um mehr wiederherzustellen.",
+            "interrupted": "  130  Ein zweites Ctrl-C erzwang einen sofortigen Abbruch."
+        }
     },
     "help": {
         "unknown_command": "Unknown command '{cmd}'. Try 'freemkv help' for a list of commands.",
@@ -509,7 +541,9 @@
             "open_disc": "Disc öffnen…",
             "exit": "Beenden",
             "copy": "Kopieren",
-            "select_all_text": "Alles auswählen"
+            "select_all_text": "Alles auswählen",
+            "cut": "Ausschneiden",
+            "paste": "Einfügen"
         },
         "col": {
             "type": "Typ",
@@ -570,7 +604,8 @@
             "test_connection": "Verbindung testen",
             "keydb_no_url": "Keine keydb-Update-URL festgelegt — oben eine hinzufügen und auf Aktualisieren klicken.",
             "keydb_updating": "keydb wird aktualisiert… Download läuft, bitte warten.",
-            "lang_any": "Beliebig"
+            "lang_any": "Beliebig",
+            "notify_when_rip_finished": "Benachrichtigen, wenn ein Rip abgeschlossen ist"
         },
         "btn": {
             "open_file": "Datei oder ISO öffnen…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Schließen",
             "browse": "…",
-            "show_explorer": "Im Explorer anzeigen"
+            "show_explorer": "Im Explorer anzeigen",
+            "show_folder": "Im Ordner anzeigen"
         },
         "group": {
             "output": "Ausgabe",
@@ -645,9 +681,21 @@
             "select_title_first": "Wählen Sie mindestens einen Titel zum Rippen aus.",
             "video_only_warning": "Keine Ton- oder Untertitelspuren ausgewählt — die Ausgabe enthält nur Video.",
             "raw_iso_only": "„Verschlüsselt beibehalten (raw)“ gilt nur für die Ausgabe „Ganze Disc → ISO-Abbild“; für dieses Format wird es ignoriert.",
+            "raw_disc_only": "„Verschlüsselt beibehalten (raw)“ gilt nur für eine Disc im Laufwerk; für diese Quelle wird es ignoriert.",
             "no_drive": "Kein optisches Laufwerk gefunden. Schließen Sie ein Blu-ray-/DVD-Laufwerk mit einer Disc an.",
             "opening_drive": "{label} ({device}) wird geöffnet",
-            "drives_found": "{n} Laufwerke gefunden: {list} — es wird das mit einer Disc verwendet"
+            "drives_found": "{n} Laufwerke gefunden: {list} — es wird das mit einer Disc verwendet",
+            "drop_unreadable": "Das abgelegte Element konnte nicht gelesen werden: {e}",
+            "eject_failed": "Auswerfen fehlgeschlagen: {error}",
+            "ejected": "Disc ausgeworfen ({device}).",
+            "ejecting": "Disc wird ausgeworfen…",
+            "open_folder_failed": "Der Ordner konnte nicht geöffnet werden: {e}",
+            "open_url_failed": "{url} konnte nicht geöffnet werden: {e}",
+            "pick_failed": "Die Dateiauswahl konnte nicht geöffnet werden: {e}",
+            "pick_not_local": "Nur lokale Dateien und Ordner können verwendet werden: {p}",
+            "reveal_failed": "Der Ordner konnte nicht im Explorer geöffnet werden: {e}",
+            "scan_not_started": "Scan der Quelle konnte nicht gestartet werden: {detail}",
+            "scan_worker_stopped": "Der Scan-Prozess für die Quelle wurde beendet, bevor er ein Ergebnis lieferte."
         },
         "alert": {
             "rip_title": "Ein Rip läuft gerade.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv-Einstellungen"
+        },
+        "notify": {
+            "rip_finished_title": "Rip abgeschlossen"
         }
     },
     "warn": {
         "no_lang_match_audio": "Warnung: Titel {num}: keine Tonspur entspricht '{requested}' (verfügbar: {available}) — nur Video wird beibehalten.",
         "no_lang_match_subtitle": "Warnung: Titel {num}: keine Untertitelspur entspricht '{requested}' (verfügbar: {available}) — nur Video wird beibehalten.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Hinweis: {count} Stream(s) konnten nicht übernommen werden und wurden ausgelassen:"
+    },
+    "share": {
+        "attach_zip": "Das Profil-Zip ist zu groß für den Issue-Text — hängen Sie {path} an das Issue an.",
+        "zip_failed": "Das Profil-Zip konnte nicht erstellt werden: {error}"
     }
 }

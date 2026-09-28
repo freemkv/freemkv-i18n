@@ -20,7 +20,7 @@
         "unknown": "未知",
         "share_hint": "运行 'freemkv info disc:// --share' 以帮助扩展驱动器支持。",
         "share_usage": "用法：freemkv info disc:// [--share] [--mask]",
-        "share_desc": "采集并提交驱动器配置以扩展驱动器支持",
+        "share_desc": "采集并提交驱动器配置和光盘结构以扩展支持",
         "mask_desc": "掩码序列号（字母 → A，数字 → 0）",
         "device_desc": "指定设备路径",
         "captured": "已采集：GET_CONFIG 0x{code} {name}（{bytes} 字节）",
@@ -33,7 +33,6 @@
         "submit_profile": "配置类型",
         "submit_features": "特性",
         "submit_packaging": "正在打包……",
-        "zip_failed": "zip 失败（{error}），仅提交文本",
         "submit_saved": "配置已保存至 {dir}/",
         "submit_zip": "Zip 压缩包：{path}",
         "submit_manual": "要贡献此配置，请新建一个 issue 并粘贴下方文本：",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "自动提交失败；你仍然可以手动提交：",
         "submit_declined": "未提交。如果愿意，你仍然可以手动提交：",
         "submit_issue_title": "Issue 标题：{title}",
-        "submit_issue_body": "Issue 正文（复制分割线之间的全部内容）："
+        "submit_issue_body": "Issue 正文（复制分割线之间的全部内容）：",
+        "share_image_note": "对于 iso:// 和 dir:// 源，--share 会采集光盘结构；--mask 和 --verbose 在此无效（没有驱动器）。",
+        "structure_unreadable": "未采集光盘结构：{err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "正在扫描光盘……",
@@ -63,7 +65,17 @@
         "forced": "强制",
         "usage": "用法：freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "未知",
-        "file": "文件"
+        "file": "文件",
+        "capture_aacs_failed": "未采集 AACS 诊断信息 —— AACS 步骤失败：{error}",
+        "capture_aacs_hash": "AACS 诊断：光盘哈希 {hash}（keydb 查找键）已记录到 aacs.json。",
+        "capture_aacs_no_hash": "AACS 诊断信息已记录到 aacs.json（光盘哈希不可用）。",
+        "capture_aacs_none": "此光盘没有 AACS —— 无 AACS 诊断信息可采集。",
+        "capture_all_skipped": "{count} 个光盘结构文件均无法保存。",
+        "capture_mkdir_failed": "无法创建 {path}：{error}",
+        "capture_no_structure": "未找到可读取的光盘结构（BDMV / VIDEO_TS）；没有可分享的内容。",
+        "capture_skipped": "已跳过光盘文件 {file}",
+        "capture_summary": "已采集光盘结构：{files} 个文件（{bytes} 字节）。",
+        "capture_unsafe_name": "不安全的文件名"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "握手失败",
         "verbose_handshake_hint": "握手可能已失败 —— 无主机证书，或被驱动器拒绝",
         "mapfile_summary": "映射文件：{good} GB 良好，{unreadable} MB 不可读，{pending} MB 待处理",
+        "retry_with_multipass": "使用 --multipass 重新运行以尝试读取更多内容；它会从映射文件恢复。",
         "nothing_to_patch": "无需修补 —— 所有扇区均良好",
         "patch_start": "正在修补：{good} GB 良好，{unreadable} MB 不可读，{pending} MB 待处理",
         "patch_done": "修补完成：恢复 {recovered} MB，{unreadable} MB 不可读，{pending} MB 待处理（{time} 秒，{speed} MB/s）",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "光盘镜像文件在本次制作副本所需的扇区之前就已结束，镜像被截断或不完整。为避免用零填充缺失部分，读取已停止 — 请从光盘重新创建镜像。",
         "E7000": "此光盘需要 AACS 解密密钥（Blu-ray/UHD），但未找到任何密钥。请使用以下命令下载密钥数据库：freemkv update-keys --url <keydb-url>",
         "E7001": "光盘的安全证书过短或无效。",
         "E7002": "驱动器未能为此光盘启动安全会话 —— 它可能正被另一程序使用。请关闭其他正在使用该光盘的程序并重试。",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "此光盘的 AACS 密钥文件缺失或无法读取。请清洁光盘后重试；如果仍然失败，光盘可能已损坏。",
+        "E7032": "无法生成已解密的光盘镜像：此光盘上有一个没有任何标题播放的流已加密，且现有密钥都无法与之匹配，因此镜像中仍会含有加密部分。请改为将标题提取为 MKV，或保留加密的副本：以原始方式复制光盘（命令行使用 --raw，或在应用中选择“保留加密（原始直通）”），或原样保留源镜像。",
+        "E7033": "已在您的密钥源中找到主机证书，但没有一个可用（已损坏或不完整）。请刷新您的密钥数据库后重试。",
         "E8000": "无法连接到密钥数据库服务器：{detail}",
         "E8001": "密钥数据库下载失败（HTTP {detail}）。请重试，或运行：freemkv update-keys --url <keydb-url>",
         "E8002": "密钥数据库为空或无效。请使用以下命令重新下载：freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "标题 {num} 超出范围（{count}）",
         "unknown_flag": "错误：未知标志 '{flag}'。请尝试 'freemkv help' 查看选项列表。",
         "usage_hint": "用法：freemkv <source> <dest> [flags]\n       freemkv info <url>\n\n请尝试 'freemkv help' 了解更多。",
+        "gui_not_in_build": "此版本不包含桌面应用。请安装 freemkv 应用：https://freemkv.org/download",
         "unknown_language": "未知语言 '{tag}'（此标题可用：{available}）",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "输出在已完成或已失败之后仍被写入，因此数据无法保存。",
+        "E9072": "轨道信息是在输出的文件头写入之后才设置的，因此无法应用。",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level：值 0 超出范围 (1–4)，已忽略",
         "log_level_not_a_number": "--log-level：需要 1–4 的数字，收到 '{value}'，已忽略",
         "log_level_needs_value": "--log-level：需要一个值 (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file：路径 '{path}' 无效 — 未写入诊断日志",
-        "language_needs_value": "{flag}：需要语言代码（例如 --language de）"
+        "language_needs_value": "{flag}：需要语言代码（例如 --language de）",
+        "disc_scan_all_titles_failed": "错误：无法扫描光盘以列出其标题，因此 `-t all` 无法确定要抓取哪些标题。未抓取任何内容 —— 请检查光盘和驱动器后重试。",
+        "log_file_needs_value": "--log-file：需要一个路径（例如 --log-file freemkv.log）",
+        "mux_failed_generic": "复用失败（E{code}）。",
+        "title_changed": "标题 {num} 在两次扫描之间发生了变化：预期为 {expected}，驱动器现在报告 {found}。抓取期间标题列表发生了变化；此标题未写入任何内容。"
     },
     "usage": {
         "synopsis_1": "用法：freemkv <source> <dest> [flags]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE 界面语言（也可用 --lang）：如 de 或 pt-BR 的代码，或 auto。",
             "raw": "      --raw           跳过解密（原始加密输出）",
             "multipass": "      --multipass    写入/更新映射文件以进行多遍恢复",
-            "share": "      --share         提交驱动器配置（仅 info disc://；在抓取时，-s 表示 --subtitles）",
+            "share": "      --share         提交驱动器配置和光盘结构（info disc://、iso:// 或 dir://；在抓取时，-s 表示 --subtitles）",
             "mask": "  -m, --mask          掩码序列号（配合 --share）",
             "force": "      --force        向非空的 dir:// 目标中提取（覆盖）"
+        },
+        "exit_codes_header": "退出代码：",
+        "exit_code": {
+            "ok": "  0    成功。",
+            "failed": "  1    失败：没有可用的输出，或发生其他错误。",
+            "usage": "  2    用法：命令或参数错误（此文本也已打印）。",
+            "damaged": "  3    已损坏（仅限 disc:// -> iso:// 或 disc:// -> null://）：已保留且可用，但缺少部分扇区 — 重新运行（--multipass）以尝试恢复更多。",
+            "interrupted": "  130  第二次 Ctrl-C 强制立即退出。"
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "打开光盘…",
             "exit": "退出",
             "copy": "复制",
-            "select_all_text": "全选"
+            "select_all_text": "全选",
+            "cut": "剪切",
+            "paste": "粘贴"
         },
         "col": {
             "type": "类型",
@@ -570,7 +604,8 @@
             "test_connection": "测试连接",
             "keydb_no_url": "未设置 keydb 更新网址 — 请在上方添加，然后点击“更新”。",
             "keydb_updating": "正在更新 keydb… 正在下载，请稍候。",
-            "lang_any": "任意"
+            "lang_any": "任意",
+            "notify_when_rip_finished": "抓取完成时通知"
         },
         "btn": {
             "open_file": "打开文件或 ISO……",
@@ -582,7 +617,8 @@
             "ok": "确定",
             "close": "关闭",
             "browse": "……",
-            "show_explorer": "在文件资源管理器中显示"
+            "show_explorer": "在文件资源管理器中显示",
+            "show_folder": "在文件夹中显示"
         },
         "group": {
             "output": "输出",
@@ -645,9 +681,21 @@
             "select_title_first": "请至少选择一个要转换的标题。",
             "video_only_warning": "未选择音频或字幕轨道——输出将只包含视频。",
             "raw_iso_only": "“保持加密（raw）”仅适用于“整盘 → ISO 映像”输出；此格式将忽略该选项。",
+            "raw_disc_only": "“保持加密（raw）”仅适用于驱动器中的光盘；此来源将忽略该选项。",
             "no_drive": "未找到光驱。请连接装有光盘的 Blu-ray/DVD 光驱。",
             "opening_drive": "正在打开 {label}（{device}）",
-            "drives_found": "找到 {n} 个光驱：{list} — 使用其中装有光盘的那个"
+            "drives_found": "找到 {n} 个光驱：{list} — 使用其中装有光盘的那个",
+            "drop_unreadable": "无法读取拖入的项目：{e}",
+            "eject_failed": "弹出失败：{error}",
+            "ejected": "已弹出光盘（{device}）。",
+            "ejecting": "正在弹出光盘……",
+            "open_folder_failed": "无法打开文件夹：{e}",
+            "open_url_failed": "无法打开 {url}：{e}",
+            "pick_failed": "无法打开文件选择器：{e}",
+            "pick_not_local": "只能使用本地文件和文件夹：{p}",
+            "reveal_failed": "无法在文件资源管理器中打开文件夹：{e}",
+            "scan_not_started": "无法开始扫描源：{detail}",
+            "scan_worker_stopped": "源扫描进程在返回结果之前已停止。"
         },
         "alert": {
             "rip_title": "抓取正在进行中。",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv 设置"
+        },
+        "notify": {
+            "rip_finished_title": "抓取完成"
         }
     },
     "warn": {
         "no_lang_match_audio": "警告：标题 {num}：没有与 '{requested}' 匹配的音频轨道（可用：{available}）——仅保留视频。",
         "no_lang_match_subtitle": "警告：标题 {num}：没有与 '{requested}' 匹配的字幕轨道（可用：{available}）——仅保留视频。",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "注意：{count} 条轨道无法写入输出，已被略去："
+    },
+    "share": {
+        "attach_zip": "配置 zip 文件过大，无法放入 issue 正文 —— 请将 {path} 附加到 issue。",
+        "zip_failed": "无法生成配置 zip 文件：{error}"
     }
 }

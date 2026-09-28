@@ -20,7 +20,7 @@
         "unknown": "Không xác định",
         "share_hint": "Chạy 'freemkv info disc:// --share' để giúp mở rộng hỗ trợ ổ đĩa.",
         "share_usage": "Cách dùng: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Ghi lại và gửi hồ sơ ổ đĩa để mở rộng hỗ trợ ổ đĩa",
+        "share_desc": "Ghi lại và gửi hồ sơ ổ đĩa cùng cấu trúc đĩa để mở rộng hỗ trợ",
         "mask_desc": "Che số sê-ri (chữ cái → A, chữ số → 0)",
         "device_desc": "Chỉ định đường dẫn thiết bị",
         "captured": "Đã ghi lại: GET_CONFIG 0x{code} {name} ({bytes} byte)",
@@ -33,7 +33,6 @@
         "submit_profile": "Hồ sơ",
         "submit_features": "Tính năng",
         "submit_packaging": "Đang đóng gói...",
-        "zip_failed": "zip thất bại ({error}), chỉ gửi văn bản",
         "submit_saved": "Đã lưu hồ sơ vào {dir}/",
         "submit_zip": "Tệp nén zip: {path}",
         "submit_manual": "Để đóng góp hồ sơ này, hãy mở một issue mới và dán văn bản bên dưới:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Gửi tự động thất bại; bạn vẫn có thể báo cáo thủ công:",
         "submit_declined": "Chưa gửi. Bạn vẫn có thể báo cáo thủ công nếu muốn:",
         "submit_issue_title": "Tiêu đề issue: {title}",
-        "submit_issue_body": "Nội dung issue (sao chép mọi thứ giữa các dòng):"
+        "submit_issue_body": "Nội dung issue (sao chép mọi thứ giữa các dòng):",
+        "share_image_note": "Với nguồn iso:// và dir://, --share ghi lại cấu trúc đĩa; --mask và --verbose không có tác dụng ở đó (không có ổ đĩa).",
+        "structure_unreadable": "Chưa ghi lại được cấu trúc đĩa: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Đang quét đĩa...",
@@ -63,7 +65,17 @@
         "forced": "bắt buộc",
         "usage": "Cách dùng: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Không xác định",
-        "file": "Tệp"
+        "file": "Tệp",
+        "capture_aacs_failed": "Chưa ghi lại chẩn đoán AACS — bước AACS thất bại: {error}",
+        "capture_aacs_hash": "Chẩn đoán AACS: mã băm đĩa {hash} (khóa tra cứu keydb) đã được ghi vào aacs.json.",
+        "capture_aacs_no_hash": "Đã ghi chẩn đoán AACS vào aacs.json (không có mã băm đĩa).",
+        "capture_aacs_none": "Đĩa này không có AACS — không có chẩn đoán AACS để ghi lại.",
+        "capture_all_skipped": "Không thể lưu tệp nào trong số {count} tệp cấu trúc đĩa.",
+        "capture_mkdir_failed": "Không thể tạo {path}: {error}",
+        "capture_no_structure": "Không tìm thấy cấu trúc đĩa đọc được (BDMV / VIDEO_TS); không có gì để chia sẻ.",
+        "capture_skipped": "Đã bỏ qua tệp đĩa {file}",
+        "capture_summary": "Đã ghi lại cấu trúc đĩa: {files} tệp ({bytes} byte).",
+        "capture_unsafe_name": "tên tệp không an toàn"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Bắt tay thất bại",
         "verbose_handshake_hint": "Bắt tay có thể đã thất bại — không có chứng chỉ host, hoặc ổ đĩa từ chối",
         "mapfile_summary": "Tệp bản đồ: {good} GB tốt, {unreadable} MB không đọc được, {pending} MB đang chờ",
+        "retry_with_multipass": "Chạy lại với --multipass để thử đọc thêm; nó sẽ tiếp tục từ mapfile.",
         "nothing_to_patch": "Không có gì để vá — tất cả sector đều tốt",
         "patch_start": "Đang vá: {good} GB tốt, {unreadable} MB không đọc được, {pending} MB đang chờ",
         "patch_done": "Vá xong: khôi phục {recovered} MB, {unreadable} MB không đọc được, {pending} MB đang chờ ({time}s, {speed} MB/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Tệp ảnh đĩa kết thúc trước một sector mà lần sao chép này cần, nên ảnh đĩa bị cắt bớt hoặc chưa hoàn chỉnh. Quá trình đọc đã dừng thay vì điền số 0 vào phần bị thiếu — hãy tạo lại ảnh đĩa từ đĩa.",
         "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Tải cơ sở dữ liệu khóa bằng: freemkv update-keys --url <keydb-url>",
         "E7001": "Chứng chỉ bảo mật của đĩa quá ngắn hoặc không hợp lệ.",
         "E7002": "Ổ đĩa không khởi động phiên bảo mật cho đĩa này — có thể nó đang được chương trình khác sử dụng. Đóng mọi thứ khác đang dùng đĩa và thử lại.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Tệp khóa AACS của đĩa này bị thiếu hoặc không đọc được. Hãy lau sạch đĩa rồi thử lại; nếu vẫn lỗi, đĩa có thể đã bị hỏng.",
+        "E7032": "Không thể tạo ảnh đĩa đã giải mã: một luồng trên đĩa này mà không tiêu đề nào phát đang được mã hóa và không khóa nào hiện có khớp với nó, nên ảnh đĩa vẫn sẽ chứa các phần bị mã hóa. Thay vào đó, hãy rip các tiêu đề sang MKV hoặc giữ một bản sao được mã hóa: sao chép thô đĩa (--raw trên dòng lệnh, hoặc “Giữ mã hóa (chuyển thô nguyên vẹn)” trong ứng dụng), hoặc giữ nguyên ảnh đĩa nguồn.",
+        "E7033": "Đã tìm thấy chứng chỉ host trong các nguồn khóa của bạn, nhưng không có chứng chỉ nào dùng được (bị hỏng hoặc không đầy đủ). Hãy làm mới cơ sở dữ liệu khóa rồi thử lại.",
         "E8000": "Không thể kết nối tới máy chủ cơ sở dữ liệu khóa: {detail}",
         "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Thử lại, hoặc chạy: freemkv update-keys --url <keydb-url>",
         "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Tải lại bằng: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "Tiêu đề {num} nằm ngoài phạm vi ({count})",
         "unknown_flag": "Lỗi: cờ không xác định '{flag}'. Thử 'freemkv help' để xem danh sách tùy chọn.",
         "usage_hint": "Cách dùng: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nThử 'freemkv help' để biết thêm.",
+        "gui_not_in_build": "Bản dựng này không có ứng dụng máy tính. Hãy cài ứng dụng freemkv để sử dụng: https://freemkv.org/download",
         "unknown_language": "ngôn ngữ không xác định '{tag}' (có sẵn trên tiêu đề này: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Đã có thao tác ghi vào đầu ra sau khi đầu ra đã hoàn tất hoặc bị lỗi, nên không thể lưu dữ liệu.",
+        "E9072": "Thông tin rãnh được đặt sau khi phần đầu (header) của đầu ra đã được ghi, nên không thể áp dụng.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: giá trị 0 nằm ngoài phạm vi (1–4), bỏ qua",
         "log_level_not_a_number": "--log-level: cần một số 1–4, nhận được '{value}', bỏ qua",
         "log_level_needs_value": "--log-level: cần một giá trị (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: đường dẫn không hợp lệ '{path}' — không ghi nhật ký chẩn đoán",
-        "language_needs_value": "{flag}: cần một mã ngôn ngữ (ví dụ --language de)"
+        "language_needs_value": "{flag}: cần một mã ngôn ngữ (ví dụ --language de)",
+        "disc_scan_all_titles_failed": "Lỗi: không thể quét đĩa để liệt kê các tiêu đề, nên `-t all` không biết cần trích xuất tiêu đề nào. Chưa trích xuất gì — hãy kiểm tra đĩa và ổ đĩa rồi thử lại.",
+        "log_file_needs_value": "--log-file: cần một đường dẫn (ví dụ --log-file freemkv.log)",
+        "mux_failed_generic": "Mux thất bại (E{code}).",
+        "title_changed": "Tiêu đề {num} đã thay đổi giữa các lần quét: dự kiến {expected}, ổ đĩa hiện báo {found}. Danh sách tiêu đề đã thay đổi trong khi trích xuất; không có gì được ghi cho tiêu đề này."
     },
     "usage": {
         "synopsis_1": "Cách dùng: freemkv <source> <dest> [flags]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Ngôn ngữ giao diện (cũng dùng --lang): mã như de hoặc pt-BR, hoặc auto.",
             "raw": "      --raw           Bỏ qua giải mã (đầu ra thô đã mã hóa)",
             "multipass": "      --multipass    Ghi/cập nhật tệp bản đồ cho khôi phục nhiều lượt",
-            "share": "      --share         Gửi hồ sơ ổ đĩa (chỉ info disc://; khi trích xuất, -s nghĩa là --subtitles)",
+            "share": "      --share         Gửi hồ sơ ổ đĩa và cấu trúc đĩa (info disc://, iso:// hoặc dir://; khi trích xuất, -s nghĩa là --subtitles)",
             "mask": "  -m, --mask          Che số sê-ri (với --share)",
             "force": "      --force        Trích xuất vào đích dir:// không trống (ghi đè)"
+        },
+        "exit_codes_header": "Mã thoát:",
+        "exit_code": {
+            "ok": "  0    Thành công.",
+            "failed": "  1    Thất bại: không có đầu ra sử dụng được, hoặc lỗi khác.",
+            "usage": "  2    Cách dùng: lệnh hoặc cờ không hợp lệ (văn bản này cũng đã được in ra).",
+            "damaged": "  3    Hư hỏng (chỉ disc:// -> iso:// hoặc disc:// -> null://): được giữ lại và sử dụng được, nhưng thiếu một số sector — chạy lại (--multipass) để thử khôi phục thêm.",
+            "interrupted": "  130  Ctrl-C lần thứ hai buộc thoát ngay lập tức."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Mở đĩa…",
             "exit": "Thoát",
             "copy": "Sao chép",
-            "select_all_text": "Chọn tất cả"
+            "select_all_text": "Chọn tất cả",
+            "cut": "Cắt",
+            "paste": "Dán"
         },
         "col": {
             "type": "Loại",
@@ -570,7 +604,8 @@
             "test_connection": "Kiểm tra kết nối",
             "keydb_no_url": "Chưa đặt URL cập nhật keydb — hãy thêm ở trên rồi bấm Cập nhật.",
             "keydb_updating": "Đang cập nhật keydb… đang tải xuống, vui lòng đợi.",
-            "lang_any": "Bất kỳ"
+            "lang_any": "Bất kỳ",
+            "notify_when_rip_finished": "Thông báo khi trích xuất xong"
         },
         "btn": {
             "open_file": "Mở tệp hoặc ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Đóng",
             "browse": "…",
-            "show_explorer": "Hiện trong File Explorer"
+            "show_explorer": "Hiện trong File Explorer",
+            "show_folder": "Hiện trong thư mục"
         },
         "group": {
             "output": "Đầu ra",
@@ -645,9 +681,21 @@
             "select_title_first": "Hãy chọn ít nhất một tiêu đề để rip.",
             "video_only_warning": "Chưa chọn rãnh âm thanh hoặc phụ đề nào — đầu ra sẽ chỉ có video.",
             "raw_iso_only": "“Giữ mã hoá (raw)” chỉ áp dụng cho đầu ra Toàn bộ đĩa → ảnh ISO; sẽ bị bỏ qua với định dạng này.",
+            "raw_disc_only": "“Giữ mã hoá (raw)” chỉ áp dụng cho đĩa trong ổ đĩa; sẽ bị bỏ qua với nguồn này.",
             "no_drive": "Không tìm thấy ổ quang. Hãy kết nối ổ Blu-ray/DVD có đĩa.",
             "opening_drive": "Đang mở {label} ({device})",
-            "drives_found": "Tìm thấy {n} ổ: {list} — đang dùng ổ có đĩa"
+            "drives_found": "Tìm thấy {n} ổ: {list} — đang dùng ổ có đĩa",
+            "drop_unreadable": "Không thể đọc mục được thả vào: {e}",
+            "eject_failed": "Đẩy đĩa ra thất bại: {error}",
+            "ejected": "Đã đẩy đĩa ra ({device}).",
+            "ejecting": "Đang đẩy đĩa ra…",
+            "open_folder_failed": "Không thể mở thư mục: {e}",
+            "open_url_failed": "Không thể mở {url}: {e}",
+            "pick_failed": "Không thể mở hộp thoại chọn tệp: {e}",
+            "pick_not_local": "Chỉ có thể dùng tệp và thư mục cục bộ: {p}",
+            "reveal_failed": "Không thể mở thư mục trong File Explorer: {e}",
+            "scan_not_started": "Không thể bắt đầu quét nguồn: {detail}",
+            "scan_worker_stopped": "Tiến trình quét nguồn đã dừng trước khi trả về kết quả."
         },
         "alert": {
             "rip_title": "Quá trình trích xuất đang diễn ra.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "Cài đặt freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Đã trích xuất xong"
         }
     },
     "warn": {
         "no_lang_match_audio": "cảnh báo: tiêu đề {num}: không có rãnh âm thanh nào khớp với '{requested}' (có sẵn: {available}) — chỉ giữ lại video.",
         "no_lang_match_subtitle": "cảnh báo: tiêu đề {num}: không có rãnh phụ đề nào khớp với '{requested}' (có sẵn: {available}) — chỉ giữ lại video.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Lưu ý: {count} rãnh không thể ghi vào đầu ra và đã bị bỏ qua:"
+    },
+    "share": {
+        "attach_zip": "Tệp zip hồ sơ quá lớn để đưa vào nội dung issue — hãy đính kèm {path} vào issue.",
+        "zip_failed": "Không thể tạo tệp zip hồ sơ: {error}"
     }
 }

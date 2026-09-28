@@ -20,7 +20,7 @@
         "unknown": "Okänd",
         "share_hint": "Kör 'freemkv info disc:// --share' för att hjälpa till att utöka enhetsstödet.",
         "share_usage": "Användning: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Fånga och skicka in enhetsprofil för att utöka enhetsstödet",
+        "share_desc": "Fånga och skicka in enhetsprofil och skivstruktur för att utöka stödet",
         "mask_desc": "Maskera serienummer (bokstäver → A, siffror → 0)",
         "device_desc": "Ange enhetssökväg",
         "captured": "Infångade: GET_CONFIG 0x{code} {name} ({bytes} byte)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funktioner",
         "submit_packaging": "Paketerar...",
-        "zip_failed": "zip misslyckades ({error}), skickar endast text",
         "submit_saved": "Profil sparad till {dir}/",
         "submit_zip": "Zip-arkiv: {path}",
         "submit_manual": "För att bidra med den här profilen, öppna ett nytt ärende och klistra in texten nedan:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatisk inskickning misslyckades; du kan fortfarande rapportera den för hand:",
         "submit_declined": "Inte inskickad. Du kan fortfarande rapportera den för hand om du vill:",
         "submit_issue_title": "Ärendetitel: {title}",
-        "submit_issue_body": "Ärendetext (kopiera allt mellan linjerna):"
+        "submit_issue_body": "Ärendetext (kopiera allt mellan linjerna):",
+        "share_image_note": "För iso://- och dir://-källor fångar --share in skivstrukturen; --mask och --verbose har ingen effekt där (det finns ingen enhet).",
+        "structure_unreadable": "Skivstrukturen fångades inte in: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Skannar skiva...",
@@ -63,7 +65,17 @@
         "forced": "tvingad",
         "usage": "Användning: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Okänt",
-        "file": "Fil"
+        "file": "Fil",
+        "capture_aacs_failed": "AACS-diagnostik inte infångad — AACS-steget misslyckades: {error}",
+        "capture_aacs_hash": "AACS-diagnostik: skivans hash {hash} (uppslagsnyckel i keydb) registrerad i aacs.json.",
+        "capture_aacs_no_hash": "AACS-diagnostik registrerad i aacs.json (skivans hash är inte tillgänglig).",
+        "capture_aacs_none": "Ingen AACS på den här skivan — ingen AACS-diagnostik att fånga in.",
+        "capture_all_skipped": "Ingen av de {count} skivstrukturfilerna kunde sparas.",
+        "capture_mkdir_failed": "Kunde inte skapa {path}: {error}",
+        "capture_no_structure": "Ingen läsbar skivstruktur (BDMV / VIDEO_TS) hittades; inget att dela.",
+        "capture_skipped": "Hoppade över skivfilen {file}",
+        "capture_summary": "Infångad skivstruktur: {files} filer ({bytes} byte).",
+        "capture_unsafe_name": "osäkert filnamn"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Handskakning misslyckades",
         "verbose_handshake_hint": "Handskakningen kan ha misslyckats — inget värdcertifikat, eller så avvisade enheten",
         "mapfile_summary": "Kartfil: {good} GB bra, {unreadable} MB oläsbara, {pending} MB väntande",
+        "retry_with_multipass": "Kör igen med --multipass för att försöka läsa mer; det återupptas från mapfilen.",
         "nothing_to_patch": "Inget att korrigera — alla sektorer är bra",
         "patch_start": "Korrigerar: {good} GB bra, {unreadable} MB oläsbara, {pending} MB väntande",
         "patch_done": "Korrigering klar: återställde {recovered} MB, {unreadable} MB oläsbara, {pending} MB väntande ({time}s, {speed} MB/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Skivavbildsfilen tar slut före en sektor som den här rippningen behöver, så avbilden är avhuggen eller ofullständig. Läsningen stoppades i stället för att fylla den saknade delen med nollor — skapa en ny avbild från skivan.",
         "E7000": "Den här skivan behöver AACS-dekrypteringsnycklar (Blu-ray/UHD), men inga hittades. Ladda ner en nyckeldatabas med: freemkv update-keys --url <keydb-url>",
         "E7001": "Skivans säkerhetscertifikat är för kort eller ogiltigt.",
         "E7002": "Enheten ville inte starta en säker session för den här skivan — den kan användas av ett annat program. Stäng allt annat som använder skivan och försök igen.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Skivans AACS-nyckelfil saknas eller kunde inte läsas. Rengör skivan och försök igen; om det fortfarande misslyckas kan skivan vara skadad.",
+        "E7032": "En dekrypterad skivavbild kan inte skapas: en ström på skivan som ingen titel spelar upp är krypterad och ingen av de tillgängliga nycklarna passar den, så avbilden skulle fortfarande innehålla krypterade delar. Rippa titlarna till MKV i stället, eller behåll en krypterad kopia: kopiera skivan rått (--raw på kommandoraden, eller ”Behåll krypterad (rå genomströmning)” i appen), eller behåll källavbilden som den är.",
+        "E7033": "Värdcertifikat hittades i dina nyckelkällor, men inget av dem är användbart (skadat eller ofullständigt). Uppdatera din nyckeldatabas och försök igen.",
         "E8000": "Kan inte ansluta till nyckeldatabasservern: {detail}",
         "E8001": "Nedladdning av nyckeldatabas misslyckades (HTTP {detail}). Försök igen, eller kör: freemkv update-keys --url <keydb-url>",
         "E8002": "Nyckeldatabasen är tom eller ogiltig. Ladda ner den på nytt med: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "Titel {num} utanför intervallet ({count})",
         "unknown_flag": "Fel: okänd flagga '{flag}'. Prova 'freemkv help' för en lista över alternativ.",
         "usage_hint": "Användning: freemkv <källa> <mål> [flaggor]\n       freemkv info <url>\n\nProva 'freemkv help' för mer.",
+        "gui_not_in_build": "Skrivbordsappen ingår inte i den här versionen. Installera freemkv-appen för att få den: https://freemkv.org/download",
         "unknown_language": "okänt språk '{tag}' (tillgängliga på den här titeln: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Något skrevs till utdata efter att de redan hade avslutats eller misslyckats, så datan kunde inte sparas.",
+        "E9072": "Spåruppgifterna angavs efter att utdatas huvud redan hade skrivits, så de kunde inte tillämpas.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: värdet 0 ligger utanför intervallet (1–4), ignoreras",
         "log_level_not_a_number": "--log-level: förväntade ett tal 1–4, fick '{value}', ignoreras",
         "log_level_needs_value": "--log-level: kräver ett värde (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ogiltig sökväg '{path}' — ingen diagnostiklogg skrevs",
-        "language_needs_value": "{flag}: kräver en språkkod (t.ex. --language de)"
+        "language_needs_value": "{flag}: kräver en språkkod (t.ex. --language de)",
+        "disc_scan_all_titles_failed": "Fel: kunde inte skanna skivan för att lista dess titlar, så `-t all` kan inte veta vilka titlar som ska rippas. Inget rippades — kontrollera skivan och enheten och försök igen.",
+        "log_file_needs_value": "--log-file: kräver en sökväg (t.ex. --log-file freemkv.log)",
+        "mux_failed_generic": "Muxning misslyckades (E{code}).",
+        "title_changed": "Titel {num} ändrades mellan skanningarna: förväntade {expected}, enheten rapporterar nu {found}. Titellistan ändrades under rippningen; inget skrevs för den här titeln."
     },
     "usage": {
         "synopsis_1": "Användning: freemkv <källa> <mål> [flaggor]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Gränssnittsspråk (även --lang): en kod som de eller pt-BR, eller auto.",
             "raw": "      --raw           Hoppa över dekryptering (rå krypterad utdata)",
             "multipass": "      --multipass    Skriv/uppdatera kartfil för flerpass-återställning",
-            "share": "      --share         Skicka in enhetsprofil (endast info disc://; vid en rippning betyder -s --subtitles)",
+            "share": "      --share         Skicka in enhetsprofil och skivstruktur (info disc://, iso:// eller dir://; vid en rippning betyder -s --subtitles)",
             "mask": "  -m, --mask          Maskera serienummer (med --share)",
             "force": "      --force        Extrahera in i ett icke-tomt dir://-mål (skriv över)"
+        },
+        "exit_codes_header": "Avslutningskoder:",
+        "exit_code": {
+            "ok": "  0    Lyckades.",
+            "failed": "  1    Misslyckades: ingen användbar utdata, eller ett annat fel.",
+            "usage": "  2    Användning: felaktigt kommando eller flaggor (denna text skrevs också ut).",
+            "damaged": "  3    Skadad (endast disc:// -> iso:// eller disc:// -> null://): behållen och användbar, men saknar några sektorer — kör igen (--multipass) för att försöka hämta mer.",
+            "interrupted": "  130  En andra Ctrl-C tvingade fram en omedelbar avslutning."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Öppna skiva…",
             "exit": "Avsluta",
             "copy": "Kopiera",
-            "select_all_text": "Markera allt"
+            "select_all_text": "Markera allt",
+            "cut": "Klipp ut",
+            "paste": "Klistra in"
         },
         "col": {
             "type": "Typ",
@@ -570,7 +604,8 @@
             "test_connection": "Testa anslutning",
             "keydb_no_url": "Ingen URL för keydb-uppdatering angiven — lägg till en ovan och klicka på Uppdatera.",
             "keydb_updating": "Uppdaterar keydb… hämtar, vänta.",
-            "lang_any": "Alla"
+            "lang_any": "Alla",
+            "notify_when_rip_finished": "Meddela när en rippning är klar"
         },
         "btn": {
             "open_file": "Öppna fil eller ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Stäng",
             "browse": "…",
-            "show_explorer": "Visa i Utforskaren"
+            "show_explorer": "Visa i Utforskaren",
+            "show_folder": "Visa i mapp"
         },
         "group": {
             "output": "Utdata",
@@ -645,9 +681,21 @@
             "select_title_first": "Välj minst en titel att rippa.",
             "video_only_warning": "Inga ljud- eller undertextspår valda — utdata kommer endast att innehålla video.",
             "raw_iso_only": "”Behåll krypterad (raw)” gäller endast utdata Hela skivan → ISO-avbild; ignoreras för det här formatet.",
+            "raw_disc_only": "”Behåll krypterad (raw)” gäller endast en skiva i enheten; ignoreras för den här källan.",
             "no_drive": "Ingen optisk enhet hittades. Anslut en Blu-ray-/DVD-enhet med en skiva.",
             "opening_drive": "Öppnar {label} ({device})",
-            "drives_found": "{n} enheter hittades: {list} — använder den med en skiva"
+            "drives_found": "{n} enheter hittades: {list} — använder den med en skiva",
+            "drop_unreadable": "Kunde inte läsa det släppta objektet: {e}",
+            "eject_failed": "Utmatningen misslyckades: {error}",
+            "ejected": "Skivan matades ut ({device}).",
+            "ejecting": "Matar ut skivan…",
+            "open_folder_failed": "Kunde inte öppna mappen: {e}",
+            "open_url_failed": "Kunde inte öppna {url}: {e}",
+            "pick_failed": "Kunde inte öppna filväljaren: {e}",
+            "pick_not_local": "Endast lokala filer och mappar kan användas: {p}",
+            "reveal_failed": "Kunde inte öppna mappen i Utforskaren: {e}",
+            "scan_not_started": "Kunde inte starta skanningen av källan: {detail}",
+            "scan_worker_stopped": "Skanningsprocessen för källan stoppades innan den returnerade ett resultat."
         },
         "alert": {
             "rip_title": "En rippning pågår.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv-inställningar"
+        },
+        "notify": {
+            "rip_finished_title": "Rippning klar"
         }
     },
     "warn": {
         "no_lang_match_audio": "varning: titel {num}: inget ljudspår matchar '{requested}' (tillgängliga: {available}) — behåller endast video.",
         "no_lang_match_subtitle": "varning: titel {num}: inget undertextspår matchar '{requested}' (tillgängliga: {available}) — behåller endast video.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Obs: {count} spår kunde inte levereras och utelämnades:"
+    },
+    "share": {
+        "attach_zip": "Profilens zip-fil är för stor för ärendetexten — bifoga {path} till ärendet.",
+        "zip_failed": "Kunde inte skapa profilens zip-fil: {error}"
     }
 }

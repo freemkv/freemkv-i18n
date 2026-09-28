@@ -20,7 +20,7 @@
         "unknown": "Desconegut",
         "share_hint": "Executeu «freemkv info disc:// --share» per ajudar a ampliar la compatibilitat d'unitats.",
         "share_usage": "Ús: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Captura i envia el perfil de la unitat per ampliar-ne la compatibilitat",
+        "share_desc": "Captura i envia el perfil de la unitat i l'estructura del disc per ampliar-ne la compatibilitat",
         "mask_desc": "Emmascara els números de sèrie (lletres → A, dígits → 0)",
         "device_desc": "Especifica el camí del dispositiu",
         "captured": "Capturat: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Perfil",
         "submit_features": "Funcions",
         "submit_packaging": "S'està empaquetant...",
-        "zip_failed": "Ha fallat el zip ({error}); s'envia només el text",
         "submit_saved": "Perfil desat a {dir}/",
         "submit_zip": "Arxiu zip: {path}",
         "submit_manual": "Per contribuir amb aquest perfil, obriu una incidència nova i enganxeu-hi el text següent:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "L'enviament automàtic ha fallat; encara podeu notificar-ho a mà:",
         "submit_declined": "No s'ha enviat. Encara podeu notificar-ho a mà si voleu:",
         "submit_issue_title": "Títol de la incidència: {title}",
-        "submit_issue_body": "Cos de la incidència (copieu-ho tot entre les línies):"
+        "submit_issue_body": "Cos de la incidència (copieu-ho tot entre les línies):",
+        "share_image_note": "Amb orígens iso:// i dir://, --share captura l'estructura del disc; --mask i --verbose no hi tenen cap efecte (no hi ha cap unitat).",
+        "structure_unreadable": "Estructura del disc no capturada: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "S'està analitzant el disc...",
@@ -63,7 +65,17 @@
         "forced": "forçat",
         "usage": "Ús: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Desconegut",
-        "file": "Fitxer"
+        "file": "Fitxer",
+        "capture_aacs_failed": "Diagnòstic AACS no capturat — el pas AACS ha fallat: {error}",
+        "capture_aacs_hash": "Diagnòstic AACS: hash del disc {hash} (clau de cerca a keydb) desat a aacs.json.",
+        "capture_aacs_no_hash": "Diagnòstic AACS desat a aacs.json (hash del disc no disponible).",
+        "capture_aacs_none": "Aquest disc no té AACS — no hi ha cap diagnòstic AACS per capturar.",
+        "capture_all_skipped": "No s'ha pogut desar cap dels {count} fitxers d'estructura del disc.",
+        "capture_mkdir_failed": "No s'ha pogut crear {path}: {error}",
+        "capture_no_structure": "No s'ha trobat cap estructura de disc llegible (BDMV / VIDEO_TS); no hi ha res per compartir.",
+        "capture_skipped": "S'ha omès el fitxer del disc {file}",
+        "capture_summary": "Estructura del disc capturada: {files} fitxers ({bytes} bytes).",
+        "capture_unsafe_name": "nom de fitxer no segur"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Ha fallat la negociació",
         "verbose_handshake_hint": "És possible que hagi fallat la negociació — sense certificat d'amfitrió, o la unitat l'ha rebutjada",
         "mapfile_summary": "Fitxer de mapa: {good} GB correctes, {unreadable} MB il·legibles, {pending} MB pendents",
+        "retry_with_multipass": "Torneu a executar amb --multipass per intentar llegir més; es reprèn des del fitxer de mapa.",
         "nothing_to_patch": "Res a apedaçar — tots els sectors són correctes",
         "patch_start": "S'està apedaçant: {good} GB correctes, {unreadable} MB il·legibles, {pending} MB pendents",
         "patch_done": "Apedaçament fet: recuperats {recovered} MB, {unreadable} MB il·legibles, {pending} MB pendents ({time}s, {speed} MB/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "El fitxer d'imatge de disc s'acaba abans d'un sector que necessita aquesta extracció, de manera que la imatge està truncada o incompleta. La lectura s'ha aturat en lloc d'omplir amb zeros la part que falta: torneu a crear la imatge a partir del disc.",
         "E7000": "Aquest disc necessita claus de desxifratge AACS (Blu-ray/UHD), però no se n'ha trobat cap. Baixeu una base de dades de claus amb: freemkv update-keys --url <url-keydb>",
         "E7001": "El certificat de seguretat del disc és massa curt o no és vàlid.",
         "E7002": "La unitat no ha volgut iniciar una sessió segura per a aquest disc — pot ser que l'estigui usant un altre programa. Tanqueu qualsevol altra cosa que estigui usant el disc i proveu-ho de nou.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Falta el fitxer de claus AACS d'aquest disc o no s'ha pogut llegir. Netegeu el disc i torneu-ho a provar; si continua fallant, pot ser que el disc estigui malmès.",
+        "E7032": "No es pot crear una imatge de disc desxifrada: un flux d'aquest disc que cap títol reprodueix està xifrat i cap de les claus disponibles hi correspon, de manera que la imatge encara contindria parts xifrades. Extraieu els títols a MKV, o conserveu una còpia xifrada: copieu el disc en brut (--raw a la línia d'ordres, o «Conserva xifrat (pas directe en brut)» a l'aplicació), o conserveu la imatge d'origen tal com és.",
+        "E7033": "S'han trobat certificats d'amfitrió a les vostres fonts de claus, però cap és utilitzable (malmès o incomplet). Actualitzeu la vostra base de dades de claus i torneu-ho a provar.",
         "E8000": "No es pot connectar al servidor de la base de dades de claus: {detail}",
         "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu-ho a provar, o executeu: freemkv update-keys --url <url-keydb>",
         "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "El títol {num} és fora de rang ({count})",
         "unknown_flag": "Error: indicador desconegut «{flag}». Proveu «freemkv help» per veure la llista d'opcions.",
         "usage_hint": "Ús: freemkv <origen> <destinació> [indicadors]\n       freemkv info <url>\n\nProveu «freemkv help» per a més informació.",
+        "gui_not_in_build": "Aquesta versió no inclou l'aplicació d'escriptori. Instal·leu l'aplicació freemkv per obtenir-la: https://freemkv.org/download",
         "unknown_language": "idioma desconegut «{tag}» (disponibles en aquest títol: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "S'ha intentat escriure a la sortida després que ja s'hagués finalitzat o hagués fallat, de manera que les dades no s'han pogut desar.",
+        "E9072": "Les dades de les pistes s'han definit després que ja s'hagués escrit la capçalera de la sortida, de manera que no s'han pogut aplicar.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 és fora d'interval (1–4), s'ignora",
         "log_level_not_a_number": "--log-level: s'esperava un número 1–4, s'ha rebut '{value}', s'ignora",
         "log_level_needs_value": "--log-level: requereix un valor (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: camí no vàlid '{path}' — no s'ha escrit cap registre de diagnòstic",
-        "language_needs_value": "{flag}: requereix un codi d'idioma (p. ex. --language de)"
+        "language_needs_value": "{flag}: requereix un codi d'idioma (p. ex. --language de)",
+        "disc_scan_all_titles_failed": "Error: no s'ha pogut analitzar el disc per llistar-ne els títols, de manera que `-t all` no pot saber quins títols cal extreure. No s'ha extret res — comproveu el disc i la unitat i torneu-ho a provar.",
+        "log_file_needs_value": "--log-file: requereix un camí (p. ex. --log-file freemkv.log)",
+        "mux_failed_generic": "El multiplexatge ha fallat (E{code}).",
+        "title_changed": "El títol {num} ha canviat entre anàlisis: s'esperava {expected}, però la unitat ara informa {found}. La llista de títols del disc ha canviat durant l'extracció; no s'ha escrit res per a aquest títol."
     },
     "usage": {
         "synopsis_1": "Ús: freemkv <origen> <destinació> [indicadors]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Idioma de la interfície (també --lang): un codi com de o pt-BR, o auto.",
             "raw": "      --raw           Omet el desxifratge (sortida xifrada bruta)",
             "multipass": "      --multipass    Escriu/actualitza el fitxer de mapa per a recuperació multipassada",
-            "share": "      --share         Envia el perfil de la unitat (només info disc://; en una extracció, -s vol dir --subtitles)",
+            "share": "      --share         Envia el perfil de la unitat i l'estructura del disc (info disc://, iso:// o dir://; en una extracció, -s vol dir --subtitles)",
             "mask": "  -m, --mask          Emmascara els números de sèrie (amb --share)",
             "force": "      --force        Extreu a una destinació dir:// no buida (sobreescriu)"
+        },
+        "exit_codes_header": "Codis de sortida:",
+        "exit_code": {
+            "ok": "  0    Èxit.",
+            "failed": "  1    Fallit: cap sortida utilitzable, o qualsevol altre error.",
+            "usage": "  2    Ús: ordre o opcions incorrectes (aquest text també s'ha mostrat).",
+            "damaged": "  3    Danyat (només disc:// -> iso:// o disc:// -> null://): es conserva i és utilitzable, però falten alguns sectors — torneu a executar-ho (--multipass) per intentar-ne més.",
+            "interrupted": "  130  Un segon Ctrl-C ha forçat una sortida immediata."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Obre el disc…",
             "exit": "Surt",
             "copy": "Copia",
-            "select_all_text": "Selecciona-ho tot"
+            "select_all_text": "Selecciona-ho tot",
+            "cut": "Retalla",
+            "paste": "Enganxa"
         },
         "col": {
             "type": "Tipus",
@@ -570,7 +604,8 @@
             "test_connection": "Prova la connexió",
             "keydb_no_url": "No s'ha definit cap URL d'actualització de keydb — afegiu-ne una a dalt i feu clic a Actualitza.",
             "keydb_updating": "S'està actualitzant el keydb… s'està baixant, espereu.",
-            "lang_any": "Qualsevol"
+            "lang_any": "Qualsevol",
+            "notify_when_rip_finished": "Notifica quan acabi una extracció"
         },
         "btn": {
             "open_file": "Obre un fitxer o una ISO…",
@@ -582,7 +617,8 @@
             "ok": "D'acord",
             "close": "Tanca",
             "browse": "…",
-            "show_explorer": "Mostra a l'Explorador"
+            "show_explorer": "Mostra a l'Explorador",
+            "show_folder": "Mostra a la carpeta"
         },
         "group": {
             "output": "Sortida",
@@ -645,9 +681,21 @@
             "select_title_first": "Seleccioneu almenys un títol per extreure.",
             "video_only_warning": "Cap pista d'àudio o de subtítols seleccionada — la sortida només contindrà vídeo.",
             "raw_iso_only": "«Mantenir xifrat (raw)» només s'aplica a la sortida Disc sencer → imatge ISO; s'ignora per a aquest format.",
+            "raw_disc_only": "«Mantenir xifrat (raw)» només s'aplica a un disc a la unitat; s'ignora per a aquesta font.",
             "no_drive": "No s'ha trobat cap unitat òptica. Connecteu una unitat Blu-ray/DVD amb un disc.",
             "opening_drive": "S'està obrint {label} ({device})",
-            "drives_found": "{n} unitats trobades: {list} — s'utilitza la que té un disc"
+            "drives_found": "{n} unitats trobades: {list} — s'utilitza la que té un disc",
+            "drop_unreadable": "No s'ha pogut llegir l'element deixat anar: {e}",
+            "eject_failed": "L'expulsió ha fallat: {error}",
+            "ejected": "S'ha expulsat el disc ({device}).",
+            "ejecting": "S'està expulsant el disc…",
+            "open_folder_failed": "No s'ha pogut obrir la carpeta: {e}",
+            "open_url_failed": "No s'ha pogut obrir {url}: {e}",
+            "pick_failed": "No s'ha pogut obrir el selector de fitxers: {e}",
+            "pick_not_local": "Només es poden fer servir fitxers i carpetes locals: {p}",
+            "reveal_failed": "No s'ha pogut obrir la carpeta a l'Explorador de fitxers: {e}",
+            "scan_not_started": "No s'ha pogut iniciar l'anàlisi de l'origen: {detail}",
+            "scan_worker_stopped": "El procés d'anàlisi de l'origen s'ha aturat abans de retornar un resultat."
         },
         "alert": {
             "rip_title": "Hi ha una extracció en curs.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "Configuració del freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Extracció acabada"
         }
     },
     "warn": {
         "no_lang_match_audio": "advertiment: títol {num}: cap pista d'àudio coincideix amb '{requested}' (disponible: {available}) — es conserva només el vídeo.",
         "no_lang_match_subtitle": "advertiment: títol {num}: cap pista de subtítols coincideix amb '{requested}' (disponible: {available}) — es conserva només el vídeo.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Nota: no s'han pogut lliurar {count} flux(os) i s'han deixat fora:"
+    },
+    "share": {
+        "attach_zip": "El zip del perfil és massa gran per al text de la incidència — adjunteu {path} a la incidència.",
+        "zip_failed": "No s'ha pogut crear el zip del perfil: {error}"
     }
 }

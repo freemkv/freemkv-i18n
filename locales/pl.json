@@ -20,7 +20,7 @@
         "unknown": "Nieznany",
         "share_hint": "Uruchom polecenie „freemkv info disc:// --share”, aby pomóc rozszerzyć obsługę napędów.",
         "share_usage": "Sposób użycia: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Przechwyć i prześlij profil napędu, aby rozszerzyć obsługę napędów",
+        "share_desc": "Przechwyć i prześlij profil napędu oraz strukturę płyty, aby rozszerzyć obsługę",
         "mask_desc": "Maskuj numery seryjne (litery → A, cyfry → 0)",
         "device_desc": "Podaj ścieżkę urządzenia",
         "captured": "Przechwycono: GET_CONFIG 0x{code} {name} ({bytes} bajtów)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Funkcje",
         "submit_packaging": "Pakowanie…",
-        "zip_failed": "kompresja zip nie powiodła się ({error}), przesyłanie samego tekstu",
         "submit_saved": "Profil zapisano w {dir}/",
         "submit_zip": "Archiwum zip: {path}",
         "submit_manual": "Aby przekazać ten profil, otwórz nowe zgłoszenie i wklej poniższy tekst:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatyczne wysłanie nie powiodło się; nadal możesz zgłosić to ręcznie:",
         "submit_declined": "Nie wysłano. Nadal możesz zgłosić to ręcznie, jeśli chcesz:",
         "submit_issue_title": "Tytuł zgłoszenia: {title}",
-        "submit_issue_body": "Treść zgłoszenia (skopiuj wszystko pomiędzy liniami):"
+        "submit_issue_body": "Treść zgłoszenia (skopiuj wszystko pomiędzy liniami):",
+        "share_image_note": "Dla źródeł iso:// i dir:// opcja --share przechwytuje strukturę płyty; --mask i --verbose nie mają tam żadnego wpływu (nie ma napędu).",
+        "structure_unreadable": "Nie przechwycono struktury płyty: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Skanowanie płyty…",
@@ -63,7 +65,17 @@
         "forced": "wymuszone",
         "usage": "Sposób użycia: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Nieznany",
-        "file": "Plik"
+        "file": "Plik",
+        "capture_aacs_failed": "Nie zebrano diagnostyki AACS — etap AACS nie powiódł się: {error}",
+        "capture_aacs_hash": "Diagnostyka AACS: skrót płyty {hash} (klucz wyszukiwania w keydb) zapisany w aacs.json.",
+        "capture_aacs_no_hash": "Diagnostykę AACS zapisano w aacs.json (skrót płyty niedostępny).",
+        "capture_aacs_none": "Ta płyta nie ma AACS — brak diagnostyki AACS do zebrania.",
+        "capture_all_skipped": "Nie udało się zapisać żadnego z plików struktury płyty (łącznie: {count}).",
+        "capture_mkdir_failed": "Nie można utworzyć {path}: {error}",
+        "capture_no_structure": "Nie znaleziono czytelnej struktury płyty (BDMV / VIDEO_TS); nie ma czego udostępnić.",
+        "capture_skipped": "Pominięto plik płyty {file}",
+        "capture_summary": "Przechwycono strukturę płyty — plików: {files}, bajtów: {bytes}.",
+        "capture_unsafe_name": "niebezpieczna nazwa pliku"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Uzgadnianie nie powiodło się",
         "verbose_handshake_hint": "Uzgadnianie mogło się nie powieść — brak certyfikatu hosta lub napęd go odrzucił",
         "mapfile_summary": "Plik mapy: {good} GB dobrych, {unreadable} MB nieczytelnych, {pending} MB oczekujących",
+        "retry_with_multipass": "Uruchom ponownie z --multipass, aby spróbować odczytać więcej; wznawia od pliku mapy.",
         "nothing_to_patch": "Nic do naprawienia — wszystkie sektory są dobre",
         "patch_start": "Naprawianie: {good} GB dobrych, {unreadable} MB nieczytelnych, {pending} MB oczekujących",
         "patch_done": "Naprawianie ukończone: odzyskano {recovered} MB, {unreadable} MB nieczytelnych, {pending} MB oczekujących ({time} s, {speed} MB/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Plik obrazu płyty kończy się przed sektorem, którego potrzebuje to zgrywanie, więc obraz jest obcięty lub niekompletny. Odczyt zatrzymano, zamiast wypełniać brakującą część zerami — utwórz obraz z płyty ponownie.",
         "E7000": "Ta płyta wymaga kluczy deszyfrujących AACS (Blu-ray/UHD), ale nie znaleziono żadnego. Pobierz bazę kluczy poleceniem: freemkv update-keys --url <adres-url-keydb>",
         "E7001": "Certyfikat bezpieczeństwa płyty jest zbyt krótki lub nieprawidłowy.",
         "E7002": "Napęd nie rozpoczął bezpiecznej sesji dla tej płyty — może być używany przez inny program. Zamknij wszystko inne korzystające z płyty i spróbuj ponownie.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Brak pliku kluczy AACS tej płyty lub nie można go odczytać. Wyczyść płytę i spróbuj ponownie; jeśli błąd się powtarza, płyta może być uszkodzona.",
+        "E7032": "Nie można utworzyć odszyfrowanego obrazu płyty: strumień na tej płycie, którego nie odtwarza żaden tytuł, jest zaszyfrowany i żaden z dostępnych kluczy do niego nie pasuje, więc obraz nadal zawierałby zaszyfrowane części. Zamiast tego zgraj tytuły do MKV albo zachowaj zaszyfrowaną kopię: skopiuj płytę na surowo (--raw w wierszu poleceń lub „Zachowaj zaszyfrowane (surowe przepuszczanie)” w aplikacji) albo zachowaj obraz źródłowy bez zmian.",
+        "E7033": "W Twoich źródłach kluczy znaleziono certyfikaty hosta, ale żaden nie nadaje się do użycia (uszkodzony lub niekompletny). Odśwież bazę kluczy i spróbuj ponownie.",
         "E8000": "Nie można połączyć się z serwerem bazy kluczy: {detail}",
         "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie lub uruchom: freemkv update-keys --url <adres-url-keydb>",
         "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "Tytuł {num} poza zakresem ({count})",
         "unknown_flag": "Błąd: nieznana flaga „{flag}”. Wpisz „freemkv help”, aby wyświetlić listę opcji.",
         "usage_hint": "Sposób użycia: freemkv <źródło> <cel> [flagi]\n       freemkv info <url>\n\nWpisz „freemkv help”, aby uzyskać więcej informacji.",
+        "gui_not_in_build": "Ta wersja nie zawiera aplikacji desktopowej. Zainstaluj aplikację freemkv: https://freemkv.org/download",
         "unknown_language": "nieznany język „{tag}” (dostępne w tym tytule: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Próbowano zapisać do wyjścia po tym, jak zostało już zakończone lub uległo awarii, więc nie udało się zapisać danych.",
+        "E9072": "Dane ścieżek ustawiono po zapisaniu nagłówka wyjścia, więc nie można było ich zastosować.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: wartość 0 jest poza zakresem (1–4), zignorowano",
         "log_level_not_a_number": "--log-level: oczekiwano liczby 1–4, otrzymano '{value}', zignorowano",
         "log_level_needs_value": "--log-level: wymaga wartości (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: nieprawidłowa ścieżka '{path}' — nie zapisano dziennika diagnostycznego",
-        "language_needs_value": "{flag}: wymaga kodu języka (np. --language de)"
+        "language_needs_value": "{flag}: wymaga kodu języka (np. --language de)",
+        "disc_scan_all_titles_failed": "Błąd: nie udało się przeskanować płyty, aby wyświetlić listę tytułów, więc `-t all` nie może ustalić, które tytuły zgrać. Nic nie zostało zgrane — sprawdź płytę i napęd, a następnie spróbuj ponownie.",
+        "log_file_needs_value": "--log-file: wymaga ścieżki (np. --log-file freemkv.log)",
+        "mux_failed_generic": "Multipleksowanie nie powiodło się (E{code}).",
+        "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano."
     },
     "usage": {
         "synopsis_1": "Sposób użycia: freemkv <źródło> <cel> [flagi]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Język interfejsu (także --lang): kod taki jak de lub pt-BR, albo auto.",
             "raw": "      --raw           Pomiń deszyfrowanie (surowy zaszyfrowany wynik)",
             "multipass": "      --multipass    Zapisz/zaktualizuj plik mapy dla odzyskiwania wieloprzebiegowego",
-            "share": "      --share         Prześlij profil napędu (tylko info disc://; przy zgrywaniu -s oznacza --subtitles)",
+            "share": "      --share         Prześlij profil napędu i strukturę płyty (info disc://, iso:// lub dir://; przy zgrywaniu -s oznacza --subtitles)",
             "mask": "  -m, --mask          Maskuj numery seryjne (z --share)",
             "force": "      --force        Wyodrębnij do niepustego celu dir:// (nadpisanie)"
+        },
+        "exit_codes_header": "Kody wyjścia:",
+        "exit_code": {
+            "ok": "  0    Sukces.",
+            "failed": "  1    Niepowodzenie: brak użytecznego wyjścia lub inny błąd.",
+            "usage": "  2    Użycie: nieprawidłowe polecenie lub flagi (ten tekst również został wypisany).",
+            "damaged": "  3    Uszkodzone (tylko disc:// -> iso:// lub disc:// -> null://): zachowane i użyteczne, ale brakuje niektórych sektorów — uruchom ponownie (--multipass), aby spróbować odzyskać więcej.",
+            "interrupted": "  130  Drugi Ctrl-C wymusił natychmiastowe zakończenie."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Otwórz dysk…",
             "exit": "Zakończ",
             "copy": "Kopiuj",
-            "select_all_text": "Zaznacz wszystko"
+            "select_all_text": "Zaznacz wszystko",
+            "cut": "Wytnij",
+            "paste": "Wklej"
         },
         "col": {
             "type": "Typ",
@@ -570,7 +604,8 @@
             "test_connection": "Testuj połączenie",
             "keydb_no_url": "Nie ustawiono adresu URL aktualizacji keydb — dodaj go powyżej, a następnie kliknij Aktualizuj.",
             "keydb_updating": "Aktualizowanie keydb… pobieranie, proszę czekać.",
-            "lang_any": "Dowolny"
+            "lang_any": "Dowolny",
+            "notify_when_rip_finished": "Powiadom po zakończeniu zgrywania"
         },
         "btn": {
             "open_file": "Otwórz plik lub ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Zamknij",
             "browse": "…",
-            "show_explorer": "Pokaż w Eksploratorze"
+            "show_explorer": "Pokaż w Eksploratorze",
+            "show_folder": "Pokaż w folderze"
         },
         "group": {
             "output": "Wyjście",
@@ -645,9 +681,21 @@
             "select_title_first": "Wybierz co najmniej jeden tytuł do zgrania.",
             "video_only_warning": "Nie wybrano ścieżek dźwiękowych ani napisów — wynik będzie zawierał tylko obraz.",
             "raw_iso_only": "„Zachowaj zaszyfrowane (raw)” dotyczy tylko wyjścia Cały dysk → obraz ISO; zostanie zignorowane dla tego formatu.",
+            "raw_disc_only": "„Zachowaj zaszyfrowane (raw)” dotyczy tylko płyty w napędzie; zostanie zignorowane dla tego źródła.",
             "no_drive": "Nie znaleziono napędu optycznego. Podłącz napęd Blu-ray/DVD z płytą.",
             "opening_drive": "Otwieranie {label} ({device})",
-            "drives_found": "Znaleziono {n} napędów: {list} — zostanie użyty ten z płytą"
+            "drives_found": "Znaleziono {n} napędów: {list} — zostanie użyty ten z płytą",
+            "drop_unreadable": "Nie można odczytać upuszczonego elementu: {e}",
+            "eject_failed": "Wysuwanie nie powiodło się: {error}",
+            "ejected": "Wysunięto płytę ({device}).",
+            "ejecting": "Wysuwanie płyty…",
+            "open_folder_failed": "Nie można otworzyć folderu: {e}",
+            "open_url_failed": "Nie można otworzyć {url}: {e}",
+            "pick_failed": "Nie można otworzyć okna wyboru plików: {e}",
+            "pick_not_local": "Można używać tylko lokalnych plików i folderów: {p}",
+            "reveal_failed": "Nie można otworzyć folderu w Eksploratorze plików: {e}",
+            "scan_not_started": "Nie można rozpocząć skanowania źródła: {detail}",
+            "scan_worker_stopped": "Proces skanowania źródła zatrzymał się przed zwróceniem wyniku."
         },
         "alert": {
             "rip_title": "Trwa zgrywanie.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "Ustawienia freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Zgrywanie zakończone"
         }
     },
     "warn": {
         "no_lang_match_audio": "ostrzeżenie: tytuł {num}: żadna ścieżka dźwiękowa nie odpowiada '{requested}' (dostępne: {available}) — zachowano tylko obraz.",
         "no_lang_match_subtitle": "ostrzeżenie: tytuł {num}: żadna ścieżka napisów nie odpowiada '{requested}' (dostępne: {available}) — zachowano tylko obraz.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Uwaga: nie udało się dostarczyć strumieni (liczba: {count}), więc zostały pominięte:"
+    },
+    "share": {
+        "attach_zip": "Archiwum zip z profilem jest za duże na treść zgłoszenia — dołącz {path} do zgłoszenia.",
+        "zip_failed": "Nie można utworzyć archiwum zip z profilem: {error}"
     }
 }

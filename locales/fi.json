@@ -20,7 +20,7 @@
         "unknown": "Tuntematon",
         "share_hint": "Suorita 'freemkv info disc:// --share' laajentaaksesi asematukea.",
         "share_usage": "Käyttö: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Kaappaa ja lähetä aseman profiili laajentaaksesi asematukea",
+        "share_desc": "Kaappaa ja lähetä aseman profiili ja levyrakenne laajentaaksesi tukea",
         "mask_desc": "Peitä sarjanumerot (kirjaimet → A, numerot → 0)",
         "device_desc": "Määritä laitepolku",
         "captured": "Kaapattu: GET_CONFIG 0x{code} {name} ({bytes} tavua)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profiili",
         "submit_features": "Ominaisuudet",
         "submit_packaging": "Pakataan...",
-        "zip_failed": "zip epäonnistui ({error}), lähetetään vain teksti",
         "submit_saved": "Profiili tallennettu kohteeseen {dir}/",
         "submit_zip": "Zip-arkisto: {path}",
         "submit_manual": "Osallistuaksesi tähän profiiliin avaa uusi issue ja liitä alla oleva teksti:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automaattinen lähetys epäonnistui; voit silti ilmoittaa sen käsin:",
         "submit_declined": "Ei lähetetty. Voit silti ilmoittaa sen käsin, jos haluat:",
         "submit_issue_title": "Issuen otsikko: {title}",
-        "submit_issue_body": "Issuen sisältö (kopioi kaikki viivojen väliltä):"
+        "submit_issue_body": "Issuen sisältö (kopioi kaikki viivojen väliltä):",
+        "share_image_note": "iso://- ja dir://-lähteillä --share kaappaa levyrakenteen; --mask ja --verbose eivät vaikuta niihin (asemaa ei ole).",
+        "structure_unreadable": "Levyrakennetta ei kaapattu: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Skannataan levyä...",
@@ -63,7 +65,17 @@
         "forced": "pakotettu",
         "usage": "Käyttö: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Tuntematon",
-        "file": "Tiedosto"
+        "file": "Tiedosto",
+        "capture_aacs_failed": "AACS-diagnostiikkaa ei kaapattu — AACS-vaihe epäonnistui: {error}",
+        "capture_aacs_hash": "AACS-diagnostiikka: levyn tiiviste {hash} (keydb-hakuavain) tallennettu tiedostoon aacs.json.",
+        "capture_aacs_no_hash": "AACS-diagnostiikka tallennettu tiedostoon aacs.json (levyn tiiviste ei saatavilla).",
+        "capture_aacs_none": "Tällä levyllä ei ole AACS:ää — ei AACS-diagnostiikkaa kaapattavaksi.",
+        "capture_all_skipped": "Yhtäkään levyn {count} rakennetiedostosta ei voitu tallentaa.",
+        "capture_mkdir_failed": "Kohdetta {path} ei voitu luoda: {error}",
+        "capture_no_structure": "Luettavaa levyrakennetta (BDMV / VIDEO_TS) ei löytynyt; ei mitään jaettavaa.",
+        "capture_skipped": "Ohitettiin levyn tiedosto {file}",
+        "capture_summary": "Levyrakenne kaapattu: {files} tiedostoa ({bytes} tavua).",
+        "capture_unsafe_name": "vaarallinen tiedostonimi"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Kättely epäonnistui",
         "verbose_handshake_hint": "Kättely saattoi epäonnistua — ei isäntävarmennetta, tai asema hylkäsi",
         "mapfile_summary": "Karttatiedosto: {good} Gt kelvollista, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa",
+        "retry_with_multipass": "Aja uudelleen --multipass-valitsimella lukeaksesi lisää; se jatkaa mapfile-tiedostosta.",
         "nothing_to_patch": "Ei paikattavaa — kaikki sektorit ovat kelvollisia",
         "patch_start": "Paikataan: {good} Gt kelvollista, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa",
         "patch_done": "Paikkaus valmis: palautettu {recovered} Mt, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa ({time} s, {speed} Mt/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Levykuvatiedosto päättyy ennen sektoria, jota tämä rippaus tarvitsee, joten levykuva on katkennut tai keskeneräinen. Lukeminen pysäytettiin sen sijaan, että puuttuva osa olisi täytetty nollilla — luo levykuva uudelleen levyltä.",
         "E7000": "Tämä levy tarvitsee AACS-salauksenpurkuavaimet (Blu-ray/UHD), mutta niitä ei löytynyt. Lataa avaintietokanta komennolla: freemkv update-keys --url <keydb-url>",
         "E7001": "Levyn suojausvarmenne on liian lyhyt tai virheellinen.",
         "E7002": "Asema ei käynnistänyt suojattua istuntoa tälle levylle — se voi olla toisen ohjelman käytössä. Sulje kaikki muu levyä käyttävä ja yritä uudelleen.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Tämän levyn AACS-avaintiedosto puuttuu tai sitä ei voitu lukea. Puhdista levy ja yritä uudelleen; jos virhe toistuu, levy voi olla vaurioitunut.",
+        "E7032": "Purettua levykuvaa ei voi tehdä: levyllä on virta, jota mikään nimike ei toista, ja se on salattu eikä mikään käytettävissä olevista avaimista sovi siihen, joten levykuva sisältäisi yhä salattuja osia. Rippaa nimikkeet MKV-muotoon tai säilytä salattu kopio: kopioi levy raakana (--raw komentorivillä tai ”Säilytä salattuna (raaka läpivienti)” sovelluksessa) tai säilytä lähdelevykuva sellaisenaan.",
+        "E7033": "Avainlähteistäsi löytyi isäntävarmenteita, mutta yksikään niistä ei kelpaa (vaurioitunut tai puutteellinen). Päivitä avaintietokantasi ja yritä uudelleen.",
         "E8000": "Avaintietokantapalvelimeen ei saada yhteyttä: {detail}",
         "E8001": "Avaintietokannan lataus epäonnistui (HTTP {detail}). Yritä uudelleen tai suorita: freemkv update-keys --url <keydb-url>",
         "E8002": "Avaintietokanta on tyhjä tai virheellinen. Lataa se uudelleen komennolla: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "Nimike {num} on alueen ulkopuolella ({count})",
         "unknown_flag": "Virhe: tuntematon valitsin '{flag}'. Kokeile 'freemkv help' saadaksesi luettelon valitsimista.",
         "usage_hint": "Käyttö: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nKokeile 'freemkv help' saadaksesi lisätietoja.",
+        "gui_not_in_build": "Työpöytäsovellus ei sisälly tähän versioon. Asenna freemkv-sovellus: https://freemkv.org/download",
         "unknown_language": "tuntematon kieli '{tag}' (saatavilla tässä nimikkeessä: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Tulosteeseen kirjoitettiin sen jälkeen, kun se oli jo valmis tai epäonnistunut, joten tietoja ei voitu tallentaa.",
+        "E9072": "Raitojen tiedot asetettiin vasta sen jälkeen, kun tulosteen otsake oli jo kirjoitettu, joten niitä ei voitu ottaa käyttöön.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: arvo 0 on sallitun välin ulkopuolella (1–4), ohitetaan",
         "log_level_not_a_number": "--log-level: odotettiin lukua 1–4, saatiin '{value}', ohitetaan",
         "log_level_needs_value": "--log-level: vaatii arvon (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: virheellinen polku '{path}' — diagnostiikkalokia ei kirjoitettu",
-        "language_needs_value": "{flag}: vaatii kielikoodin (esim. --language de)"
+        "language_needs_value": "{flag}: vaatii kielikoodin (esim. --language de)",
+        "disc_scan_all_titles_failed": "Virhe: levyä ei voitu skannata nimikkeiden luetteloimiseksi, joten `-t all` ei tiedä, mitkä nimikkeet ripataan. Mitään ei ripattu — tarkista levy ja asema ja yritä uudelleen.",
+        "log_file_needs_value": "--log-file: vaatii polun (esim. --log-file freemkv.log)",
+        "mux_failed_generic": "Muksaus epäonnistui (E{code}).",
+        "title_changed": "Nimike {num} muuttui skannausten välillä: odotettiin {expected}, asema ilmoittaa nyt {found}. Levyn nimikeluettelo muuttui rippauksen aikana; tälle nimikkeelle ei kirjoitettu mitään."
     },
     "usage": {
         "synopsis_1": "Käyttö: freemkv <source> <dest> [flags]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Käyttöliittymän kieli (myös --lang): koodi kuten de tai pt-BR, tai auto.",
             "raw": "      --raw           Ohita salauksen purku (raaka salattu tuloste)",
             "multipass": "      --multipass    Kirjoita/päivitä karttatiedosto monivaiheista palautusta varten",
-            "share": "      --share         Lähetä aseman profiili (vain info disc://; rippauksessa -s tarkoittaa --subtitles)",
+            "share": "      --share         Lähetä aseman profiili ja levyrakenne (info disc://, iso:// tai dir://; rippauksessa -s tarkoittaa --subtitles)",
             "mask": "  -m, --mask          Peitä sarjanumerot (--share:n kanssa)",
             "force": "      --force        Pura ei-tyhjään dir://-kohteeseen (ylikirjoita)"
+        },
+        "exit_codes_header": "Poistumiskoodit:",
+        "exit_code": {
+            "ok": "  0    Onnistui.",
+            "failed": "  1    Epäonnistui: ei käyttökelpoista tulostetta, tai jokin muu virhe.",
+            "usage": "  2    Käyttö: virheellinen komento tai valitsimet (tämä teksti tulostettiin myös).",
+            "damaged": "  3    Vaurioitunut (vain disc:// -> iso:// tai disc:// -> null://): säilytetty ja käyttökelpoinen, mutta joitakin sektoreita puuttuu — aja uudelleen (--multipass) yrittääksesi palauttaa lisää.",
+            "interrupted": "  130  Toinen Ctrl-C pakotti välittömän lopetuksen."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Avaa levy…",
             "exit": "Lopeta",
             "copy": "Kopioi",
-            "select_all_text": "Valitse kaikki"
+            "select_all_text": "Valitse kaikki",
+            "cut": "Leikkaa",
+            "paste": "Liitä"
         },
         "col": {
             "type": "Tyyppi",
@@ -570,7 +604,8 @@
             "test_connection": "Testaa yhteys",
             "keydb_no_url": "keydb-päivitysosoitetta ei ole asetettu — lisää se yllä ja napsauta Päivitä.",
             "keydb_updating": "Päivitetään keydb… ladataan, odota.",
-            "lang_any": "Mikä tahansa"
+            "lang_any": "Mikä tahansa",
+            "notify_when_rip_finished": "Ilmoita, kun rippaus valmistuu"
         },
         "btn": {
             "open_file": "Avaa tiedosto tai ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Sulje",
             "browse": "…",
-            "show_explorer": "Näytä Resurssienhallinnassa"
+            "show_explorer": "Näytä Resurssienhallinnassa",
+            "show_folder": "Näytä kansiossa"
         },
         "group": {
             "output": "Tuloste",
@@ -645,9 +681,21 @@
             "select_title_first": "Valitse vähintään yksi kopioitava nimike.",
             "video_only_warning": "Ääni- tai tekstitysraitoja ei valittu — tuloste sisältää vain videon.",
             "raw_iso_only": "”Säilytä salattuna (raw)” koskee vain Koko levy → ISO-kuva -tulostetta; ohitetaan tässä muodossa.",
+            "raw_disc_only": "”Säilytä salattuna (raw)” koskee vain asemassa olevaa levyä; ohitetaan tälle lähteelle.",
             "no_drive": "Optista asemaa ei löytynyt. Liitä Blu-ray-/DVD-asema, jossa on levy.",
             "opening_drive": "Avataan {label} ({device})",
-            "drives_found": "{n} asemaa löytyi: {list} — käytetään sitä, jossa on levy"
+            "drives_found": "{n} asemaa löytyi: {list} — käytetään sitä, jossa on levy",
+            "drop_unreadable": "Pudotettua kohdetta ei voitu lukea: {e}",
+            "eject_failed": "Levyn poisto epäonnistui: {error}",
+            "ejected": "Levy poistettu ({device}).",
+            "ejecting": "Poistetaan levyä…",
+            "open_folder_failed": "Kansiota ei voitu avata: {e}",
+            "open_url_failed": "Kohdetta {url} ei voitu avata: {e}",
+            "pick_failed": "Tiedostonvalitsinta ei voitu avata: {e}",
+            "pick_not_local": "Vain paikallisia tiedostoja ja kansioita voidaan käyttää: {p}",
+            "reveal_failed": "Kansiota ei voitu avata Resurssienhallinnassa: {e}",
+            "scan_not_started": "Lähteen skannausta ei voitu aloittaa: {detail}",
+            "scan_worker_stopped": "Lähteen skannaus pysähtyi ennen tuloksen palauttamista."
         },
         "alert": {
             "rip_title": "Rippaus on käynnissä.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv-asetukset"
+        },
+        "notify": {
+            "rip_finished_title": "Rippaus valmis"
         }
     },
     "warn": {
         "no_lang_match_audio": "varoitus: nimike {num}: yksikään ääniraita ei vastaa '{requested}' (saatavilla: {available}) — säilytetään vain video.",
         "no_lang_match_subtitle": "varoitus: nimike {num}: yksikään tekstitysraita ei vastaa '{requested}' (saatavilla: {available}) — säilytetään vain video.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Huomautus: {count} raitaa ei voitu toimittaa, ja ne jätettiin pois:"
+    },
+    "share": {
+        "attach_zip": "Profiilin zip-tiedosto on liian suuri ongelmaraportin tekstiin — liitä {path} ongelmaraporttiin.",
+        "zip_failed": "Profiilin zip-tiedostoa ei voitu luoda: {error}"
     }
 }

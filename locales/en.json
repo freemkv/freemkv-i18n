@@ -20,7 +20,7 @@
         "unknown": "Unknown",
         "share_hint": "Run 'freemkv info disc:// --share' to help expand drive support.",
         "share_usage": "Usage: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Capture and submit drive profile to expand drive support",
+        "share_desc": "Capture and submit the drive profile and disc structure to help expand support",
         "mask_desc": "Mask serial numbers (letters → A, digits → 0)",
         "device_desc": "Specify device path",
         "captured": "Captured: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profile",
         "submit_features": "Features",
         "submit_packaging": "Packaging...",
-        "zip_failed": "zip failed ({error}), submitting text only",
         "submit_saved": "Profile saved to {dir}/",
         "submit_zip": "Zip archive: {path}",
         "submit_manual": "To contribute this profile, open a new issue and paste the text below:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automated submission failed; you can still file it by hand:",
         "submit_declined": "Not submitted. You can still file it by hand if you like:",
         "submit_issue_title": "Issue title: {title}",
-        "submit_issue_body": "Issue body (copy everything between the lines):"
+        "submit_issue_body": "Issue body (copy everything between the lines):",
+        "share_image_note": "On iso:// and dir:// sources --share captures the disc structure; --mask and --verbose have no effect there (there is no drive).",
+        "structure_unreadable": "Disc structure not captured: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Scanning disc...",
@@ -63,7 +65,17 @@
         "forced": "forced",
         "usage": "Usage: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Unknown",
-        "file": "File"
+        "file": "File",
+        "capture_aacs_failed": "AACS diagnostics not captured — the AACS step failed: {error}",
+        "capture_aacs_hash": "AACS diagnostics: disc hash {hash} (keydb lookup key) recorded in aacs.json.",
+        "capture_aacs_no_hash": "AACS diagnostics recorded in aacs.json (disc hash unavailable).",
+        "capture_aacs_none": "No AACS on this disc — no AACS diagnostics to capture.",
+        "capture_all_skipped": "None of the {count} disc structure files could be saved.",
+        "capture_mkdir_failed": "Could not create {path}: {error}",
+        "capture_no_structure": "No readable disc structure (BDMV / VIDEO_TS) was found; nothing to share.",
+        "capture_skipped": "Skipped disc file {file}",
+        "capture_summary": "Captured disc structure: {files} files ({bytes} bytes).",
+        "capture_unsafe_name": "unsafe file name"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Handshake failed",
         "verbose_handshake_hint": "Handshake may have failed — no host cert, or drive rejected",
         "mapfile_summary": "Mapfile: {good} GB good, {unreadable} MB unreadable, {pending} MB pending",
+        "retry_with_multipass": "Re-run with --multipass to try to read more; it resumes from the mapfile.",
         "nothing_to_patch": "Nothing to patch — all sectors are good",
         "patch_start": "Patching: {good} GB good, {unreadable} MB unreadable, {pending} MB pending",
         "patch_done": "Patch done: recovered {recovered} MB, {unreadable} MB unreadable, {pending} MB pending ({time}s, {speed} MB/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Error: the disc image file ends before a sector this rip needs, so the image is truncated or incomplete. Reading stopped rather than fill the missing part with zeros — make a new image from the disc.",
         "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Download a key database with: freemkv update-keys --url <keydb-url>",
         "E7001": "The disc's security certificate is too short or invalid.",
         "E7002": "The drive would not start a secure session for this disc — it may be in use by another program. Close anything else using the disc and try again.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "This disc's AACS key file is missing or could not be read. Clean the disc and try again; if it still fails, the disc may be damaged.",
+        "E7032": "A decrypted disc image can't be made: a stream on this disc that no title plays is encrypted, and none of the available keys could be matched to it, so the image would still contain encrypted parts. Rip the titles to MKV instead, or keep an encrypted copy: copy the disc raw (--raw on the command line, or “Keep encrypted (raw passthrough)” in the app), or keep the source image as it is.",
+        "E7033": "Host certificates were found in your key sources, but none of them is usable (damaged or incomplete). Refresh your key database and try again.",
         "E8000": "Cannot connect to the key database server: {detail}",
         "E8001": "Key database download failed (HTTP {detail}). Try again, or run: freemkv update-keys --url <keydb-url>",
         "E8002": "The key database is empty or invalid. Re-download it with: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "Title {num} out of range ({count})",
         "unknown_flag": "Error: unknown flag '{flag}'. Try 'freemkv help' for a list of options.",
         "usage_hint": "Usage: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nTry 'freemkv help' for more.",
+        "gui_not_in_build": "The desktop app isn't included in this build. Install the freemkv app to get it: https://freemkv.org/download",
         "unknown_language": "unknown language '{tag}' (available on this title: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Error: the output was written to after it had already been finished or had failed, so the data could not be saved.",
+        "E9072": "Error: track details were set after the output's header had already been written, so they could not be applied.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: value 0 is out of range (1–4), ignored",
         "log_level_not_a_number": "--log-level: expected a number 1–4, got '{value}', ignored",
         "log_level_needs_value": "--log-level: requires a value (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: invalid path '{path}' — no diagnostic log written",
-        "language_needs_value": "{flag}: requires a language code (e.g. --language de)"
+        "language_needs_value": "{flag}: requires a language code (e.g. --language de)",
+        "disc_scan_all_titles_failed": "Error: could not scan the disc to list its titles, so `-t all` cannot know which titles to rip. Nothing was ripped — check the disc and drive and try again.",
+        "log_file_needs_value": "--log-file: requires a path (e.g. --log-file freemkv.log)",
+        "mux_failed_generic": "Mux failed (E{code}).",
+        "title_changed": "Title {num} changed between scans: expected {expected}, the drive now reports {found}. The disc list moved under the rip; nothing was written for this title."
     },
     "usage": {
         "synopsis_1": "Usage: freemkv <source> <dest> [flags]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Interface language (also --lang): a code like de or pt-BR, or auto.",
             "raw": "      --raw           Skip decryption (raw encrypted output)",
             "multipass": "      --multipass    Write/update mapfile for multipass recovery",
-            "share": "      --share         Submit drive profile (info disc:// only; on a rip, -s means --subtitles)",
+            "share": "      --share         Submit the drive profile and disc structure (info disc://, iso:// or dir://; on a rip, -s means --subtitles)",
             "mask": "  -m, --mask          Mask serial numbers (with --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
+        },
+        "exit_codes_header": "Exit codes:",
+        "exit_code": {
+            "ok": "  0    Success.",
+            "failed": "  1    Failed: no usable output, or any other error.",
+            "usage": "  2    Usage: bad command or flags (this text was also printed).",
+            "damaged": "  3    Damaged (disc:// -> iso:// or disc:// -> null:// only): kept and usable, but short some sectors — re-run (--multipass) to try for more.",
+            "interrupted": "  130  A second Ctrl-C forced an immediate exit."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Open disc…",
             "exit": "Exit",
             "copy": "Copy",
-            "select_all_text": "Select All"
+            "select_all_text": "Select All",
+            "cut": "Cut",
+            "paste": "Paste"
         },
         "col": {
             "type": "Type",
@@ -570,7 +604,8 @@
             "update_keydb": "Update keydb now",
             "test_connection": "Test connection",
             "keydb_no_url": "No keydb update URL set — add one above, then click Update.",
-            "keydb_updating": "Updating keydb… downloading, please wait."
+            "keydb_updating": "Updating keydb… downloading, please wait.",
+            "notify_when_rip_finished": "Notify when a rip finishes"
         },
         "btn": {
             "open_file": "Open file or ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Close",
             "browse": "…",
-            "show_explorer": "Show in Explorer"
+            "show_explorer": "Show in Explorer",
+            "show_folder": "Show in Folder"
         },
         "group": {
             "output": "Output",
@@ -645,9 +681,21 @@
             "select_title_first": "Select at least one title to rip.",
             "video_only_warning": "No audio or subtitle tracks selected — the output will be video-only.",
             "raw_iso_only": "“Keep encrypted (raw)” applies only to a Whole-disc → ISO image output; ignoring it for this format.",
+            "raw_disc_only": "“Keep encrypted (raw)” applies only to a disc in a drive; ignoring it for this source.",
             "no_drive": "No optical drive found. Connect a Blu-ray/DVD drive with a disc.",
             "opening_drive": "Opening {label} ({device})",
-            "drives_found": "{n} drives found: {list} — using the one with a disc"
+            "drives_found": "{n} drives found: {list} — using the one with a disc",
+            "drop_unreadable": "Could not read the dropped item: {e}",
+            "eject_failed": "Eject failed: {error}",
+            "ejected": "Ejected the disc ({device}).",
+            "ejecting": "Ejecting the disc…",
+            "open_folder_failed": "Could not open the folder: {e}",
+            "open_url_failed": "Could not open {url}: {e}",
+            "pick_failed": "Could not open the file chooser: {e}",
+            "pick_not_local": "Only local files and folders can be used: {p}",
+            "reveal_failed": "Could not open the folder in Explorer: {e}",
+            "scan_not_started": "Could not start scanning the source: {detail}",
+            "scan_worker_stopped": "Source scan worker stopped before returning a result."
         },
         "alert": {
             "rip_title": "A rip is in progress.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv Settings"
+        },
+        "notify": {
+            "rip_finished_title": "Rip finished"
         }
     },
     "warn": {
         "no_lang_match_audio": "warning: title {num}: no audio track matches '{requested}' (available: {available}) — keeping video only.",
         "no_lang_match_subtitle": "warning: title {num}: no subtitle track matches '{requested}' (available: {available}) — keeping video only.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Note: {count} stream(s) could not be delivered and were left out:"
+    },
+    "share": {
+        "attach_zip": "The profile zip is too large for the issue text — attach {path} to the issue.",
+        "zip_failed": "Could not build the profile zip: {error}"
     }
 }

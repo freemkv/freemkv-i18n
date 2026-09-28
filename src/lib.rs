@@ -1091,6 +1091,23 @@ mod tests {
         }
     }
 
+    // freemkv compares the answer to drive.submit_prompt against drive.submit_affirmative, so
+    // each prompt must offer that token. drive.zip_failed was superseded by share.zip_failed.
+    #[test]
+    fn every_submit_prompt_offers_its_affirmative_token() {
+        assert!(lookup_in(english_catalog(), "drive.zip_failed").is_none());
+        for code in SHIPPED_CODES {
+            let v: Value =
+                serde_json::from_str(bundled_locale_json(code).expect("bundled")).expect("json");
+            let yes = lookup_in(&v, "drive.submit_affirmative").expect("affirmative");
+            let prompt = lookup_in(&v, "drive.submit_prompt").expect("prompt");
+            assert!(
+                prompt.contains(&format!("[{yes}/")),
+                "{code}: {prompt:?} does not offer {yes:?}"
+            );
+        }
+    }
+
     #[test]
     fn locale_en_loads() {
         let _: Value = serde_json::from_str(LOCALE_EN).expect("en.json invalid");

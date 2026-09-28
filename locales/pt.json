@@ -20,7 +20,7 @@
         "unknown": "Desconhecido",
         "share_hint": "Execute 'freemkv info disc:// --share' para ajudar a expandir o suporte a drives.",
         "share_usage": "Uso: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Capturar e enviar perfil do drive para expandir o suporte",
+        "share_desc": "Capturar e enviar perfil do drive e estrutura do disco para expandir o suporte",
         "mask_desc": "Ocultar numeros de serie (letras -> A, digitos -> 0)",
         "device_desc": "Especificar caminho do dispositivo",
         "captured": "Capturado: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Perfil",
         "submit_features": "Recursos",
         "submit_packaging": "Empacotando...",
-        "zip_failed": "zip falhou ({error}), enviando apenas texto",
         "submit_saved": "Perfil salvo em {dir}/",
         "submit_zip": "Arquivo zip: {path}",
         "submit_manual": "Para contribuir com este perfil, abra uma nova issue e cole o texto abaixo:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "O envio automático falhou; pode ainda comunicá-lo manualmente:",
         "submit_declined": "Não enviado. Pode ainda comunicá-lo manualmente se quiser:",
         "submit_issue_title": "Título da issue: {title}",
-        "submit_issue_body": "Corpo da issue (copie tudo entre as linhas):"
+        "submit_issue_body": "Corpo da issue (copie tudo entre as linhas):",
+        "share_image_note": "Em origens iso:// e dir://, --share captura a estrutura do disco; --mask e --verbose não têm efeito aí (não existe drive).",
+        "structure_unreadable": "Estrutura do disco não capturada: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Escaneando disco...",
@@ -63,7 +65,17 @@
         "forced": "forcada",
         "usage": "Uso: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Desconhecido",
-        "file": "Ficheiro"
+        "file": "Ficheiro",
+        "capture_aacs_failed": "Diagnóstico AACS não capturado — o passo AACS falhou: {error}",
+        "capture_aacs_hash": "Diagnóstico AACS: hash do disco {hash} (chave de pesquisa na keydb) registado em aacs.json.",
+        "capture_aacs_no_hash": "Diagnóstico AACS registado em aacs.json (hash do disco indisponível).",
+        "capture_aacs_none": "Este disco não tem AACS — não há diagnóstico AACS a capturar.",
+        "capture_all_skipped": "Nenhum dos {count} ficheiros da estrutura do disco pôde ser guardado.",
+        "capture_mkdir_failed": "Não foi possível criar {path}: {error}",
+        "capture_no_structure": "Não foi encontrada nenhuma estrutura de disco legível (BDMV / VIDEO_TS); nada a partilhar.",
+        "capture_skipped": "Ficheiro do disco ignorado: {file}",
+        "capture_summary": "Estrutura do disco capturada: {files} ficheiros ({bytes} bytes).",
+        "capture_unsafe_name": "nome de ficheiro inseguro"
     },
     "stream": {
         "purpose": {
@@ -130,6 +142,7 @@
         "verbose_handshake_error": "Handshake falhou",
         "verbose_handshake_hint": "O handshake pode ter falhado — sem certificado de host, ou o drive rejeitou",
         "mapfile_summary": "Mapfile: {good} GB bons, {unreadable} MB ilegiveis, {pending} MB pendentes",
+        "retry_with_multipass": "Execute novamente com --multipass para tentar ler mais; retoma a partir do mapfile.",
         "nothing_to_patch": "Nada a corrigir — todos os setores estao bons",
         "patch_start": "Corrigindo: {good} GB bons, {unreadable} MB ilegiveis, {pending} MB pendentes",
         "patch_done": "Correcao concluida: recuperados {recovered} MB, {unreadable} MB ilegiveis, {pending} MB pendentes ({time}s, {speed} MB/s)",
@@ -222,6 +235,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "O ficheiro de imagem de disco termina antes de um setor de que esta extração precisa, pelo que a imagem está truncada ou incompleta. A leitura foi interrompida em vez de preencher a parte em falta com zeros — crie novamente a imagem a partir do disco.",
         "E7000": "Este disco precisa de chaves de descriptografia AACS, mas nenhuma fonte de chaves as forneceu.",
         "E7001": "Certificado de host AACS muito curto ou invalido",
         "E7002": "Handshake AACS falhou — nao foi possivel alocar AGID",
@@ -252,6 +266,9 @@
         "E7028": "Não foi possível contactar o serviço de chaves online, pelo que nunca disse se este disco tem chave. Normalmente é temporário — aguarde alguns minutos e tente novamente. Ainda não procure uma chave em falta: o que estava em baixo era o serviço, não o disco.",
         "E7029": "O serviço de chaves online rejeitou o token de acesso e por isso não respondeu. Corrija o token do serviço de chaves nas Definições (ou --key-auth na linha de comandos) e tente novamente. Isto não significa que o disco não tenha chave.",
         "E7030": "O serviço de chaves online está a limitar os pedidos e por isso não respondeu. Aguarde alguns minutos e tente novamente, ou processe menos discos de cada vez. Isto não significa que o disco não tenha chave.",
+        "E7031": "O ficheiro de chaves AACS deste disco está em falta ou não foi possível lê-lo. Limpe o disco e tente novamente; se continuar a falhar, o disco pode estar danificado.",
+        "E7032": "Não é possível criar uma imagem de disco desencriptada: um fluxo deste disco que nenhum título reproduz está encriptado e nenhuma das chaves disponíveis lhe corresponde, pelo que a imagem continuaria a conter partes encriptadas. Extraia os títulos para MKV ou guarde uma cópia encriptada: copie o disco em bruto (--raw na linha de comandos, ou «Manter encriptado (passagem bruta)» na aplicação), ou mantenha a imagem de origem tal como está.",
+        "E7033": "Foram encontrados certificados de host nas suas fontes de chaves, mas nenhum deles é utilizável (danificado ou incompleto). Atualize a sua base de dados de chaves e tente novamente.",
         "E8000": "Nao foi possivel conectar ao servidor KEYDB: {detail}",
         "E8001": "Download do KEYDB falhou (HTTP {detail})",
         "E8002": "KEYDB vazio ou invalido",
@@ -358,6 +375,7 @@
         "title_out_of_range": "Título {num} fora do intervalo ({count})",
         "unknown_flag": "Erro: opcao desconhecida '{flag}'. Use 'freemkv help' para ver as opcoes.",
         "usage_hint": "Uso: freemkv <fonte> <dest> [opções]\n       freemkv info <url>\n\nUse 'freemkv help' para mais informações.",
+        "gui_not_in_build": "A aplicação de ambiente de trabalho não está incluída nesta versão. Instale a aplicação freemkv para a obter: https://freemkv.org/download",
         "unknown_language": "idioma desconhecido '{tag}' (disponiveis neste titulo: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -376,12 +394,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Houve uma escrita na saída depois de esta já ter sido concluída ou ter falhado, pelo que os dados não puderam ser guardados.",
+        "E9072": "Os detalhes das faixas foram definidos depois de o cabeçalho da saída já ter sido escrito, pelo que não puderam ser aplicados.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: o valor 0 está fora do intervalo (1–4), ignorado",
         "log_level_not_a_number": "--log-level: esperado um número 1–4, recebido '{value}', ignorado",
         "log_level_needs_value": "--log-level: requer um valor (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: caminho inválido '{path}' — nenhum registo de diagnóstico escrito",
-        "language_needs_value": "{flag}: requer um código de idioma (por ex. --language de)"
+        "language_needs_value": "{flag}: requer um código de idioma (por ex. --language de)",
+        "disc_scan_all_titles_failed": "Erro: não foi possível analisar o disco para listar os títulos, pelo que `-t all` não consegue saber que títulos extrair. Nada foi extraído — verifique o disco e a unidade e tente novamente.",
+        "log_file_needs_value": "--log-file: requer um caminho (ex. --log-file freemkv.log)",
+        "mux_failed_generic": "A multiplexagem falhou (E{code}).",
+        "title_changed": "O título {num} mudou entre análises: esperado {expected}, a unidade indica agora {found}. A lista de títulos do disco mudou durante o rip; nada foi escrito para este título."
     },
     "usage": {
         "synopsis_1": "Uso: freemkv <origem> <dest> [opcoes]",
@@ -447,7 +471,7 @@
             "language": "      --language CODE Idioma da interface (também --lang): um código como de ou pt-BR, ou auto.",
             "raw": "      --raw           Ignorar descriptografia (saida cifrada bruta)",
             "multipass": "      --multipass    Gravar/atualizar mapfile para recuperacao multipassagem",
-            "share": "      --share         Enviar perfil do drive (apenas info disc://; num rip, -s significa --subtitles)",
+            "share": "      --share         Enviar perfil do drive e estrutura do disco (info disc://, iso:// ou dir://; num rip, -s significa --subtitles)",
             "mask": "  -m, --mask          Ocultar numeros de serie (com --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -459,7 +483,15 @@
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
         },
-        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help."
+        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
+        "exit_codes_header": "Códigos de saída:",
+        "exit_code": {
+            "ok": "  0    Sucesso.",
+            "failed": "  1    Falhou: nenhuma saída utilizável, ou outro erro.",
+            "usage": "  2    Utilização: comando ou opções incorretas (este texto também foi impresso).",
+            "damaged": "  3    Danificado (apenas disc:// -> iso:// ou disc:// -> null://): mantido e utilizável, mas faltam alguns setores — execute novamente (--multipass) para tentar recuperar mais.",
+            "interrupted": "  130  Um segundo Ctrl-C forçou uma saída imediata."
+        }
     },
     "help": {
         "unknown_command": "Unknown command '{cmd}'. Try 'freemkv help' for a list of commands.",
@@ -509,7 +541,9 @@
             "open_disc": "Abrir disco…",
             "exit": "Sair",
             "copy": "Copiar",
-            "select_all_text": "Selecionar tudo"
+            "select_all_text": "Selecionar tudo",
+            "cut": "Cortar",
+            "paste": "Colar"
         },
         "col": {
             "type": "Tipo",
@@ -570,7 +604,8 @@
             "test_connection": "Testar ligação",
             "keydb_no_url": "Nenhum URL de atualização do keydb definido — adicione um acima e clique em Atualizar.",
             "keydb_updating": "A atualizar o keydb… a transferir, aguarde.",
-            "lang_any": "Qualquer"
+            "lang_any": "Qualquer",
+            "notify_when_rip_finished": "Notificar quando um rip terminar"
         },
         "btn": {
             "open_file": "Abrir ficheiro ou ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Fechar",
             "browse": "…",
-            "show_explorer": "Mostrar no Explorador"
+            "show_explorer": "Mostrar no Explorador",
+            "show_folder": "Mostrar na pasta"
         },
         "group": {
             "output": "Saída",
@@ -645,9 +681,21 @@
             "select_title_first": "Selecione pelo menos um título para extrair.",
             "video_only_warning": "Nenhuma faixa de áudio ou legendas selecionada — a saída terá apenas vídeo.",
             "raw_iso_only": "“Manter encriptado (raw)” aplica-se apenas à saída Disco completo → imagem ISO; será ignorado para este formato.",
+            "raw_disc_only": "“Manter encriptado (raw)” aplica-se apenas a um disco na unidade; será ignorado para esta fonte.",
             "no_drive": "Nenhuma unidade ótica encontrada. Ligue uma unidade Blu-ray/DVD com um disco.",
             "opening_drive": "A abrir {label} ({device})",
-            "drives_found": "{n} unidades encontradas: {list} — a usar a que tem um disco"
+            "drives_found": "{n} unidades encontradas: {list} — a usar a que tem um disco",
+            "drop_unreadable": "Não foi possível ler o item largado: {e}",
+            "eject_failed": "Falha ao ejectar: {error}",
+            "ejected": "Disco ejectado ({device}).",
+            "ejecting": "A ejectar o disco…",
+            "open_folder_failed": "Não foi possível abrir a pasta: {e}",
+            "open_url_failed": "Não foi possível abrir {url}: {e}",
+            "pick_failed": "Não foi possível abrir o seletor de ficheiros: {e}",
+            "pick_not_local": "Só é possível usar ficheiros e pastas locais: {p}",
+            "reveal_failed": "Não foi possível abrir a pasta no Explorador de Ficheiros: {e}",
+            "scan_not_started": "Não foi possível iniciar a análise da origem: {detail}",
+            "scan_worker_stopped": "O processo de análise da origem parou antes de devolver um resultado."
         },
         "alert": {
             "rip_title": "Está uma extração em curso.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "Definições do freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Rip concluído"
         }
     },
     "warn": {
         "no_lang_match_audio": "aviso: título {num}: nenhuma faixa de áudio corresponde a '{requested}' (disponível: {available}) — a manter apenas o vídeo.",
         "no_lang_match_subtitle": "aviso: título {num}: nenhuma faixa de legendas corresponde a '{requested}' (disponível: {available}) — a manter apenas o vídeo.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Nota: {count} fluxo(s) não puderam ser entregues e foram deixados de fora:"
+    },
+    "share": {
+        "attach_zip": "O zip do perfil é demasiado grande para o texto da issue — anexe {path} à issue.",
+        "zip_failed": "Não foi possível criar o zip do perfil: {error}"
     }
 }

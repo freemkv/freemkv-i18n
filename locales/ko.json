@@ -20,7 +20,7 @@
         "unknown": "알 수 없음",
         "share_hint": "'freemkv info disc:// --share'를 실행하면 드라이브 지원 확대에 도움이 됩니다.",
         "share_usage": "사용법: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "드라이브 프로파일을 수집하고 제출하여 드라이브 지원 확대",
+        "share_desc": "드라이브 프로파일과 디스크 구조를 수집하고 제출하여 지원 확대",
         "mask_desc": "일련번호 마스킹 (문자 → A, 숫자 → 0)",
         "device_desc": "장치 경로 지정",
         "captured": "수집됨: GET_CONFIG 0x{code} {name} ({bytes} 바이트)",
@@ -33,7 +33,6 @@
         "submit_profile": "프로파일",
         "submit_features": "기능",
         "submit_packaging": "패키징 중...",
-        "zip_failed": "zip 실패 ({error}), 텍스트만 제출합니다",
         "submit_saved": "프로파일이 {dir}/에 저장되었습니다",
         "submit_zip": "Zip 아카이브: {path}",
         "submit_manual": "이 프로파일을 기여하려면 새 이슈를 열고 아래 텍스트를 붙여넣으세요:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "자동 제출에 실패했습니다. 직접 신고하실 수도 있습니다:",
         "submit_declined": "제출하지 않았습니다. 원하시면 직접 신고하실 수 있습니다:",
         "submit_issue_title": "이슈 제목: {title}",
-        "submit_issue_body": "이슈 본문 (선과 선 사이의 모든 내용을 복사하세요):"
+        "submit_issue_body": "이슈 본문 (선과 선 사이의 모든 내용을 복사하세요):",
+        "share_image_note": "iso:// 및 dir:// 소스에서는 --share가 디스크 구조를 수집하며, --mask와 --verbose는 효과가 없습니다(드라이브가 없음).",
+        "structure_unreadable": "디스크 구조를 수집하지 못함: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "디스크 스캔 중...",
@@ -63,7 +65,17 @@
         "forced": "강제",
         "usage": "사용법: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "알 수 없음",
-        "file": "파일"
+        "file": "파일",
+        "capture_aacs_failed": "AACS 진단 정보를 수집하지 못했습니다 — AACS 단계 실패: {error}",
+        "capture_aacs_hash": "AACS 진단: 디스크 해시 {hash}(keydb 조회 키)가 aacs.json에 기록되었습니다.",
+        "capture_aacs_no_hash": "AACS 진단 정보가 aacs.json에 기록되었습니다(디스크 해시를 사용할 수 없음).",
+        "capture_aacs_none": "이 디스크에는 AACS가 없습니다 — 수집할 AACS 진단 정보가 없습니다.",
+        "capture_all_skipped": "디스크 구조 파일 {count}개 중 하나도 저장하지 못했습니다.",
+        "capture_mkdir_failed": "{path}을(를) 만들 수 없습니다: {error}",
+        "capture_no_structure": "읽을 수 있는 디스크 구조(BDMV / VIDEO_TS)를 찾지 못했습니다. 공유할 내용이 없습니다.",
+        "capture_skipped": "디스크 파일 {file} 건너뜀",
+        "capture_summary": "디스크 구조 수집됨: 파일 {files}개 ({bytes} 바이트).",
+        "capture_unsafe_name": "안전하지 않은 파일 이름"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "핸드셰이크 실패",
         "verbose_handshake_hint": "핸드셰이크가 실패했을 수 있음 — 호스트 인증서가 없거나 드라이브가 거부함",
         "mapfile_summary": "맵파일: 정상 {good} GB, 읽기 불가 {unreadable} MB, 대기 {pending} MB",
+        "retry_with_multipass": "더 많이 읽으려면 --multipass로 다시 실행하세요. 맵파일에서 재개됩니다.",
         "nothing_to_patch": "패치할 것 없음 — 모든 섹터가 정상입니다",
         "patch_start": "패치 중: 정상 {good} GB, 읽기 불가 {unreadable} MB, 대기 {pending} MB",
         "patch_done": "패치 완료: {recovered} MB 복구, 읽기 불가 {unreadable} MB, 대기 {pending} MB ({time}초, {speed} MB/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "디스크 이미지 파일이 이 립에 필요한 섹터보다 앞에서 끝나므로 이미지가 잘렸거나 불완전합니다. 누락된 부분을 0으로 채우는 대신 읽기를 중단했습니다. 디스크에서 이미지를 다시 만드십시오.",
         "E7000": "이 디스크는 AACS 복호화 키(Blu-ray/UHD)가 필요하지만 찾을 수 없습니다. 다음 명령으로 키 데이터베이스를 다운로드하세요: freemkv update-keys --url <keydb-url>",
         "E7001": "디스크의 보안 인증서가 너무 짧거나 잘못되었습니다.",
         "E7002": "드라이브가 이 디스크에 대한 보안 세션을 시작하지 못했습니다 — 다른 프로그램이 사용 중일 수 있습니다. 디스크를 사용하는 다른 프로그램을 닫고 다시 시도하세요.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "이 디스크의 AACS 키 파일이 없거나 읽을 수 없습니다. 디스크를 닦은 후 다시 시도하십시오. 계속 실패하면 디스크가 손상되었을 수 있습니다.",
+        "E7032": "복호화된 디스크 이미지를 만들 수 없습니다. 이 디스크에는 어떤 타이틀에서도 재생되지 않는 암호화된 스트림이 있으며, 사용 가능한 키 중 어느 것도 이에 맞지 않아 이미지에 암호화된 부분이 남게 됩니다. 대신 타이틀을 MKV로 추출하거나 암호화된 사본을 보관하십시오. 디스크를 원본 그대로 복사하거나(명령줄에서는 --raw, 앱에서는 “암호화 유지 (원본 패스스루)”) 원본 이미지를 그대로 보관하면 됩니다.",
+        "E7033": "키 소스에서 호스트 인증서를 찾았지만 사용할 수 있는 것이 없습니다(손상되었거나 불완전함). 키 데이터베이스를 새로고침한 후 다시 시도하십시오.",
         "E8000": "키 데이터베이스 서버에 연결할 수 없음: {detail}",
         "E8001": "키 데이터베이스 다운로드 실패 (HTTP {detail}). 다시 시도하거나 다음을 실행하세요: freemkv update-keys --url <keydb-url>",
         "E8002": "키 데이터베이스가 비어 있거나 잘못되었습니다. 다음 명령으로 다시 다운로드하세요: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "타이틀 {num}이(가) 범위를 벗어남 ({count})",
         "unknown_flag": "오류: 알 수 없는 플래그 '{flag}'. 옵션 목록은 'freemkv help'를 실행하세요.",
         "usage_hint": "사용법: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\n자세한 내용은 'freemkv help'를 실행하세요.",
+        "gui_not_in_build": "이 빌드에는 데스크톱 앱이 포함되어 있지 않습니다. freemkv 앱을 설치하세요: https://freemkv.org/download",
         "unknown_language": "알 수 없는 언어 '{tag}' (이 타이틀에서 사용 가능: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "출력이 이미 완료되었거나 실패한 뒤에 쓰기가 시도되어 데이터를 저장할 수 없습니다.",
+        "E9072": "출력 헤더가 이미 기록된 뒤에 트랙 정보가 설정되어 적용할 수 없습니다.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: 값 0은 범위(1–4)를 벗어났습니다. 무시합니다",
         "log_level_not_a_number": "--log-level: 1–4 사이의 숫자가 필요하지만 '{value}'을(를) 받았습니다. 무시합니다",
         "log_level_needs_value": "--log-level: 값이 필요합니다 (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: 잘못된 경로 '{path}' — 진단 로그를 기록하지 않았습니다",
-        "language_needs_value": "{flag}: 언어 코드가 필요합니다 (예: --language de)"
+        "language_needs_value": "{flag}: 언어 코드가 필요합니다 (예: --language de)",
+        "disc_scan_all_titles_failed": "오류: 타이틀 목록을 얻기 위해 디스크를 스캔할 수 없어 `-t all`이 추출할 타이틀을 알 수 없습니다. 아무것도 추출되지 않았습니다 — 디스크와 드라이브를 확인하고 다시 시도하세요.",
+        "log_file_needs_value": "--log-file: 경로가 필요합니다(예: --log-file freemkv.log)",
+        "mux_failed_generic": "먹싱 실패 (E{code}).",
+        "title_changed": "타이틀 {num}이(가) 스캔 사이에 변경되었습니다: 예상 {expected}, 드라이브의 현재 보고 {found}. 추출 중 디스크의 타이틀 목록이 바뀌었습니다. 이 타이틀에는 아무것도 기록되지 않았습니다."
     },
     "usage": {
         "synopsis_1": "사용법: freemkv <source> <dest> [flags]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE 인터페이스 언어 (--lang 도 가능): de 또는 pt-BR 같은 코드, 혹은 auto.",
             "raw": "      --raw           복호화 건너뛰기 (원본 암호화 출력)",
             "multipass": "      --multipass    멀티패스 복구를 위한 맵파일 쓰기/업데이트",
-            "share": "      --share         드라이브 프로파일 제출 (info disc:// 전용; 추출에서 -s는 --subtitles를 의미)",
+            "share": "      --share         드라이브 프로파일과 디스크 구조 제출 (info disc://, iso:// 또는 dir://; 추출에서 -s는 --subtitles를 의미)",
             "mask": "  -m, --mask          일련번호 마스킹 (--share와 함께)",
             "force": "      --force        비어 있지 않은 dir:// 대상에 추출 (덮어쓰기)"
+        },
+        "exit_codes_header": "종료 코드:",
+        "exit_code": {
+            "ok": "  0    성공.",
+            "failed": "  1    실패: 사용 가능한 출력이 없거나 다른 오류가 발생했습니다.",
+            "usage": "  2    사용법: 잘못된 명령 또는 플래그(이 텍스트도 출력되었습니다).",
+            "damaged": "  3    손상됨(disc:// -> iso:// 또는 disc:// -> null:// 만 해당): 유지되어 사용 가능하지만 일부 섹터가 부족합니다 — 더 복구하려면 다시 실행하세요 (--multipass).",
+            "interrupted": "  130  두 번째 Ctrl-C로 즉시 종료되었습니다."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "디스크 열기…",
             "exit": "끝내기",
             "copy": "복사",
-            "select_all_text": "모두 선택"
+            "select_all_text": "모두 선택",
+            "cut": "잘라내기",
+            "paste": "붙여넣기"
         },
         "col": {
             "type": "유형",
@@ -570,7 +604,8 @@
             "test_connection": "연결 테스트",
             "keydb_no_url": "keydb 업데이트 URL이 설정되지 않았습니다. 위에 입력한 후 업데이트를 클릭하세요.",
             "keydb_updating": "keydb 업데이트 중… 다운로드하고 있습니다. 잠시 기다려 주세요.",
-            "lang_any": "모두"
+            "lang_any": "모두",
+            "notify_when_rip_finished": "추출이 완료되면 알림"
         },
         "btn": {
             "open_file": "파일 또는 ISO 열기…",
@@ -582,7 +617,8 @@
             "ok": "확인",
             "close": "닫기",
             "browse": "…",
-            "show_explorer": "탐색기에서 표시"
+            "show_explorer": "탐색기에서 표시",
+            "show_folder": "폴더에서 보기"
         },
         "group": {
             "output": "출력",
@@ -645,9 +681,21 @@
             "select_title_first": "추출할 타이틀을 하나 이상 선택하세요.",
             "video_only_warning": "오디오 또는 자막 트랙이 선택되지 않았습니다 — 출력에 비디오만 포함됩니다.",
             "raw_iso_only": "“암호화 유지(raw)”는 전체 디스크 → ISO 이미지 출력에만 적용됩니다. 이 형식에서는 무시합니다.",
+            "raw_disc_only": "“암호화 유지(raw)”는 드라이브에 있는 디스크에만 적용됩니다. 이 소스에서는 무시합니다.",
             "no_drive": "광학 드라이브를 찾을 수 없습니다. 디스크가 있는 Blu-ray/DVD 드라이브를 연결하세요.",
             "opening_drive": "{label}({device}) 열기 중",
-            "drives_found": "드라이브 {n}개 발견: {list} — 디스크가 있는 드라이브를 사용합니다"
+            "drives_found": "드라이브 {n}개 발견: {list} — 디스크가 있는 드라이브를 사용합니다",
+            "drop_unreadable": "드롭한 항목을 읽을 수 없습니다: {e}",
+            "eject_failed": "꺼내기 실패: {error}",
+            "ejected": "디스크를 꺼냈습니다 ({device}).",
+            "ejecting": "디스크 꺼내는 중…",
+            "open_folder_failed": "폴더를 열 수 없습니다: {e}",
+            "open_url_failed": "{url}을(를) 열 수 없습니다: {e}",
+            "pick_failed": "파일 선택기를 열 수 없습니다: {e}",
+            "pick_not_local": "로컬 파일과 폴더만 사용할 수 있습니다: {p}",
+            "reveal_failed": "파일 탐색기에서 폴더를 열 수 없습니다: {e}",
+            "scan_not_started": "소스 스캔을 시작할 수 없습니다: {detail}",
+            "scan_worker_stopped": "소스 스캔 작업이 결과를 반환하기 전에 중지되었습니다."
         },
         "alert": {
             "rip_title": "추출이 진행 중입니다.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv 설정"
+        },
+        "notify": {
+            "rip_finished_title": "추출 완료"
         }
     },
     "warn": {
         "no_lang_match_audio": "경고: 타이틀 {num}: '{requested}'과(와) 일치하는 오디오 트랙이 없습니다 (사용 가능: {available}) — 비디오만 유지합니다.",
         "no_lang_match_subtitle": "경고: 타이틀 {num}: '{requested}'과(와) 일치하는 자막 트랙이 없습니다 (사용 가능: {available}) — 비디오만 유지합니다.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "참고: 스트림 {count}개를 출력할 수 없어 제외했습니다:"
+    },
+    "share": {
+        "attach_zip": "프로파일 zip이 이슈 본문에 넣기에는 너무 큽니다 — {path}을(를) 이슈에 첨부하세요.",
+        "zip_failed": "프로파일 zip을 만들 수 없습니다: {error}"
     }
 }

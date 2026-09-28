@@ -20,7 +20,7 @@
         "unknown": "Onbekend",
         "share_hint": "Voer 'freemkv info disc:// --share' uit om drive-ondersteuning uit te breiden.",
         "share_usage": "Gebruik: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Leg drive-profiel vast en stuur het in om drive-ondersteuning uit te breiden",
+        "share_desc": "Leg het stationsprofiel en de discstructuur vast en stuur ze in om de ondersteuning uit te breiden",
         "mask_desc": "Serienummers maskeren (letters → A, cijfers → 0)",
         "device_desc": "Apparaatpad opgeven",
         "captured": "Vastgelegd: GET_CONFIG 0x{code} {name} ({bytes} bytes)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profiel",
         "submit_features": "Kenmerken",
         "submit_packaging": "Inpakken...",
-        "zip_failed": "zip mislukt ({error}), alleen tekst wordt verstuurd",
         "submit_saved": "Profiel opgeslagen in {dir}/",
         "submit_zip": "Zip-archief: {path}",
         "submit_manual": "Open een nieuwe issue en plak de onderstaande tekst om dit profiel bij te dragen:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Automatisch insturen is mislukt; u kunt het nog steeds handmatig melden:",
         "submit_declined": "Niet ingestuurd. U kunt het desgewenst nog steeds handmatig melden:",
         "submit_issue_title": "Issue-titel: {title}",
-        "submit_issue_body": "Issue-tekst (kopieer alles tussen de lijnen):"
+        "submit_issue_body": "Issue-tekst (kopieer alles tussen de lijnen):",
+        "share_image_note": "Bij iso://- en dir://-bronnen legt --share de discstructuur vast; --mask en --verbose hebben daar geen effect (er is geen station).",
+        "structure_unreadable": "Discstructuur niet vastgelegd: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Disc scannen...",
@@ -63,7 +65,17 @@
         "forced": "geforceerd",
         "usage": "Gebruik: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Onbekend",
-        "file": "Bestand"
+        "file": "Bestand",
+        "capture_aacs_failed": "AACS-diagnose niet vastgelegd — de AACS-stap is mislukt: {error}",
+        "capture_aacs_hash": "AACS-diagnose: disc-hash {hash} (opzoeksleutel voor keydb) vastgelegd in aacs.json.",
+        "capture_aacs_no_hash": "AACS-diagnose vastgelegd in aacs.json (disc-hash niet beschikbaar).",
+        "capture_aacs_none": "Geen AACS op deze disc — geen AACS-diagnose om vast te leggen.",
+        "capture_all_skipped": "Geen van de {count} bestanden van de discstructuur kon worden opgeslagen.",
+        "capture_mkdir_failed": "Kon {path} niet aanmaken: {error}",
+        "capture_no_structure": "Geen leesbare discstructuur (BDMV / VIDEO_TS) gevonden; niets om te delen.",
+        "capture_skipped": "Discbestand {file} overgeslagen",
+        "capture_summary": "Discstructuur vastgelegd: {files} bestanden ({bytes} bytes).",
+        "capture_unsafe_name": "onveilige bestandsnaam"
     },
     "stream": {
         "purpose": {
@@ -130,6 +142,7 @@
         "verbose_handshake_error": "Handshake mislukt",
         "verbose_handshake_hint": "Handshake is mogelijk mislukt — geen hostcertificaat, of drive heeft geweigerd",
         "mapfile_summary": "Mapfile: {good} GB goed, {unreadable} MB onleesbaar, {pending} MB in behandeling",
+        "retry_with_multipass": "Voer opnieuw uit met --multipass om meer te proberen te lezen; het hervat vanaf het mapfile.",
         "nothing_to_patch": "Niets te patchen — alle sectoren zijn goed",
         "patch_start": "Patchen: {good} GB goed, {unreadable} MB onleesbaar, {pending} MB in behandeling",
         "patch_done": "Patch voltooid: {recovered} MB hersteld, {unreadable} MB onleesbaar, {pending} MB in behandeling ({time}s, {speed} MB/s)",
@@ -222,6 +235,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Het schijfimagebestand eindigt vóór een sector die deze rip nodig heeft, dus het image is afgekapt of onvolledig. Het lezen is gestopt in plaats van het ontbrekende deel met nullen op te vullen — maak het image opnieuw van de schijf.",
         "E7000": "Deze schijf heeft AACS-ontsleutelingssleutels nodig, maar geen enkele sleutelbron heeft ze geleverd.",
         "E7001": "AACS-hostcertificaat te kort of ongeldig",
         "E7002": "AACS-handshake mislukt — kon geen AGID toewijzen",
@@ -252,6 +266,9 @@
         "E7028": "De online-sleuteldienst was niet bereikbaar en heeft dus nooit gezegd of deze disc een sleutel heeft. Dit is meestal tijdelijk — wacht een paar minuten en probeer het opnieuw. Ga nog niet op zoek naar een ontbrekende sleutel: de dienst lag eruit, niet de disc.",
         "E7029": "De online-sleuteldienst heeft het toegangstoken geweigerd en gaf daarom geen antwoord. Corrigeer het token van de sleuteldienst in Instellingen (of --key-auth op de opdrachtregel) en probeer het opnieuw. Dit betekent niet dat de disc geen sleutel heeft.",
         "E7030": "De online-sleuteldienst beperkt het aantal verzoeken en gaf daarom geen antwoord. Wacht een paar minuten en probeer het opnieuw, of verwerk minder discs tegelijk. Dit betekent niet dat de disc geen sleutel heeft.",
+        "E7031": "Het AACS-sleutelbestand van deze disc ontbreekt of kon niet worden gelezen. Maak de disc schoon en probeer het opnieuw; als het blijft mislukken, is de disc mogelijk beschadigd.",
+        "E7032": "Er kan geen ontsleutelde disc-image worden gemaakt: een stream op deze disc die door geen enkele titel wordt afgespeeld, is versleuteld en geen van de beschikbare sleutels past erop, dus de image zou nog versleutelde delen bevatten. Rip de titels in plaats daarvan naar MKV, of bewaar een versleutelde kopie: kopieer de disc ruw (--raw op de opdrachtregel, of ‘Versleuteld behouden (ruwe doorvoer)’ in de app), of bewaar de bron-image zoals hij is.",
+        "E7033": "Er zijn hostcertificaten gevonden in uw sleutelbronnen, maar geen enkele is bruikbaar (beschadigd of onvolledig). Werk uw sleuteldatabase bij en probeer het opnieuw.",
         "E8000": "Kan geen verbinding maken met KEYDB-server: {detail}",
         "E8001": "KEYDB-download mislukt (HTTP {detail})",
         "E8002": "KEYDB is leeg of ongeldig",
@@ -358,6 +375,7 @@
         "title_out_of_range": "Titel {num} buiten bereik ({count})",
         "unknown_flag": "Fout: onbekende optie '{flag}'. Gebruik 'freemkv help' voor een lijst met opties.",
         "usage_hint": "Gebruik: freemkv <bron> <doel> [opties]\n       freemkv info <url>\n\nGebruik 'freemkv help' voor meer informatie.",
+        "gui_not_in_build": "De desktop-app zit niet in deze build. Installeer de freemkv-app om hem te krijgen: https://freemkv.org/download",
         "unknown_language": "onbekende taal '{tag}' (beschikbaar op deze titel: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -376,12 +394,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Er werd naar de uitvoer geschreven nadat die al was afgerond of mislukt, dus de gegevens konden niet worden opgeslagen.",
+        "E9072": "De spoorgegevens werden ingesteld nadat de header van de uitvoer al was geschreven, dus ze konden niet worden toegepast.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: waarde 0 valt buiten het bereik (1–4), genegeerd",
         "log_level_not_a_number": "--log-level: getal 1–4 verwacht, '{value}' gekregen, genegeerd",
         "log_level_needs_value": "--log-level: vereist een waarde (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: ongeldig pad '{path}' — geen diagnostisch logboek geschreven",
-        "language_needs_value": "{flag}: vereist een taalcode (bijv. --language de)"
+        "language_needs_value": "{flag}: vereist een taalcode (bijv. --language de)",
+        "disc_scan_all_titles_failed": "Fout: kon de disc niet scannen om de titels op te sommen, dus `-t all` weet niet welke titels geript moeten worden. Er is niets geript — controleer de disc en het station en probeer het opnieuw.",
+        "log_file_needs_value": "--log-file: vereist een pad (bijv. --log-file freemkv.log)",
+        "mux_failed_generic": "Muxen mislukt (E{code}).",
+        "title_changed": "Titel {num} is tussen scans gewijzigd: verwacht {expected}, het station meldt nu {found}. De titellijst van de disc is tijdens het rippen veranderd; voor deze titel is niets geschreven."
     },
     "usage": {
         "synopsis_1": "Gebruik: freemkv <bron> <doel> [opties]",
@@ -447,7 +471,7 @@
             "language": "      --language CODE Taal van de interface (ook --lang): een code zoals de of pt-BR, of auto.",
             "raw": "      --raw           Decodering overslaan (ruwe versleutelde uitvoer)",
             "multipass": "      --multipass    Mapfile schrijven/bijwerken voor multipass-herstel",
-            "share": "      --share         Stationsprofiel indienen (alleen info disc://; bij een rip betekent -s --subtitles)",
+            "share": "      --share         Stationsprofiel en discstructuur indienen (info disc://, iso:// of dir://; bij een rip betekent -s --subtitles)",
             "mask": "  -m, --mask          Serienummers maskeren (met --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
@@ -459,7 +483,15 @@
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
         },
-        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help."
+        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
+        "exit_codes_header": "Afsluitcodes:",
+        "exit_code": {
+            "ok": "  0    Geslaagd.",
+            "failed": "  1    Mislukt: geen bruikbare uitvoer, of een andere fout.",
+            "usage": "  2    Gebruik: onjuiste opdracht of vlaggen (deze tekst is ook afgedrukt).",
+            "damaged": "  3    Beschadigd (alleen disc:// -> iso:// of disc:// -> null://): bewaard en bruikbaar, maar enkele sectoren ontbreken — voer opnieuw uit (--multipass) om meer te herstellen.",
+            "interrupted": "  130  Een tweede Ctrl-C dwong een onmiddellijke afsluiting af."
+        }
     },
     "help": {
         "unknown_command": "Unknown command '{cmd}'. Try 'freemkv help' for a list of commands.",
@@ -509,7 +541,9 @@
             "open_disc": "Schijf openen…",
             "exit": "Afsluiten",
             "copy": "Kopiëren",
-            "select_all_text": "Alles selecteren"
+            "select_all_text": "Alles selecteren",
+            "cut": "Knippen",
+            "paste": "Plakken"
         },
         "col": {
             "type": "Type",
@@ -570,7 +604,8 @@
             "test_connection": "Verbinding testen",
             "keydb_no_url": "Geen keydb-update-URL ingesteld — voeg er hierboven een toe en klik op Bijwerken.",
             "keydb_updating": "keydb wordt bijgewerkt… downloaden, even geduld.",
-            "lang_any": "Alle"
+            "lang_any": "Alle",
+            "notify_when_rip_finished": "Melding geven als een rip klaar is"
         },
         "btn": {
             "open_file": "Bestand of ISO openen…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Sluiten",
             "browse": "…",
-            "show_explorer": "Weergeven in Verkenner"
+            "show_explorer": "Weergeven in Verkenner",
+            "show_folder": "Weergeven in map"
         },
         "group": {
             "output": "Uitvoer",
@@ -645,9 +681,21 @@
             "select_title_first": "Selecteer minstens één titel om te rippen.",
             "video_only_warning": "Geen audio- of ondertitelsporen geselecteerd — de uitvoer bevat alleen video.",
             "raw_iso_only": "“Versleuteld houden (raw)” geldt alleen voor de uitvoer Hele schijf → ISO-image; wordt genegeerd voor dit formaat.",
+            "raw_disc_only": "“Versleuteld houden (raw)” geldt alleen voor een disc in het station; wordt genegeerd voor deze bron.",
             "no_drive": "Geen optisch station gevonden. Sluit een Blu-ray-/dvd-station met een schijf aan.",
             "opening_drive": "{label} ({device}) wordt geopend",
-            "drives_found": "{n} stations gevonden: {list} — het station met een schijf wordt gebruikt"
+            "drives_found": "{n} stations gevonden: {list} — het station met een schijf wordt gebruikt",
+            "drop_unreadable": "Kon het neergezette item niet lezen: {e}",
+            "eject_failed": "Uitwerpen mislukt: {error}",
+            "ejected": "Disc uitgeworpen ({device}).",
+            "ejecting": "Disc wordt uitgeworpen…",
+            "open_folder_failed": "Kon de map niet openen: {e}",
+            "open_url_failed": "Kon {url} niet openen: {e}",
+            "pick_failed": "Kon de bestandskiezer niet openen: {e}",
+            "pick_not_local": "Alleen lokale bestanden en mappen kunnen worden gebruikt: {p}",
+            "reveal_failed": "Kon de map niet openen in Verkenner: {e}",
+            "scan_not_started": "Kon het scannen van de bron niet starten: {detail}",
+            "scan_worker_stopped": "Het scanproces voor de bron is gestopt voordat het een resultaat gaf."
         },
         "alert": {
             "rip_title": "Er is een rip bezig.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv-instellingen"
+        },
+        "notify": {
+            "rip_finished_title": "Rip voltooid"
         }
     },
     "warn": {
         "no_lang_match_audio": "waarschuwing: titel {num}: geen audiospoor komt overeen met '{requested}' (beschikbaar: {available}) — alleen video wordt behouden.",
         "no_lang_match_subtitle": "waarschuwing: titel {num}: geen ondertitelspoor komt overeen met '{requested}' (beschikbaar: {available}) — alleen video wordt behouden.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Let op: {count} stream(s) kon(den) niet worden geleverd en is/zijn weggelaten:"
+    },
+    "share": {
+        "attach_zip": "De profiel-zip is te groot voor de tekst van het issue — voeg {path} als bijlage toe aan het issue.",
+        "zip_failed": "Kon de profiel-zip niet maken: {error}"
     }
 }

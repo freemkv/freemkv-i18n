@@ -20,7 +20,7 @@
         "unknown": "Tidak diketahui",
         "share_hint": "Jalankan 'freemkv info disc:// --share' untuk membantu memperluas dukungan drive.",
         "share_usage": "Penggunaan: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Tangkap dan kirim profil drive untuk memperluas dukungan drive",
+        "share_desc": "Tangkap dan kirim profil drive dan struktur disc untuk membantu memperluas dukungan",
         "mask_desc": "Samarkan nomor seri (huruf → A, angka → 0)",
         "device_desc": "Tentukan path perangkat",
         "captured": "Ditangkap: GET_CONFIG 0x{code} {name} ({bytes} byte)",
@@ -33,7 +33,6 @@
         "submit_profile": "Profil",
         "submit_features": "Fitur",
         "submit_packaging": "Mengemas...",
-        "zip_failed": "zip gagal ({error}), mengirim teks saja",
         "submit_saved": "Profil disimpan ke {dir}/",
         "submit_zip": "Arsip zip: {path}",
         "submit_manual": "Untuk menyumbangkan profil ini, buka isu baru dan tempel teks di bawah ini:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Pengiriman otomatis gagal; Anda masih dapat melaporkannya secara manual:",
         "submit_declined": "Tidak dikirim. Anda masih dapat melaporkannya secara manual jika mau:",
         "submit_issue_title": "Judul isu: {title}",
-        "submit_issue_body": "Isi isu (salin semua di antara garis):"
+        "submit_issue_body": "Isi isu (salin semua di antara garis):",
+        "share_image_note": "Pada sumber iso:// dan dir://, --share menangkap struktur disc; --mask dan --verbose tidak berpengaruh di sana (tidak ada drive).",
+        "structure_unreadable": "Struktur disc tidak ditangkap: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Memindai disc...",
@@ -63,7 +65,17 @@
         "forced": "paksa",
         "usage": "Penggunaan: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Tidak diketahui",
-        "file": "Berkas"
+        "file": "Berkas",
+        "capture_aacs_failed": "Diagnostik AACS tidak ditangkap — langkah AACS gagal: {error}",
+        "capture_aacs_hash": "Diagnostik AACS: hash disc {hash} (kunci pencarian keydb) dicatat di aacs.json.",
+        "capture_aacs_no_hash": "Diagnostik AACS dicatat di aacs.json (hash disc tidak tersedia).",
+        "capture_aacs_none": "Tidak ada AACS pada disc ini — tidak ada diagnostik AACS untuk ditangkap.",
+        "capture_all_skipped": "Tidak satu pun dari {count} berkas struktur disc dapat disimpan.",
+        "capture_mkdir_failed": "Tidak dapat membuat {path}: {error}",
+        "capture_no_structure": "Tidak ditemukan struktur disc yang dapat dibaca (BDMV / VIDEO_TS); tidak ada yang dibagikan.",
+        "capture_skipped": "Berkas disc {file} dilewati",
+        "capture_summary": "Struktur disc ditangkap: {files} berkas ({bytes} byte).",
+        "capture_unsafe_name": "nama berkas tidak aman"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Handshake gagal",
         "verbose_handshake_hint": "Handshake mungkin gagal — tidak ada sertifikat host, atau drive menolak",
         "mapfile_summary": "Mapfile: {good} GB bagus, {unreadable} MB tidak terbaca, {pending} MB tertunda",
+        "retry_with_multipass": "Jalankan lagi dengan --multipass untuk mencoba membaca lebih banyak; ini akan melanjutkan dari mapfile.",
         "nothing_to_patch": "Tidak ada yang perlu ditambal — semua sektor bagus",
         "patch_start": "Menambal: {good} GB bagus, {unreadable} MB tidak terbaca, {pending} MB tertunda",
         "patch_done": "Penambalan selesai: memulihkan {recovered} MB, {unreadable} MB tidak terbaca, {pending} MB tertunda ({time} detik, {speed} MB/s)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Berkas image cakram berakhir sebelum sektor yang dibutuhkan penyalinan ini, sehingga image terpotong atau tidak lengkap. Pembacaan dihentikan alih-alih mengisi bagian yang hilang dengan nol — buat ulang image dari cakram.",
         "E7000": "Disc ini memerlukan kunci dekripsi AACS (Blu-ray/UHD), tetapi tidak ada yang ditemukan. Unduh basis data kunci dengan: freemkv update-keys --url <keydb-url>",
         "E7001": "Sertifikat keamanan disc terlalu pendek atau tidak valid.",
         "E7002": "Drive tidak mau memulai sesi aman untuk disc ini — mungkin sedang digunakan oleh program lain. Tutup apa pun yang menggunakan disc dan coba lagi.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Berkas kunci AACS cakram ini tidak ada atau tidak dapat dibaca. Bersihkan cakram lalu coba lagi; jika masih gagal, cakram mungkin rusak.",
+        "E7032": "Image cakram yang didekripsi tidak dapat dibuat: sebuah stream di cakram ini yang tidak diputar oleh judul mana pun terenkripsi, dan tidak ada kunci tersedia yang cocok dengannya, sehingga image masih akan berisi bagian terenkripsi. Rip judul ke MKV sebagai gantinya, atau simpan salinan terenkripsi: salin cakram secara mentah (--raw di baris perintah, atau “Simpan terenkripsi (passthrough mentah)” di aplikasi), atau simpan image sumber apa adanya.",
+        "E7033": "Sertifikat host ditemukan di sumber kunci Anda, tetapi tidak satu pun yang dapat digunakan (rusak atau tidak lengkap). Perbarui basis data kunci Anda lalu coba lagi.",
         "E8000": "Tidak dapat terhubung ke server basis data kunci: {detail}",
         "E8001": "Unduhan basis data kunci gagal (HTTP {detail}). Coba lagi, atau jalankan: freemkv update-keys --url <keydb-url>",
         "E8002": "Basis data kunci kosong atau tidak valid. Unduh ulang dengan: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "Judul {num} di luar rentang ({count})",
         "unknown_flag": "Kesalahan: flag '{flag}' tidak dikenal. Coba 'freemkv help' untuk daftar opsi.",
         "usage_hint": "Penggunaan: freemkv <source> <dest> [flags]\n       freemkv info <url>\n\nCoba 'freemkv help' untuk selengkapnya.",
+        "gui_not_in_build": "Aplikasi desktop tidak disertakan dalam build ini. Pasang aplikasi freemkv untuk mendapatkannya: https://freemkv.org/download",
         "unknown_language": "bahasa '{tag}' tidak dikenal (tersedia pada judul ini: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Keluaran ditulisi setelah sudah selesai atau gagal, sehingga data tidak dapat disimpan.",
+        "E9072": "Detail trek ditetapkan setelah header keluaran sudah ditulis, sehingga tidak dapat diterapkan.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: nilai 0 di luar rentang (1–4), diabaikan",
         "log_level_not_a_number": "--log-level: diharapkan angka 1–4, diterima '{value}', diabaikan",
         "log_level_needs_value": "--log-level: memerlukan sebuah nilai (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: jalur tidak valid '{path}' — tidak ada log diagnostik yang ditulis",
-        "language_needs_value": "{flag}: memerlukan kode bahasa (mis. --language de)"
+        "language_needs_value": "{flag}: memerlukan kode bahasa (mis. --language de)",
+        "disc_scan_all_titles_failed": "Kesalahan: tidak dapat memindai disc untuk mendaftar judulnya, sehingga `-t all` tidak dapat mengetahui judul mana yang harus dirip. Tidak ada yang dirip — periksa disc dan drive lalu coba lagi.",
+        "log_file_needs_value": "--log-file: memerlukan path (mis. --log-file freemkv.log)",
+        "mux_failed_generic": "Mux gagal (E{code}).",
+        "title_changed": "Judul {num} berubah di antara pemindaian: diharapkan {expected}, drive sekarang melaporkan {found}. Daftar judul disc berubah selama rip; tidak ada yang ditulis untuk judul ini."
     },
     "usage": {
         "synopsis_1": "Penggunaan: freemkv <source> <dest> [flags]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Bahasa antarmuka (juga --lang): kode seperti de atau pt-BR, atau auto.",
             "raw": "      --raw           Lewati dekripsi (keluaran terenkripsi mentah)",
             "multipass": "      --multipass    Tulis/perbarui mapfile untuk pemulihan multipass",
-            "share": "      --share         Kirim profil drive (info disc:// saja; pada rip, -s berarti --subtitles)",
+            "share": "      --share         Kirim profil drive dan struktur disc (info disc://, iso:// atau dir://; pada rip, -s berarti --subtitles)",
             "mask": "  -m, --mask          Samarkan nomor seri (dengan --share)",
             "force": "      --force        Ekstrak ke target dir:// yang tidak kosong (timpa)"
+        },
+        "exit_codes_header": "Kode keluar:",
+        "exit_code": {
+            "ok": "  0    Berhasil.",
+            "failed": "  1    Gagal: tidak ada keluaran yang dapat digunakan, atau kesalahan lain.",
+            "usage": "  2    Penggunaan: perintah atau flag salah (teks ini juga dicetak).",
+            "damaged": "  3    Rusak (hanya disc:// -> iso:// atau disc:// -> null://): disimpan dan dapat digunakan, tetapi beberapa sektor hilang — jalankan lagi (--multipass) untuk mencoba memulihkan lebih banyak.",
+            "interrupted": "  130  Ctrl-C kedua memaksa keluar segera."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Buka disc…",
             "exit": "Keluar",
             "copy": "Salin",
-            "select_all_text": "Pilih Semua"
+            "select_all_text": "Pilih Semua",
+            "cut": "Potong",
+            "paste": "Tempel"
         },
         "col": {
             "type": "Tipe",
@@ -570,7 +604,8 @@
             "test_connection": "Uji koneksi",
             "keydb_no_url": "URL pembaruan keydb belum diatur — tambahkan di atas, lalu klik Perbarui.",
             "keydb_updating": "Memperbarui keydb… mengunduh, mohon tunggu.",
-            "lang_any": "Apa saja"
+            "lang_any": "Apa saja",
+            "notify_when_rip_finished": "Beri tahu saat rip selesai"
         },
         "btn": {
             "open_file": "Buka berkas atau ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Tutup",
             "browse": "…",
-            "show_explorer": "Tampilkan di Explorer"
+            "show_explorer": "Tampilkan di Explorer",
+            "show_folder": "Tampilkan di Folder"
         },
         "group": {
             "output": "Keluaran",
@@ -645,9 +681,21 @@
             "select_title_first": "Pilih setidaknya satu judul untuk dirip.",
             "video_only_warning": "Tidak ada trek audio atau subtitle yang dipilih — keluaran hanya berisi video.",
             "raw_iso_only": "“Tetap terenkripsi (raw)” hanya berlaku untuk keluaran Seluruh disc → image ISO; diabaikan untuk format ini.",
+            "raw_disc_only": "“Tetap terenkripsi (raw)” hanya berlaku untuk disc di drive; diabaikan untuk sumber ini.",
             "no_drive": "Tidak ada drive optik ditemukan. Hubungkan drive Blu-ray/DVD dengan disk.",
             "opening_drive": "Membuka {label} ({device})",
-            "drives_found": "{n} drive ditemukan: {list} — menggunakan yang berisi disk"
+            "drives_found": "{n} drive ditemukan: {list} — menggunakan yang berisi disk",
+            "drop_unreadable": "Tidak dapat membaca item yang dijatuhkan: {e}",
+            "eject_failed": "Gagal mengeluarkan: {error}",
+            "ejected": "Disc dikeluarkan ({device}).",
+            "ejecting": "Mengeluarkan disc…",
+            "open_folder_failed": "Tidak dapat membuka folder: {e}",
+            "open_url_failed": "Tidak dapat membuka {url}: {e}",
+            "pick_failed": "Tidak dapat membuka pemilih berkas: {e}",
+            "pick_not_local": "Hanya berkas dan folder lokal yang dapat digunakan: {p}",
+            "reveal_failed": "Tidak dapat membuka folder di File Explorer: {e}",
+            "scan_not_started": "Tidak dapat memulai pemindaian sumber: {detail}",
+            "scan_worker_stopped": "Proses pemindaian sumber berhenti sebelum mengembalikan hasil."
         },
         "alert": {
             "rip_title": "Rip sedang berlangsung.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "Pengaturan freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Rip selesai"
         }
     },
     "warn": {
         "no_lang_match_audio": "peringatan: judul {num}: tidak ada trek audio yang cocok dengan '{requested}' (tersedia: {available}) — hanya video yang dipertahankan.",
         "no_lang_match_subtitle": "peringatan: judul {num}: tidak ada trek subtitle yang cocok dengan '{requested}' (tersedia: {available}) — hanya video yang dipertahankan.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Catatan: {count} stream tidak dapat dikirim dan dihilangkan:"
+    },
+    "share": {
+        "attach_zip": "Zip profil terlalu besar untuk teks issue — lampirkan {path} ke issue.",
+        "zip_failed": "Tidak dapat membuat zip profil: {error}"
     }
 }

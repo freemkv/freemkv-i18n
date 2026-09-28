@@ -20,7 +20,7 @@
         "unknown": "未知",
         "share_hint": "執行 'freemkv info disc:// --share' 以協助擴充光碟機支援。",
         "share_usage": "用法：freemkv info disc:// [--share] [--mask]",
-        "share_desc": "擷取並提交光碟機設定檔以擴充光碟機支援",
+        "share_desc": "擷取並提交光碟機設定檔與光碟結構以擴充支援",
         "mask_desc": "遮蔽序號（字母 → A，數字 → 0）",
         "device_desc": "指定裝置路徑",
         "captured": "已擷取：GET_CONFIG 0x{code} {name}（{bytes} 位元組）",
@@ -33,7 +33,6 @@
         "submit_profile": "設定檔",
         "submit_features": "功能",
         "submit_packaging": "封裝中…",
-        "zip_failed": "zip 失敗（{error}），僅提交文字",
         "submit_saved": "設定檔已儲存至 {dir}/",
         "submit_zip": "Zip 封存檔：{path}",
         "submit_manual": "若要貢獻此設定檔，請開啟新的 issue 並貼上以下文字：",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "自動提交失敗；你仍可手動提交：",
         "submit_declined": "未提交。如果願意，你仍可手動提交：",
         "submit_issue_title": "Issue 標題：{title}",
-        "submit_issue_body": "Issue 內文（複製兩條線之間的所有內容）："
+        "submit_issue_body": "Issue 內文（複製兩條線之間的所有內容）：",
+        "share_image_note": "對於 iso:// 與 dir:// 來源，--share 會擷取光碟結構；--mask 與 --verbose 在此無效（沒有光碟機）。",
+        "structure_unreadable": "未擷取光碟結構：{err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "掃描光碟中…",
@@ -63,7 +65,17 @@
         "forced": "強制",
         "usage": "用法：freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "未知",
-        "file": "檔案"
+        "file": "檔案",
+        "capture_aacs_failed": "未擷取 AACS 診斷資訊 — AACS 步驟失敗：{error}",
+        "capture_aacs_hash": "AACS 診斷：光碟雜湊值 {hash}（keydb 查詢鍵）已記錄於 aacs.json。",
+        "capture_aacs_no_hash": "AACS 診斷資訊已記錄於 aacs.json（無法取得光碟雜湊值）。",
+        "capture_aacs_none": "此光碟沒有 AACS — 無 AACS 診斷資訊可擷取。",
+        "capture_all_skipped": "{count} 個光碟結構檔案皆無法儲存。",
+        "capture_mkdir_failed": "無法建立 {path}：{error}",
+        "capture_no_structure": "找不到可讀取的光碟結構（BDMV / VIDEO_TS）；沒有可分享的內容。",
+        "capture_skipped": "已略過光碟檔案 {file}",
+        "capture_summary": "已擷取光碟結構：{files} 個檔案（{bytes} 位元組）。",
+        "capture_unsafe_name": "不安全的檔名"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "交握失敗",
         "verbose_handshake_hint": "交握可能失敗 — 無主機憑證，或光碟機拒絕",
         "mapfile_summary": "對應檔：{good} GB 良好，{unreadable} MB 無法讀取，{pending} MB 待處理",
+        "retry_with_multipass": "使用 --multipass 重新執行以嘗試讀取更多內容；它會從映射檔案繼續。",
         "nothing_to_patch": "無需修補 — 所有磁區皆良好",
         "patch_start": "修補中：{good} GB 良好，{unreadable} MB 無法讀取，{pending} MB 待處理",
         "patch_done": "修補完成：復原 {recovered} MB，{unreadable} MB 無法讀取，{pending} MB 待處理（{time} 秒，{speed} MB/s）",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "光碟映像檔在本次製作副本所需的磁區之前就已結束，映像被截斷或不完整。為避免以零填補缺少的部分，讀取已停止 — 請從光碟重新建立映像。",
         "E7000": "此光碟需要 AACS 解密金鑰（Blu-ray/UHD），但找不到任何金鑰。請以下列指令下載金鑰資料庫：freemkv update-keys --url <keydb-url>",
         "E7001": "光碟的安全憑證過短或無效。",
         "E7002": "光碟機不願為此光碟啟動安全工作階段 — 它可能正被另一程式使用。請關閉其他使用該光碟的程式後再試一次。",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "此光碟的 AACS 金鑰檔遺失或無法讀取。請清潔光碟後再試一次；如果仍然失敗，光碟可能已損壞。",
+        "E7032": "無法產生已解密的光碟映像檔：此光碟上有一個沒有任何標題播放的串流已加密，且現有金鑰都無法與之配對，因此映像檔中仍會含有加密部分。請改為將標題擷取為 MKV，或保留加密的複本：以原始方式複製光碟（命令列使用 --raw，或在應用程式中選擇「保留加密（原始直通）」），或原樣保留來源映像檔。",
+        "E7033": "已在您的金鑰來源中找到主機憑證，但沒有一個可用（已損壞或不完整）。請重新整理您的金鑰資料庫後再試一次。",
         "E8000": "無法連接金鑰資料庫伺服器：{detail}",
         "E8001": "金鑰資料庫下載失敗（HTTP {detail}）。請再試一次，或執行：freemkv update-keys --url <keydb-url>",
         "E8002": "金鑰資料庫為空或無效。請以下列指令重新下載：freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "標題 {num} 超出範圍（{count}）",
         "unknown_flag": "錯誤：未知旗標 '{flag}'。請試試 'freemkv help' 以取得選項清單。",
         "usage_hint": "用法：freemkv <source> <dest> [flags]\n       freemkv info <url>\n\n請試試 'freemkv help' 以取得更多資訊。",
+        "gui_not_in_build": "此版本不包含桌面應用程式。請安裝 freemkv 應用程式：https://freemkv.org/download",
         "unknown_language": "未知語言 '{tag}'（此標題可用：{available}）",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "輸出在已完成或已失敗之後仍被寫入，因此資料無法儲存。",
+        "E9072": "音軌資訊是在輸出的檔頭寫入之後才設定的，因此無法套用。",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level：值 0 超出範圍 (1–4)，已忽略",
         "log_level_not_a_number": "--log-level：需要 1–4 的數字，收到 '{value}'，已忽略",
         "log_level_needs_value": "--log-level：需要一個值 (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file：路徑 '{path}' 無效 — 未寫入診斷紀錄",
-        "language_needs_value": "{flag}：需要語言代碼（例如 --language de）"
+        "language_needs_value": "{flag}：需要語言代碼（例如 --language de）",
+        "disc_scan_all_titles_failed": "錯誤：無法掃描光碟以列出其標題，因此 `-t all` 無法得知要擷取哪些標題。未擷取任何內容 — 請檢查光碟與光碟機後再試一次。",
+        "log_file_needs_value": "--log-file：需要路徑（例如 --log-file freemkv.log）",
+        "mux_failed_generic": "多工失敗（E{code}）。",
+        "title_changed": "標題 {num} 在兩次掃描之間有所變更：預期為 {expected}，光碟機目前回報 {found}。擷取期間標題清單已變更；此標題未寫入任何內容。"
     },
     "usage": {
         "synopsis_1": "用法：freemkv <source> <dest> [flags]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE 介面語言（也可用 --lang）：如 de 或 pt-BR 的代碼，或 auto。",
             "raw": "      --raw           略過解密（原始加密輸出）",
             "multipass": "      --multipass    寫入／更新對應檔以進行多次復原",
-            "share": "      --share         提交光碟機設定檔（僅限 info disc://；擷取時 -s 代表 --subtitles）",
+            "share": "      --share         提交光碟機設定檔與光碟結構（info disc://、iso:// 或 dir://；擷取時 -s 代表 --subtitles）",
             "mask": "  -m, --mask          遮蔽序號（搭配 --share）",
             "force": "      --force        擷取至非空的 dir:// 目標（覆寫）"
+        },
+        "exit_codes_header": "結束代碼：",
+        "exit_code": {
+            "ok": "  0    成功。",
+            "failed": "  1    失敗：沒有可用的輸出，或發生其他錯誤。",
+            "usage": "  2    用法：命令或參數錯誤（此文字也已印出）。",
+            "damaged": "  3    已損壞（僅限 disc:// -> iso:// 或 disc:// -> null://）：已保留且可用，但缺少部分磁區 — 重新執行（--multipass）以嘗試復原更多。",
+            "interrupted": "  130  第二次 Ctrl-C 強制立即結束。"
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "開啟光碟…",
             "exit": "結束",
             "copy": "複製",
-            "select_all_text": "全選"
+            "select_all_text": "全選",
+            "cut": "剪下",
+            "paste": "貼上"
         },
         "col": {
             "type": "類型",
@@ -570,7 +604,8 @@
             "test_connection": "測試連線",
             "keydb_no_url": "未設定 keydb 更新網址 — 請在上方新增，然後按一下「更新」。",
             "keydb_updating": "正在更新 keydb… 正在下載，請稍候。",
-            "lang_any": "任意"
+            "lang_any": "任意",
+            "notify_when_rip_finished": "擷取完成時通知"
         },
         "btn": {
             "open_file": "開啟檔案或 ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "關閉",
             "browse": "…",
-            "show_explorer": "在檔案總管中顯示"
+            "show_explorer": "在檔案總管中顯示",
+            "show_folder": "在資料夾中顯示"
         },
         "group": {
             "output": "輸出",
@@ -645,9 +681,21 @@
             "select_title_first": "請至少選擇一個要轉換的標題。",
             "video_only_warning": "未選擇音訊或字幕軌道——輸出將只包含影片。",
             "raw_iso_only": "「保持加密（raw）」僅適用於「整片 → ISO 映像」輸出；此格式將忽略該選項。",
+            "raw_disc_only": "「保持加密（raw）」僅適用於光碟機中的光碟；此來源將忽略該選項。",
             "no_drive": "找不到光碟機。請連接放有光碟的 Blu-ray/DVD 光碟機。",
             "opening_drive": "正在開啟 {label}（{device}）",
-            "drives_found": "找到 {n} 部光碟機：{list} — 使用其中放有光碟的那一部"
+            "drives_found": "找到 {n} 部光碟機：{list} — 使用其中放有光碟的那一部",
+            "drop_unreadable": "無法讀取拖放的項目：{e}",
+            "eject_failed": "退出失敗：{error}",
+            "ejected": "已退出光碟（{device}）。",
+            "ejecting": "正在退出光碟…",
+            "open_folder_failed": "無法開啟資料夾：{e}",
+            "open_url_failed": "無法開啟 {url}：{e}",
+            "pick_failed": "無法開啟檔案選擇器：{e}",
+            "pick_not_local": "只能使用本機檔案與資料夾：{p}",
+            "reveal_failed": "無法在檔案總管中開啟資料夾：{e}",
+            "scan_not_started": "無法開始掃描來源：{detail}",
+            "scan_worker_stopped": "來源掃描程序在傳回結果前已停止。"
         },
         "alert": {
             "rip_title": "擷取正在進行中。",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "freemkv 設定"
+        },
+        "notify": {
+            "rip_finished_title": "擷取完成"
         }
     },
     "warn": {
         "no_lang_match_audio": "警告：標題 {num}：沒有與 '{requested}' 相符的音訊軌道（可用：{available}）——僅保留影片。",
         "no_lang_match_subtitle": "警告：標題 {num}：沒有與 '{requested}' 相符的字幕軌道（可用：{available}）——僅保留影片。",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "注意：{count} 條軌道無法寫入輸出，已略過："
+    },
+    "share": {
+        "attach_zip": "設定檔 zip 過大，無法放入 issue 內文 — 請將 {path} 附加至 issue。",
+        "zip_failed": "無法建立設定檔 zip：{error}"
     }
 }

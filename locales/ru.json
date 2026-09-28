@@ -20,7 +20,7 @@
         "unknown": "Неизвестно",
         "share_hint": "Выполните «freemkv info disc:// --share», чтобы помочь расширить поддержку приводов.",
         "share_usage": "Использование: freemkv info disc:// [--share] [--mask]",
-        "share_desc": "Собрать и отправить профиль привода для расширения поддержки приводов",
+        "share_desc": "Собрать и отправить профиль привода и структуру диска для расширения поддержки",
         "mask_desc": "Маскировать серийные номера (буквы → A, цифры → 0)",
         "device_desc": "Указать путь к устройству",
         "captured": "Получено: GET_CONFIG 0x{code} {name} ({bytes} байт)",
@@ -33,7 +33,6 @@
         "submit_profile": "Профиль",
         "submit_features": "Возможности",
         "submit_packaging": "Упаковка…",
-        "zip_failed": "сбой zip ({error}), отправляется только текст",
         "submit_saved": "Профиль сохранён в {dir}/",
         "submit_zip": "Zip-архив: {path}",
         "submit_manual": "Чтобы внести этот профиль, откройте новую задачу (issue) и вставьте текст ниже:",
@@ -41,7 +40,10 @@
         "submit_auto_failed": "Автоматическая отправка не удалась; вы всё ещё можете сообщить вручную:",
         "submit_declined": "Не отправлено. При желании вы всё ещё можете сообщить вручную:",
         "submit_issue_title": "Заголовок задачи: {title}",
-        "submit_issue_body": "Тело задачи (скопируйте всё между линиями):"
+        "submit_issue_body": "Тело задачи (скопируйте всё между линиями):",
+        "share_image_note": "Для источников iso:// и dir:// параметр --share собирает структуру диска; --mask и --verbose там ни на что не влияют (привода нет).",
+        "structure_unreadable": "Структура диска не собрана: {err}",
+        "submit_affirmative": "y"
     },
     "disc": {
         "scanning": "Сканирование диска…",
@@ -63,7 +65,17 @@
         "forced": "форсированные",
         "usage": "Использование: freemkv info disc:// [--full] [--basic] [--quiet]",
         "format_unknown": "Неизвестно",
-        "file": "Файл"
+        "file": "Файл",
+        "capture_aacs_failed": "Диагностика AACS не собрана — этап AACS завершился ошибкой: {error}",
+        "capture_aacs_hash": "Диагностика AACS: хеш диска {hash} (ключ поиска в keydb) записан в aacs.json.",
+        "capture_aacs_no_hash": "Диагностика AACS записана в aacs.json (хеш диска недоступен).",
+        "capture_aacs_none": "На этом диске нет AACS — собирать диагностику AACS нечего.",
+        "capture_all_skipped": "Не удалось сохранить ни один из файлов структуры диска (всего: {count}).",
+        "capture_mkdir_failed": "Не удалось создать {path}: {error}",
+        "capture_no_structure": "Читаемая структура диска (BDMV / VIDEO_TS) не найдена; отправлять нечего.",
+        "capture_skipped": "Пропущен файл диска {file}",
+        "capture_summary": "Структура диска собрана: файлов — {files}, байт — {bytes}.",
+        "capture_unsafe_name": "небезопасное имя файла"
     },
     "stream": {
         "purpose": {
@@ -134,6 +146,7 @@
         "verbose_handshake_error": "Сбой рукопожатия",
         "verbose_handshake_hint": "Возможен сбой рукопожатия — нет сертификата хоста или привод отклонил его",
         "mapfile_summary": "Файл карты: {good} ГБ пригодно, {unreadable} МБ нечитаемо, {pending} МБ в ожидании",
+        "retry_with_multipass": "Запустите снова с --multipass, чтобы попытаться прочитать больше; продолжит с mapfile.",
         "nothing_to_patch": "Нечего исправлять — все секторы пригодны",
         "patch_start": "Исправление: {good} ГБ пригодно, {unreadable} МБ нечитаемо, {pending} МБ в ожидании",
         "patch_done": "Исправление завершено: восстановлено {recovered} МБ, {unreadable} МБ нечитаемо, {pending} МБ в ожидании ({time} с, {speed} МБ/с)",
@@ -245,6 +258,7 @@
         "E6017": "Error: a file on the disc claims space that was never written, so it has no real content there. Reading it would have spliced undefined sectors into the rip as if they were part of the title.",
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
+        "E6020": "Файл образа диска заканчивается раньше сектора, который нужен для этого копирования, поэтому образ обрезан или неполон. Чтение остановлено, чтобы не заполнять недостающую часть нулями — создайте образ с диска заново.",
         "E7000": "Этому диску нужны ключи расшифровки AACS (Blu-ray/UHD), но ни одного не найдено. Загрузите базу ключей командой: freemkv update-keys --url <keydb-url>",
         "E7001": "Сертификат безопасности диска слишком короткий или недопустимый.",
         "E7002": "Привод не смог начать защищённый сеанс для этого диска — возможно, он используется другой программой. Закройте всё, что использует диск, и повторите попытку.",
@@ -275,6 +289,9 @@
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
         "E7030": "The online key service is rate-limiting requests and would not answer. Wait a few minutes and try again, or rip fewer discs at once. This does not mean the disc has no key.",
+        "E7031": "Файл ключей AACS этого диска отсутствует или его не удалось прочитать. Очистите диск и повторите попытку; если ошибка повторяется, диск может быть повреждён.",
+        "E7032": "Невозможно создать расшифрованный образ диска: поток на этом диске, который не воспроизводит ни один титул, зашифрован, и ни один из доступных ключей к нему не подходит, поэтому в образе остались бы зашифрованные части. Вместо этого извлеките титулы в MKV или сохраните зашифрованную копию: скопируйте диск в сыром виде (--raw в командной строке или «Сохранять зашифрованным (сырой транзит)» в приложении) либо оставьте исходный образ как есть.",
+        "E7033": "В ваших источниках ключей найдены сертификаты хоста, но ни один из них нельзя использовать (повреждён или неполон). Обновите базу данных ключей и повторите попытку.",
         "E8000": "Не удалось подключиться к серверу базы ключей: {detail}",
         "E8001": "Сбой загрузки базы ключей (HTTP {detail}). Повторите попытку или выполните: freemkv update-keys --url <keydb-url>",
         "E8002": "База ключей пуста или недопустима. Загрузите её заново командой: freemkv update-keys --url <keydb-url>",
@@ -381,6 +398,7 @@
         "title_out_of_range": "Тайтл {num} вне диапазона ({count})",
         "unknown_flag": "Ошибка: неизвестный флаг «{flag}». Выполните «freemkv help» для списка параметров.",
         "usage_hint": "Использование: freemkv <источник> <назначение> [флаги]\n       freemkv info <url>\n\nВыполните «freemkv help» для подробностей.",
+        "gui_not_in_build": "Настольное приложение не входит в эту сборку. Установите приложение freemkv: https://freemkv.org/download",
         "unknown_language": "неизвестный язык «{tag}» (доступно в этом тайтле: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",
@@ -399,12 +417,18 @@
         "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
+        "E9071": "Запись в вывод произошла после того, как он уже был завершён или дал сбой, поэтому данные не удалось сохранить.",
+        "E9072": "Сведения о дорожках были заданы уже после записи заголовка вывода, поэтому их не удалось применить.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: значение 0 вне диапазона (1–4), игнорируется",
         "log_level_not_a_number": "--log-level: ожидалось число 1–4, получено '{value}', игнорируется",
         "log_level_needs_value": "--log-level: требуется значение (1=warn, 2=info, 3=debug, 4=trace)",
         "log_file_invalid_path": "--log-file: неверный путь '{path}' — диагностический журнал не записан",
-        "language_needs_value": "{flag}: требуется код языка (например, --language de)"
+        "language_needs_value": "{flag}: требуется код языка (например, --language de)",
+        "disc_scan_all_titles_failed": "Ошибка: не удалось просканировать диск, чтобы получить список его тайтлов, поэтому `-t all` не может определить, какие тайтлы копировать. Ничего не скопировано — проверьте диск и привод и повторите попытку.",
+        "log_file_needs_value": "--log-file: требуется путь (например, --log-file freemkv.log)",
+        "mux_failed_generic": "Сбой мультиплексирования (E{code}).",
+        "title_changed": "Тайтл {num} изменился между сканированиями: ожидалось {expected}, теперь привод сообщает {found}. Список тайтлов диска изменился во время копирования; для этого тайтла ничего не записано."
     },
     "usage": {
         "synopsis_1": "Использование: freemkv <источник> <назначение> [флаги]",
@@ -479,9 +503,17 @@
             "language": "      --language CODE Язык интерфейса (также --lang): код вида de или pt-BR, либо auto.",
             "raw": "      --raw           Пропустить расшифровку (сырой зашифрованный вывод)",
             "multipass": "      --multipass    Записать/обновить файл карты для многопроходного восстановления",
-            "share": "      --share         Отправить профиль привода (только info disc://; при копировании -s означает --subtitles)",
+            "share": "      --share         Отправить профиль привода и структуру диска (info disc://, iso:// или dir://; при копировании -s означает --subtitles)",
             "mask": "  -m, --mask          Маскировать серийные номера (с --share)",
             "force": "      --force        Извлечь в непустую цель dir:// (перезаписать)"
+        },
+        "exit_codes_header": "Коды завершения:",
+        "exit_code": {
+            "ok": "  0    Успех.",
+            "failed": "  1    Ошибка: нет пригодного вывода, либо другая ошибка.",
+            "usage": "  2    Использование: неверная команда или флаги (этот текст также был выведен).",
+            "damaged": "  3    Повреждено (только disc:// -> iso:// или disc:// -> null://): сохранено и пригодно к использованию, но не хватает некоторых секторов — запустите снова (--multipass), чтобы попытаться восстановить больше.",
+            "interrupted": "  130  Повторное нажатие Ctrl-C привело к немедленному завершению."
         }
     },
     "gui": {
@@ -509,7 +541,9 @@
             "open_disc": "Открыть диск…",
             "exit": "Выход",
             "copy": "Копировать",
-            "select_all_text": "Выделить все"
+            "select_all_text": "Выделить все",
+            "cut": "Вырезать",
+            "paste": "Вставить"
         },
         "col": {
             "type": "Тип",
@@ -570,7 +604,8 @@
             "test_connection": "Проверить соединение",
             "keydb_no_url": "URL обновления keydb не задан — укажите его выше и нажмите «Обновить».",
             "keydb_updating": "Обновление keydb… идет загрузка, подождите.",
-            "lang_any": "Любой"
+            "lang_any": "Любой",
+            "notify_when_rip_finished": "Уведомлять о завершении копирования"
         },
         "btn": {
             "open_file": "Открыть файл или ISO…",
@@ -582,7 +617,8 @@
             "ok": "OK",
             "close": "Закрыть",
             "browse": "…",
-            "show_explorer": "Показать в Проводнике"
+            "show_explorer": "Показать в Проводнике",
+            "show_folder": "Показать в папке"
         },
         "group": {
             "output": "Вывод",
@@ -645,9 +681,21 @@
             "select_title_first": "Выберите хотя бы один тайтл для копирования.",
             "video_only_warning": "Звуковые дорожки и субтитры не выбраны — на выходе будет только видео.",
             "raw_iso_only": "«Сохранить зашифрованным (raw)» применимо только к выводу Весь диск → образ ISO; для этого формата будет проигнорировано.",
+            "raw_disc_only": "«Сохранить зашифрованным (raw)» применимо только к диску в приводе; для этого источника будет проигнорировано.",
             "no_drive": "Оптический привод не найден. Подключите привод Blu-ray/DVD с диском.",
             "opening_drive": "Открытие {label} ({device})",
-            "drives_found": "Найдено приводов: {n}: {list} — используется тот, в котором есть диск"
+            "drives_found": "Найдено приводов: {n}: {list} — используется тот, в котором есть диск",
+            "drop_unreadable": "Не удалось прочитать перетащенный элемент: {e}",
+            "eject_failed": "Сбой извлечения: {error}",
+            "ejected": "Диск извлечён ({device}).",
+            "ejecting": "Извлечение диска…",
+            "open_folder_failed": "Не удалось открыть папку: {e}",
+            "open_url_failed": "Не удалось открыть {url}: {e}",
+            "pick_failed": "Не удалось открыть окно выбора файлов: {e}",
+            "pick_not_local": "Можно использовать только локальные файлы и папки: {p}",
+            "reveal_failed": "Не удалось открыть папку в Проводнике: {e}",
+            "scan_not_started": "Не удалось начать сканирование источника: {detail}",
+            "scan_worker_stopped": "Процесс сканирования источника остановился, не вернув результат."
         },
         "alert": {
             "rip_title": "Выполняется копирование.",
@@ -686,11 +734,21 @@
         },
         "win": {
             "settings": "Настройки freemkv"
+        },
+        "notify": {
+            "rip_finished_title": "Копирование завершено"
         }
     },
     "warn": {
         "no_lang_match_audio": "предупреждение: тайтл {num}: ни одна звуковая дорожка не соответствует '{requested}' (доступно: {available}) — сохраняется только видео.",
         "no_lang_match_subtitle": "предупреждение: тайтл {num}: ни одна дорожка субтитров не соответствует '{requested}' (доступно: {available}) — сохраняется только видео.",
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
+    },
+    "mux": {
+        "undelivered_header": "Примечание: не удалось передать потоки ({count}), они пропущены:"
+    },
+    "share": {
+        "attach_zip": "Zip-архив профиля слишком велик для текста задачи (issue) — прикрепите {path} к задаче.",
+        "zip_failed": "Не удалось создать zip-архив профиля: {error}"
     }
 }
