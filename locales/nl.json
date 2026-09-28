@@ -398,7 +398,7 @@
         "E9070": "Er is niets weggeschreven — elk frame is verworpen. De uitvoer zou leeg zijn geweest.",
         "E9071": "Er werd naar de uitvoer geschreven nadat die al was afgerond of mislukt, dus de gegevens konden niet worden opgeslagen.",
         "E9072": "De spoorgegevens werden ingesteld nadat de header van de uitvoer al was geschreven, dus ze konden niet worden toegepast.",
-        "E9073": "Fout: de bewerking is verlopen zonder voortgang binnen de toegestane tijd.",
+        "E9073": "Fout: de bewerking is verlopen omdat er te lang geen voortgang was.",
         "no_lang_match_subtitle_forced": "geen geforceerde ondertitel op deze titel komt overeen met '{requested}' (beschikbare geforceerde ondertitels: {available}). Corrigeer de taal, of gebruik all/none.",
         "log_level_out_of_range": "--log-level: waarde 0 valt buiten het bereik (1–4), genegeerd",
         "log_level_not_a_number": "--log-level: getal 1–4 verwacht, '{value}' gekregen, genegeerd",

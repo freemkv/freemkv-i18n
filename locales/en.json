@@ -421,7 +421,7 @@
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
         "E9071": "Error: the output was written to after it had already been finished or had failed, so the data could not be saved.",
         "E9072": "Error: track details were set after the output's header had already been written, so they could not be applied.",
-        "E9073": "Error: the operation timed out with no progress in the time allowed.",
+        "E9073": "Error: the operation timed out after making no progress for too long.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: value 0 is out of range (1–4), ignored",
         "log_level_not_a_number": "--log-level: expected a number 1–4, got '{value}', ignored",
