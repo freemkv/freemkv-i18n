@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Handshake mislykkedes",
         "verbose_handshake_hint": "Handshake mislykkedes muligvis — intet værtscertifikat, eller drevet afviste",
         "mapfile_summary": "Mapfile: {good} GB gode, {unreadable} MB ulæselige, {pending} MB afventer",
+        "retry_with_multipass": "Prøv en multipass-gendannelse for at læse mere af disken.",
         "nothing_to_patch": "Intet at patche — alle sektorer er gode",
         "patch_start": "Patcher: {good} GB gode, {unreadable} MB ulæselige, {pending} MB afventer",
         "patch_done": "Patch fuldført: gendannede {recovered} MB, {unreadable} MB ulæselige, {pending} MB afventer ({time}s, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Indsend drevprofil og diskstruktur (info disc://, iso:// eller dir://; ved et rip betyder -s --subtitles)",
             "mask": "  -m, --mask          Maskér serienumre (med --share)",
             "force": "      --force        Udpak ind i et ikke-tomt dir://-mål (overskriv)"
+        },
+        "exit_codes_header": "Afslutningskoder (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Fuldført: hele disken blev kopieret.",
+            "damaged": "  3  Beskadiget: beholdt og brugbar, men mangler nogle sektorer — kør igen (--multipass) for at prøve at hente mere.",
+            "failed": "  1  Mislykkedes: intet brugbart image, eller en anden fejl."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Vælg mindst én titel at rippe.",
             "video_only_warning": "Ingen lyd- eller undertekstspor valgt — outputtet indeholder kun video.",
             "raw_iso_only": "“Behold krypteret (raw)” gælder kun for output Hele disken → ISO-billede; ignoreres for dette format.",
+            "raw_disc_only": "“Behold krypteret (raw)” gælder kun for en disk i drevet; ignoreres for denne kilde.",
             "no_drive": "Der blev ikke fundet noget optisk drev. Tilslut et Blu-ray/DVD-drev med en disk.",
             "opening_drive": "Åbner {label} ({device})",
             "drives_found": "{n} drev fundet: {list} — bruger det med en disk",

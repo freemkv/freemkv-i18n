@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Handshake eșuat",
         "verbose_handshake_hint": "Handshake-ul poate să fi eșuat — fără certificat gazdă sau unitatea a respins",
         "mapfile_summary": "Fișier de mapare: {good} GB buni, {unreadable} MB ilizibili, {pending} MB în așteptare",
+        "retry_with_multipass": "Încercați o recuperare multipass pentru a citi mai mult din disc.",
         "nothing_to_patch": "Nimic de corectat — toate sectoarele sunt bune",
         "patch_start": "Se corectează: {good} GB buni, {unreadable} MB ilizibili, {pending} MB în așteptare",
         "patch_done": "Corectare finalizată: recuperate {recovered} MB, {unreadable} MB ilizibili, {pending} MB în așteptare ({time}s, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Trimite profilul unității și structura discului (info disc://, iso:// sau dir://; la o extragere, -s înseamnă --subtitles)",
             "mask": "  -m, --mask          Maschează numerele de serie (cu --share)",
             "force": "      --force        Extrage într-o țintă dir:// negoală (suprascrie)"
+        },
+        "exit_codes_header": "Coduri de ieșire (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Complet: întregul disc a fost copiat.",
+            "damaged": "  3  Deteriorat: păstrat și utilizabil, dar lipsesc unele sectoare — rulați din nou (--multipass) pentru a încerca să recuperați mai mult.",
+            "failed": "  1  Eșuat: nicio imagine utilizabilă, sau o altă eroare."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Selectează cel puțin un titlu de copiat.",
             "video_only_warning": "Nicio pistă audio sau de subtitrare selectată — rezultatul va conține doar imagine.",
             "raw_iso_only": "„Păstrează criptat (raw)” se aplică doar ieșirii Disc întreg → imagine ISO; va fi ignorat pentru acest format.",
+            "raw_disc_only": "„Păstrează criptat (raw)” se aplică doar unui disc din unitate; va fi ignorat pentru această sursă.",
             "no_drive": "Nu a fost găsită nicio unitate optică. Conectați o unitate Blu-ray/DVD cu un disc.",
             "opening_drive": "Se deschide {label} ({device})",
             "drives_found": "{n} unități găsite: {list} — se folosește cea cu un disc",

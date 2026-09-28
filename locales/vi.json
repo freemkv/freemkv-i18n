@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Bắt tay thất bại",
         "verbose_handshake_hint": "Bắt tay có thể đã thất bại — không có chứng chỉ host, hoặc ổ đĩa từ chối",
         "mapfile_summary": "Tệp bản đồ: {good} GB tốt, {unreadable} MB không đọc được, {pending} MB đang chờ",
+        "retry_with_multipass": "Hãy thử khôi phục multipass để đọc thêm phần đĩa.",
         "nothing_to_patch": "Không có gì để vá — tất cả sector đều tốt",
         "patch_start": "Đang vá: {good} GB tốt, {unreadable} MB không đọc được, {pending} MB đang chờ",
         "patch_done": "Vá xong: khôi phục {recovered} MB, {unreadable} MB không đọc được, {pending} MB đang chờ ({time}s, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Gửi hồ sơ ổ đĩa và cấu trúc đĩa (info disc://, iso:// hoặc dir://; khi trích xuất, -s nghĩa là --subtitles)",
             "mask": "  -m, --mask          Che số sê-ri (với --share)",
             "force": "      --force        Trích xuất vào đích dir:// không trống (ghi đè)"
+        },
+        "exit_codes_header": "Mã thoát (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Hoàn tất: toàn bộ đĩa đã được sao chép.",
+            "damaged": "  3  Hư hỏng: được giữ lại và sử dụng được, nhưng thiếu một số sector — chạy lại (--multipass) để thử khôi phục thêm.",
+            "failed": "  1  Thất bại: không có ảnh sử dụng được, hoặc lỗi khác."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Hãy chọn ít nhất một tiêu đề để rip.",
             "video_only_warning": "Chưa chọn rãnh âm thanh hoặc phụ đề nào — đầu ra sẽ chỉ có video.",
             "raw_iso_only": "“Giữ mã hoá (raw)” chỉ áp dụng cho đầu ra Toàn bộ đĩa → ảnh ISO; sẽ bị bỏ qua với định dạng này.",
+            "raw_disc_only": "“Giữ mã hoá (raw)” chỉ áp dụng cho đĩa trong ổ đĩa; sẽ bị bỏ qua với nguồn này.",
             "no_drive": "Không tìm thấy ổ quang. Hãy kết nối ổ Blu-ray/DVD có đĩa.",
             "opening_drive": "Đang mở {label} ({device})",
             "drives_found": "Tìm thấy {n} ổ: {list} — đang dùng ổ có đĩa",

@@ -146,6 +146,7 @@
         "verbose_handshake_error": "交握失敗",
         "verbose_handshake_hint": "交握可能失敗 — 無主機憑證，或光碟機拒絕",
         "mapfile_summary": "對應檔：{good} GB 良好，{unreadable} MB 無法讀取，{pending} MB 待處理",
+        "retry_with_multipass": "嘗試多輪（multipass）復原以讀取更多光碟內容。",
         "nothing_to_patch": "無需修補 — 所有磁區皆良好",
         "patch_start": "修補中：{good} GB 良好，{unreadable} MB 無法讀取，{pending} MB 待處理",
         "patch_done": "修補完成：復原 {recovered} MB，{unreadable} MB 無法讀取，{pending} MB 待處理（{time} 秒，{speed} MB/s）",
@@ -505,6 +506,12 @@
             "share": "      --share         提交光碟機設定檔與光碟結構（info disc://、iso:// 或 dir://；擷取時 -s 代表 --subtitles）",
             "mask": "  -m, --mask          遮蔽序號（搭配 --share）",
             "force": "      --force        擷取至非空的 dir:// 目標（覆寫）"
+        },
+        "exit_codes_header": "結束代碼 (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  完成：整片光碟已複製。",
+            "damaged": "  3  已損壞：已保留且可用，但缺少部分磁區 — 重新執行（--multipass）以嘗試復原更多。",
+            "failed": "  1  失敗：沒有可用的映像，或發生其他錯誤。"
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "請至少選擇一個要轉換的標題。",
             "video_only_warning": "未選擇音訊或字幕軌道——輸出將只包含影片。",
             "raw_iso_only": "「保持加密（raw）」僅適用於「整片 → ISO 映像」輸出；此格式將忽略該選項。",
+            "raw_disc_only": "「保持加密（raw）」僅適用於光碟機中的光碟；此來源將忽略該選項。",
             "no_drive": "找不到光碟機。請連接放有光碟的 Blu-ray/DVD 光碟機。",
             "opening_drive": "正在開啟 {label}（{device}）",
             "drives_found": "找到 {n} 部光碟機：{list} — 使用其中放有光碟的那一部",

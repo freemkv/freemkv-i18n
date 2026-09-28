@@ -146,6 +146,7 @@
         "verbose_handshake_error": "握手失败",
         "verbose_handshake_hint": "握手可能已失败 —— 无主机证书，或被驱动器拒绝",
         "mapfile_summary": "映射文件：{good} GB 良好，{unreadable} MB 不可读，{pending} MB 待处理",
+        "retry_with_multipass": "尝试多轮（multipass）恢复以读取更多光盘内容。",
         "nothing_to_patch": "无需修补 —— 所有扇区均良好",
         "patch_start": "正在修补：{good} GB 良好，{unreadable} MB 不可读，{pending} MB 待处理",
         "patch_done": "修补完成：恢复 {recovered} MB，{unreadable} MB 不可读，{pending} MB 待处理（{time} 秒，{speed} MB/s）",
@@ -505,6 +506,12 @@
             "share": "      --share         提交驱动器配置和光盘结构（info disc://、iso:// 或 dir://；在抓取时，-s 表示 --subtitles）",
             "mask": "  -m, --mask          掩码序列号（配合 --share）",
             "force": "      --force        向非空的 dir:// 目标中提取（覆盖）"
+        },
+        "exit_codes_header": "退出代码 (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  完成：整张光盘已复制。",
+            "damaged": "  3  已损坏：已保留且可用，但缺少部分扇区 — 重新运行（--multipass）以尝试恢复更多。",
+            "failed": "  1  失败：没有可用的镜像，或发生其他错误。"
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "请至少选择一个要转换的标题。",
             "video_only_warning": "未选择音频或字幕轨道——输出将只包含视频。",
             "raw_iso_only": "“保持加密（raw）”仅适用于“整盘 → ISO 映像”输出；此格式将忽略该选项。",
+            "raw_disc_only": "“保持加密（raw）”仅适用于驱动器中的光盘；此来源将忽略该选项。",
             "no_drive": "未找到光驱。请连接装有光盘的 Blu-ray/DVD 光驱。",
             "opening_drive": "正在打开 {label}（{device}）",
             "drives_found": "找到 {n} 个光驱：{list} — 使用其中装有光盘的那个",

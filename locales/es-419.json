@@ -146,6 +146,7 @@
         "verbose_handshake_error": "El handshake falló",
         "verbose_handshake_hint": "Es posible que el handshake haya fallado — sin certificado de host, o la unidad lo rechazó",
         "mapfile_summary": "Mapfile: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
+        "retry_with_multipass": "Intente una recuperación multipass para leer más del disco.",
         "nothing_to_patch": "Nada que parchar — todos los sectores están bien",
         "patch_start": "Parchando: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
         "patch_done": "Parche terminado: {recovered} MB recuperados, {unreadable} MB ilegibles, {pending} MB pendientes ({time}s, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Enviar el perfil de la unidad y la estructura del disco (info disc://, iso:// o dir://; en una extracción, -s significa --subtitles)",
             "mask": "  -m, --mask          Enmascarar números de serie (con --share)",
             "force": "      --force        Extraer en un destino dir:// no vacío (sobrescribir)"
+        },
+        "exit_codes_header": "Códigos de salida (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Completo: se copió todo el disco.",
+            "damaged": "  3  Dañado: se conserva y es utilizable, pero faltan algunos sectores — vuelva a ejecutarlo (--multipass) para intentar recuperar más.",
+            "failed": "  1  Fallido: ninguna imagen utilizable, u otro error."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Selecciona al menos un título para extraer.",
             "video_only_warning": "No hay pistas de audio ni subtítulos seleccionadas — la salida solo contendrá video.",
             "raw_iso_only": "«Mantener cifrado (raw)» solo se aplica a la salida Disco completo → imagen ISO; se ignora para este formato.",
+            "raw_disc_only": "«Mantener cifrado (raw)» solo se aplica a un disco en la unidad; se ignora para esta fuente.",
             "no_drive": "No se encontró ninguna unidad óptica. Conecte una unidad Blu-ray/DVD con un disco.",
             "opening_drive": "Abriendo {label} ({device})",
             "drives_found": "{n} unidades encontradas: {list} — se usará la que tiene un disco",

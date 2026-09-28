@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Handskakning misslyckades",
         "verbose_handshake_hint": "Handskakningen kan ha misslyckats — inget värdcertifikat, eller så avvisade enheten",
         "mapfile_summary": "Kartfil: {good} GB bra, {unreadable} MB oläsbara, {pending} MB väntande",
+        "retry_with_multipass": "Prova en multipass-återställning för att läsa mer av skivan.",
         "nothing_to_patch": "Inget att korrigera — alla sektorer är bra",
         "patch_start": "Korrigerar: {good} GB bra, {unreadable} MB oläsbara, {pending} MB väntande",
         "patch_done": "Korrigering klar: återställde {recovered} MB, {unreadable} MB oläsbara, {pending} MB väntande ({time}s, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Skicka in enhetsprofil och skivstruktur (info disc://, iso:// eller dir://; vid en rippning betyder -s --subtitles)",
             "mask": "  -m, --mask          Maskera serienummer (med --share)",
             "force": "      --force        Extrahera in i ett icke-tomt dir://-mål (skriv över)"
+        },
+        "exit_codes_header": "Avslutningskoder (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Klar: hela skivan kopierades.",
+            "damaged": "  3  Skadad: behållen och användbar, men saknar några sektorer — kör igen (--multipass) för att försöka hämta mer.",
+            "failed": "  1  Misslyckades: ingen användbar avbild, eller ett annat fel."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Välj minst en titel att rippa.",
             "video_only_warning": "Inga ljud- eller undertextspår valda — utdata kommer endast att innehålla video.",
             "raw_iso_only": "”Behåll krypterad (raw)” gäller endast utdata Hela skivan → ISO-avbild; ignoreras för det här formatet.",
+            "raw_disc_only": "”Behåll krypterad (raw)” gäller endast en skiva i enheten; ignoreras för den här källan.",
             "no_drive": "Ingen optisk enhet hittades. Anslut en Blu-ray-/DVD-enhet med en skiva.",
             "opening_drive": "Öppnar {label} ({device})",
             "drives_found": "{n} enheter hittades: {list} — använder den med en skiva",

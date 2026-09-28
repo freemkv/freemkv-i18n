@@ -142,6 +142,7 @@
         "verbose_handshake_error": "Echec de la negociation",
         "verbose_handshake_hint": "La negociation a peut-etre echoue — pas de certificat hote, ou lecteur a refuse",
         "mapfile_summary": "Mapfile : {good} Go bons, {unreadable} Mo illisibles, {pending} Mo en attente",
+        "retry_with_multipass": "Essayez une récupération multipass pour lire davantage le disque.",
         "nothing_to_patch": "Rien a corriger — tous les secteurs sont bons",
         "patch_start": "Correction : {good} Go bons, {unreadable} Mo illisibles, {pending} Mo en attente",
         "patch_done": "Correction terminee : {recovered} Mo recuperes, {unreadable} Mo illisibles, {pending} Mo en attente ({time}s, {speed} Mo/s)",
@@ -482,7 +483,13 @@
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
         },
-        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help."
+        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
+        "exit_codes_header": "Codes de sortie (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Complet : le disque entier a été copié.",
+            "damaged": "  3  Endommagé : conservé et utilisable, mais il manque des secteurs — relancez (--multipass) pour tenter d'en récupérer davantage.",
+            "failed": "  1  Échec : aucune image utilisable, ou une autre erreur."
+        }
     },
     "help": {
         "unknown_command": "Unknown command '{cmd}'. Try 'freemkv help' for a list of commands.",
@@ -672,6 +679,7 @@
             "select_title_first": "Sélectionnez au moins un titre à ripper.",
             "video_only_warning": "Aucune piste audio ou de sous-titres sélectionnée — la sortie ne contiendra que la vidéo.",
             "raw_iso_only": "« Conserver chiffré (brut) » ne s'applique qu'à une sortie Disque entier → image ISO ; ignoré pour ce format.",
+            "raw_disc_only": "« Conserver chiffré (brut) » ne s'applique qu'à un disque dans le lecteur ; ignoré pour cette source.",
             "no_drive": "Aucun lecteur optique trouvé. Connectez un lecteur Blu-ray/DVD contenant un disque.",
             "opening_drive": "Ouverture de {label} ({device})",
             "drives_found": "{n} lecteurs trouvés : {list} — utilisation de celui qui contient un disque",

@@ -142,6 +142,7 @@
         "verbose_handshake_error": "Handshake falhou",
         "verbose_handshake_hint": "O handshake pode ter falhado — sem certificado de host, ou o drive rejeitou",
         "mapfile_summary": "Mapfile: {good} GB bons, {unreadable} MB ilegiveis, {pending} MB pendentes",
+        "retry_with_multipass": "Experimente uma recuperação multipass para ler mais do disco.",
         "nothing_to_patch": "Nada a corrigir — todos os setores estao bons",
         "patch_start": "Corrigindo: {good} GB bons, {unreadable} MB ilegiveis, {pending} MB pendentes",
         "patch_done": "Correcao concluida: recuperados {recovered} MB, {unreadable} MB ilegiveis, {pending} MB pendentes ({time}s, {speed} MB/s)",
@@ -482,7 +483,13 @@
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
         },
-        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help."
+        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
+        "exit_codes_header": "Códigos de saída (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Completo: todo o disco foi copiado.",
+            "damaged": "  3  Danificado: mantido e utilizável, mas faltam alguns setores — execute novamente (--multipass) para tentar recuperar mais.",
+            "failed": "  1  Falhou: nenhuma imagem utilizável, ou outro erro."
+        }
     },
     "help": {
         "unknown_command": "Unknown command '{cmd}'. Try 'freemkv help' for a list of commands.",
@@ -672,6 +679,7 @@
             "select_title_first": "Selecione pelo menos um título para extrair.",
             "video_only_warning": "Nenhuma faixa de áudio ou legendas selecionada — a saída terá apenas vídeo.",
             "raw_iso_only": "“Manter encriptado (raw)” aplica-se apenas à saída Disco completo → imagem ISO; será ignorado para este formato.",
+            "raw_disc_only": "“Manter encriptado (raw)” aplica-se apenas a um disco na unidade; será ignorado para esta fonte.",
             "no_drive": "Nenhuma unidade ótica encontrada. Ligue uma unidade Blu-ray/DVD com um disco.",
             "opening_drive": "A abrir {label} ({device})",
             "drives_found": "{n} unidades encontradas: {list} — a usar a que tem um disco",

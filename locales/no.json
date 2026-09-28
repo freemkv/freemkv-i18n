@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Håndtrykk mislyktes",
         "verbose_handshake_hint": "Håndtrykket kan ha mislyktes — ingen vertssertifikat, eller stasjonen avviste det",
         "mapfile_summary": "Kartfil: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
+        "retry_with_multipass": "Prøv en multipass-gjenoppretting for å lese mer av platen.",
         "nothing_to_patch": "Ingenting å reparere — alle sektorer er gode",
         "patch_start": "Reparerer: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
         "patch_done": "Reparasjon fullført: gjenopprettet {recovered} MB, {unreadable} MB uleselige, {pending} MB ventende ({time}s, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Send inn stasjonsprofil og platestruktur (info disc://, iso:// eller dir://; på en ripping betyr -s --subtitles)",
             "mask": "  -m, --mask          Masker serienumre (med --share)",
             "force": "      --force        Pakk ut i et ikke-tomt dir://-mål (overskriv)"
+        },
+        "exit_codes_header": "Avslutningskoder (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Fullført: hele platen ble kopiert.",
+            "damaged": "  3  Skadet: beholdt og brukbar, men mangler noen sektorer — kjør på nytt (--multipass) for å prøve å hente mer.",
+            "failed": "  1  Mislyktes: ingen brukbart bilde, eller en annen feil."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Velg minst én tittel å rippe.",
             "video_only_warning": "Ingen lyd- eller undertekstspor valgt — utdataene inneholder bare video.",
             "raw_iso_only": "«Behold kryptert (raw)» gjelder bare utdata Hele platen → ISO-bilde; ignoreres for dette formatet.",
+            "raw_disc_only": "«Behold kryptert (raw)» gjelder bare for en plate i stasjonen; ignoreres for denne kilden.",
             "no_drive": "Ingen optisk stasjon funnet. Koble til en Blu-ray-/DVD-stasjon med en plate.",
             "opening_drive": "Åpner {label} ({device})",
             "drives_found": "{n} stasjoner funnet: {list} — bruker den med en plate",

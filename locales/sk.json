@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Nadviazanie spojenia zlyhalo",
         "verbose_handshake_hint": "Nadviazanie spojenia mohlo zlyhať — chýba hostiteľský certifikát alebo mechanika odmietla",
         "mapfile_summary": "Mapovací súbor: {good} GB v poriadku, {unreadable} MB nečitateľných, {pending} MB čakajúcich",
+        "retry_with_multipass": "Skúste viacpriechodovú obnovu (multipass) a prečítajte viac z disku.",
         "nothing_to_patch": "Niet čo opraviť — všetky sektory sú v poriadku",
         "patch_start": "Oprava: {good} GB v poriadku, {unreadable} MB nečitateľných, {pending} MB čakajúcich",
         "patch_done": "Oprava dokončená: obnovených {recovered} MB, {unreadable} MB nečitateľných, {pending} MB čakajúcich ({time}s, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Odoslať profil mechaniky a štruktúru disku (info disc://, iso:// alebo dir://; pri kopírovaní -s znamená --subtitles)",
             "mask": "  -m, --mask          Maskovať sériové čísla (s --share)",
             "force": "      --force        Extrahovať do neprázdneho cieľa dir:// (prepísať)"
+        },
+        "exit_codes_header": "Návratové kódy (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Dokončené: celý disk bol skopírovaný.",
+            "damaged": "  3  Poškodené: zachované a použiteľné, ale chýbajú niektoré sektory — spustite znova (--multipass) a skúste získať viac.",
+            "failed": "  1  Zlyhalo: žiadny použiteľný obraz, alebo iná chyba."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Vyberte aspoň jeden titul na kopírovanie.",
             "video_only_warning": "Nevybrali ste žiadne zvukové stopy ani titulky — výstup bude obsahovať iba video.",
             "raw_iso_only": "„Ponechať zašifrované (raw)“ platí len pre výstup Celý disk → obraz ISO; pre tento formát sa ignoruje.",
+            "raw_disc_only": "„Ponechať zašifrované (raw)“ platí len pre disk v mechanike; pre tento zdroj sa ignoruje.",
             "no_drive": "Nenašla sa žiadna optická jednotka. Pripojte jednotku Blu-ray/DVD s diskom.",
             "opening_drive": "Otvára sa {label} ({device})",
             "drives_found": "Nájdených jednotiek: {n}: {list} — použije sa tá s diskom",

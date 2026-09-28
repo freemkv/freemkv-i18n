@@ -142,6 +142,7 @@
         "verbose_handshake_error": "Handshake fallito",
         "verbose_handshake_hint": "L'handshake potrebbe essere fallito — nessun certificato host, o rifiutato dal lettore",
         "mapfile_summary": "Mapfile: {good} GB buoni, {unreadable} MB illeggibili, {pending} MB in attesa",
+        "retry_with_multipass": "Provi un recupero multipass per leggere più dati dal disco.",
         "nothing_to_patch": "Niente da riparare — tutti i settori sono buoni",
         "patch_start": "Riparazione: {good} GB buoni, {unreadable} MB illeggibili, {pending} MB in attesa",
         "patch_done": "Riparazione completata: recuperati {recovered} MB, {unreadable} MB illeggibili, {pending} MB in attesa ({time}s, {speed} MB/s)",
@@ -482,7 +483,13 @@
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
         },
-        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help."
+        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
+        "exit_codes_header": "Codici di uscita (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Completo: l'intero disco è stato copiato.",
+            "damaged": "  3  Danneggiato: conservato e utilizzabile, ma mancano alcuni settori — rieseguire (--multipass) per provare a recuperarne altri.",
+            "failed": "  1  Fallito: nessuna immagine utilizzabile, o un altro errore."
+        }
     },
     "help": {
         "unknown_command": "Unknown command '{cmd}'. Try 'freemkv help' for a list of commands.",
@@ -672,6 +679,7 @@
             "select_title_first": "Seleziona almeno un titolo da copiare.",
             "video_only_warning": "Nessuna traccia audio o di sottotitoli selezionata — l'output conterrà solo video.",
             "raw_iso_only": "«Mantieni cifrato (raw)» si applica solo all'output Disco intero → immagine ISO; verrà ignorato per questo formato.",
+            "raw_disc_only": "«Mantieni cifrato (raw)» si applica solo a un disco nell'unità; verrà ignorato per questa fonte.",
             "no_drive": "Nessuna unità ottica trovata. Collegare un'unità Blu-ray/DVD con un disco.",
             "opening_drive": "Apertura di {label} ({device})",
             "drives_found": "{n} unità trovate: {list} — verrà usata quella con un disco",

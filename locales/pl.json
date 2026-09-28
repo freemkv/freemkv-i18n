@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Uzgadnianie nie powiodło się",
         "verbose_handshake_hint": "Uzgadnianie mogło się nie powieść — brak certyfikatu hosta lub napęd go odrzucił",
         "mapfile_summary": "Plik mapy: {good} GB dobrych, {unreadable} MB nieczytelnych, {pending} MB oczekujących",
+        "retry_with_multipass": "Spróbuj odzyskiwania wieloprzebiegowego (multipass), aby odczytać więcej płyty.",
         "nothing_to_patch": "Nic do naprawienia — wszystkie sektory są dobre",
         "patch_start": "Naprawianie: {good} GB dobrych, {unreadable} MB nieczytelnych, {pending} MB oczekujących",
         "patch_done": "Naprawianie ukończone: odzyskano {recovered} MB, {unreadable} MB nieczytelnych, {pending} MB oczekujących ({time} s, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Prześlij profil napędu i strukturę płyty (info disc://, iso:// lub dir://; przy zgrywaniu -s oznacza --subtitles)",
             "mask": "  -m, --mask          Maskuj numery seryjne (z --share)",
             "force": "      --force        Wyodrębnij do niepustego celu dir:// (nadpisanie)"
+        },
+        "exit_codes_header": "Kody wyjścia (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Ukończono: cała płyta została skopiowana.",
+            "damaged": "  3  Uszkodzone: zachowane i użyteczne, ale brakuje niektórych sektorów — uruchom ponownie (--multipass), aby spróbować odzyskać więcej.",
+            "failed": "  1  Niepowodzenie: brak użytecznego obrazu lub inny błąd."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Wybierz co najmniej jeden tytuł do zgrania.",
             "video_only_warning": "Nie wybrano ścieżek dźwiękowych ani napisów — wynik będzie zawierał tylko obraz.",
             "raw_iso_only": "„Zachowaj zaszyfrowane (raw)” dotyczy tylko wyjścia Cały dysk → obraz ISO; zostanie zignorowane dla tego formatu.",
+            "raw_disc_only": "„Zachowaj zaszyfrowane (raw)” dotyczy tylko płyty w napędzie; zostanie zignorowane dla tego źródła.",
             "no_drive": "Nie znaleziono napędu optycznego. Podłącz napęd Blu-ray/DVD z płytą.",
             "opening_drive": "Otwieranie {label} ({device})",
             "drives_found": "Znaleziono {n} napędów: {list} — zostanie użyty ten z płytą",

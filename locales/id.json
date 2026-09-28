@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Handshake gagal",
         "verbose_handshake_hint": "Handshake mungkin gagal — tidak ada sertifikat host, atau drive menolak",
         "mapfile_summary": "Mapfile: {good} GB bagus, {unreadable} MB tidak terbaca, {pending} MB tertunda",
+        "retry_with_multipass": "Coba pemulihan multipass untuk membaca lebih banyak bagian cakram.",
         "nothing_to_patch": "Tidak ada yang perlu ditambal — semua sektor bagus",
         "patch_start": "Menambal: {good} GB bagus, {unreadable} MB tidak terbaca, {pending} MB tertunda",
         "patch_done": "Penambalan selesai: memulihkan {recovered} MB, {unreadable} MB tidak terbaca, {pending} MB tertunda ({time} detik, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Kirim profil drive dan struktur disc (info disc://, iso:// atau dir://; pada rip, -s berarti --subtitles)",
             "mask": "  -m, --mask          Samarkan nomor seri (dengan --share)",
             "force": "      --force        Ekstrak ke target dir:// yang tidak kosong (timpa)"
+        },
+        "exit_codes_header": "Kode keluar (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Selesai: seluruh disc berhasil disalin.",
+            "damaged": "  3  Rusak: disimpan dan dapat digunakan, tetapi beberapa sektor hilang — jalankan lagi (--multipass) untuk mencoba memulihkan lebih banyak.",
+            "failed": "  1  Gagal: tidak ada image yang dapat digunakan, atau kesalahan lain."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Pilih setidaknya satu judul untuk dirip.",
             "video_only_warning": "Tidak ada trek audio atau subtitle yang dipilih — keluaran hanya berisi video.",
             "raw_iso_only": "“Tetap terenkripsi (raw)” hanya berlaku untuk keluaran Seluruh disc → image ISO; diabaikan untuk format ini.",
+            "raw_disc_only": "“Tetap terenkripsi (raw)” hanya berlaku untuk disc di drive; diabaikan untuk sumber ini.",
             "no_drive": "Tidak ada drive optik ditemukan. Hubungkan drive Blu-ray/DVD dengan disk.",
             "opening_drive": "Membuka {label} ({device})",
             "drives_found": "{n} drive ditemukan: {list} — menggunakan yang berisi disk",

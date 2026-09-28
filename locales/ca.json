@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Ha fallat la negociació",
         "verbose_handshake_hint": "És possible que hagi fallat la negociació — sense certificat d'amfitrió, o la unitat l'ha rebutjada",
         "mapfile_summary": "Fitxer de mapa: {good} GB correctes, {unreadable} MB il·legibles, {pending} MB pendents",
+        "retry_with_multipass": "Proveu una recuperació multipass per llegir més disc.",
         "nothing_to_patch": "Res a apedaçar — tots els sectors són correctes",
         "patch_start": "S'està apedaçant: {good} GB correctes, {unreadable} MB il·legibles, {pending} MB pendents",
         "patch_done": "Apedaçament fet: recuperats {recovered} MB, {unreadable} MB il·legibles, {pending} MB pendents ({time}s, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Envia el perfil de la unitat i l'estructura del disc (info disc://, iso:// o dir://; en una extracció, -s vol dir --subtitles)",
             "mask": "  -m, --mask          Emmascara els números de sèrie (amb --share)",
             "force": "      --force        Extreu a una destinació dir:// no buida (sobreescriu)"
+        },
+        "exit_codes_header": "Codis de sortida (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Complet: s'ha copiat tot el disc.",
+            "damaged": "  3  Danyat: es conserva i és utilitzable, però falten alguns sectors — torneu a executar-ho (--multipass) per intentar-ne més.",
+            "failed": "  1  Fallit: cap imatge utilitzable, o qualsevol altre error."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Seleccioneu almenys un títol per extreure.",
             "video_only_warning": "Cap pista d'àudio o de subtítols seleccionada — la sortida només contindrà vídeo.",
             "raw_iso_only": "«Mantenir xifrat (raw)» només s'aplica a la sortida Disc sencer → imatge ISO; s'ignora per a aquest format.",
+            "raw_disc_only": "«Mantenir xifrat (raw)» només s'aplica a un disc a la unitat; s'ignora per a aquesta font.",
             "no_drive": "No s'ha trobat cap unitat òptica. Connecteu una unitat Blu-ray/DVD amb un disc.",
             "opening_drive": "S'està obrint {label} ({device})",
             "drives_found": "{n} unitats trobades: {list} — s'utilitza la que té un disc",

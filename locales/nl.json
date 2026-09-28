@@ -142,6 +142,7 @@
         "verbose_handshake_error": "Handshake mislukt",
         "verbose_handshake_hint": "Handshake is mogelijk mislukt — geen hostcertificaat, of drive heeft geweigerd",
         "mapfile_summary": "Mapfile: {good} GB goed, {unreadable} MB onleesbaar, {pending} MB in behandeling",
+        "retry_with_multipass": "Probeer een multipass-herstel om meer van de disc te lezen.",
         "nothing_to_patch": "Niets te patchen — alle sectoren zijn goed",
         "patch_start": "Patchen: {good} GB goed, {unreadable} MB onleesbaar, {pending} MB in behandeling",
         "patch_done": "Patch voltooid: {recovered} MB hersteld, {unreadable} MB onleesbaar, {pending} MB in behandeling ({time}s, {speed} MB/s)",
@@ -482,7 +483,13 @@
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
         },
-        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help."
+        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
+        "exit_codes_header": "Afsluitcodes (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Voltooid: de hele disc is gekopieerd.",
+            "damaged": "  3  Beschadigd: bewaard en bruikbaar, maar enkele sectoren ontbreken — voer opnieuw uit (--multipass) om meer te herstellen.",
+            "failed": "  1  Mislukt: geen bruikbare image, of een andere fout."
+        }
     },
     "help": {
         "unknown_command": "Unknown command '{cmd}'. Try 'freemkv help' for a list of commands.",
@@ -672,6 +679,7 @@
             "select_title_first": "Selecteer minstens één titel om te rippen.",
             "video_only_warning": "Geen audio- of ondertitelsporen geselecteerd — de uitvoer bevat alleen video.",
             "raw_iso_only": "“Versleuteld houden (raw)” geldt alleen voor de uitvoer Hele schijf → ISO-image; wordt genegeerd voor dit formaat.",
+            "raw_disc_only": "“Versleuteld houden (raw)” geldt alleen voor een disc in het station; wordt genegeerd voor deze bron.",
             "no_drive": "Geen optisch station gevonden. Sluit een Blu-ray-/dvd-station met een schijf aan.",
             "opening_drive": "{label} ({device}) wordt geopend",
             "drives_found": "{n} stations gevonden: {list} — het station met een schijf wordt gebruikt",

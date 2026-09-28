@@ -142,6 +142,7 @@
         "verbose_handshake_error": "Autenticación falló",
         "verbose_handshake_hint": "La autenticación pudo haber fallado — sin certificado host, o unidad rechazó",
         "mapfile_summary": "Mapfile: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
+        "retry_with_multipass": "Pruebe una recuperación multipass para leer más del disco.",
         "nothing_to_patch": "Nada que reparar — todos los sectores están buenos",
         "patch_start": "Reparando: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
         "patch_done": "Reparación: recuperados {recovered} MB, {unreadable} MB ilegibles, {pending} MB pendientes ({time}s, {speed} MB/s)",
@@ -482,7 +483,13 @@
             "version": "  version                  Show version (also --version, -V)",
             "help": "  help [command]           Show this help, or help for one command"
         },
-        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help."
+        "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
+        "exit_codes_header": "Códigos de salida (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Completo: se copió todo el disco.",
+            "damaged": "  3  Dañado: se conserva y es utilizable, pero faltan algunos sectores — vuelva a ejecutarlo (--multipass) para intentar recuperar más.",
+            "failed": "  1  Fallido: ninguna imagen utilizable, u otro error."
+        }
     },
     "help": {
         "unknown_command": "Unknown command '{cmd}'. Try 'freemkv help' for a list of commands.",
@@ -672,6 +679,7 @@
             "select_title_first": "Seleccione al menos un título para extraer.",
             "video_only_warning": "No hay pistas de audio ni subtítulos seleccionadas — la salida solo contendrá vídeo.",
             "raw_iso_only": "«Mantener cifrado (raw)» solo se aplica a la salida Disco completo → imagen ISO; se ignora para este formato.",
+            "raw_disc_only": "«Mantener cifrado (raw)» solo se aplica a un disco en la unidad; se ignora para esta fuente.",
             "no_drive": "No se encontró ninguna unidad óptica. Conecte una unidad Blu-ray/DVD con un disco.",
             "opening_drive": "Abriendo {label} ({device})",
             "drives_found": "{n} unidades encontradas: {list} — se usará la que tiene un disco",

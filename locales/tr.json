@@ -146,6 +146,7 @@
         "verbose_handshake_error": "El sıkışma başarısız",
         "verbose_handshake_hint": "El sıkışma başarısız olmuş olabilir — ana bilgisayar sertifikası yok veya sürücü reddetti",
         "mapfile_summary": "Harita dosyası: {good} GB iyi, {unreadable} MB okunamaz, {pending} MB beklemede",
+        "retry_with_multipass": "Diskin daha fazlasını okumak için çok geçişli (multipass) kurtarmayı deneyin.",
         "nothing_to_patch": "Yamalanacak bir şey yok — tüm sektörler iyi",
         "patch_start": "Yamalanıyor: {good} GB iyi, {unreadable} MB okunamaz, {pending} MB beklemede",
         "patch_done": "Yama tamamlandı: {recovered} MB kurtarıldı, {unreadable} MB okunamaz, {pending} MB beklemede ({time}sn, {speed} MB/sn)",
@@ -505,6 +506,12 @@
             "share": "      --share         Sürücü profilini ve disk yapısını gönder (info disc://, iso:// veya dir://; bir kopyalamada -s, --subtitles anlamına gelir)",
             "mask": "  -m, --mask          Seri numaralarını maskele (--share ile)",
             "force": "      --force        Boş olmayan bir dir:// hedefine çıkar (üzerine yaz)"
+        },
+        "exit_codes_header": "Çıkış kodları (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Tamamlandı: tüm disk kopyalandı.",
+            "damaged": "  3  Hasarlı: korundu ve kullanılabilir, ancak bazı sektörler eksik — daha fazlasını almak için yeniden çalıştırın (--multipass).",
+            "failed": "  1  Başarısız: kullanılabilir görüntü yok veya başka bir hata."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Kopyalanacak en az bir başlık seçin.",
             "video_only_warning": "Ses veya altyazı izi seçilmedi — çıktı yalnızca video içerecek.",
             "raw_iso_only": "“Şifreli tut (raw)” yalnızca Tüm disk → ISO görüntüsü çıktısı için geçerlidir; bu biçimde yok sayılıyor.",
+            "raw_disc_only": "“Şifreli tut (raw)” yalnızca sürücüdeki bir disk için geçerlidir; bu kaynakta yok sayılıyor.",
             "no_drive": "Optik sürücü bulunamadı. İçinde disk olan bir Blu-ray/DVD sürücüsü bağlayın.",
             "opening_drive": "{label} ({device}) açılıyor",
             "drives_found": "{n} sürücü bulundu: {list} — disk bulunan sürücü kullanılıyor",

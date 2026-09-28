@@ -146,6 +146,7 @@
         "verbose_handshake_error": "핸드셰이크 실패",
         "verbose_handshake_hint": "핸드셰이크가 실패했을 수 있음 — 호스트 인증서가 없거나 드라이브가 거부함",
         "mapfile_summary": "맵파일: 정상 {good} GB, 읽기 불가 {unreadable} MB, 대기 {pending} MB",
+        "retry_with_multipass": "멀티패스 복구를 시도하여 디스크를 더 많이 읽어보세요.",
         "nothing_to_patch": "패치할 것 없음 — 모든 섹터가 정상입니다",
         "patch_start": "패치 중: 정상 {good} GB, 읽기 불가 {unreadable} MB, 대기 {pending} MB",
         "patch_done": "패치 완료: {recovered} MB 복구, 읽기 불가 {unreadable} MB, 대기 {pending} MB ({time}초, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         드라이브 프로파일과 디스크 구조 제출 (info disc://, iso:// 또는 dir://; 추출에서 -s는 --subtitles를 의미)",
             "mask": "  -m, --mask          일련번호 마스킹 (--share와 함께)",
             "force": "      --force        비어 있지 않은 dir:// 대상에 추출 (덮어쓰기)"
+        },
+        "exit_codes_header": "종료 코드 (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  완료: 디스크 전체가 복사되었습니다.",
+            "damaged": "  3  손상됨: 유지되어 사용 가능하지만 일부 섹터가 부족합니다 — 더 복구하려면 다시 실행하세요 (--multipass).",
+            "failed": "  1  실패: 사용 가능한 이미지가 없거나 다른 오류가 발생했습니다."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "추출할 타이틀을 하나 이상 선택하세요.",
             "video_only_warning": "오디오 또는 자막 트랙이 선택되지 않았습니다 — 출력에 비디오만 포함됩니다.",
             "raw_iso_only": "“암호화 유지(raw)”는 전체 디스크 → ISO 이미지 출력에만 적용됩니다. 이 형식에서는 무시합니다.",
+            "raw_disc_only": "“암호화 유지(raw)”는 드라이브에 있는 디스크에만 적용됩니다. 이 소스에서는 무시합니다.",
             "no_drive": "광학 드라이브를 찾을 수 없습니다. 디스크가 있는 Blu-ray/DVD 드라이브를 연결하세요.",
             "opening_drive": "{label}({device}) 열기 중",
             "drives_found": "드라이브 {n}개 발견: {list} — 디스크가 있는 드라이브를 사용합니다",

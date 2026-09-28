@@ -146,6 +146,7 @@
         "verbose_handshake_error": "Kézfogás sikertelen",
         "verbose_handshake_hint": "A kézfogás valószínűleg sikertelen volt — nincs gazdatanúsítvány, vagy a meghajtó elutasította",
         "mapfile_summary": "Térképfájl: {good} GB jó, {unreadable} MB olvashatatlan, {pending} MB függőben",
+        "retry_with_multipass": "Próbáljon ki egy multipass helyreállítást, hogy többet olvasson be a lemezről.",
         "nothing_to_patch": "Nincs mit javítani — minden szektor jó",
         "patch_start": "Javítás: {good} GB jó, {unreadable} MB olvashatatlan, {pending} MB függőben",
         "patch_done": "Javítás kész: {recovered} MB helyreállítva, {unreadable} MB olvashatatlan, {pending} MB függőben ({time} mp, {speed} MB/s)",
@@ -505,6 +506,12 @@
             "share": "      --share         Meghajtóprofil és lemezszerkezet beküldése (info disc://, iso:// vagy dir://; másolásnál a -s a --subtitles kapcsolót jelenti)",
             "mask": "  -m, --mask          Sorozatszámok elrejtése (a --share kapcsolóval)",
             "force": "      --force        Kibontás nem üres dir:// célba (felülírás)"
+        },
+        "exit_codes_header": "Kilépési kódok (disc:// -> iso://):",
+        "exit_code": {
+            "ok": "  0  Teljes: az egész lemez lemásolva.",
+            "damaged": "  3  Sérült: megtartva és használható, de néhány szektor hiányzik — futtassa újra (--multipass) további helyreállításhoz.",
+            "failed": "  1  Sikertelen: nincs használható kép, vagy más hiba történt."
         }
     },
     "gui": {
@@ -672,6 +679,7 @@
             "select_title_first": "Válassz ki legalább egy másolandó címet.",
             "video_only_warning": "Nincs kiválasztva hang- vagy feliratsáv — a kimenet csak videót fog tartalmazni.",
             "raw_iso_only": "A „Titkosítva hagyás (raw)” csak a Teljes lemez → ISO-képfájl kimenetre érvényes; ennél a formátumnál figyelmen kívül marad.",
+            "raw_disc_only": "A „Titkosítva hagyás (raw)” csak a meghajtóban lévő lemezre érvényes; ennél a forrásnál figyelmen kívül marad.",
             "no_drive": "Nem található optikai meghajtó. Csatlakoztasson egy Blu-ray/DVD meghajtót lemezzel.",
             "opening_drive": "{label} ({device}) megnyitása",
             "drives_found": "{n} meghajtó található: {list} — a lemezt tartalmazó lesz használva",
