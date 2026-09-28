@@ -146,7 +146,7 @@
         "verbose_handshake_error": "El handshake falló",
         "verbose_handshake_hint": "Es posible que el handshake haya fallado — sin certificado de host, o la unidad lo rechazó",
         "mapfile_summary": "Mapfile: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
-        "retry_with_multipass": "Intente una recuperación multipass para leer más del disco.",
+        "retry_with_multipass": "Vuelva a ejecutarlo con --multipass para intentar leer más; se reanuda desde el mapfile.",
         "nothing_to_patch": "Nada que parchar — todos los sectores están bien",
         "patch_start": "Parchando: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
         "patch_done": "Parche terminado: {recovered} MB recuperados, {unreadable} MB ilegibles, {pending} MB pendientes ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Enmascarar números de serie (con --share)",
             "force": "      --force        Extraer en un destino dir:// no vacío (sobrescribir)"
         },
-        "exit_codes_header": "Códigos de salida (disc:// -> iso://):",
+        "exit_codes_header": "Códigos de salida:",
         "exit_code": {
-            "ok": "  0  Completo: se copió todo el disco.",
-            "damaged": "  3  Dañado: se conserva y es utilizable, pero faltan algunos sectores — vuelva a ejecutarlo (--multipass) para intentar recuperar más.",
-            "failed": "  1  Fallido: ninguna imagen utilizable, u otro error."
+            "ok": "  0    Éxito.",
+            "failed": "  1    Fallido: ninguna salida utilizable, u otro error.",
+            "usage": "  2    Uso: comando o indicadores incorrectos (este texto también se imprimió).",
+            "damaged": "  3    Dañado (solo disc:// -> iso:// o disc:// -> null://): se conserva y es utilizable, pero faltan algunos sectores — vuelva a ejecutarlo (--multipass) para intentar recuperar más.",
+            "interrupted": "  130  Un segundo Ctrl-C forzó una salida inmediata."
         }
     },
     "gui": {

@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Nadviazanie spojenia zlyhalo",
         "verbose_handshake_hint": "Nadviazanie spojenia mohlo zlyhať — chýba hostiteľský certifikát alebo mechanika odmietla",
         "mapfile_summary": "Mapovací súbor: {good} GB v poriadku, {unreadable} MB nečitateľných, {pending} MB čakajúcich",
-        "retry_with_multipass": "Skúste viacpriechodovú obnovu (multipass) a prečítajte viac z disku.",
+        "retry_with_multipass": "Spustite to znova s --multipass, aby ste sa pokúsili prečítať viac; nadviaže na mapový súbor.",
         "nothing_to_patch": "Niet čo opraviť — všetky sektory sú v poriadku",
         "patch_start": "Oprava: {good} GB v poriadku, {unreadable} MB nečitateľných, {pending} MB čakajúcich",
         "patch_done": "Oprava dokončená: obnovených {recovered} MB, {unreadable} MB nečitateľných, {pending} MB čakajúcich ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Maskovať sériové čísla (s --share)",
             "force": "      --force        Extrahovať do neprázdneho cieľa dir:// (prepísať)"
         },
-        "exit_codes_header": "Návratové kódy (disc:// -> iso://):",
+        "exit_codes_header": "Návratové kódy:",
         "exit_code": {
-            "ok": "  0  Dokončené: celý disk bol skopírovaný.",
-            "damaged": "  3  Poškodené: zachované a použiteľné, ale chýbajú niektoré sektory — spustite znova (--multipass) a skúste získať viac.",
-            "failed": "  1  Zlyhalo: žiadny použiteľný obraz, alebo iná chyba."
+            "ok": "  0    Úspech.",
+            "failed": "  1    Zlyhalo: žiadny použiteľný výstup, alebo iná chyba.",
+            "usage": "  2    Použitie: nesprávny príkaz alebo prepínače (tento text bol tiež vypísaný).",
+            "damaged": "  3    Poškodené (iba disc:// -> iso:// alebo disc:// -> null://): zachované a použiteľné, ale chýbajú niektoré sektory — spustite znova (--multipass) a skúste získať viac.",
+            "interrupted": "  130  Druhé Ctrl-C vynútilo okamžité ukončenie."
         }
     },
     "gui": {

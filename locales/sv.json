@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Handskakning misslyckades",
         "verbose_handshake_hint": "Handskakningen kan ha misslyckats — inget värdcertifikat, eller så avvisade enheten",
         "mapfile_summary": "Kartfil: {good} GB bra, {unreadable} MB oläsbara, {pending} MB väntande",
-        "retry_with_multipass": "Prova en multipass-återställning för att läsa mer av skivan.",
+        "retry_with_multipass": "Kör igen med --multipass för att försöka läsa mer; det återupptas från mapfilen.",
         "nothing_to_patch": "Inget att korrigera — alla sektorer är bra",
         "patch_start": "Korrigerar: {good} GB bra, {unreadable} MB oläsbara, {pending} MB väntande",
         "patch_done": "Korrigering klar: återställde {recovered} MB, {unreadable} MB oläsbara, {pending} MB väntande ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Maskera serienummer (med --share)",
             "force": "      --force        Extrahera in i ett icke-tomt dir://-mål (skriv över)"
         },
-        "exit_codes_header": "Avslutningskoder (disc:// -> iso://):",
+        "exit_codes_header": "Avslutningskoder:",
         "exit_code": {
-            "ok": "  0  Klar: hela skivan kopierades.",
-            "damaged": "  3  Skadad: behållen och användbar, men saknar några sektorer — kör igen (--multipass) för att försöka hämta mer.",
-            "failed": "  1  Misslyckades: ingen användbar avbild, eller ett annat fel."
+            "ok": "  0    Lyckades.",
+            "failed": "  1    Misslyckades: ingen användbar utdata, eller ett annat fel.",
+            "usage": "  2    Användning: felaktigt kommando eller flaggor (denna text skrevs också ut).",
+            "damaged": "  3    Skadad (endast disc:// -> iso:// eller disc:// -> null://): behållen och användbar, men saknar några sektorer — kör igen (--multipass) för att försöka hämta mer.",
+            "interrupted": "  130  En andra Ctrl-C tvingade fram en omedelbar avslutning."
         }
     },
     "gui": {

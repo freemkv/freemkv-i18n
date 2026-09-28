@@ -142,7 +142,7 @@
         "verbose_handshake_error": "Handshake fallito",
         "verbose_handshake_hint": "L'handshake potrebbe essere fallito — nessun certificato host, o rifiutato dal lettore",
         "mapfile_summary": "Mapfile: {good} GB buoni, {unreadable} MB illeggibili, {pending} MB in attesa",
-        "retry_with_multipass": "Provi un recupero multipass per leggere più dati dal disco.",
+        "retry_with_multipass": "Rieseguire con --multipass per provare a leggere di più; riprende dal mapfile.",
         "nothing_to_patch": "Niente da riparare — tutti i settori sono buoni",
         "patch_start": "Riparazione: {good} GB buoni, {unreadable} MB illeggibili, {pending} MB in attesa",
         "patch_done": "Riparazione completata: recuperati {recovered} MB, {unreadable} MB illeggibili, {pending} MB in attesa ({time}s, {speed} MB/s)",
@@ -484,11 +484,13 @@
             "help": "  help [command]           Show this help, or help for one command"
         },
         "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
-        "exit_codes_header": "Codici di uscita (disc:// -> iso://):",
+        "exit_codes_header": "Codici di uscita:",
         "exit_code": {
-            "ok": "  0  Completo: l'intero disco è stato copiato.",
-            "damaged": "  3  Danneggiato: conservato e utilizzabile, ma mancano alcuni settori — rieseguire (--multipass) per provare a recuperarne altri.",
-            "failed": "  1  Fallito: nessuna immagine utilizzabile, o un altro errore."
+            "ok": "  0    Successo.",
+            "failed": "  1    Fallito: nessun output utilizzabile, o un altro errore.",
+            "usage": "  2    Utilizzo: comando o opzioni errati (questo testo è stato stampato anche).",
+            "damaged": "  3    Danneggiato (solo disc:// -> iso:// o disc:// -> null://): conservato e utilizzabile, ma mancano alcuni settori — rieseguire (--multipass) per provare a recuperarne altri.",
+            "interrupted": "  130  Un secondo Ctrl-C ha forzato un'uscita immediata."
         }
     },
     "help": {

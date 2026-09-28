@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Ha fallat la negociació",
         "verbose_handshake_hint": "És possible que hagi fallat la negociació — sense certificat d'amfitrió, o la unitat l'ha rebutjada",
         "mapfile_summary": "Fitxer de mapa: {good} GB correctes, {unreadable} MB il·legibles, {pending} MB pendents",
-        "retry_with_multipass": "Proveu una recuperació multipass per llegir més disc.",
+        "retry_with_multipass": "Torneu a executar amb --multipass per intentar llegir més; es reprèn des del fitxer de mapa.",
         "nothing_to_patch": "Res a apedaçar — tots els sectors són correctes",
         "patch_start": "S'està apedaçant: {good} GB correctes, {unreadable} MB il·legibles, {pending} MB pendents",
         "patch_done": "Apedaçament fet: recuperats {recovered} MB, {unreadable} MB il·legibles, {pending} MB pendents ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Emmascara els números de sèrie (amb --share)",
             "force": "      --force        Extreu a una destinació dir:// no buida (sobreescriu)"
         },
-        "exit_codes_header": "Codis de sortida (disc:// -> iso://):",
+        "exit_codes_header": "Codis de sortida:",
         "exit_code": {
-            "ok": "  0  Complet: s'ha copiat tot el disc.",
-            "damaged": "  3  Danyat: es conserva i és utilitzable, però falten alguns sectors — torneu a executar-ho (--multipass) per intentar-ne més.",
-            "failed": "  1  Fallit: cap imatge utilitzable, o qualsevol altre error."
+            "ok": "  0    Èxit.",
+            "failed": "  1    Fallit: cap sortida utilitzable, o qualsevol altre error.",
+            "usage": "  2    Ús: ordre o opcions incorrectes (aquest text també s'ha mostrat).",
+            "damaged": "  3    Danyat (només disc:// -> iso:// o disc:// -> null://): es conserva i és utilitzable, però falten alguns sectors — torneu a executar-ho (--multipass) per intentar-ne més.",
+            "interrupted": "  130  Un segon Ctrl-C ha forçat una sortida immediata."
         }
     },
     "gui": {

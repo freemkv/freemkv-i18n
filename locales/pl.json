@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Uzgadnianie nie powiodło się",
         "verbose_handshake_hint": "Uzgadnianie mogło się nie powieść — brak certyfikatu hosta lub napęd go odrzucił",
         "mapfile_summary": "Plik mapy: {good} GB dobrych, {unreadable} MB nieczytelnych, {pending} MB oczekujących",
-        "retry_with_multipass": "Spróbuj odzyskiwania wieloprzebiegowego (multipass), aby odczytać więcej płyty.",
+        "retry_with_multipass": "Uruchom ponownie z --multipass, aby spróbować odczytać więcej; wznawia od pliku mapy.",
         "nothing_to_patch": "Nic do naprawienia — wszystkie sektory są dobre",
         "patch_start": "Naprawianie: {good} GB dobrych, {unreadable} MB nieczytelnych, {pending} MB oczekujących",
         "patch_done": "Naprawianie ukończone: odzyskano {recovered} MB, {unreadable} MB nieczytelnych, {pending} MB oczekujących ({time} s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Maskuj numery seryjne (z --share)",
             "force": "      --force        Wyodrębnij do niepustego celu dir:// (nadpisanie)"
         },
-        "exit_codes_header": "Kody wyjścia (disc:// -> iso://):",
+        "exit_codes_header": "Kody wyjścia:",
         "exit_code": {
-            "ok": "  0  Ukończono: cała płyta została skopiowana.",
-            "damaged": "  3  Uszkodzone: zachowane i użyteczne, ale brakuje niektórych sektorów — uruchom ponownie (--multipass), aby spróbować odzyskać więcej.",
-            "failed": "  1  Niepowodzenie: brak użytecznego obrazu lub inny błąd."
+            "ok": "  0    Sukces.",
+            "failed": "  1    Niepowodzenie: brak użytecznego wyjścia lub inny błąd.",
+            "usage": "  2    Użycie: nieprawidłowe polecenie lub flagi (ten tekst również został wypisany).",
+            "damaged": "  3    Uszkodzone (tylko disc:// -> iso:// lub disc:// -> null://): zachowane i użyteczne, ale brakuje niektórych sektorów — uruchom ponownie (--multipass), aby spróbować odzyskać więcej.",
+            "interrupted": "  130  Drugi Ctrl-C wymusił natychmiastowe zakończenie."
         }
     },
     "gui": {

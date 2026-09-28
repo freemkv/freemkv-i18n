@@ -142,7 +142,7 @@
         "verbose_handshake_error": "Handshake fehlgeschlagen",
         "verbose_handshake_hint": "Handshake moeglicherweise fehlgeschlagen — kein Host-Zertifikat, oder Laufwerk hat abgelehnt",
         "mapfile_summary": "Mapfile: {good} GB gut, {unreadable} MB unlesbar, {pending} MB ausstehend",
-        "retry_with_multipass": "Versuchen Sie eine Multipass-Wiederherstellung, um mehr von der Disc zu lesen.",
+        "retry_with_multipass": "Erneut mit --multipass ausführen, um mehr zu lesen; es setzt anhand der Mapfile fort.",
         "nothing_to_patch": "Nichts zu patchen — alle Sektoren sind gut",
         "patch_start": "Patchen: {good} GB gut, {unreadable} MB unlesbar, {pending} MB ausstehend",
         "patch_done": "Patch fertig: {recovered} MB wiederhergestellt, {unreadable} MB unlesbar, {pending} MB ausstehend ({time}s, {speed} MB/s)",
@@ -484,11 +484,13 @@
             "help": "  help [command]           Show this help, or help for one command"
         },
         "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
-        "exit_codes_header": "Exit-Codes (disc:// -> iso://):",
+        "exit_codes_header": "Exit-Codes:",
         "exit_code": {
-            "ok": "  0  Vollständig: die ganze Disc wurde kopiert.",
-            "damaged": "  3  Beschädigt: behalten und nutzbar, aber einige Sektoren fehlen — erneut ausführen (--multipass), um mehr wiederherzustellen.",
-            "failed": "  1  Fehlgeschlagen: kein nutzbares Abbild, oder ein anderer Fehler."
+            "ok": "  0    Erfolg.",
+            "failed": "  1    Fehlgeschlagen: keine nutzbare Ausgabe, oder ein anderer Fehler.",
+            "usage": "  2    Verwendung: falscher Befehl oder falsche Flags (dieser Text wurde auch ausgegeben).",
+            "damaged": "  3    Beschädigt (nur disc:// -> iso:// oder disc:// -> null://): behalten und nutzbar, aber einige Sektoren fehlen — erneut ausführen (--multipass), um mehr wiederherzustellen.",
+            "interrupted": "  130  Ein zweites Ctrl-C erzwang einen sofortigen Abbruch."
         }
     },
     "help": {

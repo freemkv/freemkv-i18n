@@ -142,7 +142,7 @@
         "verbose_handshake_error": "Autenticación falló",
         "verbose_handshake_hint": "La autenticación pudo haber fallado — sin certificado host, o unidad rechazó",
         "mapfile_summary": "Mapfile: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
-        "retry_with_multipass": "Pruebe una recuperación multipass para leer más del disco.",
+        "retry_with_multipass": "Vuelva a ejecutarlo con --multipass para intentar leer más; se reanuda desde el mapfile.",
         "nothing_to_patch": "Nada que reparar — todos los sectores están buenos",
         "patch_start": "Reparando: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
         "patch_done": "Reparación: recuperados {recovered} MB, {unreadable} MB ilegibles, {pending} MB pendientes ({time}s, {speed} MB/s)",
@@ -484,11 +484,13 @@
             "help": "  help [command]           Show this help, or help for one command"
         },
         "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
-        "exit_codes_header": "Códigos de salida (disc:// -> iso://):",
+        "exit_codes_header": "Códigos de salida:",
         "exit_code": {
-            "ok": "  0  Completo: se copió todo el disco.",
-            "damaged": "  3  Dañado: se conserva y es utilizable, pero faltan algunos sectores — vuelva a ejecutarlo (--multipass) para intentar recuperar más.",
-            "failed": "  1  Fallido: ninguna imagen utilizable, u otro error."
+            "ok": "  0    Éxito.",
+            "failed": "  1    Fallido: ninguna salida utilizable, u otro error.",
+            "usage": "  2    Uso: comando o indicadores incorrectos (este texto también se imprimió).",
+            "damaged": "  3    Dañado (solo disc:// -> iso:// o disc:// -> null://): se conserva y es utilizable, pero faltan algunos sectores — vuelva a ejecutarlo (--multipass) para intentar recuperar más.",
+            "interrupted": "  130  Un segundo Ctrl-C forzó una salida inmediata."
         }
     },
     "help": {

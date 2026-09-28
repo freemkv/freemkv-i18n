@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Håndtrykk mislyktes",
         "verbose_handshake_hint": "Håndtrykket kan ha mislyktes — ingen vertssertifikat, eller stasjonen avviste det",
         "mapfile_summary": "Kartfil: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
-        "retry_with_multipass": "Prøv en multipass-gjenoppretting for å lese mer av platen.",
+        "retry_with_multipass": "Kjør på nytt med --multipass for å prøve å lese mer; det gjenopptar fra mapfilen.",
         "nothing_to_patch": "Ingenting å reparere — alle sektorer er gode",
         "patch_start": "Reparerer: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
         "patch_done": "Reparasjon fullført: gjenopprettet {recovered} MB, {unreadable} MB uleselige, {pending} MB ventende ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Masker serienumre (med --share)",
             "force": "      --force        Pakk ut i et ikke-tomt dir://-mål (overskriv)"
         },
-        "exit_codes_header": "Avslutningskoder (disc:// -> iso://):",
+        "exit_codes_header": "Avslutningskoder:",
         "exit_code": {
-            "ok": "  0  Fullført: hele platen ble kopiert.",
-            "damaged": "  3  Skadet: beholdt og brukbar, men mangler noen sektorer — kjør på nytt (--multipass) for å prøve å hente mer.",
-            "failed": "  1  Mislyktes: ingen brukbart bilde, eller en annen feil."
+            "ok": "  0    Vellykket.",
+            "failed": "  1    Mislyktes: ingen brukbar utdata, eller en annen feil.",
+            "usage": "  2    Bruk: feil kommando eller flagg (denne teksten ble også skrevet ut).",
+            "damaged": "  3    Skadet (kun disc:// -> iso:// eller disc:// -> null://): beholdt og brukbar, men mangler noen sektorer — kjør på nytt (--multipass) for å prøve å hente mer.",
+            "interrupted": "  130  En andre Ctrl-C tvang frem en umiddelbar avslutning."
         }
     },
     "gui": {

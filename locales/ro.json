@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Handshake eșuat",
         "verbose_handshake_hint": "Handshake-ul poate să fi eșuat — fără certificat gazdă sau unitatea a respins",
         "mapfile_summary": "Fișier de mapare: {good} GB buni, {unreadable} MB ilizibili, {pending} MB în așteptare",
-        "retry_with_multipass": "Încercați o recuperare multipass pentru a citi mai mult din disc.",
+        "retry_with_multipass": "Rulați din nou cu --multipass pentru a încerca să citiți mai mult; reia de la fișierul de hartă.",
         "nothing_to_patch": "Nimic de corectat — toate sectoarele sunt bune",
         "patch_start": "Se corectează: {good} GB buni, {unreadable} MB ilizibili, {pending} MB în așteptare",
         "patch_done": "Corectare finalizată: recuperate {recovered} MB, {unreadable} MB ilizibili, {pending} MB în așteptare ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Maschează numerele de serie (cu --share)",
             "force": "      --force        Extrage într-o țintă dir:// negoală (suprascrie)"
         },
-        "exit_codes_header": "Coduri de ieșire (disc:// -> iso://):",
+        "exit_codes_header": "Coduri de ieșire:",
         "exit_code": {
-            "ok": "  0  Complet: întregul disc a fost copiat.",
-            "damaged": "  3  Deteriorat: păstrat și utilizabil, dar lipsesc unele sectoare — rulați din nou (--multipass) pentru a încerca să recuperați mai mult.",
-            "failed": "  1  Eșuat: nicio imagine utilizabilă, sau o altă eroare."
+            "ok": "  0    Succes.",
+            "failed": "  1    Eșuat: nicio ieșire utilizabilă, sau o altă eroare.",
+            "usage": "  2    Utilizare: comandă sau opțiuni incorecte (acest text a fost de asemenea afișat).",
+            "damaged": "  3    Deteriorat (doar disc:// -> iso:// sau disc:// -> null://): păstrat și utilizabil, dar lipsesc unele sectoare — rulați din nou (--multipass) pentru a încerca să recuperați mai mult.",
+            "interrupted": "  130  Un al doilea Ctrl-C a forțat o ieșire imediată."
         }
     },
     "gui": {

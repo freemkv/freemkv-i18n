@@ -146,7 +146,7 @@
         "verbose_handshake_error": "握手失败",
         "verbose_handshake_hint": "握手可能已失败 —— 无主机证书，或被驱动器拒绝",
         "mapfile_summary": "映射文件：{good} GB 良好，{unreadable} MB 不可读，{pending} MB 待处理",
-        "retry_with_multipass": "尝试多轮（multipass）恢复以读取更多光盘内容。",
+        "retry_with_multipass": "使用 --multipass 重新运行以尝试读取更多内容；它会从映射文件恢复。",
         "nothing_to_patch": "无需修补 —— 所有扇区均良好",
         "patch_start": "正在修补：{good} GB 良好，{unreadable} MB 不可读，{pending} MB 待处理",
         "patch_done": "修补完成：恢复 {recovered} MB，{unreadable} MB 不可读，{pending} MB 待处理（{time} 秒，{speed} MB/s）",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          掩码序列号（配合 --share）",
             "force": "      --force        向非空的 dir:// 目标中提取（覆盖）"
         },
-        "exit_codes_header": "退出代码 (disc:// -> iso://):",
+        "exit_codes_header": "退出代码：",
         "exit_code": {
-            "ok": "  0  完成：整张光盘已复制。",
-            "damaged": "  3  已损坏：已保留且可用，但缺少部分扇区 — 重新运行（--multipass）以尝试恢复更多。",
-            "failed": "  1  失败：没有可用的镜像，或发生其他错误。"
+            "ok": "  0    成功。",
+            "failed": "  1    失败：没有可用的输出，或发生其他错误。",
+            "usage": "  2    用法：命令或参数错误（此文本也已打印）。",
+            "damaged": "  3    已损坏（仅限 disc:// -> iso:// 或 disc:// -> null://）：已保留且可用，但缺少部分扇区 — 重新运行（--multipass）以尝试恢复更多。",
+            "interrupted": "  130  第二次 Ctrl-C 强制立即退出。"
         }
     },
     "gui": {

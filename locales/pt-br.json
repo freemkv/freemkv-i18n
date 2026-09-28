@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Handshake falhou",
         "verbose_handshake_hint": "O handshake pode ter falhado — sem certificado do host, ou a unidade rejeitou",
         "mapfile_summary": "Mapfile: {good} GB bons, {unreadable} MB ilegíveis, {pending} MB pendentes",
-        "retry_with_multipass": "Tente uma recuperação multipass para ler mais do disco.",
+        "retry_with_multipass": "Execute novamente com --multipass para tentar ler mais; retoma a partir do mapfile.",
         "nothing_to_patch": "Nada para corrigir — todos os setores estão bons",
         "patch_start": "Corrigindo: {good} GB bons, {unreadable} MB ilegíveis, {pending} MB pendentes",
         "patch_done": "Correção concluída: recuperados {recovered} MB, {unreadable} MB ilegíveis, {pending} MB pendentes ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Mascara os números de série (com --share)",
             "force": "      --force        Extrai em um destino dir:// não vazio (sobrescreve)"
         },
-        "exit_codes_header": "Códigos de saída (disc:// -> iso://):",
+        "exit_codes_header": "Códigos de saída:",
         "exit_code": {
-            "ok": "  0  Completo: o disco inteiro foi copiado.",
-            "damaged": "  3  Danificado: mantido e utilizável, mas faltam alguns setores — execute novamente (--multipass) para tentar recuperar mais.",
-            "failed": "  1  Falhou: nenhuma imagem utilizável, ou outro erro."
+            "ok": "  0    Sucesso.",
+            "failed": "  1    Falhou: nenhuma saída utilizável, ou outro erro.",
+            "usage": "  2    Uso: comando ou opções incorretas (este texto também foi impresso).",
+            "damaged": "  3    Danificado (apenas disc:// -> iso:// ou disc:// -> null://): mantido e utilizável, mas faltam alguns setores — execute novamente (--multipass) para tentar recuperar mais.",
+            "interrupted": "  130  Um segundo Ctrl-C forçou uma saída imediata."
         }
     },
     "gui": {

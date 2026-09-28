@@ -146,7 +146,7 @@
         "verbose_handshake_error": "핸드셰이크 실패",
         "verbose_handshake_hint": "핸드셰이크가 실패했을 수 있음 — 호스트 인증서가 없거나 드라이브가 거부함",
         "mapfile_summary": "맵파일: 정상 {good} GB, 읽기 불가 {unreadable} MB, 대기 {pending} MB",
-        "retry_with_multipass": "멀티패스 복구를 시도하여 디스크를 더 많이 읽어보세요.",
+        "retry_with_multipass": "더 많이 읽으려면 --multipass로 다시 실행하세요. 맵파일에서 재개됩니다.",
         "nothing_to_patch": "패치할 것 없음 — 모든 섹터가 정상입니다",
         "patch_start": "패치 중: 정상 {good} GB, 읽기 불가 {unreadable} MB, 대기 {pending} MB",
         "patch_done": "패치 완료: {recovered} MB 복구, 읽기 불가 {unreadable} MB, 대기 {pending} MB ({time}초, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          일련번호 마스킹 (--share와 함께)",
             "force": "      --force        비어 있지 않은 dir:// 대상에 추출 (덮어쓰기)"
         },
-        "exit_codes_header": "종료 코드 (disc:// -> iso://):",
+        "exit_codes_header": "종료 코드:",
         "exit_code": {
-            "ok": "  0  완료: 디스크 전체가 복사되었습니다.",
-            "damaged": "  3  손상됨: 유지되어 사용 가능하지만 일부 섹터가 부족합니다 — 더 복구하려면 다시 실행하세요 (--multipass).",
-            "failed": "  1  실패: 사용 가능한 이미지가 없거나 다른 오류가 발생했습니다."
+            "ok": "  0    성공.",
+            "failed": "  1    실패: 사용 가능한 출력이 없거나 다른 오류가 발생했습니다.",
+            "usage": "  2    사용법: 잘못된 명령 또는 플래그(이 텍스트도 출력되었습니다).",
+            "damaged": "  3    손상됨(disc:// -> iso:// 또는 disc:// -> null:// 만 해당): 유지되어 사용 가능하지만 일부 섹터가 부족합니다 — 더 복구하려면 다시 실행하세요 (--multipass).",
+            "interrupted": "  130  두 번째 Ctrl-C로 즉시 종료되었습니다."
         }
     },
     "gui": {

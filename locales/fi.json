@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Kättely epäonnistui",
         "verbose_handshake_hint": "Kättely saattoi epäonnistua — ei isäntävarmennetta, tai asema hylkäsi",
         "mapfile_summary": "Karttatiedosto: {good} Gt kelvollista, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa",
-        "retry_with_multipass": "Kokeile multipass-palautusta lukeaksesi levyä enemmän.",
+        "retry_with_multipass": "Aja uudelleen --multipass-valitsimella lukeaksesi lisää; se jatkaa mapfile-tiedostosta.",
         "nothing_to_patch": "Ei paikattavaa — kaikki sektorit ovat kelvollisia",
         "patch_start": "Paikataan: {good} Gt kelvollista, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa",
         "patch_done": "Paikkaus valmis: palautettu {recovered} Mt, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa ({time} s, {speed} Mt/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Peitä sarjanumerot (--share:n kanssa)",
             "force": "      --force        Pura ei-tyhjään dir://-kohteeseen (ylikirjoita)"
         },
-        "exit_codes_header": "Poistumiskoodit (disc:// -> iso://):",
+        "exit_codes_header": "Poistumiskoodit:",
         "exit_code": {
-            "ok": "  0  Valmis: koko levy kopioitiin.",
-            "damaged": "  3  Vaurioitunut: säilytetty ja käyttökelpoinen, mutta joitakin sektoreita puuttuu — aja uudelleen (--multipass) yrittääksesi palauttaa lisää.",
-            "failed": "  1  Epäonnistui: ei käyttökelpoista levykuvaa, tai jokin muu virhe."
+            "ok": "  0    Onnistui.",
+            "failed": "  1    Epäonnistui: ei käyttökelpoista tulostetta, tai jokin muu virhe.",
+            "usage": "  2    Käyttö: virheellinen komento tai valitsimet (tämä teksti tulostettiin myös).",
+            "damaged": "  3    Vaurioitunut (vain disc:// -> iso:// tai disc:// -> null://): säilytetty ja käyttökelpoinen, mutta joitakin sektoreita puuttuu — aja uudelleen (--multipass) yrittääksesi palauttaa lisää.",
+            "interrupted": "  130  Toinen Ctrl-C pakotti välittömän lopetuksen."
         }
     },
     "gui": {

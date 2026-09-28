@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Kézfogás sikertelen",
         "verbose_handshake_hint": "A kézfogás valószínűleg sikertelen volt — nincs gazdatanúsítvány, vagy a meghajtó elutasította",
         "mapfile_summary": "Térképfájl: {good} GB jó, {unreadable} MB olvashatatlan, {pending} MB függőben",
-        "retry_with_multipass": "Próbáljon ki egy multipass helyreállítást, hogy többet olvasson be a lemezről.",
+        "retry_with_multipass": "Futtassa újra a --multipass kapcsolóval, hogy többet olvasson be; a mapfile-ból folytatja.",
         "nothing_to_patch": "Nincs mit javítani — minden szektor jó",
         "patch_start": "Javítás: {good} GB jó, {unreadable} MB olvashatatlan, {pending} MB függőben",
         "patch_done": "Javítás kész: {recovered} MB helyreállítva, {unreadable} MB olvashatatlan, {pending} MB függőben ({time} mp, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Sorozatszámok elrejtése (a --share kapcsolóval)",
             "force": "      --force        Kibontás nem üres dir:// célba (felülírás)"
         },
-        "exit_codes_header": "Kilépési kódok (disc:// -> iso://):",
+        "exit_codes_header": "Kilépési kódok:",
         "exit_code": {
-            "ok": "  0  Teljes: az egész lemez lemásolva.",
-            "damaged": "  3  Sérült: megtartva és használható, de néhány szektor hiányzik — futtassa újra (--multipass) további helyreállításhoz.",
-            "failed": "  1  Sikertelen: nincs használható kép, vagy más hiba történt."
+            "ok": "  0    Siker.",
+            "failed": "  1    Sikertelen: nincs használható kimenet, vagy más hiba történt.",
+            "usage": "  2    Használat: hibás parancs vagy kapcsolók (ez a szöveg is megjelent).",
+            "damaged": "  3    Sérült (csak disc:// -> iso:// vagy disc:// -> null://): megtartva és használható, de néhány szektor hiányzik — futtassa újra (--multipass) további helyreállításhoz.",
+            "interrupted": "  130  Egy második Ctrl-C azonnali kilépést kényszerített."
         }
     },
     "gui": {

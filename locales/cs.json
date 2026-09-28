@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Handshake selhal",
         "verbose_handshake_hint": "Handshake možná selhal — chybí certifikát hostitele nebo jej mechanika odmítla",
         "mapfile_summary": "Mapfile: {good} GB dobrých, {unreadable} MB nečitelných, {pending} MB čekajících",
-        "retry_with_multipass": "Zkuste vícenásobné obnovení (multipass) a přečtěte více z disku.",
+        "retry_with_multipass": "Spusťte to znovu s --multipass, abyste se pokusili přečíst více; naváže na mapový soubor.",
         "nothing_to_patch": "Není co opravovat — všechny sektory jsou v pořádku",
         "patch_start": "Opravování: {good} GB dobrých, {unreadable} MB nečitelných, {pending} MB čekajících",
         "patch_done": "Oprava dokončena: obnoveno {recovered} MB, {unreadable} MB nečitelných, {pending} MB čekajících ({time} s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Maskovat sériová čísla (s --share)",
             "force": "      --force        Rozbalit do neprázdného cíle dir:// (přepsat)"
         },
-        "exit_codes_header": "Návratové kódy (disc:// -> iso://):",
+        "exit_codes_header": "Návratové kódy:",
         "exit_code": {
-            "ok": "  0  Dokončeno: celý disk byl zkopírován.",
-            "damaged": "  3  Poškozeno: obraz je zachován a použitelný, ale chybí některé sektory — spusťte to znovu (--multipass) a zkuste získat víc.",
-            "failed": "  1  Selhalo: žádný použitelný obraz, nebo jiná chyba."
+            "ok": "  0    Úspěch.",
+            "failed": "  1    Selhalo: žádný použitelný výstup, nebo jiná chyba.",
+            "usage": "  2    Použití: chybný příkaz nebo přepínače (tento text byl také vypsán).",
+            "damaged": "  3    Poškozeno (pouze disc:// -> iso:// nebo disc:// -> null://): zachováno a použitelné, ale chybí některé sektory — spusťte to znovu (--multipass) a zkuste získat víc.",
+            "interrupted": "  130  Druhé Ctrl-C vynutilo okamžité ukončení."
         }
     },
     "gui": {

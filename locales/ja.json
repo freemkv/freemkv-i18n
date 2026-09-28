@@ -146,7 +146,7 @@
         "verbose_handshake_error": "ハンドシェイクに失敗しました",
         "verbose_handshake_hint": "ハンドシェイクに失敗した可能性があります — ホスト証明書がない、またはドライブが拒否しました",
         "mapfile_summary": "マップファイル: 良好 {good} GB、読み取り不能 {unreadable} MB、保留 {pending} MB",
-        "retry_with_multipass": "マルチパス リカバリを試して、ディスクをさらに読み取ってください。",
+        "retry_with_multipass": "--multipass を付けて再実行するとさらに読み取りを試みます。マップファイルから再開します。",
         "nothing_to_patch": "パッチ対象がありません — すべてのセクタが良好です",
         "patch_start": "パッチ中: 良好 {good} GB、読み取り不能 {unreadable} MB、保留 {pending} MB",
         "patch_done": "パッチ完了: {recovered} MB を復元、読み取り不能 {unreadable} MB、保留 {pending} MB（{time} 秒、{speed} MB/s）",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          シリアル番号をマスク（--share と併用）",
             "force": "      --force        空でない dir:// ターゲットに展開（上書き）"
         },
-        "exit_codes_header": "終了コード (disc:// -> iso://):",
+        "exit_codes_header": "終了コード:",
         "exit_code": {
-            "ok": "  0  完了: ディスク全体をコピーしました。",
-            "damaged": "  3  損傷: 保持され使用可能ですが、一部のセクタが不足しています — 再実行 (--multipass) してさらに回復を試みてください。",
-            "failed": "  1  失敗: 使用可能なイメージがない、またはその他のエラー。"
+            "ok": "  0    成功。",
+            "failed": "  1    失敗: 使用可能な出力がない、またはその他のエラー。",
+            "usage": "  2    使用方法: コマンドまたはフラグが不正です（このテキストも表示されました）。",
+            "damaged": "  3    損傷（disc:// -> iso:// または disc:// -> null:// のみ）: 保持され使用可能ですが、一部のセクタが不足しています — 再実行 (--multipass) してさらに回復を試みてください。",
+            "interrupted": "  130  2 回目の Ctrl-C により即座に終了しました。"
         }
     },
     "gui": {

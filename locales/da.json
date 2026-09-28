@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Handshake mislykkedes",
         "verbose_handshake_hint": "Handshake mislykkedes muligvis — intet værtscertifikat, eller drevet afviste",
         "mapfile_summary": "Mapfile: {good} GB gode, {unreadable} MB ulæselige, {pending} MB afventer",
-        "retry_with_multipass": "Prøv en multipass-gendannelse for at læse mere af disken.",
+        "retry_with_multipass": "Kør igen med --multipass for at prøve at læse mere; det genoptager fra mapfilen.",
         "nothing_to_patch": "Intet at patche — alle sektorer er gode",
         "patch_start": "Patcher: {good} GB gode, {unreadable} MB ulæselige, {pending} MB afventer",
         "patch_done": "Patch fuldført: gendannede {recovered} MB, {unreadable} MB ulæselige, {pending} MB afventer ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Maskér serienumre (med --share)",
             "force": "      --force        Udpak ind i et ikke-tomt dir://-mål (overskriv)"
         },
-        "exit_codes_header": "Afslutningskoder (disc:// -> iso://):",
+        "exit_codes_header": "Afslutningskoder:",
         "exit_code": {
-            "ok": "  0  Fuldført: hele disken blev kopieret.",
-            "damaged": "  3  Beskadiget: beholdt og brugbar, men mangler nogle sektorer — kør igen (--multipass) for at prøve at hente mere.",
-            "failed": "  1  Mislykkedes: intet brugbart image, eller en anden fejl."
+            "ok": "  0    Succes.",
+            "failed": "  1    Mislykkedes: intet brugbart output, eller en anden fejl.",
+            "usage": "  2    Brug: forkert kommando eller flag (denne tekst blev også udskrevet).",
+            "damaged": "  3    Beskadiget (kun disc:// -> iso:// eller disc:// -> null://): beholdt og brugbar, men mangler nogle sektorer — kør igen (--multipass) for at prøve at hente mere.",
+            "interrupted": "  130  Endnu et Ctrl-C fremtvang en øjeblikkelig afslutning."
         }
     },
     "gui": {

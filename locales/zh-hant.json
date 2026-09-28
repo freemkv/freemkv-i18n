@@ -146,7 +146,7 @@
         "verbose_handshake_error": "交握失敗",
         "verbose_handshake_hint": "交握可能失敗 — 無主機憑證，或光碟機拒絕",
         "mapfile_summary": "對應檔：{good} GB 良好，{unreadable} MB 無法讀取，{pending} MB 待處理",
-        "retry_with_multipass": "嘗試多輪（multipass）復原以讀取更多光碟內容。",
+        "retry_with_multipass": "使用 --multipass 重新執行以嘗試讀取更多內容；它會從映射檔案繼續。",
         "nothing_to_patch": "無需修補 — 所有磁區皆良好",
         "patch_start": "修補中：{good} GB 良好，{unreadable} MB 無法讀取，{pending} MB 待處理",
         "patch_done": "修補完成：復原 {recovered} MB，{unreadable} MB 無法讀取，{pending} MB 待處理（{time} 秒，{speed} MB/s）",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          遮蔽序號（搭配 --share）",
             "force": "      --force        擷取至非空的 dir:// 目標（覆寫）"
         },
-        "exit_codes_header": "結束代碼 (disc:// -> iso://):",
+        "exit_codes_header": "結束代碼：",
         "exit_code": {
-            "ok": "  0  完成：整片光碟已複製。",
-            "damaged": "  3  已損壞：已保留且可用，但缺少部分磁區 — 重新執行（--multipass）以嘗試復原更多。",
-            "failed": "  1  失敗：沒有可用的映像，或發生其他錯誤。"
+            "ok": "  0    成功。",
+            "failed": "  1    失敗：沒有可用的輸出，或發生其他錯誤。",
+            "usage": "  2    用法：命令或參數錯誤（此文字也已印出）。",
+            "damaged": "  3    已損壞（僅限 disc:// -> iso:// 或 disc:// -> null://）：已保留且可用，但缺少部分磁區 — 重新執行（--multipass）以嘗試復原更多。",
+            "interrupted": "  130  第二次 Ctrl-C 強制立即結束。"
         }
     },
     "gui": {

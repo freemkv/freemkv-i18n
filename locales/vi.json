@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Bắt tay thất bại",
         "verbose_handshake_hint": "Bắt tay có thể đã thất bại — không có chứng chỉ host, hoặc ổ đĩa từ chối",
         "mapfile_summary": "Tệp bản đồ: {good} GB tốt, {unreadable} MB không đọc được, {pending} MB đang chờ",
-        "retry_with_multipass": "Hãy thử khôi phục multipass để đọc thêm phần đĩa.",
+        "retry_with_multipass": "Chạy lại với --multipass để thử đọc thêm; nó sẽ tiếp tục từ mapfile.",
         "nothing_to_patch": "Không có gì để vá — tất cả sector đều tốt",
         "patch_start": "Đang vá: {good} GB tốt, {unreadable} MB không đọc được, {pending} MB đang chờ",
         "patch_done": "Vá xong: khôi phục {recovered} MB, {unreadable} MB không đọc được, {pending} MB đang chờ ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Che số sê-ri (với --share)",
             "force": "      --force        Trích xuất vào đích dir:// không trống (ghi đè)"
         },
-        "exit_codes_header": "Mã thoát (disc:// -> iso://):",
+        "exit_codes_header": "Mã thoát:",
         "exit_code": {
-            "ok": "  0  Hoàn tất: toàn bộ đĩa đã được sao chép.",
-            "damaged": "  3  Hư hỏng: được giữ lại và sử dụng được, nhưng thiếu một số sector — chạy lại (--multipass) để thử khôi phục thêm.",
-            "failed": "  1  Thất bại: không có ảnh sử dụng được, hoặc lỗi khác."
+            "ok": "  0    Thành công.",
+            "failed": "  1    Thất bại: không có đầu ra sử dụng được, hoặc lỗi khác.",
+            "usage": "  2    Cách dùng: lệnh hoặc cờ không hợp lệ (văn bản này cũng đã được in ra).",
+            "damaged": "  3    Hư hỏng (chỉ disc:// -> iso:// hoặc disc:// -> null://): được giữ lại và sử dụng được, nhưng thiếu một số sector — chạy lại (--multipass) để thử khôi phục thêm.",
+            "interrupted": "  130  Ctrl-C lần thứ hai buộc thoát ngay lập tức."
         }
     },
     "gui": {

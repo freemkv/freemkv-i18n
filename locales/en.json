@@ -146,7 +146,7 @@
         "verbose_handshake_error": "Handshake failed",
         "verbose_handshake_hint": "Handshake may have failed — no host cert, or drive rejected",
         "mapfile_summary": "Mapfile: {good} GB good, {unreadable} MB unreadable, {pending} MB pending",
-        "retry_with_multipass": "Try a multipass recovery to read more of the disc.",
+        "retry_with_multipass": "Re-run with --multipass to try to read more; it resumes from the mapfile.",
         "nothing_to_patch": "Nothing to patch — all sectors are good",
         "patch_start": "Patching: {good} GB good, {unreadable} MB unreadable, {pending} MB pending",
         "patch_done": "Patch done: recovered {recovered} MB, {unreadable} MB unreadable, {pending} MB pending ({time}s, {speed} MB/s)",
@@ -507,11 +507,13 @@
             "mask": "  -m, --mask          Mask serial numbers (with --share)",
             "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
         },
-        "exit_codes_header": "Exit codes (disc:// -> iso://):",
+        "exit_codes_header": "Exit codes:",
         "exit_code": {
-            "ok": "  0  Complete: the whole disc was copied.",
-            "damaged": "  3  Damaged: kept and usable, but short some sectors — re-run (--multipass) to try for more.",
-            "failed": "  1  Failed: no usable image, or any other error."
+            "ok": "  0    Success.",
+            "failed": "  1    Failed: no usable output, or any other error.",
+            "usage": "  2    Usage: bad command or flags (this text was also printed).",
+            "damaged": "  3    Damaged (disc:// -> iso:// or disc:// -> null:// only): kept and usable, but short some sectors — re-run (--multipass) to try for more.",
+            "interrupted": "  130  A second Ctrl-C forced an immediate exit."
         }
     },
     "gui": {

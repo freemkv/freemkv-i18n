@@ -142,7 +142,7 @@
         "verbose_handshake_error": "Echec de la negociation",
         "verbose_handshake_hint": "La negociation a peut-etre echoue — pas de certificat hote, ou lecteur a refuse",
         "mapfile_summary": "Mapfile : {good} Go bons, {unreadable} Mo illisibles, {pending} Mo en attente",
-        "retry_with_multipass": "Essayez une récupération multipass pour lire davantage le disque.",
+        "retry_with_multipass": "Relancez avec --multipass pour tenter de lire davantage ; la reprise se fait à partir du mapfile.",
         "nothing_to_patch": "Rien a corriger — tous les secteurs sont bons",
         "patch_start": "Correction : {good} Go bons, {unreadable} Mo illisibles, {pending} Mo en attente",
         "patch_done": "Correction terminee : {recovered} Mo recuperes, {unreadable} Mo illisibles, {pending} Mo en attente ({time}s, {speed} Mo/s)",
@@ -484,11 +484,13 @@
             "help": "  help [command]           Show this help, or help for one command"
         },
         "subcommands_note": "  Run 'freemkv <command> --help' (or 'freemkv help <command>') for command-specific help.",
-        "exit_codes_header": "Codes de sortie (disc:// -> iso://):",
+        "exit_codes_header": "Codes de sortie :",
         "exit_code": {
-            "ok": "  0  Complet : le disque entier a été copié.",
-            "damaged": "  3  Endommagé : conservé et utilisable, mais il manque des secteurs — relancez (--multipass) pour tenter d'en récupérer davantage.",
-            "failed": "  1  Échec : aucune image utilisable, ou une autre erreur."
+            "ok": "  0    Succès.",
+            "failed": "  1    Échec : aucune sortie utilisable, ou une autre erreur.",
+            "usage": "  2    Utilisation : commande ou options incorrectes (ce texte a aussi été affiché).",
+            "damaged": "  3    Endommagé (disc:// -> iso:// ou disc:// -> null:// uniquement) : conservé et utilisable, mais il manque des secteurs — relancez (--multipass) pour tenter d'en récupérer davantage.",
+            "interrupted": "  130  Un second Ctrl-C a forcé une sortie immédiate."
         }
     },
     "help": {
