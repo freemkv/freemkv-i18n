@@ -1091,6 +1091,32 @@ mod tests {
         }
     }
 
+    /// The keydb fix per front end (KU-F1i): the shared `error.` text is neutral, because
+    /// the freemkv-library server shows it too; `error_cli.` keeps the CLI's command and
+    /// `error_gui.` names the app's own Settings action, in every shipped locale.
+    #[test]
+    fn a_keydb_fix_is_worded_for_each_front_end() {
+        for code in SHIPPED_CODES {
+            let v: Value = serde_json::from_str(bundled_locale_json(code).unwrap()).unwrap();
+            let button = lookup_in(&v, "gui.set.update_keydb").expect("the GUI's button");
+            for err in ["E7000", "E7013", "E7026", "E8001", "E8002", "E8004"] {
+                let get = |ns: &str| lookup_in(&v, &format!("{ns}.{err}")).unwrap_or_default();
+                let shared = get("error");
+                assert!(
+                    !shared.contains("update-keys") && !shared.contains("freemkv "),
+                    "{code} error.{err} names a CLI command: {shared}"
+                );
+                let cli = get("error_cli");
+                assert!(cli.contains("freemkv update-keys"), "{code} error_cli.{err}: {cli}");
+                let gui = get("error_gui");
+                assert!(
+                    gui.contains(&button) && !gui.contains("update-keys"),
+                    "{code} error_gui.{err} must name “{button}”: {gui}"
+                );
+            }
+        }
+    }
+
     // freemkv compares the answer to drive.submit_prompt against drive.submit_affirmative, so
     // each prompt must offer that token. drive.zip_failed was superseded by share.zip_failed.
     #[test]
