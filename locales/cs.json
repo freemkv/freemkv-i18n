@@ -254,6 +254,7 @@
         "E6020": "Soubor obrazu disku končí před sektorem, který toto kopírování potřebuje, takže je obraz oříznutý nebo neúplný. Čtení bylo zastaveno, místo aby chybějící část vyplnilo nulami — vytvořte obraz z disku znovu.",
         "E6021": "Obraz disku nelze vytvořit: tento disk používá šifrování sběrnice AACS a umístění souboru streamu na disku se nepodařilo přečíst ({detail}), takže tento soubor nelze dešifrovat a obraz by stále obsahoval zašifrovaná data. Tituly, které tento soubor nepoužívají, lze i tak zkopírovat do MKV, nebo lze disk rozbalit do složky (tento soubor se nahlásí jako poškozený). Může pomoci disk vyčistit a zkusit to znovu.",
         "E6022": "Tento obraz ({detail}) byl připraven pro kopírování do MKV a obsahuje jen tituly, pro které byl připraven, ne celý disk, takže ho nelze použít jako obraz disku ani rozbalit do složky. Zkopírujte tyto tituly do MKV, nebo vytvořte nový obraz z disku.",
+        "E6023": "Seznam skladeb HD DVD na tomto disku je příliš velký na načtení, proto byl přeskočen a tituly byly místo toho určeny z videoklipů na disku. Názvy, pořadí a kapitoly titulů mohou být méně přesné.",
         "E7000": "Tento disk vyžaduje dešifrovací klíče AACS (Blu-ray/UHD), ale žádné nebyly nalezeny. Nainstalujte nebo aktualizujte databázi klíčů a zkuste to znovu.",
         "E7001": "Bezpečnostní certifikát disku je příliš krátký nebo neplatný.",
         "E7002": "Mechanika nezahájila zabezpečenou relaci pro tento disk — může jej používat jiný program. Zavřete vše ostatní, co disk používá, a zkuste to znovu.",

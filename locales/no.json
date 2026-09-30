@@ -254,6 +254,7 @@
         "E6020": "Diskbildefilen slutter før en sektor denne rippingen trenger, så bildet er avkortet eller ufullstendig. Lesingen ble stoppet i stedet for å fylle den manglende delen med nuller — lag et nytt diskbilde fra platen.",
         "E6021": "Et platebilde kan ikke lages: denne platen bruker AACS-busskryptering, og plasseringen til en strømfil på platen kunne ikke leses ({detail}), så den filen kan ikke dekrypteres, og bildet ville fortsatt inneholde krypterte data. Titler som ikke bruker den filen, kan fortsatt rippes til MKV, eller platen kan pakkes ut til en mappe (filen rapporteres som skadet). Å rengjøre platen og prøve igjen kan hjelpe.",
         "E6022": "Dette bildet ({detail}) ble klargjort for en MKV-ripping og inneholder bare titlene det ble klargjort for, ikke hele platen, så det kan ikke brukes som platebilde eller pakkes ut til en mappe. Ripp de titlene til MKV, eller lag et nytt bilde fra platen.",
+        "E6023": "En HD DVD-spilleliste på denne platen er for stor til å leses, så den ble hoppet over, og titlene ble i stedet utledet fra platens videoklipp. Titlenavn, rekkefølge og kapitler kan være mindre nøyaktige.",
         "E7000": "Denne platen trenger AACS-dekrypteringsnøkler (Blu-ray/UHD), men ingen ble funnet. Installer eller oppdater en nøkkeldatabase, og prøv igjen.",
         "E7001": "Platens sikkerhetssertifikat er for kort eller ugyldig.",
         "E7002": "Stasjonen ville ikke starte en sikker økt for denne platen — den kan være i bruk av et annet program. Lukk alt annet som bruker platen, og prøv igjen.",

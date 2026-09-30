@@ -254,6 +254,7 @@
         "E6020": "Error: the disc image file ends before a sector this rip needs, so the image is truncated or incomplete. Reading stopped rather than fill the missing part with zeros — make a new image from the disc.",
         "E6021": "A disc image can't be made: this disc uses AACS bus encryption, and the location of a stream file on the disc couldn't be read ({detail}), so that file can't be decrypted and the image would still hold encrypted data. Titles that don't use that file can still be ripped to MKV, or the disc can be extracted to a folder (that file is reported as damaged). Cleaning the disc and trying again may help.",
         "E6022": "This image ({detail}) was staged for an MKV rip and holds only the titles it was staged for, not the whole disc, so it can't be used as a disc image or extracted to a folder. Rip those titles to MKV, or make a new image from the disc.",
+        "E6023": "An HD DVD playlist on this disc is too large to read, so it was skipped and the titles were worked out from the disc's video clips instead. Title names, order and chapters may be less accurate.",
         "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Install or update a key database, then try again.",
         "E7001": "The disc's security certificate is too short or invalid.",
         "E7002": "The drive would not start a secure session for this disc — it may be in use by another program. Close anything else using the disc and try again.",

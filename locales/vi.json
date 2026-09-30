@@ -254,6 +254,7 @@
         "E6020": "Tệp ảnh đĩa kết thúc trước một sector mà lần sao chép này cần, nên ảnh đĩa bị cắt bớt hoặc chưa hoàn chỉnh. Quá trình đọc đã dừng thay vì điền số 0 vào phần bị thiếu — hãy tạo lại ảnh đĩa từ đĩa.",
         "E6021": "Không thể tạo ảnh đĩa: đĩa này dùng mã hóa bus AACS và không đọc được vị trí của một tệp luồng trên đĩa ({detail}), nên không thể giải mã tệp đó và ảnh đĩa vẫn sẽ chứa dữ liệu bị mã hóa. Các tiêu đề không dùng tệp đó vẫn có thể trích xuất sang MKV, hoặc có thể giải nén đĩa vào một thư mục (tệp đó được báo là bị hỏng). Lau sạch đĩa rồi thử lại có thể khắc phục.",
         "E6022": "Ảnh này ({detail}) được chuẩn bị cho một lần trích xuất MKV và chỉ chứa các tiêu đề đã chọn khi chuẩn bị, không phải toàn bộ đĩa, nên không thể dùng làm ảnh đĩa hoặc giải nén vào thư mục. Hãy trích xuất các tiêu đề đó sang MKV, hoặc tạo ảnh mới từ đĩa.",
+        "E6023": "Một danh sách phát HD DVD trên đĩa này quá lớn để đọc, nên đã được bỏ qua và các tựa được xác định từ các đoạn video của đĩa. Tên, thứ tự và các chương của tựa có thể kém chính xác hơn.",
         "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Hãy cài đặt hoặc cập nhật cơ sở dữ liệu khóa rồi thử lại.",
         "E7001": "Chứng chỉ bảo mật của đĩa quá ngắn hoặc không hợp lệ.",
         "E7002": "Ổ đĩa không khởi động phiên bảo mật cho đĩa này — có thể nó đang được chương trình khác sử dụng. Đóng mọi thứ khác đang dùng đĩa và thử lại.",

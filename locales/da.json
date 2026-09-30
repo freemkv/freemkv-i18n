@@ -254,6 +254,7 @@
         "E6020": "Diskaftryksfilen slutter før en sektor, som denne ripning har brug for, så aftrykket er afkortet eller ufuldstændigt. Læsningen blev stoppet i stedet for at udfylde den manglende del med nuller — lav et nyt aftryk fra disken.",
         "E6021": "Et diskimage kan ikke laves: denne disk bruger AACS-buskryptering, og placeringen af en streamfil på disken kunne ikke læses ({detail}), så den fil kan ikke dekrypteres, og imaget ville stadig indeholde krypterede data. Titler, der ikke bruger den fil, kan stadig rippes til MKV, eller disken kan udpakkes til en mappe (filen rapporteres som beskadiget). Det kan hjælpe at rengøre disken og prøve igen.",
         "E6022": "Dette image ({detail}) blev forberedt til en MKV-ripning og indeholder kun de titler, det blev forberedt til, ikke hele disken, så det kan ikke bruges som diskimage eller udpakkes til en mappe. Rip de titler til MKV, eller lav et nyt image fra disken.",
+        "E6023": "En HD DVD-playliste på denne disk er for stor til at blive læst, så den blev sprunget over, og titlerne blev i stedet udledt af diskens videoklip. Titelnavne, rækkefølge og kapitler kan være mindre nøjagtige.",
         "E7000": "Denne disk kræver AACS-dekrypteringsnøgler (Blu-ray/UHD), men ingen blev fundet. Installer eller opdatér en nøgledatabase, og prøv igen.",
         "E7001": "Diskens sikkerhedscertifikat er for kort eller ugyldigt.",
         "E7002": "Drevet ville ikke starte en sikker session for denne disk — den kan være i brug af et andet program. Luk alt andet, der bruger disken, og prøv igen.",
