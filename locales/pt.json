@@ -389,7 +389,7 @@
         "E9065": "Um ficheiro foi alterado durante a leitura, pelo que a imagem não corresponderia à pasta. Nada foi gravado.",
         "E9066": "Esta pasta é demasiado grande para ser apresentada como uma única imagem de disco.",
         "E9067": "Um nome de ficheiro é demasiado longo para armazenar num disco. Encurte-o e tente novamente: '{path}'.",
-        "E9068": "Uma pasta contém demasiadas subpastas para armazenar num disco: '{path}'.",
+        "E9068": "Uma pasta contém demasiados ficheiros ou subpastas para armazenar num disco: '{path}'.",
         "E9069": "A maioria dos fotogramas deste título ficou fora das próprias marcas de reprodução do disco, pelo que a saída ficaria muito incompleta.",
         "E9070": "Nada foi gravado — todos os fotogramas foram descartados. A saída teria ficado vazia.",
         "E9071": "Houve uma escrita na saída depois de esta já ter sido concluída ou ter falhado, pelo que os dados não puderam ser guardados.",

@@ -412,7 +412,7 @@
         "E9065": "Hiba: egy fájl megváltozott olvasás közben, így a lemezkép nem egyezne a mappával. Semmi sem lett kiírva.",
         "E9066": "Hiba: ez a mappa túl nagy ahhoz, hogy egyetlen lemezképként legyen megjeleníthető.",
         "E9067": "Hiba: egy fájlnév túl hosszú ahhoz, hogy lemezen tárolható legyen. Rövidítsd le, és próbáld újra: „{path}”.",
-        "E9068": "Hiba: egy mappa túl sok almappát tartalmaz ahhoz, hogy lemezen tárolható legyen: „{path}”.",
+        "E9068": "Hiba: egy mappa túl sok fájlt vagy almappát tartalmaz ahhoz, hogy lemezen tárolható legyen: „{path}”.",
         "E9069": "Hiba: a cím képkockáinak többsége kívül esett a lemez saját lejátszási jelölésein, így a kimenet súlyosan hiányos lenne.",
         "E9070": "Hiba: semmi sem lett kiírva — minden képkocka el lett vetve. A kimenet üres lett volna.",
         "E9071": "A kimenetre azután történt írás, hogy az már lezárult vagy hibára futott, így az adatokat nem sikerült menteni.",

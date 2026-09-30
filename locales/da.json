@@ -412,7 +412,7 @@
         "E9065": "Fejl: en fil ændrede sig, mens den blev læst, så imaget ikke ville matche mappen. Intet blev skrevet.",
         "E9066": "Fejl: denne mappe er for stor til at blive præsenteret som ét samlet diskimage.",
         "E9067": "Fejl: et filnavn er for langt til at kunne gemmes på en disk. Forkort det, og prøv igen: '{path}'.",
-        "E9068": "Fejl: en mappe indeholder for mange undermapper til at kunne gemmes på en disk: '{path}'.",
+        "E9068": "Fejl: en mappe indeholder for mange filer eller undermapper til at kunne gemmes på en disk: '{path}'.",
         "E9069": "Fejl: de fleste af denne titels frames lå uden for diskens egne afspilningsmærker, så outputtet ville være groft ufuldstændigt.",
         "E9070": "Fejl: intet blev skrevet — hver eneste frame blev kasseret. Outputtet ville have været tomt.",
         "E9071": "Der blev skrevet til outputtet, efter at det allerede var afsluttet eller var mislykkedes, så dataene kunne ikke gemmes.",

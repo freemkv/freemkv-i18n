@@ -389,7 +389,7 @@
         "E9065": "Un fichier a changé pendant sa lecture, si bien que l'image ne correspondrait pas au dossier. Rien n'a été écrit.",
         "E9066": "Ce dossier est trop volumineux pour être présenté comme une image de disque unique.",
         "E9067": "Un nom de fichier est trop long pour être stocké sur un disque. Raccourcissez-le et réessayez : '{path}'.",
-        "E9068": "Un dossier contient trop de sous-dossiers pour être stocké sur un disque : '{path}'.",
+        "E9068": "Un dossier contient trop de fichiers ou de sous-dossiers pour être stocké sur un disque : '{path}'.",
         "E9069": "La plupart des images de ce titre se trouvaient en dehors des propres marques de lecture du disque, si bien que la sortie serait très incomplète.",
         "E9070": "Rien n'a été écrit — chaque image a été rejetée. La sortie aurait été vide.",
         "E9071": "Une écriture a visé la sortie alors qu'elle était déjà terminée ou en échec : les données n'ont pas pu être enregistrées.",

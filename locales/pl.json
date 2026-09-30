@@ -412,7 +412,7 @@
         "E9065": "Błąd: plik zmienił się podczas odczytu, więc obraz nie odpowiadałby zawartości folderu. Nic nie zostało zapisane.",
         "E9066": "Błąd: ten folder jest zbyt duży, aby przedstawić go jako pojedynczy obraz płyty.",
         "E9067": "Błąd: nazwa pliku jest zbyt długa, aby zapisać ją na płycie. Skróć ją i spróbuj ponownie: „{path}”.",
-        "E9068": "Błąd: folder zawiera zbyt wiele podfolderów, aby zapisać go na płycie: „{path}”.",
+        "E9068": "Błąd: folder zawiera zbyt wiele plików lub podfolderów, aby zapisać go na płycie: „{path}”.",
         "E9069": "Błąd: większość klatek tego tytułu wypadła poza własne znaczniki odtwarzania płyty, więc wynik byłby poważnie niekompletny.",
         "E9070": "Błąd: nic nie zostało zapisane — wszystkie klatki zostały odrzucone. Wynik byłby pusty.",
         "E9071": "Próbowano zapisać do wyjścia po tym, jak zostało już zakończone lub uległo awarii, więc nie udało się zapisać danych.",

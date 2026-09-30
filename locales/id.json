@@ -412,7 +412,7 @@
         "E9065": "Kesalahan: sebuah berkas berubah saat sedang dibaca, sehingga image tidak akan cocok dengan folder. Tidak ada yang ditulis.",
         "E9066": "Kesalahan: folder ini terlalu besar untuk disajikan sebagai satu image cakram.",
         "E9067": "Kesalahan: sebuah nama berkas terlalu panjang untuk disimpan di cakram. Persingkat lalu coba lagi: '{path}'.",
-        "E9068": "Kesalahan: sebuah folder berisi terlalu banyak subfolder untuk disimpan di cakram: '{path}'.",
+        "E9068": "Kesalahan: sebuah folder berisi terlalu banyak file atau subfolder untuk disimpan di cakram: '{path}'.",
         "E9069": "Kesalahan: sebagian besar frame judul ini berada di luar penanda pemutaran milik cakram itu sendiri, sehingga keluaran akan sangat tidak lengkap.",
         "E9070": "Kesalahan: tidak ada yang ditulis — semua frame dibuang. Keluaran akan kosong.",
         "E9071": "Keluaran ditulisi setelah sudah selesai atau gagal, sehingga data tidak dapat disimpan.",

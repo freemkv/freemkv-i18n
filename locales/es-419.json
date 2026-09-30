@@ -412,7 +412,7 @@
         "E9065": "Error: un archivo cambió mientras se leía, así que la imagen no coincidiría con la carpeta. No se escribió nada.",
         "E9066": "Error: esta carpeta es demasiado grande para presentarse como una sola imagen de disco.",
         "E9067": "Error: un nombre de archivo es demasiado largo para almacenarse en un disco. Acórtalo y vuelve a intentarlo: '{path}'.",
-        "E9068": "Error: una carpeta tiene demasiadas subcarpetas para almacenarse en un disco: '{path}'.",
+        "E9068": "Error: una carpeta tiene demasiados archivos o subcarpetas para almacenarse en un disco: '{path}'.",
         "E9069": "Error: la mayoría de los fotogramas de este título quedaron fuera de las propias marcas de reproducción del disco, así que la salida quedaría gravemente incompleta.",
         "E9070": "Error: no se escribió nada — se descartaron todos los fotogramas. La salida habría quedado vacía.",
         "E9071": "Se intentó escribir en la salida después de que ya había terminado o fallado, así que no se pudieron guardar los datos.",

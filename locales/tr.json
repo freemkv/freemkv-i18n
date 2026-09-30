@@ -412,7 +412,7 @@
         "E9065": "Hata: bir dosya okunurken değişti, bu yüzden imaj klasörle eşleşmezdi. Hiçbir şey yazılmadı.",
         "E9066": "Hata: bu klasör tek bir disk imajı olarak sunulamayacak kadar büyük.",
         "E9067": "Hata: bir dosya adı diskte saklanamayacak kadar uzun. Kısaltıp tekrar deneyin: '{path}'.",
-        "E9068": "Hata: bir klasör, diskte saklanamayacak kadar çok alt klasör içeriyor: '{path}'.",
+        "E9068": "Hata: bir klasör, diskte saklanamayacak kadar çok dosya veya alt klasör içeriyor: '{path}'.",
         "E9069": "Hata: bu başlığın karelerinin çoğu diskin kendi oynatma işaretlerinin dışında kaldı, bu yüzden çıktı ciddi ölçüde eksik olurdu.",
         "E9070": "Hata: hiçbir şey yazılmadı — tüm kareler atıldı. Çıktı boş olurdu.",
         "E9071": "Çıktı zaten tamamlandıktan ya da başarısız olduktan sonra ona yazılmaya çalışıldı; bu yüzden veriler kaydedilemedi.",

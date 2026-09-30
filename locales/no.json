@@ -412,7 +412,7 @@
         "E9065": "Feil: en fil endret seg mens den ble lest, så bildet ikke ville samsvare med mappen. Ingenting ble skrevet.",
         "E9066": "Feil: denne mappen er for stor til å presenteres som ett samlet platebilde.",
         "E9067": "Feil: et filnavn er for langt til å lagres på en plate. Forkort det og prøv igjen: «{path}».",
-        "E9068": "Feil: en mappe inneholder for mange undermapper til å lagres på en plate: «{path}».",
+        "E9068": "Feil: en mappe inneholder for mange filer eller undermapper til å lagres på en plate: «{path}».",
         "E9069": "Feil: de fleste av denne tittelens bilder lå utenfor platens egne avspillingsmerker, så utdataene ville vært svært ufullstendige.",
         "E9070": "Feil: ingenting ble skrevet — hvert eneste bilde ble forkastet. Utdataene ville ha vært tomme.",
         "E9071": "Det ble skrevet til utdata etter at de allerede var fullført eller hadde feilet, så dataene kunne ikke lagres.",

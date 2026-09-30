@@ -412,7 +412,7 @@
         "E9065": "Erro: um arquivo mudou enquanto era lido, então a imagem não corresponderia à pasta. Nada foi gravado.",
         "E9066": "Erro: esta pasta é grande demais para ser apresentada como uma única imagem de disco.",
         "E9067": "Erro: um nome de arquivo é longo demais para ser armazenado em um disco. Encurte-o e tente novamente: '{path}'.",
-        "E9068": "Erro: uma pasta tem subpastas demais para serem armazenadas em um disco: '{path}'.",
+        "E9068": "Erro: uma pasta tem arquivos ou subpastas demais para serem armazenados em um disco: '{path}'.",
         "E9069": "Erro: a maior parte dos quadros deste título ficou fora das próprias marcas de reprodução do disco, então a saída ficaria seriamente incompleta.",
         "E9070": "Erro: nada foi gravado — todos os quadros foram descartados. A saída teria ficado vazia.",
         "E9071": "Houve uma gravação na saída depois que ela já havia sido finalizada ou falhado, então os dados não puderam ser salvos.",

@@ -412,7 +412,7 @@
         "E9065": "Fel: en fil ändrades medan den lästes, så avbilden inte skulle matcha mappen. Inget skrevs.",
         "E9066": "Fel: den här mappen är för stor för att presenteras som en enda skivavbild.",
         "E9067": "Fel: ett filnamn är för långt för att lagras på en skiva. Korta ner det och försök igen: '{path}'.",
-        "E9068": "Fel: en mapp innehåller för många undermappar för att lagras på en skiva: '{path}'.",
+        "E9068": "Fel: en mapp innehåller för många filer eller undermappar för att lagras på en skiva: '{path}'.",
         "E9069": "Fel: de flesta av den här titelns bildrutor låg utanför skivans egna uppspelningsmarkeringar, så utdata skulle bli grovt ofullständig.",
         "E9070": "Fel: inget skrevs — varje bildruta kasserades. Utdata skulle ha blivit tom.",
         "E9071": "Något skrevs till utdata efter att de redan hade avslutats eller misslyckats, så datan kunde inte sparas.",

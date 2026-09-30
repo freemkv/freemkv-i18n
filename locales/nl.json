@@ -389,7 +389,7 @@
         "E9065": "Een bestand is gewijzigd tijdens het lezen, waardoor de image niet met de map zou overeenkomen. Er is niets weggeschreven.",
         "E9066": "Deze map is te groot om als één enkele schijfimage aan te bieden.",
         "E9067": "Een bestandsnaam is te lang om op een schijf op te slaan. Maak hem korter en probeer het opnieuw: '{path}'.",
-        "E9068": "Een map bevat te veel submappen om op een schijf op te slaan: '{path}'.",
+        "E9068": "Een map bevat te veel bestanden of submappen om op een schijf op te slaan: '{path}'.",
         "E9069": "De meeste frames van deze titel vielen buiten de eigen afspeelmarkeringen van de schijf, waardoor de uitvoer ernstig onvolledig zou zijn.",
         "E9070": "Er is niets weggeschreven — elk frame is verworpen. De uitvoer zou leeg zijn geweest.",
         "E9071": "Er werd naar de uitvoer geschreven nadat die al was afgerond of mislukt, dus de gegevens konden niet worden opgeslagen.",

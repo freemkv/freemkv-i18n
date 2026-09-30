@@ -389,7 +389,7 @@
         "E9065": "Eine Datei hat sich während des Lesens geändert, sodass das Abbild nicht mit dem Ordner übereinstimmen würde. Es wurde nichts geschrieben.",
         "E9066": "Dieser Ordner ist zu groß, um als einzelnes Disc-Abbild dargestellt zu werden.",
         "E9067": "Ein Dateiname ist zu lang, um auf einer Disc gespeichert zu werden. Kürzen Sie ihn und versuchen Sie es erneut: '{path}'.",
-        "E9068": "Ein Ordner enthält zu viele Unterordner, um auf einer Disc gespeichert zu werden: '{path}'.",
+        "E9068": "Ein Ordner enthält zu viele Dateien oder Unterordner, um auf einer Disc gespeichert zu werden: '{path}'.",
         "E9069": "Die meisten Bilder dieses Titels lagen außerhalb der eigenen Wiedergabemarken der Disc, sodass die Ausgabe stark unvollständig wäre.",
         "E9070": "Es wurde nichts geschrieben — jedes Bild wurde verworfen. Die Ausgabe wäre leer gewesen.",
         "E9071": "In die Ausgabe wurde geschrieben, nachdem sie bereits abgeschlossen oder fehlgeschlagen war — die Daten konnten nicht gespeichert werden.",

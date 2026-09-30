@@ -389,7 +389,7 @@
         "E9065": "Un file è cambiato durante la lettura, quindi l'immagine non corrisponderebbe alla cartella. Non è stato scritto nulla.",
         "E9066": "Questa cartella è troppo grande per essere presentata come una singola immagine del disco.",
         "E9067": "Il nome di un file è troppo lungo per essere memorizzato su un disco. Accorcialo e riprova: '{path}'.",
-        "E9068": "Una cartella contiene troppe sottocartelle per essere memorizzata su un disco: '{path}'.",
+        "E9068": "Una cartella contiene troppi file o sottocartelle per essere memorizzata su un disco: '{path}'.",
         "E9069": "La maggior parte dei fotogrammi di questo titolo cadeva al di fuori dei marcatori di riproduzione propri del disco, quindi l'output sarebbe gravemente incompleto.",
         "E9070": "Non è stato scritto nulla — ogni fotogramma è stato scartato. L'output sarebbe stato vuoto.",
         "E9071": "Si è tentato di scrivere nell'output dopo che era già stato completato o era fallito, quindi i dati non sono stati salvati.",

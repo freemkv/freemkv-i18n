@@ -412,7 +412,7 @@
         "E9065": "Error: un fitxer ha canviat mentre es llegia, així que la imatge no coincidiria amb la carpeta. No s'ha escrit res.",
         "E9066": "Error: aquesta carpeta és massa gran per presentar-se com una sola imatge de disc.",
         "E9067": "Error: un nom de fitxer és massa llarg per emmagatzemar-se en un disc. Escurceu-lo i torneu-ho a provar: «{path}».",
-        "E9068": "Error: una carpeta té massa subcarpetes per emmagatzemar-se en un disc: «{path}».",
+        "E9068": "Error: una carpeta té massa fitxers o subcarpetes per emmagatzemar-se en un disc: «{path}».",
         "E9069": "Error: la majoria dels fotogrames d'aquest títol han quedat fora de les pròpies marques de reproducció del disc, així que la sortida quedaria greument incompleta.",
         "E9070": "Error: no s'ha escrit res — s'han descartat tots els fotogrames. La sortida hauria quedat buida.",
         "E9071": "S'ha intentat escriure a la sortida després que ja s'hagués finalitzat o hagués fallat, de manera que les dades no s'han pogut desar.",

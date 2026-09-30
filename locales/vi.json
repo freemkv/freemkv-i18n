@@ -412,7 +412,7 @@
         "E9065": "Lỗi: một tệp đã thay đổi trong khi đang được đọc, nên ảnh đĩa sẽ không khớp với thư mục. Chưa có gì được ghi.",
         "E9066": "Lỗi: thư mục này quá lớn để trình bày thành một ảnh đĩa duy nhất.",
         "E9067": "Lỗi: một tên tệp quá dài để lưu trên đĩa. Hãy rút ngắn rồi thử lại: '{path}'.",
-        "E9068": "Lỗi: một thư mục chứa quá nhiều thư mục con để lưu trên đĩa: '{path}'.",
+        "E9068": "Lỗi: một thư mục chứa quá nhiều tệp hoặc thư mục con để lưu trên đĩa: '{path}'.",
         "E9069": "Lỗi: phần lớn khung hình của tiêu đề này nằm ngoài các mốc phát lại của chính đĩa, nên đầu ra sẽ thiếu hụt nghiêm trọng.",
         "E9070": "Lỗi: không có gì được ghi — mọi khung hình đều bị loại bỏ. Đầu ra sẽ trống.",
         "E9071": "Đã có thao tác ghi vào đầu ra sau khi đầu ra đã hoàn tất hoặc bị lỗi, nên không thể lưu dữ liệu.",

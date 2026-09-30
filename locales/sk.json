@@ -412,7 +412,7 @@
         "E9065": "Chyba: súbor sa počas čítania zmenil, takže obraz by nezodpovedal priečinku. Nič sa nezapísalo.",
         "E9066": "Chyba: tento priečinok je príliš veľký na to, aby ho bolo možné prezentovať ako jeden obraz disku.",
         "E9067": "Chyba: názov súboru je príliš dlhý na uloženie na disk. Skráťte ho a skúste to znova: '{path}'.",
-        "E9068": "Chyba: priečinok obsahuje príliš veľa podpriečinkov na uloženie na disk: '{path}'.",
+        "E9068": "Chyba: priečinok obsahuje príliš veľa súborov alebo podpriečinkov na uloženie na disk: '{path}'.",
         "E9069": "Chyba: väčšina snímok tohto titulu leží mimo vlastných značiek prehrávania disku, takže výstup by bol výrazne neúplný.",
         "E9070": "Chyba: nič sa nezapísalo — všetky snímky boli zahodené. Výstup by bol prázdny.",
         "E9071": "Do výstupu sa zapisovalo po tom, ako už bol dokončený alebo zlyhal, takže údaje sa nepodarilo uložiť.",

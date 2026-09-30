@@ -412,7 +412,7 @@
         "E9065": "Virhe: tiedosto muuttui sitä luettaessa, joten levykuva ei olisi vastannut kansiota. Mitään ei kirjoitettu.",
         "E9066": "Virhe: tämä kansio on liian suuri esitettäväksi yhtenä levykuvana.",
         "E9067": "Virhe: tiedostonimi on liian pitkä tallennettavaksi levylle. Lyhennä sitä ja yritä uudelleen: '{path}'.",
-        "E9068": "Virhe: kansiossa on liikaa alikansioita tallennettavaksi levylle: '{path}'.",
+        "E9068": "Virhe: kansiossa on liikaa tiedostoja tai alikansioita tallennettavaksi levylle: '{path}'.",
         "E9069": "Virhe: suurin osa tämän nimikkeen kehyksistä oli levyn omien toistomerkkien ulkopuolella, joten tuloste olisi jäänyt pahasti vaillinaiseksi.",
         "E9070": "Virhe: mitään ei kirjoitettu — jokainen kehys hylättiin. Tulosteesta olisi tullut tyhjä.",
         "E9071": "Tulosteeseen kirjoitettiin sen jälkeen, kun se oli jo valmis tai epäonnistunut, joten tietoja ei voitu tallentaa.",

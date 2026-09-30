@@ -412,7 +412,7 @@
         "E9065": "Eroare: un fișier s-a schimbat în timp ce era citit, deci imaginea nu ar corespunde directorului. Nu s-a scris nimic.",
         "E9066": "Eroare: acest director este prea mare pentru a fi prezentat ca o singură imagine de disc.",
         "E9067": "Eroare: un nume de fișier este prea lung pentru a fi stocat pe un disc. Scurtează-l și încearcă din nou: '{path}'.",
-        "E9068": "Eroare: un director are prea multe subdirectoare pentru a fi stocate pe un disc: '{path}'.",
+        "E9068": "Eroare: un director are prea multe fișiere sau subdirectoare pentru a fi stocat pe un disc: '{path}'.",
         "E9069": "Eroare: majoritatea cadrelor acestui titlu au căzut în afara propriilor repere de redare ale discului, deci ieșirea ar fi grav incompletă.",
         "E9070": "Eroare: nu s-a scris nimic — fiecare cadru a fost eliminat. Ieșirea ar fi fost goală.",
         "E9071": "S-a încercat scrierea în ieșire după ce aceasta fusese deja finalizată sau eșuase, deci datele nu au putut fi salvate.",

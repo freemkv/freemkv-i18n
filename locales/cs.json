@@ -412,7 +412,7 @@
         "E9065": "Chyba: soubor se během čtení změnil, takže by obraz neodpovídal složce. Nic nebylo zapsáno.",
         "E9066": "Chyba: tato složka je příliš velká na to, aby ji bylo možné prezentovat jako jediný obraz disku.",
         "E9067": "Chyba: název souboru je příliš dlouhý pro uložení na disk. Zkraťte ho a zkuste to znovu: '{path}'.",
-        "E9068": "Chyba: složka obsahuje příliš mnoho podsložek pro uložení na disk: '{path}'.",
+        "E9068": "Chyba: složka obsahuje příliš mnoho souborů nebo podsložek pro uložení na disk: '{path}'.",
         "E9069": "Chyba: většina snímků tohoto titulu leží mimo vlastní značky přehrávání disku, takže by výstup byl značně neúplný.",
         "E9070": "Chyba: nic nebylo zapsáno — všechny snímky byly zahozeny. Výstup by byl prázdný.",
         "E9071": "Do výstupu se zapisovalo poté, co už byl dokončen nebo selhal, takže data nebylo možné uložit.",
