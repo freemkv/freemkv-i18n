@@ -427,6 +427,7 @@
         "E9072": "Les dades de les pistes s'han definit després que ja s'hagués escrit la capçalera de la sortida, de manera que no s'han pogut aplicar.",
         "E9073": "Error: l'operació ha excedit el temps d'espera en no progressar durant massa estona.",
         "E9074": "L'MPG necessita una pista de vídeo que pugui contenir (MPEG-1/2); aquest títol no en té cap. Useu mkv:// al seu lloc.",
+        "E9075": "La sortida MPG ha acabat amb àudio o vídeo que no s'ha pogut empaquetar al flux de programa, de manera que el fitxer és incomplet. Useu mkv:// en lloc seu.",
         "no_lang_match_subtitle_forced": "cap subtítol forçat d'aquest títol coincideix amb «{requested}» (subtítols forçats disponibles: {available}). Corregiu l'idioma, o useu all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 és fora d'interval (1–4), s'ignora",
         "log_level_not_a_number": "--log-level: s'esperava un número 1–4, s'ha rebut '{value}', s'ignora",

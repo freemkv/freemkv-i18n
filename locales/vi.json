@@ -427,6 +427,7 @@
         "E9072": "Thông tin rãnh được đặt sau khi phần đầu (header) của đầu ra đã được ghi, nên không thể áp dụng.",
         "E9073": "Lỗi: thao tác đã hết thời gian chờ vì không có tiến triển trong thời gian quá dài.",
         "E9074": "MPG cần một rãnh video mà nó có thể chứa (MPEG-1/2); tiêu đề này không có. Hãy dùng mkv:// thay thế.",
+        "E9075": "Đầu ra MPG kết thúc với âm thanh hoặc video không thể đóng gói vào luồng chương trình, nên tệp chưa hoàn chỉnh. Hãy dùng mkv:// thay thế.",
         "no_lang_match_subtitle_forced": "không có phụ đề bắt buộc nào của tiêu đề này khớp với '{requested}' (phụ đề bắt buộc có sẵn: {available}). Hãy sửa ngôn ngữ, hoặc dùng all/none.",
         "log_level_out_of_range": "--log-level: giá trị 0 nằm ngoài phạm vi (1–4), bỏ qua",
         "log_level_not_a_number": "--log-level: cần một số 1–4, nhận được '{value}', bỏ qua",

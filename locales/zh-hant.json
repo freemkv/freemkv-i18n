@@ -427,6 +427,7 @@
         "E9072": "音軌資訊是在輸出的檔頭寫入之後才設定的，因此無法套用。",
         "E9073": "錯誤：操作因長時間沒有進展而逾時。",
         "E9074": "MPG 需要一條它能封裝的影片軌道（MPEG-1/2），而此標題沒有。請改用 mkv://。",
+        "E9075": "MPG 輸出結束時仍有無法封裝進節目串流的音訊或視訊，因此檔案不完整。請改用 mkv://。",
         "no_lang_match_subtitle_forced": "此標題中沒有與 '{requested}' 相符的強制字幕（可用的強制字幕：{available}）。請更正語言，或使用 all/none。",
         "log_level_out_of_range": "--log-level：值 0 超出範圍 (1–4)，已忽略",
         "log_level_not_a_number": "--log-level：需要 1–4 的數字，收到 '{value}'，已忽略",

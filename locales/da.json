@@ -427,6 +427,7 @@
         "E9072": "Sporoplysningerne blev angivet, efter at outputtets header allerede var skrevet, så de kunne ikke anvendes.",
         "E9073": "Fejl: handlingen fik timeout, fordi der ikke var fremskridt i for lang tid.",
         "E9074": "MPG kræver et videospor, den kan indeholde (MPEG-1/2); denne titel har ingen. Brug mkv:// i stedet.",
+        "E9075": "MPG-output sluttede med lyd eller video, der ikke kunne pakkes i programstrømmen, så filen er ufuldstændig. Brug mkv:// i stedet.",
         "no_lang_match_subtitle_forced": "ingen tvungen undertekst på denne titel matcher '{requested}' (tilgængelige tvungne undertekster: {available}). Ret sproget, eller brug all/none.",
         "log_level_out_of_range": "--log-level: værdien 0 er uden for intervallet (1–4), ignoreret",
         "log_level_not_a_number": "--log-level: forventede et tal 1–4, fik '{value}', ignoreret",

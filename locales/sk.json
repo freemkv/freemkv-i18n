@@ -427,6 +427,7 @@
         "E9072": "Údaje o stopách boli nastavené až po zapísaní hlavičky výstupu, takže ich nebolo možné použiť.",
         "E9073": "Chyba: operácii vypršal časový limit, pretože príliš dlho nedošlo k žiadnemu postupu.",
         "E9074": "MPG potrebuje videostopu, ktorú dokáže obsiahnuť (MPEG-1/2); tento titul žiadnu nemá. Použite namiesto toho mkv://.",
+        "E9075": "Výstup MPG skončil so zvukom alebo videom, ktoré sa nepodarilo zabaliť do programového toku, takže súbor je neúplný. Použite namiesto toho mkv://.",
         "no_lang_match_subtitle_forced": "žiadna stopa vynútených titulkov tohto titulu nezodpovedá '{requested}' (dostupné vynútené titulky: {available}). Opravte jazyk alebo použite all/none.",
         "log_level_out_of_range": "--log-level: hodnota 0 je mimo rozsahu (1–4), ignoruje sa",
         "log_level_not_a_number": "--log-level: očakávalo sa číslo 1–4, prijaté '{value}', ignoruje sa",

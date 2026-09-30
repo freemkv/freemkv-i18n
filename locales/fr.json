@@ -404,6 +404,7 @@
         "E9072": "Les informations des pistes ont été définies après l'écriture de l'en-tête de la sortie : elles n'ont pas pu être appliquées.",
         "E9073": "Erreur : l'opération a expiré car aucune progression n'a été constatée pendant trop longtemps.",
         "E9074": "MPG a besoin d'une piste vidéo qu'il peut contenir (MPEG-1/2) ; ce titre n'en a aucune. Utilisez plutôt mkv://.",
+        "E9075": "La sortie MPG s'est terminée avec de l'audio ou de la vidéo impossible à empaqueter dans le flux de programme ; le fichier est donc incomplet. Utilisez plutôt mkv://.",
         "no_lang_match_subtitle_forced": "aucune piste de sous-titres forcés de ce titre ne correspond à '{requested}' (sous-titres forcés disponibles : {available}). Corrigez la langue ou utilisez all/none.",
         "log_level_out_of_range": "--log-level : la valeur 0 est hors plage (1–4), ignorée",
         "log_level_not_a_number": "--log-level : nombre 1–4 attendu, '{value}' reçu, ignoré",

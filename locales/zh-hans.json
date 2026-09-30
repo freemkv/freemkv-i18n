@@ -427,6 +427,7 @@
         "E9072": "轨道信息是在输出的文件头写入之后才设置的，因此无法应用。",
         "E9073": "错误：操作因长时间没有进展而超时。",
         "E9074": "MPG 需要一条它能封装的视频轨道（MPEG-1/2），而此标题没有。请改用 mkv://。",
+        "E9075": "MPG 输出结束时仍有无法打包进节目流的音频或视频，因此文件不完整。请改用 mkv://。",
         "no_lang_match_subtitle_forced": "此标题中没有与 '{requested}' 匹配的强制字幕（可用的强制字幕：{available}）。请更正语言，或使用 all/none。",
         "log_level_out_of_range": "--log-level：值 0 超出范围 (1–4)，已忽略",
         "log_level_not_a_number": "--log-level：需要 1–4 的数字，收到 '{value}'，已忽略",

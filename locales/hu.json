@@ -427,6 +427,7 @@
         "E9072": "A sávadatok beállítása azután történt, hogy a kimenet fejléce már ki lett írva, így nem sikerült alkalmazni őket.",
         "E9073": "Hiba: a művelet túllépte az időkorlátot, mert túl sokáig nem történt előrehaladás.",
         "E9074": "Az MPG-hez olyan videósáv kell, amelyet tárolni tud (MPEG-1/2); ennek a címnek nincs ilyen. Használj helyette mkv://-t.",
+        "E9075": "Az MPG-kimenet olyan hanggal vagy videóval ért véget, amelyet nem lehetett a programfolyamba csomagolni, ezért a fájl hiányos. Használd helyette a mkv:// célt.",
         "no_lang_match_subtitle_forced": "ennek a címnek egyetlen kényszerített felirata sem felel meg a következőnek: '{requested}' (elérhető kényszerített feliratok: {available}). Javítsd a nyelvet, vagy használd az all/none értéket.",
         "log_level_out_of_range": "--log-level: a 0 érték a tartományon kívül esik (1–4), figyelmen kívül hagyva",
         "log_level_not_a_number": "--log-level: 1–4 közötti szám várt, '{value}' érkezett, figyelmen kívül hagyva",
