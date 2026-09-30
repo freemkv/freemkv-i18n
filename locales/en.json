@@ -432,7 +432,7 @@
         "E9078": "Title {detail} stopped before its mux finished, so no file was kept. Try the title again.",
         "E9079": "The remux staging file would overwrite the target or its own temporary file. Choose a different staging location.",
         "E9080": "Copying the finished file into place wrote the wrong number of bytes ({detail}). Check the destination for free space and errors, then try again.",
-        "E9081": "The check of the finished file stopped before it reported, so the file was not put in place. Try again.",
+        "E9081": "Copying or checking the finished file stopped before it reported, so the file was not put in place. Try again.",
         "E9082": "--multipass makes a raw whole-disc image and cannot decrypt. Add --raw, or rip without --multipass.",
         "E9083": "'{detail}' is not a language freemkv recognizes. Fix the language, or use all/none.",
         "E9084": "{detail} already exists. Move or delete it, or choose to replace it.",

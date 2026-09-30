@@ -432,7 +432,7 @@
         "E9078": "Titel {detail} stoppede, før dens mux var færdig, så ingen fil blev gemt. Prøv titlen igen.",
         "E9079": "Remux-mellemfilen ville overskrive målet eller sin egen midlertidige fil. Vælg en anden mellemplacering.",
         "E9080": "Kopieringen af den færdige fil på plads skrev et forkert antal bytes ({detail}). Tjek destinationen for ledig plads og fejl, og prøv igen.",
-        "E9081": "Kontrollen af den færdige fil stoppede, før den meldte tilbage, så filen blev ikke sat på plads. Prøv igen.",
+        "E9081": "Kopieringen eller kontrollen af den færdige fil stoppede, før den meldte tilbage, så filen blev ikke sat på plads. Prøv igen.",
         "E9082": "--multipass laver et råt diskimage af hele disken og kan ikke dekryptere. Tilføj --raw, eller rip uden --multipass.",
         "E9083": "'{detail}' er ikke et sprog, freemkv kender. Ret sproget, eller brug all/none.",
         "E9084": "{detail} findes allerede. Flyt eller slet den, eller vælg at erstatte den.",

@@ -432,7 +432,7 @@
         "E9078": "Tytuł {detail} zatrzymał się przed zakończeniem multipleksowania, więc nie zachowano żadnego pliku. Spróbuj ponownie ten tytuł.",
         "E9079": "Plik pośredni remuksu nadpisałby cel lub własny plik tymczasowy. Wybierz inne miejsce pośrednie.",
         "E9080": "Kopiowanie gotowego pliku na miejsce zapisało niewłaściwą liczbę bajtów ({detail}). Sprawdź wolne miejsce i błędy w miejscu docelowym, a potem spróbuj ponownie.",
-        "E9081": "Kontrola gotowego pliku zatrzymała się, zanim zgłosiła wynik, więc plik nie został umieszczony na miejscu. Spróbuj ponownie.",
+        "E9081": "Kopiowanie lub kontrola gotowego pliku zatrzymała się, zanim zgłoszono wynik, więc plik nie został umieszczony na miejscu. Spróbuj ponownie.",
         "E9082": "--multipass tworzy surowy obraz całej płyty i nie może odszyfrowywać. Dodaj --raw albo zgrywaj bez --multipass.",
         "E9083": "'{detail}' nie jest językiem rozpoznawanym przez freemkv. Popraw język albo użyj all/none.",
         "E9084": "{detail} już istnieje. Przenieś lub usuń ten plik albo wybierz jego zastąpienie.",

@@ -409,7 +409,7 @@
         "E9078": "Il titolo {detail} si è fermato prima di completare il mux, quindi nessun file è stato conservato. Riprova il titolo.",
         "E9079": "Il file intermedio del remux sovrascriverebbe la destinazione o il proprio file temporaneo. Scegli un'altra posizione intermedia.",
         "E9080": "La copia del file completato nella destinazione ha scritto un numero di byte errato ({detail}). Controlla lo spazio libero e gli errori della destinazione, poi riprova.",
-        "E9081": "Il controllo del file completato si è interrotto prima di riportare l'esito, quindi il file non è stato messo al suo posto. Riprova.",
+        "E9081": "La copia o il controllo del file completato si è interrotto prima di riportare l'esito, quindi il file non è stato messo al suo posto. Riprova.",
         "E9082": "--multipass crea un'immagine grezza dell'intero disco e non può decrittare. Aggiungi --raw oppure esegui il rip senza --multipass.",
         "E9083": "'{detail}' non è una lingua riconosciuta da freemkv. Correggi la lingua o usa all/none.",
         "E9084": "{detail} esiste già. Spostalo o eliminalo, oppure scegli di sostituirlo.",

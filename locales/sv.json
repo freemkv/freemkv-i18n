@@ -432,7 +432,7 @@
         "E9078": "Titel {detail} stoppades innan dess muxning var klar, så ingen fil sparades. Försök med titeln igen.",
         "E9079": "Remuxens mellanfil skulle skriva över målet eller sin egen temporära fil. Välj en annan mellanplats.",
         "E9080": "När den färdiga filen kopierades på plats skrevs fel antal byte ({detail}). Kontrollera ledigt utrymme och fel på målet och försök igen.",
-        "E9081": "Kontrollen av den färdiga filen stoppades innan den rapporterade, så filen flyttades inte på plats. Försök igen.",
+        "E9081": "Kopieringen eller kontrollen av den färdiga filen stoppades innan den rapporterade, så filen flyttades inte på plats. Försök igen.",
         "E9082": "--multipass skapar en rå avbild av hela skivan och kan inte dekryptera. Lägg till --raw, eller rippa utan --multipass.",
         "E9083": "'{detail}' är inte ett språk som freemkv känner igen. Rätta språket, eller använd all/none.",
         "E9084": "{detail} finns redan. Flytta eller ta bort den, eller välj att ersätta den.",

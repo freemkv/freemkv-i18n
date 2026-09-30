@@ -409,7 +409,7 @@
         "E9078": "Titel {detail} wurde beendet, bevor sein Muxen abgeschlossen war; es wurde keine Datei behalten. Versuchen Sie den Titel erneut.",
         "E9079": "Die Remux-Zwischendatei würde das Ziel oder ihre eigene temporäre Datei überschreiben. Wählen Sie einen anderen Zwischenspeicherort.",
         "E9080": "Beim Kopieren der fertigen Datei an ihr Ziel wurde eine falsche Anzahl Bytes geschrieben ({detail}). Prüfen Sie das Ziel auf freien Speicher und Fehler und versuchen Sie es erneut.",
-        "E9081": "Die Prüfung der fertigen Datei wurde beendet, bevor sie ein Ergebnis meldete; die Datei wurde daher nicht übernommen. Versuchen Sie es erneut.",
+        "E9081": "Das Kopieren oder Prüfen der fertigen Datei wurde beendet, bevor es ein Ergebnis meldete; die Datei wurde daher nicht übernommen. Versuchen Sie es erneut.",
         "E9082": "--multipass erstellt ein rohes Abbild der ganzen Disc und kann nicht entschlüsseln. Fügen Sie --raw hinzu oder rippen Sie ohne --multipass.",
         "E9083": "'{detail}' ist keine Sprache, die freemkv kennt. Korrigieren Sie die Sprache oder verwenden Sie all/none.",
         "E9084": "{detail} existiert bereits. Verschieben oder löschen Sie die Datei oder wählen Sie, sie zu ersetzen.",

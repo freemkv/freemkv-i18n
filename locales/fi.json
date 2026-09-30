@@ -432,7 +432,7 @@
         "E9078": "Nimike {detail} pysähtyi ennen kuin sen muksaus valmistui, joten tiedostoa ei säilytetty. Yritä nimikettä uudelleen.",
         "E9079": "Remuxin välitiedosto korvaisi kohteen tai oman väliaikaistiedostonsa. Valitse toinen välisijainti.",
         "E9080": "Valmiin tiedoston kopiointi paikalleen kirjoitti väärän määrän tavuja ({detail}). Tarkista kohteen vapaa tila ja virheet ja yritä uudelleen.",
-        "E9081": "Valmiin tiedoston tarkistus pysähtyi ennen kuin se ilmoitti tuloksen, joten tiedostoa ei siirretty paikalleen. Yritä uudelleen.",
+        "E9081": "Valmiin tiedoston kopiointi tai tarkistus pysähtyi ennen kuin se ilmoitti tuloksen, joten tiedostoa ei siirretty paikalleen. Yritä uudelleen.",
         "E9082": "--multipass tekee raakalevykuvan koko levystä eikä voi purkaa salausta. Lisää --raw tai rippaa ilman --multipass-valitsinta.",
         "E9083": "'{detail}' ei ole kieli, jonka freemkv tunnistaa. Korjaa kieli tai käytä arvoa all/none.",
         "E9084": "{detail} on jo olemassa. Siirrä tai poista se, tai valitse sen korvaaminen.",

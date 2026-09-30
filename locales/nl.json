@@ -409,7 +409,7 @@
         "E9078": "Titel {detail} stopte voordat het muxen klaar was, dus er is geen bestand bewaard. Probeer de titel opnieuw.",
         "E9079": "Het tussenbestand van de remux zou het doel of zijn eigen tijdelijke bestand overschrijven. Kies een andere tussenlocatie.",
         "E9080": "Bij het kopiëren van het voltooide bestand naar zijn plaats is een verkeerd aantal bytes geschreven ({detail}). Controleer de bestemming op vrije ruimte en fouten en probeer het opnieuw.",
-        "E9081": "De controle van het voltooide bestand stopte voordat er een resultaat was, dus het bestand is niet op zijn plaats gezet. Probeer het opnieuw.",
+        "E9081": "Het kopiëren of controleren van het voltooide bestand stopte voordat er een resultaat was, dus het bestand is niet op zijn plaats gezet. Probeer het opnieuw.",
         "E9082": "--multipass maakt een ruwe image van de hele schijf en kan niet ontsleutelen. Voeg --raw toe, of rip zonder --multipass.",
         "E9083": "'{detail}' is geen taal die freemkv herkent. Corrigeer de taal, of gebruik all/none.",
         "E9084": "{detail} bestaat al. Verplaats of verwijder het, of kies ervoor het te vervangen.",

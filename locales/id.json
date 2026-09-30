@@ -432,7 +432,7 @@
         "E9078": "Judul {detail} berhenti sebelum mux-nya selesai, jadi tidak ada file yang disimpan. Coba judul itu lagi.",
         "E9079": "File perantara remux akan menimpa target atau file sementaranya sendiri. Pilih lokasi perantara lain.",
         "E9080": "Menyalin file yang selesai ke tempatnya menulis jumlah byte yang salah ({detail}). Periksa ruang kosong dan galat di tujuan, lalu coba lagi.",
-        "E9081": "Pemeriksaan file yang selesai berhenti sebelum melaporkan hasil, jadi file tidak dipindahkan ke tempatnya. Coba lagi.",
+        "E9081": "Penyalinan atau pemeriksaan file yang selesai berhenti sebelum melaporkan hasil, jadi file tidak dipindahkan ke tempatnya. Coba lagi.",
         "E9082": "--multipass membuat image mentah seluruh disk dan tidak dapat mendekripsi. Tambahkan --raw, atau rip tanpa --multipass.",
         "E9083": "'{detail}' bukan bahasa yang dikenali freemkv. Perbaiki bahasanya, atau gunakan all/none.",
         "E9084": "{detail} sudah ada. Pindahkan atau hapus, atau pilih untuk menggantinya.",

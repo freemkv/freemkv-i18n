@@ -432,7 +432,7 @@
         "E9078": "A(z) {detail}. cím leállt, mielőtt a muxolása befejeződött volna, ezért nem maradt meg fájl. Próbálja újra a címet.",
         "E9079": "A remux köztes fájlja felülírná a célt vagy a saját ideiglenes fájlját. Válasszon másik köztes helyet.",
         "E9080": "Az elkészült fájl helyére másolása hibás számú bájtot írt ki ({detail}). Ellenőrizze a cél szabad helyét és hibáit, majd próbálja újra.",
-        "E9081": "Az elkészült fájl ellenőrzése leállt, mielőtt eredményt jelzett volna, ezért a fájl nem került a helyére. Próbálja újra.",
+        "E9081": "Az elkészült fájl másolása vagy ellenőrzése leállt, mielőtt eredményt jelzett volna, ezért a fájl nem került a helyére. Próbálja újra.",
         "E9082": "A --multipass nyers képet készít a teljes lemezről, és nem tud visszafejteni. Adja hozzá a --raw kapcsolót, vagy rippeljen --multipass nélkül.",
         "E9083": "A(z) '{detail}' nem olyan nyelv, amelyet a freemkv ismer. Javítsa a nyelvet, vagy használja az all/none értéket.",
         "E9084": "A(z) {detail} már létezik. Helyezze át vagy törölje, vagy válassza a cseréjét.",

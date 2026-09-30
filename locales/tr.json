@@ -432,7 +432,7 @@
         "E9078": "{detail} numaralı başlık muxlama bitmeden durdu, bu yüzden hiçbir dosya tutulmadı. Başlığı yeniden deneyin.",
         "E9079": "Remux ara dosyası hedefin ya da kendi geçici dosyasının üzerine yazacaktı. Başka bir ara konum seçin.",
         "E9080": "Tamamlanan dosya yerine kopyalanırken yanlış sayıda bayt yazıldı ({detail}). Hedefte boş alan ve hata olup olmadığını denetleyip yeniden deneyin.",
-        "E9081": "Tamamlanan dosyanın denetimi sonuç bildirmeden durdu, bu yüzden dosya yerine konmadı. Yeniden deneyin.",
+        "E9081": "Tamamlanan dosyanın kopyalanması ya da denetimi sonuç bildirmeden durdu, bu yüzden dosya yerine konmadı. Yeniden deneyin.",
         "E9082": "--multipass tüm diskin ham bir görüntüsünü oluşturur ve şifre çözemez. --raw ekleyin ya da --multipass olmadan rip edin.",
         "E9083": "'{detail}' freemkv'nin tanıdığı bir dil değil. Dili düzeltin ya da all/none kullanın.",
         "E9084": "{detail} zaten var. Taşıyın ya da silin veya değiştirilmesini seçin.",

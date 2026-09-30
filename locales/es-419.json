@@ -432,7 +432,7 @@
         "E9078": "El título {detail} se detuvo antes de terminar su multiplexado, así que no se conservó ningún archivo. Vuelve a intentar el título.",
         "E9079": "El archivo intermedio del remux sobrescribiría el destino o su propio archivo temporal. Elige otra ubicación intermedia.",
         "E9080": "Al copiar el archivo terminado a su destino se escribió una cantidad incorrecta de bytes ({detail}). Revisa el espacio libre y los errores del destino y vuelve a intentarlo.",
-        "E9081": "La verificación del archivo terminado se detuvo antes de informar, así que el archivo no se colocó en su destino. Vuelve a intentarlo.",
+        "E9081": "La copia o la verificación del archivo terminado se detuvo antes de informar, así que el archivo no se colocó en su destino. Vuelve a intentarlo.",
         "E9082": "--multipass crea una imagen en bruto del disco completo y no puede descifrar. Agrega --raw o ripea sin --multipass.",
         "E9083": "'{detail}' no es un idioma que freemkv reconozca. Corrige el idioma o usa all/none.",
         "E9084": "{detail} ya existe. Muévelo o elimínalo, o elige reemplazarlo.",

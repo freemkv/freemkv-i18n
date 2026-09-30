@@ -432,7 +432,7 @@
         "E9078": "El títol {detail} s'ha aturat abans d'acabar el multiplexat, així que no s'ha conservat cap fitxer. Torna a provar el títol.",
         "E9079": "El fitxer intermedi del remux sobreescriuria la destinació o el seu propi fitxer temporal. Tria una altra ubicació intermèdia.",
         "E9080": "En copiar el fitxer acabat a la destinació s'ha escrit un nombre incorrecte de bytes ({detail}). Comprova l'espai lliure i els errors de la destinació i torna-ho a provar.",
-        "E9081": "La comprovació del fitxer acabat s'ha aturat abans d'informar, així que el fitxer no s'ha col·locat al seu lloc. Torna-ho a provar.",
+        "E9081": "La còpia o la comprovació del fitxer acabat s'ha aturat abans d'informar, així que el fitxer no s'ha col·locat al seu lloc. Torna-ho a provar.",
         "E9082": "--multipass crea una imatge en brut del disc sencer i no pot desxifrar. Afegeix --raw o fes el rip sense --multipass.",
         "E9083": "'{detail}' no és un idioma que freemkv reconegui. Corregeix l'idioma o fes servir all/none.",
         "E9084": "{detail} ja existeix. Mou-lo o elimina'l, o tria substituir-lo.",

@@ -432,7 +432,7 @@
         "E9078": "Tiêu đề {detail} dừng trước khi mux xong, nên không giữ lại tệp nào. Hãy thử lại tiêu đề.",
         "E9079": "Tệp trung gian của remux sẽ ghi đè lên đích hoặc tệp tạm của chính nó. Hãy chọn vị trí trung gian khác.",
         "E9080": "Việc sao chép tệp đã hoàn tất vào vị trí đã ghi sai số byte ({detail}). Hãy kiểm tra dung lượng trống và lỗi ở đích, rồi thử lại.",
-        "E9081": "Bước kiểm tra tệp đã hoàn tất dừng trước khi báo kết quả, nên tệp không được đặt vào vị trí. Hãy thử lại.",
+        "E9081": "Bước sao chép hoặc kiểm tra tệp đã hoàn tất dừng trước khi báo kết quả, nên tệp không được đặt vào vị trí. Hãy thử lại.",
         "E9082": "--multipass tạo ảnh thô của toàn bộ đĩa và không thể giải mã. Hãy thêm --raw, hoặc rip mà không dùng --multipass.",
         "E9083": "'{detail}' không phải là ngôn ngữ freemkv nhận ra. Hãy sửa ngôn ngữ, hoặc dùng all/none.",
         "E9084": "{detail} đã tồn tại. Hãy di chuyển hoặc xóa nó, hoặc chọn thay thế nó.",

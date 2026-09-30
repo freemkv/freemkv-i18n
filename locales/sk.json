@@ -432,7 +432,7 @@
         "E9078": "Titul {detail} sa zastavil skôr, ako sa dokončil jeho mux, preto nebol ponechaný žiadny súbor. Skúste titul znova.",
         "E9079": "Medzisúbor remuxu by prepísal cieľ alebo svoj vlastný dočasný súbor. Zvoľte iné medziľahlé umiestnenie.",
         "E9080": "Kopírovanie hotového súboru na miesto zapísalo nesprávny počet bajtov ({detail}). Skontrolujte voľné miesto a chyby v cieli a skúste to znova.",
-        "E9081": "Kontrola hotového súboru sa zastavila skôr, ako ohlásila výsledok, preto súbor nebol presunutý na miesto. Skúste to znova.",
+        "E9081": "Kopírovanie alebo kontrola hotového súboru sa zastavila skôr, ako ohlásila výsledok, preto súbor nebol presunutý na miesto. Skúste to znova.",
         "E9082": "--multipass vytvára surový obraz celého disku a nemôže dešifrovať. Pridajte --raw, alebo ripujte bez --multipass.",
         "E9083": "'{detail}' nie je jazyk, ktorý freemkv pozná. Opravte jazyk, alebo použite all/none.",
         "E9084": "{detail} už existuje. Presuňte ho alebo vymažte, alebo zvoľte jeho nahradenie.",

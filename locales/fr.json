@@ -409,7 +409,7 @@
         "E9078": "Le titre {detail} s'est arrêté avant la fin de son multiplexage ; aucun fichier n'a été conservé. Réessayez ce titre.",
         "E9079": "Le fichier intermédiaire du remux écraserait la cible ou son propre fichier temporaire. Choisissez un autre emplacement intermédiaire.",
         "E9080": "La copie du fichier terminé vers sa destination a écrit un nombre d'octets incorrect ({detail}). Vérifiez l'espace libre et les erreurs de la destination, puis réessayez.",
-        "E9081": "La vérification du fichier terminé s'est arrêtée avant de rendre son résultat ; le fichier n'a donc pas été mis en place. Réessayez.",
+        "E9081": "La copie ou la vérification du fichier terminé s'est arrêtée avant de rendre son résultat ; le fichier n'a donc pas été mis en place. Réessayez.",
         "E9082": "--multipass produit une image brute du disque entier et ne peut pas déchiffrer. Ajoutez --raw, ou rippez sans --multipass.",
         "E9083": "« {detail} » n'est pas une langue reconnue par freemkv. Corrigez la langue, ou utilisez all/none.",
         "E9084": "{detail} existe déjà. Déplacez-le ou supprimez-le, ou choisissez de le remplacer.",

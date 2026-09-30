@@ -432,7 +432,7 @@
         "E9078": "Titlul {detail} s-a oprit înainte de terminarea multiplexării, așa că nu a fost păstrat niciun fișier. Încercați din nou titlul.",
         "E9079": "Fișierul intermediar al remux-ului ar suprascrie ținta sau propriul fișier temporar. Alegeți altă locație intermediară.",
         "E9080": "Copierea fișierului finalizat la destinație a scris un număr greșit de octeți ({detail}). Verificați spațiul liber și erorile destinației, apoi încercați din nou.",
-        "E9081": "Verificarea fișierului finalizat s-a oprit înainte de a raporta, așa că fișierul nu a fost pus la locul lui. Încercați din nou.",
+        "E9081": "Copierea sau verificarea fișierului finalizat s-a oprit înainte de a raporta, așa că fișierul nu a fost pus la locul lui. Încercați din nou.",
         "E9082": "--multipass creează o imagine brută a întregului disc și nu poate decripta. Adăugați --raw sau faceți rip fără --multipass.",
         "E9083": "'{detail}' nu este o limbă recunoscută de freemkv. Corectați limba sau folosiți all/none.",
         "E9084": "{detail} există deja. Mutați-l sau ștergeți-l, ori alegeți să îl înlocuiți.",
