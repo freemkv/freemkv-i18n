@@ -429,7 +429,7 @@
         "E9074": "MPG tarvitsee videoraidan, jonka se voi sisältää (MPEG-1/2); tässä nimikkeessä ei ole sellaista. Käytä sen sijaan mkv://.",
         "E9075": "MPG-tuloste päättyi ääneen tai videoon, jota ei voitu pakata ohjelmavirtaan, joten tiedosto on keskeneräinen. Käytä sen sijaan mkv://.",
         "E9077": "Valmis MKV ei läpäissyt takaisinlukutarkistusta ({detail}), joten sitä ei siirretty paikalleen. Rippaa nimike uudelleen.",
-        "E9078": "Nimike {detail} pysähtyi ennen kuin sen muksaus valmistui, joten tiedostoa ei säilytetty. Yritä nimikettä uudelleen.",
+        "E9078": "Nimike {detail} päättyi ennen kuin sen muksaus valmistui, joten tiedostoa ei säilytetty. Yritä nimikettä uudelleen.",
         "E9079": "Remuxin välitiedosto korvaisi kohteen tai oman väliaikaistiedostonsa. Valitse toinen välisijainti.",
         "E9080": "Valmiin tiedoston kopiointi paikalleen kirjoitti väärän määrän tavuja ({detail}). Tarkista kohteen vapaa tila ja virheet ja yritä uudelleen.",
         "E9081": "Valmiin tiedoston kopiointi tai tarkistus pysähtyi ennen kuin se ilmoitti tuloksen, joten tiedostoa ei siirretty paikalleen. Yritä uudelleen.",

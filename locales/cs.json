@@ -429,7 +429,7 @@
         "E9074": "MPG potřebuje videostopu, kterou umí přenést (MPEG-1/2); tento titul žádnou takovou nemá. Použijte místo toho mkv://.",
         "E9075": "Výstup MPG skončil se zvukem nebo videem, které nešlo zabalit do programového proudu, takže soubor je neúplný. Použijte místo toho mkv://.",
         "E9077": "Hotový soubor MKV neprošel kontrolou zpětného čtení ({detail}), proto nebyl přesunut na místo. Ripujte titul znovu.",
-        "E9078": "Titul {detail} se zastavil dříve, než byl dokončen jeho mux, proto nebyl ponechán žádný soubor. Zkuste titul znovu.",
+        "E9078": "Titul {detail} skončil dříve, než byl dokončen jeho mux, proto nebyl ponechán žádný soubor. Zkuste titul znovu.",
         "E9079": "Mezisoubor remuxu by přepsal cíl nebo svůj vlastní dočasný soubor. Zvolte jiné mezilehlé umístění.",
         "E9080": "Kopírování hotového souboru na místo zapsalo nesprávný počet bajtů ({detail}). Zkontrolujte volné místo a chyby v cíli a zkuste to znovu.",
         "E9081": "Kopírování nebo kontrola hotového souboru se zastavila dříve, než ohlásila výsledek, proto soubor nebyl přesunut na místo. Zkuste to znovu.",

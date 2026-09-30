@@ -406,7 +406,7 @@
         "E9074": "MPG heeft een videospoor nodig dat het kan bevatten (MPEG-1/2); deze titel heeft er geen. Gebruik in plaats daarvan mkv://.",
         "E9075": "MPG-uitvoer eindigde met audio of video die niet in de programmastroom kon worden verpakt, dus het bestand is onvolledig. Gebruik in plaats daarvan mkv://.",
         "E9077": "De voltooide MKV is niet door de teruglees-controle gekomen ({detail}) en is daarom niet op zijn plaats gezet. Rip de titel opnieuw.",
-        "E9078": "Titel {detail} stopte voordat het muxen klaar was, dus er is geen bestand bewaard. Probeer de titel opnieuw.",
+        "E9078": "Titel {detail} eindigde voordat het muxen klaar was, dus er is geen bestand bewaard. Probeer de titel opnieuw.",
         "E9079": "Het tussenbestand van de remux zou het doel of zijn eigen tijdelijke bestand overschrijven. Kies een andere tussenlocatie.",
         "E9080": "Bij het kopiëren van het voltooide bestand naar zijn plaats is een verkeerd aantal bytes geschreven ({detail}). Controleer de bestemming op vrije ruimte en fouten en probeer het opnieuw.",
         "E9081": "Het kopiëren of controleren van het voltooide bestand stopte voordat er een resultaat was, dus het bestand is niet op zijn plaats gezet. Probeer het opnieuw.",

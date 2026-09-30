@@ -406,7 +406,7 @@
         "E9074": "MPG benötigt eine Videospur, die es speichern kann (MPEG-1/2); dieser Titel hat keine. Verwenden Sie stattdessen mkv://.",
         "E9075": "Die MPG-Ausgabe endete mit Audio oder Video, das nicht in den Programmstrom gepackt werden konnte; die Datei ist daher unvollständig. Verwenden Sie stattdessen mkv://.",
         "E9077": "Die fertige MKV hat die Rücklese-Prüfung nicht bestanden ({detail}) und wurde daher nicht übernommen. Rippen Sie den Titel erneut.",
-        "E9078": "Titel {detail} wurde beendet, bevor sein Muxen abgeschlossen war; es wurde keine Datei behalten. Versuchen Sie den Titel erneut.",
+        "E9078": "Titel {detail} endete, bevor sein Muxen abgeschlossen war; es wurde keine Datei behalten. Versuchen Sie den Titel erneut.",
         "E9079": "Die Remux-Zwischendatei würde das Ziel oder ihre eigene temporäre Datei überschreiben. Wählen Sie einen anderen Zwischenspeicherort.",
         "E9080": "Beim Kopieren der fertigen Datei an ihr Ziel wurde eine falsche Anzahl Bytes geschrieben ({detail}). Prüfen Sie das Ziel auf freien Speicher und Fehler und versuchen Sie es erneut.",
         "E9081": "Das Kopieren oder Prüfen der fertigen Datei wurde beendet, bevor es ein Ergebnis meldete; die Datei wurde daher nicht übernommen. Versuchen Sie es erneut.",

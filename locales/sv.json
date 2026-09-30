@@ -429,7 +429,7 @@
         "E9074": "MPG behöver ett videospår som det kan innehålla (MPEG-1/2); den här titeln har inget. Använd mkv:// i stället.",
         "E9075": "MPG-utdata slutade med ljud eller video som inte kunde packas i programströmmen, så filen är ofullständig. Använd mkv:// i stället.",
         "E9077": "Den färdiga MKV-filen klarade inte återläsningskontrollen ({detail}) och flyttades därför inte på plats. Rippa titeln igen.",
-        "E9078": "Titel {detail} stoppades innan dess muxning var klar, så ingen fil sparades. Försök med titeln igen.",
+        "E9078": "Titel {detail} avslutades innan dess muxning var klar, så ingen fil sparades. Försök med titeln igen.",
         "E9079": "Remuxens mellanfil skulle skriva över målet eller sin egen temporära fil. Välj en annan mellanplats.",
         "E9080": "När den färdiga filen kopierades på plats skrevs fel antal byte ({detail}). Kontrollera ledigt utrymme och fel på målet och försök igen.",
         "E9081": "Kopieringen eller kontrollen av den färdiga filen stoppades innan den rapporterade, så filen flyttades inte på plats. Försök igen.",

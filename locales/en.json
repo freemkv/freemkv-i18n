@@ -429,7 +429,7 @@
         "E9074": "MPG needs a video track it can carry (MPEG-1/2); this title has none. Use mkv:// instead.",
         "E9075": "MPG output ended with audio or video that could not be packed into the program stream, so the file is incomplete. Use mkv:// instead.",
         "E9077": "The finished MKV failed its read-back check ({detail}), so it was not put in place. Rip the title again.",
-        "E9078": "Title {detail} stopped before its mux finished, so no file was kept. Try the title again.",
+        "E9078": "Title {detail} ended before its mux finished, so no file was kept. Try the title again.",
         "E9079": "The remux staging file would overwrite the target or its own temporary file. Choose a different staging location.",
         "E9080": "Copying the finished file into place wrote the wrong number of bytes ({detail}). Check the destination for free space and errors, then try again.",
         "E9081": "Copying or checking the finished file stopped before it reported, so the file was not put in place. Try again.",

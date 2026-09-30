@@ -429,7 +429,7 @@
         "E9074": "MPG are nevoie de o pistă video pe care o poate stoca (MPEG-1/2); acest titlu nu are niciuna. Folosește mkv:// în schimb.",
         "E9075": "Ieșirea MPG s-a încheiat cu audio sau video care nu a putut fi împachetat în fluxul de program, deci fișierul este incomplet. Folosește mkv:// în schimb.",
         "E9077": "MKV-ul finalizat nu a trecut verificarea prin recitire ({detail}), așa că nu a fost pus la locul lui. Faceți din nou rip la titlu.",
-        "E9078": "Titlul {detail} s-a oprit înainte de terminarea multiplexării, așa că nu a fost păstrat niciun fișier. Încercați din nou titlul.",
+        "E9078": "Titlul {detail} s-a încheiat înainte de terminarea multiplexării, așa că nu a fost păstrat niciun fișier. Încercați din nou titlul.",
         "E9079": "Fișierul intermediar al remux-ului ar suprascrie ținta sau propriul fișier temporar. Alegeți altă locație intermediară.",
         "E9080": "Copierea fișierului finalizat la destinație a scris un număr greșit de octeți ({detail}). Verificați spațiul liber și erorile destinației, apoi încercați din nou.",
         "E9081": "Copierea sau verificarea fișierului finalizat s-a oprit înainte de a raporta, așa că fișierul nu a fost pus la locul lui. Încercați din nou.",

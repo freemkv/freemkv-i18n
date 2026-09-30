@@ -429,7 +429,7 @@
         "E9074": "MPG cần một rãnh video mà nó có thể chứa (MPEG-1/2); tiêu đề này không có. Hãy dùng mkv:// thay thế.",
         "E9075": "Đầu ra MPG kết thúc với âm thanh hoặc video không thể đóng gói vào luồng chương trình, nên tệp chưa hoàn chỉnh. Hãy dùng mkv:// thay thế.",
         "E9077": "Tệp MKV đã hoàn tất không vượt qua bước kiểm tra đọc lại ({detail}), nên không được đặt vào vị trí. Hãy rip lại tiêu đề.",
-        "E9078": "Tiêu đề {detail} dừng trước khi mux xong, nên không giữ lại tệp nào. Hãy thử lại tiêu đề.",
+        "E9078": "Tiêu đề {detail} kết thúc trước khi mux xong, nên không giữ lại tệp nào. Hãy thử lại tiêu đề.",
         "E9079": "Tệp trung gian của remux sẽ ghi đè lên đích hoặc tệp tạm của chính nó. Hãy chọn vị trí trung gian khác.",
         "E9080": "Việc sao chép tệp đã hoàn tất vào vị trí đã ghi sai số byte ({detail}). Hãy kiểm tra dung lượng trống và lỗi ở đích, rồi thử lại.",
         "E9081": "Bước sao chép hoặc kiểm tra tệp đã hoàn tất dừng trước khi báo kết quả, nên tệp không được đặt vào vị trí. Hãy thử lại.",

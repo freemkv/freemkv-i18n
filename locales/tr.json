@@ -429,7 +429,7 @@
         "E9074": "MPG'nin taşıyabileceği bir video izi (MPEG-1/2) gerekir; bu başlıkta yok. Bunun yerine mkv:// kullanın.",
         "E9075": "MPG çıktısı, program akışına paketlenemeyen ses veya video ile sona erdi; bu nedenle dosya eksik. Bunun yerine mkv:// kullanın.",
         "E9077": "Tamamlanan MKV geri okuma denetiminden geçemedi ({detail}), bu yüzden yerine konmadı. Başlığı yeniden rip edin.",
-        "E9078": "{detail} numaralı başlık muxlama bitmeden durdu, bu yüzden hiçbir dosya tutulmadı. Başlığı yeniden deneyin.",
+        "E9078": "{detail} numaralı başlık muxlama tamamlanmadan sona erdi, bu yüzden hiçbir dosya tutulmadı. Başlığı yeniden deneyin.",
         "E9079": "Remux ara dosyası hedefin ya da kendi geçici dosyasının üzerine yazacaktı. Başka bir ara konum seçin.",
         "E9080": "Tamamlanan dosya yerine kopyalanırken yanlış sayıda bayt yazıldı ({detail}). Hedefte boş alan ve hata olup olmadığını denetleyip yeniden deneyin.",
         "E9081": "Tamamlanan dosyanın kopyalanması ya da denetimi sonuç bildirmeden durdu, bu yüzden dosya yerine konmadı. Yeniden deneyin.",

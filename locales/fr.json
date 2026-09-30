@@ -406,7 +406,7 @@
         "E9074": "MPG a besoin d'une piste vidéo qu'il peut contenir (MPEG-1/2) ; ce titre n'en a aucune. Utilisez plutôt mkv://.",
         "E9075": "La sortie MPG s'est terminée avec de l'audio ou de la vidéo impossible à empaqueter dans le flux de programme ; le fichier est donc incomplet. Utilisez plutôt mkv://.",
         "E9077": "Le MKV terminé a échoué à la vérification par relecture ({detail}) ; il n'a donc pas été mis en place. Rippez à nouveau le titre.",
-        "E9078": "Le titre {detail} s'est arrêté avant la fin de son multiplexage ; aucun fichier n'a été conservé. Réessayez ce titre.",
+        "E9078": "Le titre {detail} s'est terminé avant la fin de son multiplexage ; aucun fichier n'a été conservé. Réessayez ce titre.",
         "E9079": "Le fichier intermédiaire du remux écraserait la cible ou son propre fichier temporaire. Choisissez un autre emplacement intermédiaire.",
         "E9080": "La copie du fichier terminé vers sa destination a écrit un nombre d'octets incorrect ({detail}). Vérifiez l'espace libre et les erreurs de la destination, puis réessayez.",
         "E9081": "La copie ou la vérification du fichier terminé s'est arrêtée avant de rendre son résultat ; le fichier n'a donc pas été mis en place. Réessayez.",

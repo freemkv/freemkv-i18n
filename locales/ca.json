@@ -429,7 +429,7 @@
         "E9074": "L'MPG necessita una pista de vídeo que pugui contenir (MPEG-1/2); aquest títol no en té cap. Useu mkv:// al seu lloc.",
         "E9075": "La sortida MPG ha acabat amb àudio o vídeo que no s'ha pogut empaquetar al flux de programa, de manera que el fitxer és incomplet. Useu mkv:// en lloc seu.",
         "E9077": "L'MKV acabat no ha superat la comprovació de relectura ({detail}), així que no s'ha col·locat al seu lloc. Torna a fer el rip del títol.",
-        "E9078": "El títol {detail} s'ha aturat abans d'acabar el multiplexat, així que no s'ha conservat cap fitxer. Torna a provar el títol.",
+        "E9078": "El títol {detail} ha acabat abans de completar el multiplexat, així que no s'ha conservat cap fitxer. Torna a provar el títol.",
         "E9079": "El fitxer intermedi del remux sobreescriuria la destinació o el seu propi fitxer temporal. Tria una altra ubicació intermèdia.",
         "E9080": "En copiar el fitxer acabat a la destinació s'ha escrit un nombre incorrecte de bytes ({detail}). Comprova l'espai lliure i els errors de la destinació i torna-ho a provar.",
         "E9081": "La còpia o la comprovació del fitxer acabat s'ha aturat abans d'informar, així que el fitxer no s'ha col·locat al seu lloc. Torna-ho a provar.",

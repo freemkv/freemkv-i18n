@@ -429,7 +429,7 @@
         "E9074": "MPG trenger et videospor det kan inneholde (MPEG-1/2); denne tittelen har ingen. Bruk mkv:// i stedet.",
         "E9075": "MPG-utdata endte med lyd eller video som ikke kunne pakkes inn i programstrømmen, så filen er ufullstendig. Bruk mkv:// i stedet.",
         "E9077": "Den ferdige MKV-en besto ikke tilbakelesingskontrollen ({detail}), så den ble ikke satt på plass. Ripp tittelen på nytt.",
-        "E9078": "Tittel {detail} stoppet før muxingen var ferdig, så ingen fil ble beholdt. Prøv tittelen på nytt.",
+        "E9078": "Tittel {detail} endte før muxingen var ferdig, så ingen fil ble beholdt. Prøv tittelen på nytt.",
         "E9079": "Remux-mellomfilen ville overskrive målet eller sin egen midlertidige fil. Velg en annen mellomplassering.",
         "E9080": "Kopieringen av den ferdige filen på plass skrev feil antall byte ({detail}). Sjekk målet for ledig plass og feil, og prøv igjen.",
         "E9081": "Kopieringen eller kontrollen av den ferdige filen stoppet før den rapporterte, så filen ble ikke satt på plass. Prøv igjen.",

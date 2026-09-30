@@ -429,7 +429,7 @@
         "E9074": "MPG wymaga ścieżki wideo, którą potrafi przenieść (MPEG-1/2); ten tytuł jej nie ma. Użyj zamiast tego mkv://.",
         "E9075": "Wyjście MPG zakończyło się dźwiękiem lub obrazem, których nie dało się spakować do strumienia programowego, więc plik jest niekompletny. Użyj zamiast tego mkv://.",
         "E9077": "Gotowy plik MKV nie przeszedł kontroli odczytu zwrotnego ({detail}), więc nie został umieszczony na miejscu. Zgraj tytuł ponownie.",
-        "E9078": "Tytuł {detail} zatrzymał się przed zakończeniem multipleksowania, więc nie zachowano żadnego pliku. Spróbuj ponownie ten tytuł.",
+        "E9078": "Tytuł {detail} zakończył się przed ukończeniem multipleksowania, więc nie zachowano żadnego pliku. Spróbuj ponownie ten tytuł.",
         "E9079": "Plik pośredni remuksu nadpisałby cel lub własny plik tymczasowy. Wybierz inne miejsce pośrednie.",
         "E9080": "Kopiowanie gotowego pliku na miejsce zapisało niewłaściwą liczbę bajtów ({detail}). Sprawdź wolne miejsce i błędy w miejscu docelowym, a potem spróbuj ponownie.",
         "E9081": "Kopiowanie lub kontrola gotowego pliku zatrzymała się, zanim zgłoszono wynik, więc plik nie został umieszczony na miejscu. Spróbuj ponownie.",
