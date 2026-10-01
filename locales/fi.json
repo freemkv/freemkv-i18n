@@ -436,6 +436,7 @@
         "E9082": "--multipass tekee raakalevykuvan koko levystä eikä voi purkaa salausta. Lisää --raw tai rippaa ilman --multipass-valitsinta.",
         "E9083": "'{detail}' ei ole kieli, jonka freemkv tunnistaa. Korjaa kieli tai käytä arvoa all/none.",
         "E9084": "{detail} on jo olemassa. Siirrä tai poista se, tai valitse sen korvaaminen.",
+        "E9085": "Lukuerän koko on nolla, joten mitään ei voitaisi lukea. Aseta se vähintään yhteen sektoriin.",
         "no_lang_match_subtitle_forced": "yksikään pakotettu tekstitys tässä nimikkeessä ei vastaa '{requested}' (saatavilla olevat pakotetut tekstitykset: {available}). Korjaa kieli tai käytä all/none.",
         "log_level_out_of_range": "--log-level: arvo 0 on sallitun välin ulkopuolella (1–4), ohitetaan",
         "log_level_not_a_number": "--log-level: odotettiin lukua 1–4, saatiin '{value}', ohitetaan",

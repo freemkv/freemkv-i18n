@@ -413,6 +413,7 @@
         "E9082": "--multipass crea un'immagine grezza dell'intero disco e non può decrittare. Aggiungi --raw oppure esegui il rip senza --multipass.",
         "E9083": "'{detail}' non è una lingua riconosciuta da freemkv. Correggi la lingua o usa all/none.",
         "E9084": "{detail} esiste già. Spostalo o eliminalo, oppure scegli di sostituirlo.",
+        "E9085": "La dimensione del batch di lettura è zero, quindi non verrebbe letto nulla. Imposta almeno 1 settore.",
         "no_lang_match_subtitle_forced": "nessuna traccia di sottotitoli forzati di questo titolo corrisponde a '{requested}' (sottotitoli forzati disponibili: {available}). Correggi la lingua o usa all/none.",
         "log_level_out_of_range": "--log-level: il valore 0 è fuori intervallo (1–4), ignorato",
         "log_level_not_a_number": "--log-level: atteso un numero 1–4, ricevuto '{value}', ignorato",

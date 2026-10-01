@@ -436,6 +436,7 @@
         "E9082": "--multipass는 디스크 전체의 원시 이미지를 만들며 복호화할 수 없습니다. --raw를 추가하거나 --multipass 없이 리핑하세요.",
         "E9083": "'{detail}'은(는) freemkv가 인식하는 언어가 아닙니다. 언어를 수정하거나 all/none을 사용하세요.",
         "E9084": "{detail}이(가) 이미 있습니다. 옮기거나 삭제하거나, 교체하도록 선택하세요.",
+        "E9085": "읽기 배치 크기가 0이라 아무것도 읽을 수 없습니다. 1섹터 이상으로 설정하세요.",
         "no_lang_match_subtitle_forced": "이 타이틀에 '{requested}'과(와) 일치하는 강제 자막이 없습니다 (사용 가능한 강제 자막: {available}). 언어를 수정하거나 all/none을 사용하세요.",
         "log_level_out_of_range": "--log-level: 값 0은 범위(1–4)를 벗어났습니다. 무시합니다",
         "log_level_not_a_number": "--log-level: 1–4 사이의 숫자가 필요하지만 '{value}'을(를) 받았습니다. 무시합니다",

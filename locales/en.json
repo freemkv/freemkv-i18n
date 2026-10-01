@@ -436,6 +436,7 @@
         "E9082": "--multipass makes a raw whole-disc image and cannot decrypt. Add --raw, or rip without --multipass.",
         "E9083": "'{detail}' is not a language freemkv recognizes. Fix the language, or use all/none.",
         "E9084": "{detail} already exists. Move or delete it, or choose to replace it.",
+        "E9085": "The read batch size is zero, so nothing could be read. Set it to at least 1 sector.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: value 0 is out of range (1–4), ignored",
         "log_level_not_a_number": "--log-level: expected a number 1–4, got '{value}', ignored",

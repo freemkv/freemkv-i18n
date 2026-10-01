@@ -436,6 +436,7 @@
         "E9082": "--multipass tworzy surowy obraz całej płyty i nie może odszyfrowywać. Dodaj --raw albo zgrywaj bez --multipass.",
         "E9083": "'{detail}' nie jest językiem rozpoznawanym przez freemkv. Popraw język albo użyj all/none.",
         "E9084": "{detail} już istnieje. Przenieś lub usuń ten plik albo wybierz jego zastąpienie.",
+        "E9085": "Rozmiar partii odczytu wynosi zero, więc nic nie zostałoby odczytane. Ustaw co najmniej 1 sektor.",
         "no_lang_match_subtitle_forced": "żadna ścieżka napisów wymuszonych tego tytułu nie odpowiada '{requested}' (dostępne napisy wymuszone: {available}). Popraw język lub użyj all/none.",
         "log_level_out_of_range": "--log-level: wartość 0 jest poza zakresem (1–4), zignorowano",
         "log_level_not_a_number": "--log-level: oczekiwano liczby 1–4, otrzymano '{value}', zignorowano",

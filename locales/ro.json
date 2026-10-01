@@ -436,6 +436,7 @@
         "E9082": "--multipass creează o imagine brută a întregului disc și nu poate decripta. Adăugați --raw sau faceți rip fără --multipass.",
         "E9083": "'{detail}' nu este o limbă recunoscută de freemkv. Corectați limba sau folosiți all/none.",
         "E9084": "{detail} există deja. Mutați-l sau ștergeți-l, ori alegeți să îl înlocuiți.",
+        "E9085": "Dimensiunea lotului de citire este zero, deci nu s-ar citi nimic. Setați cel puțin 1 sector.",
         "no_lang_match_subtitle_forced": "nicio subtitrare forțată din acest titlu nu se potrivește cu '{requested}' (subtitrări forțate disponibile: {available}). Corectează limba, sau folosește all/none.",
         "log_level_out_of_range": "--log-level: valoarea 0 este în afara intervalului (1–4), ignorată",
         "log_level_not_a_number": "--log-level: se aștepta un număr 1–4, s-a primit '{value}', ignorat",

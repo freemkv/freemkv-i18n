@@ -436,6 +436,7 @@
         "E9082": "A --multipass nyers képet készít a teljes lemezről, és nem tud visszafejteni. Adja hozzá a --raw kapcsolót, vagy rippeljen --multipass nélkül.",
         "E9083": "A(z) '{detail}' nem olyan nyelv, amelyet a freemkv ismer. Javítsa a nyelvet, vagy használja az all/none értéket.",
         "E9084": "A(z) {detail} már létezik. Helyezze át vagy törölje, vagy válassza a cseréjét.",
+        "E9085": "Az olvasási köteg mérete nulla, így semmi sem olvasható. Állítsa legalább 1 szektorra.",
         "no_lang_match_subtitle_forced": "ennek a címnek egyetlen kényszerített felirata sem felel meg a következőnek: '{requested}' (elérhető kényszerített feliratok: {available}). Javítsd a nyelvet, vagy használd az all/none értéket.",
         "log_level_out_of_range": "--log-level: a 0 érték a tartományon kívül esik (1–4), figyelmen kívül hagyva",
         "log_level_not_a_number": "--log-level: 1–4 közötti szám várt, '{value}' érkezett, figyelmen kívül hagyva",

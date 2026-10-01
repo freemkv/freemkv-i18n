@@ -413,6 +413,7 @@
         "E9082": "--multipass crea una imagen en bruto del disco completo y no puede descifrar. Añade --raw o ripea sin --multipass.",
         "E9083": "'{detail}' no es un idioma que freemkv reconozca. Corrige el idioma o usa all/none.",
         "E9084": "{detail} ya existe. Muévelo o elimínalo, o elige reemplazarlo.",
+        "E9085": "El tamaño del lote de lectura es cero, así que no se leería nada. Configúralo en al menos 1 sector.",
         "no_lang_match_subtitle_forced": "ningún subtítulo forzado en este título coincide con '{requested}' (subtítulos forzados disponibles: {available}). Corrija el idioma, o use all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 está fuera de rango (1–4), ignorado",
         "log_level_not_a_number": "--log-level: se esperaba un número 1–4, se recibió '{value}', ignorado",

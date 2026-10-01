@@ -436,6 +436,7 @@
         "E9082": "--multipass 会生成整张光盘的原始镜像，无法解密。请添加 --raw，或不使用 --multipass 进行翻录。",
         "E9083": "'{detail}' 不是 freemkv 能识别的语言。请更正语言，或使用 all/none。",
         "E9084": "{detail} 已存在。请移动或删除它，或选择替换它。",
+        "E9085": "读取批大小为 0，无法读取任何内容。请至少设置为 1 个扇区。",
         "no_lang_match_subtitle_forced": "此标题中没有与 '{requested}' 匹配的强制字幕（可用的强制字幕：{available}）。请更正语言，或使用 all/none。",
         "log_level_out_of_range": "--log-level：值 0 超出范围 (1–4)，已忽略",
         "log_level_not_a_number": "--log-level：需要 1–4 的数字，收到 '{value}'，已忽略",

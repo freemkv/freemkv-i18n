@@ -436,6 +436,7 @@
         "E9082": "--multipass crea una imatge en brut del disc sencer i no pot desxifrar. Afegeix --raw o fes el rip sense --multipass.",
         "E9083": "'{detail}' no és un idioma que freemkv reconegui. Corregeix l'idioma o fes servir all/none.",
         "E9084": "{detail} ja existeix. Mou-lo o elimina'l, o tria substituir-lo.",
+        "E9085": "La mida del lot de lectura és zero, així que no es podria llegir res. Estableix-la en almenys 1 sector.",
         "no_lang_match_subtitle_forced": "cap subtítol forçat d'aquest títol coincideix amb «{requested}» (subtítols forçats disponibles: {available}). Corregiu l'idioma, o useu all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 és fora d'interval (1–4), s'ignora",
         "log_level_not_a_number": "--log-level: s'esperava un número 1–4, s'ha rebut '{value}', s'ignora",

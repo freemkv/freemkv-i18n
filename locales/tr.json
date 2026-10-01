@@ -436,6 +436,7 @@
         "E9082": "--multipass tüm diskin ham bir görüntüsünü oluşturur ve şifre çözemez. --raw ekleyin ya da --multipass olmadan rip edin.",
         "E9083": "'{detail}' freemkv'nin tanıdığı bir dil değil. Dili düzeltin ya da all/none kullanın.",
         "E9084": "{detail} zaten var. Taşıyın ya da silin veya değiştirilmesini seçin.",
+        "E9085": "Okuma toplu iş boyutu sıfır olduğundan hiçbir şey okunamaz. En az 1 sektör olarak ayarlayın.",
         "no_lang_match_subtitle_forced": "bu başlıkta '{requested}' ile eşleşen zorunlu altyazı yok (mevcut zorunlu altyazılar: {available}). Dili düzeltin veya all/none kullanın.",
         "log_level_out_of_range": "--log-level: 0 değeri aralık dışında (1–4), yok sayıldı",
         "log_level_not_a_number": "--log-level: 1–4 arası bir sayı bekleniyordu, '{value}' alındı, yok sayıldı",

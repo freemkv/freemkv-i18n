@@ -413,6 +413,7 @@
         "E9082": "--multipass erstellt ein rohes Abbild der ganzen Disc und kann nicht entschlüsseln. Fügen Sie --raw hinzu oder rippen Sie ohne --multipass.",
         "E9083": "'{detail}' ist keine Sprache, die freemkv kennt. Korrigieren Sie die Sprache oder verwenden Sie all/none.",
         "E9084": "{detail} existiert bereits. Verschieben oder löschen Sie die Datei oder wählen Sie, sie zu ersetzen.",
+        "E9085": "Die Lese-Batchgröße ist null, daher würde nichts gelesen. Setzen Sie sie auf mindestens 1 Sektor.",
         "no_lang_match_subtitle_forced": "keine erzwungene Untertitelspur dieses Titels entspricht '{requested}' (verfügbare erzwungene Untertitel: {available}). Korrigieren Sie die Sprache oder verwenden Sie all/none.",
         "log_level_out_of_range": "--log-level: Wert 0 liegt außerhalb des Bereichs (1–4), ignoriert",
         "log_level_not_a_number": "--log-level: Zahl 1–4 erwartet, '{value}' erhalten, ignoriert",

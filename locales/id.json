@@ -436,6 +436,7 @@
         "E9082": "--multipass membuat image mentah seluruh disk dan tidak dapat mendekripsi. Tambahkan --raw, atau rip tanpa --multipass.",
         "E9083": "'{detail}' bukan bahasa yang dikenali freemkv. Perbaiki bahasanya, atau gunakan all/none.",
         "E9084": "{detail} sudah ada. Pindahkan atau hapus, atau pilih untuk menggantinya.",
+        "E9085": "Ukuran batch baca adalah nol sehingga tidak ada yang dapat dibaca. Atur setidaknya 1 sektor.",
         "no_lang_match_subtitle_forced": "tidak ada subtitle paksa pada judul ini yang cocok dengan '{requested}' (subtitle paksa tersedia: {available}). Perbaiki bahasanya, atau gunakan all/none.",
         "log_level_out_of_range": "--log-level: nilai 0 di luar rentang (1–4), diabaikan",
         "log_level_not_a_number": "--log-level: diharapkan angka 1–4, diterima '{value}', diabaikan",

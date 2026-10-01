@@ -436,6 +436,7 @@
         "E9082": "--multipass vytváří surový obraz celého disku a nemůže dešifrovat. Přidejte --raw, nebo ripujte bez --multipass.",
         "E9083": "'{detail}' není jazyk, který freemkv zná. Opravte jazyk, nebo použijte all/none.",
         "E9084": "{detail} již existuje. Přesuňte nebo smažte jej, nebo zvolte jeho nahrazení.",
+        "E9085": "Velikost čtecí dávky je nula, takže by se nic nepřečetlo. Nastavte alespoň 1 sektor.",
         "no_lang_match_subtitle_forced": "žádná stopa vynucených titulků tohoto titulu neodpovídá '{requested}' (dostupné vynucené titulky: {available}). Opravte jazyk nebo použijte all/none.",
         "log_level_out_of_range": "--log-level: hodnota 0 je mimo rozsah (1–4), ignorováno",
         "log_level_not_a_number": "--log-level: očekáváno číslo 1–4, přijato '{value}', ignorováno",

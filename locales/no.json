@@ -436,6 +436,7 @@
         "E9082": "--multipass lager et rått bilde av hele platen og kan ikke dekryptere. Legg til --raw, eller ripp uten --multipass.",
         "E9083": "'{detail}' er ikke et språk freemkv kjenner igjen. Rett språket, eller bruk all/none.",
         "E9084": "{detail} finnes allerede. Flytt eller slett den, eller velg å erstatte den.",
+        "E9085": "Lesebatchstørrelsen er null, så ingenting kunne leses. Sett den til minst 1 sektor.",
         "no_lang_match_subtitle_forced": "ingen tvunget undertekst på denne tittelen samsvarer med «{requested}» (tilgjengelige tvungne undertekster: {available}). Rett språket, eller bruk all/none.",
         "log_level_out_of_range": "--log-level: verdien 0 er utenfor området (1–4), ignorert",
         "log_level_not_a_number": "--log-level: forventet et tall 1–4, fikk '{value}', ignorert",

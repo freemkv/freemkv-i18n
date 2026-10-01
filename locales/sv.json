@@ -436,6 +436,7 @@
         "E9082": "--multipass skapar en rå avbild av hela skivan och kan inte dekryptera. Lägg till --raw, eller rippa utan --multipass.",
         "E9083": "'{detail}' är inte ett språk som freemkv känner igen. Rätta språket, eller använd all/none.",
         "E9084": "{detail} finns redan. Flytta eller ta bort den, eller välj att ersätta den.",
+        "E9085": "Läsbatchstorleken är noll, så inget skulle läsas. Ange minst 1 sektor.",
         "no_lang_match_subtitle_forced": "ingen tvingad undertext på den här titeln matchar '{requested}' (tillgängliga tvingade undertexter: {available}). Rätta språket, eller använd all/none.",
         "log_level_out_of_range": "--log-level: värdet 0 ligger utanför intervallet (1–4), ignoreras",
         "log_level_not_a_number": "--log-level: förväntade ett tal 1–4, fick '{value}', ignoreras",
