@@ -91,15 +91,6 @@
             "descriptive_service": "Kuvailupalvelu"
         }
     },
-    "mp4": {
-        "excluded_header": "Huomautus: {count} raitaa ei voi tallentaa MP4-tiedostoon ja ne jätetään pois (käytä mkv:// säilyttääksesi kaiken):",
-        "reason": {
-            "subtitle": "bittikarttatekstitys — MP4 tukee vain tekstitekstityksiä",
-            "audio": "äänikoodekilla ei ole MP4-vastaavuutta",
-            "video": "toissijainen videonäkymä",
-            "video_unmappable": "videokoodekilla ei ole MP4-vastaavuutta"
-        }
-    },
     "rip": {
         "opening": "Avataan {device}...",
         "waiting": "Odotetaan levyä...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Kättely epäonnistui",
         "verbose_handshake_hint": "Kättely saattoi epäonnistua — ei isäntävarmennetta, tai asema hylkäsi",
         "mapfile_summary": "Karttatiedosto: {good} Gt kelvollista, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa",
+        "staging_not_kept": "Valmisteltua levykuvaa ei säilytetty: erään virtatiedoston sijaintia tällä levyllä ei voitu lukea, joten vain valitut nimikkeet luettiin, eikä se ole koko levyn levykuva.",
         "retry_with_multipass": "Aja uudelleen --multipass-valitsimella lukeaksesi lisää; se jatkaa mapfile-tiedostosta.",
         "nothing_to_patch": "Ei paikattavaa — kaikki sektorit ovat kelvollisia",
         "patch_start": "Paikataan: {good} Gt kelvollista, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa",
@@ -260,7 +252,10 @@
         "E6018": "Virhe: levyllä oleva tiedosto tallentaa sisältönsä suoraan sektorien sijaan, mitä tämä lukupolku ei osaa käsitellä. Sen lukeminen olisi osoittanut muihin, ei-liittyviin sektoreihin.",
         "E6019": "Virhe: levyllä oleva tiedosto luettelee varaamansa tilan, mutta jokainen listan osa on tyhjä tai osoittaa tyhjyyteen, joten tiedostolla ei ole luettavaa sisältöä. Sen lukeminen ei olisi tuottanut mitään, tai olisi liittänyt rippaukseen ei-liittyviä sektoreita.",
         "E6020": "Levykuvatiedosto päättyy ennen sektoria, jota tämä rippaus tarvitsee, joten levykuva on katkennut tai keskeneräinen. Lukeminen pysäytettiin sen sijaan, että puuttuva osa olisi täytetty nollilla — luo levykuva uudelleen levyltä.",
-        "E7000": "Tämä levy tarvitsee AACS-salauksenpurkuavaimet (Blu-ray/UHD), mutta niitä ei löytynyt. Lataa avaintietokanta komennolla: freemkv update-keys --url <keydb-url>",
+        "E6021": "Levykuvaa ei voi tehdä: tämä levy käyttää AACS-väyläsalausta, eikä erään virtatiedoston sijaintia levyllä voitu lukea ({detail}), joten tiedostoa ei voi purkaa ja levykuva sisältäisi yhä salattua dataa. Nimikkeet, jotka eivät käytä tätä tiedostoa, voi silti ripata MKV-muotoon, tai levyn voi purkaa kansioon (tiedosto ilmoitetaan vaurioituneeksi). Levyn puhdistaminen ja uudelleen yrittäminen voi auttaa.",
+        "E6022": "Tämä levykuva ({detail}) valmisteltiin MKV-rippausta varten ja sisältää vain ne nimikkeet, joita varten se valmisteltiin, ei koko levyä, joten sitä ei voi käyttää levykuvana eikä purkaa kansioon. Rippaa nämä nimikkeet MKV-muotoon tai tee levystä uusi levykuva.",
+        "E6023": "Tämän levyn HD DVD -soittolista on liian suuri luettavaksi, joten se ohitettiin ja nimikkeet määritettiin sen sijaan levyn videoleikkeistä. Nimikkeiden nimet, järjestys ja kappaleet voivat olla epätarkempia.",
+        "E7000": "Tämä levy tarvitsee AACS-salauksenpurkuavaimet (Blu-ray/UHD), mutta niitä ei löytynyt. Asenna tai päivitä avaintietokanta ja yritä uudelleen.",
         "E7001": "Levyn suojausvarmenne on liian lyhyt tai virheellinen.",
         "E7002": "Asema ei käynnistänyt suojattua istuntoa tälle levylle — se voi olla toisen ohjelman käytössä. Sulje kaikki muu levyä käyttävä ja yritä uudelleen.",
         "E7003": "Asema hylkäsi tämän levyn suojausvarmenteen.",
@@ -272,7 +267,7 @@
         "E7009": "Levyn tunnistetta ei voitu lukea. Levy voi olla likainen tai vaurioitunut.",
         "E7010": "Levyn tunnistetta ei voitu vahvistaa. Levy voi olla vaurioitunut tai ei-tuettu.",
         "E7011": "Tämän levyn salauksenpurkuavainta ei voitu valmistella.",
-        "E7013": "Salauksen purku epäonnistui — palautettu avain ei avannut tämän levyn dataa. Avain voi olla väärä tai vanhentunut; päivitä se komennolla: freemkv update-keys --url <keydb-url>",
+        "E7013": "Salauksen purku epäonnistui — palautettu avain ei avannut tämän levyn dataa. Avain voi olla väärä tai vanhentunut; päivitä avaintietokantasi ja yritä uudelleen.",
         "E7014": "CSS-todennus epäonnistui: asema ei voinut muodostaa avaintenvaihtoa, jota tämän DVD:n salauksen purku vaatii. Kokeile puhdistaa levy ja asettaa se uudelleen. Jos ongelma jatkuu, asemasi ei ehkä tue täysin CSS-salauksen purkua.",
         "E7015": "Asema hylkäsi AACS-isäntävarmenteen, eikä tätä asemaa voi avata muulla tavalla.",
         "E7016": "Tämä asema ei voi lukea levyä salauksen purkuun tarvittavassa tilassa, ja suojattu istunto evättiin. Levyä ei voi enää purkaa tällä asemalla.",
@@ -285,7 +280,7 @@
         "E7023": "Tämä levy on kopiosuojattu eikä tälle nimikkeelle voitu palauttaa avainta, joten sitä ei voi purkaa (tuloste olisi lukukelvoton).",
         "E7024": "Millään avainlähteellä ei ole isäntävarmennetta aseman suojattua kättelyä varten.",
         "E7025": "Tämä levy käyttää AACS-väyläsalausta, mutta aseman suojatusta kättelystä ei saatu väyläavainta, joten sen dataa ei voi purkaa (tuloste olisi lukukelvoton).",
-        "E7026": "Tämä levy käyttää AACS 2.1 -forensista vesileimausta (FMTS) eikä sille ole saatavilla varianttiavainta, joten elokuvaa ei voi rakentaa uudelleen ilman aukkoja. Päivitä avaintietokantasi.",
+        "E7026": "Tämä levy käyttää AACS 2.1 -forensista vesileimausta (FMTS) eikä sille ole saatavilla varianttiavainta, joten elokuvaa ei voi rakentaa uudelleen ilman aukkoja. Päivitä avaintietokantasi. Jos mikään avainlähde ei vielä tunne tätä levyä, rippaa levy levykuvaksi ja muunna levykuva, kun avaimet julkaistaan.",
         "E7027": "Tämän DVD:n kopiosuojausta ei saatu purettua, joten yhtään sen nimikettä ei voida lukea. Levy voi olla vaurioitunut, tai se käyttää varianttia, jota tämä versio ei tue.",
         "E7028": "Verkkoavainpalveluun ei saatu yhteyttä, joten se ei koskaan kertonut, onko tällä levyllä avainta. Tämä on yleensä tilapäistä — odota muutama minuutti ja yritä uudelleen. Älä vielä etsi puuttuvaa avainta; palvelu oli poissa käytöstä, ei levy.",
         "E7029": "Verkkoavainpalvelu hylkäsi käyttötunnuksen (tokenin), eikä siksi vastannut. Korjaa avainpalvelun token Asetuksissa (tai --key-auth komentorivillä) ja yritä uudelleen. Tämä ei tarkoita, ettei levyllä olisi avainta.",
@@ -293,11 +288,20 @@
         "E7031": "Tämän levyn AACS-avaintiedosto puuttuu tai sitä ei voitu lukea. Puhdista levy ja yritä uudelleen; jos virhe toistuu, levy voi olla vaurioitunut.",
         "E7032": "Puretun kopion koko levystä (levykuva tai kansio) ei voi tehdä: osa levystä on salattu, eikä mikään käytettävissä olevista avaimista avaa sitä, joten kopio sisältäisi yhä salattuja osia. Rippaa nimikkeet MKV-muotoon tai säilytä salattu kopio: kopioi levy raakana (--raw komentorivillä tai ”Säilytä salattuna (raaka läpivienti)” sovelluksessa) tai säilytä lähdelevykuva sellaisenaan.",
         "E7033": "Avainlähteistäsi löytyi isäntävarmenteita, mutta yksikään niistä ei kelpaa (vaurioitunut tai puutteellinen). Päivitä avaintietokantasi ja yritä uudelleen.",
+        "E7034": "Tämän levyn avaimet tarvitsevat sen taltion tunnuksen (Volume ID), joka voidaan lukea vain levyltä itseltään. Aseta levy paikalleen viimeistelläksesi; sitä ei ripata uudelleen.",
+        "E7100": "Tämä levy ei käytä AACS 2.1 -varianttiavainlohkoa; sen sijaan käytetään tavallista avaimen johtamista.",
+        "E7101": "Tämän levyn AACS 2.1 -avainlohko on puutteellinen, joten sen avainta ei voi johtaa. Puhdista levy ja yritä uudelleen.",
+        "E7102": "Mikään käytettävissä olevista laiteavaimista ei sovi tämän levyn AACS 2.1 -avainlohkoon. Päivitä avaintietokantasi ja yritä uudelleen.",
+        "E7103": "Tämän levyn AACS 2.1 -avain vaatii ohjelmistokorjausvaiheen, jota ei tueta.",
+        "E7104": "Tämän levyn AACS 2.1 -avain vaatii verkkohaasteen, jota ei tueta.",
+        "E7106": "Tämän levyn AACS 2.1 -avainlohkosta puuttuu varianttitaulukko, joten sen avainta ei voi johtaa. Levy saattaa olla vaurioitunut.",
+        "E7107": "Tämän levyn AACS 2.1 -avainlohko viittaa varianttiavaintietojensa ulkopuolelle, joten sen avainta ei voi johtaa. Levy saattaa olla vaurioitunut.",
+        "E7108": "Tämän levyn AACS 2.1 -avainlohkosta johdettu avain ei läpäissyt tarkistusta, eikä sitä käytetty. Päivitä avaintietokantasi ja yritä uudelleen.",
         "E8000": "Avaintietokantapalvelimeen ei saada yhteyttä: {detail}",
-        "E8001": "Avaintietokannan lataus epäonnistui (HTTP {detail}). Yritä uudelleen tai suorita: freemkv update-keys --url <keydb-url>",
-        "E8002": "Avaintietokanta on tyhjä tai virheellinen. Lataa se uudelleen komennolla: freemkv update-keys --url <keydb-url>",
+        "E8001": "Avaintietokannan lataus epäonnistui (HTTP {detail}). Yritä päivitystä uudelleen.",
+        "E8002": "Avaintietokanta on tyhjä tai virheellinen. Lataa se uudelleen.",
         "E8003": "Avaintietokantaa ei voi kirjoittaa: {detail}",
-        "E8004": "Avaintietokantaa ei voitu lukea. Lataa se uudelleen komennolla: freemkv update-keys --url <keydb-url>",
+        "E8004": "Avaintietokantaa ei voitu lukea. Lataa se uudelleen.",
         "E8005": "Avaintietokantaa ei voi ladata: {detail}",
         "E8006": "Avaintietokannan URL käyttää osoitetyyppiä, jota ei sallita ({detail}).",
         "E8007": "Avaintietokannan lataus ohjattiin liian monta kertaa. Tarkista URL ja yritä uudelleen.",
@@ -310,7 +314,6 @@
         "E9006": "Syötedata on vioittunut tai ei ole odotetussa muodossa.",
         "E9007": "ISO-levykuva liian suuri: {detail}",
         "E9008": "Tälle syötteelle ei ole saatavilla tietoja.",
-        "E9009": "Levysyötettä ei voi avata tällä tavalla — tämä on sisäinen käyttövirhe.",
         "E9010": "Videoraidan asetusdataa ei voitu lukea. Lähde voi olla vaurioitunut tai ei-tuettu.",
         "E9011": "Sisäinen virhe tulostetta rakennettaessa. Ilmoita tästä.",
         "E9012": "Tätä tulostemuotoa ei vielä tueta.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Virhe: --raw koskee vain disc://-lähdettä (se kopioi sektorit levyltä purkamatta niiden salausta). '{source}' ei ole levy. Poista --raw tai rippaa levyltä asemassa.",
         "scan_failed": "Skannaus epäonnistui: {detail}",
         "source_needs_scheme": "Virhe: '{source}' ei ole käyttökelpoinen lähde-URL — käytä tunnettua scheme://-etuliitettä (esim. iso://{source} ISO-levykuvalle tai disc:// optiselle asemalle).",
+        "source_needs_container_scheme": "Virhe: '{source}' ei ole käyttökelpoinen lähde-URL — se vaikuttaa {container}-tiedostolta, joten käytä osoitetta {scheme}://{source} (tai iso:// ISO-levykuvalle, disc:// optiselle asemalle).",
         "stream_none": "ei mitään",
         "selection_disc_only": "Virhe: nimikkeiden ja raitojen valinta (-t / -a / -s) koskee vain disc:// tai iso:// -lähdettä, joka luetaan nimikeluetteloksi. '{source}' on virta-/tiedostolähde ilman nimikkeitä — poista -t/-a/-s tai kopioi disc:// tai iso:// -lähteestä.",
         "title_out_of_range": "Nimike {num} on alueen ulkopuolella ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Virhe: lähde ei ilmoita yhtään sektoria, joten kirjoitettavaa ei ole.",
         "E9061": "Virhe: tässä kansiossa on 3D-levy (BDMV/STREAM/SSIF), jota dir:// ei vielä osaa lukea. Rippaa sen sijaan levyltä tai ISO-tiedostosta.",
         "E9062": "Virhe: kansion tiedostoja ei voida järjestää levykuvaksi — vaadittu tiedosto ei ole siinä paikassa, johon levy sen sijoittaisi.",
-        "E9063": "Virhe: tämä kansio on yhä salattu. dir:// tarvitsee salauksesta puretun varmuuskopion; rippaa sen sijaan levyltä tai ISO-tiedostosta.",
         "E9064": "Virhe: tämä kansio ei ole levyn varmuuskopio. Osoita dir:// kansioon, joka sisältää VIDEO_TS- tai BDMV-hakemiston.",
         "E9065": "Virhe: tiedosto muuttui sitä luettaessa, joten levykuva ei olisi vastannut kansiota. Mitään ei kirjoitettu.",
         "E9066": "Virhe: tämä kansio on liian suuri esitettäväksi yhtenä levykuvana.",
         "E9067": "Virhe: tiedostonimi on liian pitkä tallennettavaksi levylle. Lyhennä sitä ja yritä uudelleen: '{path}'.",
-        "E9068": "Virhe: kansiossa on liikaa alikansioita tallennettavaksi levylle: '{path}'.",
+        "E9068": "Virhe: kansiossa on liikaa tiedostoja tai alikansioita tallennettavaksi levylle: '{path}'.",
         "E9069": "Virhe: suurin osa tämän nimikkeen kehyksistä oli levyn omien toistomerkkien ulkopuolella, joten tuloste olisi jäänyt pahasti vaillinaiseksi.",
         "E9070": "Virhe: mitään ei kirjoitettu — jokainen kehys hylättiin. Tulosteesta olisi tullut tyhjä.",
         "E9071": "Tulosteeseen kirjoitettiin sen jälkeen, kun se oli jo valmis tai epäonnistunut, joten tietoja ei voitu tallentaa.",
         "E9072": "Raitojen tiedot asetettiin vasta sen jälkeen, kun tulosteen otsake oli jo kirjoitettu, joten niitä ei voitu ottaa käyttöön.",
+        "E9073": "Virhe: toiminto aikakatkaistiin, koska edistymistä ei tapahtunut liian pitkään aikaan.",
+        "E9074": "MPG tarvitsee videoraidan, jonka se voi sisältää (MPEG-1/2); tässä nimikkeessä ei ole sellaista. Käytä sen sijaan mkv://.",
+        "E9075": "MPG-tuloste päättyi ääneen tai videoon, jota ei voitu pakata ohjelmavirtaan, joten tiedosto on keskeneräinen. Käytä sen sijaan mkv://.",
+        "E9077": "Valmis MKV ei läpäissyt takaisinlukutarkistusta ({detail}), joten sitä ei siirretty paikalleen. Rippaa nimike uudelleen.",
+        "E9078": "Nimike {detail} päättyi ennen kuin sen muksaus valmistui, joten tiedostoa ei säilytetty. Yritä nimikettä uudelleen.",
+        "E9079": "Remuxin välitiedosto korvaisi kohteen tai oman väliaikaistiedostonsa. Valitse toinen välisijainti.",
+        "E9080": "Valmiin tiedoston kopiointi paikalleen kirjoitti väärän määrän tavuja ({detail}). Tarkista kohteen vapaa tila ja virheet ja yritä uudelleen.",
+        "E9081": "Valmiin tiedoston kopiointi tai tarkistus pysähtyi ennen kuin se ilmoitti tuloksen, joten tiedostoa ei siirretty paikalleen. Yritä uudelleen.",
+        "E9083": "'{detail}' ei ole kieli, jonka freemkv tunnistaa. Korjaa kieli tai käytä arvoa all/none.",
+        "E9084": "{detail} on jo olemassa. Siirrä tai poista se, tai valitse sen korvaaminen.",
+        "E9085": "Lukuerän koko on nolla, joten mitään ei voitaisi lukea. Aseta se vähintään yhteen sektoriin.",
         "no_lang_match_subtitle_forced": "yksikään pakotettu tekstitys tässä nimikkeessä ei vastaa '{requested}' (saatavilla olevat pakotetut tekstitykset: {available}). Korjaa kieli tai käytä all/none.",
         "log_level_out_of_range": "--log-level: arvo 0 on sallitun välin ulkopuolella (1–4), ohitetaan",
         "log_level_not_a_number": "--log-level: odotettiin lukua 1–4, saatiin '{value}', ohitetaan",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Matroska-tiedosto",
             "m2ts": "  m2ts://path.m2ts         BD-siirtovirtatiedosto",
             "mp4": "  mp4://path.mp4           MP4-tiedosto",
+            "mpg": "  mpg://path.mpg           MPEG-ohjelmavirtatiedosto",
             "iso": "  iso://image.iso          Blu-ray ISO -levykuva",
             "dir": "  dir://folder/            Puretttu tiedostopuu kansiossa",
             "network": "  network://host:port      TCP-virta",
@@ -658,7 +673,7 @@
             "cancelling": "Peruutetaan …",
             "nothing_eject": "Ei mitään poistettavaa — lähde on tiedosto, ei asema.",
             "checking_updates": "Tarkistetaan päivityksiä …",
-            "mp4_mismatch": "MP4 ei voi tallentaa {codecs}-videota. Valitse MKV, joka säilyttää kaiken.",
+            "container_mismatch": "Muoto {container} ei voi tallentaa {codecs}-videota. Valitse sen sijaan MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} avattu — {n} nimikettä, avaimet: {keys}",
             "ready_convert": "Valmis muuntamaan",
@@ -695,7 +710,8 @@
             "pick_not_local": "Vain paikallisia tiedostoja ja kansioita voidaan käyttää: {p}",
             "reveal_failed": "Kansiota ei voitu avata Resurssienhallinnassa: {e}",
             "scan_not_started": "Lähteen skannausta ei voitu aloittaa: {detail}",
-            "scan_worker_stopped": "Lähteen skannaus pysähtyi ennen tuloksen palauttamista."
+            "scan_worker_stopped": "Lähteen skannaus pysähtyi ennen tuloksen palauttamista.",
+            "insert_disc_retry": "Aseta levy asemaan ja valitse uudelleen ”Aloita rippaus”. Vain sen taltion tunnus luetaan; sitä ei ripata uudelleen."
         },
         "alert": {
             "rip_title": "Rippaus on käynnissä.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Valitut nimikkeet → MKV",
             "mp4": "Valitut nimikkeet → MP4",
+            "mpg": "Valitut nimikkeet → MPG",
             "m2ts": "Valitut nimikkeet → M2TS",
             "tracks": "Valitut nimikkeet → erilliset raitatiedostot",
             "iso": "Koko levy → ISO-levykuva",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "varoitus: nimike {num}: yksikään pakotettu tekstitys ei vastaa '{requested}' (saatavilla: {available}) — säilytetään vain video."
     },
     "mux": {
-        "undelivered_header": "Huomautus: {count} raitaa ei voitu toimittaa, ja ne jätettiin pois:"
+        "undelivered_header": "Huomautus: {count} raitaa ei voitu toimittaa, ja ne jätettiin pois:",
+        "excluded_header": "Huomautus: {count} raitaa ei voi tallentaa muotoon {container}, joten ne jätetään pois (käytä {keep}:// säilyttääksesi ne):",
+        "reason": {
+            "subtitle": "tekstitysmuodolla ei ole vastaavuutta muodossa {container}",
+            "audio": "äänikoodekilla ei ole vastaavuutta muodossa {container}",
+            "video": "toissijainen videonäkymä",
+            "video_unmappable": "videokoodekilla ei ole vastaavuutta muodossa {container}",
+            "mp2_extension": "MPEG-2-monikanavalaajennus — muoto {container} ei voi tallentaa sitä (käytä mpg:// säilyttääksesi sen); stereoperusosa säilytetään",
+            "no_stream_id": "muodossa {container} ei ole enää vapaata virtanumeroa tälle raidalle"
+        }
     },
     "share": {
         "attach_zip": "Profiilin zip-tiedosto on liian suuri ongelmaraportin tekstiin — liitä {path} ongelmaraporttiin.",
         "zip_failed": "Profiilin zip-tiedostoa ei voitu luoda: {error}"
+    },
+    "stop": {
+        "stopping": "Pysäytetään …",
+        "waiting_for_drive": "Odotetaan asemaa …",
+        "progress_kept": "Edistyminen säilyy",
+        "finishing": "Viimeistellään …",
+        "artifact_lock_failed": "Kohteen {name} lukitusta ei saatu; toinen prosessi saattaa käyttää sitä."
     }
 }

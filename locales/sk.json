@@ -91,15 +91,6 @@
             "descriptive_service": "Opisná služba"
         }
     },
-    "mp4": {
-        "excluded_header": "Poznámka: nasledujúce stopy (počet: {count}) nemožno uložiť do MP4 a budú vynechané (použite mkv:// na zachovanie všetkého):",
-        "reason": {
-            "subtitle": "bitmapové titulky — MP4 podporuje iba textové titulky",
-            "audio": "zvukový kodek nemá mapovanie na MP4",
-            "video": "sekundárny videopohľad",
-            "video_unmappable": "videokodek nemá mapovanie na MP4"
-        }
-    },
     "rip": {
         "opening": "Otvára sa {device}...",
         "waiting": "Čaká sa na disk...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Nadviazanie spojenia zlyhalo",
         "verbose_handshake_hint": "Nadviazanie spojenia mohlo zlyhať — chýba hostiteľský certifikát alebo mechanika odmietla",
         "mapfile_summary": "Mapovací súbor: v poriadku: {good} GB, nečitateľné: {unreadable} MB, čakajúce: {pending} MB",
+        "staging_not_kept": "Pripravený obraz nebol zachovaný: umiestnenie súboru streamu na tomto disku sa nepodarilo prečítať, takže sa prečítali len vybrané tituly a nejde o obraz celého disku.",
         "retry_with_multipass": "Spustite to znova s --multipass, aby ste sa pokúsili prečítať viac; nadviaže na mapový súbor.",
         "nothing_to_patch": "Niet čo opraviť — všetky sektory sú v poriadku",
         "patch_start": "Oprava: v poriadku: {good} GB, nečitateľné: {unreadable} MB, čakajúce: {pending} MB",
@@ -260,7 +252,10 @@
         "E6018": "Chyba: súbor na disku ukladá svoj obsah priamo vo svojom zázname namiesto v sektoroch, čo táto cesta čítania nevie naplánovať. Jeho čítanie by ukazovalo na nesúvisiace sektory.",
         "E6019": "Chyba: súbor na disku uvádza miesto, ktoré zaberá, ale každá časť tohto zoznamu je prázdna alebo nikam neukazuje, takže súbor nemá žiadny čitateľný obsah. Jeho čítanie by nevytvorilo nič alebo by do kópie vložilo nesúvisiace sektory.",
         "E6020": "Súbor obrazu disku končí pred sektorom, ktorý toto kopírovanie potrebuje, takže obraz je orezaný alebo neúplný. Čítanie bolo zastavené namiesto toho, aby chýbajúcu časť vyplnilo nulami — vytvorte obraz z disku znova.",
-        "E7000": "Tento disk potrebuje dešifrovacie kľúče AACS (Blu-ray/UHD), ale žiadne sa nenašli. Stiahnite databázu kľúčov pomocou: freemkv update-keys --url <keydb-url>",
+        "E6021": "Obraz disku nie je možné vytvoriť: tento disk používa šifrovanie zbernice AACS a umiestnenie súboru streamu na disku sa nepodarilo prečítať ({detail}), takže tento súbor nie je možné dešifrovať a obraz by stále obsahoval zašifrované dáta. Tituly, ktoré tento súbor nepoužívajú, možno aj tak skopírovať do MKV, alebo možno disk rozbaliť do priečinka (tento súbor sa nahlási ako poškodený). Môže pomôcť disk vyčistiť a skúsiť to znova.",
+        "E6022": "Tento obraz ({detail}) bol pripravený na kopírovanie do MKV a obsahuje len tituly, pre ktoré bol pripravený, nie celý disk, takže ho nemožno použiť ako obraz disku ani rozbaliť do priečinka. Skopírujte tieto tituly do MKV alebo vytvorte nový obraz z disku.",
+        "E6023": "Zoznam skladieb HD DVD na tomto disku je príliš veľký na načítanie, preto bol preskočený a tituly boli namiesto toho určené z videoklipov na disku. Názvy, poradie a kapitoly titulov môžu byť menej presné.",
+        "E7000": "Tento disk potrebuje dešifrovacie kľúče AACS (Blu-ray/UHD), ale žiadne sa nenašli. Nainštalujte alebo aktualizujte databázu kľúčov a skúste to znova.",
         "E7001": "Bezpečnostný certifikát disku je príliš krátky alebo neplatný.",
         "E7002": "Mechanika by nezačala zabezpečenú reláciu pre tento disk — môže ho používať iný program. Zatvorte všetko ostatné, čo používa disk, a skúste to znova.",
         "E7003": "Mechanika odmietla bezpečnostný certifikát tohto disku.",
@@ -272,7 +267,7 @@
         "E7009": "Nepodarilo sa prečítať identifikátor disku. Disk môže byť špinavý alebo poškodený.",
         "E7010": "Identifikátor disku sa nepodarilo overiť. Disk môže byť poškodený alebo nepodporovaný.",
         "E7011": "Nepodarilo sa pripraviť dešifrovací kľúč tohto disku.",
-        "E7013": "Dešifrovanie zlyhalo — obnovený kľúč neodomkol dáta tohto disku. Kľúč môže byť nesprávny alebo zastaraný; obnovte ho pomocou: freemkv update-keys --url <keydb-url>",
+        "E7013": "Dešifrovanie zlyhalo — obnovený kľúč neodomkol dáta tohto disku. Kľúč môže byť nesprávny alebo zastaraný; aktualizujte databázu kľúčov a skúste to znova.",
         "E7014": "Overenie CSS zlyhalo: mechanika nedokázala nadviazať výmenu kľúčov potrebnú na dešifrovanie tohto DVD. Skúste disk vyčistiť a znova vložiť. Ak problém pretrváva, vaša mechanika nemusí plne podporovať dešifrovanie CSS.",
         "E7015": "Mechanika odmietla hostiteľský certifikát AACS a túto mechaniku nemožno odomknúť iným spôsobom.",
         "E7016": "Táto mechanika nedokáže prečítať disk v režime potrebnom na jeho dešifrovanie a zabezpečená relácia bola odmietnutá. Na tejto mechanike nezostáva žiadny spôsob dešifrovania tohto disku.",
@@ -285,7 +280,7 @@
         "E7023": "Tento disk je chránený proti kopírovaniu a pre tento titul sa nepodarilo obnoviť žiadny kľúč, takže sa nedá dešifrovať (výstup by bol nečitateľný).",
         "E7024": "Zo žiadneho zdroja kľúčov nie je dostupný hostiteľský certifikát pre zabezpečené nadviazanie spojenia mechaniky.",
         "E7025": "Tento disk používa šifrovanie zbernice AACS, ale zo zabezpečeného nadviazania spojenia mechaniky sa nepodarilo získať žiadny kľúč zbernice, takže jeho dáta sa nedajú dešifrovať (výstup by bol nečitateľný).",
-        "E7026": "Tento disk používa forenzné vodoznaky AACS 2.1 (FMTS) a nie je preň dostupný žiadny variantný kľúč, takže film sa nedá zrekonštruovať bez medzier. Aktualizujte svoju databázu kľúčov.",
+        "E7026": "Tento disk používa forenzné vodoznaky AACS 2.1 (FMTS) a nie je preň dostupný žiadny variantný kľúč, takže film sa nedá zrekonštruovať bez medzier. Aktualizujte svoju databázu kľúčov. Ak žiadny zdroj kľúčov zatiaľ nepozná tento disk, skopírujte disk do obrazu a po zverejnení kľúčov obraz skonvertujte.",
         "E7027": "Ochranu proti kopírovaniu tohto DVD sa nepodarilo odomknúť, takže z neho nemožno prečítať žiadny titul. Disk môže byť poškodený alebo používa variant, ktorý táto verzia nepodporuje.",
         "E7028": "Online službu kľúčov sa nepodarilo kontaktovať, takže vôbec neodpovedala, či pre tento disk kľúč existuje. Zvyčajne ide o dočasný stav — počkajte niekoľko minút a skúste to znova. Chýbajúci kľúč zatiaľ nehľadajte; nedostupná bola služba, nie disk.",
         "E7029": "Online služba kľúčov odmietla prístupový token, a preto neodpovedala. Opravte token služby kľúčov v Nastaveniach (alebo --key-auth v príkazovom riadku) a skúste to znova. Neznamená to, že disk nemá kľúč.",
@@ -293,11 +288,20 @@
         "E7031": "Súbor kľúčov AACS tohto disku chýba alebo sa ho nepodarilo prečítať. Vyčistite disk a skúste to znova; ak to stále zlyháva, disk môže byť poškodený.",
         "E7032": "Dešifrovanú kópiu celého disku (obraz alebo priečinok) nie je možné vytvoriť: časť disku je zašifrovaná a žiadny z dostupných kľúčov ju neotvorí, takže kópia by stále obsahovala zašifrované časti. Namiesto toho preveďte tituly do MKV alebo si ponechajte šifrovanú kópiu: skopírujte disk surovo (--raw v príkazovom riadku alebo „Ponechať šifrované (surový prechod)“ v aplikácii), alebo si ponechajte zdrojový obraz tak, ako je.",
         "E7033": "Vo vašich zdrojoch kľúčov boli nájdené hostiteľské certifikáty, ale žiadny z nich nie je použiteľný (poškodený alebo neúplný). Aktualizujte databázu kľúčov a skúste to znova.",
+        "E7034": "Kľúče tohto disku vyžadujú jeho ID zväzku (Volume ID), ktoré je možné prečítať iba zo samotného disku. Vložte disk na dokončenie; nebude znova skopírovaný.",
+        "E7100": "Tento disk nepoužíva variantný blok kľúčov AACS 2.1; namiesto toho sa použije štandardné odvodenie kľúča.",
+        "E7101": "Blok kľúčov AACS 2.1 tohto disku je neúplný, takže jeho kľúč nemožno odvodiť. Očistite disk a skúste to znova.",
+        "E7102": "Žiadny z dostupných kľúčov zariadenia nezodpovedá bloku kľúčov AACS 2.1 tohto disku. Aktualizujte databázu kľúčov a skúste to znova.",
+        "E7103": "Kľúč AACS 2.1 tohto disku vyžaduje krok softvérovej korekcie, ktorý nie je podporovaný.",
+        "E7104": "Kľúč AACS 2.1 tohto disku vyžaduje online výzvu, ktorá nie je podporovaná.",
+        "E7106": "V bloku kľúčov AACS 2.1 tohto disku chýba tabuľka variantov, takže jeho kľúč nemožno odvodiť. Disk môže byť poškodený.",
+        "E7107": "Blok kľúčov AACS 2.1 tohto disku odkazuje mimo svojich údajov variantných kľúčov, takže jeho kľúč nemožno odvodiť. Disk môže byť poškodený.",
+        "E7108": "Kľúč odvodený z bloku kľúčov AACS 2.1 tohto disku neprešiel overením a nebol použitý. Aktualizujte databázu kľúčov a skúste to znova.",
         "E8000": "Nepodarilo sa pripojiť k serveru databázy kľúčov: {detail}",
-        "E8001": "Sťahovanie databázy kľúčov zlyhalo (HTTP {detail}). Skúste to znova alebo spustite: freemkv update-keys --url <keydb-url>",
-        "E8002": "Databáza kľúčov je prázdna alebo neplatná. Znova ju stiahnite pomocou: freemkv update-keys --url <keydb-url>",
+        "E8001": "Sťahovanie databázy kľúčov zlyhalo (HTTP {detail}). Skúste aktualizáciu znova.",
+        "E8002": "Databáza kľúčov je prázdna alebo neplatná. Znova ju stiahnite.",
         "E8003": "Nedá sa zapísať databáza kľúčov: {detail}",
-        "E8004": "Databázu kľúčov sa nepodarilo prečítať. Znova ju stiahnite pomocou: freemkv update-keys --url <keydb-url>",
+        "E8004": "Databázu kľúčov sa nepodarilo prečítať. Znova ju stiahnite.",
         "E8005": "Nedá sa načítať databáza kľúčov: {detail}",
         "E8006": "URL databázy kľúčov používa typ adresy, ktorý nie je povolený ({detail}).",
         "E8007": "Sťahovanie databázy kľúčov bolo presmerované príliš veľakrát. Skontrolujte URL a skúste to znova.",
@@ -310,7 +314,6 @@
         "E9006": "Vstupné dáta sú poškodené alebo nie sú v očakávanom formáte.",
         "E9007": "Obraz ISO je príliš veľký: {detail}",
         "E9008": "Pre tento vstup nie sú dostupné žiadne informácie.",
-        "E9009": "Diskový vstup sa takto nedá otvoriť — ide o internú chybu použitia.",
         "E9010": "Nepodarilo sa prečítať inicializačné dáta videostopy. Zdroj môže byť poškodený alebo nepodporovaný.",
         "E9011": "Interná chyba pri zostavovaní výstupu. Nahláste to, prosím.",
         "E9012": "Tento výstupný formát zatiaľ nie je podporovaný.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Chyba: --raw platí iba pre zdroj disc:// (kopíruje sektory z disku bez dešifrovania). '{source}' nie je disk. Odstráňte --raw alebo kopírujte z disku v mechanike.",
         "scan_failed": "Skenovanie zlyhalo: {detail}",
         "source_needs_scheme": "Chyba: '{source}' nie je použiteľná zdrojová URL — použite rozpoznanú predponu scheme:// (napr. iso://{source} pre obraz ISO alebo disc:// pre optickú mechaniku).",
+        "source_needs_container_scheme": "Chyba: '{source}' nie je použiteľná zdrojová URL — vyzerá to ako súbor {container}, preto použite {scheme}://{source} (alebo iso:// pre obraz ISO, disc:// pre optickú mechaniku).",
         "stream_none": "žiadne",
         "selection_disc_only": "Chyba: výber titulov a stôp (-t / -a / -s) platí len pre zdroj disc:// alebo iso://, ktorý sa načíta do zoznamu titulov. '{source}' je zdroj streamu/súboru bez titulov — odstráňte -t/-a/-s alebo kopírujte zo zdroja disc:// či iso://.",
         "title_out_of_range": "Titul {num} mimo rozsahu ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Chyba: zdroj nehlási žiadne sektory, takže nie je čo zapísať.",
         "E9061": "Chyba: tento priečinok obsahuje 3D disk (BDMV/STREAM/SSIF), ktorý dir:// zatiaľ nedokáže čítať. Kopírujte namiesto toho z disku alebo z ISO.",
         "E9062": "Chyba: súbory v priečinku nemožno usporiadať ako obraz disku — požadovaný súbor nie je tam, kde by ho mal disk.",
-        "E9063": "Chyba: tento priečinok je stále šifrovaný. dir:// potrebuje dešifrovanú zálohu; kopírujte namiesto toho z disku alebo z ISO.",
         "E9064": "Chyba: tento priečinok nie je záloha disku. Nasmerujte dir:// na priečinok, ktorý obsahuje VIDEO_TS alebo BDMV.",
         "E9065": "Chyba: súbor sa počas čítania zmenil, takže obraz by nezodpovedal priečinku. Nič sa nezapísalo.",
         "E9066": "Chyba: tento priečinok je príliš veľký na to, aby ho bolo možné prezentovať ako jeden obraz disku.",
         "E9067": "Chyba: názov súboru je príliš dlhý na uloženie na disk. Skráťte ho a skúste to znova: '{path}'.",
-        "E9068": "Chyba: priečinok obsahuje príliš veľa podpriečinkov na uloženie na disk: '{path}'.",
+        "E9068": "Chyba: priečinok obsahuje príliš veľa súborov alebo podpriečinkov na uloženie na disk: '{path}'.",
         "E9069": "Chyba: väčšina snímok tohto titulu leží mimo vlastných značiek prehrávania disku, takže výstup by bol výrazne neúplný.",
         "E9070": "Chyba: nič sa nezapísalo — všetky snímky boli zahodené. Výstup by bol prázdny.",
         "E9071": "Do výstupu sa zapisovalo po tom, ako už bol dokončený alebo zlyhal, takže údaje sa nepodarilo uložiť.",
         "E9072": "Údaje o stopách boli nastavené až po zapísaní hlavičky výstupu, takže ich nebolo možné použiť.",
+        "E9073": "Chyba: operácii vypršal časový limit, pretože príliš dlho nedošlo k žiadnemu postupu.",
+        "E9074": "MPG potrebuje videostopu, ktorú dokáže obsiahnuť (MPEG-1/2); tento titul žiadnu nemá. Použite namiesto toho mkv://.",
+        "E9075": "Výstup MPG skončil so zvukom alebo videom, ktoré sa nepodarilo zabaliť do programového toku, takže súbor je neúplný. Použite namiesto toho mkv://.",
+        "E9077": "Hotový súbor MKV neprešiel kontrolou spätného čítania ({detail}), preto nebol presunutý na miesto. Ripujte titul znova.",
+        "E9078": "Titul {detail} skončil skôr, ako sa dokončil jeho mux, preto nebol ponechaný žiadny súbor. Skúste titul znova.",
+        "E9079": "Medzisúbor remuxu by prepísal cieľ alebo svoj vlastný dočasný súbor. Zvoľte iné medziľahlé umiestnenie.",
+        "E9080": "Kopírovanie hotového súboru na miesto zapísalo nesprávny počet bajtov ({detail}). Skontrolujte voľné miesto a chyby v cieli a skúste to znova.",
+        "E9081": "Kopírovanie alebo kontrola hotového súboru sa zastavila skôr, ako ohlásila výsledok, preto súbor nebol presunutý na miesto. Skúste to znova.",
+        "E9083": "'{detail}' nie je jazyk, ktorý freemkv pozná. Opravte jazyk, alebo použite all/none.",
+        "E9084": "{detail} už existuje. Presuňte ho alebo vymažte, alebo zvoľte jeho nahradenie.",
+        "E9085": "Veľkosť čítacej dávky je nula, takže by sa nič neprečítalo. Nastavte aspoň 1 sektor.",
         "no_lang_match_subtitle_forced": "žiadna stopa vynútených titulkov tohto titulu nezodpovedá '{requested}' (dostupné vynútené titulky: {available}). Opravte jazyk alebo použite all/none.",
         "log_level_out_of_range": "--log-level: hodnota 0 je mimo rozsahu (1–4), ignoruje sa",
         "log_level_not_a_number": "--log-level: očakávalo sa číslo 1–4, prijaté '{value}', ignoruje sa",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Súbor Matroska",
             "m2ts": "  m2ts://path.m2ts         Súbor transportného toku BD",
             "mp4": "  mp4://path.mp4           Súbor MP4",
+            "mpg": "  mpg://path.mpg           Súbor programového streamu MPEG",
             "iso": "  iso://image.iso          Obraz ISO Blu-ray",
             "dir": "  dir://folder/            Dešifrovaný strom súborov v priečinku",
             "network": "  network://host:port      Tok TCP",
@@ -658,7 +673,7 @@
             "cancelling": "Ruší sa …",
             "nothing_eject": "Niet čo vysunúť — zdroj je súbor, nie mechanika.",
             "checking_updates": "Kontrolujú sa aktualizácie …",
-            "mp4_mismatch": "MP4 nedokáže uložiť video {codecs}. Zvoľte MKV, ktoré zachová všetko.",
+            "container_mismatch": "{container} nedokáže uložiť video {codecs}. Zvoľte namiesto toho MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} otvorené — počet titulov: {n}, kľúče: {keys}",
             "ready_convert": "Pripravené na konverziu",
@@ -695,7 +710,8 @@
             "pick_not_local": "Použiť možno iba lokálne súbory a priečinky: {p}",
             "reveal_failed": "Nepodarilo sa otvoriť priečinok v Prieskumníkovi: {e}",
             "scan_not_started": "Nepodarilo sa spustiť skenovanie zdroja: {detail}",
-            "scan_worker_stopped": "Proces skenovania zdroja sa zastavil skôr, ako vrátil výsledok."
+            "scan_worker_stopped": "Proces skenovania zdroja sa zastavil skôr, ako vrátil výsledok.",
+            "insert_disc_retry": "Vložte disk do jednotky a znova zvoľte „Spustiť kopírovanie“. Načíta sa iba jeho ID zväzku; disk sa znova neskopíruje."
         },
         "alert": {
             "rip_title": "Prebieha kopírovanie.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Vybrané tituly → MKV",
             "mp4": "Vybrané tituly → MP4",
+            "mpg": "Vybrané tituly → MPG",
             "m2ts": "Vybrané tituly → M2TS",
             "tracks": "Vybrané tituly → samostatné súbory stôp",
             "iso": "Celý disk → obraz ISO",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "upozornenie: titul {num}: žiadna stopa vynútených titulkov nezodpovedá '{requested}' (dostupné: {available}) — zachované je iba video."
     },
     "mux": {
-        "undelivered_header": "Poznámka: nasledujúce stopy (počet: {count}) sa nepodarilo zapísať a boli vynechané:"
+        "undelivered_header": "Poznámka: nasledujúce stopy (počet: {count}) sa nepodarilo zapísať a boli vynechané:",
+        "excluded_header": "Poznámka: nasledujúce stopy (počet: {count}) nemožno uložiť do formátu {container} a budú vynechané (na ich zachovanie použite {keep}://):",
+        "reason": {
+            "subtitle": "formát titulkov nemá mapovanie na {container}",
+            "audio": "zvukový kodek nemá mapovanie na {container}",
+            "video": "sekundárny videopohľad",
+            "video_unmappable": "videokodek nemá mapovanie na {container}",
+            "mp2_extension": "viackanálové rozšírenie MPEG-2 — {container} ho nedokáže uložiť (na jeho zachovanie použite mpg://); stereofónny základ zostane zachovaný",
+            "no_stream_id": "{container} už nemá pre túto stopu voľné číslo streamu"
+        }
     },
     "share": {
         "attach_zip": "Zip s profilom je príliš veľký pre text hlásenia — priložte {path} k hláseniu.",
         "zip_failed": "Nepodarilo sa vytvoriť zip s profilom: {error}"
+    },
+    "stop": {
+        "stopping": "Zastavuje sa …",
+        "waiting_for_drive": "Čaká sa na jednotku …",
+        "progress_kept": "Postup je zachovaný",
+        "finishing": "Dokončuje sa …",
+        "artifact_lock_failed": "Nepodarilo sa získať zámok na {name}; môže ho používať iný proces."
     }
 }

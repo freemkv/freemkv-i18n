@@ -91,15 +91,6 @@
             "descriptive_service": "Betimleme Hizmeti"
         }
     },
-    "mp4": {
-        "excluded_header": "Not: {count} iz bir MP4 içinde saklanamaz ve dışarıda bırakılacak (her şeyi korumak için mkv:// kullanın):",
-        "reason": {
-            "subtitle": "bit eşlem altyazı — MP4 yalnızca metin altyazı taşır",
-            "audio": "ses codec'inin MP4 karşılığı yok",
-            "video": "ikincil video görünümü",
-            "video_unmappable": "video codec'inin MP4 karşılığı yok"
-        }
-    },
     "rip": {
         "opening": "{device} açılıyor...",
         "waiting": "Disk bekleniyor...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "El sıkışma başarısız",
         "verbose_handshake_hint": "El sıkışma başarısız olmuş olabilir — ana bilgisayar sertifikası yok veya sürücü reddetti",
         "mapfile_summary": "Harita dosyası: {good} GB iyi, {unreadable} MB okunamaz, {pending} MB beklemede",
+        "staging_not_kept": "Hazırlanan kalıp saklanmadı: bu diskteki bir akış dosyasının konumu okunamadığı için yalnızca seçilen başlıklar okundu ve bu, diskin tamamının kalıbı değil.",
         "retry_with_multipass": "Daha fazlasını okumayı denemek için --multipass ile yeniden çalıştırın; mapfile'dan devam eder.",
         "nothing_to_patch": "Yamalanacak bir şey yok — tüm sektörler iyi",
         "patch_start": "Yamalanıyor: {good} GB iyi, {unreadable} MB okunamaz, {pending} MB beklemede",
@@ -260,7 +252,10 @@
         "E6018": "Hata: diskteki bir dosya içeriğini sektörler yerine satır içi olarak saklıyor ve bu okuma yolu bunu planlayamıyor. Okunsaydı ilgisiz sektörlere işaret edilirdi.",
         "E6019": "Hata: diskteki bir dosya kapladığı alanı listeliyor, ancak bu listenin her parçası boş veya hiçbir yeri göstermiyor, bu yüzden dosyanın okunabilir içeriği yok. Okunsaydı hiçbir şey üretilmez ya da ilgisiz sektörler kopyaya eklenirdi.",
         "E6020": "Disk kalıbı dosyası, bu kopyalamanın ihtiyaç duyduğu bir sektörden önce bitiyor; yani kalıp kırpılmış ya da eksik. Eksik kısım sıfırlarla doldurulmak yerine okuma durduruldu — kalıbı diskten yeniden oluşturun.",
-        "E7000": "Bu disk AACS şifre çözme anahtarlarına ihtiyaç duyuyor (Blu-ray/UHD), ancak hiçbiri bulunamadı. Şu komutla bir anahtar veritabanı indirin: freemkv update-keys --url <keydb-url>",
+        "E6021": "Disk kalıbı oluşturulamıyor: bu disk AACS veri yolu şifrelemesi kullanıyor ve bir akış dosyasının diskteki konumu okunamadı ({detail}); bu yüzden o dosyanın şifresi çözülemiyor ve kalıp hâlâ şifreli veri içerirdi. O dosyayı kullanmayan başlıklar yine de MKV'ye aktarılabilir ya da disk bir klasöre çıkarılabilir (o dosya hasarlı olarak bildirilir). Diski temizleyip yeniden denemek yardımcı olabilir.",
+        "E6022": "Bu kalıp ({detail}) bir MKV aktarımı için hazırlandı ve tüm diski değil, yalnızca hazırlandığı başlıkları içeriyor; bu yüzden disk kalıbı olarak kullanılamaz veya bir klasöre çıkarılamaz. Bu başlıkları MKV'ye aktarın ya da diskten yeni bir kalıp oluşturun.",
+        "E6023": "Bu diskteki bir HD DVD oynatma listesi okunamayacak kadar büyük olduğundan atlandı ve başlıklar bunun yerine diskin video kliplerinden belirlendi. Başlık adları, sırası ve bölümleri daha az doğru olabilir.",
+        "E7000": "Bu disk AACS şifre çözme anahtarlarına ihtiyaç duyuyor (Blu-ray/UHD), ancak hiçbiri bulunamadı. Bir anahtar veritabanı kurun veya güncelleyin, ardından tekrar deneyin.",
         "E7001": "Diskin güvenlik sertifikası çok kısa veya geçersiz.",
         "E7002": "Sürücü bu disk için güvenli bir oturum başlatmadı — başka bir program tarafından kullanılıyor olabilir. Diski kullanan diğer her şeyi kapatın ve tekrar deneyin.",
         "E7003": "Sürücü bu diskin güvenlik sertifikasını reddetti.",
@@ -272,7 +267,7 @@
         "E7009": "Diskin tanımlayıcısı okunamadı. Disk kirli veya hasarlı olabilir.",
         "E7010": "Diskin tanımlayıcısı doğrulanamadı. Disk hasarlı veya desteklenmeyen olabilir.",
         "E7011": "Bu diskin şifre çözme anahtarı hazırlanamadı.",
-        "E7013": "Şifre çözme başarısız — kurtarılan anahtar bu diskin verisini açmadı. Anahtar yanlış veya güncel olmayabilir; şununla yenileyin: freemkv update-keys --url <keydb-url>",
+        "E7013": "Şifre çözme başarısız — kurtarılan anahtar bu diskin verisini açmadı. Anahtar yanlış veya güncel olmayabilir; anahtar veritabanınızı güncelleyin ve tekrar deneyin.",
         "E7014": "CSS kimlik doğrulaması başarısız: sürücü bu DVD'nin şifresini çözmek için gereken anahtar değişimini kuramadı. Diski temizleyip yeniden takmayı deneyin. Sorun devam ederse sürücünüz CSS şifre çözmeyi tam olarak desteklemiyor olabilir.",
         "E7015": "Sürücü AACS ana bilgisayar sertifikasını reddetti ve bu sürücünün kilidi başka bir yolla açılamıyor.",
         "E7016": "Bu sürücü diski şifresini çözmek için gereken modda okuyamıyor ve güvenli oturum reddedildi. Bu sürücüde bu diskin şifresini çözmenin bir yolu kalmadı.",
@@ -285,7 +280,7 @@
         "E7023": "Bu disk kopya korumalı ve bu başlık için hiçbir anahtar kurtarılamadı, bu yüzden şifresi çözülemiyor (çıktı okunamaz olurdu).",
         "E7024": "Sürücünün güvenli el sıkışması için hiçbir anahtar kaynağından ana bilgisayar sertifikası mevcut değil.",
         "E7025": "Bu disk AACS veri yolu şifrelemesi kullanıyor, ancak sürücünün güvenli el sıkışmasından hiçbir veri yolu anahtarı alınamadı, bu yüzden verisinin şifresi çözülemez (çıktı okunamaz olurdu).",
-        "E7026": "Bu disk AACS 2.1 adli filigran (FMTS) kullanıyor ve bunun için hiçbir varyant anahtarı mevcut değil, bu yüzden film boşluklar olmadan yeniden oluşturulamaz. Anahtar veritabanınızı güncelleyin.",
+        "E7026": "Bu disk AACS 2.1 adli filigran (FMTS) kullanıyor ve bunun için hiçbir varyant anahtarı mevcut değil, bu yüzden film boşluklar olmadan yeniden oluşturulamaz. Anahtar veritabanınızı güncelleyin. Henüz hiçbir anahtar kaynağı bu diski içermiyorsa, diski bir kalıba kopyalayın ve anahtarlar yayımlandığında kalıbı dönüştürün.",
         "E7027": "Bu DVD'nin kopya koruması açılamadı, bu yüzden üzerindeki hiçbir başlık okunamıyor. Disk hasarlı olabilir veya bu sürümün desteklemediği bir varyant kullanıyor olabilir.",
         "E7028": "Çevrimiçi anahtar hizmetine ulaşılamadı, bu yüzden bu disk için anahtar olup olmadığı öğrenilemedi. Bu genellikle geçicidir — birkaç dakika bekleyip tekrar deneyin. Henüz eksik bir anahtar aramaya kalkmayın; sorun diskte değil, hizmetteydi.",
         "E7029": "Çevrimiçi anahtar hizmeti erişim belirtecini reddetti, bu yüzden yanıt vermedi. Ayarlar'daki anahtar hizmeti belirtecini (veya komut satırında --key-auth) düzeltip tekrar deneyin. Bu, diskin anahtarı olmadığı anlamına gelmez.",
@@ -293,11 +288,20 @@
         "E7031": "Bu diskin AACS anahtar dosyası eksik veya okunamadı. Diski temizleyip yeniden deneyin; yine başarısız olursa disk hasarlı olabilir.",
         "E7032": "Diskin tamamının şifresi çözülmüş bir kopyası (bir kalıp ya da bir klasör) oluşturulamıyor: diskin bir bölümü şifreli ve mevcut anahtarların hiçbiri onu açmıyor; bu yüzden kopya hâlâ şifreli parçalar içerirdi. Bunun yerine başlıkları MKV olarak çıkarın ya da şifreli bir kopya saklayın: diski ham olarak kopyalayın (komut satırında --raw veya uygulamada “Şifreli olarak koru (ham geçiş)”) ya da kaynak kalıbı olduğu gibi saklayın.",
         "E7033": "Anahtar kaynaklarınızda ana bilgisayar sertifikaları bulundu, ancak hiçbiri kullanılabilir değil (hasarlı veya eksik). Anahtar veritabanınızı güncelleyip yeniden deneyin.",
+        "E7034": "Bu diskin anahtarları, yalnızca diskin kendisinden okunabilen birim kimliğini (Volume ID) gerektiriyor. Tamamlamak için diski takın; tekrar kopyalanmayacaktır.",
+        "E7100": "Bu disk AACS 2.1 varyant anahtar bloğu kullanmıyor; bunun yerine standart anahtar türetme kullanılıyor.",
+        "E7101": "Bu diskin AACS 2.1 anahtar bloğu eksik, bu nedenle anahtarı türetilemiyor. Diski temizleyip yeniden deneyin.",
+        "E7102": "Kullanılabilir aygıt anahtarlarının hiçbiri bu diskin AACS 2.1 anahtar bloğuyla eşleşmiyor. Anahtar veritabanınızı güncelleyip yeniden deneyin.",
+        "E7103": "Bu diskin AACS 2.1 anahtarı, desteklenmeyen bir yazılımsal düzeltme adımı gerektiriyor.",
+        "E7104": "Bu diskin AACS 2.1 anahtarı, desteklenmeyen bir çevrimiçi sınama gerektiriyor.",
+        "E7106": "Bu diskin AACS 2.1 anahtar bloğunda varyant tablosu eksik, bu nedenle anahtarı türetilemiyor. Disk hasarlı olabilir.",
+        "E7107": "Bu diskin AACS 2.1 anahtar bloğu kendi varyant anahtar verilerinin dışını gösteriyor, bu nedenle anahtarı türetilemiyor. Disk hasarlı olabilir.",
+        "E7108": "Bu diskin AACS 2.1 anahtar bloğundan türetilen anahtar doğrulamayı geçemedi ve kullanılmadı. Anahtar veritabanınızı güncelleyip yeniden deneyin.",
         "E8000": "Anahtar veritabanı sunucusuna bağlanılamıyor: {detail}",
-        "E8001": "Anahtar veritabanı indirmesi başarısız (HTTP {detail}). Tekrar deneyin veya şunu çalıştırın: freemkv update-keys --url <keydb-url>",
-        "E8002": "Anahtar veritabanı boş veya geçersiz. Şununla yeniden indirin: freemkv update-keys --url <keydb-url>",
+        "E8001": "Anahtar veritabanı indirmesi başarısız (HTTP {detail}). Güncellemeyi tekrar deneyin.",
+        "E8002": "Anahtar veritabanı boş veya geçersiz. Yeniden indirin.",
         "E8003": "Anahtar veritabanı yazılamıyor: {detail}",
-        "E8004": "Anahtar veritabanı okunamadı. Şununla yeniden indirin: freemkv update-keys --url <keydb-url>",
+        "E8004": "Anahtar veritabanı okunamadı. Yeniden indirin.",
         "E8005": "Anahtar veritabanı yüklenemiyor: {detail}",
         "E8006": "Anahtar veritabanı URL'si izin verilmeyen bir adres türü kullanıyor ({detail}).",
         "E8007": "Anahtar veritabanı indirmesi çok fazla yönlendirildi. URL'yi kontrol edin ve tekrar deneyin.",
@@ -310,7 +314,6 @@
         "E9006": "Girdi verisi bozuk veya beklenen biçimde değil.",
         "E9007": "ISO imajı çok büyük: {detail}",
         "E9008": "Bu girdi için hiçbir bilgi mevcut değil.",
-        "E9009": "Disk girdisi bu şekilde açılamıyor — bu bir iç kullanım hatasıdır.",
         "E9010": "Video akışının kurulum verisi okunamadı. Kaynak hasarlı veya desteklenmeyen olabilir.",
         "E9011": "Çıktı oluşturulurken iç hata. Lütfen bunu bildirin.",
         "E9012": "Bu çıktı biçimi henüz desteklenmiyor.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Hata: --raw yalnızca bir disc:// kaynağına uygulanır (sektörleri şifrelerini çözmeden diskten kopyalar). '{source}' bir disk değil. --raw'ı kaldırın veya sürücüdeki diskten kopyalayın.",
         "scan_failed": "Tarama başarısız: {detail}",
         "source_needs_scheme": "Hata: '{source}' kullanılabilir bir kaynak URL değil — tanınan bir scheme:// öneki kullanın (örneğin bir ISO imajı için iso://{source} veya optik sürücü için disc://).",
+        "source_needs_container_scheme": "Hata: '{source}' kullanılabilir bir kaynak URL değil — bu bir {container} dosyası gibi görünüyor, bu yüzden {scheme}://{source} kullanın (veya ISO imajı için iso://, optik sürücü için disc://).",
         "stream_none": "yok",
         "selection_disc_only": "Hata: başlık ve iz seçimi (-t / -a / -s) yalnızca başlık listesine taranan disc:// veya iso:// kaynağı için geçerlidir. '{source}' başlığı olmayan bir akış/dosya kaynağıdır — -t/-a/-s seçeneklerini kaldırın veya disc:// ya da iso:// kaynağından kopyalayın.",
         "title_out_of_range": "{num} numaralı başlık aralık dışında ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Hata: kaynak hiç sektör bildirmiyor, bu yüzden yazılacak bir şey yok.",
         "E9061": "Hata: bu klasör bir 3D disk (BDMV/STREAM/SSIF) içeriyor ve dir:// bunu henüz okuyamıyor. Bunun yerine diskten veya bir ISO'dan kopyalayın.",
         "E9062": "Hata: klasördeki dosyalar bir disk imajı olarak düzenlenemiyor — gerekli bir dosya, bir diskin koyacağı yerde değil.",
-        "E9063": "Hata: bu klasör hâlâ şifreli. dir:// şifresi çözülmüş bir yedek gerektirir; bunun yerine diskten veya bir ISO'dan kopyalayın.",
         "E9064": "Hata: bu klasör bir disk yedeği değil. dir:// için VIDEO_TS veya BDMV içeren klasörü gösterin.",
         "E9065": "Hata: bir dosya okunurken değişti, bu yüzden imaj klasörle eşleşmezdi. Hiçbir şey yazılmadı.",
         "E9066": "Hata: bu klasör tek bir disk imajı olarak sunulamayacak kadar büyük.",
         "E9067": "Hata: bir dosya adı diskte saklanamayacak kadar uzun. Kısaltıp tekrar deneyin: '{path}'.",
-        "E9068": "Hata: bir klasör, diskte saklanamayacak kadar çok alt klasör içeriyor: '{path}'.",
+        "E9068": "Hata: bir klasör, diskte saklanamayacak kadar çok dosya veya alt klasör içeriyor: '{path}'.",
         "E9069": "Hata: bu başlığın karelerinin çoğu diskin kendi oynatma işaretlerinin dışında kaldı, bu yüzden çıktı ciddi ölçüde eksik olurdu.",
         "E9070": "Hata: hiçbir şey yazılmadı — tüm kareler atıldı. Çıktı boş olurdu.",
         "E9071": "Çıktı zaten tamamlandıktan ya da başarısız olduktan sonra ona yazılmaya çalışıldı; bu yüzden veriler kaydedilemedi.",
         "E9072": "Parça bilgileri, çıktının başlığı zaten yazıldıktan sonra ayarlandı; bu yüzden uygulanamadı.",
+        "E9073": "Hata: işlem, çok uzun süre ilerleme kaydedilmediği için zaman aşımına uğradı.",
+        "E9074": "MPG'nin taşıyabileceği bir video izi (MPEG-1/2) gerekir; bu başlıkta yok. Bunun yerine mkv:// kullanın.",
+        "E9075": "MPG çıktısı, program akışına paketlenemeyen ses veya video ile sona erdi; bu nedenle dosya eksik. Bunun yerine mkv:// kullanın.",
+        "E9077": "Tamamlanan MKV geri okuma denetiminden geçemedi ({detail}), bu yüzden yerine konmadı. Başlığı yeniden rip edin.",
+        "E9078": "{detail} numaralı başlık muxlama tamamlanmadan sona erdi, bu yüzden hiçbir dosya tutulmadı. Başlığı yeniden deneyin.",
+        "E9079": "Remux ara dosyası hedefin ya da kendi geçici dosyasının üzerine yazacaktı. Başka bir ara konum seçin.",
+        "E9080": "Tamamlanan dosya yerine kopyalanırken yanlış sayıda bayt yazıldı ({detail}). Hedefte boş alan ve hata olup olmadığını denetleyip yeniden deneyin.",
+        "E9081": "Tamamlanan dosyanın kopyalanması ya da denetimi sonuç bildirmeden durdu, bu yüzden dosya yerine konmadı. Yeniden deneyin.",
+        "E9083": "'{detail}' freemkv'nin tanıdığı bir dil değil. Dili düzeltin ya da all/none kullanın.",
+        "E9084": "{detail} zaten var. Taşıyın ya da silin veya değiştirilmesini seçin.",
+        "E9085": "Okuma toplu iş boyutu sıfır olduğundan hiçbir şey okunamaz. En az 1 sektör olarak ayarlayın.",
         "no_lang_match_subtitle_forced": "bu başlıkta '{requested}' ile eşleşen zorunlu altyazı yok (mevcut zorunlu altyazılar: {available}). Dili düzeltin veya all/none kullanın.",
         "log_level_out_of_range": "--log-level: 0 değeri aralık dışında (1–4), yok sayıldı",
         "log_level_not_a_number": "--log-level: 1–4 arası bir sayı bekleniyordu, '{value}' alındı, yok sayıldı",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Matroska dosyası",
             "m2ts": "  m2ts://path.m2ts         BD taşıma akışı dosyası",
             "mp4": "  mp4://path.mp4           MP4 dosyası",
+            "mpg": "  mpg://path.mpg           MPEG program akışı dosyası",
             "iso": "  iso://image.iso          Blu-ray ISO imajı",
             "dir": "  dir://folder/            Bir klasörde şifresi çözülmüş dosya ağacı",
             "network": "  network://host:port      TCP akışı",
@@ -658,7 +673,7 @@
             "cancelling": "İptal ediliyor …",
             "nothing_eject": "Çıkarılacak bir şey yok — kaynak bir dosya, sürücü değil.",
             "checking_updates": "Güncellemeler denetleniyor …",
-            "mp4_mismatch": "MP4, {codecs} videoyu saklayamaz. Her şeyi koruyan MKV'yi seçin.",
+            "container_mismatch": "{container} biçimi {codecs} videoyu saklayamaz. Bunun yerine MKV'yi seçin.",
             "opened_version": "freemkv {version}",
             "opened": "{label} açıldı — {n} başlık, anahtarlar: {keys}",
             "ready_convert": "Dönüştürmeye hazır",
@@ -695,7 +710,8 @@
             "pick_not_local": "Yalnızca yerel dosyalar ve klasörler kullanılabilir: {p}",
             "reveal_failed": "Klasör Dosya Gezgini'nde açılamadı: {e}",
             "scan_not_started": "Kaynak taraması başlatılamadı: {detail}",
-            "scan_worker_stopped": "Kaynak tarama işlemi bir sonuç döndürmeden durdu."
+            "scan_worker_stopped": "Kaynak tarama işlemi bir sonuç döndürmeden durdu.",
+            "insert_disc_retry": "Diski bir sürücüye takın, ardından tekrar “Kopyalamayı başlat”ı seçin. Yalnızca birim kimliği okunur; tekrar kopyalanmaz."
         },
         "alert": {
             "rip_title": "Bir kopyalama sürüyor.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Seçili başlıklar → MKV",
             "mp4": "Seçili başlıklar → MP4",
+            "mpg": "Seçili başlıklar → MPG",
             "m2ts": "Seçili başlıklar → M2TS",
             "tracks": "Seçili başlıklar → ayrı iz dosyaları",
             "iso": "Tüm disk → ISO imajı",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "uyarı: başlık {num}: '{requested}' ile eşleşen zorunlu altyazı yok (mevcut: {available}) — yalnızca video korunuyor."
     },
     "mux": {
-        "undelivered_header": "Not: {count} iz çıktıya yazılamadı ve dışarıda bırakıldı:"
+        "undelivered_header": "Not: {count} iz çıktıya yazılamadı ve dışarıda bırakıldı:",
+        "excluded_header": "Not: {count} iz {container} biçiminde saklanamaz ve dışarıda bırakılacak (bunları korumak için {keep}:// kullanın):",
+        "reason": {
+            "subtitle": "altyazı biçiminin {container} karşılığı yok",
+            "audio": "ses codec'inin {container} karşılığı yok",
+            "video": "ikincil video görünümü",
+            "video_unmappable": "video codec'inin {container} karşılığı yok",
+            "mp2_extension": "MPEG-2 çok kanallı uzantı — {container} biçimi bunu saklayamaz (korumak için mpg:// kullanın); stereo taban korunur",
+            "no_stream_id": "{container} biçiminde bu iz için boş akış numarası kalmadı"
+        }
     },
     "share": {
         "attach_zip": "Profil zip dosyası issue metni için çok büyük — {path} dosyasını issue'ya ekleyin.",
         "zip_failed": "Profil zip dosyası oluşturulamadı: {error}"
+    },
+    "stop": {
+        "stopping": "Durduruluyor …",
+        "waiting_for_drive": "Sürücü bekleniyor …",
+        "progress_kept": "İlerleme korunur",
+        "finishing": "Tamamlanıyor …",
+        "artifact_lock_failed": "{name} üzerindeki kilit alınamadı; başka bir işlem onu kullanıyor olabilir."
     }
 }

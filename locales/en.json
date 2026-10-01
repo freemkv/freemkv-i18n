@@ -91,15 +91,6 @@
             "descriptive_service": "Descriptive Service"
         }
     },
-    "mp4": {
-        "excluded_header": "Note: {count} track(s) can't be stored in an MP4 and will be left out (use mkv:// to keep everything):",
-        "reason": {
-            "subtitle": "bitmap subtitle — MP4 carries text subtitles only",
-            "audio": "audio codec has no MP4 mapping",
-            "video": "secondary video view",
-            "video_unmappable": "video codec has no MP4 mapping"
-        }
-    },
     "rip": {
         "opening": "Opening {device}...",
         "waiting": "Waiting for disc...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Handshake failed",
         "verbose_handshake_hint": "Handshake may have failed — no host cert, or drive rejected",
         "mapfile_summary": "Mapfile: {good} GB good, {unreadable} MB unreadable, {pending} MB pending",
+        "staging_not_kept": "The staged image was not kept: the location of a stream file on this disc could not be read, so only the chosen titles were read and it is not a whole-disc image.",
         "retry_with_multipass": "Re-run with --multipass to try to read more; it resumes from the mapfile.",
         "nothing_to_patch": "Nothing to patch — all sectors are good",
         "patch_start": "Patching: {good} GB good, {unreadable} MB unreadable, {pending} MB pending",
@@ -260,7 +252,10 @@
         "E6018": "Error: a file on the disc stores its content inline instead of in sectors, which this read path cannot plan. Reading it would have pointed at unrelated sectors.",
         "E6019": "Error: a file on the disc lists the space it occupies, but every part of that list is empty or points nowhere, so the file has no readable content. Reading it would have produced nothing, or spliced unrelated sectors into the rip.",
         "E6020": "Error: the disc image file ends before a sector this rip needs, so the image is truncated or incomplete. Reading stopped rather than fill the missing part with zeros — make a new image from the disc.",
-        "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Download a key database with: freemkv update-keys --url <keydb-url>",
+        "E6021": "A disc image can't be made: this disc uses AACS bus encryption, and the location of a stream file on the disc couldn't be read ({detail}), so that file can't be decrypted and the image would still hold encrypted data. Titles that don't use that file can still be ripped to MKV, or the disc can be extracted to a folder (that file is reported as damaged). Cleaning the disc and trying again may help.",
+        "E6022": "This image ({detail}) was staged for an MKV rip and holds only the titles it was staged for, not the whole disc, so it can't be used as a disc image or extracted to a folder. Rip those titles to MKV, or make a new image from the disc.",
+        "E6023": "An HD DVD playlist on this disc is too large to read, so it was skipped and the titles were worked out from the disc's video clips instead. Title names, order and chapters may be less accurate.",
+        "E7000": "This disc needs AACS decryption keys (Blu-ray/UHD), but none were found. Install or update a key database, then try again.",
         "E7001": "The disc's security certificate is too short or invalid.",
         "E7002": "The drive would not start a secure session for this disc — it may be in use by another program. Close anything else using the disc and try again.",
         "E7003": "The drive rejected this disc's security certificate.",
@@ -272,7 +267,7 @@
         "E7009": "Could not read the disc's identifier. The disc may be dirty or damaged.",
         "E7010": "The disc's identifier could not be verified. The disc may be damaged or unsupported.",
         "E7011": "Could not prepare this disc's decryption key.",
-        "E7013": "Decryption failed — the recovered key did not unlock this disc's data. The key may be wrong or outdated; refresh it with: freemkv update-keys --url <keydb-url>",
+        "E7013": "Decryption failed — the recovered key did not unlock this disc's data. The key may be wrong or outdated; update your key database and try again.",
         "E7014": "CSS authentication failed: the drive could not establish the key exchange needed to decrypt this DVD. Try cleaning the disc and reinserting it. If the problem persists, your drive may not fully support CSS decryption.",
         "E7015": "The drive rejected the AACS host certificate, and this drive can't be unlocked another way.",
         "E7016": "This drive can't read the disc in the mode needed to decrypt it, and the secure session was refused. No way to decrypt this disc remains on this drive.",
@@ -285,7 +280,7 @@
         "E7023": "This disc is copy-protected and no key could be recovered for this title, so it can't be decrypted (the output would be unreadable).",
         "E7024": "No host certificate is available from any key source for the drive's secure handshake.",
         "E7025": "This disc uses AACS bus encryption, but no bus key could be obtained from the drive's secure handshake, so its data can't be decrypted (the output would be unreadable).",
-        "E7026": "This disc uses AACS 2.1 forensic watermarking (FMTS) and no variant key is available for it, so the movie can't be rebuilt without gaps. Refresh your key database with: freemkv update-keys --url <keydb-url>. If no key source carries this disc yet, rip it to an image with 'freemkv disc:// iso://Disc.iso' and convert the image once the keys are published.",
+        "E7026": "This disc uses AACS 2.1 forensic watermarking (FMTS) and no variant key is available for it, so the movie can't be rebuilt without gaps. Update your key database. If no key source carries this disc yet, rip the disc to an image and convert the image once the keys are published.",
         "E7027": "This DVD's copy protection could not be unlocked, so no title on it can be read. The disc may be damaged, or use a variant this version does not handle.",
         "E7028": "The online key service could not be reached, so it never said whether this disc has a key. This is usually temporary — wait a few minutes and try again. Don't go looking for a missing key yet; the service was down, not the disc.",
         "E7029": "The online key service rejected the access token, so it would not answer. Fix the key-service token in Settings (or --key-auth on the command line) and try again. This does not mean the disc has no key.",
@@ -293,11 +288,20 @@
         "E7031": "This disc's AACS key file is missing or could not be read. Clean the disc and try again; if it still fails, the disc may be damaged.",
         "E7032": "A decrypted copy of the whole disc (an image or a folder) can't be made: part of the disc is encrypted and none of the available keys opens it, so the copy would still contain encrypted parts. Rip the titles to MKV instead, or keep an encrypted copy: copy the disc raw (--raw on the command line, or “Keep encrypted (raw passthrough)” in the app), or keep the source image as it is.",
         "E7033": "Host certificates were found in your key sources, but none of them is usable (damaged or incomplete). Refresh your key database and try again.",
+        "E7034": "This disc's keys need its Volume ID, which can only be read from the disc itself. Insert the disc to finish; it will not be ripped again.",
+        "E7100": "This disc does not use an AACS 2.1 variant key block; the standard key derivation is used instead.",
+        "E7101": "This disc's AACS 2.1 key block is incomplete, so its key can't be derived. Clean the disc and try again.",
+        "E7102": "None of the available device keys matches this disc's AACS 2.1 key block. Refresh your key database and try again.",
+        "E7103": "This disc's AACS 2.1 key needs a soft-correction step, which is not supported.",
+        "E7104": "This disc's AACS 2.1 key needs an online challenge, which is not supported.",
+        "E7106": "This disc's AACS 2.1 key block is missing its variant table, so its key can't be derived. The disc may be damaged.",
+        "E7107": "This disc's AACS 2.1 key block points outside its variant key data, so its key can't be derived. The disc may be damaged.",
+        "E7108": "The key derived from this disc's AACS 2.1 key block failed verification and was not used. Refresh your key database and try again.",
         "E8000": "Cannot connect to the key database server: {detail}",
-        "E8001": "Key database download failed (HTTP {detail}). Try again, or run: freemkv update-keys --url <keydb-url>",
-        "E8002": "The key database is empty or invalid. Re-download it with: freemkv update-keys --url <keydb-url>",
+        "E8001": "Key database download failed (HTTP {detail}). Try the update again.",
+        "E8002": "The key database is empty or invalid. Download it again.",
         "E8003": "Cannot write the key database: {detail}",
-        "E8004": "The key database could not be read. Re-download it with: freemkv update-keys --url <keydb-url>",
+        "E8004": "The key database could not be read. Download it again.",
         "E8005": "Cannot load the key database: {detail}",
         "E8006": "The key database URL uses an address type that isn't allowed ({detail}).",
         "E8007": "The key database download was redirected too many times. Check the URL and try again.",
@@ -310,7 +314,6 @@
         "E9006": "The input data is corrupted or not in the expected format.",
         "E9007": "ISO image too large: {detail}",
         "E9008": "No information is available for this input.",
-        "E9009": "Disc input can't be opened this way — this is an internal usage error.",
         "E9010": "The video stream's setup data could not be read. The source may be damaged or unsupported.",
         "E9011": "Internal error while building the output. Please report this.",
         "E9012": "This output format isn't supported yet.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Error: --raw only applies to a disc:// source (it copies the sectors off the disc without decrypting them). '{source}' is not a disc. Drop --raw, or rip from the disc in a drive.",
         "scan_failed": "Scan failed: {detail}",
         "source_needs_scheme": "Error: '{source}' is not a usable source URL — use a recognized scheme:// prefix (e.g. iso://{source} for an ISO image, or disc:// for the optical drive).",
+        "source_needs_container_scheme": "Error: '{source}' is not a usable source URL — it looks like a {container} file, so use {scheme}://{source} (or iso:// for an ISO image, disc:// for the optical drive).",
         "stream_none": "none",
         "selection_disc_only": "Error: title and stream selection (-t / -a / -s) applies only to a disc:// or iso:// source, which is scanned into a title list. '{source}' is a stream/file source with no titles — remove -t/-a/-s, or rip from a disc:// or iso:// source.",
         "title_out_of_range": "Title {num} out of range ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Error: the source reports no sectors, so there is nothing to write.",
         "E9061": "Error: this folder holds a 3D disc (BDMV/STREAM/SSIF), which dir:// cannot read yet. Rip from the disc or an ISO instead.",
         "E9062": "Error: the folder's files cannot be laid out as a disc image — a required file is not where a disc would put it.",
-        "E9063": "Error: this folder is still encrypted. dir:// needs a decrypted backup; rip from the disc or an ISO instead.",
         "E9064": "Error: this folder is not a disc backup. Point dir:// at the folder containing VIDEO_TS or BDMV.",
         "E9065": "Error: a file changed while it was being read, so the image would not match the folder. Nothing was written.",
         "E9066": "Error: this folder is too large to present as a single disc image.",
         "E9067": "Error: a file name is too long to store on a disc. Shorten it and try again: '{path}'.",
-        "E9068": "Error: a folder holds too many subfolders to store on a disc: '{path}'.",
+        "E9068": "Error: a folder holds too many files or subfolders to store on a disc: '{path}'.",
         "E9069": "Error: most of this title's frames fell outside the disc's own playback marks, so the output would be badly incomplete.",
         "E9070": "Error: nothing was written — every frame was discarded. The output would have been empty.",
         "E9071": "Error: the output was written to after it had already been finished or had failed, so the data could not be saved.",
         "E9072": "Error: track details were set after the output's header had already been written, so they could not be applied.",
+        "E9073": "Error: the operation timed out after making no progress for too long.",
+        "E9074": "MPG needs a video track it can carry (MPEG-1/2); this title has none. Use mkv:// instead.",
+        "E9075": "MPG output ended with audio or video that could not be packed into the program stream, so the file is incomplete. Use mkv:// instead.",
+        "E9077": "The finished MKV failed its read-back check ({detail}), so it was not put in place. Rip the title again.",
+        "E9078": "Title {detail} ended before its mux finished, so no file was kept. Try the title again.",
+        "E9079": "The remux staging file would overwrite the target or its own temporary file. Choose a different staging location.",
+        "E9080": "Copying the finished file into place wrote the wrong number of bytes ({detail}). Check the destination for free space and errors, then try again.",
+        "E9081": "Copying or checking the finished file stopped before it reported, so the file was not put in place. Try again.",
+        "E9083": "'{detail}' is not a language freemkv recognizes. Fix the language, or use all/none.",
+        "E9084": "{detail} already exists. Move or delete it, or choose to replace it.",
+        "E9085": "The read batch size is zero, so nothing could be read. Set it to at least 1 sector.",
         "no_lang_match_subtitle_forced": "no forced subtitle on this title matches '{requested}' (available forced subtitles: {available}). Fix the language, or use all/none.",
         "log_level_out_of_range": "--log-level: value 0 is out of range (1–4), ignored",
         "log_level_not_a_number": "--log-level: expected a number 1–4, got '{value}', ignored",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Matroska file",
             "m2ts": "  m2ts://path.m2ts         BD transport stream file",
             "mp4": "  mp4://path.mp4           MP4 file",
+            "mpg": "  mpg://path.mpg           MPEG program stream file",
             "iso": "  iso://image.iso          Blu-ray ISO image",
             "dir": "  dir://folder/            Decrypted file tree in a folder",
             "network": "  network://host:port      TCP stream",
@@ -658,7 +673,7 @@
             "cancelling": "Cancelling …",
             "nothing_eject": "Nothing to eject — the source is a file, not a drive.",
             "checking_updates": "Checking for updates …",
-            "mp4_mismatch": "MP4 cannot store {codecs} video. Choose MKV, which keeps everything.",
+            "container_mismatch": "{container} cannot store {codecs} video. Choose MKV instead.",
             "opened_version": "freemkv {version}",
             "opened": "{label} opened — {n} title(s), keys: {keys}",
             "ready_convert": "Ready to convert",
@@ -695,7 +710,8 @@
             "pick_not_local": "Only local files and folders can be used: {p}",
             "reveal_failed": "Could not open the folder in Explorer: {e}",
             "scan_not_started": "Could not start scanning the source: {detail}",
-            "scan_worker_stopped": "Source scan worker stopped before returning a result."
+            "scan_worker_stopped": "Source scan worker stopped before returning a result.",
+            "insert_disc_retry": "Insert the disc into a drive, then choose “Start rip” again. Only its Volume ID is read; it is not ripped again."
         },
         "alert": {
             "rip_title": "A rip is in progress.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Selected titles → MKV",
             "mp4": "Selected titles → MP4",
+            "mpg": "Selected titles → MPG",
             "m2ts": "Selected titles → M2TS",
             "tracks": "Selected titles → separate track files",
             "video_only": "Selected titles → video tracks only",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "warning: title {num}: no forced subtitle matches '{requested}' (available: {available}) — keeping video only."
     },
     "mux": {
-        "undelivered_header": "Note: {count} stream(s) could not be delivered and were left out:"
+        "undelivered_header": "Note: {count} stream(s) could not be delivered and were left out:",
+        "excluded_header": "Note: {count} track(s) can't be stored in {container} and will be left out (use {keep}:// to keep them):",
+        "reason": {
+            "subtitle": "subtitle format has no {container} mapping",
+            "audio": "audio codec has no {container} mapping",
+            "video": "secondary video view",
+            "video_unmappable": "video codec has no {container} mapping",
+            "mp2_extension": "MPEG-2 multichannel extension — {container} cannot store it (use mpg:// to keep it); the stereo base is kept",
+            "no_stream_id": "{container} has no stream number left for this track"
+        }
     },
     "share": {
         "attach_zip": "The profile zip is too large for the issue text — attach {path} to the issue.",
         "zip_failed": "Could not build the profile zip: {error}"
+    },
+    "stop": {
+        "stopping": "Stopping …",
+        "waiting_for_drive": "Waiting for the drive …",
+        "progress_kept": "Progress kept",
+        "finishing": "Finishing …",
+        "artifact_lock_failed": "Could not take the lock on {name}; another process may be using it."
     }
 }

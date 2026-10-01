@@ -91,15 +91,6 @@
             "descriptive_service": "Hangalámondás-szolgáltatás"
         }
     },
-    "mp4": {
-        "excluded_header": "Megjegyzés: {count} sáv nem tárolható MP4-ben, ezért kimarad (a teljes megőrzéshez használd az mkv:// formátumot):",
-        "reason": {
-            "subtitle": "képalapú felirat — az MP4 csak szöveges feliratot kezel",
-            "audio": "a hangkodekhez nincs MP4-leképezés",
-            "video": "másodlagos videónézet",
-            "video_unmappable": "a videókodekhez nincs MP4-leképezés"
-        }
-    },
     "rip": {
         "opening": "{device} megnyitása…",
         "waiting": "Várakozás a lemezre…",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Kézfogás sikertelen",
         "verbose_handshake_hint": "A kézfogás valószínűleg sikertelen volt — nincs gazdatanúsítvány, vagy a meghajtó elutasította",
         "mapfile_summary": "Térképfájl: {good} GB jó, {unreadable} MB olvashatatlan, {pending} MB függőben",
+        "staging_not_kept": "Az előkészített lemezkép nem maradt meg: a lemez egyik adatfolyam-fájljának helyét nem sikerült beolvasni, így csak a kiválasztott címek lettek beolvasva, és ez nem a teljes lemez képe.",
         "retry_with_multipass": "Futtassa újra a --multipass kapcsolóval, hogy többet olvasson be; a mapfile-ból folytatja.",
         "nothing_to_patch": "Nincs mit javítani — minden szektor jó",
         "patch_start": "Javítás: {good} GB jó, {unreadable} MB olvashatatlan, {pending} MB függőben",
@@ -260,7 +252,10 @@
         "E6018": "Hiba: a lemez egyik fájlja a tartalmát szektorok helyett beágyazva tárolja, amit ez az olvasási útvonal nem tud megtervezni. Beolvasásakor nem kapcsolódó szektorokra mutatott volna.",
         "E6019": "Hiba: a lemez egyik fájlja felsorolja az általa elfoglalt területet, de a lista minden eleme üres vagy sehová sem mutat, így a fájlnak nincs olvasható tartalma. Beolvasásakor semmi sem jött volna létre, vagy nem kapcsolódó szektorok kerültek volna a másolatba.",
         "E6020": "A lemezkép-fájl véget ér egy olyan szektor előtt, amelyre ennek a másolásnak szüksége van, így a lemezkép csonka vagy hiányos. Az olvasás leállt, ahelyett hogy a hiányzó részt nullákkal töltené ki — készítsen új lemezképet a lemezről.",
-        "E7000": "Ehhez a lemezhez AACS-visszafejtési kulcsok kellenek (Blu-ray/UHD), de egy sem található. Tölts le egy kulcsadatbázist: freemkv update-keys --url <keydb-url>",
+        "E6021": "Lemezkép nem készíthető: ez a lemez AACS-busztitkosítást használ, és egy adatfolyam-fájl lemezen belüli helyét nem sikerült beolvasni ({detail}), így ez a fájl nem fejthető vissza, és a lemezkép továbbra is titkosított adatokat tartalmazna. Az ezt a fájlt nem használó címek továbbra is kimásolhatók MKV-ba, vagy a lemez kibontható egy mappába (a fájl sérültként lesz jelentve). Segíthet a lemez megtisztítása és az újrapróbálkozás.",
+        "E6022": "Ez a lemezkép ({detail}) MKV-másoláshoz készült, és csak azokat a címeket tartalmazza, amelyekhez készült, nem a teljes lemezt, így nem használható lemezképként, és nem bontható ki mappába. Másolja ezeket a címeket MKV-ba, vagy készítsen új lemezképet a lemezről.",
+        "E6023": "A lemezen lévő egyik HD DVD-lejátszási lista túl nagy a beolvasáshoz, ezért kimaradt, és a címeket helyette a lemez videoklipjei alapján állapítottuk meg. A címek neve, sorrendje és fejezetei kevésbé pontosak lehetnek.",
+        "E7000": "Ehhez a lemezhez AACS-visszafejtési kulcsok kellenek (Blu-ray/UHD), de egy sem található. Telepíts vagy frissíts egy kulcsadatbázist, majd próbáld újra.",
         "E7001": "A lemez biztonsági tanúsítványa túl rövid vagy érvénytelen.",
         "E7002": "A meghajtó nem indított biztonságos munkamenetet ehhez a lemezhez — lehet, hogy egy másik program használja. Zárj be minden mást, ami a lemezt használja, és próbáld újra.",
         "E7003": "A meghajtó elutasította a lemez biztonsági tanúsítványát.",
@@ -272,7 +267,7 @@
         "E7009": "Nem sikerült beolvasni a lemez azonosítóját. A lemez koszos vagy sérült lehet.",
         "E7010": "A lemez azonosítóját nem sikerült ellenőrizni. A lemez sérült vagy nem támogatott lehet.",
         "E7011": "Nem sikerült előkészíteni a lemez visszafejtési kulcsát.",
-        "E7013": "A visszafejtés sikertelen — a helyreállított kulcs nem oldotta fel a lemez adatait. A kulcs hibás vagy elavult lehet; frissítsd: freemkv update-keys --url <keydb-url>",
+        "E7013": "A visszafejtés sikertelen — a helyreállított kulcs nem oldotta fel a lemez adatait. A kulcs hibás vagy elavult lehet; frissítsd a kulcsadatbázisodat, majd próbáld újra.",
         "E7014": "A CSS-hitelesítés sikertelen: a meghajtó nem tudta létrehozni a DVD visszafejtéséhez szükséges kulcscserét. Próbáld megtisztítani és újra behelyezni a lemezt. Ha a probléma továbbra is fennáll, lehet, hogy a meghajtód nem támogatja teljesen a CSS-visszafejtést.",
         "E7015": "A meghajtó elutasította az AACS gazdatanúsítványt, és ez a meghajtó másképp nem oldható fel.",
         "E7016": "Ez a meghajtó nem tudja olvasni a lemezt a visszafejtéséhez szükséges módban, és a biztonságos munkamenetet elutasította. Ezen a meghajtón nem maradt mód a lemez visszafejtésére.",
@@ -285,7 +280,7 @@
         "E7023": "Ez a lemez másolásvédett, és ehhez a címhez nem sikerült kulcsot helyreállítani, ezért nem fejthető vissza (a kimenet olvashatatlan lenne).",
         "E7024": "Egyik kulcsforrásból sem érhető el gazdatanúsítvány a meghajtó biztonságos kézfogásához.",
         "E7025": "Ez a lemez AACS-busztitkosítást használ, de a meghajtó biztonságos kézfogásából nem sikerült buszkulcsot szerezni, ezért az adatai nem fejthetők vissza (a kimenet olvashatatlan lenne).",
-        "E7026": "Ez a lemez AACS 2.1 kriminalisztikai vízjelezést (FMTS) használ, és nincs hozzá variánskulcs, ezért a film nem építhető újra hézagok nélkül. Frissítsd a kulcsadatbázisodat.",
+        "E7026": "Ez a lemez AACS 2.1 kriminalisztikai vízjelezést (FMTS) használ, és nincs hozzá variánskulcs, ezért a film nem építhető újra hézagok nélkül. Frissítsd a kulcsadatbázisodat. Ha még egyetlen kulcsforrás sem ismeri ezt a lemezt, másold ki a lemezt képfájlba, és alakítsd át a képfájlt, amint a kulcsok megjelennek.",
         "E7027": "Ennek a DVD-nek a másolásvédelmét nem sikerült feloldani, így egyetlen címe sem olvasható. A lemez sérült lehet, vagy olyan változatot használ, amelyet ez a verzió nem kezel.",
         "E7028": "Az online kulcsszolgáltatás nem volt elérhető, így nem derült ki, hogy van-e kulcs ehhez a lemezhez. Ez általában átmeneti — várj néhány percet, és próbáld újra. Még ne keress hiányzó kulcsot; a szolgáltatás volt elérhetetlen, nem a lemezzel van baj.",
         "E7029": "Az online kulcsszolgáltatás elutasította a hozzáférési tokent, ezért nem válaszolt. Javítsd a kulcsszolgáltatás tokenjét a Beállításokban (vagy a --key-auth kapcsolóval a parancssorban), és próbáld újra. Ez nem jelenti azt, hogy a lemezhez nincs kulcs.",
@@ -293,11 +288,20 @@
         "E7031": "A lemez AACS-kulcsfájlja hiányzik, vagy nem sikerült beolvasni. Tisztítsa meg a lemezt, és próbálja újra; ha a hiba továbbra is fennáll, a lemez sérült lehet.",
         "E7032": "A teljes lemez visszafejtett másolata (lemezkép vagy mappa) nem készíthető el: a lemez egy része titkosított, és egyik elérhető kulcs sem nyitja meg, így a másolat továbbra is titkosított részeket tartalmazna. Rippelje inkább MKV-ba a címeket, vagy tartson meg egy titkosított másolatot: másolja a lemezt nyersen (--raw a parancssorban, vagy „Titkosítva tartás (nyers átvitel)” az alkalmazásban), vagy tartsa meg a forrás lemezképet változatlanul.",
         "E7033": "A kulcsforrásaiban gazdatanúsítványokat találtunk, de egyik sem használható (sérült vagy hiányos). Frissítse a kulcsadatbázist, és próbálja újra.",
+        "E7034": "Ennek a lemeznek a kulcsaihoz szükség van a kötetazonosítójára (Volume ID), amely csak magáról a lemezről olvasható ki. Helyezd be a lemezt a befejezéshez; nem lesz újra kimásolva.",
+        "E7100": "Ez a lemez nem használ AACS 2.1 változatkulcs-blokkot; helyette a szabványos kulcsszármaztatás történik.",
+        "E7101": "A lemez AACS 2.1 kulcsblokkja hiányos, ezért a kulcsa nem származtatható. Tisztítsa meg a lemezt, és próbálja újra.",
+        "E7102": "Egyik elérhető eszközkulcs sem illik a lemez AACS 2.1 kulcsblokkjához. Frissítse a kulcsadatbázist, és próbálja újra.",
+        "E7103": "A lemez AACS 2.1 kulcsához szoftveres korrekciós lépés szükséges, amely nem támogatott.",
+        "E7104": "A lemez AACS 2.1 kulcsához online kihívás szükséges, amely nem támogatott.",
+        "E7106": "A lemez AACS 2.1 kulcsblokkjából hiányzik a változattábla, ezért a kulcsa nem származtatható. Lehet, hogy a lemez sérült.",
+        "E7107": "A lemez AACS 2.1 kulcsblokkja a változatkulcs-adatain kívülre mutat, ezért a kulcsa nem származtatható. Lehet, hogy a lemez sérült.",
+        "E7108": "A lemez AACS 2.1 kulcsblokkjából származtatott kulcs nem ment át az ellenőrzésen, ezért nem lett felhasználva. Frissítse a kulcsadatbázist, és próbálja újra.",
         "E8000": "Nem sikerült csatlakozni a kulcsadatbázis-kiszolgálóhoz: {detail}",
-        "E8001": "A kulcsadatbázis letöltése sikertelen (HTTP {detail}). Próbáld újra, vagy futtasd: freemkv update-keys --url <keydb-url>",
-        "E8002": "A kulcsadatbázis üres vagy érvénytelen. Töltsd le újra: freemkv update-keys --url <keydb-url>",
+        "E8001": "A kulcsadatbázis letöltése sikertelen (HTTP {detail}). Próbáld meg újra a frissítést.",
+        "E8002": "A kulcsadatbázis üres vagy érvénytelen. Töltsd le újra.",
         "E8003": "Nem sikerült írni a kulcsadatbázist: {detail}",
-        "E8004": "A kulcsadatbázist nem sikerült beolvasni. Töltsd le újra: freemkv update-keys --url <keydb-url>",
+        "E8004": "A kulcsadatbázist nem sikerült beolvasni. Töltsd le újra.",
         "E8005": "Nem sikerült betölteni a kulcsadatbázist: {detail}",
         "E8006": "A kulcsadatbázis URL-je nem engedélyezett címtípust használ ({detail}).",
         "E8007": "A kulcsadatbázis letöltését túl sokszor irányították át. Ellenőrizd az URL-t, és próbáld újra.",
@@ -310,7 +314,6 @@
         "E9006": "A bemeneti adat sérült, vagy nem a várt formátumú.",
         "E9007": "Az ISO-képfájl túl nagy: {detail}",
         "E9008": "Ehhez a bemenethez nem érhető el információ.",
-        "E9009": "A lemezbemenet nem nyitható meg ilyen módon — ez belső használati hiba.",
         "E9010": "A videó-adatfolyam beállítási adatait nem sikerült beolvasni. A forrás sérült vagy nem támogatott lehet.",
         "E9011": "Belső hiba a kimenet összeállítása közben. Kérjük, jelentsd ezt.",
         "E9012": "Ez a kimeneti formátum még nem támogatott.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Hiba: a --raw csak disc:// forrásra vonatkozik (visszafejtés nélkül másolja le a szektorokat a lemezről). A(z) „{source}” nem lemez. Hagyd el a --raw kapcsolót, vagy másolj a meghajtóban lévő lemezről.",
         "scan_failed": "A beolvasás sikertelen: {detail}",
         "source_needs_scheme": "Hiba: a(z) „{source}” nem használható forrás-URL — használj felismert scheme:// előtagot (pl. iso://{source} egy ISO-képhez, vagy disc:// az optikai meghajtóhoz).",
+        "source_needs_container_scheme": "Hiba: a(z) „{source}” nem használható forrás-URL — ez egy {container} fájlnak tűnik, ezért használd a {scheme}://{source} formátumot (vagy iso:// egy ISO-képhez, disc:// az optikai meghajtóhoz).",
         "stream_none": "nincs",
         "selection_disc_only": "Hiba: a cím- és sávválasztás (-t / -a / -s) csak disc:// vagy iso:// forrásra érvényes, amelyet címlistába olvasunk be. A '{source}' cím nélküli stream-/fájlforrás — távolítsd el a -t/-a/-s kapcsolókat, vagy másolj disc:// vagy iso:// forrásból.",
         "title_out_of_range": "A(z) {num}. cím tartományon kívül esik ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Hiba: a forrás egyetlen szektort sem jelez, így nincs mit kiírni.",
         "E9061": "Hiba: ez a mappa 3D-s lemezt tartalmaz (BDMV/STREAM/SSIF), amelyet a dir:// még nem tud olvasni. Másolj inkább a lemezről vagy egy ISO-ból.",
         "E9062": "Hiba: a mappa fájljai nem rendezhetők lemezképpé — egy szükséges fájl nem ott van, ahová egy lemez tenné.",
-        "E9063": "Hiba: ez a mappa még titkosított. A dir:// visszafejtett biztonsági másolatot igényel; másolj inkább a lemezről vagy egy ISO-ból.",
         "E9064": "Hiba: ez a mappa nem lemezről készült biztonsági másolat. A dir:// forrást a VIDEO_TS vagy BDMV mappát tartalmazó mappára irányítsd.",
         "E9065": "Hiba: egy fájl megváltozott olvasás közben, így a lemezkép nem egyezne a mappával. Semmi sem lett kiírva.",
         "E9066": "Hiba: ez a mappa túl nagy ahhoz, hogy egyetlen lemezképként legyen megjeleníthető.",
         "E9067": "Hiba: egy fájlnév túl hosszú ahhoz, hogy lemezen tárolható legyen. Rövidítsd le, és próbáld újra: „{path}”.",
-        "E9068": "Hiba: egy mappa túl sok almappát tartalmaz ahhoz, hogy lemezen tárolható legyen: „{path}”.",
+        "E9068": "Hiba: egy mappa túl sok fájlt vagy almappát tartalmaz ahhoz, hogy lemezen tárolható legyen: „{path}”.",
         "E9069": "Hiba: a cím képkockáinak többsége kívül esett a lemez saját lejátszási jelölésein, így a kimenet súlyosan hiányos lenne.",
         "E9070": "Hiba: semmi sem lett kiírva — minden képkocka el lett vetve. A kimenet üres lett volna.",
         "E9071": "A kimenetre azután történt írás, hogy az már lezárult vagy hibára futott, így az adatokat nem sikerült menteni.",
         "E9072": "A sávadatok beállítása azután történt, hogy a kimenet fejléce már ki lett írva, így nem sikerült alkalmazni őket.",
+        "E9073": "Hiba: a művelet túllépte az időkorlátot, mert túl sokáig nem történt előrehaladás.",
+        "E9074": "Az MPG-hez olyan videósáv kell, amelyet tárolni tud (MPEG-1/2); ennek a címnek nincs ilyen. Használj helyette mkv://-t.",
+        "E9075": "Az MPG-kimenet olyan hanggal vagy videóval ért véget, amelyet nem lehetett a programfolyamba csomagolni, ezért a fájl hiányos. Használd helyette a mkv:// célt.",
+        "E9077": "Az elkészült MKV nem ment át a visszaolvasási ellenőrzésen ({detail}), ezért nem került a helyére. Rippelje újra a címet.",
+        "E9078": "A(z) {detail}. cím véget ért, mielőtt a muxolása befejeződött volna, ezért nem maradt meg fájl. Próbálja újra a címet.",
+        "E9079": "A remux köztes fájlja felülírná a célt vagy a saját ideiglenes fájlját. Válasszon másik köztes helyet.",
+        "E9080": "Az elkészült fájl helyére másolása hibás számú bájtot írt ki ({detail}). Ellenőrizze a cél szabad helyét és hibáit, majd próbálja újra.",
+        "E9081": "Az elkészült fájl másolása vagy ellenőrzése leállt, mielőtt eredményt jelzett volna, ezért a fájl nem került a helyére. Próbálja újra.",
+        "E9083": "A(z) '{detail}' nem olyan nyelv, amelyet a freemkv ismer. Javítsa a nyelvet, vagy használja az all/none értéket.",
+        "E9084": "A(z) {detail} már létezik. Helyezze át vagy törölje, vagy válassza a cseréjét.",
+        "E9085": "Az olvasási köteg mérete nulla, így semmi sem olvasható. Állítsa legalább 1 szektorra.",
         "no_lang_match_subtitle_forced": "ennek a címnek egyetlen kényszerített felirata sem felel meg a következőnek: '{requested}' (elérhető kényszerített feliratok: {available}). Javítsd a nyelvet, vagy használd az all/none értéket.",
         "log_level_out_of_range": "--log-level: a 0 érték a tartományon kívül esik (1–4), figyelmen kívül hagyva",
         "log_level_not_a_number": "--log-level: 1–4 közötti szám várt, '{value}' érkezett, figyelmen kívül hagyva",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Matroska fájl",
             "m2ts": "  m2ts://path.m2ts         BD transzportfolyam fájl",
             "mp4": "  mp4://path.mp4           MP4-fájl",
+            "mpg": "  mpg://path.mpg           MPEG programfolyam-fájl",
             "iso": "  iso://image.iso          Blu-ray ISO-képfájl",
             "dir": "  dir://folder/            Visszafejtett fájlfa egy mappában",
             "network": "  network://host:port      TCP adatfolyam",
@@ -658,7 +673,7 @@
             "cancelling": "Megszakítás…",
             "nothing_eject": "Nincs mit kiadni — a forrás egy fájl, nem meghajtó.",
             "checking_updates": "Frissítések keresése…",
-            "mp4_mismatch": "Az MP4 nem tárolhat {codecs} videót. Válaszd az MKV-t, amely mindent megőriz.",
+            "container_mismatch": "A(z) {container} formátum nem tárolhat {codecs} videót. Válaszd helyette az MKV-t.",
             "opened_version": "freemkv {version}",
             "opened": "{label} megnyitva — {n} cím, kulcsok: {keys}",
             "ready_convert": "Kész az átalakításra",
@@ -695,7 +710,8 @@
             "pick_not_local": "Csak helyi fájlok és mappák használhatók: {p}",
             "reveal_failed": "Nem sikerült megnyitni a mappát az Intézőben: {e}",
             "scan_not_started": "Nem sikerült elindítani a forrás beolvasását: {detail}",
-            "scan_worker_stopped": "A forrásbeolvasó folyamat leállt, mielőtt eredményt adott volna."
+            "scan_worker_stopped": "A forrásbeolvasó folyamat leállt, mielőtt eredményt adott volna.",
+            "insert_disc_retry": "Helyezd be a lemezt egy meghajtóba, majd válaszd újra a „Kimásolás indítása” pontot. Csak a kötetazonosítója olvasódik be; nem másolódik ki újra."
         },
         "alert": {
             "rip_title": "Kimásolás van folyamatban.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Kiválasztott címek → MKV",
             "mp4": "Kiválasztott címek → MP4",
+            "mpg": "Kiválasztott címek → MPG",
             "m2ts": "Kiválasztott címek → M2TS",
             "tracks": "Kiválasztott címek → külön sávfájlok",
             "iso": "Teljes lemez → ISO-képfájl",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "figyelmeztetés: {num}. cím: egyetlen kényszerített felirat sem felel meg a következőnek: '{requested}' (elérhető: {available}) — csak a videó marad meg."
     },
     "mux": {
-        "undelivered_header": "Megjegyzés: {count} adatfolyamot nem sikerült kiírni, ezek kimaradtak:"
+        "undelivered_header": "Megjegyzés: {count} adatfolyamot nem sikerült kiírni, ezek kimaradtak:",
+        "excluded_header": "Megjegyzés: {count} sáv nem tárolható {container} formátumban, ezért kimarad (a megőrzésükhöz használd a {keep}:// formátumot):",
+        "reason": {
+            "subtitle": "a feliratformátumhoz nincs {container}-leképezés",
+            "audio": "a hangkodekhez nincs {container}-leképezés",
+            "video": "másodlagos videónézet",
+            "video_unmappable": "a videókodekhez nincs {container}-leképezés",
+            "mp2_extension": "MPEG-2 többcsatornás kiterjesztés — a(z) {container} formátum nem tudja tárolni (a megőrzéséhez használd az mpg:// formátumot); a sztereó alap megmarad",
+            "no_stream_id": "a(z) {container} formátumban nincs több szabad adatfolyam-szám ehhez a sávhoz"
+        }
     },
     "share": {
         "attach_zip": "A profil zip-fájlja túl nagy a hibajegy szövegéhez — csatold a(z) {path} fájlt a hibajegyhez.",
         "zip_failed": "Nem sikerült létrehozni a profil zip-fájlját: {error}"
+    },
+    "stop": {
+        "stopping": "Leállítás…",
+        "waiting_for_drive": "Várakozás a meghajtóra…",
+        "progress_kept": "A haladás megmarad",
+        "finishing": "Befejezés…",
+        "artifact_lock_failed": "Nem sikerült zárolni a(z) {name} elemet; lehet, hogy egy másik folyamat használja."
     }
 }

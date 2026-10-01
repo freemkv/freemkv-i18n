@@ -534,13 +534,10 @@ fn allowlist_check(file: &str, func: &str, actual_count: usize) -> Result<usize,
 }
 
 // I005 / N6 (IB1): a NEW allowlist, separate from the call-site ALLOWLIST above (X4-1).
-// Carries `keys.hddvd_unverified` (KU-I0) until freemkv's KU-F1 renders it and its
-// paired KU-F1i removes the entry. A now-used entry fails loudly (§8.1 R11).
+// Empty: KU-F1 rendered `keys.hddvd_unverified` and ST-F1 the five ST-I2 `stop.*` keys,
+// each removing its entry (§8.1 R11). A new en.json key freemkv does not render yet goes here.
 /// `(key, reason)` for every en.json key deliberately not (yet) used by freemkv.
-const ORPHAN_ALLOWLIST: &[(&str, &str)] = &[(
-    "keys.hddvd_unverified",
-    "added by KU-I0; rendered by freemkv only from KU-F1, which removes this entry (KU-F1i)",
-)];
+const ORPHAN_ALLOWLIST: &[(&str, &str)] = &[];
 
 /// §8.1 R11's assumption, made real (review fixup): checking `checked` cannot prove an
 /// ORPHAN_ALLOWLIST key is unused, because freemkv renders `keys.*` through bare
@@ -551,8 +548,11 @@ const ORPHAN_ALLOWLIST: &[(&str, &str)] = &[(
 /// entry is stale, and that is a failure, not a warning.
 ///
 /// `files` is `(display name, raw source text)` for every `.rs` file under FREEMKV_SRC.
-fn stale_orphan_allowlist_entries(files: &[(String, String)]) -> Vec<String> {
-    ORPHAN_ALLOWLIST
+fn stale_orphan_allowlist_entries(
+    allowlist: &[(&str, &str)],
+    files: &[(String, String)],
+) -> Vec<String> {
+    allowlist
         .iter()
         .filter_map(|(key, why)| {
             let quoted = format!("\"{key}\"");
@@ -675,7 +675,7 @@ fn freemkv_fallback_keys_ship_in_english_with_the_same_text() {
 
     // §8.1 R11: see stale_orphan_allowlist_entries' doc for why this greps raw source
     // text instead of using `checked`.
-    for problem in stale_orphan_allowlist_entries(&raw_sources) {
+    for problem in stale_orphan_allowlist_entries(ORPHAN_ALLOWLIST, &raw_sources) {
         problems.push(problem);
     }
 
@@ -705,9 +705,11 @@ fn allowlist_matches_by_expected_call_count_not_line() {
 // `strings::get`, unparsed here), so the old check could never catch a real stale entry.
 #[test]
 fn a_literal_key_in_freemkv_src_fails_as_stale() {
+    // A synthetic entry, so the self-test does not depend on the live list.
+    let allowlist = [("keys.hddvd_unverified", "until freemkv renders it")];
     let clean = [("other.rs".to_string(), "fn f() {}".to_string())];
     assert!(
-        stale_orphan_allowlist_entries(&clean).is_empty(),
+        stale_orphan_allowlist_entries(&allowlist, &clean).is_empty(),
         "not rendered anywhere: not stale"
     );
 
@@ -715,7 +717,7 @@ fn a_literal_key_in_freemkv_src_fails_as_stale() {
         "keys.rs".to_string(),
         "fn open_image() {\n    strings::get(\"keys.hddvd_unverified\")\n}".to_string(),
     )];
-    let stale = stale_orphan_allowlist_entries(&now_rendered);
+    let stale = stale_orphan_allowlist_entries(&allowlist, &now_rendered);
     assert_eq!(stale.len(), 1);
     assert!(stale[0].contains("keys.hddvd_unverified"), "{stale:?}");
     assert!(stale[0].contains("keys.rs:2"), "{stale:?}");

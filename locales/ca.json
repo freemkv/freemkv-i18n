@@ -91,15 +91,6 @@
             "descriptive_service": "Servei descriptiu"
         }
     },
-    "mp4": {
-        "excluded_header": "Nota: {count} pista(es) no es poden desar en un MP4 i s'ometran (useu mkv:// per conservar-ho tot):",
-        "reason": {
-            "subtitle": "subtítol de mapa de bits — MP4 només admet subtítols de text",
-            "audio": "el còdec d'àudio no té correspondència en MP4",
-            "video": "vista de vídeo secundària",
-            "video_unmappable": "el còdec de vídeo no té correspondència en MP4"
-        }
-    },
     "rip": {
         "opening": "S'està obrint {device}...",
         "waiting": "S'està esperant el disc...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Ha fallat la negociació",
         "verbose_handshake_hint": "És possible que hagi fallat la negociació — sense certificat d'amfitrió, o la unitat l'ha rebutjada",
         "mapfile_summary": "Fitxer de mapa: {good} GB correctes, {unreadable} MB il·legibles, {pending} MB pendents",
+        "staging_not_kept": "No s'ha conservat la imatge preparada: no s'ha pogut llegir la ubicació d'un fitxer de flux d'aquest disc, de manera que només s'han llegit els títols triats i no és una imatge de disc completa.",
         "retry_with_multipass": "Torneu a executar amb --multipass per intentar llegir més; es reprèn des del fitxer de mapa.",
         "nothing_to_patch": "Res a apedaçar — tots els sectors són correctes",
         "patch_start": "S'està apedaçant: {good} GB correctes, {unreadable} MB il·legibles, {pending} MB pendents",
@@ -260,7 +252,10 @@
         "E6018": "Error: un fitxer del disc emmagatzema el seu contingut en línia en lloc de en sectors, cosa que aquesta ruta de lectura no pot planificar. Llegir-lo hauria apuntat a sectors no relacionats.",
         "E6019": "Error: un fitxer del disc llista l'espai que ocupa, però cada part d'aquesta llista és buida o no apunta enlloc, així que el fitxer no té contingut llegible. Llegir-lo no hauria produït res, o hauria inserit sectors no relacionats a l'extracció.",
         "E6020": "El fitxer d'imatge de disc s'acaba abans d'un sector que necessita aquesta extracció, de manera que la imatge està truncada o incompleta. La lectura s'ha aturat en lloc d'omplir amb zeros la part que falta: torneu a crear la imatge a partir del disc.",
-        "E7000": "Aquest disc necessita claus de desxifratge AACS (Blu-ray/UHD), però no se n'ha trobat cap. Baixeu una base de dades de claus amb: freemkv update-keys --url <url-keydb>",
+        "E6021": "No es pot crear una imatge del disc: aquest disc fa servir el xifratge de bus AACS i no s'ha pogut llegir la ubicació d'un fitxer de flux al disc ({detail}), de manera que aquest fitxer no es pot desxifrar i la imatge encara contindria dades xifrades. Els títols que no facin servir aquest fitxer encara es poden extreure a MKV, o es pot extreure el disc a una carpeta (aquest fitxer es notifica com a malmès). Netejar el disc i tornar-ho a provar pot ajudar.",
+        "E6022": "Aquesta imatge ({detail}) es va preparar per a una extracció MKV i només conté els títols per als quals es va preparar, no tot el disc, de manera que no es pot fer servir com a imatge de disc ni extreure a una carpeta. Extraieu aquests títols a MKV o creeu una imatge nova a partir del disc.",
+        "E6023": "Una llista de reproducció HD DVD d'aquest disc és massa gran per llegir-la, així que s'ha omès i els títols s'han determinat a partir dels clips de vídeo del disc. Els noms, l'ordre i els capítols dels títols poden ser menys precisos.",
+        "E7000": "Aquest disc necessita claus de desxifratge AACS (Blu-ray/UHD), però no se n'ha trobat cap. Instal·leu o actualitzeu una base de dades de claus i torneu-ho a provar.",
         "E7001": "El certificat de seguretat del disc és massa curt o no és vàlid.",
         "E7002": "La unitat no ha volgut iniciar una sessió segura per a aquest disc — pot ser que l'estigui usant un altre programa. Tanqueu qualsevol altra cosa que estigui usant el disc i proveu-ho de nou.",
         "E7003": "La unitat ha rebutjat el certificat de seguretat d'aquest disc.",
@@ -272,7 +267,7 @@
         "E7009": "No s'ha pogut llegir l'identificador del disc. El disc pot estar brut o danyat.",
         "E7010": "No s'ha pogut verificar l'identificador del disc. El disc pot estar danyat o no ser compatible.",
         "E7011": "No s'ha pogut preparar la clau de desxifratge d'aquest disc.",
-        "E7013": "El desxifratge ha fallat — la clau recuperada no ha desbloquejat les dades d'aquest disc. La clau pot ser incorrecta o obsoleta; actualitzeu-la amb: freemkv update-keys --url <url-keydb>",
+        "E7013": "El desxifratge ha fallat — la clau recuperada no ha desbloquejat les dades d'aquest disc. La clau pot ser incorrecta o obsoleta; actualitzeu la base de dades de claus i torneu-ho a provar.",
         "E7014": "L'autenticació CSS ha fallat: la unitat no ha pogut establir l'intercanvi de claus necessari per desxifrar aquest DVD. Proveu de netejar el disc i tornar-lo a inserir. Si el problema persisteix, pot ser que la unitat no admeti del tot el desxifratge CSS.",
         "E7015": "La unitat ha rebutjat el certificat d'amfitrió AACS, i aquesta unitat no es pot desbloquejar d'una altra manera.",
         "E7016": "Aquesta unitat no pot llegir el disc en el mode necessari per desxifrar-lo, i la sessió segura s'ha rebutjat. No queda cap manera de desxifrar aquest disc en aquesta unitat.",
@@ -285,7 +280,7 @@
         "E7023": "Aquest disc està protegit contra còpia i no s'ha pogut recuperar cap clau per a aquest títol, així que no es pot desxifrar (la sortida seria il·legible).",
         "E7024": "No hi ha cap certificat d'amfitrió disponible en cap font de claus per a la negociació segura de la unitat.",
         "E7025": "Aquest disc usa xifratge de bus AACS, però no s'ha pogut obtenir cap clau de bus de la negociació segura de la unitat, així que les seves dades no es poden desxifrar (la sortida seria il·legible).",
-        "E7026": "Aquest disc usa la marca d'aigua forense AACS 2.1 (FMTS) i no hi ha cap clau de variant disponible, així que la pel·lícula no es pot reconstruir sense buits. Actualitzeu la base de dades de claus.",
+        "E7026": "Aquest disc usa la marca d'aigua forense AACS 2.1 (FMTS) i no hi ha cap clau de variant disponible, així que la pel·lícula no es pot reconstruir sense buits. Actualitzeu la base de dades de claus. Si encara cap font de claus no inclou aquest disc, extraieu-lo a una imatge i convertiu-la quan es publiquin les claus.",
         "E7027": "No s'ha pogut desbloquejar la protecció contra còpia d'aquest DVD, així que no es pot llegir cap títol seu. Pot ser que el disc estigui malmès, o que usi una variant que aquesta versió no gestiona.",
         "E7028": "No s'ha pogut contactar el servei de claus en línia, així que mai ha indicat si aquest disc té clau. Això sol ser temporal — espereu uns minuts i torneu-ho a provar. No busqueu encara una clau que falta; el servei estava caigut, no el disc.",
         "E7029": "El servei de claus en línia ha rebutjat el testimoni d'accés, així que no ha respost. Corregiu el testimoni del servei de claus a Configuració (o --key-auth a la línia d'ordres) i torneu-ho a provar. Això no vol dir que el disc no tingui clau.",
@@ -293,11 +288,20 @@
         "E7031": "Falta el fitxer de claus AACS d'aquest disc o no s'ha pogut llegir. Netegeu el disc i torneu-ho a provar; si continua fallant, pot ser que el disc estigui malmès.",
         "E7032": "No es pot fer una còpia desxifrada de tot el disc (una imatge o una carpeta): una part del disc està xifrada i cap de les claus disponibles l'obre, de manera que la còpia encara contindria parts xifrades. Extraieu els títols a MKV, o conserveu una còpia xifrada: copieu el disc en brut (--raw a la línia d'ordres, o «Conserva xifrat (pas directe en brut)» a l'aplicació), o conserveu la imatge d'origen tal com és.",
         "E7033": "S'han trobat certificats d'amfitrió a les vostres fonts de claus, però cap és utilitzable (malmès o incomplet). Actualitzeu la vostra base de dades de claus i torneu-ho a provar.",
+        "E7034": "Les claus d'aquest disc necessiten el seu ID del volum (Volume ID), que només es pot llegir des del disc mateix. Inseriu el disc per acabar; no es tornarà a extreure.",
+        "E7100": "Aquest disc no utilitza un bloc de claus de variants AACS 2.1; s'utilitza la derivació de claus estàndard.",
+        "E7101": "El bloc de claus AACS 2.1 d'aquest disc és incomplet, de manera que no se'n pot derivar la clau. Netegeu el disc i torneu-ho a provar.",
+        "E7102": "Cap de les claus de dispositiu disponibles no coincideix amb el bloc de claus AACS 2.1 d'aquest disc. Actualitzeu la vostra base de dades de claus i torneu-ho a provar.",
+        "E7103": "La clau AACS 2.1 d'aquest disc necessita un pas de correcció per programari, que no és compatible.",
+        "E7104": "La clau AACS 2.1 d'aquest disc necessita un repte en línia, que no és compatible.",
+        "E7106": "Al bloc de claus AACS 2.1 d'aquest disc li falta la taula de variants, de manera que no se'n pot derivar la clau. Pot ser que el disc estigui malmès.",
+        "E7107": "El bloc de claus AACS 2.1 d'aquest disc apunta fora de les seves dades de claus de variants, de manera que no se'n pot derivar la clau. Pot ser que el disc estigui malmès.",
+        "E7108": "La clau derivada del bloc de claus AACS 2.1 d'aquest disc no ha superat la verificació i no s'ha utilitzat. Actualitzeu la vostra base de dades de claus i torneu-ho a provar.",
         "E8000": "No es pot connectar al servidor de la base de dades de claus: {detail}",
-        "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu-ho a provar, o executeu: freemkv update-keys --url <url-keydb>",
-        "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>",
+        "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu a provar l'actualització.",
+        "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar.",
         "E8003": "No es pot escriure la base de dades de claus: {detail}",
-        "E8004": "No s'ha pogut llegir la base de dades de claus. Torneu-la a baixar amb: freemkv update-keys --url <url-keydb>",
+        "E8004": "No s'ha pogut llegir la base de dades de claus. Torneu-la a baixar.",
         "E8005": "No es pot carregar la base de dades de claus: {detail}",
         "E8006": "L'URL de la base de dades de claus usa un tipus d'adreça no permès ({detail}).",
         "E8007": "La baixada de la base de dades de claus s'ha redirigit massa vegades. Comproveu l'URL i proveu-ho de nou.",
@@ -310,7 +314,6 @@
         "E9006": "Les dades d'entrada estan malmeses o no tenen el format esperat.",
         "E9007": "Imatge ISO massa gran: {detail}",
         "E9008": "No hi ha informació disponible per a aquesta entrada.",
-        "E9009": "L'entrada de disc no es pot obrir d'aquesta manera — es tracta d'un error d'ús intern.",
         "E9010": "No s'han pogut llegir les dades de configuració del flux de vídeo. L'origen pot estar danyat o no ser compatible.",
         "E9011": "Error intern en construir la sortida. Informeu-ne, si us plau.",
         "E9012": "Aquest format de sortida encara no és compatible.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Error: --raw només s'aplica a un origen disc:// (copia els sectors del disc sense desxifrar-los). «{source}» no és un disc. Traieu --raw, o extraieu des del disc en una unitat.",
         "scan_failed": "L'anàlisi ha fallat: {detail}",
         "source_needs_scheme": "Error: «{source}» no és una URL d'origen utilitzable — useu un prefix esquema:// reconegut (p. ex. iso://{source} per a una imatge ISO, o disc:// per a la unitat òptica).",
+        "source_needs_container_scheme": "Error: «{source}» no és una URL d'origen utilitzable — sembla un fitxer {container}, així que useu {scheme}://{source} (o iso:// per a una imatge ISO, disc:// per a la unitat òptica).",
         "stream_none": "cap",
         "selection_disc_only": "Error: la selecció de títols i pistes (-t / -a / -s) només s'aplica a una font disc:// o iso://, que s'analitza en una llista de títols. '{source}' és una font de flux/fitxer sense títols — elimineu -t/-a/-s o extraieu des d'una font disc:// o iso://.",
         "title_out_of_range": "El títol {num} és fora de rang ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Error: l'origen no informa de cap sector, així que no hi ha res a escriure.",
         "E9061": "Error: aquesta carpeta conté un disc 3D (BDMV/STREAM/SSIF), que dir:// encara no pot llegir. Extraieu des del disc o d'una ISO en el seu lloc.",
         "E9062": "Error: els fitxers de la carpeta no es poden organitzar com una imatge de disc — un fitxer necessari no és on el posaria un disc.",
-        "E9063": "Error: aquesta carpeta encara està xifrada. dir:// necessita una còpia de seguretat desxifrada; extraieu des del disc o d'una ISO en el seu lloc.",
         "E9064": "Error: aquesta carpeta no és una còpia de seguretat d'un disc. Apunteu dir:// a la carpeta que conté VIDEO_TS o BDMV.",
         "E9065": "Error: un fitxer ha canviat mentre es llegia, així que la imatge no coincidiria amb la carpeta. No s'ha escrit res.",
         "E9066": "Error: aquesta carpeta és massa gran per presentar-se com una sola imatge de disc.",
         "E9067": "Error: un nom de fitxer és massa llarg per emmagatzemar-se en un disc. Escurceu-lo i torneu-ho a provar: «{path}».",
-        "E9068": "Error: una carpeta té massa subcarpetes per emmagatzemar-se en un disc: «{path}».",
+        "E9068": "Error: una carpeta té massa fitxers o subcarpetes per emmagatzemar-se en un disc: «{path}».",
         "E9069": "Error: la majoria dels fotogrames d'aquest títol han quedat fora de les pròpies marques de reproducció del disc, així que la sortida quedaria greument incompleta.",
         "E9070": "Error: no s'ha escrit res — s'han descartat tots els fotogrames. La sortida hauria quedat buida.",
         "E9071": "S'ha intentat escriure a la sortida després que ja s'hagués finalitzat o hagués fallat, de manera que les dades no s'han pogut desar.",
         "E9072": "Les dades de les pistes s'han definit després que ja s'hagués escrit la capçalera de la sortida, de manera que no s'han pogut aplicar.",
+        "E9073": "Error: l'operació ha excedit el temps d'espera en no progressar durant massa estona.",
+        "E9074": "L'MPG necessita una pista de vídeo que pugui contenir (MPEG-1/2); aquest títol no en té cap. Useu mkv:// al seu lloc.",
+        "E9075": "La sortida MPG ha acabat amb àudio o vídeo que no s'ha pogut empaquetar al flux de programa, de manera que el fitxer és incomplet. Useu mkv:// en lloc seu.",
+        "E9077": "L'MKV acabat no ha superat la comprovació de relectura ({detail}), així que no s'ha col·locat al seu lloc. Torna a fer el rip del títol.",
+        "E9078": "El títol {detail} ha acabat abans de completar el multiplexat, així que no s'ha conservat cap fitxer. Torna a provar el títol.",
+        "E9079": "El fitxer intermedi del remux sobreescriuria la destinació o el seu propi fitxer temporal. Tria una altra ubicació intermèdia.",
+        "E9080": "En copiar el fitxer acabat a la destinació s'ha escrit un nombre incorrecte de bytes ({detail}). Comprova l'espai lliure i els errors de la destinació i torna-ho a provar.",
+        "E9081": "La còpia o la comprovació del fitxer acabat s'ha aturat abans d'informar, així que el fitxer no s'ha col·locat al seu lloc. Torna-ho a provar.",
+        "E9083": "'{detail}' no és un idioma que freemkv reconegui. Corregeix l'idioma o fes servir all/none.",
+        "E9084": "{detail} ja existeix. Mou-lo o elimina'l, o tria substituir-lo.",
+        "E9085": "La mida del lot de lectura és zero, així que no es podria llegir res. Estableix-la en almenys 1 sector.",
         "no_lang_match_subtitle_forced": "cap subtítol forçat d'aquest títol coincideix amb «{requested}» (subtítols forçats disponibles: {available}). Corregiu l'idioma, o useu all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 és fora d'interval (1–4), s'ignora",
         "log_level_not_a_number": "--log-level: s'esperava un número 1–4, s'ha rebut '{value}', s'ignora",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Fitxer Matroska",
             "m2ts": "  m2ts://path.m2ts         Fitxer de flux de transport de BD",
             "mp4": "  mp4://path.mp4           Fitxer MP4",
+            "mpg": "  mpg://path.mpg           Fitxer de flux de programa MPEG",
             "iso": "  iso://image.iso          Imatge ISO de Blu-ray",
             "dir": "  dir://folder/            Arbre de fitxers desxifrat en una carpeta",
             "network": "  network://host:port      Flux TCP",
@@ -658,7 +673,7 @@
             "cancelling": "S'està cancel·lant …",
             "nothing_eject": "Res a expulsar — l'origen és un fitxer, no una unitat.",
             "checking_updates": "S'estan comprovant les actualitzacions …",
-            "mp4_mismatch": "MP4 no pot emmagatzemar vídeo {codecs}. Trieu MKV, que ho conserva tot.",
+            "container_mismatch": "{container} no pot emmagatzemar vídeo {codecs}. Trieu MKV al seu lloc.",
             "opened_version": "freemkv {version}",
             "opened": "{label} obert — {n} títol(s), claus: {keys}",
             "ready_convert": "A punt per convertir",
@@ -695,7 +710,8 @@
             "pick_not_local": "Només es poden fer servir fitxers i carpetes locals: {p}",
             "reveal_failed": "No s'ha pogut obrir la carpeta a l'Explorador de fitxers: {e}",
             "scan_not_started": "No s'ha pogut iniciar l'anàlisi de l'origen: {detail}",
-            "scan_worker_stopped": "El procés d'anàlisi de l'origen s'ha aturat abans de retornar un resultat."
+            "scan_worker_stopped": "El procés d'anàlisi de l'origen s'ha aturat abans de retornar un resultat.",
+            "insert_disc_retry": "Inseriu el disc en una unitat i torneu a triar «Inicia l'extracció». Només se'n llegeix l'ID del volum; no es torna a extreure."
         },
         "alert": {
             "rip_title": "Hi ha una extracció en curs.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Títols seleccionats → MKV",
             "mp4": "Títols seleccionats → MP4",
+            "mpg": "Títols seleccionats → MPG",
             "m2ts": "Títols seleccionats → M2TS",
             "tracks": "Títols seleccionats → fitxers de pista separats",
             "iso": "Disc sencer → imatge ISO",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "avís: títol {num}: cap subtítol forçat coincideix amb «{requested}» (disponibles: {available}) — es conserva només el vídeo."
     },
     "mux": {
-        "undelivered_header": "Nota: no s'han pogut lliurar {count} flux(os) i s'han deixat fora:"
+        "undelivered_header": "Nota: no s'han pogut lliurar {count} flux(os) i s'han deixat fora:",
+        "excluded_header": "Nota: {count} pista(es) no es poden desar en {container} i s'ometran (useu {keep}:// per conservar-les):",
+        "reason": {
+            "subtitle": "el format de subtítol no té correspondència en {container}",
+            "audio": "el còdec d'àudio no té correspondència en {container}",
+            "video": "vista de vídeo secundària",
+            "video_unmappable": "el còdec de vídeo no té correspondència en {container}",
+            "mp2_extension": "extensió multicanal MPEG-2 — {container} no la pot desar (useu mpg:// per conservar-la); es conserva la base estèreo",
+            "no_stream_id": "{container} no té cap número de flux lliure per a aquesta pista"
+        }
     },
     "share": {
         "attach_zip": "El zip del perfil és massa gran per al text de la incidència — adjunteu {path} a la incidència.",
         "zip_failed": "No s'ha pogut crear el zip del perfil: {error}"
+    },
+    "stop": {
+        "stopping": "S'està aturant …",
+        "waiting_for_drive": "S'està esperant la unitat …",
+        "progress_kept": "El progrés es conserva",
+        "finishing": "S'està acabant …",
+        "artifact_lock_failed": "No s'ha pogut obtenir el bloqueig de {name}; és possible que un altre procés l'estigui utilitzant."
     }
 }

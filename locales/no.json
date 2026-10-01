@@ -91,15 +91,6 @@
             "descriptive_service": "Beskrivende tjeneste"
         }
     },
-    "mp4": {
-        "excluded_header": "Merk: {count} spor kan ikke lagres i en MP4 og vil bli utelatt (bruk mkv:// for å beholde alt):",
-        "reason": {
-            "subtitle": "punktgrafikk-undertekst — MP4 bærer kun tekstundertekster",
-            "audio": "lydkodeken har ingen MP4-tilordning",
-            "video": "sekundær videovisning",
-            "video_unmappable": "videokodeken har ingen MP4-tilordning"
-        }
-    },
     "rip": {
         "opening": "Åpner {device} …",
         "waiting": "Venter på plate …",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Håndtrykk mislyktes",
         "verbose_handshake_hint": "Håndtrykket kan ha mislyktes — ingen vertssertifikat, eller stasjonen avviste det",
         "mapfile_summary": "Kartfil: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
+        "staging_not_kept": "Det klargjorte bildet ble ikke beholdt: plasseringen til en strømfil på denne platen kunne ikke leses, så bare de valgte titlene ble lest, og det er ikke et bilde av hele platen.",
         "retry_with_multipass": "Kjør på nytt med --multipass for å prøve å lese mer; det gjenopptar fra mapfilen.",
         "nothing_to_patch": "Ingenting å reparere — alle sektorer er gode",
         "patch_start": "Reparerer: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
@@ -260,7 +252,10 @@
         "E6018": "Feil: en fil på platen lagrer innholdet sitt direkte i stedet for i sektorer, noe denne lesebanen ikke kan planlegge for. Å lese den ville ha pekt på urelaterte sektorer.",
         "E6019": "Feil: en fil på platen lister opp plassen den opptar, men hver del av listen er tom eller peker ingen steder, så filen har intet lesbart innhold. Å lese den ville enten ikke ha gitt noe, eller satt inn urelaterte sektorer i rippingen.",
         "E6020": "Diskbildefilen slutter før en sektor denne rippingen trenger, så bildet er avkortet eller ufullstendig. Lesingen ble stoppet i stedet for å fylle den manglende delen med nuller — lag et nytt diskbilde fra platen.",
-        "E7000": "Denne platen trenger AACS-dekrypteringsnøkler (Blu-ray/UHD), men ingen ble funnet. Last ned en nøkkeldatabase med: freemkv update-keys --url <keydb-url>",
+        "E6021": "Et platebilde kan ikke lages: denne platen bruker AACS-busskryptering, og plasseringen til en strømfil på platen kunne ikke leses ({detail}), så den filen kan ikke dekrypteres, og bildet ville fortsatt inneholde krypterte data. Titler som ikke bruker den filen, kan fortsatt rippes til MKV, eller platen kan pakkes ut til en mappe (filen rapporteres som skadet). Å rengjøre platen og prøve igjen kan hjelpe.",
+        "E6022": "Dette bildet ({detail}) ble klargjort for en MKV-ripping og inneholder bare titlene det ble klargjort for, ikke hele platen, så det kan ikke brukes som platebilde eller pakkes ut til en mappe. Ripp de titlene til MKV, eller lag et nytt bilde fra platen.",
+        "E6023": "En HD DVD-spilleliste på denne platen er for stor til å leses, så den ble hoppet over, og titlene ble i stedet utledet fra platens videoklipp. Titlenavn, rekkefølge og kapitler kan være mindre nøyaktige.",
+        "E7000": "Denne platen trenger AACS-dekrypteringsnøkler (Blu-ray/UHD), men ingen ble funnet. Installer eller oppdater en nøkkeldatabase, og prøv igjen.",
         "E7001": "Platens sikkerhetssertifikat er for kort eller ugyldig.",
         "E7002": "Stasjonen ville ikke starte en sikker økt for denne platen — den kan være i bruk av et annet program. Lukk alt annet som bruker platen, og prøv igjen.",
         "E7003": "Stasjonen avviste denne platens sikkerhetssertifikat.",
@@ -272,7 +267,7 @@
         "E7009": "Kunne ikke lese platens identifikator. Platen kan være skitten eller skadet.",
         "E7010": "Platens identifikator kunne ikke verifiseres. Platen kan være skadet eller ikke støttet.",
         "E7011": "Kunne ikke klargjøre denne platens dekrypteringsnøkkel.",
-        "E7013": "Dekryptering mislyktes — den gjenopprettede nøkkelen låste ikke opp denne platens data. Nøkkelen kan være feil eller utdatert; oppdater den med: freemkv update-keys --url <keydb-url>",
+        "E7013": "Dekryptering mislyktes — den gjenopprettede nøkkelen låste ikke opp denne platens data. Nøkkelen kan være feil eller utdatert; oppdater nøkkeldatabasen din, og prøv igjen.",
         "E7014": "CSS-autentisering mislyktes: stasjonen kunne ikke etablere nøkkelutvekslingen som trengs for å dekryptere denne DVD-en. Prøv å rengjøre platen og sette den inn på nytt. Hvis problemet vedvarer, støtter stasjonen kanskje ikke CSS-dekryptering fullt ut.",
         "E7015": "Stasjonen avviste AACS-vertssertifikatet, og denne stasjonen kan ikke låses opp på annen måte.",
         "E7016": "Denne stasjonen kan ikke lese platen i modusen som trengs for å dekryptere den, og den sikre økten ble avvist. Ingen måte å dekryptere denne platen på gjenstår på denne stasjonen.",
@@ -285,7 +280,7 @@
         "E7023": "Denne platen er kopibeskyttet og ingen nøkkel kunne gjenopprettes for denne tittelen, så den kan ikke dekrypteres (utdata ville vært uleselig).",
         "E7024": "Ingen vertssertifikat er tilgjengelig fra noen nøkkelkilde for stasjonens sikre håndtrykk.",
         "E7025": "Denne platen bruker AACS-busskryptering, men ingen bussnøkkel kunne hentes fra stasjonens sikre håndtrykk, så dataene kan ikke dekrypteres (utdata ville vært uleselig).",
-        "E7026": "Denne platen bruker AACS 2.1 forensisk vannmerking (FMTS), og ingen variantnøkkel er tilgjengelig for den, så filmen kan ikke bygges opp igjen uten hull. Oppdater nøkkeldatabasen din.",
+        "E7026": "Denne platen bruker AACS 2.1 forensisk vannmerking (FMTS), og ingen variantnøkkel er tilgjengelig for den, så filmen kan ikke bygges opp igjen uten hull. Oppdater nøkkeldatabasen din. Hvis ingen nøkkelkilde ennå kjenner denne platen, kan du rippe platen til et image og konvertere imaget når nøklene blir publisert.",
         "E7027": "Kopibeskyttelsen på denne DVD-en kunne ikke låses opp, så ingen tittel på den kan leses. Platen kan være skadet, eller bruke en variant denne versjonen ikke håndterer.",
         "E7028": "Nettbasert nøkkeltjeneste kunne ikke nås, så den sa aldri om denne platen har en nøkkel. Dette er som regel midlertidig — vent noen minutter og prøv igjen. Ikke let etter en manglende nøkkel ennå; det var tjenesten som var nede, ikke platen.",
         "E7029": "Nettbasert nøkkeltjeneste avviste tilgangstokenet og svarte derfor ikke. Rett nøkkeltjenestens token i Innstillinger (eller --key-auth på kommandolinjen) og prøv igjen. Dette betyr ikke at platen mangler nøkkel.",
@@ -293,11 +288,20 @@
         "E7031": "Platens AACS-nøkkelfil mangler eller kunne ikke leses. Rengjør platen og prøv igjen; hvis det fortsatt mislykkes, kan platen være skadet.",
         "E7032": "En dekryptert kopi av hele platen (et platebilde eller en mappe) kan ikke lages: en del av platen er kryptert, og ingen av de tilgjengelige nøklene åpner den, så kopien ville fortsatt inneholde krypterte deler. Ripp titlene til MKV i stedet, eller behold en kryptert kopi: kopier platen rått (--raw på kommandolinjen, eller «Behold kryptert (rå gjennomstrømming)» i appen), eller behold kildebildet som det er.",
         "E7033": "Det ble funnet vertssertifikater i nøkkelkildene dine, men ingen av dem kan brukes (skadet eller ufullstendig). Oppdater nøkkeldatabasen din og prøv igjen.",
+        "E7034": "Nøklene til denne platen krever dens Volum-ID (Volume ID), som bare kan leses fra selve platen. Sett inn platen for å fullføre; den vil ikke bli rippet på nytt.",
+        "E7100": "Denne platen bruker ikke en AACS 2.1-variantnøkkelblokk; standard nøkkelavledning brukes i stedet.",
+        "E7101": "AACS 2.1-nøkkelblokken på denne platen er ufullstendig, så nøkkelen kan ikke avledes. Rengjør platen og prøv igjen.",
+        "E7102": "Ingen av de tilgjengelige enhetsnøklene passer til AACS 2.1-nøkkelblokken på denne platen. Oppdater nøkkeldatabasen din og prøv igjen.",
+        "E7103": "AACS 2.1-nøkkelen på denne platen krever et programvarekorreksjonstrinn, som ikke støttes.",
+        "E7104": "AACS 2.1-nøkkelen på denne platen krever en nettbasert utfordring, som ikke støttes.",
+        "E7106": "AACS 2.1-nøkkelblokken på denne platen mangler varianttabellen, så nøkkelen kan ikke avledes. Platen kan være skadet.",
+        "E7107": "AACS 2.1-nøkkelblokken på denne platen peker utenfor sine variantnøkkeldata, så nøkkelen kan ikke avledes. Platen kan være skadet.",
+        "E7108": "Nøkkelen som ble avledet fra AACS 2.1-nøkkelblokken på denne platen, besto ikke kontrollen og ble ikke brukt. Oppdater nøkkeldatabasen din og prøv igjen.",
         "E8000": "Kan ikke koble til nøkkeldatabaseserveren: {detail}",
-        "E8001": "Nedlasting av nøkkeldatabase mislyktes (HTTP {detail}). Prøv igjen, eller kjør: freemkv update-keys --url <keydb-url>",
-        "E8002": "Nøkkeldatabasen er tom eller ugyldig. Last den ned på nytt med: freemkv update-keys --url <keydb-url>",
+        "E8001": "Nedlasting av nøkkeldatabase mislyktes (HTTP {detail}). Prøv oppdateringen igjen.",
+        "E8002": "Nøkkeldatabasen er tom eller ugyldig. Last den ned på nytt.",
         "E8003": "Kan ikke skrive nøkkeldatabasen: {detail}",
-        "E8004": "Nøkkeldatabasen kunne ikke leses. Last den ned på nytt med: freemkv update-keys --url <keydb-url>",
+        "E8004": "Nøkkeldatabasen kunne ikke leses. Last den ned på nytt.",
         "E8005": "Kan ikke laste inn nøkkeldatabasen: {detail}",
         "E8006": "Nøkkeldatabase-URL-en bruker en adressetype som ikke er tillatt ({detail}).",
         "E8007": "Nedlastingen av nøkkeldatabasen ble omdirigert for mange ganger. Kontroller URL-en og prøv igjen.",
@@ -310,7 +314,6 @@
         "E9006": "Inndataene er ødelagte eller ikke i forventet format.",
         "E9007": "ISO-bilde for stort: {detail}",
         "E9008": "Ingen informasjon er tilgjengelig for denne inndataen.",
-        "E9009": "Plateinndata kan ikke åpnes på denne måten — dette er en intern bruksfeil.",
         "E9010": "Videostrømmens oppsettsdata kunne ikke leses. Kilden kan være skadet eller ikke støttet.",
         "E9011": "Intern feil under bygging av utdata. Vennligst rapporter dette.",
         "E9012": "Dette utdataformatet støttes ikke ennå.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Feil: --raw gjelder bare en disc://-kilde (den kopierer sektorene fra platen uten å dekryptere dem). «{source}» er ikke en plate. Fjern --raw, eller ripp fra platen i en stasjon.",
         "scan_failed": "Skanning mislyktes: {detail}",
         "source_needs_scheme": "Feil: «{source}» er ikke en brukbar kilde-URL — bruk et gjenkjent scheme://-prefiks (f.eks. iso://{source} for et ISO-bilde, eller disc:// for den optiske stasjonen).",
+        "source_needs_container_scheme": "Feil: «{source}» er ikke en brukbar kilde-URL — dette ser ut som en {container}-fil, så bruk {scheme}://{source} (eller iso:// for et ISO-bilde, disc:// for den optiske stasjonen).",
         "stream_none": "ingen",
         "selection_disc_only": "Feil: valg av titler og spor (-t / -a / -s) gjelder bare en disc:// eller iso://-kilde, som leses inn som en tittelliste. '{source}' er en strøm-/filkilde uten titler — fjern -t/-a/-s, eller rip fra en disc:// eller iso://-kilde.",
         "title_out_of_range": "Tittel {num} utenfor område ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Feil: kilden rapporterer ingen sektorer, så det er ingenting å skrive.",
         "E9061": "Feil: denne mappen inneholder en 3D-plate (BDMV/STREAM/SSIF), som dir:// ennå ikke kan lese. Ripp fra platen eller en ISO i stedet.",
         "E9062": "Feil: filene i mappen kan ikke legges ut som et platebilde — en påkrevd fil er ikke der en plate ville plassert den.",
-        "E9063": "Feil: denne mappen er fortsatt kryptert. dir:// trenger en dekryptert sikkerhetskopi; ripp fra platen eller en ISO i stedet.",
         "E9064": "Feil: denne mappen er ikke en platesikkerhetskopi. Pek dir:// på mappen som inneholder VIDEO_TS eller BDMV.",
         "E9065": "Feil: en fil endret seg mens den ble lest, så bildet ikke ville samsvare med mappen. Ingenting ble skrevet.",
         "E9066": "Feil: denne mappen er for stor til å presenteres som ett samlet platebilde.",
         "E9067": "Feil: et filnavn er for langt til å lagres på en plate. Forkort det og prøv igjen: «{path}».",
-        "E9068": "Feil: en mappe inneholder for mange undermapper til å lagres på en plate: «{path}».",
+        "E9068": "Feil: en mappe inneholder for mange filer eller undermapper til å lagres på en plate: «{path}».",
         "E9069": "Feil: de fleste av denne tittelens bilder lå utenfor platens egne avspillingsmerker, så utdataene ville vært svært ufullstendige.",
         "E9070": "Feil: ingenting ble skrevet — hvert eneste bilde ble forkastet. Utdataene ville ha vært tomme.",
         "E9071": "Det ble skrevet til utdata etter at de allerede var fullført eller hadde feilet, så dataene kunne ikke lagres.",
         "E9072": "Sporopplysningene ble satt etter at utdataenes header allerede var skrevet, så de kunne ikke tas i bruk.",
+        "E9073": "Feil: operasjonen fikk tidsavbrudd fordi det ikke var fremgang på for lenge.",
+        "E9074": "MPG trenger et videospor det kan inneholde (MPEG-1/2); denne tittelen har ingen. Bruk mkv:// i stedet.",
+        "E9075": "MPG-utdata endte med lyd eller video som ikke kunne pakkes inn i programstrømmen, så filen er ufullstendig. Bruk mkv:// i stedet.",
+        "E9077": "Den ferdige MKV-en besto ikke tilbakelesingskontrollen ({detail}), så den ble ikke satt på plass. Ripp tittelen på nytt.",
+        "E9078": "Tittel {detail} endte før muxingen var ferdig, så ingen fil ble beholdt. Prøv tittelen på nytt.",
+        "E9079": "Remux-mellomfilen ville overskrive målet eller sin egen midlertidige fil. Velg en annen mellomplassering.",
+        "E9080": "Kopieringen av den ferdige filen på plass skrev feil antall byte ({detail}). Sjekk målet for ledig plass og feil, og prøv igjen.",
+        "E9081": "Kopieringen eller kontrollen av den ferdige filen stoppet før den rapporterte, så filen ble ikke satt på plass. Prøv igjen.",
+        "E9083": "'{detail}' er ikke et språk freemkv kjenner igjen. Rett språket, eller bruk all/none.",
+        "E9084": "{detail} finnes allerede. Flytt eller slett den, eller velg å erstatte den.",
+        "E9085": "Lesebatchstørrelsen er null, så ingenting kunne leses. Sett den til minst 1 sektor.",
         "no_lang_match_subtitle_forced": "ingen tvunget undertekst på denne tittelen samsvarer med «{requested}» (tilgjengelige tvungne undertekster: {available}). Rett språket, eller bruk all/none.",
         "log_level_out_of_range": "--log-level: verdien 0 er utenfor området (1–4), ignorert",
         "log_level_not_a_number": "--log-level: forventet et tall 1–4, fikk '{value}', ignorert",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Matroska-fil",
             "m2ts": "  m2ts://path.m2ts         BD-transportstrømfil",
             "mp4": "  mp4://path.mp4           MP4-fil",
+            "mpg": "  mpg://path.mpg           MPEG-programstrømfil",
             "iso": "  iso://image.iso          Blu-ray ISO-bilde",
             "dir": "  dir://folder/            Dekryptert filtre i en mappe",
             "network": "  network://host:port      TCP-strøm",
@@ -658,7 +673,7 @@
             "cancelling": "Avbryter …",
             "nothing_eject": "Ingenting å løse ut — kilden er en fil, ikke en stasjon.",
             "checking_updates": "Ser etter oppdateringer …",
-            "mp4_mismatch": "MP4 kan ikke lagre {codecs}-video. Velg MKV, som beholder alt.",
+            "container_mismatch": "{container} kan ikke lagre {codecs}-video. Velg MKV i stedet.",
             "opened_version": "freemkv {version}",
             "opened": "{label} åpnet — {n} tittel(er), nøkler: {keys}",
             "ready_convert": "Klar til å konvertere",
@@ -695,7 +710,8 @@
             "pick_not_local": "Bare lokale filer og mapper kan brukes: {p}",
             "reveal_failed": "Kunne ikke åpne mappen i Filutforsker: {e}",
             "scan_not_started": "Kunne ikke starte skanningen av kilden: {detail}",
-            "scan_worker_stopped": "Skanneprosessen for kilden stoppet før den returnerte et resultat."
+            "scan_worker_stopped": "Skanneprosessen for kilden stoppet før den returnerte et resultat.",
+            "insert_disc_retry": "Sett platen inn i en stasjon, og velg «Start ripping» igjen. Bare Volum-ID-en leses; den rippes ikke på nytt."
         },
         "alert": {
             "rip_title": "En ripping pågår.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Valgte titler → MKV",
             "mp4": "Valgte titler → MP4",
+            "mpg": "Valgte titler → MPG",
             "m2ts": "Valgte titler → M2TS",
             "tracks": "Valgte titler → separate sporfiler",
             "iso": "Hele platen → ISO-bilde",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "advarsel: tittel {num}: ingen tvunget undertekst samsvarer med «{requested}» (tilgjengelig: {available}) — beholder bare video."
     },
     "mux": {
-        "undelivered_header": "Merk: {count} strøm(mer) kunne ikke leveres og ble utelatt:"
+        "undelivered_header": "Merk: {count} strøm(mer) kunne ikke leveres og ble utelatt:",
+        "excluded_header": "Merk: {count} spor kan ikke lagres i {container} og vil bli utelatt (bruk {keep}:// for å beholde dem):",
+        "reason": {
+            "subtitle": "undertekstformatet har ingen {container}-tilordning",
+            "audio": "lydkodeken har ingen {container}-tilordning",
+            "video": "sekundær videovisning",
+            "video_unmappable": "videokodeken har ingen {container}-tilordning",
+            "mp2_extension": "MPEG-2-flerkanalsutvidelse — {container} kan ikke lagre den (bruk mpg:// for å beholde den); stereobasen beholdes",
+            "no_stream_id": "{container} har ikke flere ledige strømnumre til dette sporet"
+        }
     },
     "share": {
         "attach_zip": "Profil-zip-filen er for stor for saksteksten — legg ved {path} i saken.",
         "zip_failed": "Kunne ikke lage profil-zip-filen: {error}"
+    },
+    "stop": {
+        "stopping": "Stopper …",
+        "waiting_for_drive": "Venter på stasjonen …",
+        "progress_kept": "Fremgangen beholdes",
+        "finishing": "Fullfører …",
+        "artifact_lock_failed": "Kunne ikke ta låsen på {name}; en annen prosess bruker den kanskje."
     }
 }

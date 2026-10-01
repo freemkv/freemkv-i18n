@@ -91,15 +91,6 @@
             "descriptive_service": "Serviciu descriptiv"
         }
     },
-    "mp4": {
-        "excluded_header": "Notă: {count} pistă/piste nu pot fi stocate într-un MP4 și vor fi omise (folosește mkv:// pentru a păstra totul):",
-        "reason": {
-            "subtitle": "subtitrare de tip imagine — MP4 acceptă doar subtitrări text",
-            "audio": "codecul audio nu are corespondent MP4",
-            "video": "vizualizare video secundară",
-            "video_unmappable": "codecul video nu are corespondent MP4"
-        }
-    },
     "rip": {
         "opening": "Se deschide {device}...",
         "waiting": "Se așteaptă discul...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Handshake eșuat",
         "verbose_handshake_hint": "Handshake-ul poate să fi eșuat — fără certificat gazdă sau unitatea a respins",
         "mapfile_summary": "Fișier de mapare: {good} GB buni, {unreadable} MB ilizibili, {pending} MB în așteptare",
+        "staging_not_kept": "Imaginea pregătită nu a fost păstrată: locația unui fișier de flux de pe acest disc nu a putut fi citită, deci au fost citite doar titlurile alese și nu este o imagine a întregului disc.",
         "retry_with_multipass": "Rulați din nou cu --multipass pentru a încerca să citiți mai mult; reia de la fișierul de hartă.",
         "nothing_to_patch": "Nimic de corectat — toate sectoarele sunt bune",
         "patch_start": "Se corectează: {good} GB buni, {unreadable} MB ilizibili, {pending} MB în așteptare",
@@ -260,7 +252,10 @@
         "E6018": "Eroare: un fișier de pe disc își stochează conținutul direct în loc de în sectoare, ceva ce această rutină de citire nu poate planifica. Citirea lui ar fi indicat spre sectoare fără legătură.",
         "E6019": "Eroare: un fișier de pe disc listează spațiul pe care îl ocupă, dar fiecare parte a acelei liste este goală sau nu indică nicăieri, deci fișierul nu are conținut care poate fi citit. Citirea lui nu ar fi produs nimic, sau ar fi inserat sectoare fără legătură în extragere.",
         "E6020": "Fișierul imagine al discului se termină înaintea unui sector de care are nevoie această extragere, deci imaginea este trunchiată sau incompletă. Citirea a fost oprită în loc să completeze cu zerouri partea lipsă — creați din nou imaginea de pe disc.",
-        "E7000": "Acest disc are nevoie de chei de decriptare AACS (Blu-ray/UHD), dar nu s-a găsit niciuna. Descarcă o bază de date de chei cu: freemkv update-keys --url <keydb-url>",
+        "E6021": "Nu se poate crea o imagine de disc: acest disc folosește criptarea de magistrală AACS, iar locația unui fișier de flux pe disc nu a putut fi citită ({detail}), deci acel fișier nu poate fi decriptat și imaginea ar conține în continuare date criptate. Titlurile care nu folosesc acel fișier pot fi în continuare extrase în MKV, sau discul poate fi extras într-un dosar (acel fișier este raportat ca deteriorat). Curățarea discului și o nouă încercare pot ajuta.",
+        "E6022": "Această imagine ({detail}) a fost pregătită pentru o extragere în MKV și conține doar titlurile pentru care a fost pregătită, nu întregul disc, deci nu poate fi folosită ca imagine de disc și nici extrasă într-un dosar. Extrageți acele titluri în MKV sau creați o imagine nouă de pe disc.",
+        "E6023": "O listă de redare HD DVD de pe acest disc este prea mare pentru a fi citită, așa că a fost omisă, iar titlurile au fost determinate în schimb din clipurile video ale discului. Numele, ordinea și capitolele titlurilor pot fi mai puțin exacte.",
+        "E7000": "Acest disc are nevoie de chei de decriptare AACS (Blu-ray/UHD), dar nu s-a găsit niciuna. Instalează sau actualizează o bază de date de chei, apoi încearcă din nou.",
         "E7001": "Certificatul de securitate al discului este prea scurt sau invalid.",
         "E7002": "Unitatea nu a pornit o sesiune securizată pentru acest disc — poate fi folosită de un alt program. Închide orice altceva folosește discul și încearcă din nou.",
         "E7003": "Unitatea a respins certificatul de securitate al acestui disc.",
@@ -272,7 +267,7 @@
         "E7009": "Nu s-a putut citi identificatorul discului. Discul poate fi murdar sau deteriorat.",
         "E7010": "Identificatorul discului nu a putut fi verificat. Discul poate fi deteriorat sau neacceptat.",
         "E7011": "Nu s-a putut pregăti cheia de decriptare a acestui disc.",
-        "E7013": "Decriptare eșuată — cheia recuperată nu a deblocat datele acestui disc. Cheia poate fi greșită sau învechită; reîmprospăteaz-o cu: freemkv update-keys --url <keydb-url>",
+        "E7013": "Decriptare eșuată — cheia recuperată nu a deblocat datele acestui disc. Cheia poate fi greșită sau învechită; actualizează baza de date de chei, apoi încearcă din nou.",
         "E7014": "Autentificarea CSS a eșuat: unitatea nu a putut stabili schimbul de chei necesar pentru a decripta acest DVD. Încearcă să cureți discul și să-l reintroduci. Dacă problema persistă, este posibil ca unitatea ta să nu accepte complet decriptarea CSS.",
         "E7015": "Unitatea a respins certificatul gazdă AACS, iar această unitate nu poate fi deblocată în alt mod.",
         "E7016": "Această unitate nu poate citi discul în modul necesar pentru a-l decripta, iar sesiunea securizată a fost refuzată. Nu mai rămâne nicio cale de a decripta acest disc pe această unitate.",
@@ -285,7 +280,7 @@
         "E7023": "Acest disc este protejat la copiere și nu s-a putut recupera nicio cheie pentru acest titlu, deci nu poate fi decriptat (ieșirea ar fi ilizibilă).",
         "E7024": "Niciun certificat gazdă nu este disponibil de la vreo sursă de chei pentru handshake-ul securizat al unității.",
         "E7025": "Acest disc folosește criptare de magistrală AACS, dar nu s-a putut obține nicio cheie de magistrală din handshake-ul securizat al unității, deci datele lui nu pot fi decriptate (ieșirea ar fi ilizibilă).",
-        "E7026": "Acest disc folosește filigranare criminalistică AACS 2.1 (FMTS) și nu este disponibilă nicio cheie de variantă pentru el, deci filmul nu poate fi reconstruit fără goluri. Actualizează baza de date de chei.",
+        "E7026": "Acest disc folosește filigranare criminalistică AACS 2.1 (FMTS) și nu este disponibilă nicio cheie de variantă pentru el, deci filmul nu poate fi reconstruit fără goluri. Actualizează baza de date de chei. Dacă nicio sursă de chei nu conține încă acest disc, extrage discul într-o imagine și convertește imaginea după ce cheile sunt publicate.",
         "E7027": "Protecția anticopiere a acestui DVD nu a putut fi deblocată, deci niciun titlu de pe el nu poate fi citit. Discul poate fi deteriorat, sau poate folosi o variantă pe care această versiune nu o gestionează.",
         "E7028": "Serviciul de chei online nu a putut fi contactat, deci nu a spus niciodată dacă acest disc are o cheie. Acest lucru este de obicei temporar — așteaptă câteva minute și încearcă din nou. Nu căuta încă o cheie lipsă; serviciul era indisponibil, nu discul.",
         "E7029": "Serviciul de chei online a respins tokenul de acces, deci nu a răspuns. Corectează tokenul serviciului de chei din Setări (sau --key-auth în linia de comandă) și încearcă din nou. Asta nu înseamnă că discul nu are cheie.",
@@ -293,11 +288,20 @@
         "E7031": "Fișierul de chei AACS al acestui disc lipsește sau nu a putut fi citit. Curățați discul și încercați din nou; dacă eroarea persistă, discul poate fi deteriorat.",
         "E7032": "Nu se poate crea o copie decriptată a întregului disc (o imagine sau un director): o parte a discului este criptată și niciuna dintre cheile disponibile nu o deschide, așa că respectiva copie ar conține în continuare părți criptate. Extrageți în schimb titlurile în MKV sau păstrați o copie criptată: copiați discul brut (--raw în linia de comandă sau „Păstrează criptat (transfer brut)” în aplicație) ori păstrați imaginea sursă așa cum este.",
         "E7033": "Au fost găsite certificate gazdă în sursele dvs. de chei, dar niciunul nu este utilizabil (deteriorat sau incomplet). Actualizați baza de date de chei și încercați din nou.",
+        "E7034": "Cheile acestui disc necesită ID-ul de volum, care poate fi citit doar de pe disc. Introdu discul pentru a finaliza; nu va fi extras din nou.",
+        "E7100": "Acest disc nu folosește un bloc de chei de variante AACS 2.1; se folosește în schimb derivarea standard a cheii.",
+        "E7101": "Blocul de chei AACS 2.1 al acestui disc este incomplet, așa că cheia sa nu poate fi derivată. Curățați discul și încercați din nou.",
+        "E7102": "Niciuna dintre cheile de dispozitiv disponibile nu se potrivește cu blocul de chei AACS 2.1 al acestui disc. Actualizați baza de date de chei și încercați din nou.",
+        "E7103": "Cheia AACS 2.1 a acestui disc necesită un pas de corecție software, care nu este acceptat.",
+        "E7104": "Cheia AACS 2.1 a acestui disc necesită o provocare online, care nu este acceptată.",
+        "E7106": "Din blocul de chei AACS 2.1 al acestui disc lipsește tabelul de variante, așa că cheia sa nu poate fi derivată. Discul poate fi deteriorat.",
+        "E7107": "Blocul de chei AACS 2.1 al acestui disc indică în afara datelor sale de chei de variante, așa că cheia sa nu poate fi derivată. Discul poate fi deteriorat.",
+        "E7108": "Cheia derivată din blocul de chei AACS 2.1 al acestui disc nu a trecut verificarea și nu a fost folosită. Actualizați baza de date de chei și încercați din nou.",
         "E8000": "Nu se poate conecta la serverul bazei de date de chei: {detail}",
-        "E8001": "Descărcarea bazei de date de chei a eșuat (HTTP {detail}). Încearcă din nou sau rulează: freemkv update-keys --url <keydb-url>",
-        "E8002": "Baza de date de chei este goală sau invalidă. Descarc-o din nou cu: freemkv update-keys --url <keydb-url>",
+        "E8001": "Descărcarea bazei de date de chei a eșuat (HTTP {detail}). Încearcă din nou actualizarea.",
+        "E8002": "Baza de date de chei este goală sau invalidă. Descarc-o din nou.",
         "E8003": "Nu se poate scrie baza de date de chei: {detail}",
-        "E8004": "Baza de date de chei nu a putut fi citită. Descarc-o din nou cu: freemkv update-keys --url <keydb-url>",
+        "E8004": "Baza de date de chei nu a putut fi citită. Descarc-o din nou.",
         "E8005": "Nu se poate încărca baza de date de chei: {detail}",
         "E8006": "URL-ul bazei de date de chei folosește un tip de adresă nepermis ({detail}).",
         "E8007": "Descărcarea bazei de date de chei a fost redirecționată de prea multe ori. Verifică URL-ul și încearcă din nou.",
@@ -310,7 +314,6 @@
         "E9006": "Datele de intrare sunt corupte sau nu sunt în formatul așteptat.",
         "E9007": "Imagine ISO prea mare: {detail}",
         "E9008": "Nu este disponibilă nicio informație pentru această intrare.",
-        "E9009": "Intrarea de tip disc nu poate fi deschisă astfel — aceasta este o eroare internă de utilizare.",
         "E9010": "Datele de configurare ale fluxului video nu au putut fi citite. Sursa poate fi deteriorată sau neacceptată.",
         "E9011": "Eroare internă la construirea ieșirii. Te rugăm să raportezi acest lucru.",
         "E9012": "Acest format de ieșire nu este încă acceptat.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Eroare: --raw se aplică doar unei surse disc:// (copiază sectoarele de pe disc fără să le decripteze). '{source}' nu este un disc. Renunță la --raw, sau extrage de pe discul dintr-o unitate.",
         "scan_failed": "Scanare eșuată: {detail}",
         "source_needs_scheme": "Eroare: '{source}' nu este un URL sursă utilizabil — folosește un prefix scheme:// recunoscut (de ex. iso://{source} pentru o imagine ISO sau disc:// pentru unitatea optică).",
+        "source_needs_container_scheme": "Eroare: '{source}' nu este un URL sursă utilizabil — pare a fi un fișier {container}, așa că folosește {scheme}://{source} (sau iso:// pentru o imagine ISO, disc:// pentru unitatea optică).",
         "stream_none": "niciuna",
         "selection_disc_only": "Eroare: selecția titlurilor și pistelor (-t / -a / -s) se aplică doar unei surse disc:// sau iso://, care este scanată într-o listă de titluri. '{source}' este o sursă flux/fișier fără titluri — elimină -t/-a/-s sau copiază de la o sursă disc:// ori iso://.",
         "title_out_of_range": "Titlul {num} este în afara intervalului ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Eroare: sursa nu raportează niciun sector, deci nu este nimic de scris.",
         "E9061": "Eroare: acest director conține un disc 3D (BDMV/STREAM/SSIF), pe care dir:// nu îl poate citi încă. Extrage de pe disc sau dintr-un ISO în schimb.",
         "E9062": "Eroare: fișierele directorului nu pot fi organizate ca o imagine de disc — un fișier necesar nu se află unde l-ar pune un disc.",
-        "E9063": "Eroare: acest director este încă criptat. dir:// are nevoie de o copie de rezervă decriptată; extrage de pe disc sau dintr-un ISO în schimb.",
         "E9064": "Eroare: acest director nu este o copie de rezervă a unui disc. Îndreaptă dir:// spre directorul care conține VIDEO_TS sau BDMV.",
         "E9065": "Eroare: un fișier s-a schimbat în timp ce era citit, deci imaginea nu ar corespunde directorului. Nu s-a scris nimic.",
         "E9066": "Eroare: acest director este prea mare pentru a fi prezentat ca o singură imagine de disc.",
         "E9067": "Eroare: un nume de fișier este prea lung pentru a fi stocat pe un disc. Scurtează-l și încearcă din nou: '{path}'.",
-        "E9068": "Eroare: un director are prea multe subdirectoare pentru a fi stocate pe un disc: '{path}'.",
+        "E9068": "Eroare: un director are prea multe fișiere sau subdirectoare pentru a fi stocat pe un disc: '{path}'.",
         "E9069": "Eroare: majoritatea cadrelor acestui titlu au căzut în afara propriilor repere de redare ale discului, deci ieșirea ar fi grav incompletă.",
         "E9070": "Eroare: nu s-a scris nimic — fiecare cadru a fost eliminat. Ieșirea ar fi fost goală.",
         "E9071": "S-a încercat scrierea în ieșire după ce aceasta fusese deja finalizată sau eșuase, deci datele nu au putut fi salvate.",
         "E9072": "Detaliile pistelor au fost setate după ce antetul ieșirii fusese deja scris, deci nu au putut fi aplicate.",
+        "E9073": "Eroare: operațiunea a expirat deoarece nu a înregistrat niciun progres timp îndelungat.",
+        "E9074": "MPG are nevoie de o pistă video pe care o poate stoca (MPEG-1/2); acest titlu nu are niciuna. Folosește mkv:// în schimb.",
+        "E9075": "Ieșirea MPG s-a încheiat cu audio sau video care nu a putut fi împachetat în fluxul de program, deci fișierul este incomplet. Folosește mkv:// în schimb.",
+        "E9077": "MKV-ul finalizat nu a trecut verificarea prin recitire ({detail}), așa că nu a fost pus la locul lui. Faceți din nou rip la titlu.",
+        "E9078": "Titlul {detail} s-a încheiat înainte de terminarea multiplexării, așa că nu a fost păstrat niciun fișier. Încercați din nou titlul.",
+        "E9079": "Fișierul intermediar al remux-ului ar suprascrie ținta sau propriul fișier temporar. Alegeți altă locație intermediară.",
+        "E9080": "Copierea fișierului finalizat la destinație a scris un număr greșit de octeți ({detail}). Verificați spațiul liber și erorile destinației, apoi încercați din nou.",
+        "E9081": "Copierea sau verificarea fișierului finalizat s-a oprit înainte de a raporta, așa că fișierul nu a fost pus la locul lui. Încercați din nou.",
+        "E9083": "'{detail}' nu este o limbă recunoscută de freemkv. Corectați limba sau folosiți all/none.",
+        "E9084": "{detail} există deja. Mutați-l sau ștergeți-l, ori alegeți să îl înlocuiți.",
+        "E9085": "Dimensiunea lotului de citire este zero, deci nu s-ar citi nimic. Setați cel puțin 1 sector.",
         "no_lang_match_subtitle_forced": "nicio subtitrare forțată din acest titlu nu se potrivește cu '{requested}' (subtitrări forțate disponibile: {available}). Corectează limba, sau folosește all/none.",
         "log_level_out_of_range": "--log-level: valoarea 0 este în afara intervalului (1–4), ignorată",
         "log_level_not_a_number": "--log-level: se aștepta un număr 1–4, s-a primit '{value}', ignorat",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Fișier Matroska",
             "m2ts": "  m2ts://path.m2ts         Fișier de flux de transport BD",
             "mp4": "  mp4://path.mp4           Fișier MP4",
+            "mpg": "  mpg://path.mpg           Fișier flux de program MPEG",
             "iso": "  iso://image.iso          Imagine ISO Blu-ray",
             "dir": "  dir://folder/            Arbore de fișiere decriptat într-un folder",
             "network": "  network://host:port      Flux TCP",
@@ -658,7 +673,7 @@
             "cancelling": "Se anulează …",
             "nothing_eject": "Nimic de scos — sursa este un fișier, nu o unitate.",
             "checking_updates": "Se verifică actualizări …",
-            "mp4_mismatch": "MP4 nu poate stoca video {codecs}. Alege MKV, care păstrează totul.",
+            "container_mismatch": "{container} nu poate stoca video {codecs}. Alege MKV în schimb.",
             "opened_version": "freemkv {version}",
             "opened": "{label} deschis — {n} titlu(ri), chei: {keys}",
             "ready_convert": "Pregătit pentru conversie",
@@ -695,7 +710,8 @@
             "pick_not_local": "Se pot folosi doar fișiere și dosare locale: {p}",
             "reveal_failed": "Nu s-a putut deschide dosarul în Explorer: {e}",
             "scan_not_started": "Nu s-a putut porni scanarea sursei: {detail}",
-            "scan_worker_stopped": "Procesul de scanare a sursei s-a oprit înainte de a returna un rezultat."
+            "scan_worker_stopped": "Procesul de scanare a sursei s-a oprit înainte de a returna un rezultat.",
+            "insert_disc_retry": "Introdu discul într-o unitate, apoi alege din nou „Începe extragerea”. Se citește doar ID-ul său de volum; nu este extras din nou."
         },
         "alert": {
             "rip_title": "O extragere este în curs.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Titluri selectate → MKV",
             "mp4": "Titluri selectate → MP4",
+            "mpg": "Titluri selectate → MPG",
             "m2ts": "Titluri selectate → M2TS",
             "tracks": "Titluri selectate → fișiere de pistă separate",
             "iso": "Disc întreg → imagine ISO",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "avertisment: titlul {num}: nicio subtitrare forțată nu se potrivește cu '{requested}' (disponibile: {available}) — se păstrează doar videoul."
     },
     "mux": {
-        "undelivered_header": "Notă: {count} flux(uri) nu au putut fi livrate și au fost omise:"
+        "undelivered_header": "Notă: {count} flux(uri) nu au putut fi livrate și au fost omise:",
+        "excluded_header": "Notă: {count} pistă/piste nu pot fi stocate în {container} și vor fi omise (folosește {keep}:// pentru a le păstra):",
+        "reason": {
+            "subtitle": "formatul de subtitrare nu are corespondent {container}",
+            "audio": "codecul audio nu are corespondent {container}",
+            "video": "vizualizare video secundară",
+            "video_unmappable": "codecul video nu are corespondent {container}",
+            "mp2_extension": "extensie multicanal MPEG-2 — {container} nu o poate stoca (folosește mpg:// pentru a o păstra); baza stereo este păstrată",
+            "no_stream_id": "{container} nu mai are niciun număr de flux liber pentru această pistă"
+        }
     },
     "share": {
         "attach_zip": "Arhiva zip a profilului este prea mare pentru textul problemei — atașează {path} la problemă.",
         "zip_failed": "Nu s-a putut crea arhiva zip a profilului: {error}"
+    },
+    "stop": {
+        "stopping": "Se oprește …",
+        "waiting_for_drive": "Se așteaptă unitatea …",
+        "progress_kept": "Progresul este păstrat",
+        "finishing": "Se finalizează …",
+        "artifact_lock_failed": "Nu s-a putut obține blocarea pentru {name}; este posibil să fie folosit de un alt proces."
     }
 }

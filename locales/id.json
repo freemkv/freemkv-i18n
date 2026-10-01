@@ -91,15 +91,6 @@
             "descriptive_service": "Layanan Deskriptif"
         }
     },
-    "mp4": {
-        "excluded_header": "Catatan: {count} trek tidak dapat disimpan dalam MP4 dan akan diabaikan (gunakan mkv:// untuk menyimpan semuanya):",
-        "reason": {
-            "subtitle": "subtitle bitmap — MP4 hanya membawa subtitle teks",
-            "audio": "codec audio tidak dapat dipetakan ke MP4",
-            "video": "tampilan video sekunder",
-            "video_unmappable": "codec video tidak dapat dipetakan ke MP4"
-        }
-    },
     "rip": {
         "opening": "Membuka {device}...",
         "waiting": "Menunggu disc...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Handshake gagal",
         "verbose_handshake_hint": "Handshake mungkin gagal — tidak ada sertifikat host, atau drive menolak",
         "mapfile_summary": "Mapfile: {good} GB bagus, {unreadable} MB tidak terbaca, {pending} MB tertunda",
+        "staging_not_kept": "Image yang disiapkan tidak disimpan: lokasi sebuah berkas stream di cakram ini tidak dapat dibaca, sehingga hanya judul yang dipilih yang dibaca dan ini bukan image seluruh cakram.",
         "retry_with_multipass": "Jalankan lagi dengan --multipass untuk mencoba membaca lebih banyak; ini akan melanjutkan dari mapfile.",
         "nothing_to_patch": "Tidak ada yang perlu ditambal — semua sektor bagus",
         "patch_start": "Menambal: {good} GB bagus, {unreadable} MB tidak terbaca, {pending} MB tertunda",
@@ -260,7 +252,10 @@
         "E6018": "Kesalahan: sebuah berkas di cakram menyimpan kontennya secara inline, bukan di sektor, dan jalur baca ini tidak dapat merencanakannya. Membacanya akan menunjuk ke sektor yang tidak terkait.",
         "E6019": "Kesalahan: sebuah berkas di cakram mencantumkan ruang yang ditempatinya, tetapi setiap bagian daftar itu kosong atau tidak menunjuk ke mana pun, sehingga berkas tidak memiliki konten yang dapat dibaca. Membacanya tidak akan menghasilkan apa pun, atau akan menyisipkan sektor yang tidak terkait ke dalam rip.",
         "E6020": "Berkas image cakram berakhir sebelum sektor yang dibutuhkan penyalinan ini, sehingga image terpotong atau tidak lengkap. Pembacaan dihentikan alih-alih mengisi bagian yang hilang dengan nol — buat ulang image dari cakram.",
-        "E7000": "Disc ini memerlukan kunci dekripsi AACS (Blu-ray/UHD), tetapi tidak ada yang ditemukan. Unduh basis data kunci dengan: freemkv update-keys --url <keydb-url>",
+        "E6021": "Image cakram tidak dapat dibuat: cakram ini memakai enkripsi bus AACS, dan lokasi sebuah berkas stream di cakram tidak dapat dibaca ({detail}), sehingga berkas itu tidak dapat didekripsi dan image masih akan berisi data terenkripsi. Judul yang tidak memakai berkas itu masih dapat disalin ke MKV, atau cakram dapat diekstrak ke folder (berkas itu dilaporkan sebagai rusak). Membersihkan cakram lalu mencoba lagi mungkin membantu.",
+        "E6022": "Image ini ({detail}) disiapkan untuk penyalinan MKV dan hanya berisi judul yang dipilih saat itu, bukan seluruh cakram, sehingga tidak dapat dipakai sebagai image cakram atau diekstrak ke folder. Salin judul-judul itu ke MKV, atau buat image baru dari cakram.",
+        "E6023": "Sebuah daftar putar HD DVD di disk ini terlalu besar untuk dibaca, jadi dilewati dan judul-judulnya ditentukan dari klip video disk sebagai gantinya. Nama, urutan, dan bab judul mungkin kurang akurat.",
+        "E7000": "Disc ini memerlukan kunci dekripsi AACS (Blu-ray/UHD), tetapi tidak ada yang ditemukan. Pasang atau perbarui basis data kunci, lalu coba lagi.",
         "E7001": "Sertifikat keamanan disc terlalu pendek atau tidak valid.",
         "E7002": "Drive tidak mau memulai sesi aman untuk disc ini — mungkin sedang digunakan oleh program lain. Tutup apa pun yang menggunakan disc dan coba lagi.",
         "E7003": "Drive menolak sertifikat keamanan disc ini.",
@@ -272,7 +267,7 @@
         "E7009": "Tidak dapat membaca pengenal disc. Disc mungkin kotor atau rusak.",
         "E7010": "Pengenal disc tidak dapat diverifikasi. Disc mungkin rusak atau tidak didukung.",
         "E7011": "Tidak dapat menyiapkan kunci dekripsi disc ini.",
-        "E7013": "Dekripsi gagal — kunci yang dipulihkan tidak membuka data disc ini. Kunci mungkin salah atau usang; perbarui dengan: freemkv update-keys --url <keydb-url>",
+        "E7013": "Dekripsi gagal — kunci yang dipulihkan tidak membuka data disc ini. Kunci mungkin salah atau usang; perbarui basis data kunci Anda, lalu coba lagi.",
         "E7014": "Autentikasi CSS gagal: drive tidak dapat membangun pertukaran kunci yang diperlukan untuk mendekripsi DVD ini. Coba bersihkan disc dan masukkan kembali. Jika masalah berlanjut, drive Anda mungkin tidak sepenuhnya mendukung dekripsi CSS.",
         "E7015": "Drive menolak sertifikat host AACS, dan drive ini tidak dapat dibuka kuncinya dengan cara lain.",
         "E7016": "Drive ini tidak dapat membaca disc dalam mode yang diperlukan untuk mendekripsinya, dan sesi aman ditolak. Tidak ada cara tersisa untuk mendekripsi disc ini pada drive ini.",
@@ -285,7 +280,7 @@
         "E7023": "Disc ini dilindungi salinan dan tidak ada kunci yang dapat dipulihkan untuk judul ini, sehingga tidak dapat didekripsi (keluaran akan tidak terbaca).",
         "E7024": "Tidak ada sertifikat host tersedia dari sumber kunci mana pun untuk handshake aman drive.",
         "E7025": "Disc ini menggunakan enkripsi bus AACS, tetapi tidak ada kunci bus yang dapat diperoleh dari handshake aman drive, sehingga datanya tidak dapat didekripsi (keluaran akan tidak terbaca).",
-        "E7026": "Disc ini menggunakan watermark forensik AACS 2.1 (FMTS) dan tidak ada kunci varian yang tersedia untuknya, sehingga film tidak dapat direkonstruksi tanpa celah. Perbarui basis data kunci Anda.",
+        "E7026": "Disc ini menggunakan watermark forensik AACS 2.1 (FMTS) dan tidak ada kunci varian yang tersedia untuknya, sehingga film tidak dapat direkonstruksi tanpa celah. Perbarui basis data kunci Anda. Jika belum ada sumber kunci yang mencakup disc ini, rip disc ke image, lalu konversikan image tersebut setelah kunci dipublikasikan.",
         "E7027": "Perlindungan salinan DVD ini tidak dapat dibuka, sehingga tidak ada judul di dalamnya yang dapat dibaca. Cakram mungkin rusak, atau menggunakan varian yang tidak ditangani versi ini.",
         "E7028": "Layanan kunci daring tidak dapat dihubungi, sehingga layanan itu tidak pernah menjawab apakah cakram ini memiliki kunci. Ini biasanya sementara — tunggu beberapa menit lalu coba lagi. Jangan mencari kunci yang hilang dulu; yang bermasalah adalah layanannya, bukan cakramnya.",
         "E7029": "Layanan kunci daring menolak token akses, sehingga tidak mau menjawab. Perbaiki token layanan kunci di Pengaturan (atau --key-auth di baris perintah) lalu coba lagi. Ini tidak berarti cakram tidak memiliki kunci.",
@@ -293,11 +288,20 @@
         "E7031": "Berkas kunci AACS cakram ini tidak ada atau tidak dapat dibaca. Bersihkan cakram lalu coba lagi; jika masih gagal, cakram mungkin rusak.",
         "E7032": "Salinan hasil dekripsi dari seluruh cakram (image atau folder) tidak dapat dibuat: sebagian cakram terenkripsi dan tidak ada kunci tersedia yang membukanya, sehingga salinan masih akan berisi bagian terenkripsi. Rip judul ke MKV sebagai gantinya, atau simpan salinan terenkripsi: salin cakram secara mentah (--raw di baris perintah, atau “Simpan terenkripsi (passthrough mentah)” di aplikasi), atau simpan image sumber apa adanya.",
         "E7033": "Sertifikat host ditemukan di sumber kunci Anda, tetapi tidak satu pun yang dapat digunakan (rusak atau tidak lengkap). Perbarui basis data kunci Anda lalu coba lagi.",
+        "E7034": "Kunci disc ini memerlukan Volume ID-nya, yang hanya dapat dibaca dari disc itu sendiri. Masukkan disc untuk menyelesaikan; disc tidak akan dirip lagi.",
+        "E7100": "Disk ini tidak menggunakan blok kunci varian AACS 2.1; derivasi kunci standar digunakan sebagai gantinya.",
+        "E7101": "Blok kunci AACS 2.1 disk ini tidak lengkap, sehingga kuncinya tidak dapat diturunkan. Bersihkan disk lalu coba lagi.",
+        "E7102": "Tidak ada kunci perangkat yang tersedia yang cocok dengan blok kunci AACS 2.1 disk ini. Perbarui basis data kunci Anda lalu coba lagi.",
+        "E7103": "Kunci AACS 2.1 disk ini memerlukan langkah koreksi perangkat lunak, yang tidak didukung.",
+        "E7104": "Kunci AACS 2.1 disk ini memerlukan tantangan online, yang tidak didukung.",
+        "E7106": "Blok kunci AACS 2.1 disk ini tidak memiliki tabel varian, sehingga kuncinya tidak dapat diturunkan. Disk mungkin rusak.",
+        "E7107": "Blok kunci AACS 2.1 disk ini menunjuk ke luar data kunci variannya, sehingga kuncinya tidak dapat diturunkan. Disk mungkin rusak.",
+        "E7108": "Kunci yang diturunkan dari blok kunci AACS 2.1 disk ini gagal verifikasi dan tidak digunakan. Perbarui basis data kunci Anda lalu coba lagi.",
         "E8000": "Tidak dapat terhubung ke server basis data kunci: {detail}",
-        "E8001": "Unduhan basis data kunci gagal (HTTP {detail}). Coba lagi, atau jalankan: freemkv update-keys --url <keydb-url>",
-        "E8002": "Basis data kunci kosong atau tidak valid. Unduh ulang dengan: freemkv update-keys --url <keydb-url>",
+        "E8001": "Unduhan basis data kunci gagal (HTTP {detail}). Coba lagi pembaruannya.",
+        "E8002": "Basis data kunci kosong atau tidak valid. Unduh ulang.",
         "E8003": "Tidak dapat menulis basis data kunci: {detail}",
-        "E8004": "Basis data kunci tidak dapat dibaca. Unduh ulang dengan: freemkv update-keys --url <keydb-url>",
+        "E8004": "Basis data kunci tidak dapat dibaca. Unduh ulang.",
         "E8005": "Tidak dapat memuat basis data kunci: {detail}",
         "E8006": "URL basis data kunci menggunakan jenis alamat yang tidak diizinkan ({detail}).",
         "E8007": "Unduhan basis data kunci dialihkan terlalu banyak kali. Periksa URL dan coba lagi.",
@@ -310,7 +314,6 @@
         "E9006": "Data masukan rusak atau tidak dalam format yang diharapkan.",
         "E9007": "Image ISO terlalu besar: {detail}",
         "E9008": "Tidak ada informasi tersedia untuk masukan ini.",
-        "E9009": "Masukan disc tidak dapat dibuka dengan cara ini — ini adalah kesalahan penggunaan internal.",
         "E9010": "Data pengaturan stream video tidak dapat dibaca. Sumber mungkin rusak atau tidak didukung.",
         "E9011": "Kesalahan internal saat membangun keluaran. Harap laporkan ini.",
         "E9012": "Format keluaran ini belum didukung.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Kesalahan: --raw hanya berlaku untuk sumber disc:// (opsi ini menyalin sektor dari cakram tanpa mendekripsinya). '{source}' bukan cakram. Hilangkan --raw, atau rip dari cakram di dalam drive.",
         "scan_failed": "Pemindaian gagal: {detail}",
         "source_needs_scheme": "Kesalahan: '{source}' bukan URL sumber yang dapat digunakan — gunakan prefiks scheme:// yang dikenali (mis. iso://{source} untuk image ISO, atau disc:// untuk drive optik).",
+        "source_needs_container_scheme": "Kesalahan: '{source}' bukan URL sumber yang dapat digunakan — ini tampaknya file {container}, jadi gunakan {scheme}://{source} (atau iso:// untuk image ISO, disc:// untuk drive optik).",
         "stream_none": "tidak ada",
         "selection_disc_only": "Kesalahan: pemilihan judul dan trek (-t / -a / -s) hanya berlaku untuk sumber disc:// atau iso://, yang dipindai menjadi daftar judul. '{source}' adalah sumber stream/berkas tanpa judul — hapus -t/-a/-s, atau rip dari sumber disc:// atau iso://.",
         "title_out_of_range": "Judul {num} di luar rentang ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Kesalahan: sumber tidak melaporkan sektor apa pun, sehingga tidak ada yang perlu ditulis.",
         "E9061": "Kesalahan: folder ini berisi cakram 3D (BDMV/STREAM/SSIF), yang belum dapat dibaca oleh dir://. Rip dari cakram atau ISO sebagai gantinya.",
         "E9062": "Kesalahan: berkas-berkas di folder tidak dapat disusun sebagai image cakram — sebuah berkas yang diperlukan tidak berada di tempat yang semestinya pada cakram.",
-        "E9063": "Kesalahan: folder ini masih terenkripsi. dir:// memerlukan cadangan yang sudah didekripsi; rip dari cakram atau ISO sebagai gantinya.",
         "E9064": "Kesalahan: folder ini bukan cadangan cakram. Arahkan dir:// ke folder yang berisi VIDEO_TS atau BDMV.",
         "E9065": "Kesalahan: sebuah berkas berubah saat sedang dibaca, sehingga image tidak akan cocok dengan folder. Tidak ada yang ditulis.",
         "E9066": "Kesalahan: folder ini terlalu besar untuk disajikan sebagai satu image cakram.",
         "E9067": "Kesalahan: sebuah nama berkas terlalu panjang untuk disimpan di cakram. Persingkat lalu coba lagi: '{path}'.",
-        "E9068": "Kesalahan: sebuah folder berisi terlalu banyak subfolder untuk disimpan di cakram: '{path}'.",
+        "E9068": "Kesalahan: sebuah folder berisi terlalu banyak file atau subfolder untuk disimpan di cakram: '{path}'.",
         "E9069": "Kesalahan: sebagian besar frame judul ini berada di luar penanda pemutaran milik cakram itu sendiri, sehingga keluaran akan sangat tidak lengkap.",
         "E9070": "Kesalahan: tidak ada yang ditulis — semua frame dibuang. Keluaran akan kosong.",
         "E9071": "Keluaran ditulisi setelah sudah selesai atau gagal, sehingga data tidak dapat disimpan.",
         "E9072": "Detail trek ditetapkan setelah header keluaran sudah ditulis, sehingga tidak dapat diterapkan.",
+        "E9073": "Kesalahan: operasi mengalami waktu habis karena tidak ada kemajuan dalam waktu yang terlalu lama.",
+        "E9074": "MPG memerlukan trek video yang dapat dimuatnya (MPEG-1/2); judul ini tidak memilikinya. Gunakan mkv:// sebagai gantinya.",
+        "E9075": "Output MPG berakhir dengan audio atau video yang tidak dapat dikemas ke dalam program stream, sehingga file tidak lengkap. Gunakan mkv:// sebagai gantinya.",
+        "E9077": "MKV yang selesai gagal dalam pemeriksaan baca-ulang ({detail}), jadi tidak dipindahkan ke tempatnya. Rip ulang judul tersebut.",
+        "E9078": "Judul {detail} berakhir sebelum mux-nya selesai, jadi tidak ada file yang disimpan. Coba judul itu lagi.",
+        "E9079": "File perantara remux akan menimpa target atau file sementaranya sendiri. Pilih lokasi perantara lain.",
+        "E9080": "Menyalin file yang selesai ke tempatnya menulis jumlah byte yang salah ({detail}). Periksa ruang kosong dan galat di tujuan, lalu coba lagi.",
+        "E9081": "Penyalinan atau pemeriksaan file yang selesai berhenti sebelum melaporkan hasil, jadi file tidak dipindahkan ke tempatnya. Coba lagi.",
+        "E9083": "'{detail}' bukan bahasa yang dikenali freemkv. Perbaiki bahasanya, atau gunakan all/none.",
+        "E9084": "{detail} sudah ada. Pindahkan atau hapus, atau pilih untuk menggantinya.",
+        "E9085": "Ukuran batch baca adalah nol sehingga tidak ada yang dapat dibaca. Atur setidaknya 1 sektor.",
         "no_lang_match_subtitle_forced": "tidak ada subtitle paksa pada judul ini yang cocok dengan '{requested}' (subtitle paksa tersedia: {available}). Perbaiki bahasanya, atau gunakan all/none.",
         "log_level_out_of_range": "--log-level: nilai 0 di luar rentang (1–4), diabaikan",
         "log_level_not_a_number": "--log-level: diharapkan angka 1–4, diterima '{value}', diabaikan",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Berkas Matroska",
             "m2ts": "  m2ts://path.m2ts         Berkas transport stream BD",
             "mp4": "  mp4://path.mp4           Berkas MP4",
+            "mpg": "  mpg://path.mpg           Berkas program stream MPEG",
             "iso": "  iso://image.iso          Image ISO Blu-ray",
             "dir": "  dir://folder/            Pohon berkas terdekripsi dalam sebuah folder",
             "network": "  network://host:port      Stream TCP",
@@ -658,7 +673,7 @@
             "cancelling": "Membatalkan …",
             "nothing_eject": "Tidak ada yang dikeluarkan — sumbernya adalah berkas, bukan drive.",
             "checking_updates": "Memeriksa pembaruan …",
-            "mp4_mismatch": "MP4 tidak dapat menyimpan video {codecs}. Pilih MKV, yang menyimpan semuanya.",
+            "container_mismatch": "{container} tidak dapat menyimpan video {codecs}. Pilih MKV sebagai gantinya.",
             "opened_version": "freemkv {version}",
             "opened": "{label} dibuka — {n} judul, kunci: {keys}",
             "ready_convert": "Siap mengonversi",
@@ -695,7 +710,8 @@
             "pick_not_local": "Hanya berkas dan folder lokal yang dapat digunakan: {p}",
             "reveal_failed": "Tidak dapat membuka folder di File Explorer: {e}",
             "scan_not_started": "Tidak dapat memulai pemindaian sumber: {detail}",
-            "scan_worker_stopped": "Proses pemindaian sumber berhenti sebelum mengembalikan hasil."
+            "scan_worker_stopped": "Proses pemindaian sumber berhenti sebelum mengembalikan hasil.",
+            "insert_disc_retry": "Masukkan disc ke drive, lalu pilih “Mulai rip” lagi. Hanya Volume ID-nya yang dibaca; disc tidak dirip lagi."
         },
         "alert": {
             "rip_title": "Rip sedang berlangsung.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Judul terpilih → MKV",
             "mp4": "Judul terpilih → MP4",
+            "mpg": "Judul terpilih → MPG",
             "m2ts": "Judul terpilih → M2TS",
             "tracks": "Judul terpilih → berkas trek terpisah",
             "iso": "Seluruh disc → image ISO",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "peringatan: judul {num}: tidak ada subtitle paksa yang cocok dengan '{requested}' (tersedia: {available}) — hanya video yang dipertahankan."
     },
     "mux": {
-        "undelivered_header": "Catatan: {count} stream tidak dapat dikirim dan dihilangkan:"
+        "undelivered_header": "Catatan: {count} stream tidak dapat dikirim dan dihilangkan:",
+        "excluded_header": "Catatan: {count} trek tidak dapat disimpan dalam {container} dan akan diabaikan (gunakan {keep}:// untuk menyimpannya):",
+        "reason": {
+            "subtitle": "format subtitle tidak dapat dipetakan ke {container}",
+            "audio": "codec audio tidak dapat dipetakan ke {container}",
+            "video": "tampilan video sekunder",
+            "video_unmappable": "codec video tidak dapat dipetakan ke {container}",
+            "mp2_extension": "ekstensi multikanal MPEG-2 — {container} tidak dapat menyimpannya (gunakan mpg:// untuk mempertahankannya); basis stereo tetap disimpan",
+            "no_stream_id": "{container} tidak memiliki nomor stream tersisa untuk trek ini"
+        }
     },
     "share": {
         "attach_zip": "Zip profil terlalu besar untuk teks issue — lampirkan {path} ke issue.",
         "zip_failed": "Tidak dapat membuat zip profil: {error}"
+    },
+    "stop": {
+        "stopping": "Menghentikan …",
+        "waiting_for_drive": "Menunggu drive …",
+        "progress_kept": "Kemajuan tetap disimpan",
+        "finishing": "Menyelesaikan …",
+        "artifact_lock_failed": "Tidak dapat mengambil kunci pada {name}; mungkin sedang digunakan oleh proses lain."
     }
 }

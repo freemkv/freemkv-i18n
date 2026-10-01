@@ -1091,6 +1091,22 @@ mod tests {
         }
     }
 
+    /// KU-F1i: the keydb-fixing texts are front-end-neutral, because the freemkv-library
+    /// server shows them too: no CLI command in any shipped locale.
+    #[test]
+    fn a_keydb_fix_names_no_cli_command() {
+        for code in SHIPPED_CODES {
+            let v: Value = serde_json::from_str(bundled_locale_json(code).unwrap()).unwrap();
+            for err in ["E7000", "E7013", "E7026", "E8001", "E8002", "E8004"] {
+                let text = lookup_in(&v, &format!("error.{err}")).unwrap_or_default();
+                assert!(
+                    !text.contains("update-keys") && !text.contains("freemkv "),
+                    "{code} error.{err} names a CLI command: {text}"
+                );
+            }
+        }
+    }
+
     // freemkv compares the answer to drive.submit_prompt against drive.submit_affirmative, so
     // each prompt must offer that token. drive.zip_failed was superseded by share.zip_failed.
     #[test]

@@ -91,15 +91,6 @@
             "descriptive_service": "Servicio descriptivo"
         }
     },
-    "mp4": {
-        "excluded_header": "Nota: {count} pista(s) no se pueden almacenar en un MP4 y quedarán excluidas (usa mkv:// para conservar todo):",
-        "reason": {
-            "subtitle": "subtítulo de mapa de bits — MP4 solo admite subtítulos de texto",
-            "audio": "el códec de audio no tiene equivalente en MP4",
-            "video": "vista de video secundaria",
-            "video_unmappable": "el códec de video no tiene equivalente en MP4"
-        }
-    },
     "rip": {
         "opening": "Abriendo {device}...",
         "waiting": "Esperando el disco...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "El handshake falló",
         "verbose_handshake_hint": "Es posible que el handshake haya fallado — sin certificado de host, o la unidad lo rechazó",
         "mapfile_summary": "Mapfile: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
+        "staging_not_kept": "No se conservó la imagen preparada: no se pudo leer la ubicación de un archivo de flujo de este disco, así que solo se leyeron los títulos elegidos y no es una imagen del disco completo.",
         "retry_with_multipass": "Vuelva a ejecutarlo con --multipass para intentar leer más; se reanuda desde el mapfile.",
         "nothing_to_patch": "Nada que parchar — todos los sectores están bien",
         "patch_start": "Parchando: {good} GB buenos, {unreadable} MB ilegibles, {pending} MB pendientes",
@@ -260,7 +252,10 @@
         "E6018": "Error: un archivo del disco almacena su contenido en línea en lugar de en sectores, algo que esta ruta de lectura no puede planificar. Leerlo habría apuntado a sectores no relacionados.",
         "E6019": "Error: un archivo del disco lista el espacio que ocupa, pero cada parte de esa lista está vacía o no apunta a nada, así que el archivo no tiene contenido legible. Leerlo no habría producido nada, o habría insertado sectores no relacionados en la extracción.",
         "E6020": "El archivo de imagen de disco termina antes de un sector que necesita esta extracción, así que la imagen está truncada o incompleta. La lectura se detuvo en lugar de rellenar con ceros la parte faltante: vuelva a crear la imagen a partir del disco.",
-        "E7000": "Este disco necesita claves de descifrado AACS (Blu-ray/UHD), pero no se encontró ninguna. Descarga una base de datos de claves con: freemkv update-keys --url <keydb-url>",
+        "E6021": "No se puede crear una imagen del disco: este disco usa cifrado de bus AACS y no se pudo leer la ubicación de un archivo de flujo en el disco ({detail}), así que ese archivo no se puede descifrar y la imagen aún contendría datos cifrados. Los títulos que no usan ese archivo todavía se pueden extraer a MKV, o se puede extraer el disco a una carpeta (ese archivo se informa como dañado). Limpiar el disco y volver a intentarlo puede ayudar.",
+        "E6022": "Esta imagen ({detail}) se preparó para una extracción a MKV y solo contiene los títulos para los que se preparó, no todo el disco, así que no se puede usar como imagen de disco ni extraer a una carpeta. Extraiga esos títulos a MKV o cree una nueva imagen a partir del disco.",
+        "E6023": "Una lista de reproducción HD DVD de este disco es demasiado grande para leerla, así que se omitió y los títulos se determinaron a partir de los clips de video del disco. Los nombres, el orden y los capítulos de los títulos pueden ser menos precisos.",
+        "E7000": "Este disco necesita claves de descifrado AACS (Blu-ray/UHD), pero no se encontró ninguna. Instala o actualiza una base de datos de claves y vuelve a intentarlo.",
         "E7001": "El certificado de seguridad del disco es demasiado corto o inválido.",
         "E7002": "La unidad no iniciaría una sesión segura para este disco — puede estar en uso por otro programa. Cierra cualquier otra cosa que use el disco y vuelve a intentarlo.",
         "E7003": "La unidad rechazó el certificado de seguridad de este disco.",
@@ -272,7 +267,7 @@
         "E7009": "No se pudo leer el identificador del disco. El disco puede estar sucio o dañado.",
         "E7010": "No se pudo verificar el identificador del disco. El disco puede estar dañado o no ser compatible.",
         "E7011": "No se pudo preparar la clave de descifrado de este disco.",
-        "E7013": "El descifrado falló — la clave recuperada no desbloqueó los datos de este disco. La clave puede estar equivocada o desactualizada; actualízala con: freemkv update-keys --url <keydb-url>",
+        "E7013": "El descifrado falló — la clave recuperada no desbloqueó los datos de este disco. La clave puede estar equivocada o desactualizada; actualiza tu base de datos de claves y vuelve a intentarlo.",
         "E7014": "La autenticación CSS falló: la unidad no pudo establecer el intercambio de claves necesario para descifrar este DVD. Intenta limpiar el disco y volver a insertarlo. Si el problema persiste, es posible que tu unidad no admita del todo el descifrado CSS.",
         "E7015": "La unidad rechazó el certificado de host AACS, y esta unidad no se puede desbloquear de otra manera.",
         "E7016": "Esta unidad no puede leer el disco en el modo necesario para descifrarlo, y la sesión segura fue rechazada. No queda forma de descifrar este disco en esta unidad.",
@@ -285,7 +280,7 @@
         "E7023": "Este disco está protegido contra copia y no se pudo recuperar ninguna clave para este título, así que no se puede descifrar (la salida sería ilegible).",
         "E7024": "No hay ningún certificado de host disponible en ninguna fuente de claves para el handshake seguro de la unidad.",
         "E7025": "Este disco usa cifrado de bus AACS, pero no se pudo obtener ninguna clave de bus del handshake seguro de la unidad, así que sus datos no se pueden descifrar (la salida sería ilegible).",
-        "E7026": "Este disco usa marca de agua forense AACS 2.1 (FMTS) y no hay ninguna clave de variante disponible para él, así que la película no se puede reconstruir sin huecos. Actualiza tu base de datos de claves con: freemkv update-keys --url <keydb-url>. Si ninguna fuente de claves incluye todavía este disco, cópialo a una imagen con 'freemkv disc:// iso://Disc.iso' y convierte la imagen cuando se publiquen las claves.",
+        "E7026": "Este disco usa marca de agua forense AACS 2.1 (FMTS) y no hay ninguna clave de variante disponible para él, así que la película no se puede reconstruir sin huecos. Actualiza tu base de datos de claves. Si ninguna fuente de claves incluye todavía este disco, extráelo a una imagen y conviértela cuando se publiquen las claves.",
         "E7027": "No se pudo desbloquear la protección anticopia de este DVD, por lo que no se puede leer ningún título. Puede que el disco esté dañado o use una variante no compatible.",
         "E7028": "No se pudo contactar al servicio de claves en línea, así que nunca indicó si este disco tiene clave. Esto suele ser temporal — espera unos minutos y vuelve a intentarlo. No busques todavía una clave faltante; el servicio estaba caído, no el disco.",
         "E7029": "El servicio de claves en línea rechazó el token de acceso, así que no respondió. Corrige el token del servicio de claves en Configuración (o --key-auth en la línea de comandos) y vuelve a intentarlo. Esto no significa que el disco no tenga clave.",
@@ -293,11 +288,20 @@
         "E7031": "Falta el archivo de claves AACS de este disco o no se pudo leer. Limpie el disco y vuelva a intentarlo; si sigue fallando, es posible que el disco esté dañado.",
         "E7032": "No se puede hacer una copia descifrada de todo el disco (una imagen o una carpeta): una parte del disco está cifrada y ninguna de las claves disponibles la abre, así que la copia aún contendría partes cifradas. Extraiga los títulos a MKV o conserve una copia cifrada: copie el disco sin procesar (--raw en la línea de comandos, o “Conservar cifrado (passthrough sin procesar)” en la app), o conserve la imagen de origen tal como está.",
         "E7033": "Se encontraron certificados de host en tus fuentes de claves, pero ninguno se puede usar (dañado o incompleto). Actualiza tu base de datos de claves y vuelve a intentarlo.",
+        "E7034": "Las claves de este disco necesitan su ID de volumen, que solo se puede leer desde el disco mismo. Inserta el disco para terminar; no se volverá a extraer.",
+        "E7100": "Este disco no usa un bloque de claves de variantes AACS 2.1; en su lugar se usa la derivación de claves estándar.",
+        "E7101": "El bloque de claves AACS 2.1 de este disco está incompleto, así que no se puede derivar su clave. Limpia el disco y vuelve a intentarlo.",
+        "E7102": "Ninguna de las claves de dispositivo disponibles coincide con el bloque de claves AACS 2.1 de este disco. Actualiza tu base de datos de claves y vuelve a intentarlo.",
+        "E7103": "La clave AACS 2.1 de este disco requiere un paso de corrección por software, que no es compatible.",
+        "E7104": "La clave AACS 2.1 de este disco requiere un desafío en línea, que no es compatible.",
+        "E7106": "Al bloque de claves AACS 2.1 de este disco le falta la tabla de variantes, así que no se puede derivar su clave. Es posible que el disco esté dañado.",
+        "E7107": "El bloque de claves AACS 2.1 de este disco apunta fuera de sus datos de claves de variantes, así que no se puede derivar su clave. Es posible que el disco esté dañado.",
+        "E7108": "La clave derivada del bloque de claves AACS 2.1 de este disco no pasó la verificación y no se usó. Actualiza tu base de datos de claves y vuelve a intentarlo.",
         "E8000": "No se puede conectar al servidor de la base de datos de claves: {detail}",
-        "E8001": "La descarga de la base de datos de claves falló (HTTP {detail}). Vuelve a intentarlo, o ejecuta: freemkv update-keys --url <keydb-url>",
-        "E8002": "La base de datos de claves está vacía o es inválida. Vuelve a descargarla con: freemkv update-keys --url <keydb-url>",
+        "E8001": "La descarga de la base de datos de claves falló (HTTP {detail}). Vuelve a intentar la actualización.",
+        "E8002": "La base de datos de claves está vacía o es inválida. Vuelve a descargarla.",
         "E8003": "No se puede escribir la base de datos de claves: {detail}",
-        "E8004": "No se pudo leer la base de datos de claves. Vuelve a descargarla con: freemkv update-keys --url <keydb-url>",
+        "E8004": "No se pudo leer la base de datos de claves. Vuelve a descargarla.",
         "E8005": "No se puede cargar la base de datos de claves: {detail}",
         "E8006": "La URL de la base de datos de claves usa un tipo de dirección que no está permitido ({detail}).",
         "E8007": "La descarga de la base de datos de claves fue redirigida demasiadas veces. Verifica la URL y vuelve a intentarlo.",
@@ -310,7 +314,6 @@
         "E9006": "Los datos de entrada están corruptos o no tienen el formato esperado.",
         "E9007": "Imagen ISO demasiado grande: {detail}",
         "E9008": "No hay información disponible para esta entrada.",
-        "E9009": "La entrada del disco no se puede abrir de esta manera — esto es un error de uso interno.",
         "E9010": "No se pudieron leer los datos de configuración de la pista de video. El origen puede estar dañado o no ser compatible.",
         "E9011": "Error interno al construir la salida. Por favor, repórtalo.",
         "E9012": "Este formato de salida aún no es compatible.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Error: --raw solo se aplica a un origen disc:// (copia los sectores del disco sin descifrarlos). '{source}' no es un disco. Quita --raw, o extrae desde el disco en una unidad.",
         "scan_failed": "El escaneo falló: {detail}",
         "source_needs_scheme": "Error: '{source}' no es una URL de origen utilizable — usa un prefijo scheme:// reconocido (p. ej. iso://{source} para una imagen ISO, o disc:// para la unidad óptica).",
+        "source_needs_container_scheme": "Error: '{source}' no es una URL de origen utilizable — parece un archivo {container}, así que usa {scheme}://{source} (o iso:// para una imagen ISO, disc:// para la unidad óptica).",
         "stream_none": "ninguno",
         "selection_disc_only": "Error: la selección de títulos y pistas (-t / -a / -s) solo se aplica a una fuente disc:// o iso://, que se analiza en una lista de títulos. '{source}' es una fuente de flujo/archivo sin títulos — quita -t/-a/-s o extraiga desde una fuente disc:// o iso://.",
         "title_out_of_range": "Título {num} fuera de rango ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Error: el origen no informa sectores, así que no hay nada que escribir.",
         "E9061": "Error: esta carpeta contiene un disco 3D (BDMV/STREAM/SSIF), que dir:// todavía no puede leer. Extrae desde el disco o una ISO en su lugar.",
         "E9062": "Error: los archivos de la carpeta no se pueden organizar como una imagen de disco — un archivo requerido no está donde lo pondría un disco.",
-        "E9063": "Error: esta carpeta todavía está cifrada. dir:// necesita una copia de seguridad descifrada; extrae desde el disco o una ISO en su lugar.",
         "E9064": "Error: esta carpeta no es una copia de seguridad de un disco. Apunta dir:// a la carpeta que contiene VIDEO_TS o BDMV.",
         "E9065": "Error: un archivo cambió mientras se leía, así que la imagen no coincidiría con la carpeta. No se escribió nada.",
         "E9066": "Error: esta carpeta es demasiado grande para presentarse como una sola imagen de disco.",
         "E9067": "Error: un nombre de archivo es demasiado largo para almacenarse en un disco. Acórtalo y vuelve a intentarlo: '{path}'.",
-        "E9068": "Error: una carpeta tiene demasiadas subcarpetas para almacenarse en un disco: '{path}'.",
+        "E9068": "Error: una carpeta tiene demasiados archivos o subcarpetas para almacenarse en un disco: '{path}'.",
         "E9069": "Error: la mayoría de los fotogramas de este título quedaron fuera de las propias marcas de reproducción del disco, así que la salida quedaría gravemente incompleta.",
         "E9070": "Error: no se escribió nada — se descartaron todos los fotogramas. La salida habría quedado vacía.",
         "E9071": "Se intentó escribir en la salida después de que ya había terminado o fallado, así que no se pudieron guardar los datos.",
         "E9072": "Los datos de las pistas se establecieron después de que ya se había escrito el encabezado de la salida, así que no se pudieron aplicar.",
+        "E9073": "Error: la operación superó el límite de tiempo por falta de progreso durante demasiado rato.",
+        "E9074": "MPG necesita una pista de video que pueda contener (MPEG-1/2); este título no tiene ninguna. Usa mkv:// en su lugar.",
+        "E9075": "La salida MPG terminó con audio o video que no se pudo empaquetar en el flujo de programa, así que el archivo está incompleto. Usa mkv:// en su lugar.",
+        "E9077": "El MKV terminado no pasó la verificación de relectura ({detail}), así que no se colocó en su destino. Vuelve a ripear el título.",
+        "E9078": "El título {detail} terminó antes de completar su multiplexado, así que no se conservó ningún archivo. Vuelve a intentar el título.",
+        "E9079": "El archivo intermedio del remux sobrescribiría el destino o su propio archivo temporal. Elige otra ubicación intermedia.",
+        "E9080": "Al copiar el archivo terminado a su destino se escribió una cantidad incorrecta de bytes ({detail}). Revisa el espacio libre y los errores del destino y vuelve a intentarlo.",
+        "E9081": "La copia o la verificación del archivo terminado se detuvo antes de informar, así que el archivo no se colocó en su destino. Vuelve a intentarlo.",
+        "E9083": "'{detail}' no es un idioma que freemkv reconozca. Corrige el idioma o usa all/none.",
+        "E9084": "{detail} ya existe. Muévelo o elimínalo, o elige reemplazarlo.",
+        "E9085": "El tamaño del lote de lectura es cero, así que no se leería nada. Configúralo en al menos 1 sector.",
         "no_lang_match_subtitle_forced": "ningún subtítulo forzado de este título coincide con '{requested}' (subtítulos forzados disponibles: {available}). Corrige el idioma, o usa all/none.",
         "log_level_out_of_range": "--log-level: el valor 0 está fuera de rango (1–4), se ignora",
         "log_level_not_a_number": "--log-level: se esperaba un número 1–4, se recibió '{value}', se ignora",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Archivo Matroska",
             "m2ts": "  m2ts://path.m2ts         Archivo de transport stream de BD",
             "mp4": "  mp4://path.mp4           Archivo MP4",
+            "mpg": "  mpg://path.mpg           Archivo de flujo de programa MPEG",
             "iso": "  iso://image.iso          Imagen ISO de Blu-ray",
             "dir": "  dir://folder/            Árbol de archivos descifrado en una carpeta",
             "network": "  network://host:port      Stream TCP",
@@ -658,7 +673,7 @@
             "cancelling": "Cancelando …",
             "nothing_eject": "Nada que expulsar — el origen es un archivo, no una unidad.",
             "checking_updates": "Buscando actualizaciones …",
-            "mp4_mismatch": "MP4 no puede almacenar video {codecs}. Elige MKV, que conserva todo.",
+            "container_mismatch": "{container} no puede almacenar video {codecs}. Elige MKV en su lugar.",
             "opened_version": "freemkv {version}",
             "opened": "{label} abierto — {n} título(s), claves: {keys}",
             "ready_convert": "Listo para convertir",
@@ -695,7 +710,8 @@
             "pick_not_local": "Solo se pueden usar archivos y carpetas locales: {p}",
             "reveal_failed": "No se pudo abrir la carpeta en el Explorador de archivos: {e}",
             "scan_not_started": "No se pudo iniciar el escaneo del origen: {detail}",
-            "scan_worker_stopped": "El proceso de escaneo del origen se detuvo antes de devolver un resultado."
+            "scan_worker_stopped": "El proceso de escaneo del origen se detuvo antes de devolver un resultado.",
+            "insert_disc_retry": "Inserta el disco en una unidad y vuelve a elegir “Iniciar extracción”. Solo se lee su ID de volumen; no se vuelve a extraer."
         },
         "alert": {
             "rip_title": "Hay una extracción en curso.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Títulos seleccionados → MKV",
             "mp4": "Títulos seleccionados → MP4",
+            "mpg": "Títulos seleccionados → MPG",
             "m2ts": "Títulos seleccionados → M2TS",
             "tracks": "Títulos seleccionados → archivos de pista separados",
             "iso": "Disco completo → imagen ISO",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "advertencia: título {num}: ningún subtítulo forzado coincide con '{requested}' (disponibles: {available}) — se conserva solo el video."
     },
     "mux": {
-        "undelivered_header": "Nota: no se pudieron entregar {count} pista(s) y se omitieron:"
+        "undelivered_header": "Nota: no se pudieron entregar {count} pista(s) y se omitieron:",
+        "excluded_header": "Nota: {count} pista(s) no se pueden almacenar en {container} y quedarán excluidas (usa {keep}:// para conservarlas):",
+        "reason": {
+            "subtitle": "el formato de subtítulo no tiene equivalente en {container}",
+            "audio": "el códec de audio no tiene equivalente en {container}",
+            "video": "vista de video secundaria",
+            "video_unmappable": "el códec de video no tiene equivalente en {container}",
+            "mp2_extension": "extensión multicanal MPEG-2 — {container} no puede almacenarla (usa mpg:// para conservarla); se conserva la base estéreo",
+            "no_stream_id": "{container} no tiene más números de flujo para esta pista"
+        }
     },
     "share": {
         "attach_zip": "El zip del perfil es demasiado grande para el texto del issue — adjunta {path} al issue.",
         "zip_failed": "No se pudo crear el zip del perfil: {error}"
+    },
+    "stop": {
+        "stopping": "Deteniendo …",
+        "waiting_for_drive": "Esperando la unidad …",
+        "progress_kept": "El progreso se conserva",
+        "finishing": "Finalizando …",
+        "artifact_lock_failed": "No se pudo tomar el bloqueo de {name}; es posible que otro proceso lo esté usando."
     }
 }

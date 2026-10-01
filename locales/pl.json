@@ -91,15 +91,6 @@
             "descriptive_service": "Usługa audiodeskrypcji"
         }
     },
-    "mp4": {
-        "excluded_header": "Uwaga: następujących ścieżek (liczba: {count}) nie można zapisać w pliku MP4, więc zostaną pominięte (użyj mkv://, aby zachować wszystko):",
-        "reason": {
-            "subtitle": "napisy bitmapowe — MP4 obsługuje tylko napisy tekstowe",
-            "audio": "kodek dźwięku nie ma odpowiednika w MP4",
-            "video": "dodatkowy widok wideo",
-            "video_unmappable": "kodek wideo nie ma odpowiednika w MP4"
-        }
-    },
     "rip": {
         "opening": "Otwieranie {device}…",
         "waiting": "Oczekiwanie na płytę…",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Uzgadnianie nie powiodło się",
         "verbose_handshake_hint": "Uzgadnianie mogło się nie powieść — brak certyfikatu hosta lub napęd go odrzucił",
         "mapfile_summary": "Plik mapy — dobre: {good} GB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB",
+        "staging_not_kept": "Przygotowanego obrazu nie zachowano: nie udało się odczytać położenia pliku strumienia na tej płycie, więc odczytano tylko wybrane tytuły i nie jest to obraz całej płyty.",
         "retry_with_multipass": "Uruchom ponownie z --multipass, aby spróbować odczytać więcej; wznawia od pliku mapy.",
         "nothing_to_patch": "Nic do naprawienia — wszystkie sektory są dobre",
         "patch_start": "Naprawianie — dobre: {good} GB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB",
@@ -260,7 +252,10 @@
         "E6018": "Błąd: plik na płycie przechowuje zawartość bezpośrednio w swoim wpisie zamiast w sektorach, czego ta ścieżka odczytu nie potrafi zaplanować. Jego odczyt wskazywałby na niepowiązane sektory.",
         "E6019": "Błąd: plik na płycie wymienia zajmowane miejsce, ale każda część tej listy jest pusta lub nigdzie nie wskazuje, więc plik nie ma czytelnej zawartości. Jego odczyt nie dałby nic albo wstawiłby do zgrywanego materiału niepowiązane sektory.",
         "E6020": "Plik obrazu płyty kończy się przed sektorem, którego potrzebuje to zgrywanie, więc obraz jest obcięty lub niekompletny. Odczyt zatrzymano, zamiast wypełniać brakującą część zerami — utwórz obraz z płyty ponownie.",
-        "E7000": "Ta płyta wymaga kluczy deszyfrujących AACS (Blu-ray/UHD), ale nie znaleziono żadnego. Pobierz bazę kluczy poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E6021": "Nie można utworzyć obrazu płyty: ta płyta używa szyfrowania magistrali AACS, a położenia pliku strumienia na płycie nie udało się odczytać ({detail}), więc tego pliku nie da się odszyfrować, a obraz nadal zawierałby zaszyfrowane dane. Tytuły, które nie używają tego pliku, nadal można zgrać do MKV, albo płytę można wypakować do folderu (ten plik jest zgłaszany jako uszkodzony). Może pomóc wyczyszczenie płyty i ponowna próba.",
+        "E6022": "Ten obraz ({detail}) przygotowano do zgrania do MKV i zawiera tylko tytuły, dla których go przygotowano, a nie całą płytę, więc nie można go użyć jako obrazu płyty ani wypakować do folderu. Zgraj te tytuły do MKV albo utwórz nowy obraz z płyty.",
+        "E6023": "Lista odtwarzania HD DVD na tej płycie jest zbyt duża, aby ją odczytać, więc została pominięta, a tytuły ustalono na podstawie klipów wideo z płyty. Nazwy, kolejność i rozdziały tytułów mogą być mniej dokładne.",
+        "E7000": "Ta płyta wymaga kluczy deszyfrujących AACS (Blu-ray/UHD), ale nie znaleziono żadnego. Zainstaluj lub zaktualizuj bazę kluczy i spróbuj ponownie.",
         "E7001": "Certyfikat bezpieczeństwa płyty jest zbyt krótki lub nieprawidłowy.",
         "E7002": "Napęd nie rozpoczął bezpiecznej sesji dla tej płyty — może być używany przez inny program. Zamknij wszystko inne korzystające z płyty i spróbuj ponownie.",
         "E7003": "Napęd odrzucił certyfikat bezpieczeństwa tej płyty.",
@@ -272,7 +267,7 @@
         "E7009": "Nie można odczytać identyfikatora płyty. Płyta może być brudna lub uszkodzona.",
         "E7010": "Nie udało się zweryfikować identyfikatora płyty. Płyta może być uszkodzona lub nieobsługiwana.",
         "E7011": "Nie można przygotować klucza deszyfrującego tej płyty.",
-        "E7013": "Deszyfrowanie nie powiodło się — odzyskany klucz nie odblokował danych tej płyty. Klucz może być błędny lub nieaktualny; odśwież go poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E7013": "Deszyfrowanie nie powiodło się — odzyskany klucz nie odblokował danych tej płyty. Klucz może być błędny lub nieaktualny; zaktualizuj bazę kluczy i spróbuj ponownie.",
         "E7014": "Uwierzytelnianie CSS nie powiodło się: napęd nie mógł nawiązać wymiany kluczy potrzebnej do odszyfrowania tego DVD. Spróbuj wyczyścić płytę i włożyć ją ponownie. Jeśli problem będzie się powtarzać, Twój napęd może nie w pełni obsługiwać deszyfrowanie CSS.",
         "E7015": "Napęd odrzucił certyfikat hosta AACS i tego napędu nie da się odblokować w inny sposób.",
         "E7016": "Ten napęd nie potrafi odczytać płyty w trybie potrzebnym do jej odszyfrowania, a bezpieczna sesja została odrzucona. Na tym napędzie nie ma już sposobu na odszyfrowanie tej płyty.",
@@ -285,7 +280,7 @@
         "E7023": "Ta płyta jest zabezpieczona przed kopiowaniem i nie udało się odzyskać klucza dla tego tytułu, więc nie da się go odszyfrować (wynik byłby nieczytelny).",
         "E7024": "Żadne źródło kluczy nie udostępnia certyfikatu hosta do bezpiecznego uzgadniania napędu.",
         "E7025": "Ta płyta używa szyfrowania magistrali AACS, ale nie udało się uzyskać klucza magistrali z bezpiecznego uzgadniania napędu, więc jej danych nie da się odszyfrować (wynik byłby nieczytelny).",
-        "E7026": "Ta płyta używa kryminalistycznego znaku wodnego AACS 2.1 (FMTS) i nie jest dostępny dla niej żaden klucz wariantowy, więc filmu nie da się odtworzyć bez luk. Zaktualizuj bazę kluczy.",
+        "E7026": "Ta płyta używa kryminalistycznego znaku wodnego AACS 2.1 (FMTS) i nie jest dostępny dla niej żaden klucz wariantowy, więc filmu nie da się odtworzyć bez luk. Zaktualizuj bazę kluczy. Jeśli żadne źródło kluczy nie obsługuje jeszcze tej płyty, zgraj płytę do obrazu i przekonwertuj obraz, gdy klucze zostaną opublikowane.",
         "E7027": "Nie udało się odblokować zabezpieczenia przed kopiowaniem tego DVD, więc nie można odczytać z niego żadnego tytułu. Płyta może być uszkodzona albo używa wariantu, którego ta wersja nie obsługuje.",
         "E7028": "Nie udało się połączyć z internetową usługą kluczy, więc nie odpowiedziała, czy ta płyta ma klucz. Zwykle jest to stan przejściowy — odczekaj kilka minut i spróbuj ponownie. Nie szukaj jeszcze brakującego klucza; niedostępna była usługa, a nie płyta.",
         "E7029": "Internetowa usługa kluczy odrzuciła token dostępu, więc nie odpowiedziała. Popraw token usługi kluczy w Ustawieniach (lub --key-auth w wierszu poleceń) i spróbuj ponownie. Nie oznacza to, że płyta nie ma klucza.",
@@ -293,11 +288,20 @@
         "E7031": "Brak pliku kluczy AACS tej płyty lub nie można go odczytać. Wyczyść płytę i spróbuj ponownie; jeśli błąd się powtarza, płyta może być uszkodzona.",
         "E7032": "Nie można utworzyć odszyfrowanej kopii całej płyty (obrazu lub folderu): część płyty jest zaszyfrowana i żaden z dostępnych kluczy jej nie otwiera, więc kopia nadal zawierałaby zaszyfrowane części. Zamiast tego zgraj tytuły do MKV albo zachowaj zaszyfrowaną kopię: skopiuj płytę na surowo (--raw w wierszu poleceń lub „Zachowaj zaszyfrowane (surowe przepuszczanie)” w aplikacji) albo zachowaj obraz źródłowy bez zmian.",
         "E7033": "W Twoich źródłach kluczy znaleziono certyfikaty hosta, ale żaden nie nadaje się do użycia (uszkodzony lub niekompletny). Odśwież bazę kluczy i spróbuj ponownie.",
+        "E7034": "Klucze tej płyty wymagają jej identyfikatora woluminu (Volume ID), który można odczytać tylko z samej płyty. Włóż płytę, aby zakończyć; nie zostanie ona ponownie zgrana.",
+        "E7100": "Ta płyta nie używa bloku kluczy wariantów AACS 2.1; zamiast tego używane jest standardowe wyprowadzanie klucza.",
+        "E7101": "Blok kluczy AACS 2.1 tej płyty jest niekompletny, więc nie można wyprowadzić jej klucza. Wyczyść płytę i spróbuj ponownie.",
+        "E7102": "Żaden z dostępnych kluczy urządzenia nie pasuje do bloku kluczy AACS 2.1 tej płyty. Odśwież bazę kluczy i spróbuj ponownie.",
+        "E7103": "Klucz AACS 2.1 tej płyty wymaga kroku korekcji programowej, który nie jest obsługiwany.",
+        "E7104": "Klucz AACS 2.1 tej płyty wymaga wyzwania online, które nie jest obsługiwane.",
+        "E7106": "W bloku kluczy AACS 2.1 tej płyty brakuje tabeli wariantów, więc nie można wyprowadzić jej klucza. Płyta może być uszkodzona.",
+        "E7107": "Blok kluczy AACS 2.1 tej płyty wskazuje poza swoje dane kluczy wariantów, więc nie można wyprowadzić jej klucza. Płyta może być uszkodzona.",
+        "E7108": "Klucz wyprowadzony z bloku kluczy AACS 2.1 tej płyty nie przeszedł weryfikacji i nie został użyty. Odśwież bazę kluczy i spróbuj ponownie.",
         "E8000": "Nie można połączyć się z serwerem bazy kluczy: {detail}",
-        "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie lub uruchom: freemkv update-keys --url <adres-url-keydb>",
-        "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie zaktualizować.",
+        "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie.",
         "E8003": "Nie można zapisać bazy kluczy: {detail}",
-        "E8004": "Nie udało się odczytać bazy kluczy. Pobierz ją ponownie poleceniem: freemkv update-keys --url <adres-url-keydb>",
+        "E8004": "Nie udało się odczytać bazy kluczy. Pobierz ją ponownie.",
         "E8005": "Nie można wczytać bazy kluczy: {detail}",
         "E8006": "Adres URL bazy kluczy używa niedozwolonego typu adresu ({detail}).",
         "E8007": "Pobieranie bazy kluczy zostało przekierowane zbyt wiele razy. Sprawdź adres URL i spróbuj ponownie.",
@@ -310,7 +314,6 @@
         "E9006": "Dane wejściowe są uszkodzone lub nie są w oczekiwanym formacie.",
         "E9007": "Obraz ISO jest zbyt duży: {detail}",
         "E9008": "Brak dostępnych informacji dla tego wejścia.",
-        "E9009": "Wejścia płyty nie można otworzyć w ten sposób — to wewnętrzny błąd użycia.",
         "E9010": "Nie udało się odczytać danych konfiguracyjnych strumienia wideo. Źródło może być uszkodzone lub nieobsługiwane.",
         "E9011": "Błąd wewnętrzny podczas tworzenia wyniku. Zgłoś to.",
         "E9012": "Ten format wyjściowy nie jest jeszcze obsługiwany.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Błąd: --raw dotyczy tylko źródła disc:// (kopiuje sektory z płyty bez ich odszyfrowywania). „{source}” nie jest płytą. Usuń --raw albo zgrywaj z płyty w napędzie.",
         "scan_failed": "Skanowanie nie powiodło się: {detail}",
         "source_needs_scheme": "Błąd: „{source}” nie jest użytecznym źródłowym adresem URL — użyj rozpoznawanego prefiksu schemat:// (np. iso://{source} dla obrazu ISO lub disc:// dla napędu optycznego).",
+        "source_needs_container_scheme": "Błąd: „{source}” nie jest użytecznym źródłowym adresem URL — wygląda na plik {container}, więc użyj {scheme}://{source} (lub iso:// dla obrazu ISO, disc:// dla napędu optycznego).",
         "stream_none": "brak",
         "selection_disc_only": "Błąd: wybór tytułów i ścieżek (-t / -a / -s) dotyczy tylko źródła disc:// lub iso://, które jest skanowane do listy tytułów. '{source}' to źródło strumienia/pliku bez tytułów — usuń -t/-a/-s lub zgrywaj ze źródła disc:// albo iso://.",
         "title_out_of_range": "Tytuł {num} poza zakresem ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Błąd: źródło nie zgłasza żadnych sektorów, więc nie ma czego zapisać.",
         "E9061": "Błąd: ten folder zawiera płytę 3D (BDMV/STREAM/SSIF), której dir:// nie potrafi jeszcze odczytać. Zgrywaj zamiast tego z płyty lub z ISO.",
         "E9062": "Błąd: plików z folderu nie da się ułożyć jako obrazu płyty — wymagany plik nie znajduje się tam, gdzie umieściłaby go płyta.",
-        "E9063": "Błąd: ten folder jest nadal zaszyfrowany. dir:// wymaga odszyfrowanej kopii zapasowej; zgrywaj zamiast tego z płyty lub z ISO.",
         "E9064": "Błąd: ten folder nie jest kopią zapasową płyty. Wskaż w dir:// folder zawierający VIDEO_TS lub BDMV.",
         "E9065": "Błąd: plik zmienił się podczas odczytu, więc obraz nie odpowiadałby zawartości folderu. Nic nie zostało zapisane.",
         "E9066": "Błąd: ten folder jest zbyt duży, aby przedstawić go jako pojedynczy obraz płyty.",
         "E9067": "Błąd: nazwa pliku jest zbyt długa, aby zapisać ją na płycie. Skróć ją i spróbuj ponownie: „{path}”.",
-        "E9068": "Błąd: folder zawiera zbyt wiele podfolderów, aby zapisać go na płycie: „{path}”.",
+        "E9068": "Błąd: folder zawiera zbyt wiele plików lub podfolderów, aby zapisać go na płycie: „{path}”.",
         "E9069": "Błąd: większość klatek tego tytułu wypadła poza własne znaczniki odtwarzania płyty, więc wynik byłby poważnie niekompletny.",
         "E9070": "Błąd: nic nie zostało zapisane — wszystkie klatki zostały odrzucone. Wynik byłby pusty.",
         "E9071": "Próbowano zapisać do wyjścia po tym, jak zostało już zakończone lub uległo awarii, więc nie udało się zapisać danych.",
         "E9072": "Dane ścieżek ustawiono po zapisaniu nagłówka wyjścia, więc nie można było ich zastosować.",
+        "E9073": "Błąd: operacja przekroczyła limit czasu, ponieważ zbyt długo nie było żadnego postępu.",
+        "E9074": "MPG wymaga ścieżki wideo, którą potrafi przenieść (MPEG-1/2); ten tytuł jej nie ma. Użyj zamiast tego mkv://.",
+        "E9075": "Wyjście MPG zakończyło się dźwiękiem lub obrazem, których nie dało się spakować do strumienia programowego, więc plik jest niekompletny. Użyj zamiast tego mkv://.",
+        "E9077": "Gotowy plik MKV nie przeszedł kontroli odczytu zwrotnego ({detail}), więc nie został umieszczony na miejscu. Zgraj tytuł ponownie.",
+        "E9078": "Tytuł {detail} zakończył się przed ukończeniem multipleksowania, więc nie zachowano żadnego pliku. Spróbuj ponownie ten tytuł.",
+        "E9079": "Plik pośredni remuksu nadpisałby cel lub własny plik tymczasowy. Wybierz inne miejsce pośrednie.",
+        "E9080": "Kopiowanie gotowego pliku na miejsce zapisało niewłaściwą liczbę bajtów ({detail}). Sprawdź wolne miejsce i błędy w miejscu docelowym, a potem spróbuj ponownie.",
+        "E9081": "Kopiowanie lub kontrola gotowego pliku zatrzymała się, zanim zgłoszono wynik, więc plik nie został umieszczony na miejscu. Spróbuj ponownie.",
+        "E9083": "'{detail}' nie jest językiem rozpoznawanym przez freemkv. Popraw język albo użyj all/none.",
+        "E9084": "{detail} już istnieje. Przenieś lub usuń ten plik albo wybierz jego zastąpienie.",
+        "E9085": "Rozmiar partii odczytu wynosi zero, więc nic nie zostałoby odczytane. Ustaw co najmniej 1 sektor.",
         "no_lang_match_subtitle_forced": "żadna ścieżka napisów wymuszonych tego tytułu nie odpowiada '{requested}' (dostępne napisy wymuszone: {available}). Popraw język lub użyj all/none.",
         "log_level_out_of_range": "--log-level: wartość 0 jest poza zakresem (1–4), zignorowano",
         "log_level_not_a_number": "--log-level: oczekiwano liczby 1–4, otrzymano '{value}', zignorowano",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Plik Matroska",
             "m2ts": "  m2ts://path.m2ts         Plik strumienia transportowego BD",
             "mp4": "  mp4://path.mp4           Plik MP4",
+            "mpg": "  mpg://path.mpg           Plik strumienia programowego MPEG",
             "iso": "  iso://image.iso          Obraz ISO Blu-ray",
             "dir": "  dir://folder/            Odszyfrowane drzewo plików w folderze",
             "network": "  network://host:port      Strumień TCP",
@@ -658,7 +673,7 @@
             "cancelling": "Anulowanie…",
             "nothing_eject": "Nie ma czego wysunąć — źródło jest plikiem, a nie napędem.",
             "checking_updates": "Sprawdzanie aktualizacji…",
-            "mp4_mismatch": "MP4 nie może przechowywać wideo {codecs}. Wybierz MKV, który zachowuje wszystko.",
+            "container_mismatch": "Format {container} nie może przechowywać wideo {codecs}. Wybierz zamiast tego MKV.",
             "opened_version": "freemkv {version}",
             "opened": "Otwarto {label} — liczba tytułów: {n}, klucze: {keys}",
             "ready_convert": "Gotowy do konwersji",
@@ -695,7 +710,8 @@
             "pick_not_local": "Można używać tylko lokalnych plików i folderów: {p}",
             "reveal_failed": "Nie można otworzyć folderu w Eksploratorze plików: {e}",
             "scan_not_started": "Nie można rozpocząć skanowania źródła: {detail}",
-            "scan_worker_stopped": "Proces skanowania źródła zatrzymał się przed zwróceniem wyniku."
+            "scan_worker_stopped": "Proces skanowania źródła zatrzymał się przed zwróceniem wyniku.",
+            "insert_disc_retry": "Włóż płytę do napędu, a następnie ponownie wybierz „Rozpocznij zgrywanie”. Odczytywany jest tylko jej identyfikator woluminu; nie jest ona ponownie zgrywana."
         },
         "alert": {
             "rip_title": "Trwa zgrywanie.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Wybrane tytuły → MKV",
             "mp4": "Wybrane tytuły → MP4",
+            "mpg": "Wybrane tytuły → MPG",
             "m2ts": "Wybrane tytuły → M2TS",
             "tracks": "Wybrane tytuły → osobne pliki ścieżek",
             "iso": "Cała płyta → obraz ISO",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "ostrzeżenie: tytuł {num}: żadna ścieżka napisów wymuszonych nie odpowiada '{requested}' (dostępne: {available}) — zachowano tylko obraz."
     },
     "mux": {
-        "undelivered_header": "Uwaga: nie udało się dostarczyć strumieni (liczba: {count}), więc zostały pominięte:"
+        "undelivered_header": "Uwaga: nie udało się dostarczyć strumieni (liczba: {count}), więc zostały pominięte:",
+        "excluded_header": "Uwaga: następujących ścieżek (liczba: {count}) nie można zapisać w formacie {container}, więc zostaną pominięte (użyj {keep}://, aby je zachować):",
+        "reason": {
+            "subtitle": "format napisów nie ma odpowiednika w formacie {container}",
+            "audio": "kodek dźwięku nie ma odpowiednika w formacie {container}",
+            "video": "dodatkowy widok wideo",
+            "video_unmappable": "kodek wideo nie ma odpowiednika w formacie {container}",
+            "mp2_extension": "wielokanałowe rozszerzenie MPEG-2 — format {container} nie może go przechować (użyj mpg://, aby je zachować); podstawa stereo zostaje zachowana",
+            "no_stream_id": "w formacie {container} nie ma już wolnego numeru strumienia dla tej ścieżki"
+        }
     },
     "share": {
         "attach_zip": "Archiwum zip z profilem jest za duże na treść zgłoszenia — dołącz {path} do zgłoszenia.",
         "zip_failed": "Nie można utworzyć archiwum zip z profilem: {error}"
+    },
+    "stop": {
+        "stopping": "Zatrzymywanie…",
+        "waiting_for_drive": "Oczekiwanie na napęd…",
+        "progress_kept": "Postęp zostaje zachowany",
+        "finishing": "Kończenie…",
+        "artifact_lock_failed": "Nie udało się uzyskać blokady na {name}; może być używany przez inny proces."
     }
 }

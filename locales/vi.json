@@ -91,15 +91,6 @@
             "descriptive_service": "Dịch vụ mô tả"
         }
     },
-    "mp4": {
-        "excluded_header": "Lưu ý: {count} rãnh không thể lưu trong MP4 và sẽ bị bỏ qua (dùng mkv:// để giữ mọi thứ):",
-        "reason": {
-            "subtitle": "phụ đề dạng ảnh — MP4 chỉ mang phụ đề văn bản",
-            "audio": "codec âm thanh không có ánh xạ MP4",
-            "video": "chế độ xem video phụ",
-            "video_unmappable": "codec video không có ánh xạ MP4"
-        }
-    },
     "rip": {
         "opening": "Đang mở {device}...",
         "waiting": "Đang chờ đĩa...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Bắt tay thất bại",
         "verbose_handshake_hint": "Bắt tay có thể đã thất bại — không có chứng chỉ host, hoặc ổ đĩa từ chối",
         "mapfile_summary": "Tệp bản đồ: {good} GB tốt, {unreadable} MB không đọc được, {pending} MB đang chờ",
+        "staging_not_kept": "Ảnh đã chuẩn bị không được giữ lại: không đọc được vị trí của một tệp luồng trên đĩa này, nên chỉ các tiêu đề đã chọn được đọc và đây không phải ảnh của toàn bộ đĩa.",
         "retry_with_multipass": "Chạy lại với --multipass để thử đọc thêm; nó sẽ tiếp tục từ mapfile.",
         "nothing_to_patch": "Không có gì để vá — tất cả sector đều tốt",
         "patch_start": "Đang vá: {good} GB tốt, {unreadable} MB không đọc được, {pending} MB đang chờ",
@@ -260,7 +252,10 @@
         "E6018": "Lỗi: một tệp trên đĩa lưu nội dung trực tiếp bên trong mục mô tả thay vì trong các sector, điều mà đường đọc này không thể lập kế hoạch. Nếu đọc tệp này, nó sẽ trỏ tới các sector không liên quan.",
         "E6019": "Lỗi: một tệp trên đĩa liệt kê vùng mà nó chiếm, nhưng mọi phần của danh sách đó đều trống hoặc không trỏ tới đâu, nên tệp không có nội dung đọc được. Nếu đọc tệp này, sẽ không tạo ra gì cả, hoặc các sector không liên quan sẽ bị ghép vào bản sao.",
         "E6020": "Tệp ảnh đĩa kết thúc trước một sector mà lần sao chép này cần, nên ảnh đĩa bị cắt bớt hoặc chưa hoàn chỉnh. Quá trình đọc đã dừng thay vì điền số 0 vào phần bị thiếu — hãy tạo lại ảnh đĩa từ đĩa.",
-        "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Tải cơ sở dữ liệu khóa bằng: freemkv update-keys --url <keydb-url>",
+        "E6021": "Không thể tạo ảnh đĩa: đĩa này dùng mã hóa bus AACS và không đọc được vị trí của một tệp luồng trên đĩa ({detail}), nên không thể giải mã tệp đó và ảnh đĩa vẫn sẽ chứa dữ liệu bị mã hóa. Các tiêu đề không dùng tệp đó vẫn có thể trích xuất sang MKV, hoặc có thể giải nén đĩa vào một thư mục (tệp đó được báo là bị hỏng). Lau sạch đĩa rồi thử lại có thể khắc phục.",
+        "E6022": "Ảnh này ({detail}) được chuẩn bị cho một lần trích xuất MKV và chỉ chứa các tiêu đề đã chọn khi chuẩn bị, không phải toàn bộ đĩa, nên không thể dùng làm ảnh đĩa hoặc giải nén vào thư mục. Hãy trích xuất các tiêu đề đó sang MKV, hoặc tạo ảnh mới từ đĩa.",
+        "E6023": "Một danh sách phát HD DVD trên đĩa này quá lớn để đọc, nên đã được bỏ qua và các tựa được xác định từ các đoạn video của đĩa. Tên, thứ tự và các chương của tựa có thể kém chính xác hơn.",
+        "E7000": "Đĩa này cần khóa giải mã AACS (Blu-ray/UHD), nhưng không tìm thấy khóa nào. Hãy cài đặt hoặc cập nhật cơ sở dữ liệu khóa rồi thử lại.",
         "E7001": "Chứng chỉ bảo mật của đĩa quá ngắn hoặc không hợp lệ.",
         "E7002": "Ổ đĩa không khởi động phiên bảo mật cho đĩa này — có thể nó đang được chương trình khác sử dụng. Đóng mọi thứ khác đang dùng đĩa và thử lại.",
         "E7003": "Ổ đĩa từ chối chứng chỉ bảo mật của đĩa này.",
@@ -272,7 +267,7 @@
         "E7009": "Không thể đọc mã định danh của đĩa. Đĩa có thể bẩn hoặc hỏng.",
         "E7010": "Không thể xác minh mã định danh của đĩa. Đĩa có thể bị hỏng hoặc không được hỗ trợ.",
         "E7011": "Không thể chuẩn bị khóa giải mã của đĩa này.",
-        "E7013": "Giải mã thất bại — khóa khôi phục không mở khóa được dữ liệu của đĩa này. Khóa có thể sai hoặc lỗi thời; làm mới bằng: freemkv update-keys --url <keydb-url>",
+        "E7013": "Giải mã thất bại — khóa khôi phục không mở khóa được dữ liệu của đĩa này. Khóa có thể sai hoặc lỗi thời; hãy cập nhật cơ sở dữ liệu khóa của bạn rồi thử lại.",
         "E7014": "Xác thực CSS thất bại: ổ đĩa không thiết lập được trao đổi khóa cần để giải mã DVD này. Thử làm sạch đĩa và đưa lại vào. Nếu vẫn còn, ổ đĩa của bạn có thể không hỗ trợ đầy đủ giải mã CSS.",
         "E7015": "Ổ đĩa từ chối chứng chỉ host AACS, và ổ đĩa này không thể mở khóa bằng cách khác.",
         "E7016": "Ổ đĩa này không thể đọc đĩa ở chế độ cần để giải mã nó, và phiên bảo mật bị từ chối. Không còn cách nào giải mã đĩa này trên ổ đĩa này.",
@@ -285,7 +280,7 @@
         "E7023": "Đĩa này được bảo vệ chống sao chép và không khôi phục được khóa nào cho tiêu đề này, nên không thể giải mã (đầu ra sẽ không đọc được).",
         "E7024": "Không có chứng chỉ host nào khả dụng từ bất kỳ nguồn khóa nào cho bắt tay bảo mật của ổ đĩa.",
         "E7025": "Đĩa này dùng mã hóa bus AACS, nhưng không lấy được khóa bus nào từ bắt tay bảo mật của ổ đĩa, nên dữ liệu của nó không thể giải mã (đầu ra sẽ không đọc được).",
-        "E7026": "Đĩa này dùng thủy vân pháp y AACS 2.1 (FMTS) và không có khóa biến thể nào cho nó, nên không thể dựng lại phim mà không có khoảng trống. Cập nhật cơ sở dữ liệu khóa của bạn.",
+        "E7026": "Đĩa này dùng thủy vân pháp y AACS 2.1 (FMTS) và không có khóa biến thể nào cho nó, nên không thể dựng lại phim mà không có khoảng trống. Hãy cập nhật cơ sở dữ liệu khóa của bạn. Nếu chưa có nguồn khóa nào chứa đĩa này, hãy trích xuất đĩa thành một tập tin ảnh rồi chuyển đổi tập tin ảnh đó khi khóa được công bố.",
         "E7027": "Không thể mở khóa cơ chế chống sao chép của DVD này, nên không tiêu đề nào trên đĩa đọc được. Đĩa có thể bị hỏng, hoặc dùng một biến thể mà phiên bản này không hỗ trợ.",
         "E7028": "Không thể kết nối tới dịch vụ khóa trực tuyến, nên dịch vụ chưa hề cho biết đĩa này có khóa hay không. Việc này thường chỉ là tạm thời — hãy đợi vài phút rồi thử lại. Đừng vội đi tìm khóa bị thiếu; dịch vụ gặp sự cố chứ không phải đĩa.",
         "E7029": "Dịch vụ khóa trực tuyến đã từ chối token truy cập, nên không phản hồi. Hãy sửa token dịch vụ khóa trong Cài đặt (hoặc --key-auth trên dòng lệnh) rồi thử lại. Điều này không có nghĩa là đĩa không có khóa.",
@@ -293,11 +288,20 @@
         "E7031": "Tệp khóa AACS của đĩa này bị thiếu hoặc không đọc được. Hãy lau sạch đĩa rồi thử lại; nếu vẫn lỗi, đĩa có thể đã bị hỏng.",
         "E7032": "Không thể tạo bản sao đã giải mã của toàn bộ đĩa (ảnh đĩa hoặc thư mục): một phần của đĩa đang được mã hóa và không khóa nào hiện có mở được phần đó, nên bản sao vẫn sẽ chứa các phần bị mã hóa. Thay vào đó, hãy rip các tiêu đề sang MKV hoặc giữ một bản sao được mã hóa: sao chép thô đĩa (--raw trên dòng lệnh, hoặc “Giữ mã hóa (chuyển thô nguyên vẹn)” trong ứng dụng), hoặc giữ nguyên ảnh đĩa nguồn.",
         "E7033": "Đã tìm thấy chứng chỉ host trong các nguồn khóa của bạn, nhưng không có chứng chỉ nào dùng được (bị hỏng hoặc không đầy đủ). Hãy làm mới cơ sở dữ liệu khóa rồi thử lại.",
+        "E7034": "Khóa của đĩa này cần mã định danh tập đĩa (Volume ID) của nó, chỉ có thể đọc được từ chính đĩa. Hãy lắp đĩa vào để hoàn tất; đĩa sẽ không bị trích xuất lại.",
+        "E7100": "Đĩa này không dùng khối khóa biến thể AACS 2.1; thay vào đó sẽ dùng cách suy ra khóa tiêu chuẩn.",
+        "E7101": "Khối khóa AACS 2.1 của đĩa này không đầy đủ nên không thể suy ra khóa của đĩa. Hãy lau sạch đĩa rồi thử lại.",
+        "E7102": "Không có khóa thiết bị nào hiện có khớp với khối khóa AACS 2.1 của đĩa này. Hãy làm mới cơ sở dữ liệu khóa rồi thử lại.",
+        "E7103": "Khóa AACS 2.1 của đĩa này cần một bước hiệu chỉnh bằng phần mềm, bước này không được hỗ trợ.",
+        "E7104": "Khóa AACS 2.1 của đĩa này cần một thử thách trực tuyến, việc này không được hỗ trợ.",
+        "E7106": "Khối khóa AACS 2.1 của đĩa này thiếu bảng biến thể nên không thể suy ra khóa của đĩa. Đĩa có thể bị hỏng.",
+        "E7107": "Khối khóa AACS 2.1 của đĩa này trỏ ra ngoài dữ liệu khóa biến thể của nó nên không thể suy ra khóa của đĩa. Đĩa có thể bị hỏng.",
+        "E7108": "Khóa suy ra từ khối khóa AACS 2.1 của đĩa này không vượt qua kiểm tra và đã không được dùng. Hãy làm mới cơ sở dữ liệu khóa rồi thử lại.",
         "E8000": "Không thể kết nối tới máy chủ cơ sở dữ liệu khóa: {detail}",
-        "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Thử lại, hoặc chạy: freemkv update-keys --url <keydb-url>",
-        "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Tải lại bằng: freemkv update-keys --url <keydb-url>",
+        "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Hãy thử cập nhật lại.",
+        "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Hãy tải lại.",
         "E8003": "Không thể ghi cơ sở dữ liệu khóa: {detail}",
-        "E8004": "Không thể đọc cơ sở dữ liệu khóa. Tải lại bằng: freemkv update-keys --url <keydb-url>",
+        "E8004": "Không thể đọc cơ sở dữ liệu khóa. Hãy tải lại.",
         "E8005": "Không thể tải cơ sở dữ liệu khóa: {detail}",
         "E8006": "URL cơ sở dữ liệu khóa dùng loại địa chỉ không được phép ({detail}).",
         "E8007": "Việc tải cơ sở dữ liệu khóa bị chuyển hướng quá nhiều lần. Kiểm tra URL và thử lại.",
@@ -310,7 +314,6 @@
         "E9006": "Dữ liệu đầu vào bị hỏng hoặc không đúng định dạng mong đợi.",
         "E9007": "Ảnh ISO quá lớn: {detail}",
         "E9008": "Không có thông tin nào khả dụng cho đầu vào này.",
-        "E9009": "Không thể mở đầu vào đĩa theo cách này — đây là lỗi sử dụng nội bộ.",
         "E9010": "Không thể đọc dữ liệu thiết lập của luồng video. Nguồn có thể bị hỏng hoặc không được hỗ trợ.",
         "E9011": "Lỗi nội bộ khi dựng đầu ra. Vui lòng báo cáo việc này.",
         "E9012": "Định dạng đầu ra này chưa được hỗ trợ.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Lỗi: --raw chỉ áp dụng cho nguồn disc:// (nó sao chép các sector ra khỏi đĩa mà không giải mã). '{source}' không phải là đĩa. Hãy bỏ --raw, hoặc trích xuất từ đĩa trong ổ đĩa.",
         "scan_failed": "Quét thất bại: {detail}",
         "source_needs_scheme": "Lỗi: '{source}' không phải URL nguồn dùng được — dùng tiền tố scheme:// được nhận dạng (ví dụ iso://{source} cho một ảnh ISO, hoặc disc:// cho ổ đĩa quang).",
+        "source_needs_container_scheme": "Lỗi: '{source}' không phải URL nguồn dùng được — có vẻ đây là tệp {container}, vì vậy hãy dùng {scheme}://{source} (hoặc iso:// cho ảnh ISO, disc:// cho ổ đĩa quang).",
         "stream_none": "không có",
         "selection_disc_only": "Lỗi: việc chọn tiêu đề và rãnh (-t / -a / -s) chỉ áp dụng cho nguồn disc:// hoặc iso://, vốn được quét thành danh sách tiêu đề. '{source}' là nguồn luồng/tệp không có tiêu đề — hãy bỏ -t/-a/-s, hoặc rip từ nguồn disc:// hay iso://.",
         "title_out_of_range": "Tiêu đề {num} nằm ngoài phạm vi ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Lỗi: nguồn không báo có sector nào, nên không có gì để ghi.",
         "E9061": "Lỗi: thư mục này chứa một đĩa 3D (BDMV/STREAM/SSIF) mà dir:// chưa đọc được. Hãy trích xuất từ đĩa hoặc từ ISO thay thế.",
         "E9062": "Lỗi: không thể sắp xếp các tệp trong thư mục thành một ảnh đĩa — một tệp bắt buộc không nằm ở vị trí mà một đĩa sẽ đặt nó.",
-        "E9063": "Lỗi: thư mục này vẫn còn bị mã hóa. dir:// cần một bản sao lưu đã giải mã; hãy trích xuất từ đĩa hoặc từ ISO thay thế.",
         "E9064": "Lỗi: thư mục này không phải bản sao lưu của đĩa. Hãy trỏ dir:// tới thư mục chứa VIDEO_TS hoặc BDMV.",
         "E9065": "Lỗi: một tệp đã thay đổi trong khi đang được đọc, nên ảnh đĩa sẽ không khớp với thư mục. Chưa có gì được ghi.",
         "E9066": "Lỗi: thư mục này quá lớn để trình bày thành một ảnh đĩa duy nhất.",
         "E9067": "Lỗi: một tên tệp quá dài để lưu trên đĩa. Hãy rút ngắn rồi thử lại: '{path}'.",
-        "E9068": "Lỗi: một thư mục chứa quá nhiều thư mục con để lưu trên đĩa: '{path}'.",
+        "E9068": "Lỗi: một thư mục chứa quá nhiều tệp hoặc thư mục con để lưu trên đĩa: '{path}'.",
         "E9069": "Lỗi: phần lớn khung hình của tiêu đề này nằm ngoài các mốc phát lại của chính đĩa, nên đầu ra sẽ thiếu hụt nghiêm trọng.",
         "E9070": "Lỗi: không có gì được ghi — mọi khung hình đều bị loại bỏ. Đầu ra sẽ trống.",
         "E9071": "Đã có thao tác ghi vào đầu ra sau khi đầu ra đã hoàn tất hoặc bị lỗi, nên không thể lưu dữ liệu.",
         "E9072": "Thông tin rãnh được đặt sau khi phần đầu (header) của đầu ra đã được ghi, nên không thể áp dụng.",
+        "E9073": "Lỗi: thao tác đã hết thời gian chờ vì không có tiến triển trong thời gian quá dài.",
+        "E9074": "MPG cần một rãnh video mà nó có thể chứa (MPEG-1/2); tiêu đề này không có. Hãy dùng mkv:// thay thế.",
+        "E9075": "Đầu ra MPG kết thúc với âm thanh hoặc video không thể đóng gói vào luồng chương trình, nên tệp chưa hoàn chỉnh. Hãy dùng mkv:// thay thế.",
+        "E9077": "Tệp MKV đã hoàn tất không vượt qua bước kiểm tra đọc lại ({detail}), nên không được đặt vào vị trí. Hãy rip lại tiêu đề.",
+        "E9078": "Tiêu đề {detail} kết thúc trước khi mux xong, nên không giữ lại tệp nào. Hãy thử lại tiêu đề.",
+        "E9079": "Tệp trung gian của remux sẽ ghi đè lên đích hoặc tệp tạm của chính nó. Hãy chọn vị trí trung gian khác.",
+        "E9080": "Việc sao chép tệp đã hoàn tất vào vị trí đã ghi sai số byte ({detail}). Hãy kiểm tra dung lượng trống và lỗi ở đích, rồi thử lại.",
+        "E9081": "Bước sao chép hoặc kiểm tra tệp đã hoàn tất dừng trước khi báo kết quả, nên tệp không được đặt vào vị trí. Hãy thử lại.",
+        "E9083": "'{detail}' không phải là ngôn ngữ freemkv nhận ra. Hãy sửa ngôn ngữ, hoặc dùng all/none.",
+        "E9084": "{detail} đã tồn tại. Hãy di chuyển hoặc xóa nó, hoặc chọn thay thế nó.",
+        "E9085": "Kích thước lô đọc bằng 0 nên sẽ không đọc được gì. Hãy đặt tối thiểu 1 sector.",
         "no_lang_match_subtitle_forced": "không có phụ đề bắt buộc nào của tiêu đề này khớp với '{requested}' (phụ đề bắt buộc có sẵn: {available}). Hãy sửa ngôn ngữ, hoặc dùng all/none.",
         "log_level_out_of_range": "--log-level: giá trị 0 nằm ngoài phạm vi (1–4), bỏ qua",
         "log_level_not_a_number": "--log-level: cần một số 1–4, nhận được '{value}', bỏ qua",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Tệp Matroska",
             "m2ts": "  m2ts://path.m2ts         Tệp luồng truyền tải BD",
             "mp4": "  mp4://path.mp4           Tệp MP4",
+            "mpg": "  mpg://path.mpg           Tệp luồng chương trình MPEG",
             "iso": "  iso://image.iso          Ảnh ISO Blu-ray",
             "dir": "  dir://folder/            Cây tệp đã giải mã trong một thư mục",
             "network": "  network://host:port      Luồng TCP",
@@ -658,7 +673,7 @@
             "cancelling": "Đang hủy …",
             "nothing_eject": "Không có gì để đẩy ra — nguồn là một tệp, không phải ổ đĩa.",
             "checking_updates": "Đang kiểm tra cập nhật …",
-            "mp4_mismatch": "MP4 không thể lưu video {codecs}. Chọn MKV, giữ được mọi thứ.",
+            "container_mismatch": "{container} không thể lưu video {codecs}. Hãy chọn MKV thay thế.",
             "opened_version": "freemkv {version}",
             "opened": "{label} đã mở — {n} tiêu đề, khóa: {keys}",
             "ready_convert": "Sẵn sàng chuyển đổi",
@@ -695,7 +710,8 @@
             "pick_not_local": "Chỉ có thể dùng tệp và thư mục cục bộ: {p}",
             "reveal_failed": "Không thể mở thư mục trong File Explorer: {e}",
             "scan_not_started": "Không thể bắt đầu quét nguồn: {detail}",
-            "scan_worker_stopped": "Tiến trình quét nguồn đã dừng trước khi trả về kết quả."
+            "scan_worker_stopped": "Tiến trình quét nguồn đã dừng trước khi trả về kết quả.",
+            "insert_disc_retry": "Hãy lắp đĩa vào ổ đĩa, rồi chọn lại “Bắt đầu trích xuất”. Chỉ mã định danh tập đĩa của đĩa được đọc; đĩa không bị trích xuất lại."
         },
         "alert": {
             "rip_title": "Quá trình trích xuất đang diễn ra.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Tiêu đề đã chọn → MKV",
             "mp4": "Tiêu đề đã chọn → MP4",
+            "mpg": "Tiêu đề đã chọn → MPG",
             "m2ts": "Tiêu đề đã chọn → M2TS",
             "tracks": "Tiêu đề đã chọn → tệp rãnh riêng biệt",
             "iso": "Toàn đĩa → ảnh ISO",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "cảnh báo: tiêu đề {num}: không có phụ đề bắt buộc nào khớp với '{requested}' (có sẵn: {available}) — chỉ giữ lại video."
     },
     "mux": {
-        "undelivered_header": "Lưu ý: {count} rãnh không thể ghi vào đầu ra và đã bị bỏ qua:"
+        "undelivered_header": "Lưu ý: {count} rãnh không thể ghi vào đầu ra và đã bị bỏ qua:",
+        "excluded_header": "Lưu ý: {count} rãnh không thể lưu trong {container} và sẽ bị bỏ qua (dùng {keep}:// để giữ chúng):",
+        "reason": {
+            "subtitle": "định dạng phụ đề không có ánh xạ {container}",
+            "audio": "codec âm thanh không có ánh xạ {container}",
+            "video": "chế độ xem video phụ",
+            "video_unmappable": "codec video không có ánh xạ {container}",
+            "mp2_extension": "phần mở rộng đa kênh MPEG-2 — {container} không thể lưu phần này (dùng mpg:// để giữ lại); phần nền stereo vẫn được giữ",
+            "no_stream_id": "{container} không còn số luồng trống cho rãnh này"
+        }
     },
     "share": {
         "attach_zip": "Tệp zip hồ sơ quá lớn để đưa vào nội dung issue — hãy đính kèm {path} vào issue.",
         "zip_failed": "Không thể tạo tệp zip hồ sơ: {error}"
+    },
+    "stop": {
+        "stopping": "Đang dừng …",
+        "waiting_for_drive": "Đang chờ ổ đĩa …",
+        "progress_kept": "Tiến độ được giữ lại",
+        "finishing": "Đang hoàn tất …",
+        "artifact_lock_failed": "Không thể khóa {name}; có thể một tiến trình khác đang sử dụng nó."
     }
 }

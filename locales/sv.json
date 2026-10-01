@@ -91,15 +91,6 @@
             "descriptive_service": "Beskrivande tjänst"
         }
     },
-    "mp4": {
-        "excluded_header": "Obs: {count} spår kan inte lagras i en MP4 och kommer att utelämnas (använd mkv:// för att behålla allt):",
-        "reason": {
-            "subtitle": "bitmappsundertext — MP4 stöder endast textbaserade undertexter",
-            "audio": "ljudkodeken har ingen MP4-mappning",
-            "video": "sekundär videovy",
-            "video_unmappable": "videokodeken har ingen MP4-mappning"
-        }
-    },
     "rip": {
         "opening": "Öppnar {device}...",
         "waiting": "Väntar på skiva...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Handskakning misslyckades",
         "verbose_handshake_hint": "Handskakningen kan ha misslyckats — inget värdcertifikat, eller så avvisade enheten",
         "mapfile_summary": "Kartfil: {good} GB bra, {unreadable} MB oläsbara, {pending} MB väntande",
+        "staging_not_kept": "Den förberedda avbilden sparades inte: platsen för en strömfil på den här skivan kunde inte läsas, så bara de valda titlarna lästes och den är inte en avbild av hela skivan.",
         "retry_with_multipass": "Kör igen med --multipass för att försöka läsa mer; det återupptas från mapfilen.",
         "nothing_to_patch": "Inget att korrigera — alla sektorer är bra",
         "patch_start": "Korrigerar: {good} GB bra, {unreadable} MB oläsbara, {pending} MB väntande",
@@ -260,7 +252,10 @@
         "E6018": "Fel: en fil på skivan lagrar sitt innehåll direkt i stället för i sektorer, vilket den här läsvägen inte kan planera för. Att läsa den skulle ha pekat på orelaterade sektorer.",
         "E6019": "Fel: en fil på skivan listar det utrymme den upptar, men varje del av listan är tom eller pekar ingenstans, så filen har inget läsbart innehåll. Att läsa den skulle antingen inte ha gett något, eller klistrat in orelaterade sektorer i rippningen.",
         "E6020": "Skivavbildsfilen tar slut före en sektor som den här rippningen behöver, så avbilden är avhuggen eller ofullständig. Läsningen stoppades i stället för att fylla den saknade delen med nollor — skapa en ny avbild från skivan.",
-        "E7000": "Den här skivan behöver AACS-dekrypteringsnycklar (Blu-ray/UHD), men inga hittades. Ladda ner en nyckeldatabas med: freemkv update-keys --url <keydb-url>",
+        "E6021": "En skivavbild kan inte skapas: skivan använder AACS-busskryptering, och platsen för en strömfil på skivan kunde inte läsas ({detail}), så den filen kan inte dekrypteras och avbilden skulle fortfarande innehålla krypterade data. Titlar som inte använder den filen kan fortfarande rippas till MKV, eller så kan skivan packas upp till en mapp (filen rapporteras som skadad). Att rengöra skivan och försöka igen kan hjälpa.",
+        "E6022": "Den här avbilden ({detail}) förbereddes för en MKV-rippning och innehåller bara de titlar den förbereddes för, inte hela skivan, så den kan inte användas som skivavbild eller packas upp till en mapp. Rippa de titlarna till MKV, eller skapa en ny avbild från skivan.",
+        "E6023": "En HD DVD-spellista på den här skivan är för stor för att läsas, så den hoppades över och titlarna togs i stället fram ur skivans videoklipp. Titelnamn, ordning och kapitel kan vara mindre exakta.",
+        "E7000": "Den här skivan behöver AACS-dekrypteringsnycklar (Blu-ray/UHD), men inga hittades. Installera eller uppdatera en nyckeldatabas och försök igen.",
         "E7001": "Skivans säkerhetscertifikat är för kort eller ogiltigt.",
         "E7002": "Enheten ville inte starta en säker session för den här skivan — den kan användas av ett annat program. Stäng allt annat som använder skivan och försök igen.",
         "E7003": "Enheten avvisade den här skivans säkerhetscertifikat.",
@@ -272,7 +267,7 @@
         "E7009": "Kunde inte läsa skivans identifierare. Skivan kan vara smutsig eller skadad.",
         "E7010": "Skivans identifierare kunde inte verifieras. Skivan kan vara skadad eller inte stödjas.",
         "E7011": "Kunde inte förbereda den här skivans dekrypteringsnyckel.",
-        "E7013": "Dekryptering misslyckades — den återställda nyckeln låste inte upp den här skivans data. Nyckeln kan vara felaktig eller föråldrad; uppdatera den med: freemkv update-keys --url <keydb-url>",
+        "E7013": "Dekryptering misslyckades — den återställda nyckeln låste inte upp den här skivans data. Nyckeln kan vara felaktig eller föråldrad; uppdatera din nyckeldatabas och försök igen.",
         "E7014": "CSS-autentisering misslyckades: enheten kunde inte upprätta det nyckelutbyte som krävs för att dekryptera den här DVD:n. Prova att rengöra skivan och sätta i den på nytt. Om problemet kvarstår kanske din enhet inte fullt ut stöder CSS-dekryptering.",
         "E7015": "Enheten avvisade AACS-värdcertifikatet, och den här enheten kan inte låsas upp på annat sätt.",
         "E7016": "Den här enheten kan inte läsa skivan i det läge som krävs för att dekryptera den, och den säkra sessionen avvisades. Inget sätt att dekryptera den här skivan återstår på den här enheten.",
@@ -285,7 +280,7 @@
         "E7023": "Den här skivan är kopieringsskyddad och ingen nyckel kunde återställas för den här titeln, så den kan inte dekrypteras (utdata skulle bli oläsbar).",
         "E7024": "Inget värdcertifikat är tillgängligt från någon nyckelkälla för enhetens säkra handskakning.",
         "E7025": "Den här skivan använder AACS-busskryptering, men ingen bussnyckel kunde erhållas från enhetens säkra handskakning, så dess data kan inte dekrypteras (utdata skulle bli oläsbar).",
-        "E7026": "Den här skivan använder AACS 2.1 forensisk vattenmärkning (FMTS) och ingen variantnyckel är tillgänglig för den, så filmen kan inte återskapas utan luckor. Uppdatera din nyckeldatabas.",
+        "E7026": "Den här skivan använder AACS 2.1 forensisk vattenmärkning (FMTS) och ingen variantnyckel är tillgänglig för den, så filmen kan inte återskapas utan luckor. Uppdatera din nyckeldatabas. Om ingen nyckelkälla ännu känner till den här skivan kan du rippa skivan till en avbild och konvertera avbilden när nycklarna publiceras.",
         "E7027": "Den här DVD-skivans kopieringsskydd kunde inte låsas upp, så ingen titel på den kan läsas. Skivan kan vara skadad, eller använda en variant som den här versionen inte hanterar.",
         "E7028": "Nyckeltjänsten online gick inte att nå, så den sa aldrig om den här skivan har en nyckel. Det är oftast tillfälligt — vänta några minuter och försök igen. Leta inte efter en saknad nyckel än; det var tjänsten som låg nere, inte skivan.",
         "E7029": "Nyckeltjänsten online avvisade åtkomsttoken och svarade därför inte. Rätta till nyckeltjänstens token i Inställningar (eller --key-auth på kommandoraden) och försök igen. Det betyder inte att skivan saknar nyckel.",
@@ -293,11 +288,20 @@
         "E7031": "Skivans AACS-nyckelfil saknas eller kunde inte läsas. Rengör skivan och försök igen; om det fortfarande misslyckas kan skivan vara skadad.",
         "E7032": "En dekrypterad kopia av hela skivan (en avbild eller en mapp) kan inte skapas: en del av skivan är krypterad och ingen av de tillgängliga nycklarna öppnar den, så kopian skulle fortfarande innehålla krypterade delar. Rippa titlarna till MKV i stället, eller behåll en krypterad kopia: kopiera skivan rått (--raw på kommandoraden, eller ”Behåll krypterad (rå genomströmning)” i appen), eller behåll källavbilden som den är.",
         "E7033": "Värdcertifikat hittades i dina nyckelkällor, men inget av dem är användbart (skadat eller ofullständigt). Uppdatera din nyckeldatabas och försök igen.",
+        "E7034": "Nycklarna för den här skivan behöver dess Volym-ID (Volume ID), som bara kan läsas från skivan själv. Sätt i skivan för att slutföra; den kommer inte att rippas igen.",
+        "E7100": "Den här skivan använder inte ett AACS 2.1-variantnyckelblock; standardnyckelhärledningen används i stället.",
+        "E7101": "Skivans AACS 2.1-nyckelblock är ofullständigt, så dess nyckel kan inte härledas. Rengör skivan och försök igen.",
+        "E7102": "Ingen av de tillgängliga enhetsnycklarna passar skivans AACS 2.1-nyckelblock. Uppdatera din nyckeldatabas och försök igen.",
+        "E7103": "Skivans AACS 2.1-nyckel kräver ett programvarukorrigeringssteg, vilket inte stöds.",
+        "E7104": "Skivans AACS 2.1-nyckel kräver en onlineutmaning, vilket inte stöds.",
+        "E7106": "Skivans AACS 2.1-nyckelblock saknar sin varianttabell, så dess nyckel kan inte härledas. Skivan kan vara skadad.",
+        "E7107": "Skivans AACS 2.1-nyckelblock pekar utanför sina variantnyckeldata, så dess nyckel kan inte härledas. Skivan kan vara skadad.",
+        "E7108": "Nyckeln som härleddes från skivans AACS 2.1-nyckelblock klarade inte kontrollen och användes inte. Uppdatera din nyckeldatabas och försök igen.",
         "E8000": "Kan inte ansluta till nyckeldatabasservern: {detail}",
-        "E8001": "Nedladdning av nyckeldatabas misslyckades (HTTP {detail}). Försök igen, eller kör: freemkv update-keys --url <keydb-url>",
-        "E8002": "Nyckeldatabasen är tom eller ogiltig. Ladda ner den på nytt med: freemkv update-keys --url <keydb-url>",
+        "E8001": "Nedladdning av nyckeldatabas misslyckades (HTTP {detail}). Försök uppdateringen igen.",
+        "E8002": "Nyckeldatabasen är tom eller ogiltig. Ladda ner den på nytt.",
         "E8003": "Kan inte skriva nyckeldatabasen: {detail}",
-        "E8004": "Nyckeldatabasen kunde inte läsas. Ladda ner den på nytt med: freemkv update-keys --url <keydb-url>",
+        "E8004": "Nyckeldatabasen kunde inte läsas. Ladda ner den på nytt.",
         "E8005": "Kan inte läsa in nyckeldatabasen: {detail}",
         "E8006": "Nyckeldatabasens URL använder en adresstyp som inte är tillåten ({detail}).",
         "E8007": "Nedladdningen av nyckeldatabasen omdirigerades för många gånger. Kontrollera URL:en och försök igen.",
@@ -310,7 +314,6 @@
         "E9006": "Indata är skadad eller inte i det förväntade formatet.",
         "E9007": "ISO-avbild för stor: {detail}",
         "E9008": "Ingen information är tillgänglig för denna indata.",
-        "E9009": "Skivindata kan inte öppnas på det här sättet — detta är ett internt användningsfel.",
         "E9010": "Videoströmmens konfigurationsdata kunde inte läsas. Källan kan vara skadad eller inte stödjas.",
         "E9011": "Internt fel vid uppbyggnad av utdata. Rapportera detta.",
         "E9012": "Det här utdataformatet stöds inte ännu.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Fel: --raw gäller bara en disc://-källa (det kopierar sektorerna från skivan utan att dekryptera dem). '{source}' är inte en skiva. Ta bort --raw, eller rippa från skivan i en enhet.",
         "scan_failed": "Skanning misslyckades: {detail}",
         "source_needs_scheme": "Fel: '{source}' är inte en användbar käll-URL — använd ett igenkänt scheme://-prefix (t.ex. iso://{source} för en ISO-avbild, eller disc:// för den optiska enheten).",
+        "source_needs_container_scheme": "Fel: '{source}' är inte en användbar käll-URL — det ser ut som en {container}-fil, så använd {scheme}://{source} (eller iso:// för en ISO-avbild, disc:// för den optiska enheten).",
         "stream_none": "inget",
         "selection_disc_only": "Fel: val av titlar och spår (-t / -a / -s) gäller endast en disc:// eller iso://-källa, som läses in till en titellista. '{source}' är en ström-/filkälla utan titlar — ta bort -t/-a/-s eller rippa från en disc:// eller iso://-källa.",
         "title_out_of_range": "Titel {num} utanför intervallet ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Fel: källan rapporterar inga sektorer, så det finns inget att skriva.",
         "E9061": "Fel: den här mappen innehåller en 3D-skiva (BDMV/STREAM/SSIF), vilket dir:// ännu inte kan läsa. Rippa från skivan eller en ISO i stället.",
         "E9062": "Fel: mappens filer kan inte läggas upp som en skivavbild — en obligatorisk fil finns inte där en skiva skulle placera den.",
-        "E9063": "Fel: den här mappen är fortfarande krypterad. dir:// behöver en dekrypterad säkerhetskopia; rippa från skivan eller en ISO i stället.",
         "E9064": "Fel: den här mappen är inte en skivsäkerhetskopia. Peka dir:// på mappen som innehåller VIDEO_TS eller BDMV.",
         "E9065": "Fel: en fil ändrades medan den lästes, så avbilden inte skulle matcha mappen. Inget skrevs.",
         "E9066": "Fel: den här mappen är för stor för att presenteras som en enda skivavbild.",
         "E9067": "Fel: ett filnamn är för långt för att lagras på en skiva. Korta ner det och försök igen: '{path}'.",
-        "E9068": "Fel: en mapp innehåller för många undermappar för att lagras på en skiva: '{path}'.",
+        "E9068": "Fel: en mapp innehåller för många filer eller undermappar för att lagras på en skiva: '{path}'.",
         "E9069": "Fel: de flesta av den här titelns bildrutor låg utanför skivans egna uppspelningsmarkeringar, så utdata skulle bli grovt ofullständig.",
         "E9070": "Fel: inget skrevs — varje bildruta kasserades. Utdata skulle ha blivit tom.",
         "E9071": "Något skrevs till utdata efter att de redan hade avslutats eller misslyckats, så datan kunde inte sparas.",
         "E9072": "Spåruppgifterna angavs efter att utdatas huvud redan hade skrivits, så de kunde inte tillämpas.",
+        "E9073": "Fel: åtgärden fick timeout eftersom inga framsteg gjordes under för lång tid.",
+        "E9074": "MPG behöver ett videospår som det kan innehålla (MPEG-1/2); den här titeln har inget. Använd mkv:// i stället.",
+        "E9075": "MPG-utdata slutade med ljud eller video som inte kunde packas i programströmmen, så filen är ofullständig. Använd mkv:// i stället.",
+        "E9077": "Den färdiga MKV-filen klarade inte återläsningskontrollen ({detail}) och flyttades därför inte på plats. Rippa titeln igen.",
+        "E9078": "Titel {detail} avslutades innan dess muxning var klar, så ingen fil sparades. Försök med titeln igen.",
+        "E9079": "Remuxens mellanfil skulle skriva över målet eller sin egen temporära fil. Välj en annan mellanplats.",
+        "E9080": "När den färdiga filen kopierades på plats skrevs fel antal byte ({detail}). Kontrollera ledigt utrymme och fel på målet och försök igen.",
+        "E9081": "Kopieringen eller kontrollen av den färdiga filen stoppades innan den rapporterade, så filen flyttades inte på plats. Försök igen.",
+        "E9083": "'{detail}' är inte ett språk som freemkv känner igen. Rätta språket, eller använd all/none.",
+        "E9084": "{detail} finns redan. Flytta eller ta bort den, eller välj att ersätta den.",
+        "E9085": "Läsbatchstorleken är noll, så inget skulle läsas. Ange minst 1 sektor.",
         "no_lang_match_subtitle_forced": "ingen tvingad undertext på den här titeln matchar '{requested}' (tillgängliga tvingade undertexter: {available}). Rätta språket, eller använd all/none.",
         "log_level_out_of_range": "--log-level: värdet 0 ligger utanför intervallet (1–4), ignoreras",
         "log_level_not_a_number": "--log-level: förväntade ett tal 1–4, fick '{value}', ignoreras",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Matroska-fil",
             "m2ts": "  m2ts://path.m2ts         BD-transportströmfil",
             "mp4": "  mp4://path.mp4           MP4-fil",
+            "mpg": "  mpg://path.mpg           MPEG-programströmsfil",
             "iso": "  iso://image.iso          Blu-ray ISO-avbild",
             "dir": "  dir://folder/            Dekrypterat filträd i en mapp",
             "network": "  network://host:port      TCP-ström",
@@ -658,7 +673,7 @@
             "cancelling": "Avbryter …",
             "nothing_eject": "Inget att mata ut — källan är en fil, inte en enhet.",
             "checking_updates": "Söker efter uppdateringar …",
-            "mp4_mismatch": "MP4 kan inte lagra {codecs}-video. Välj MKV, som behåller allt.",
+            "container_mismatch": "{container} kan inte lagra {codecs}-video. Välj MKV i stället.",
             "opened_version": "freemkv {version}",
             "opened": "{label} öppnad — {n} titel/titlar, nycklar: {keys}",
             "ready_convert": "Redo att konvertera",
@@ -695,7 +710,8 @@
             "pick_not_local": "Endast lokala filer och mappar kan användas: {p}",
             "reveal_failed": "Kunde inte öppna mappen i Utforskaren: {e}",
             "scan_not_started": "Kunde inte starta skanningen av källan: {detail}",
-            "scan_worker_stopped": "Skanningsprocessen för källan stoppades innan den returnerade ett resultat."
+            "scan_worker_stopped": "Skanningsprocessen för källan stoppades innan den returnerade ett resultat.",
+            "insert_disc_retry": "Sätt i skivan i en enhet och välj ”Starta rippning” igen. Endast dess Volym-ID läses; den rippas inte igen."
         },
         "alert": {
             "rip_title": "En rippning pågår.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Valda titlar → MKV",
             "mp4": "Valda titlar → MP4",
+            "mpg": "Valda titlar → MPG",
             "m2ts": "Valda titlar → M2TS",
             "tracks": "Valda titlar → separata spårfiler",
             "iso": "Hel skiva → ISO-avbild",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "varning: titel {num}: ingen tvingad undertext matchar '{requested}' (tillgängliga: {available}) — behåller endast video."
     },
     "mux": {
-        "undelivered_header": "Obs: {count} spår kunde inte levereras och utelämnades:"
+        "undelivered_header": "Obs: {count} spår kunde inte levereras och utelämnades:",
+        "excluded_header": "Obs: {count} spår kan inte lagras i {container} och kommer att utelämnas (använd {keep}:// för att behålla dem):",
+        "reason": {
+            "subtitle": "undertextformatet har ingen {container}-mappning",
+            "audio": "ljudkodeken har ingen {container}-mappning",
+            "video": "sekundär videovy",
+            "video_unmappable": "videokodeken har ingen {container}-mappning",
+            "mp2_extension": "MPEG-2-flerkanalstillägg — {container} kan inte lagra det (använd mpg:// för att behålla det); stereobasen behålls",
+            "no_stream_id": "{container} har inga lediga strömnummer kvar för det här spåret"
+        }
     },
     "share": {
         "attach_zip": "Profilens zip-fil är för stor för ärendetexten — bifoga {path} till ärendet.",
         "zip_failed": "Kunde inte skapa profilens zip-fil: {error}"
+    },
+    "stop": {
+        "stopping": "Stoppar …",
+        "waiting_for_drive": "Väntar på enheten …",
+        "progress_kept": "Förloppet behålls",
+        "finishing": "Avslutar …",
+        "artifact_lock_failed": "Det gick inte att låsa {name}; en annan process kan använda den."
     }
 }

@@ -91,15 +91,6 @@
             "descriptive_service": "Beskrivende tjeneste"
         }
     },
-    "mp4": {
-        "excluded_header": "Bemærk: {count} spor kan ikke gemmes i en MP4 og udelades (brug mkv:// for at beholde alt):",
-        "reason": {
-            "subtitle": "bitmap-undertekst — MP4 understøtter kun tekstundertekster",
-            "audio": "lydcodec har ingen MP4-tilknytning",
-            "video": "sekundær videovisning",
-            "video_unmappable": "videocodec har ingen MP4-tilknytning"
-        }
-    },
     "rip": {
         "opening": "Åbner {device}...",
         "waiting": "Venter på disk...",
@@ -146,6 +137,7 @@
         "verbose_handshake_error": "Handshake mislykkedes",
         "verbose_handshake_hint": "Handshake mislykkedes muligvis — intet værtscertifikat, eller drevet afviste",
         "mapfile_summary": "Mapfile: {good} GB gode, {unreadable} MB ulæselige, {pending} MB afventer",
+        "staging_not_kept": "Det forberedte image blev ikke beholdt: placeringen af en streamfil på denne disk kunne ikke læses, så kun de valgte titler blev læst, og det er ikke et image af hele disken.",
         "retry_with_multipass": "Kør igen med --multipass for at prøve at læse mere; det genoptager fra mapfilen.",
         "nothing_to_patch": "Intet at patche — alle sektorer er gode",
         "patch_start": "Patcher: {good} GB gode, {unreadable} MB ulæselige, {pending} MB afventer",
@@ -260,7 +252,10 @@
         "E6018": "Fejl: en fil på disken gemmer sit indhold direkte i stedet for i sektorer, hvilket denne læsevej ikke kan planlægge for. At læse den ville have peget på ikke-relaterede sektorer.",
         "E6019": "Fejl: en fil på disken angiver den plads, den fylder, men hver del af den liste er tom eller peger ingen steder, så filen har intet læsbart indhold. At læse den ville enten ikke have givet noget, eller have flettet ikke-relaterede sektorer ind i ripningen.",
         "E6020": "Diskaftryksfilen slutter før en sektor, som denne ripning har brug for, så aftrykket er afkortet eller ufuldstændigt. Læsningen blev stoppet i stedet for at udfylde den manglende del med nuller — lav et nyt aftryk fra disken.",
-        "E7000": "Denne disk kræver AACS-dekrypteringsnøgler (Blu-ray/UHD), men ingen blev fundet. Download en nøgledatabase med: freemkv update-keys --url <keydb-url>",
+        "E6021": "Et diskimage kan ikke laves: denne disk bruger AACS-buskryptering, og placeringen af en streamfil på disken kunne ikke læses ({detail}), så den fil kan ikke dekrypteres, og imaget ville stadig indeholde krypterede data. Titler, der ikke bruger den fil, kan stadig rippes til MKV, eller disken kan udpakkes til en mappe (filen rapporteres som beskadiget). Det kan hjælpe at rengøre disken og prøve igen.",
+        "E6022": "Dette image ({detail}) blev forberedt til en MKV-ripning og indeholder kun de titler, det blev forberedt til, ikke hele disken, så det kan ikke bruges som diskimage eller udpakkes til en mappe. Rip de titler til MKV, eller lav et nyt image fra disken.",
+        "E6023": "En HD DVD-playliste på denne disk er for stor til at blive læst, så den blev sprunget over, og titlerne blev i stedet udledt af diskens videoklip. Titelnavne, rækkefølge og kapitler kan være mindre nøjagtige.",
+        "E7000": "Denne disk kræver AACS-dekrypteringsnøgler (Blu-ray/UHD), men ingen blev fundet. Installer eller opdatér en nøgledatabase, og prøv igen.",
         "E7001": "Diskens sikkerhedscertifikat er for kort eller ugyldigt.",
         "E7002": "Drevet ville ikke starte en sikker session for denne disk — den kan være i brug af et andet program. Luk alt andet, der bruger disken, og prøv igen.",
         "E7003": "Drevet afviste diskens sikkerhedscertifikat.",
@@ -272,7 +267,7 @@
         "E7009": "Kunne ikke læse diskens identifikator. Disken kan være snavset eller beskadiget.",
         "E7010": "Diskens identifikator kunne ikke verificeres. Disken kan være beskadiget eller ikke understøttet.",
         "E7011": "Kunne ikke forberede denne disks dekrypteringsnøgle.",
-        "E7013": "Dekryptering mislykkedes — den gendannede nøgle låste ikke diskens data op. Nøglen kan være forkert eller forældet; opdatér den med: freemkv update-keys --url <keydb-url>",
+        "E7013": "Dekryptering mislykkedes — den gendannede nøgle låste ikke diskens data op. Nøglen kan være forkert eller forældet; opdatér din nøgledatabase, og prøv igen.",
         "E7014": "CSS-godkendelse mislykkedes: drevet kunne ikke etablere den nøgleudveksling, der kræves for at dekryptere denne DVD. Prøv at rense disken og indsætte den igen. Hvis problemet fortsætter, understøtter dit drev muligvis ikke CSS-dekryptering fuldt ud.",
         "E7015": "Drevet afviste AACS-værtscertifikatet, og dette drev kan ikke låses op på anden måde.",
         "E7016": "Dette drev kan ikke læse disken i den tilstand, der kræves for at dekryptere den, og den sikre session blev afvist. Der er ingen måde tilbage at dekryptere denne disk på med dette drev.",
@@ -285,7 +280,7 @@
         "E7023": "Denne disk er kopibeskyttet, og ingen nøgle kunne gendannes for denne titel, så den kan ikke dekrypteres (outputtet ville være ulæseligt).",
         "E7024": "Intet værtscertifikat er tilgængeligt fra nogen nøglekilde til drevets sikre handshake.",
         "E7025": "Denne disk bruger AACS-buskryptering, men ingen busnøgle kunne opnås fra drevets sikre handshake, så dens data kan ikke dekrypteres (outputtet ville være ulæseligt).",
-        "E7026": "Denne disk bruger AACS 2.1 forensisk vandmærkning (FMTS), og ingen variantnøgle er tilgængelig for den, så filmen kan ikke genopbygges uden huller. Opdatér din nøgledatabase.",
+        "E7026": "Denne disk bruger AACS 2.1 forensisk vandmærkning (FMTS), og ingen variantnøgle er tilgængelig for den, så filmen kan ikke genopbygges uden huller. Opdatér din nøgledatabase. Hvis ingen nøglekilde endnu kender denne disk, så rip disken til et image, og konvertér imaget, når nøglerne bliver udgivet.",
         "E7027": "Denne DVD's kopibeskyttelse kunne ikke låses op, så ingen titel på den kan læses. Disken kan være beskadiget, eller bruge en variant, denne version ikke understøtter.",
         "E7028": "Nøgletjenesten online kunne ikke nås, så den svarede aldrig på, om denne disk har en nøgle. Dette er som regel midlertidigt — vent et par minutter, og prøv igen. Led ikke efter en manglende nøgle endnu; det var tjenesten, der var nede, ikke disken.",
         "E7029": "Nøgletjenesten online afviste adgangstokenet og svarede derfor ikke. Ret nøgletjenestens token i Indstillinger (eller --key-auth på kommandolinjen), og prøv igen. Det betyder ikke, at disken ikke har en nøgle.",
@@ -293,11 +288,20 @@
         "E7031": "Diskens AACS-nøglefil mangler eller kunne ikke læses. Rengør disken, og prøv igen; hvis det stadig mislykkes, kan disken være beskadiget.",
         "E7032": "En dekrypteret kopi af hele disken (et image eller en mappe) kan ikke laves: en del af disken er krypteret, og ingen af de tilgængelige nøgler åbner den, så kopien ville stadig indeholde krypterede dele. Rip titlerne til MKV i stedet, eller behold en krypteret kopi: kopiér disken råt (--raw på kommandolinjen eller “Behold krypteret (rå passthrough)” i appen), eller behold kildeimaget, som det er.",
         "E7033": "Der blev fundet værtscertifikater i dine nøglekilder, men ingen af dem kan bruges (beskadiget eller ufuldstændigt). Opdater din nøgledatabase, og prøv igen.",
+        "E7034": "Denne disks nøgler kræver dens Volume ID, som kun kan læses fra disken selv. Indsæt disken for at fuldføre; den vil ikke blive rippet igen.",
+        "E7100": "Denne disk bruger ikke en AACS 2.1-variantnøgleblok; standardnøgleafledningen bruges i stedet.",
+        "E7101": "Diskens AACS 2.1-nøgleblok er ufuldstændig, så dens nøgle kan ikke afledes. Rengør disken, og prøv igen.",
+        "E7102": "Ingen af de tilgængelige enhedsnøgler passer til diskens AACS 2.1-nøgleblok. Opdater din nøgledatabase, og prøv igen.",
+        "E7103": "Diskens AACS 2.1-nøgle kræver et softwarekorrektionstrin, som ikke understøttes.",
+        "E7104": "Diskens AACS 2.1-nøgle kræver en onlineudfordring, som ikke understøttes.",
+        "E7106": "Diskens AACS 2.1-nøgleblok mangler sin varianttabel, så dens nøgle kan ikke afledes. Disken kan være beskadiget.",
+        "E7107": "Diskens AACS 2.1-nøgleblok peger uden for sine variantnøgledata, så dens nøgle kan ikke afledes. Disken kan være beskadiget.",
+        "E7108": "Nøglen, der blev afledt af diskens AACS 2.1-nøgleblok, bestod ikke kontrollen og blev ikke brugt. Opdater din nøgledatabase, og prøv igen.",
         "E8000": "Kan ikke oprette forbindelse til nøgledatabaseserveren: {detail}",
-        "E8001": "Download af nøgledatabase mislykkedes (HTTP {detail}). Prøv igen, eller kør: freemkv update-keys --url <keydb-url>",
-        "E8002": "Nøgledatabasen er tom eller ugyldig. Download den igen med: freemkv update-keys --url <keydb-url>",
+        "E8001": "Download af nøgledatabase mislykkedes (HTTP {detail}). Prøv opdateringen igen.",
+        "E8002": "Nøgledatabasen er tom eller ugyldig. Download den igen.",
         "E8003": "Kan ikke skrive nøgledatabasen: {detail}",
-        "E8004": "Nøgledatabasen kunne ikke læses. Download den igen med: freemkv update-keys --url <keydb-url>",
+        "E8004": "Nøgledatabasen kunne ikke læses. Download den igen.",
         "E8005": "Kan ikke indlæse nøgledatabasen: {detail}",
         "E8006": "Nøgledatabasens URL bruger en adressetype, der ikke er tilladt ({detail}).",
         "E8007": "Download af nøgledatabasen blev omdirigeret for mange gange. Kontrollér URL'en og prøv igen.",
@@ -310,7 +314,6 @@
         "E9006": "Inputdataene er beskadigede eller ikke i det forventede format.",
         "E9007": "ISO-image for stort: {detail}",
         "E9008": "Ingen oplysninger er tilgængelige for dette input.",
-        "E9009": "Diskinput kan ikke åbnes på denne måde — dette er en intern brugsfejl.",
         "E9010": "Videostreams opsætningsdata kunne ikke læses. Kilden kan være beskadiget eller ikke understøttet.",
         "E9011": "Intern fejl under opbygning af output. Rapportér venligst dette.",
         "E9012": "Dette outputformat understøttes ikke endnu.",
@@ -394,6 +397,7 @@
         "raw_disc_only": "Fejl: --raw gælder kun for en disc://-kilde (det kopierer sektorerne fra disken uden at dekryptere dem). '{source}' er ikke en disk. Fjern --raw, eller rip fra disken i et drev.",
         "scan_failed": "Scanning mislykkedes: {detail}",
         "source_needs_scheme": "Fejl: '{source}' er ikke en brugbar kilde-URL — brug et genkendt scheme://-præfiks (f.eks. iso://{source} for et ISO-image, eller disc:// for det optiske drev).",
+        "source_needs_container_scheme": "Fejl: '{source}' er ikke en brugbar kilde-URL — det ligner en {container}-fil, så brug {scheme}://{source} (eller iso:// for et ISO-image, disc:// for det optiske drev).",
         "stream_none": "ingen",
         "selection_disc_only": "Fejl: titel- og sporvalg (-t / -a / -s) gælder kun for en disc:// eller iso:// kilde, som scannes til en titelliste. '{source}' er en stream-/filkilde uden titler — fjern -t/-a/-s, eller rip fra en disc:// eller iso:// kilde.",
         "title_out_of_range": "Titel {num} uden for området ({count})",
@@ -410,16 +414,26 @@
         "E9060": "Fejl: kilden rapporterer ingen sektorer, så der er intet at skrive.",
         "E9061": "Fejl: denne mappe indeholder en 3D-disk (BDMV/STREAM/SSIF), som dir:// endnu ikke kan læse. Rip fra disken eller en ISO i stedet.",
         "E9062": "Fejl: mappens filer kan ikke lægges ud som et diskimage — en påkrævet fil er ikke, hvor en disk ville placere den.",
-        "E9063": "Fejl: denne mappe er stadig krypteret. dir:// kræver en dekrypteret sikkerhedskopi; rip fra disken eller en ISO i stedet.",
         "E9064": "Fejl: denne mappe er ikke en disksikkerhedskopi. Peg dir:// på mappen, der indeholder VIDEO_TS eller BDMV.",
         "E9065": "Fejl: en fil ændrede sig, mens den blev læst, så imaget ikke ville matche mappen. Intet blev skrevet.",
         "E9066": "Fejl: denne mappe er for stor til at blive præsenteret som ét samlet diskimage.",
         "E9067": "Fejl: et filnavn er for langt til at kunne gemmes på en disk. Forkort det, og prøv igen: '{path}'.",
-        "E9068": "Fejl: en mappe indeholder for mange undermapper til at kunne gemmes på en disk: '{path}'.",
+        "E9068": "Fejl: en mappe indeholder for mange filer eller undermapper til at kunne gemmes på en disk: '{path}'.",
         "E9069": "Fejl: de fleste af denne titels frames lå uden for diskens egne afspilningsmærker, så outputtet ville være groft ufuldstændigt.",
         "E9070": "Fejl: intet blev skrevet — hver eneste frame blev kasseret. Outputtet ville have været tomt.",
         "E9071": "Der blev skrevet til outputtet, efter at det allerede var afsluttet eller var mislykkedes, så dataene kunne ikke gemmes.",
         "E9072": "Sporoplysningerne blev angivet, efter at outputtets header allerede var skrevet, så de kunne ikke anvendes.",
+        "E9073": "Fejl: handlingen fik timeout, fordi der ikke var fremskridt i for lang tid.",
+        "E9074": "MPG kræver et videospor, den kan indeholde (MPEG-1/2); denne titel har ingen. Brug mkv:// i stedet.",
+        "E9075": "MPG-output sluttede med lyd eller video, der ikke kunne pakkes i programstrømmen, så filen er ufuldstændig. Brug mkv:// i stedet.",
+        "E9077": "Den færdige MKV bestod ikke kontrollen ved genlæsning ({detail}), så den blev ikke sat på plads. Rip titlen igen.",
+        "E9078": "Titel {detail} sluttede, før dens mux var færdig, så ingen fil blev gemt. Prøv titlen igen.",
+        "E9079": "Remux-mellemfilen ville overskrive målet eller sin egen midlertidige fil. Vælg en anden mellemplacering.",
+        "E9080": "Kopieringen af den færdige fil på plads skrev et forkert antal bytes ({detail}). Tjek destinationen for ledig plads og fejl, og prøv igen.",
+        "E9081": "Kopieringen eller kontrollen af den færdige fil stoppede, før den meldte tilbage, så filen blev ikke sat på plads. Prøv igen.",
+        "E9083": "'{detail}' er ikke et sprog, freemkv kender. Ret sproget, eller brug all/none.",
+        "E9084": "{detail} findes allerede. Flyt eller slet den, eller vælg at erstatte den.",
+        "E9085": "Læsebatchstørrelsen er nul, så der kunne ikke læses noget. Sæt den til mindst 1 sektor.",
         "no_lang_match_subtitle_forced": "ingen tvungen undertekst på denne titel matcher '{requested}' (tilgængelige tvungne undertekster: {available}). Ret sproget, eller brug all/none.",
         "log_level_out_of_range": "--log-level: værdien 0 er uden for intervallet (1–4), ignoreret",
         "log_level_not_a_number": "--log-level: forventede et tal 1–4, fik '{value}', ignoreret",
@@ -452,6 +466,7 @@
             "mkv": "  mkv://path.mkv           Matroska-fil",
             "m2ts": "  m2ts://path.m2ts         BD-transportstreamfil",
             "mp4": "  mp4://path.mp4           MP4-fil",
+            "mpg": "  mpg://path.mpg           MPEG-programstrømfil",
             "iso": "  iso://image.iso          Blu-ray-ISO-image",
             "dir": "  dir://folder/            Dekrypteret filtræ i en mappe",
             "network": "  network://host:port      TCP-stream",
@@ -658,7 +673,7 @@
             "cancelling": "Annullerer …",
             "nothing_eject": "Intet at skubbe ud — kilden er en fil, ikke et drev.",
             "checking_updates": "Søger efter opdateringer …",
-            "mp4_mismatch": "MP4 kan ikke gemme {codecs}-video. Vælg MKV, som beholder alt.",
+            "container_mismatch": "{container} kan ikke gemme {codecs}-video. Vælg MKV i stedet.",
             "opened_version": "freemkv {version}",
             "opened": "{label} åbnet — {n} titel/titler, nøgler: {keys}",
             "ready_convert": "Klar til at konvertere",
@@ -695,7 +710,8 @@
             "pick_not_local": "Kun lokale filer og mapper kan bruges: {p}",
             "reveal_failed": "Kunne ikke åbne mappen i Stifinder: {e}",
             "scan_not_started": "Kunne ikke starte scanning af kilden: {detail}",
-            "scan_worker_stopped": "Scanningsprocessen for kilden stoppede, før den returnerede et resultat."
+            "scan_worker_stopped": "Scanningsprocessen for kilden stoppede, før den returnerede et resultat.",
+            "insert_disc_retry": "Indsæt disken i et drev, og vælg „Start rip“ igen. Kun dens Volume ID læses; den rippes ikke igen."
         },
         "alert": {
             "rip_title": "Et rip er i gang.",
@@ -721,6 +737,7 @@
         "format": {
             "mkv": "Valgte titler → MKV",
             "mp4": "Valgte titler → MP4",
+            "mpg": "Valgte titler → MPG",
             "m2ts": "Valgte titler → M2TS",
             "tracks": "Valgte titler → separate sporfiler",
             "iso": "Hele disken → ISO-image",
@@ -745,10 +762,26 @@
         "no_lang_match_subtitle_forced": "advarsel: titel {num}: ingen tvungen undertekst matcher '{requested}' (tilgængelige: {available}) — beholder kun video."
     },
     "mux": {
-        "undelivered_header": "Bemærk: {count} stream(s) kunne ikke leveres og blev udeladt:"
+        "undelivered_header": "Bemærk: {count} stream(s) kunne ikke leveres og blev udeladt:",
+        "excluded_header": "Bemærk: {count} spor kan ikke gemmes i {container} og udelades (brug {keep}:// for at beholde dem):",
+        "reason": {
+            "subtitle": "undertekstformatet har ingen {container}-tilknytning",
+            "audio": "lydcodec har ingen {container}-tilknytning",
+            "video": "sekundær videovisning",
+            "video_unmappable": "videocodec har ingen {container}-tilknytning",
+            "mp2_extension": "MPEG-2-flerkanalsudvidelse — {container} kan ikke gemme den (brug mpg:// for at beholde den); stereobasen bevares",
+            "no_stream_id": "{container} har intet ledigt streamnummer til dette spor"
+        }
     },
     "share": {
         "attach_zip": "Profil-zip'en er for stor til issue-teksten — vedhæft {path} til issuet.",
         "zip_failed": "Kunne ikke oprette profil-zip'en: {error}"
+    },
+    "stop": {
+        "stopping": "Stopper …",
+        "waiting_for_drive": "Venter på drevet …",
+        "progress_kept": "Fremskridt bevaret",
+        "finishing": "Afslutter …",
+        "artifact_lock_failed": "Kunne ikke tage låsen på {name}; en anden proces bruger den muligvis."
     }
 }
