@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Tip",
-            "desc": "Descriere"
+            "desc": "Descriere",
+            "duration": "Durată",
+            "size": "Dimensiune"
         },
         "tab": {
             "output": "Ieșire",

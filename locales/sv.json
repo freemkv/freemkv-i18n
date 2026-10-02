@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Typ",
-            "desc": "Beskrivning"
+            "desc": "Beskrivning",
+            "duration": "Speltid",
+            "size": "Storlek"
         },
         "tab": {
             "output": "Utdata",

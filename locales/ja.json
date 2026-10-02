@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "種類",
-            "desc": "説明"
+            "desc": "説明",
+            "duration": "再生時間",
+            "size": "サイズ"
         },
         "tab": {
             "output": "出力",

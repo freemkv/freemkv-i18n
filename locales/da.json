@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Type",
-            "desc": "Beskrivelse"
+            "desc": "Beskrivelse",
+            "duration": "Varighed",
+            "size": "Størrelse"
         },
         "tab": {
             "output": "Output",

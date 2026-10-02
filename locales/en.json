@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Type",
-            "desc": "Description"
+            "desc": "Description",
+            "duration": "Length",
+            "size": "Size"
         },
         "tab": {
             "output": "Output",

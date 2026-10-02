@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Type",
-            "desc": "Beskrivelse"
+            "desc": "Beskrivelse",
+            "duration": "Varighet",
+            "size": "Størrelse"
         },
         "tab": {
             "output": "Utdata",

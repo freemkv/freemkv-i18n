@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "유형",
-            "desc": "설명"
+            "desc": "설명",
+            "duration": "재생 시간",
+            "size": "크기"
         },
         "tab": {
             "output": "출력",
