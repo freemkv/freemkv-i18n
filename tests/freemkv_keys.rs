@@ -470,6 +470,8 @@ fn is_key(s: &str) -> bool {
 enum Covered {
     /// Its (key, english) pairs are the rows of this `const NAME: &[(&str, &str)]`.
     PairTable(&'static str),
+    /// Its pairs are this `(id, english)` table's rows, keyed `prefix` + id.
+    PrefixedPairTable(&'static str, &'static str),
     /// Its pairs are this fn's `"english" => "key"` match arms.
     MatchTable(&'static str),
     /// A wrapper whose own callers are checked directly.
@@ -508,6 +510,13 @@ const ALLOWLIST: &[(&str, &str, usize, Covered, &str)] = &[
         1,
         Covered::Forwarder,
         "fmt_or delegates to get_or",
+    ),
+    (
+        "ui.rs",
+        "lang_display_name",
+        1,
+        Covered::PrefixedPairTable("PICKER_LANGUAGES", "gui.lang."),
+        "gui.lang.<code> keys come from the picker's (code, English name) table",
     ),
 ];
 
@@ -629,16 +638,17 @@ fn freemkv_fallback_keys_ship_in_english_with_the_same_text() {
                 Err(e) => problems.push(e),
                 Ok(n) => {
                     used[n] = true;
-                    let rows = match ALLOWLIST[n].3 {
-                        Covered::PairTable(t) => ex.pair_tables.get(t),
-                        Covered::MatchTable(f) => ex.match_tables.get(f),
+                    let (rows, prefix) = match ALLOWLIST[n].3 {
+                        Covered::PairTable(t) => (ex.pair_tables.get(t), ""),
+                        Covered::PrefixedPairTable(t, p) => (ex.pair_tables.get(t), p),
+                        Covered::MatchTable(f) => (ex.match_tables.get(f), ""),
                         Covered::Forwarder => continue,
                     };
                     match rows {
                         Some(rows) => {
                             for (k, e) in rows {
                                 checked.push((
-                                    k.clone(),
+                                    format!("{prefix}{k}"),
                                     e.clone(),
                                     format!("{name} fn {func} table"),
                                 ));
