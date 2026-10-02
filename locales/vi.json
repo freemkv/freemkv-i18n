@@ -609,6 +609,7 @@
             "keyserver_token": "Token dịch vụ khóa :",
             "language": "Ngôn ngữ giao diện :",
             "language_note": "Có hiệu lực sau khi bạn khởi động lại freemkv.",
+            "language_auto": "Tự động",
             "decrypt_threads": "Luồng giải mã :",
             "decrypt_threads_note": "0 = một luồng cho mỗi nhân CPU.",
             "log_detail": "Chi tiết nhật ký :",
@@ -620,6 +621,12 @@
             "test_connection": "Kiểm tra kết nối",
             "keydb_no_url": "Chưa đặt URL cập nhật keydb — hãy thêm ở trên rồi bấm Cập nhật.",
             "keydb_updating": "Đang cập nhật keydb… đang tải xuống, vui lòng đợi.",
+            "keydb_found": "Đã tìm thấy keydb — {kb} KB, cập nhật {age}",
+            "keydb_not_found": "Không tìm thấy keydb.cfg",
+            "keydb_age_today": "hôm nay",
+            "keydb_age_yesterday": "hôm qua",
+            "keydb_age_days": "{days} ngày trước",
+            "keydb_age_unknown": "không rõ",
             "lang_any": "Bất kỳ",
             "notify_when_rip_finished": "Thông báo khi trích xuất xong"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "Đang lưu tất cả tiêu đề vào tệp {container}",
             "elapsed": "Đã trôi qua: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Còn lại: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "chương",
+            "word_track": "rãnh",
+            "word_video_track": "rãnh video",
+            "word_audio_track": "rãnh âm thanh",
+            "word_subtitle_track": "rãnh phụ đề"
         },
         "result": {
             "finished": "Đã hoàn tất",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "Cập nhật keydb thất bại — lỗi nội bộ",
             "drive_scan_failed": "Không thể liệt kê các ổ quang (lỗi nội bộ).",
             "bad_number_setting": "“{name}” phải là số nguyên, không phải “{value}”. Hãy sửa trong Cài đặt rồi bắt đầu lại.",
-            "open_url_refused": "Không thể mở {url}"
+            "open_url_refused": "Không thể mở {url}",
+            "update_worker_stopped": "Kiểm tra cập nhật thất bại: tiến trình đã dừng trước khi trả về kết quả",
+            "eject_worker_stopped": "Tiến trình đẩy đĩa ra đã dừng trước khi trả về kết quả",
+            "keydb_no_url": "Chưa đặt URL cập nhật keydb — hãy thêm trong Cài đặt ▸ Khóa",
+            "keydb_no_path": "Chưa đặt vị trí keydb.cfg — hãy thêm trong Cài đặt ▸ Khóa",
+            "keydb_download_failed": "Tải xuống thất bại: {error}",
+            "keydb_download_empty": "Tệp tải xuống trống",
+            "keydb_updated": "Đã cập nhật keydb — đã ghi {entries} mục ({kb} KB) vào {path}",
+            "keydb_rejected": "keydb bị từ chối: E{code}",
+            "update_failed": "Kiểm tra cập nhật thất bại: {error}",
+            "update_none_published": "Kiểm tra cập nhật: chưa có bản phát hành nào.",
+            "update_http_status": "Kiểm tra cập nhật thất bại: máy chủ trả về {code}",
+            "update_bad_response": "Kiểm tra cập nhật thất bại: phản hồi không hợp lệ ({error})",
+            "update_latest": "Bạn đang dùng phiên bản mới nhất ({current}).",
+            "update_available": "Có bản cập nhật: {latest} (bạn đang dùng {current}) — https://freemkv.org",
+            "update_no_version": "Kiểm tra cập nhật thất bại: không có phiên bản trong phản hồi"
         },
         "alert": {
             "rip_title": "Quá trình trích xuất đang diễn ra.",

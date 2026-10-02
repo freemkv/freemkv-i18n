@@ -609,6 +609,7 @@
             "keyserver_token": "Nøgletjeneste-token :",
             "language": "Brugerfladesprog :",
             "language_note": "Træder i kraft, når du genstarter freemkv.",
+            "language_auto": "Automatisk",
             "decrypt_threads": "Dekrypteringstråde :",
             "decrypt_threads_note": "0 = én pr. CPU-kerne.",
             "log_detail": "Logdetalje :",
@@ -620,6 +621,12 @@
             "test_connection": "Test forbindelse",
             "keydb_no_url": "Ingen keydb-opdaterings-URL angivet — tilføj en ovenfor og klik på Opdater.",
             "keydb_updating": "Opdaterer keydb… downloader, vent venligst.",
+            "keydb_found": "keydb fundet — {kb} KB, opdateret {age}",
+            "keydb_not_found": "ingen keydb.cfg fundet",
+            "keydb_age_today": "i dag",
+            "keydb_age_yesterday": "i går",
+            "keydb_age_days": "for {days} dage siden",
+            "keydb_age_unknown": "på ukendt tidspunkt",
             "lang_any": "Alle",
             "notify_when_rip_finished": "Giv besked, når et rip er færdigt"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "Gemmer alle titler til {container}-filer",
             "elapsed": "Forløbet: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Tilbage: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "kapitel",
+            "word_track": "spor",
+            "word_video_track": "videospor",
+            "word_audio_track": "lydspor",
+            "word_subtitle_track": "undertekstspor"
         },
         "result": {
             "finished": "Afsluttet",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "Opdatering af keydb mislykkedes — intern fejl",
             "drive_scan_failed": "Kunne ikke vise de optiske drev (intern fejl).",
             "bad_number_setting": "„{name}“ skal være et heltal, ikke „{value}“. Ret det i Indstillinger, og start igen.",
-            "open_url_refused": "Kunne ikke åbne {url}"
+            "open_url_refused": "Kunne ikke åbne {url}",
+            "update_worker_stopped": "Søgning efter opdateringer mislykkedes: arbejdsprocessen stoppede, før den returnerede et resultat",
+            "eject_worker_stopped": "Udskubningsprocessen stoppede, før den returnerede et resultat",
+            "keydb_no_url": "Ingen keydb-opdaterings-URL angivet — tilføj en under Indstillinger ▸ Nøgler",
+            "keydb_no_path": "Ingen placering til keydb.cfg angivet — tilføj en under Indstillinger ▸ Nøgler",
+            "keydb_download_failed": "Download mislykkedes: {error}",
+            "keydb_download_empty": "Downloaden var tom",
+            "keydb_updated": "keydb opdateret — {entries} poster ({kb} KB) skrevet til {path}",
+            "keydb_rejected": "keydb afvist: E{code}",
+            "update_failed": "Søgning efter opdateringer mislykkedes: {error}",
+            "update_none_published": "Søgning efter opdateringer: ingen udgivelser er udgivet endnu.",
+            "update_http_status": "Søgning efter opdateringer mislykkedes: serveren returnerede {code}",
+            "update_bad_response": "Søgning efter opdateringer mislykkedes: ugyldigt svar ({error})",
+            "update_latest": "Du kører den nyeste version ({current}).",
+            "update_available": "Opdatering tilgængelig: {latest} (du har {current}) — https://freemkv.org",
+            "update_no_version": "Søgning efter opdateringer mislykkedes: ingen version i svaret"
         },
         "alert": {
             "rip_title": "Et rip er i gang.",

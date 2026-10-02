@@ -609,6 +609,7 @@
             "keyserver_token": "密钥服务令牌 ：",
             "language": "界面语言 ：",
             "language_note": "重启 freemkv 后生效。",
+            "language_auto": "自动",
             "decrypt_threads": "解密线程 ：",
             "decrypt_threads_note": "0 = 每个 CPU 核心一个。",
             "log_detail": "日志详细程度 ：",
@@ -620,6 +621,12 @@
             "test_connection": "测试连接",
             "keydb_no_url": "未设置 keydb 更新网址 — 请在上方添加，然后点击“更新”。",
             "keydb_updating": "正在更新 keydb… 正在下载，请稍候。",
+            "keydb_found": "已找到 keydb — {kb} KB，更新于{age}",
+            "keydb_not_found": "未找到 keydb.cfg",
+            "keydb_age_today": "今天",
+            "keydb_age_yesterday": "昨天",
+            "keydb_age_days": "{days} 天前",
+            "keydb_age_unknown": "未知",
             "lang_any": "任意",
             "notify_when_rip_finished": "抓取完成时通知"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "正在将所有标题保存到 {container} 文件",
             "elapsed": "已用时：{hms}",
             "caption_eta": "{pct}%   {elapsed}   剩余：{hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "章节",
+            "word_track": "轨道",
+            "word_video_track": "视频轨道",
+            "word_audio_track": "音频轨道",
+            "word_subtitle_track": "字幕轨道"
         },
         "result": {
             "finished": "已完成",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "keydb 更新失败 —— 内部错误",
             "drive_scan_failed": "无法列出光驱（内部错误）。",
             "bad_number_setting": "“{name}”必须是整数，而不是“{value}”。请在设置中修正后重新开始。",
-            "open_url_refused": "无法打开 {url}"
+            "open_url_refused": "无法打开 {url}",
+            "update_worker_stopped": "检查更新失败：工作进程在返回结果之前已停止",
+            "eject_worker_stopped": "弹出进程在返回结果之前已停止",
+            "keydb_no_url": "未设置 keydb 更新网址 — 请在 设置 ▸ 密钥 中添加",
+            "keydb_no_path": "未设置 keydb.cfg 位置 — 请在 设置 ▸ 密钥 中添加",
+            "keydb_download_failed": "下载失败：{error}",
+            "keydb_download_empty": "下载内容为空",
+            "keydb_updated": "keydb 已更新 — 已将 {entries} 个条目（{kb} KB）写入 {path}",
+            "keydb_rejected": "keydb 被拒绝：E{code}",
+            "update_failed": "检查更新失败：{error}",
+            "update_none_published": "检查更新：尚无已发布的版本。",
+            "update_http_status": "检查更新失败：服务器返回 {code}",
+            "update_bad_response": "检查更新失败：响应无效（{error}）",
+            "update_latest": "您正在运行最新版本（{current}）。",
+            "update_available": "有可用更新：{latest}（当前版本 {current}）— https://freemkv.org",
+            "update_no_version": "检查更新失败：响应中没有版本信息"
         },
         "alert": {
             "rip_title": "抓取正在进行中。",

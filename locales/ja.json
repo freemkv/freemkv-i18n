@@ -609,6 +609,7 @@
             "keyserver_token": "キーサービストークン :",
             "language": "インターフェース言語 :",
             "language_note": "freemkv を再起動すると反映されます。",
+            "language_auto": "自動",
             "decrypt_threads": "復号スレッド数 :",
             "decrypt_threads_note": "0 = CPU コアごとに 1 つ。",
             "log_detail": "ログの詳細度 :",
@@ -620,6 +621,12 @@
             "test_connection": "接続をテスト",
             "keydb_no_url": "keydb 更新 URL が設定されていません。上に入力して「更新」をクリックしてください。",
             "keydb_updating": "keydb を更新中… ダウンロードしています。お待ちください。",
+            "keydb_found": "keydb が見つかりました — {kb} KB、更新: {age}",
+            "keydb_not_found": "keydb.cfg が見つかりません",
+            "keydb_age_today": "今日",
+            "keydb_age_yesterday": "昨日",
+            "keydb_age_days": "{days} 日前",
+            "keydb_age_unknown": "不明",
             "lang_any": "すべて",
             "notify_when_rip_finished": "リッピング完了時に通知する"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "すべてのタイトルを {container} ファイルに保存中",
             "elapsed": "経過: {hms}",
             "caption_eta": "{pct}%   {elapsed}   残り: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "チャプター",
+            "word_track": "トラック",
+            "word_video_track": "ビデオトラック",
+            "word_audio_track": "オーディオトラック",
+            "word_subtitle_track": "字幕トラック"
         },
         "result": {
             "finished": "完了",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "keydb の更新に失敗しました — 内部エラー",
             "drive_scan_failed": "光学ドライブを一覧表示できませんでした（内部エラー）。",
             "bad_number_setting": "「{name}」 には 「{value}」 ではなく整数を指定してください。設定で修正してから、もう一度開始してください。",
-            "open_url_refused": "{url} を開けませんでした"
+            "open_url_refused": "{url} を開けませんでした",
+            "update_worker_stopped": "アップデートの確認に失敗しました: 結果を返す前に処理が停止しました",
+            "eject_worker_stopped": "取り出し処理が結果を返す前に停止しました",
+            "keydb_no_url": "keydb 更新 URL が設定されていません — 設定 ▸ キー で追加してください",
+            "keydb_no_path": "keydb.cfg の場所が設定されていません — 設定 ▸ キー で追加してください",
+            "keydb_download_failed": "ダウンロードに失敗しました: {error}",
+            "keydb_download_empty": "ダウンロードした内容が空でした",
+            "keydb_updated": "keydb を更新しました — {entries} 件のエントリ ({kb} KB) を {path} に書き込みました",
+            "keydb_rejected": "keydb が拒否されました: E{code}",
+            "update_failed": "アップデートの確認に失敗しました: {error}",
+            "update_none_published": "アップデートの確認: 公開されているリリースはまだありません。",
+            "update_http_status": "アップデートの確認に失敗しました: サーバーが {code} を返しました",
+            "update_bad_response": "アップデートの確認に失敗しました: 不正な応答です ({error})",
+            "update_latest": "最新バージョン ({current}) を使用中です。",
+            "update_available": "アップデートがあります: {latest} (現在のバージョン: {current}) — https://freemkv.org",
+            "update_no_version": "アップデートの確認に失敗しました: 応答にバージョンが含まれていません"
         },
         "alert": {
             "rip_title": "リッピングが進行中です。",

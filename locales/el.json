@@ -609,6 +609,7 @@
             "keyserver_token": "Token υπηρεσίας κλειδιών :",
             "language": "Γλώσσα διεπαφής :",
             "language_note": "Τίθεται σε ισχύ αφού επανεκκινήσετε το freemkv.",
+            "language_auto": "Αυτόματα",
             "decrypt_threads": "Νήματα αποκρυπτογράφησης :",
             "decrypt_threads_note": "0 = ένα ανά πυρήνα CPU.",
             "log_detail": "Λεπτομέρεια καταγραφής :",
@@ -620,6 +621,12 @@
             "test_connection": "Δοκιμή σύνδεσης",
             "keydb_no_url": "Δεν έχει οριστεί URL ενημέρωσης keydb — προσθέστε ένα παραπάνω και κάντε κλικ στην Ενημέρωση.",
             "keydb_updating": "Ενημέρωση keydb… γίνεται λήψη, περιμένετε.",
+            "keydb_found": "Το keydb βρέθηκε — {kb} KB, ενημερώθηκε {age}",
+            "keydb_not_found": "δεν βρέθηκε keydb.cfg",
+            "keydb_age_today": "σήμερα",
+            "keydb_age_yesterday": "χθες",
+            "keydb_age_days": "πριν από {days} ημέρες",
+            "keydb_age_unknown": "άγνωστο πότε",
             "lang_any": "Οποιαδήποτε",
             "notify_when_rip_finished": "Ειδοποίηση όταν ολοκληρωθεί μια εξαγωγή"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "Αποθήκευση όλων των τίτλων σε αρχεία {container}",
             "elapsed": "Παρήλθε: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Απομένουν: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "κεφαλαίου",
+            "word_track": "κομματιού",
+            "word_video_track": "κομματιού βίντεο",
+            "word_audio_track": "κομματιού ήχου",
+            "word_subtitle_track": "κομματιού υποτίτλων"
         },
         "result": {
             "finished": "Ολοκληρώθηκε",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "Η ενημέρωση του keydb απέτυχε — εσωτερικό σφάλμα",
             "drive_scan_failed": "Δεν ήταν δυνατή η εμφάνιση των οπτικών μονάδων (εσωτερικό σφάλμα).",
             "bad_number_setting": "Το «{name}» πρέπει να είναι ακέραιος αριθμός, όχι «{value}». Διορθώστε το στις Ρυθμίσεις και, στη συνέχεια, ξεκινήστε ξανά.",
-            "open_url_refused": "Δεν ήταν δυνατό το άνοιγμα του {url}"
+            "open_url_refused": "Δεν ήταν δυνατό το άνοιγμα του {url}",
+            "update_worker_stopped": "Ο έλεγχος ενημερώσεων απέτυχε: η διεργασία σταμάτησε πριν επιστρέψει αποτέλεσμα",
+            "eject_worker_stopped": "η διεργασία εξαγωγής σταμάτησε πριν επιστρέψει αποτέλεσμα",
+            "keydb_no_url": "Δεν έχει οριστεί URL ενημέρωσης keydb — προσθέστε ένα στις Ρυθμίσεις ▸ Κλειδιά",
+            "keydb_no_path": "Δεν έχει οριστεί τοποθεσία keydb.cfg — προσθέστε μία στις Ρυθμίσεις ▸ Κλειδιά",
+            "keydb_download_failed": "Η λήψη απέτυχε: {error}",
+            "keydb_download_empty": "Η λήψη ήταν κενή",
+            "keydb_updated": "Το keydb ενημερώθηκε — {entries} εγγραφές ({kb} KB) γράφτηκαν στο {path}",
+            "keydb_rejected": "Το keydb απορρίφθηκε: E{code}",
+            "update_failed": "Ο έλεγχος ενημερώσεων απέτυχε: {error}",
+            "update_none_published": "Έλεγχος ενημερώσεων: δεν έχουν δημοσιευτεί ακόμη εκδόσεις.",
+            "update_http_status": "Ο έλεγχος ενημερώσεων απέτυχε: ο διακομιστής επέστρεψε {code}",
+            "update_bad_response": "Ο έλεγχος ενημερώσεων απέτυχε: μη έγκυρη απάντηση ({error})",
+            "update_latest": "Χρησιμοποιείτε την πιο πρόσφατη έκδοση ({current}).",
+            "update_available": "Διαθέσιμη ενημέρωση: {latest} (έχετε {current}) — https://freemkv.org",
+            "update_no_version": "Ο έλεγχος ενημερώσεων απέτυχε: δεν υπάρχει έκδοση στην απάντηση"
         },
         "alert": {
             "rip_title": "Μια εξαγωγή βρίσκεται σε εξέλιξη.",

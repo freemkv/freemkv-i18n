@@ -609,6 +609,7 @@
             "keyserver_token": "Token služby klíčů :",
             "language": "Jazyk rozhraní :",
             "language_note": "Projeví se po restartu freemkv.",
+            "language_auto": "Automaticky",
             "decrypt_threads": "Vlákna dešifrování :",
             "decrypt_threads_note": "0 = jedno na jádro CPU.",
             "log_detail": "Podrobnost protokolu :",
@@ -620,6 +621,12 @@
             "test_connection": "Otestovat připojení",
             "keydb_no_url": "Není nastavena adresa URL pro aktualizaci keydb — zadejte ji výše a klikněte na Aktualizovat.",
             "keydb_updating": "Aktualizace keydb… stahování, čekejte prosím.",
+            "keydb_found": "keydb nalezen — {kb} KB, aktualizován {age}",
+            "keydb_not_found": "soubor keydb.cfg nebyl nalezen",
+            "keydb_age_today": "dnes",
+            "keydb_age_yesterday": "včera",
+            "keydb_age_days": "před {days} dny",
+            "keydb_age_unknown": "v neznámém čase",
             "lang_any": "Libovolný",
             "notify_when_rip_finished": "Upozornit po dokončení ripování"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "Ukládání všech titulů do souborů {container}",
             "elapsed": "Uplynulo: {hms}",
             "caption_eta": "{pct} %   {elapsed}   Zbývá: {hms}",
-            "caption_no_eta": "{pct} %   {elapsed}"
+            "caption_no_eta": "{pct} %   {elapsed}",
+            "word_chapter": "kapitoly",
+            "word_track": "stopy",
+            "word_video_track": "videostopy",
+            "word_audio_track": "zvukové stopy",
+            "word_subtitle_track": "stopy titulků"
         },
         "result": {
             "finished": "Dokončeno",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "Aktualizace keydb selhala — interní chyba",
             "drive_scan_failed": "Nelze vypsat optické jednotky (interní chyba).",
             "bad_number_setting": "„{name}“ musí být celé číslo, ne „{value}“. Opravte to v Nastavení a začněte znovu.",
-            "open_url_refused": "Nelze otevřít {url}"
+            "open_url_refused": "Nelze otevřít {url}",
+            "update_worker_stopped": "Kontrola aktualizací selhala: pracovní proces se zastavil dříve, než vrátil výsledek",
+            "eject_worker_stopped": "Proces vysunutí se zastavil dříve, než vrátil výsledek",
+            "keydb_no_url": "Není nastavena adresa URL pro aktualizaci keydb — přidejte ji v Nastavení ▸ Klíče",
+            "keydb_no_path": "Není nastaveno umístění souboru keydb.cfg — přidejte jej v Nastavení ▸ Klíče",
+            "keydb_download_failed": "Stahování selhalo: {error}",
+            "keydb_download_empty": "Stažený soubor byl prázdný",
+            "keydb_updated": "keydb aktualizován — {entries} záznamů ({kb} KB) zapsáno do {path}",
+            "keydb_rejected": "keydb zamítnut: E{code}",
+            "update_failed": "Kontrola aktualizací selhala: {error}",
+            "update_none_published": "Kontrola aktualizací: zatím nebyla publikována žádná vydání.",
+            "update_http_status": "Kontrola aktualizací selhala: server vrátil {code}",
+            "update_bad_response": "Kontrola aktualizací selhala: neplatná odpověď ({error})",
+            "update_latest": "Používáte nejnovější verzi ({current}).",
+            "update_available": "K dispozici je aktualizace: {latest} (máte {current}) — https://freemkv.org",
+            "update_no_version": "Kontrola aktualizací selhala: v odpovědi chybí verze"
         },
         "alert": {
             "rip_title": "Probíhá ripování.",

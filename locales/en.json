@@ -610,6 +610,7 @@
             "keyserver_token": "Key service token :",
             "language": "Interface language :",
             "language_note": "Takes effect after you restart freemkv.",
+            "language_auto": "Auto",
             "decrypt_threads": "Decrypt threads :",
             "decrypt_threads_note": "0 = one per CPU core.",
             "log_detail": "Log detail :",
@@ -621,6 +622,12 @@
             "test_connection": "Test connection",
             "keydb_no_url": "No keydb update URL set — add one above, then click Update.",
             "keydb_updating": "Updating keydb… downloading, please wait.",
+            "keydb_found": "keydb found — {kb} KB, updated {age}",
+            "keydb_not_found": "no keydb.cfg found",
+            "keydb_age_today": "today",
+            "keydb_age_yesterday": "yesterday",
+            "keydb_age_days": "{days} days ago",
+            "keydb_age_unknown": "unknown",
             "notify_when_rip_finished": "Notify when a rip finishes"
         },
         "btn": {
@@ -651,7 +658,12 @@
             "saving_overall": "Saving all titles to {container} files",
             "elapsed": "Elapsed: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Remaining: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "chapter",
+            "word_track": "track",
+            "word_video_track": "video track",
+            "word_audio_track": "audio track",
+            "word_subtitle_track": "subtitle track"
         },
         "result": {
             "finished": "Finished",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "keydb update failed — internal error",
             "drive_scan_failed": "Could not list the optical drives (internal error).",
             "bad_number_setting": "“{name}” must be a whole number, not “{value}”. Fix it in Settings, then start again.",
-            "open_url_refused": "Could not open {url}"
+            "open_url_refused": "Could not open {url}",
+            "update_worker_stopped": "Update check failed: worker stopped before returning a result",
+            "eject_worker_stopped": "eject worker stopped before returning a result",
+            "keydb_no_url": "No keydb update URL set — add one in Settings ▸ Keys",
+            "keydb_no_path": "No keydb.cfg location set — add one in Settings ▸ Keys",
+            "keydb_download_failed": "Download failed: {error}",
+            "keydb_download_empty": "Download was empty",
+            "keydb_updated": "keydb updated — {entries} entries ({kb} KB) written to {path}",
+            "keydb_rejected": "keydb rejected: E{code}",
+            "update_failed": "Update check failed: {error}",
+            "update_none_published": "Update check: no releases published yet.",
+            "update_http_status": "Update check failed: server returned {code}",
+            "update_bad_response": "Update check failed: bad response ({error})",
+            "update_latest": "You are running the latest version ({current}).",
+            "update_available": "Update available: {latest} (you have {current}) — https://freemkv.org",
+            "update_no_version": "Update check failed: no version in response"
         },
         "alert": {
             "rip_title": "A rip is in progress.",

@@ -609,6 +609,7 @@
             "keyserver_token": "Токен службы ключей :",
             "language": "Язык интерфейса :",
             "language_note": "Вступит в силу после перезапуска freemkv.",
+            "language_auto": "Автоматически",
             "decrypt_threads": "Потоки расшифровки :",
             "decrypt_threads_note": "0 = по одному на ядро ЦП.",
             "log_detail": "Детализация журнала :",
@@ -620,6 +621,12 @@
             "test_connection": "Проверить соединение",
             "keydb_no_url": "URL обновления keydb не задан — укажите его выше и нажмите «Обновить».",
             "keydb_updating": "Обновление keydb… идет загрузка, подождите.",
+            "keydb_found": "keydb найден — {kb} KB, обновлен {age}",
+            "keydb_not_found": "keydb.cfg не найден",
+            "keydb_age_today": "сегодня",
+            "keydb_age_yesterday": "вчера",
+            "keydb_age_days": "{days} дн. назад",
+            "keydb_age_unknown": "неизвестно когда",
             "lang_any": "Любой",
             "notify_when_rip_finished": "Уведомлять о завершении копирования"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "Сохранение всех тайтлов в файлы {container}",
             "elapsed": "Прошло: {hms}",
             "caption_eta": "{pct} %   {elapsed}   Осталось: {hms}",
-            "caption_no_eta": "{pct} %   {elapsed}"
+            "caption_no_eta": "{pct} %   {elapsed}",
+            "word_chapter": "главы",
+            "word_track": "дорожки",
+            "word_video_track": "видеодорожки",
+            "word_audio_track": "аудиодорожки",
+            "word_subtitle_track": "дорожки субтитров"
         },
         "result": {
             "finished": "Завершено",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "Не удалось обновить keydb — внутренняя ошибка",
             "drive_scan_failed": "Не удалось получить список оптических приводов (внутренняя ошибка).",
             "bad_number_setting": "Значение «{name}» должно быть целым числом, а не «{value}». Исправьте его в Настройках и начните заново.",
-            "open_url_refused": "Не удалось открыть {url}"
+            "open_url_refused": "Не удалось открыть {url}",
+            "update_worker_stopped": "Не удалось проверить обновления: процесс остановился, не вернув результат",
+            "eject_worker_stopped": "процесс извлечения остановился, не вернув результат",
+            "keydb_no_url": "URL обновления keydb не задан — укажите его в разделе Настройки ▸ Ключи",
+            "keydb_no_path": "Расположение keydb.cfg не задано — укажите его в разделе Настройки ▸ Ключи",
+            "keydb_download_failed": "Не удалось загрузить: {error}",
+            "keydb_download_empty": "Загруженный файл пуст",
+            "keydb_updated": "keydb обновлен — {entries} записей ({kb} KB) записано в {path}",
+            "keydb_rejected": "keydb отклонен: E{code}",
+            "update_failed": "Не удалось проверить обновления: {error}",
+            "update_none_published": "Проверка обновлений: релизов пока не опубликовано.",
+            "update_http_status": "Не удалось проверить обновления: сервер вернул {code}",
+            "update_bad_response": "Не удалось проверить обновления: некорректный ответ ({error})",
+            "update_latest": "Установлена последняя версия ({current}).",
+            "update_available": "Доступно обновление: {latest} (у вас {current}) — https://freemkv.org",
+            "update_no_version": "Не удалось проверить обновления: в ответе нет версии"
         },
         "alert": {
             "rip_title": "Выполняется копирование.",

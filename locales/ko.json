@@ -609,6 +609,7 @@
             "keyserver_token": "키 서비스 토큰 :",
             "language": "인터페이스 언어 :",
             "language_note": "freemkv를 다시 시작한 후 적용됩니다.",
+            "language_auto": "자동",
             "decrypt_threads": "복호화 스레드 :",
             "decrypt_threads_note": "0 = CPU 코어당 하나.",
             "log_detail": "로그 상세 :",
@@ -620,6 +621,12 @@
             "test_connection": "연결 테스트",
             "keydb_no_url": "keydb 업데이트 URL이 설정되지 않았습니다. 위에 입력한 후 업데이트를 클릭하세요.",
             "keydb_updating": "keydb 업데이트 중… 다운로드하고 있습니다. 잠시 기다려 주세요.",
+            "keydb_found": "keydb 발견 — {kb} KB, 업데이트: {age}",
+            "keydb_not_found": "keydb.cfg를 찾을 수 없음",
+            "keydb_age_today": "오늘",
+            "keydb_age_yesterday": "어제",
+            "keydb_age_days": "{days}일 전",
+            "keydb_age_unknown": "알 수 없음",
             "lang_any": "모두",
             "notify_when_rip_finished": "추출이 완료되면 알림"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "모든 타이틀을 {container} 파일로 저장 중",
             "elapsed": "경과: {hms}",
             "caption_eta": "{pct}%   {elapsed}   남음: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "챕터",
+            "word_track": "트랙",
+            "word_video_track": "비디오 트랙",
+            "word_audio_track": "오디오 트랙",
+            "word_subtitle_track": "자막 트랙"
         },
         "result": {
             "finished": "완료됨",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "keydb 업데이트 실패 — 내부 오류",
             "drive_scan_failed": "광학 드라이브 목록을 가져올 수 없습니다(내부 오류).",
             "bad_number_setting": "“{name}”은(는) “{value}”이(가) 아닌 정수여야 합니다. 설정에서 수정한 후 다시 시작하세요.",
-            "open_url_refused": "{url}을(를) 열 수 없습니다"
+            "open_url_refused": "{url}을(를) 열 수 없습니다",
+            "update_worker_stopped": "업데이트 확인 실패: 결과를 반환하기 전에 작업이 중지되었습니다",
+            "eject_worker_stopped": "꺼내기 작업이 결과를 반환하기 전에 중지되었습니다",
+            "keydb_no_url": "keydb 업데이트 URL이 설정되지 않았습니다 — 설정 ▸ 키에서 추가하세요",
+            "keydb_no_path": "keydb.cfg 위치가 설정되지 않았습니다 — 설정 ▸ 키에서 추가하세요",
+            "keydb_download_failed": "다운로드 실패: {error}",
+            "keydb_download_empty": "다운로드한 내용이 비어 있습니다",
+            "keydb_updated": "keydb 업데이트 완료 — 항목 {entries}개({kb} KB)를 {path}에 기록했습니다",
+            "keydb_rejected": "keydb 거부됨: E{code}",
+            "update_failed": "업데이트 확인 실패: {error}",
+            "update_none_published": "업데이트 확인: 아직 공개된 릴리스가 없습니다.",
+            "update_http_status": "업데이트 확인 실패: 서버가 {code}을(를) 반환했습니다",
+            "update_bad_response": "업데이트 확인 실패: 잘못된 응답({error})",
+            "update_latest": "최신 버전({current})을 사용 중입니다.",
+            "update_available": "업데이트 가능: {latest}(현재 {current}) — https://freemkv.org",
+            "update_no_version": "업데이트 확인 실패: 응답에 버전 정보가 없습니다"
         },
         "alert": {
             "rip_title": "추출이 진행 중입니다.",

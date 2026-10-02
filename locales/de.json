@@ -609,6 +609,7 @@
             "keyserver_token": "Schlüsseldienst-Token:",
             "language": "Sprache der Benutzeroberfläche:",
             "language_note": "Wird nach einem Neustart von freemkv wirksam.",
+            "language_auto": "Automatisch",
             "decrypt_threads": "Entschlüsselungs-Threads:",
             "decrypt_threads_note": "0 = einer pro CPU-Kern.",
             "log_detail": "Protokolldetailgrad:",
@@ -620,6 +621,12 @@
             "test_connection": "Verbindung testen",
             "keydb_no_url": "Keine keydb-Update-URL festgelegt — oben eine hinzufügen und auf Aktualisieren klicken.",
             "keydb_updating": "keydb wird aktualisiert… Download läuft, bitte warten.",
+            "keydb_found": "keydb gefunden — {kb} KB, aktualisiert {age}",
+            "keydb_not_found": "keydb.cfg nicht gefunden",
+            "keydb_age_today": "heute",
+            "keydb_age_yesterday": "gestern",
+            "keydb_age_days": "vor {days} Tagen",
+            "keydb_age_unknown": "zu unbekanntem Zeitpunkt",
             "lang_any": "Beliebig",
             "notify_when_rip_finished": "Benachrichtigen, wenn ein Rip abgeschlossen ist"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "Alle Titel werden in {container}-Dateien gespeichert",
             "elapsed": "Vergangen: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Verbleibend: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "Kapitel",
+            "word_track": "Spur",
+            "word_video_track": "Videospur",
+            "word_audio_track": "Audiospur",
+            "word_subtitle_track": "Untertitelspur"
         },
         "result": {
             "finished": "Abgeschlossen",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "keydb-Aktualisierung fehlgeschlagen — interner Fehler",
             "drive_scan_failed": "Die optischen Laufwerke konnten nicht aufgelistet werden (interner Fehler).",
             "bad_number_setting": "„{name}“ muss eine ganze Zahl sein, nicht „{value}“. Korrigieren Sie dies in den Einstellungen und starten Sie dann erneut.",
-            "open_url_refused": "{url} konnte nicht geöffnet werden"
+            "open_url_refused": "{url} konnte nicht geöffnet werden",
+            "update_worker_stopped": "Update-Suche fehlgeschlagen: Der Worker wurde beendet, bevor er ein Ergebnis lieferte",
+            "eject_worker_stopped": "Der Auswerfen-Prozess wurde beendet, bevor er ein Ergebnis lieferte",
+            "keydb_no_url": "Keine keydb-Update-URL festgelegt — in Einstellungen ▸ Schlüssel eine hinzufügen",
+            "keydb_no_path": "Kein keydb.cfg-Speicherort festgelegt — in Einstellungen ▸ Schlüssel einen hinzufügen",
+            "keydb_download_failed": "Download fehlgeschlagen: {error}",
+            "keydb_download_empty": "Der Download war leer",
+            "keydb_updated": "keydb aktualisiert — {entries} Einträge ({kb} KB) nach {path} geschrieben",
+            "keydb_rejected": "keydb abgelehnt: E{code}",
+            "update_failed": "Update-Suche fehlgeschlagen: {error}",
+            "update_none_published": "Update-Suche: Es wurden noch keine Releases veröffentlicht.",
+            "update_http_status": "Update-Suche fehlgeschlagen: Server antwortete mit {code}",
+            "update_bad_response": "Update-Suche fehlgeschlagen: ungültige Antwort ({error})",
+            "update_latest": "Sie verwenden die neueste Version ({current}).",
+            "update_available": "Update verfügbar: {latest} (Sie haben {current}) — https://freemkv.org",
+            "update_no_version": "Update-Suche fehlgeschlagen: keine Version in der Antwort"
         },
         "alert": {
             "rip_title": "Ein Rip läuft gerade.",

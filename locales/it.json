@@ -609,6 +609,7 @@
             "keyserver_token": "Token servizio chiavi:",
             "language": "Lingua dell'interfaccia:",
             "language_note": "Ha effetto dopo il riavvio di freemkv.",
+            "language_auto": "Automatico",
             "decrypt_threads": "Thread di decifratura:",
             "decrypt_threads_note": "0 = uno per core della CPU.",
             "log_detail": "Livello di dettaglio del registro:",
@@ -620,6 +621,12 @@
             "test_connection": "Prova connessione",
             "keydb_no_url": "Nessun URL di aggiornamento keydb impostato: aggiungerne uno sopra, poi fare clic su Aggiorna.",
             "keydb_updating": "Aggiornamento di keydb… download in corso, attendere.",
+            "keydb_found": "keydb trovato: {kb} KB, aggiornato {age}",
+            "keydb_not_found": "keydb.cfg non trovato",
+            "keydb_age_today": "oggi",
+            "keydb_age_yesterday": "ieri",
+            "keydb_age_days": "{days} giorni fa",
+            "keydb_age_unknown": "in una data sconosciuta",
             "lang_any": "Qualsiasi",
             "notify_when_rip_finished": "Notifica al termine di un'estrazione"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "Salvataggio di tutti i titoli in file {container}",
             "elapsed": "Trascorso: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Rimanente: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "capitolo",
+            "word_track": "traccia",
+            "word_video_track": "traccia video",
+            "word_audio_track": "traccia audio",
+            "word_subtitle_track": "traccia dei sottotitoli"
         },
         "result": {
             "finished": "Completato",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "Aggiornamento di keydb non riuscito — errore interno",
             "drive_scan_failed": "Impossibile elencare le unità ottiche (errore interno).",
             "bad_number_setting": "«{name}» deve essere un numero intero, non «{value}». Correggilo nelle Impostazioni, quindi ricomincia.",
-            "open_url_refused": "Impossibile aprire {url}"
+            "open_url_refused": "Impossibile aprire {url}",
+            "update_worker_stopped": "Verifica aggiornamenti non riuscita: il processo di lavoro si è arrestato prima di restituire un risultato",
+            "eject_worker_stopped": "il processo di espulsione si è arrestato prima di restituire un risultato",
+            "keydb_no_url": "Nessun URL di aggiornamento keydb impostato: aggiungerne uno in Impostazioni ▸ Chiavi",
+            "keydb_no_path": "Nessuna posizione di keydb.cfg impostata: aggiungerne una in Impostazioni ▸ Chiavi",
+            "keydb_download_failed": "Download non riuscito: {error}",
+            "keydb_download_empty": "Il download era vuoto",
+            "keydb_updated": "keydb aggiornato: {entries} voci ({kb} KB) scritte in {path}",
+            "keydb_rejected": "keydb rifiutato: E{code}",
+            "update_failed": "Verifica aggiornamenti non riuscita: {error}",
+            "update_none_published": "Verifica aggiornamenti: nessuna versione ancora pubblicata.",
+            "update_http_status": "Verifica aggiornamenti non riuscita: il server ha restituito {code}",
+            "update_bad_response": "Verifica aggiornamenti non riuscita: risposta non valida ({error})",
+            "update_latest": "Stai usando l'ultima versione ({current}).",
+            "update_available": "Aggiornamento disponibile: {latest} (hai {current}) — https://freemkv.org",
+            "update_no_version": "Verifica aggiornamenti non riuscita: nessuna versione nella risposta"
         },
         "alert": {
             "rip_title": "È in corso un'estrazione.",

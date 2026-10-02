@@ -609,6 +609,7 @@
             "keyserver_token": "Token layanan kunci :",
             "language": "Bahasa antarmuka :",
             "language_note": "Berlaku setelah Anda memulai ulang freemkv.",
+            "language_auto": "Otomatis",
             "decrypt_threads": "Thread dekripsi :",
             "decrypt_threads_note": "0 = satu per inti CPU.",
             "log_detail": "Detail log :",
@@ -620,6 +621,12 @@
             "test_connection": "Uji koneksi",
             "keydb_no_url": "URL pembaruan keydb belum diatur — tambahkan di atas, lalu klik Perbarui.",
             "keydb_updating": "Memperbarui keydb… mengunduh, mohon tunggu.",
+            "keydb_found": "keydb ditemukan — {kb} KB, diperbarui {age}",
+            "keydb_not_found": "keydb.cfg tidak ditemukan",
+            "keydb_age_today": "hari ini",
+            "keydb_age_yesterday": "kemarin",
+            "keydb_age_days": "{days} hari yang lalu",
+            "keydb_age_unknown": "tidak diketahui",
             "lang_any": "Apa saja",
             "notify_when_rip_finished": "Beri tahu saat rip selesai"
         },
@@ -651,7 +658,12 @@
             "saving_overall": "Menyimpan semua judul ke berkas {container}",
             "elapsed": "Berlalu: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Tersisa: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "bab",
+            "word_track": "trek",
+            "word_video_track": "trek video",
+            "word_audio_track": "trek audio",
+            "word_subtitle_track": "trek subjudul"
         },
         "result": {
             "finished": "Selesai",
@@ -716,7 +728,22 @@
             "keydb_worker_failed": "Pembaruan keydb gagal — kesalahan internal",
             "drive_scan_failed": "Tidak dapat menampilkan daftar drive optik (kesalahan internal).",
             "bad_number_setting": "“{name}” harus berupa bilangan bulat, bukan “{value}”. Perbaiki di Pengaturan, lalu mulai lagi.",
-            "open_url_refused": "Tidak dapat membuka {url}"
+            "open_url_refused": "Tidak dapat membuka {url}",
+            "update_worker_stopped": "Pemeriksaan pembaruan gagal: proses berhenti sebelum mengembalikan hasil",
+            "eject_worker_stopped": "Proses pengeluaran berhenti sebelum mengembalikan hasil",
+            "keydb_no_url": "URL pembaruan keydb belum diatur — tambahkan di Pengaturan ▸ Kunci",
+            "keydb_no_path": "Lokasi keydb.cfg belum diatur — tambahkan di Pengaturan ▸ Kunci",
+            "keydb_download_failed": "Unduhan gagal: {error}",
+            "keydb_download_empty": "Unduhan kosong",
+            "keydb_updated": "keydb diperbarui — {entries} entri ({kb} KB) ditulis ke {path}",
+            "keydb_rejected": "keydb ditolak: E{code}",
+            "update_failed": "Pemeriksaan pembaruan gagal: {error}",
+            "update_none_published": "Pemeriksaan pembaruan: belum ada rilis yang dipublikasikan.",
+            "update_http_status": "Pemeriksaan pembaruan gagal: server mengembalikan {code}",
+            "update_bad_response": "Pemeriksaan pembaruan gagal: respons tidak valid ({error})",
+            "update_latest": "Anda menjalankan versi terbaru ({current}).",
+            "update_available": "Pembaruan tersedia: {latest} (Anda memakai {current}) — https://freemkv.org",
+            "update_no_version": "Pemeriksaan pembaruan gagal: tidak ada versi dalam respons"
         },
         "alert": {
             "rip_title": "Rip sedang berlangsung.",
