@@ -763,7 +763,7 @@
             "rip_finished_title": "Extraction terminée"
         },
         "dialog": {
-            "timer_failed": "freemkv n'a pas pu démarrer son minuteur de progression ({error}). L'extraction est peut-être toujours en cours, mais cette fenêtre ne sera plus mise à jour. Veuillez redémarrer freemkv."
+            "timer_failed": "Impossible de démarrer le minuteur de progression de l’application ({error}). L'extraction est peut-être toujours en cours, mais cette fenêtre ne sera plus mise à jour. Veuillez redémarrer freemkv."
         }
     },
     "warn": {
