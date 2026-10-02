@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Type",
-            "desc": "Description"
+            "desc": "Description",
+            "duration": "Durée",
+            "size": "Taille"
         },
         "tab": {
             "output": "Sortie",

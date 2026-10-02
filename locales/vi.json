@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Loại",
-            "desc": "Mô tả"
+            "desc": "Mô tả",
+            "duration": "Thời lượng",
+            "size": "Kích thước"
         },
         "tab": {
             "output": "Đầu ra",

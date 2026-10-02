@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Tipo",
-            "desc": "Descrizione"
+            "desc": "Descrizione",
+            "duration": "Durata",
+            "size": "Dimensione"
         },
         "tab": {
             "output": "Destinazione",

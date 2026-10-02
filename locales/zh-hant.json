@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "類型",
-            "desc": "描述"
+            "desc": "描述",
+            "duration": "時長",
+            "size": "大小"
         },
         "tab": {
             "output": "輸出",

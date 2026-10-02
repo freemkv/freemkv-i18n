@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Tür",
-            "desc": "Açıklama"
+            "desc": "Açıklama",
+            "duration": "Süre",
+            "size": "Boyut"
         },
         "tab": {
             "output": "Çıktı",

@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Type",
-            "desc": "Omschrijving"
+            "desc": "Omschrijving",
+            "duration": "Duur",
+            "size": "Grootte"
         },
         "tab": {
             "output": "Uitvoer",

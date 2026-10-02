@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Típus",
-            "desc": "Leírás"
+            "desc": "Leírás",
+            "duration": "Időtartam",
+            "size": "Méret"
         },
         "tab": {
             "output": "Kimenet",

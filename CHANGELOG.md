@@ -9,6 +9,7 @@
 - CI `freemkv-key-drift`: fails when a freemkv fallback key is missing from en.json or its English differs.
 - `gui.lang.<code>`: the names of the 38 languages freemkv's preferred-language pickers offer, in all 29 locales. The key-drift test reads them from freemkv's `PICKER_LANGUAGES` table.
 - GUI texts freemkv showed in English under every locale, in all 29 locales: `gui.set.language_auto`, the keydb status line (`gui.set.keydb_found`, `keydb_not_found`, `keydb_age_*`), the progress caption's output words (`gui.progress.word_*`), and the keydb-update and update-check log lines (`gui.log.keydb_*`, `gui.log.update_*`, `gui.log.eject_worker_stopped`).
+- `gui.col.duration` and `gui.col.size`, the headers of the title tree's Length and Size columns, in all 29 locales.
 
 ### Changed
 

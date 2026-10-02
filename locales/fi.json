@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Tyyppi",
-            "desc": "Kuvaus"
+            "desc": "Kuvaus",
+            "duration": "Kesto",
+            "size": "Koko"
         },
         "tab": {
             "output": "Tuloste",

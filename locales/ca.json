@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Tipus",
-            "desc": "Descripció"
+            "desc": "Descripció",
+            "duration": "Durada",
+            "size": "Mida"
         },
         "tab": {
             "output": "Sortida",

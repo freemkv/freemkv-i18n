@@ -564,7 +564,9 @@
         },
         "col": {
             "type": "Typ",
-            "desc": "Popis"
+            "desc": "Popis",
+            "duration": "Délka",
+            "size": "Velikost"
         },
         "tab": {
             "output": "Výstup",
