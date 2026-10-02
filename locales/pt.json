@@ -75,7 +75,8 @@
         "capture_no_structure": "Não foi encontrada nenhuma estrutura de disco legível (BDMV / VIDEO_TS); nada a partilhar.",
         "capture_skipped": "Ficheiro do disco ignorado: {file}",
         "capture_summary": "Estrutura do disco capturada: {files} ficheiros ({bytes} bytes).",
-        "capture_unsafe_name": "nome de ficheiro inseguro"
+        "capture_unsafe_name": "nome de ficheiro inseguro",
+        "capture_aacs_unread": "Diagnóstico AACS não capturado — o disco está encriptado, mas foi analisado sem chaves."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Não foi possível abrir a pasta no Explorador de Ficheiros: {e}",
             "scan_not_started": "Não foi possível iniciar a análise da origem: {detail}",
             "scan_worker_stopped": "O processo de análise da origem parou antes de devolver um resultado.",
-            "insert_disc_retry": "Insira o disco numa unidade e escolha novamente «Iniciar extração». Apenas o respetivo ID do volume é lido; não volta a ser ripado."
+            "insert_disc_retry": "Insira o disco numa unidade e escolha novamente «Iniciar extração». Apenas o respetivo ID do volume é lido; não volta a ser ripado.",
+            "keydb_worker_failed": "Falha ao atualizar o keydb — erro interno",
+            "drive_scan_failed": "Não foi possível listar as unidades óticas (erro interno).",
+            "bad_number_setting": "«{name}» tem de ser um número inteiro, não «{value}». Corrija nas Definições e comece novamente.",
+            "open_url_refused": "Não foi possível abrir {url}"
         },
         "alert": {
             "rip_title": "Está uma extração em curso.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Criar cópia de segurança",
             "backup_msg": "Criar cópia de segurança de todo o disco (todos os títulos, desencriptados) para:",
             "open_prompt": "Abrir",
-            "folder_msg": "Selecione uma pasta VIDEO_TS ou BDMV"
+            "folder_msg": "Selecione uma pasta VIDEO_TS ou BDMV",
+            "default_output_msg": "Escolha a pasta de saída predefinida",
+            "keydb_msg": "Escolha o ficheiro keydb.cfg"
         },
         "about": {
             "version": "Versão:",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Rip concluído"
+        },
+        "dialog": {
+            "timer_failed": "O freemkv não conseguiu iniciar o temporizador de progresso ({error}). A extração pode ainda estar em curso, mas esta janela não será atualizada. Reinicie o freemkv."
         }
     },
     "warn": {

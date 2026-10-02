@@ -75,7 +75,8 @@
         "capture_no_structure": "Tidak ditemukan struktur disc yang dapat dibaca (BDMV / VIDEO_TS); tidak ada yang dibagikan.",
         "capture_skipped": "Berkas disc {file} dilewati",
         "capture_summary": "Struktur disc ditangkap: {files} berkas ({bytes} byte).",
-        "capture_unsafe_name": "nama berkas tidak aman"
+        "capture_unsafe_name": "nama berkas tidak aman",
+        "capture_aacs_unread": "Diagnostik AACS tidak ditangkap — disc terenkripsi tetapi dipindai tanpa kunci."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Tidak dapat membuka folder di File Explorer: {e}",
             "scan_not_started": "Tidak dapat memulai pemindaian sumber: {detail}",
             "scan_worker_stopped": "Proses pemindaian sumber berhenti sebelum mengembalikan hasil.",
-            "insert_disc_retry": "Masukkan disc ke drive, lalu pilih “Mulai rip” lagi. Hanya Volume ID-nya yang dibaca; disc tidak dirip lagi."
+            "insert_disc_retry": "Masukkan disc ke drive, lalu pilih “Mulai rip” lagi. Hanya Volume ID-nya yang dibaca; disc tidak dirip lagi.",
+            "keydb_worker_failed": "Pembaruan keydb gagal — kesalahan internal",
+            "drive_scan_failed": "Tidak dapat menampilkan daftar drive optik (kesalahan internal).",
+            "bad_number_setting": "“{name}” harus berupa bilangan bulat, bukan “{value}”. Perbaiki di Pengaturan, lalu mulai lagi.",
+            "open_url_refused": "Tidak dapat membuka {url}"
         },
         "alert": {
             "rip_title": "Rip sedang berlangsung.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Cadangkan",
             "backup_msg": "Cadangkan seluruh disc (semua judul, terdekripsi) ke:",
             "open_prompt": "Buka",
-            "folder_msg": "Pilih folder VIDEO_TS atau BDMV"
+            "folder_msg": "Pilih folder VIDEO_TS atau BDMV",
+            "default_output_msg": "Pilih folder keluaran default",
+            "keydb_msg": "Pilih berkas keydb.cfg"
         },
         "about": {
             "version": "Versi :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Rip selesai"
+        },
+        "dialog": {
+            "timer_failed": "freemkv tidak dapat memulai pengatur waktu progresnya ({error}). Rip mungkin masih berjalan, tetapi jendela ini tidak akan diperbarui. Harap mulai ulang freemkv."
         }
     },
     "warn": {

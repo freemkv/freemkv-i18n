@@ -75,7 +75,8 @@
         "capture_no_structure": "找不到可讀取的光碟結構（BDMV / VIDEO_TS）；沒有可分享的內容。",
         "capture_skipped": "已略過光碟檔案 {file}",
         "capture_summary": "已擷取光碟結構：{files} 個檔案（{bytes} 位元組）。",
-        "capture_unsafe_name": "不安全的檔名"
+        "capture_unsafe_name": "不安全的檔名",
+        "capture_aacs_unread": "未擷取 AACS 診斷資訊 — 光碟已加密，但掃描時未使用金鑰。"
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "無法在檔案總管中開啟資料夾：{e}",
             "scan_not_started": "無法開始掃描來源：{detail}",
             "scan_worker_stopped": "來源掃描程序在傳回結果前已停止。",
-            "insert_disc_retry": "請將光碟插入光碟機，然後再次選擇「開始擷取」。只會讀取其磁碟區 ID；不會再次擷取。"
+            "insert_disc_retry": "請將光碟插入光碟機，然後再次選擇「開始擷取」。只會讀取其磁碟區 ID；不會再次擷取。",
+            "keydb_worker_failed": "keydb 更新失敗 — 內部錯誤",
+            "drive_scan_failed": "無法列出光碟機（內部錯誤）。",
+            "bad_number_setting": "「{name}」必須是整數，而非「{value}」。請在設定中修正後重新開始。",
+            "open_url_refused": "無法開啟 {url}"
         },
         "alert": {
             "rip_title": "擷取正在進行中。",
@@ -725,7 +730,9 @@
             "backup_prompt": "備份",
             "backup_msg": "將整張光碟（所有標題，已解密）備份至：",
             "open_prompt": "開啟",
-            "folder_msg": "選擇 VIDEO_TS 或 BDMV 資料夾"
+            "folder_msg": "選擇 VIDEO_TS 或 BDMV 資料夾",
+            "default_output_msg": "選擇預設輸出資料夾",
+            "keydb_msg": "選擇 keydb.cfg 檔案"
         },
         "about": {
             "version": "版本：",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "擷取完成"
+        },
+        "dialog": {
+            "timer_failed": "freemkv 無法啟動進度計時器（{error}）。擷取可能仍在進行，但此視窗將不會更新。請重新啟動 freemkv。"
         }
     },
     "warn": {

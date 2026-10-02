@@ -75,7 +75,8 @@
         "capture_no_structure": "Luettavaa levyrakennetta (BDMV / VIDEO_TS) ei löytynyt; ei mitään jaettavaa.",
         "capture_skipped": "Ohitettiin levyn tiedosto {file}",
         "capture_summary": "Levyrakenne kaapattu: {files} tiedostoa ({bytes} tavua).",
-        "capture_unsafe_name": "vaarallinen tiedostonimi"
+        "capture_unsafe_name": "vaarallinen tiedostonimi",
+        "capture_aacs_unread": "AACS-diagnostiikkaa ei kaapattu — levy on salattu, mutta se skannattiin ilman avaimia."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Kansiota ei voitu avata Resurssienhallinnassa: {e}",
             "scan_not_started": "Lähteen skannausta ei voitu aloittaa: {detail}",
             "scan_worker_stopped": "Lähteen skannaus pysähtyi ennen tuloksen palauttamista.",
-            "insert_disc_retry": "Aseta levy asemaan ja valitse uudelleen ”Aloita rippaus”. Vain sen taltion tunnus luetaan; sitä ei ripata uudelleen."
+            "insert_disc_retry": "Aseta levy asemaan ja valitse uudelleen ”Aloita rippaus”. Vain sen taltion tunnus luetaan; sitä ei ripata uudelleen.",
+            "keydb_worker_failed": "keydb-päivitys epäonnistui — sisäinen virhe",
+            "drive_scan_failed": "Optisia asemia ei voitu luetella (sisäinen virhe).",
+            "bad_number_setting": "Kohdan ”{name}” on oltava kokonaisluku, ei ”{value}”. Korjaa se Asetuksissa ja aloita sitten uudelleen.",
+            "open_url_refused": "Kohdetta {url} ei voitu avata"
         },
         "alert": {
             "rip_title": "Rippaus on käynnissä.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Varmuuskopioi",
             "backup_msg": "Varmuuskopioi koko levy (kaikki nimikkeet, salaus purettuna) kohteeseen:",
             "open_prompt": "Avaa",
-            "folder_msg": "Valitse VIDEO_TS- tai BDMV-kansio"
+            "folder_msg": "Valitse VIDEO_TS- tai BDMV-kansio",
+            "default_output_msg": "Valitse oletustulostekansio",
+            "keydb_msg": "Valitse keydb.cfg-tiedosto"
         },
         "about": {
             "version": "Versio :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Rippaus valmis"
+        },
+        "dialog": {
+            "timer_failed": "freemkv ei voinut käynnistää edistymisajastintaan ({error}). Rippaus saattaa olla yhä käynnissä, mutta tämä ikkuna ei päivity. Käynnistä freemkv uudelleen."
         }
     },
     "warn": {

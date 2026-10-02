@@ -75,7 +75,8 @@
         "capture_no_structure": "No se encontró ninguna estructura de disco legible (BDMV / VIDEO_TS); no hay nada que compartir.",
         "capture_skipped": "Se omitió el archivo del disco {file}",
         "capture_summary": "Estructura del disco capturada: {files} archivos ({bytes} bytes).",
-        "capture_unsafe_name": "nombre de archivo no seguro"
+        "capture_unsafe_name": "nombre de archivo no seguro",
+        "capture_aacs_unread": "No se capturó el diagnóstico de AACS — el disco está cifrado, pero se escaneó sin claves."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "No se pudo abrir la carpeta en el Explorador de archivos: {e}",
             "scan_not_started": "No se pudo iniciar el escaneo del origen: {detail}",
             "scan_worker_stopped": "El proceso de escaneo del origen se detuvo antes de devolver un resultado.",
-            "insert_disc_retry": "Inserta el disco en una unidad y vuelve a elegir “Iniciar extracción”. Solo se lee su ID de volumen; no se vuelve a extraer."
+            "insert_disc_retry": "Inserta el disco en una unidad y vuelve a elegir “Iniciar extracción”. Solo se lee su ID de volumen; no se vuelve a extraer.",
+            "keydb_worker_failed": "Falló la actualización de keydb — error interno",
+            "drive_scan_failed": "No se pudieron listar las unidades ópticas (error interno).",
+            "bad_number_setting": "“{name}” debe ser un número entero, no “{value}”. Corrígelo en Configuración y vuelve a empezar.",
+            "open_url_refused": "No se pudo abrir {url}"
         },
         "alert": {
             "rip_title": "Hay una extracción en curso.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Respaldar",
             "backup_msg": "Respaldar el disco completo (todos los títulos, descifrados) en:",
             "open_prompt": "Abrir",
-            "folder_msg": "Selecciona una carpeta VIDEO_TS o BDMV"
+            "folder_msg": "Selecciona una carpeta VIDEO_TS o BDMV",
+            "default_output_msg": "Elige la carpeta de salida predeterminada",
+            "keydb_msg": "Elige el archivo keydb.cfg"
         },
         "about": {
             "version": "Versión:",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Extracción terminada"
+        },
+        "dialog": {
+            "timer_failed": "freemkv no pudo iniciar su temporizador de progreso ({error}). Es posible que la extracción siga en curso, pero esta ventana no se actualizará. Reinicia freemkv."
         }
     },
     "warn": {

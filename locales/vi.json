@@ -75,7 +75,8 @@
         "capture_no_structure": "Không tìm thấy cấu trúc đĩa đọc được (BDMV / VIDEO_TS); không có gì để chia sẻ.",
         "capture_skipped": "Đã bỏ qua tệp đĩa {file}",
         "capture_summary": "Đã ghi lại cấu trúc đĩa: {files} tệp ({bytes} byte).",
-        "capture_unsafe_name": "tên tệp không an toàn"
+        "capture_unsafe_name": "tên tệp không an toàn",
+        "capture_aacs_unread": "Chưa ghi lại chẩn đoán AACS — đĩa đã được mã hóa nhưng được quét mà không có khóa."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Không thể mở thư mục trong File Explorer: {e}",
             "scan_not_started": "Không thể bắt đầu quét nguồn: {detail}",
             "scan_worker_stopped": "Tiến trình quét nguồn đã dừng trước khi trả về kết quả.",
-            "insert_disc_retry": "Hãy lắp đĩa vào ổ đĩa, rồi chọn lại “Bắt đầu trích xuất”. Chỉ mã định danh tập đĩa của đĩa được đọc; đĩa không bị trích xuất lại."
+            "insert_disc_retry": "Hãy lắp đĩa vào ổ đĩa, rồi chọn lại “Bắt đầu trích xuất”. Chỉ mã định danh tập đĩa của đĩa được đọc; đĩa không bị trích xuất lại.",
+            "keydb_worker_failed": "Cập nhật keydb thất bại — lỗi nội bộ",
+            "drive_scan_failed": "Không thể liệt kê các ổ quang (lỗi nội bộ).",
+            "bad_number_setting": "“{name}” phải là số nguyên, không phải “{value}”. Hãy sửa trong Cài đặt rồi bắt đầu lại.",
+            "open_url_refused": "Không thể mở {url}"
         },
         "alert": {
             "rip_title": "Quá trình trích xuất đang diễn ra.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Sao lưu",
             "backup_msg": "Sao lưu toàn bộ đĩa (tất cả tiêu đề, đã giải mã) vào:",
             "open_prompt": "Mở",
-            "folder_msg": "Chọn một thư mục VIDEO_TS hoặc BDMV"
+            "folder_msg": "Chọn một thư mục VIDEO_TS hoặc BDMV",
+            "default_output_msg": "Chọn thư mục đầu ra mặc định",
+            "keydb_msg": "Chọn tệp keydb.cfg"
         },
         "about": {
             "version": "Phiên bản :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Đã trích xuất xong"
+        },
+        "dialog": {
+            "timer_failed": "freemkv không thể khởi động bộ hẹn giờ tiến trình ({error}). Quá trình trích xuất có thể vẫn đang chạy, nhưng cửa sổ này sẽ không cập nhật. Vui lòng khởi động lại freemkv."
         }
     },
     "warn": {

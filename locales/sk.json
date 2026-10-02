@@ -75,7 +75,8 @@
         "capture_no_structure": "Nenašla sa žiadna čitateľná štruktúra disku (BDMV / VIDEO_TS); niet čo zdieľať.",
         "capture_skipped": "Preskočený súbor disku {file}",
         "capture_summary": "Štruktúra disku zachytená (počet súborov: {files}, {bytes} B).",
-        "capture_unsafe_name": "nebezpečný názov súboru"
+        "capture_unsafe_name": "nebezpečný názov súboru",
+        "capture_aacs_unread": "Diagnostika AACS nebola zachytená — disk je šifrovaný, ale bol naskenovaný bez kľúčov."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Nepodarilo sa otvoriť priečinok v Prieskumníkovi: {e}",
             "scan_not_started": "Nepodarilo sa spustiť skenovanie zdroja: {detail}",
             "scan_worker_stopped": "Proces skenovania zdroja sa zastavil skôr, ako vrátil výsledok.",
-            "insert_disc_retry": "Vložte disk do jednotky a znova zvoľte „Spustiť kopírovanie“. Načíta sa iba jeho ID zväzku; disk sa znova neskopíruje."
+            "insert_disc_retry": "Vložte disk do jednotky a znova zvoľte „Spustiť kopírovanie“. Načíta sa iba jeho ID zväzku; disk sa znova neskopíruje.",
+            "keydb_worker_failed": "Aktualizácia keydb zlyhala — interná chyba",
+            "drive_scan_failed": "Nepodarilo sa zobraziť zoznam optických jednotiek (interná chyba).",
+            "bad_number_setting": "„{name}“ musí byť celé číslo, nie „{value}“. Opravte to v Nastaveniach a potom začnite znova.",
+            "open_url_refused": "Nepodarilo sa otvoriť {url}"
         },
         "alert": {
             "rip_title": "Prebieha kopírovanie.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Zálohovať",
             "backup_msg": "Zálohovať celý disk (všetky tituly, dešifrované) do:",
             "open_prompt": "Otvoriť",
-            "folder_msg": "Vyberte priečinok VIDEO_TS alebo BDMV"
+            "folder_msg": "Vyberte priečinok VIDEO_TS alebo BDMV",
+            "default_output_msg": "Zvoľte predvolený výstupný priečinok",
+            "keydb_msg": "Zvoľte súbor keydb.cfg"
         },
         "about": {
             "version": "Verzia :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Kopírovanie dokončené"
+        },
+        "dialog": {
+            "timer_failed": "freemkv nemohol spustiť časovač priebehu ({error}). Kopírovanie môže stále prebiehať, ale toto okno sa nebude aktualizovať. Reštartujte, prosím, freemkv."
         }
     },
     "warn": {

@@ -75,7 +75,8 @@
         "capture_no_structure": "No s'ha trobat cap estructura de disc llegible (BDMV / VIDEO_TS); no hi ha res per compartir.",
         "capture_skipped": "S'ha omès el fitxer del disc {file}",
         "capture_summary": "Estructura del disc capturada: {files} fitxers ({bytes} bytes).",
-        "capture_unsafe_name": "nom de fitxer no segur"
+        "capture_unsafe_name": "nom de fitxer no segur",
+        "capture_aacs_unread": "Diagnòstic AACS no capturat — el disc està xifrat però s'ha analitzat sense claus."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "No s'ha pogut obrir la carpeta a l'Explorador de fitxers: {e}",
             "scan_not_started": "No s'ha pogut iniciar l'anàlisi de l'origen: {detail}",
             "scan_worker_stopped": "El procés d'anàlisi de l'origen s'ha aturat abans de retornar un resultat.",
-            "insert_disc_retry": "Inseriu el disc en una unitat i torneu a triar «Inicia l'extracció». Només se'n llegeix l'ID del volum; no es torna a extreure."
+            "insert_disc_retry": "Inseriu el disc en una unitat i torneu a triar «Inicia l'extracció». Només se'n llegeix l'ID del volum; no es torna a extreure.",
+            "keydb_worker_failed": "Ha fallat l'actualització del keydb — error intern",
+            "drive_scan_failed": "No s'han pogut llistar les unitats òptiques (error intern).",
+            "bad_number_setting": "«{name}» ha de ser un nombre enter, no «{value}». Corregiu-ho a Configuració i torneu a començar.",
+            "open_url_refused": "No s'ha pogut obrir {url}"
         },
         "alert": {
             "rip_title": "Hi ha una extracció en curs.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Fes una còpia",
             "backup_msg": "Fes una còpia de seguretat de tot el disc (tots els títols, desxifrats) a:",
             "open_prompt": "Obre",
-            "folder_msg": "Seleccioneu una carpeta VIDEO_TS o BDMV"
+            "folder_msg": "Seleccioneu una carpeta VIDEO_TS o BDMV",
+            "default_output_msg": "Trieu la carpeta de sortida per defecte",
+            "keydb_msg": "Trieu el fitxer keydb.cfg"
         },
         "about": {
             "version": "Versió :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Extracció acabada"
+        },
+        "dialog": {
+            "timer_failed": "El freemkv no ha pogut iniciar el temporitzador de progrés ({error}). És possible que l'extracció encara estigui en curs, però aquesta finestra no s'actualitzarà. Reinicieu el freemkv."
         }
     },
     "warn": {

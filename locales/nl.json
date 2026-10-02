@@ -75,7 +75,8 @@
         "capture_no_structure": "Geen leesbare discstructuur (BDMV / VIDEO_TS) gevonden; niets om te delen.",
         "capture_skipped": "Discbestand {file} overgeslagen",
         "capture_summary": "Discstructuur vastgelegd: {files} bestanden ({bytes} bytes).",
-        "capture_unsafe_name": "onveilige bestandsnaam"
+        "capture_unsafe_name": "onveilige bestandsnaam",
+        "capture_aacs_unread": "AACS-diagnose niet vastgelegd — de disc is versleuteld maar werd zonder sleutels gescand."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Kon de map niet openen in Verkenner: {e}",
             "scan_not_started": "Kon het scannen van de bron niet starten: {detail}",
             "scan_worker_stopped": "Het scanproces voor de bron is gestopt voordat het een resultaat gaf.",
-            "insert_disc_retry": "Plaats de schijf in een station en kies opnieuw “Rip starten”. Alleen het Volume ID wordt gelezen; deze wordt niet opnieuw geript."
+            "insert_disc_retry": "Plaats de schijf in een station en kies opnieuw “Rip starten”. Alleen het Volume ID wordt gelezen; deze wordt niet opnieuw geript.",
+            "keydb_worker_failed": "keydb bijwerken mislukt — interne fout",
+            "drive_scan_failed": "Kon de optische stations niet weergeven (interne fout).",
+            "bad_number_setting": "“{name}” moet een geheel getal zijn, niet “{value}”. Corrigeer dit in Instellingen en start daarna opnieuw.",
+            "open_url_refused": "Kon {url} niet openen"
         },
         "alert": {
             "rip_title": "Er is een rip bezig.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Back-uppen",
             "backup_msg": "Maak een back-up van de hele disc (alle titels, ontsleuteld) naar:",
             "open_prompt": "Openen",
-            "folder_msg": "Selecteer een VIDEO_TS- of BDMV-map"
+            "folder_msg": "Selecteer een VIDEO_TS- of BDMV-map",
+            "default_output_msg": "Kies de standaarduitvoermap",
+            "keydb_msg": "Kies het bestand keydb.cfg"
         },
         "about": {
             "version": "Versie:",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Rip voltooid"
+        },
+        "dialog": {
+            "timer_failed": "freemkv kon de voortgangstimer niet starten ({error}). De rip loopt mogelijk nog, maar dit venster wordt niet bijgewerkt. Start freemkv opnieuw."
         }
     },
     "warn": {

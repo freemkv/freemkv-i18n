@@ -75,7 +75,8 @@
         "capture_no_structure": "Nem található olvasható lemezszerkezet (BDMV / VIDEO_TS); nincs mit megosztani.",
         "capture_skipped": "Kihagyott lemezfájl: {file}",
         "capture_summary": "Lemezszerkezet rögzítve: {files} fájl ({bytes} bájt).",
-        "capture_unsafe_name": "nem biztonságos fájlnév"
+        "capture_unsafe_name": "nem biztonságos fájlnév",
+        "capture_aacs_unread": "Az AACS-diagnosztika nem került rögzítésre — a lemez titkosított, de kulcsok nélkül lett beolvasva."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Nem sikerült megnyitni a mappát az Intézőben: {e}",
             "scan_not_started": "Nem sikerült elindítani a forrás beolvasását: {detail}",
             "scan_worker_stopped": "A forrásbeolvasó folyamat leállt, mielőtt eredményt adott volna.",
-            "insert_disc_retry": "Helyezd be a lemezt egy meghajtóba, majd válaszd újra a „Kimásolás indítása” pontot. Csak a kötetazonosítója olvasódik be; nem másolódik ki újra."
+            "insert_disc_retry": "Helyezd be a lemezt egy meghajtóba, majd válaszd újra a „Kimásolás indítása” pontot. Csak a kötetazonosítója olvasódik be; nem másolódik ki újra.",
+            "keydb_worker_failed": "A keydb frissítése sikertelen — belső hiba",
+            "drive_scan_failed": "Nem sikerült listázni az optikai meghajtókat (belső hiba).",
+            "bad_number_setting": "A(z) „{name}” értéke csak egész szám lehet, nem „{value}”. Javítsd a Beállításokban, majd kezdd újra.",
+            "open_url_refused": "Nem sikerült megnyitni: {url}"
         },
         "alert": {
             "rip_title": "Kimásolás van folyamatban.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Mentés",
             "backup_msg": "A teljes lemez mentése (minden cím, visszafejtve) ide:",
             "open_prompt": "Megnyitás",
-            "folder_msg": "Válassz egy VIDEO_TS vagy BDMV mappát"
+            "folder_msg": "Válassz egy VIDEO_TS vagy BDMV mappát",
+            "default_output_msg": "Válaszd ki az alapértelmezett kimeneti mappát",
+            "keydb_msg": "Válaszd ki a keydb.cfg fájlt"
         },
         "about": {
             "version": "Verzió:",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Kimásolás kész"
+        },
+        "dialog": {
+            "timer_failed": "A freemkv nem tudta elindítani a folyamatjelző időzítőjét ({error}). A kimásolás még futhat, de ez az ablak nem frissül. Kérjük, indítsd újra a freemkv-t."
         }
     },
     "warn": {

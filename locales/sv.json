@@ -75,7 +75,8 @@
         "capture_no_structure": "Ingen läsbar skivstruktur (BDMV / VIDEO_TS) hittades; inget att dela.",
         "capture_skipped": "Hoppade över skivfilen {file}",
         "capture_summary": "Infångad skivstruktur: {files} filer ({bytes} byte).",
-        "capture_unsafe_name": "osäkert filnamn"
+        "capture_unsafe_name": "osäkert filnamn",
+        "capture_aacs_unread": "AACS-diagnostik inte infångad — skivan är krypterad men skannades utan nycklar."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Kunde inte öppna mappen i Utforskaren: {e}",
             "scan_not_started": "Kunde inte starta skanningen av källan: {detail}",
             "scan_worker_stopped": "Skanningsprocessen för källan stoppades innan den returnerade ett resultat.",
-            "insert_disc_retry": "Sätt i skivan i en enhet och välj ”Starta rippning” igen. Endast dess Volym-ID läses; den rippas inte igen."
+            "insert_disc_retry": "Sätt i skivan i en enhet och välj ”Starta rippning” igen. Endast dess Volym-ID läses; den rippas inte igen.",
+            "keydb_worker_failed": "Uppdatering av keydb misslyckades — internt fel",
+            "drive_scan_failed": "Kunde inte lista de optiska enheterna (internt fel).",
+            "bad_number_setting": "”{name}” måste vara ett heltal, inte ”{value}”. Rätta det i Inställningar och starta sedan igen.",
+            "open_url_refused": "Kunde inte öppna {url}"
         },
         "alert": {
             "rip_title": "En rippning pågår.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Säkerhetskopiera",
             "backup_msg": "Säkerhetskopiera hela skivan (alla titlar, dekrypterade) till:",
             "open_prompt": "Öppna",
-            "folder_msg": "Välj en VIDEO_TS- eller BDMV-mapp"
+            "folder_msg": "Välj en VIDEO_TS- eller BDMV-mapp",
+            "default_output_msg": "Välj standardmapp för utdata",
+            "keydb_msg": "Välj filen keydb.cfg"
         },
         "about": {
             "version": "Version :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Rippning klar"
+        },
+        "dialog": {
+            "timer_failed": "freemkv kunde inte starta sin förloppstimer ({error}). Rippningen kan fortfarande pågå, men det här fönstret uppdateras inte. Starta om freemkv."
         }
     },
     "warn": {

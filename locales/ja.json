@@ -75,7 +75,8 @@
         "capture_no_structure": "読み取り可能なディスク構造（BDMV / VIDEO_TS）が見つかりませんでした。共有するものはありません。",
         "capture_skipped": "ディスクファイル {file} をスキップしました",
         "capture_summary": "ディスク構造を取得しました: {files} ファイル（{bytes} バイト）。",
-        "capture_unsafe_name": "安全でないファイル名"
+        "capture_unsafe_name": "安全でないファイル名",
+        "capture_aacs_unread": "AACS 診断情報を取得できませんでした — ディスクは暗号化されていますが、キーなしでスキャンされました。"
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "エクスプローラーでフォルダを開けませんでした: {e}",
             "scan_not_started": "ソースのスキャンを開始できませんでした: {detail}",
             "scan_worker_stopped": "ソースのスキャン処理が結果を返す前に停止しました。",
-            "insert_disc_retry": "ディスクをドライブに挿入し、もう一度「リッピング開始」を選択してください。読み取られるのはそのボリューム ID のみで、再度リッピングされることはありません。"
+            "insert_disc_retry": "ディスクをドライブに挿入し、もう一度「リッピング開始」を選択してください。読み取られるのはそのボリューム ID のみで、再度リッピングされることはありません。",
+            "keydb_worker_failed": "keydb の更新に失敗しました — 内部エラー",
+            "drive_scan_failed": "光学ドライブを一覧表示できませんでした（内部エラー）。",
+            "bad_number_setting": "「{name}」 には 「{value}」 ではなく整数を指定してください。設定で修正してから、もう一度開始してください。",
+            "open_url_refused": "{url} を開けませんでした"
         },
         "alert": {
             "rip_title": "リッピングが進行中です。",
@@ -725,7 +730,9 @@
             "backup_prompt": "バックアップ",
             "backup_msg": "ディスク全体（すべてのタイトル、復号済み）を次にバックアップ:",
             "open_prompt": "開く",
-            "folder_msg": "VIDEO_TS または BDMV フォルダを選択"
+            "folder_msg": "VIDEO_TS または BDMV フォルダを選択",
+            "default_output_msg": "デフォルトの出力フォルダを選択",
+            "keydb_msg": "keydb.cfg ファイルを選択"
         },
         "about": {
             "version": "バージョン :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "リッピング完了"
+        },
+        "dialog": {
+            "timer_failed": "freemkv は進行状況タイマーを開始できませんでした（{error}）。リッピングはまだ実行中の可能性がありますが、このウィンドウは更新されません。freemkv を再起動してください。"
         }
     },
     "warn": {

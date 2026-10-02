@@ -75,7 +75,8 @@
         "capture_no_structure": "Der blev ikke fundet nogen læsbar diskstruktur (BDMV / VIDEO_TS); intet at dele.",
         "capture_skipped": "Sprang diskfilen {file} over",
         "capture_summary": "Diskstruktur registreret: {files} filer ({bytes} byte).",
-        "capture_unsafe_name": "usikkert filnavn"
+        "capture_unsafe_name": "usikkert filnavn",
+        "capture_aacs_unread": "AACS-diagnostik ikke registreret — disken er krypteret, men blev scannet uden nøgler."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Kunne ikke åbne mappen i Stifinder: {e}",
             "scan_not_started": "Kunne ikke starte scanning af kilden: {detail}",
             "scan_worker_stopped": "Scanningsprocessen for kilden stoppede, før den returnerede et resultat.",
-            "insert_disc_retry": "Indsæt disken i et drev, og vælg „Start rip“ igen. Kun dens Volume ID læses; den rippes ikke igen."
+            "insert_disc_retry": "Indsæt disken i et drev, og vælg „Start rip“ igen. Kun dens Volume ID læses; den rippes ikke igen.",
+            "keydb_worker_failed": "Opdatering af keydb mislykkedes — intern fejl",
+            "drive_scan_failed": "Kunne ikke vise de optiske drev (intern fejl).",
+            "bad_number_setting": "„{name}“ skal være et heltal, ikke „{value}“. Ret det i Indstillinger, og start igen.",
+            "open_url_refused": "Kunne ikke åbne {url}"
         },
         "alert": {
             "rip_title": "Et rip er i gang.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Sikkerhedskopiér",
             "backup_msg": "Sikkerhedskopiér hele disken (alle titler, dekrypteret) til:",
             "open_prompt": "Åbn",
-            "folder_msg": "Vælg en VIDEO_TS- eller BDMV-mappe"
+            "folder_msg": "Vælg en VIDEO_TS- eller BDMV-mappe",
+            "default_output_msg": "Vælg standardoutputmappen",
+            "keydb_msg": "Vælg filen keydb.cfg"
         },
         "about": {
             "version": "Version :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Rip færdigt"
+        },
+        "dialog": {
+            "timer_failed": "freemkv kunne ikke starte sin fremskridtstimer ({error}). Rippet kører muligvis stadig, men dette vindue opdateres ikke. Genstart venligst freemkv."
         }
     },
     "warn": {

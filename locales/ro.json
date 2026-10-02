@@ -75,7 +75,8 @@
         "capture_no_structure": "Nu s-a găsit nicio structură de disc lizibilă (BDMV / VIDEO_TS); nu există nimic de partajat.",
         "capture_skipped": "S-a omis fișierul de pe disc {file}",
         "capture_summary": "Structura discului a fost capturată: {files} fișiere ({bytes} octeți).",
-        "capture_unsafe_name": "nume de fișier nesigur"
+        "capture_unsafe_name": "nume de fișier nesigur",
+        "capture_aacs_unread": "Diagnosticul AACS nu a fost capturat — discul este criptat, dar a fost scanat fără chei."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Nu s-a putut deschide dosarul în Explorer: {e}",
             "scan_not_started": "Nu s-a putut porni scanarea sursei: {detail}",
             "scan_worker_stopped": "Procesul de scanare a sursei s-a oprit înainte de a returna un rezultat.",
-            "insert_disc_retry": "Introdu discul într-o unitate, apoi alege din nou „Începe extragerea”. Se citește doar ID-ul său de volum; nu este extras din nou."
+            "insert_disc_retry": "Introdu discul într-o unitate, apoi alege din nou „Începe extragerea”. Se citește doar ID-ul său de volum; nu este extras din nou.",
+            "keydb_worker_failed": "Actualizarea keydb a eșuat — eroare internă",
+            "drive_scan_failed": "Nu s-au putut lista unitățile optice (eroare internă).",
+            "bad_number_setting": "„{name}” trebuie să fie un număr întreg, nu „{value}”. Corectează în Setări, apoi pornește din nou.",
+            "open_url_refused": "Nu s-a putut deschide {url}"
         },
         "alert": {
             "rip_title": "O extragere este în curs.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Copie de rezervă",
             "backup_msg": "Fă o copie de rezervă a întregului disc (toate titlurile, decriptate) în:",
             "open_prompt": "Deschide",
-            "folder_msg": "Selectează un director VIDEO_TS sau BDMV"
+            "folder_msg": "Selectează un director VIDEO_TS sau BDMV",
+            "default_output_msg": "Alege directorul de ieșire implicit",
+            "keydb_msg": "Alege fișierul keydb.cfg"
         },
         "about": {
             "version": "Versiune :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Extragere finalizată"
+        },
+        "dialog": {
+            "timer_failed": "freemkv nu a putut porni cronometrul de progres ({error}). Extragerea poate rula în continuare, dar această fereastră nu se va actualiza. Te rugăm să repornești freemkv."
         }
     },
     "warn": {

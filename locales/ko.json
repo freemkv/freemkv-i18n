@@ -75,7 +75,8 @@
         "capture_no_structure": "읽을 수 있는 디스크 구조(BDMV / VIDEO_TS)를 찾지 못했습니다. 공유할 내용이 없습니다.",
         "capture_skipped": "디스크 파일 {file} 건너뜀",
         "capture_summary": "디스크 구조 수집됨: 파일 {files}개 ({bytes} 바이트).",
-        "capture_unsafe_name": "안전하지 않은 파일 이름"
+        "capture_unsafe_name": "안전하지 않은 파일 이름",
+        "capture_aacs_unread": "AACS 진단 정보를 수집하지 못했습니다 — 디스크가 암호화되어 있지만 키 없이 스캔되었습니다."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "파일 탐색기에서 폴더를 열 수 없습니다: {e}",
             "scan_not_started": "소스 스캔을 시작할 수 없습니다: {detail}",
             "scan_worker_stopped": "소스 스캔 작업이 결과를 반환하기 전에 중지되었습니다.",
-            "insert_disc_retry": "디스크를 드라이브에 삽입한 후 “추출 시작”을 다시 선택하세요. 볼륨 ID만 읽으며 다시 추출되지 않습니다."
+            "insert_disc_retry": "디스크를 드라이브에 삽입한 후 “추출 시작”을 다시 선택하세요. 볼륨 ID만 읽으며 다시 추출되지 않습니다.",
+            "keydb_worker_failed": "keydb 업데이트 실패 — 내부 오류",
+            "drive_scan_failed": "광학 드라이브 목록을 가져올 수 없습니다(내부 오류).",
+            "bad_number_setting": "“{name}”은(는) “{value}”이(가) 아닌 정수여야 합니다. 설정에서 수정한 후 다시 시작하세요.",
+            "open_url_refused": "{url}을(를) 열 수 없습니다"
         },
         "alert": {
             "rip_title": "추출이 진행 중입니다.",
@@ -725,7 +730,9 @@
             "backup_prompt": "백업",
             "backup_msg": "디스크 전체(모든 타이틀, 복호화됨)를 다음으로 백업:",
             "open_prompt": "열기",
-            "folder_msg": "VIDEO_TS 또는 BDMV 폴더 선택"
+            "folder_msg": "VIDEO_TS 또는 BDMV 폴더 선택",
+            "default_output_msg": "기본 출력 폴더 선택",
+            "keydb_msg": "keydb.cfg 파일 선택"
         },
         "about": {
             "version": "버전 :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "추출 완료"
+        },
+        "dialog": {
+            "timer_failed": "freemkv가 진행률 타이머를 시작하지 못했습니다({error}). 추출이 계속 실행 중일 수 있지만 이 창은 업데이트되지 않습니다. freemkv를 다시 시작하세요."
         }
     },
     "warn": {

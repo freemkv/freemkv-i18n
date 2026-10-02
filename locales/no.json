@@ -75,7 +75,8 @@
         "capture_no_structure": "Fant ingen lesbar platestruktur (BDMV / VIDEO_TS); ingenting å dele.",
         "capture_skipped": "Hoppet over platefilen {file}",
         "capture_summary": "Platestruktur fanget opp: {files} filer ({bytes} byte).",
-        "capture_unsafe_name": "utrygt filnavn"
+        "capture_unsafe_name": "utrygt filnavn",
+        "capture_aacs_unread": "AACS-diagnostikk ble ikke fanget opp — platen er kryptert, men ble skannet uten nøkler."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Kunne ikke åpne mappen i Filutforsker: {e}",
             "scan_not_started": "Kunne ikke starte skanningen av kilden: {detail}",
             "scan_worker_stopped": "Skanneprosessen for kilden stoppet før den returnerte et resultat.",
-            "insert_disc_retry": "Sett platen inn i en stasjon, og velg «Start ripping» igjen. Bare Volum-ID-en leses; den rippes ikke på nytt."
+            "insert_disc_retry": "Sett platen inn i en stasjon, og velg «Start ripping» igjen. Bare Volum-ID-en leses; den rippes ikke på nytt.",
+            "keydb_worker_failed": "Oppdatering av keydb mislyktes — intern feil",
+            "drive_scan_failed": "Kunne ikke liste opp de optiske stasjonene (intern feil).",
+            "bad_number_setting": "«{name}» må være et heltall, ikke «{value}». Rett det i Innstillinger, og start på nytt.",
+            "open_url_refused": "Kunne ikke åpne {url}"
         },
         "alert": {
             "rip_title": "En ripping pågår.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Sikkerhetskopier",
             "backup_msg": "Sikkerhetskopier hele platen (alle titler, dekryptert) til:",
             "open_prompt": "Åpne",
-            "folder_msg": "Velg en VIDEO_TS- eller BDMV-mappe"
+            "folder_msg": "Velg en VIDEO_TS- eller BDMV-mappe",
+            "default_output_msg": "Velg standard utdatamappe",
+            "keydb_msg": "Velg filen keydb.cfg"
         },
         "about": {
             "version": "Versjon:",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Ripping fullført"
+        },
+        "dialog": {
+            "timer_failed": "freemkv kunne ikke starte fremdriftstidtakeren ({error}). Rippingen kan fortsatt pågå, men dette vinduet blir ikke oppdatert. Start freemkv på nytt."
         }
     },
     "warn": {

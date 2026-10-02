@@ -75,7 +75,8 @@
         "capture_no_structure": "Aucune structure de disque lisible (BDMV / VIDEO_TS) trouvée ; rien à partager.",
         "capture_skipped": "Fichier du disque ignoré : {file}",
         "capture_summary": "Structure du disque capturée : {files} fichiers ({bytes} octets).",
-        "capture_unsafe_name": "nom de fichier non sûr"
+        "capture_unsafe_name": "nom de fichier non sûr",
+        "capture_aacs_unread": "Diagnostics AACS non capturés — le disque est chiffré mais a été analysé sans clés."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Impossible d'ouvrir le dossier dans l'Explorateur de fichiers : {e}",
             "scan_not_started": "Impossible de lancer l'analyse de la source : {detail}",
             "scan_worker_stopped": "Le processus d'analyse de la source s'est arrêté avant de renvoyer un résultat.",
-            "insert_disc_retry": "Insérez le disque dans un lecteur, puis choisissez à nouveau « Démarrer l'extraction ». Seul son identifiant de volume est lu ; il n'est pas extrait à nouveau."
+            "insert_disc_retry": "Insérez le disque dans un lecteur, puis choisissez à nouveau « Démarrer l'extraction ». Seul son identifiant de volume est lu ; il n'est pas extrait à nouveau.",
+            "keydb_worker_failed": "Échec de la mise à jour de keydb — erreur interne",
+            "drive_scan_failed": "Impossible de lister les lecteurs optiques (erreur interne).",
+            "bad_number_setting": "« {name} » doit être un nombre entier, pas « {value} ». Corrigez-le dans les Réglages, puis recommencez.",
+            "open_url_refused": "Impossible d'ouvrir {url}"
         },
         "alert": {
             "rip_title": "Une extraction est en cours.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Sauvegarder",
             "backup_msg": "Sauvegarder le disque entier (tous les titres, déchiffrés) vers :",
             "open_prompt": "Ouvrir",
-            "folder_msg": "Sélectionnez un dossier VIDEO_TS ou BDMV"
+            "folder_msg": "Sélectionnez un dossier VIDEO_TS ou BDMV",
+            "default_output_msg": "Choisissez le dossier de sortie par défaut",
+            "keydb_msg": "Choisissez le fichier keydb.cfg"
         },
         "about": {
             "version": "Version :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Extraction terminée"
+        },
+        "dialog": {
+            "timer_failed": "freemkv n'a pas pu démarrer son minuteur de progression ({error}). L'extraction est peut-être toujours en cours, mais cette fenêtre ne sera plus mise à jour. Veuillez redémarrer freemkv."
         }
     },
     "warn": {

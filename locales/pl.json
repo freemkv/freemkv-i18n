@@ -75,7 +75,8 @@
         "capture_no_structure": "Nie znaleziono czytelnej struktury płyty (BDMV / VIDEO_TS); nie ma czego udostępnić.",
         "capture_skipped": "Pominięto plik płyty {file}",
         "capture_summary": "Przechwycono strukturę płyty — plików: {files}, bajtów: {bytes}.",
-        "capture_unsafe_name": "niebezpieczna nazwa pliku"
+        "capture_unsafe_name": "niebezpieczna nazwa pliku",
+        "capture_aacs_unread": "Nie zebrano diagnostyki AACS — płyta jest zaszyfrowana, ale została przeskanowana bez kluczy."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Nie można otworzyć folderu w Eksploratorze plików: {e}",
             "scan_not_started": "Nie można rozpocząć skanowania źródła: {detail}",
             "scan_worker_stopped": "Proces skanowania źródła zatrzymał się przed zwróceniem wyniku.",
-            "insert_disc_retry": "Włóż płytę do napędu, a następnie ponownie wybierz „Rozpocznij zgrywanie”. Odczytywany jest tylko jej identyfikator woluminu; nie jest ona ponownie zgrywana."
+            "insert_disc_retry": "Włóż płytę do napędu, a następnie ponownie wybierz „Rozpocznij zgrywanie”. Odczytywany jest tylko jej identyfikator woluminu; nie jest ona ponownie zgrywana.",
+            "keydb_worker_failed": "Aktualizacja keydb nie powiodła się — błąd wewnętrzny",
+            "drive_scan_failed": "Nie można wyświetlić listy napędów optycznych (błąd wewnętrzny).",
+            "bad_number_setting": "„{name}” musi być liczbą całkowitą, a nie „{value}”. Popraw to w Ustawieniach, a następnie zacznij ponownie.",
+            "open_url_refused": "Nie można otworzyć {url}"
         },
         "alert": {
             "rip_title": "Trwa zgrywanie.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Utwórz kopię zapasową",
             "backup_msg": "Utwórz kopię zapasową całej płyty (wszystkie tytuły, odszyfrowane) w:",
             "open_prompt": "Otwórz",
-            "folder_msg": "Wybierz folder VIDEO_TS lub BDMV"
+            "folder_msg": "Wybierz folder VIDEO_TS lub BDMV",
+            "default_output_msg": "Wybierz domyślny folder wyjściowy",
+            "keydb_msg": "Wybierz plik keydb.cfg"
         },
         "about": {
             "version": "Wersja:",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Zgrywanie zakończone"
+        },
+        "dialog": {
+            "timer_failed": "freemkv nie mógł uruchomić licznika postępu ({error}). Zgrywanie może nadal trwać, ale to okno nie będzie aktualizowane. Uruchom ponownie freemkv."
         }
     },
     "warn": {

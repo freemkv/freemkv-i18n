@@ -75,7 +75,8 @@
         "capture_no_structure": "Nebyla nalezena žádná čitelná struktura disku (BDMV / VIDEO_TS); není co sdílet.",
         "capture_skipped": "Přeskočen soubor disku {file}",
         "capture_summary": "Struktura disku zachycena (počet souborů: {files}, {bytes} B).",
-        "capture_unsafe_name": "nebezpečný název souboru"
+        "capture_unsafe_name": "nebezpečný název souboru",
+        "capture_aacs_unread": "Diagnostika AACS nebyla zachycena — disk je šifrovaný, ale byl prohledán bez klíčů."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Složku nelze otevřít v Průzkumníku souborů: {e}",
             "scan_not_started": "Nelze spustit prohledávání zdroje: {detail}",
             "scan_worker_stopped": "Proces prohledávání zdroje se zastavil dříve, než vrátil výsledek.",
-            "insert_disc_retry": "Vložte disk do jednotky a znovu zvolte „Spustit ripování“. Čte se pouze jeho ID svazku; disk se znovu neripuje."
+            "insert_disc_retry": "Vložte disk do jednotky a znovu zvolte „Spustit ripování“. Čte se pouze jeho ID svazku; disk se znovu neripuje.",
+            "keydb_worker_failed": "Aktualizace keydb selhala — interní chyba",
+            "drive_scan_failed": "Nelze vypsat optické jednotky (interní chyba).",
+            "bad_number_setting": "„{name}“ musí být celé číslo, ne „{value}“. Opravte to v Nastavení a začněte znovu.",
+            "open_url_refused": "Nelze otevřít {url}"
         },
         "alert": {
             "rip_title": "Probíhá ripování.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Zálohovat",
             "backup_msg": "Zálohovat celý disk (všechny tituly, dešifrované) do:",
             "open_prompt": "Otevřít",
-            "folder_msg": "Vyberte složku VIDEO_TS nebo BDMV"
+            "folder_msg": "Vyberte složku VIDEO_TS nebo BDMV",
+            "default_output_msg": "Zvolte výchozí výstupní složku",
+            "keydb_msg": "Zvolte soubor keydb.cfg"
         },
         "about": {
             "version": "Verze :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Ripování dokončeno"
+        },
+        "dialog": {
+            "timer_failed": "freemkv nemohl spustit časovač průběhu ({error}). Ripování možná stále probíhá, ale toto okno se nebude aktualizovat. Restartujte prosím freemkv."
         }
     },
     "warn": {

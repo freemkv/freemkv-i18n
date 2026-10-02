@@ -1,6 +1,7 @@
 // ST-I0 (stop-design-v5.md §5.7), IT0: ci/pick-libfreemkv-ref.sh must not compare
 // against `github.ref_name`, which is `<n>/merge` on a `pull_request` run. Hermetic: a
 // fake `git` first on PATH stands in for the real `git ls-remote` network call.
+#![cfg(unix)]
 
 use std::io::{Read, Write};
 use std::os::unix::fs::PermissionsExt;

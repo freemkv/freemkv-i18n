@@ -75,7 +75,8 @@
         "capture_no_structure": "No readable disc structure (BDMV / VIDEO_TS) was found; nothing to share.",
         "capture_skipped": "Skipped disc file {file}",
         "capture_summary": "Captured disc structure: {files} files ({bytes} bytes).",
-        "capture_unsafe_name": "unsafe file name"
+        "capture_unsafe_name": "unsafe file name",
+        "capture_aacs_unread": "AACS diagnostics not captured — the disc is encrypted but was scanned without keys."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Could not open the folder in Explorer: {e}",
             "scan_not_started": "Could not start scanning the source: {detail}",
             "scan_worker_stopped": "Source scan worker stopped before returning a result.",
-            "insert_disc_retry": "Insert the disc into a drive, then choose “Start rip” again. Only its Volume ID is read; it is not ripped again."
+            "insert_disc_retry": "Insert the disc into a drive, then choose “Start rip” again. Only its Volume ID is read; it is not ripped again.",
+            "keydb_worker_failed": "keydb update failed — internal error",
+            "drive_scan_failed": "Could not list the optical drives (internal error).",
+            "bad_number_setting": "“{name}” must be a whole number, not “{value}”. Fix it in Settings, then start again.",
+            "open_url_refused": "Could not open {url}"
         },
         "alert": {
             "rip_title": "A rip is in progress.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Back up",
             "backup_msg": "Back up the entire disc (all titles, decrypted) to:",
             "open_prompt": "Open",
-            "folder_msg": "Select a VIDEO_TS or BDMV folder"
+            "folder_msg": "Select a VIDEO_TS or BDMV folder",
+            "default_output_msg": "Choose the default output folder",
+            "keydb_msg": "Choose the keydb.cfg file"
         },
         "about": {
             "version": "Version :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Rip finished"
+        },
+        "dialog": {
+            "timer_failed": "freemkv could not start its progress timer ({error}). The rip may still be running, but this window will not update. Please restart freemkv."
         }
     },
     "warn": {

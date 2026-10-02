@@ -75,7 +75,8 @@
         "capture_no_structure": "Okunabilir disk yapısı (BDMV / VIDEO_TS) bulunamadı; paylaşılacak bir şey yok.",
         "capture_skipped": "Disk dosyası atlandı: {file}",
         "capture_summary": "Disk yapısı yakalandı: {files} dosya ({bytes} bayt).",
-        "capture_unsafe_name": "güvenli olmayan dosya adı"
+        "capture_unsafe_name": "güvenli olmayan dosya adı",
+        "capture_aacs_unread": "AACS tanılama bilgileri yakalanmadı — disk şifreli ancak anahtarsız tarandı."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Klasör Dosya Gezgini'nde açılamadı: {e}",
             "scan_not_started": "Kaynak taraması başlatılamadı: {detail}",
             "scan_worker_stopped": "Kaynak tarama işlemi bir sonuç döndürmeden durdu.",
-            "insert_disc_retry": "Diski bir sürücüye takın, ardından tekrar “Kopyalamayı başlat”ı seçin. Yalnızca birim kimliği okunur; tekrar kopyalanmaz."
+            "insert_disc_retry": "Diski bir sürücüye takın, ardından tekrar “Kopyalamayı başlat”ı seçin. Yalnızca birim kimliği okunur; tekrar kopyalanmaz.",
+            "keydb_worker_failed": "keydb güncellemesi başarısız oldu — iç hata",
+            "drive_scan_failed": "Optik sürücüler listelenemedi (iç hata).",
+            "bad_number_setting": "“{name}” bir tam sayı olmalıdır, “{value}” değil. Ayarlar'da düzeltin, ardından yeniden başlayın.",
+            "open_url_refused": "{url} açılamadı"
         },
         "alert": {
             "rip_title": "Bir kopyalama sürüyor.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Yedekle",
             "backup_msg": "Tüm diski (tüm başlıklar, şifresi çözülmüş) şuraya yedekle:",
             "open_prompt": "Aç",
-            "folder_msg": "Bir VIDEO_TS veya BDMV klasörü seçin"
+            "folder_msg": "Bir VIDEO_TS veya BDMV klasörü seçin",
+            "default_output_msg": "Varsayılan çıktı klasörünü seçin",
+            "keydb_msg": "keydb.cfg dosyasını seçin"
         },
         "about": {
             "version": "Sürüm :",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Kopyalama tamamlandı"
+        },
+        "dialog": {
+            "timer_failed": "freemkv ilerleme zamanlayıcısını başlatamadı ({error}). Kopyalama hâlâ sürüyor olabilir, ancak bu pencere güncellenmeyecek. Lütfen freemkv'yi yeniden başlatın."
         }
     },
     "warn": {

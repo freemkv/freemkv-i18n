@@ -75,7 +75,8 @@
         "capture_no_structure": "未找到可读取的光盘结构（BDMV / VIDEO_TS）；没有可分享的内容。",
         "capture_skipped": "已跳过光盘文件 {file}",
         "capture_summary": "已采集光盘结构：{files} 个文件（{bytes} 字节）。",
-        "capture_unsafe_name": "不安全的文件名"
+        "capture_unsafe_name": "不安全的文件名",
+        "capture_aacs_unread": "未采集 AACS 诊断信息 —— 光盘已加密，但扫描时未使用密钥。"
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "无法在文件资源管理器中打开文件夹：{e}",
             "scan_not_started": "无法开始扫描源：{detail}",
             "scan_worker_stopped": "源扫描进程在返回结果之前已停止。",
-            "insert_disc_retry": "请将光盘插入驱动器，然后再次选择“开始抓取”。只会读取其卷 ID；不会再次抓取。"
+            "insert_disc_retry": "请将光盘插入驱动器，然后再次选择“开始抓取”。只会读取其卷 ID；不会再次抓取。",
+            "keydb_worker_failed": "keydb 更新失败 —— 内部错误",
+            "drive_scan_failed": "无法列出光驱（内部错误）。",
+            "bad_number_setting": "“{name}”必须是整数，而不是“{value}”。请在设置中修正后重新开始。",
+            "open_url_refused": "无法打开 {url}"
         },
         "alert": {
             "rip_title": "抓取正在进行中。",
@@ -725,7 +730,9 @@
             "backup_prompt": "备份",
             "backup_msg": "将整张光盘（所有标题，已解密）备份到：",
             "open_prompt": "打开",
-            "folder_msg": "选择一个 VIDEO_TS 或 BDMV 文件夹"
+            "folder_msg": "选择一个 VIDEO_TS 或 BDMV 文件夹",
+            "default_output_msg": "选择默认输出文件夹",
+            "keydb_msg": "选择 keydb.cfg 文件"
         },
         "about": {
             "version": "版本 ：",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "抓取完成"
+        },
+        "dialog": {
+            "timer_failed": "freemkv 无法启动进度计时器（{error}）。抓取可能仍在进行，但此窗口将不再更新。请重启 freemkv。"
         }
     },
     "warn": {

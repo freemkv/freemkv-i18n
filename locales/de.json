@@ -75,7 +75,8 @@
         "capture_no_structure": "Keine lesbare Disc-Struktur (BDMV / VIDEO_TS) gefunden; nichts zu teilen.",
         "capture_skipped": "Disc-Datei {file} übersprungen",
         "capture_summary": "Disc-Struktur erfasst: {files} Dateien ({bytes} Bytes).",
-        "capture_unsafe_name": "unsicherer Dateiname"
+        "capture_unsafe_name": "unsicherer Dateiname",
+        "capture_aacs_unread": "AACS-Diagnose nicht erfasst — die Disc ist verschlüsselt, wurde aber ohne Schlüssel gescannt."
     },
     "stream": {
         "purpose": {
@@ -711,7 +712,11 @@
             "reveal_failed": "Der Ordner konnte nicht im Explorer geöffnet werden: {e}",
             "scan_not_started": "Scan der Quelle konnte nicht gestartet werden: {detail}",
             "scan_worker_stopped": "Der Scan-Prozess für die Quelle wurde beendet, bevor er ein Ergebnis lieferte.",
-            "insert_disc_retry": "Legen Sie die Disc in ein Laufwerk ein und wählen Sie erneut „Rip starten“. Es wird nur deren Volume-ID gelesen; sie wird nicht erneut gerippt."
+            "insert_disc_retry": "Legen Sie die Disc in ein Laufwerk ein und wählen Sie erneut „Rip starten“. Es wird nur deren Volume-ID gelesen; sie wird nicht erneut gerippt.",
+            "keydb_worker_failed": "keydb-Aktualisierung fehlgeschlagen — interner Fehler",
+            "drive_scan_failed": "Die optischen Laufwerke konnten nicht aufgelistet werden (interner Fehler).",
+            "bad_number_setting": "„{name}“ muss eine ganze Zahl sein, nicht „{value}“. Korrigieren Sie dies in den Einstellungen und starten Sie dann erneut.",
+            "open_url_refused": "{url} konnte nicht geöffnet werden"
         },
         "alert": {
             "rip_title": "Ein Rip läuft gerade.",
@@ -725,7 +730,9 @@
             "backup_prompt": "Sichern",
             "backup_msg": "Die gesamte Disc (alle Titel, entschlüsselt) sichern nach:",
             "open_prompt": "Öffnen",
-            "folder_msg": "Wählen Sie einen VIDEO_TS- oder BDMV-Ordner"
+            "folder_msg": "Wählen Sie einen VIDEO_TS- oder BDMV-Ordner",
+            "default_output_msg": "Wählen Sie den Standard-Ausgabeordner",
+            "keydb_msg": "Wählen Sie die Datei keydb.cfg"
         },
         "about": {
             "version": "Version:",
@@ -754,6 +761,9 @@
         },
         "notify": {
             "rip_finished_title": "Rip abgeschlossen"
+        },
+        "dialog": {
+            "timer_failed": "freemkv konnte seinen Fortschritts-Timer nicht starten ({error}). Der Rip läuft möglicherweise noch, aber dieses Fenster wird nicht mehr aktualisiert. Bitte starten Sie freemkv neu."
         }
     },
     "warn": {
