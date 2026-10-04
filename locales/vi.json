@@ -566,7 +566,10 @@
             "type": "Loại",
             "desc": "Mô tả",
             "duration": "Thời lượng",
-            "size": "Kích thước"
+            "size": "Kích thước",
+            "item": "Mục",
+            "lang": "Ngôn ngữ",
+            "notes": "Ghi chú"
         },
         "tab": {
             "output": "Đầu ra",
@@ -833,6 +836,24 @@
             "est": "Tiếng Estonia",
             "lav": "Tiếng Latvia",
             "lit": "Tiếng Litva"
+        },
+        "item": {
+            "title": "Tiêu đề {num}",
+            "chapter": "1 chương",
+            "chapters": "{n} chương",
+            "tracks": "{n} rãnh",
+            "forced": "Bắt buộc",
+            "play_all": "Phát tất cả",
+            "episode": "Tập"
+        },
+        "pick": {
+            "titles": "Tiêu đề",
+            "audio": "Âm thanh",
+            "subtitles": "Phụ đề",
+            "all": "Tất cả",
+            "none": "Không có",
+            "forced": "Chỉ bắt buộc",
+            "episodes": "Các tập"
         }
     },
     "warn": {

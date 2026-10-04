@@ -566,7 +566,10 @@
             "type": "類型",
             "desc": "描述",
             "duration": "時長",
-            "size": "大小"
+            "size": "大小",
+            "item": "項目",
+            "lang": "語言",
+            "notes": "備註"
         },
         "tab": {
             "output": "輸出",
@@ -833,6 +836,24 @@
             "est": "愛沙尼亞語",
             "lav": "拉脫維亞語",
             "lit": "立陶宛語"
+        },
+        "item": {
+            "title": "標題 {num}",
+            "chapter": "1 個章節",
+            "chapters": "{n} 個章節",
+            "tracks": "{n} 條軌道",
+            "forced": "強制",
+            "play_all": "全部播放",
+            "episode": "劇集"
+        },
+        "pick": {
+            "titles": "標題",
+            "audio": "音訊",
+            "subtitles": "字幕",
+            "all": "全部",
+            "none": "無",
+            "forced": "僅強制",
+            "episodes": "劇集"
         }
     },
     "warn": {

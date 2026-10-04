@@ -566,7 +566,10 @@
             "type": "Tip",
             "desc": "Descriere",
             "duration": "Durată",
-            "size": "Dimensiune"
+            "size": "Dimensiune",
+            "item": "Element",
+            "lang": "Limbă",
+            "notes": "Note"
         },
         "tab": {
             "output": "Ieșire",
@@ -833,6 +836,24 @@
             "est": "Estonă",
             "lav": "Letonă",
             "lit": "Lituaniană"
+        },
+        "item": {
+            "title": "Titlul {num}",
+            "chapter": "1 capitol",
+            "chapters": "{n} capitole",
+            "tracks": "{n} piste",
+            "forced": "Forțat",
+            "play_all": "Redă tot",
+            "episode": "Episod"
+        },
+        "pick": {
+            "titles": "Titluri",
+            "audio": "Audio",
+            "subtitles": "Subtitrări",
+            "all": "Toate",
+            "none": "Niciuna",
+            "forced": "Doar forțate",
+            "episodes": "Episoade"
         }
     },
     "warn": {

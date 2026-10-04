@@ -566,7 +566,10 @@
             "type": "Típus",
             "desc": "Leírás",
             "duration": "Időtartam",
-            "size": "Méret"
+            "size": "Méret",
+            "item": "Elem",
+            "lang": "Nyelv",
+            "notes": "Megjegyzések"
         },
         "tab": {
             "output": "Kimenet",
@@ -833,6 +836,24 @@
             "est": "Észt",
             "lav": "Lett",
             "lit": "Litván"
+        },
+        "item": {
+            "title": "{num}. cím",
+            "chapter": "1 fejezet",
+            "chapters": "{n} fejezet",
+            "tracks": "{n} sáv",
+            "forced": "Kényszerített",
+            "play_all": "Összes lejátszása",
+            "episode": "Epizód"
+        },
+        "pick": {
+            "titles": "Címek",
+            "audio": "Hang",
+            "subtitles": "Feliratok",
+            "all": "Mind",
+            "none": "Nincs",
+            "forced": "Csak kényszerített",
+            "episodes": "Epizódok"
         }
     },
     "warn": {

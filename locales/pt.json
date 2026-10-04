@@ -566,7 +566,10 @@
             "type": "Tipo",
             "desc": "Descrição",
             "duration": "Duração",
-            "size": "Tamanho"
+            "size": "Tamanho",
+            "item": "Item",
+            "lang": "Idioma",
+            "notes": "Notas"
         },
         "tab": {
             "output": "Saída",
@@ -833,6 +836,24 @@
             "est": "Estónio",
             "lav": "Letão",
             "lit": "Lituano"
+        },
+        "item": {
+            "title": "Título {num}",
+            "chapter": "1 capítulo",
+            "chapters": "{n} capítulos",
+            "tracks": "{n} faixas",
+            "forced": "Forçada",
+            "play_all": "Reproduzir tudo",
+            "episode": "Episódio"
+        },
+        "pick": {
+            "titles": "Títulos",
+            "audio": "Áudio",
+            "subtitles": "Legendas",
+            "all": "Todos",
+            "none": "Nenhum",
+            "forced": "Apenas forçadas",
+            "episodes": "Episódios"
         }
     },
     "warn": {

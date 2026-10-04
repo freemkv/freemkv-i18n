@@ -566,7 +566,10 @@
             "type": "Type",
             "desc": "Omschrijving",
             "duration": "Duur",
-            "size": "Grootte"
+            "size": "Grootte",
+            "item": "Item",
+            "lang": "Taal",
+            "notes": "Opmerkingen"
         },
         "tab": {
             "output": "Uitvoer",
@@ -833,6 +836,24 @@
             "est": "Estisch",
             "lav": "Lets",
             "lit": "Litouws"
+        },
+        "item": {
+            "title": "Titel {num}",
+            "chapter": "1 hoofdstuk",
+            "chapters": "{n} hoofdstukken",
+            "tracks": "{n} sporen",
+            "forced": "Geforceerd",
+            "play_all": "Alles afspelen",
+            "episode": "Aflevering"
+        },
+        "pick": {
+            "titles": "Titels",
+            "audio": "Audio",
+            "subtitles": "Ondertitels",
+            "all": "Alle",
+            "none": "Geen",
+            "forced": "Alleen geforceerd",
+            "episodes": "Afleveringen"
         }
     },
     "warn": {

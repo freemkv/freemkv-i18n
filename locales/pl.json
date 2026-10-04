@@ -566,7 +566,10 @@
             "type": "Typ",
             "desc": "Opis",
             "duration": "Czas trwania",
-            "size": "Rozmiar"
+            "size": "Rozmiar",
+            "item": "Element",
+            "lang": "Język",
+            "notes": "Uwagi"
         },
         "tab": {
             "output": "Wyjście",
@@ -833,6 +836,24 @@
             "est": "Estoński",
             "lav": "Łotewski",
             "lit": "Litewski"
+        },
+        "item": {
+            "title": "Tytuł {num}",
+            "chapter": "1 rozdział",
+            "chapters": "Rozdziały: {n}",
+            "tracks": "Ścieżki: {n}",
+            "forced": "Wymuszone",
+            "play_all": "Odtwórz wszystko",
+            "episode": "Odcinek"
+        },
+        "pick": {
+            "titles": "Tytuły",
+            "audio": "Dźwięk",
+            "subtitles": "Napisy",
+            "all": "Wszystkie",
+            "none": "Brak",
+            "forced": "Tylko wymuszone",
+            "episodes": "Odcinki"
         }
     },
     "warn": {

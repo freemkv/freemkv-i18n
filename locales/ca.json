@@ -566,7 +566,10 @@
             "type": "Tipus",
             "desc": "Descripció",
             "duration": "Durada",
-            "size": "Mida"
+            "size": "Mida",
+            "item": "Element",
+            "lang": "Idioma",
+            "notes": "Notes"
         },
         "tab": {
             "output": "Sortida",
@@ -833,6 +836,24 @@
             "est": "Estonià",
             "lav": "Letó",
             "lit": "Lituà"
+        },
+        "item": {
+            "title": "Títol {num}",
+            "chapter": "1 capítol",
+            "chapters": "{n} capítols",
+            "tracks": "{n} pistes",
+            "forced": "Forçat",
+            "play_all": "Reproduir-ho tot",
+            "episode": "Episodi"
+        },
+        "pick": {
+            "titles": "Títols",
+            "audio": "Àudio",
+            "subtitles": "Subtítols",
+            "all": "Tot",
+            "none": "Cap",
+            "forced": "Només forçats",
+            "episodes": "Episodis"
         }
     },
     "warn": {

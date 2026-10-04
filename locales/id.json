@@ -566,7 +566,10 @@
             "type": "Tipe",
             "desc": "Deskripsi",
             "duration": "Durasi",
-            "size": "Ukuran"
+            "size": "Ukuran",
+            "item": "Item",
+            "lang": "Bahasa",
+            "notes": "Catatan"
         },
         "tab": {
             "output": "Keluaran",
@@ -833,6 +836,24 @@
             "est": "Bahasa Estonia",
             "lav": "Bahasa Latvia",
             "lit": "Bahasa Lituania"
+        },
+        "item": {
+            "title": "Judul {num}",
+            "chapter": "1 bab",
+            "chapters": "{n} bab",
+            "tracks": "{n} trek",
+            "forced": "Paksa",
+            "play_all": "Putar semua",
+            "episode": "Episode"
+        },
+        "pick": {
+            "titles": "Judul",
+            "audio": "Audio",
+            "subtitles": "Subtitel",
+            "all": "Semua",
+            "none": "Tidak ada",
+            "forced": "Hanya paksa",
+            "episodes": "Episode"
         }
     },
     "warn": {

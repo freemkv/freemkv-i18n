@@ -566,7 +566,10 @@
             "type": "类型",
             "desc": "描述",
             "duration": "时长",
-            "size": "大小"
+            "size": "大小",
+            "item": "项目",
+            "lang": "语言",
+            "notes": "备注"
         },
         "tab": {
             "output": "输出",
@@ -833,6 +836,24 @@
             "est": "爱沙尼亚语",
             "lav": "拉脱维亚语",
             "lit": "立陶宛语"
+        },
+        "item": {
+            "title": "标题 {num}",
+            "chapter": "1 个章节",
+            "chapters": "{n} 个章节",
+            "tracks": "{n} 条轨道",
+            "forced": "强制",
+            "play_all": "全部播放",
+            "episode": "剧集"
+        },
+        "pick": {
+            "titles": "标题",
+            "audio": "音频",
+            "subtitles": "字幕",
+            "all": "全部",
+            "none": "无",
+            "forced": "仅强制",
+            "episodes": "剧集"
         }
     },
     "warn": {

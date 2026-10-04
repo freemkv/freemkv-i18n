@@ -566,7 +566,10 @@
             "type": "Tipo",
             "desc": "Descrizione",
             "duration": "Durata",
-            "size": "Dimensione"
+            "size": "Dimensione",
+            "item": "Elemento",
+            "lang": "Lingua",
+            "notes": "Note"
         },
         "tab": {
             "output": "Destinazione",
@@ -833,6 +836,24 @@
             "est": "Estone",
             "lav": "Lettone",
             "lit": "Lituano"
+        },
+        "item": {
+            "title": "Titolo {num}",
+            "chapter": "1 capitolo",
+            "chapters": "{n} capitoli",
+            "tracks": "{n} tracce",
+            "forced": "Forzato",
+            "play_all": "Riproduci tutto",
+            "episode": "Episodio"
+        },
+        "pick": {
+            "titles": "Titoli",
+            "audio": "Audio",
+            "subtitles": "Sottotitoli",
+            "all": "Tutti",
+            "none": "Nessuno",
+            "forced": "Solo forzati",
+            "episodes": "Episodi"
         }
     },
     "warn": {

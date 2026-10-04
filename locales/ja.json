@@ -566,7 +566,10 @@
             "type": "種類",
             "desc": "説明",
             "duration": "再生時間",
-            "size": "サイズ"
+            "size": "サイズ",
+            "item": "項目",
+            "lang": "言語",
+            "notes": "備考"
         },
         "tab": {
             "output": "出力",
@@ -833,6 +836,24 @@
             "est": "エストニア語",
             "lav": "ラトビア語",
             "lit": "リトアニア語"
+        },
+        "item": {
+            "title": "タイトル {num}",
+            "chapter": "1 チャプター",
+            "chapters": "{n} チャプター",
+            "tracks": "{n} トラック",
+            "forced": "強制",
+            "play_all": "すべて再生",
+            "episode": "エピソード"
+        },
+        "pick": {
+            "titles": "タイトル",
+            "audio": "音声",
+            "subtitles": "字幕",
+            "all": "すべて",
+            "none": "なし",
+            "forced": "強制のみ",
+            "episodes": "エピソード"
         }
     },
     "warn": {

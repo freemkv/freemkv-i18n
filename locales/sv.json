@@ -566,7 +566,10 @@
             "type": "Typ",
             "desc": "Beskrivning",
             "duration": "Speltid",
-            "size": "Storlek"
+            "size": "Storlek",
+            "item": "Objekt",
+            "lang": "Språk",
+            "notes": "Anteckningar"
         },
         "tab": {
             "output": "Utdata",
@@ -833,6 +836,24 @@
             "est": "Estniska",
             "lav": "Lettiska",
             "lit": "Litauiska"
+        },
+        "item": {
+            "title": "Titel {num}",
+            "chapter": "1 kapitel",
+            "chapters": "{n} kapitel",
+            "tracks": "{n} spår",
+            "forced": "Tvingad",
+            "play_all": "Spela alla",
+            "episode": "Avsnitt"
+        },
+        "pick": {
+            "titles": "Titlar",
+            "audio": "Ljud",
+            "subtitles": "Undertexter",
+            "all": "Alla",
+            "none": "Inga",
+            "forced": "Endast tvingade",
+            "episodes": "Avsnitt"
         }
     },
     "warn": {

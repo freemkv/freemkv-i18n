@@ -566,7 +566,10 @@
             "type": "Type",
             "desc": "Beskrivelse",
             "duration": "Varighet",
-            "size": "Størrelse"
+            "size": "Størrelse",
+            "item": "Element",
+            "lang": "Språk",
+            "notes": "Merknader"
         },
         "tab": {
             "output": "Utdata",
@@ -833,6 +836,24 @@
             "est": "Estisk",
             "lav": "Latvisk",
             "lit": "Litauisk"
+        },
+        "item": {
+            "title": "Tittel {num}",
+            "chapter": "1 kapittel",
+            "chapters": "{n} kapitler",
+            "tracks": "{n} spor",
+            "forced": "Tvunget",
+            "play_all": "Spill av alle",
+            "episode": "Episode"
+        },
+        "pick": {
+            "titles": "Titler",
+            "audio": "Lyd",
+            "subtitles": "Undertekster",
+            "all": "Alle",
+            "none": "Ingen",
+            "forced": "Bare tvungne",
+            "episodes": "Episoder"
         }
     },
     "warn": {

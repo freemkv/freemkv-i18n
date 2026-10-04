@@ -566,7 +566,10 @@
             "type": "Tyyppi",
             "desc": "Kuvaus",
             "duration": "Kesto",
-            "size": "Koko"
+            "size": "Koko",
+            "item": "Kohde",
+            "lang": "Kieli",
+            "notes": "Huomiot"
         },
         "tab": {
             "output": "Tuloste",
@@ -833,6 +836,24 @@
             "est": "Viro",
             "lav": "Latvia",
             "lit": "Liettua"
+        },
+        "item": {
+            "title": "Nimike {num}",
+            "chapter": "1 luku",
+            "chapters": "{n} lukua",
+            "tracks": "{n} raitaa",
+            "forced": "Pakotettu",
+            "play_all": "Toista kaikki",
+            "episode": "Jakso"
+        },
+        "pick": {
+            "titles": "Nimikkeet",
+            "audio": "Ääni",
+            "subtitles": "Tekstitykset",
+            "all": "Kaikki",
+            "none": "Ei mitään",
+            "forced": "Vain pakotetut",
+            "episodes": "Jaksot"
         }
     },
     "warn": {

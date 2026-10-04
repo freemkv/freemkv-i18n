@@ -566,7 +566,10 @@
             "type": "유형",
             "desc": "설명",
             "duration": "재생 시간",
-            "size": "크기"
+            "size": "크기",
+            "item": "항목",
+            "lang": "언어",
+            "notes": "메모"
         },
         "tab": {
             "output": "출력",
@@ -833,6 +836,24 @@
             "est": "에스토니아어",
             "lav": "라트비아어",
             "lit": "리투아니아어"
+        },
+        "item": {
+            "title": "타이틀 {num}",
+            "chapter": "챕터 1개",
+            "chapters": "챕터 {n}개",
+            "tracks": "트랙 {n}개",
+            "forced": "강제",
+            "play_all": "모두 재생",
+            "episode": "에피소드"
+        },
+        "pick": {
+            "titles": "타이틀",
+            "audio": "오디오",
+            "subtitles": "자막",
+            "all": "모두",
+            "none": "없음",
+            "forced": "강제 자막만",
+            "episodes": "에피소드"
         }
     },
     "warn": {

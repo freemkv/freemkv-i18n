@@ -566,7 +566,10 @@
             "type": "Type",
             "desc": "Description",
             "duration": "Durée",
-            "size": "Taille"
+            "size": "Taille",
+            "item": "Élément",
+            "lang": "Langue",
+            "notes": "Remarques"
         },
         "tab": {
             "output": "Sortie",
@@ -833,6 +836,24 @@
             "est": "Estonien",
             "lav": "Letton",
             "lit": "Lituanien"
+        },
+        "item": {
+            "title": "Titre {num}",
+            "chapter": "1 chapitre",
+            "chapters": "{n} chapitres",
+            "tracks": "{n} pistes",
+            "forced": "Forcé",
+            "play_all": "Tout lire",
+            "episode": "Épisode"
+        },
+        "pick": {
+            "titles": "Titres",
+            "audio": "Audio",
+            "subtitles": "Sous-titres",
+            "all": "Tous",
+            "none": "Aucun",
+            "forced": "Forcés uniquement",
+            "episodes": "Épisodes"
         }
     },
     "warn": {

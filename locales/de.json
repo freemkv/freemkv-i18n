@@ -566,7 +566,10 @@
             "type": "Typ",
             "desc": "Beschreibung",
             "duration": "Länge",
-            "size": "Größe"
+            "size": "Größe",
+            "item": "Element",
+            "lang": "Sprache",
+            "notes": "Hinweise"
         },
         "tab": {
             "output": "Ausgabe",
@@ -833,6 +836,24 @@
             "est": "Estnisch",
             "lav": "Lettisch",
             "lit": "Litauisch"
+        },
+        "item": {
+            "title": "Titel {num}",
+            "chapter": "1 Kapitel",
+            "chapters": "{n} Kapitel",
+            "tracks": "{n} Spuren",
+            "forced": "Erzwungen",
+            "play_all": "Alle abspielen",
+            "episode": "Folge"
+        },
+        "pick": {
+            "titles": "Titel",
+            "audio": "Audio",
+            "subtitles": "Untertitel",
+            "all": "Alle",
+            "none": "Keine",
+            "forced": "Nur erzwungene",
+            "episodes": "Folgen"
         }
     },
     "warn": {

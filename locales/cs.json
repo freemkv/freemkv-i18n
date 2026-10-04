@@ -566,7 +566,10 @@
             "type": "Typ",
             "desc": "Popis",
             "duration": "Délka",
-            "size": "Velikost"
+            "size": "Velikost",
+            "item": "Položka",
+            "lang": "Jazyk",
+            "notes": "Poznámky"
         },
         "tab": {
             "output": "Výstup",
@@ -833,6 +836,24 @@
             "est": "Estonština",
             "lav": "Lotyština",
             "lit": "Litevština"
+        },
+        "item": {
+            "title": "Titul {num}",
+            "chapter": "1 kapitola",
+            "chapters": "Kapitoly: {n}",
+            "tracks": "Stopy: {n}",
+            "forced": "Vynucené",
+            "play_all": "Přehrát vše",
+            "episode": "Epizoda"
+        },
+        "pick": {
+            "titles": "Tituly",
+            "audio": "Zvuk",
+            "subtitles": "Titulky",
+            "all": "Vše",
+            "none": "Žádné",
+            "forced": "Jen vynucené",
+            "episodes": "Epizody"
         }
     },
     "warn": {

@@ -566,7 +566,10 @@
             "type": "Tür",
             "desc": "Açıklama",
             "duration": "Süre",
-            "size": "Boyut"
+            "size": "Boyut",
+            "item": "Öğe",
+            "lang": "Dil",
+            "notes": "Notlar"
         },
         "tab": {
             "output": "Çıktı",
@@ -833,6 +836,24 @@
             "est": "Estonca",
             "lav": "Letonca",
             "lit": "Litvanca"
+        },
+        "item": {
+            "title": "Başlık {num}",
+            "chapter": "1 bölüm",
+            "chapters": "{n} bölüm",
+            "tracks": "{n} parça",
+            "forced": "Zorlanmış",
+            "play_all": "Tümünü oynat",
+            "episode": "Bölüm"
+        },
+        "pick": {
+            "titles": "Başlıklar",
+            "audio": "Ses",
+            "subtitles": "Altyazılar",
+            "all": "Tümü",
+            "none": "Hiçbiri",
+            "forced": "Yalnızca zorlanmış",
+            "episodes": "Bölümler"
         }
     },
     "warn": {
