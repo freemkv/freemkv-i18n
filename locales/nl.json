@@ -275,6 +275,7 @@
         "E7106": "Het AACS 2.1-sleutelblok van deze schijf mist de varianttabel, dus de sleutel kan niet worden afgeleid. De schijf is mogelijk beschadigd.",
         "E7107": "Het AACS 2.1-sleutelblok van deze schijf verwijst buiten de eigen variantsleutelgegevens, dus de sleutel kan niet worden afgeleid. De schijf is mogelijk beschadigd.",
         "E7108": "De sleutel die uit het AACS 2.1-sleutelblok van deze schijf is afgeleid, is niet door de controle gekomen en is niet gebruikt. Werk uw sleuteldatabase bij en probeer het opnieuw.",
+        "E7109": "Het AACS-sleutelblok van deze schijf is van een niet-ondersteunde klasse, dus er kan geen sleutel uit worden afgeleid.",
         "E8000": "Kan geen verbinding maken met KEYDB-server: {detail}",
         "E8001": "Downloaden van de sleuteldatabase is mislukt (HTTP {detail}). Probeer de update opnieuw.",
         "E8002": "De sleuteldatabase is leeg of ongeldig. Download hem opnieuw.",

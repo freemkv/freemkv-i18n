@@ -298,6 +298,7 @@
         "E7106": "Blok kunci AACS 2.1 disk ini tidak memiliki tabel varian, sehingga kuncinya tidak dapat diturunkan. Disk mungkin rusak.",
         "E7107": "Blok kunci AACS 2.1 disk ini menunjuk ke luar data kunci variannya, sehingga kuncinya tidak dapat diturunkan. Disk mungkin rusak.",
         "E7108": "Kunci yang diturunkan dari blok kunci AACS 2.1 disk ini gagal verifikasi dan tidak digunakan. Perbarui basis data kunci Anda lalu coba lagi.",
+        "E7109": "Blok kunci AACS disk ini termasuk kelas yang tidak didukung, sehingga tidak ada kunci yang dapat diturunkan darinya.",
         "E8000": "Tidak dapat terhubung ke server basis data kunci: {detail}",
         "E8001": "Unduhan basis data kunci gagal (HTTP {detail}). Coba lagi pembaruannya.",
         "E8002": "Basis data kunci kosong atau tidak valid. Unduh ulang.",

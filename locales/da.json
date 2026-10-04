@@ -298,6 +298,7 @@
         "E7106": "Diskens AACS 2.1-nøgleblok mangler sin varianttabel, så dens nøgle kan ikke afledes. Disken kan være beskadiget.",
         "E7107": "Diskens AACS 2.1-nøgleblok peger uden for sine variantnøgledata, så dens nøgle kan ikke afledes. Disken kan være beskadiget.",
         "E7108": "Nøglen, der blev afledt af diskens AACS 2.1-nøgleblok, bestod ikke kontrollen og blev ikke brugt. Opdater din nøgledatabase, og prøv igen.",
+        "E7109": "Diskens AACS-nøgleblok er af en klasse, der ikke understøttes, så der kan ikke udledes nogen nøgle fra den.",
         "E8000": "Kan ikke oprette forbindelse til nøgledatabaseserveren: {detail}",
         "E8001": "Download af nøgledatabase mislykkedes (HTTP {detail}). Prøv opdateringen igen.",
         "E8002": "Nøgledatabasen er tom eller ugyldig. Download den igen.",

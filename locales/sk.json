@@ -298,6 +298,7 @@
         "E7106": "V bloku kľúčov AACS 2.1 tohto disku chýba tabuľka variantov, takže jeho kľúč nemožno odvodiť. Disk môže byť poškodený.",
         "E7107": "Blok kľúčov AACS 2.1 tohto disku odkazuje mimo svojich údajov variantných kľúčov, takže jeho kľúč nemožno odvodiť. Disk môže byť poškodený.",
         "E7108": "Kľúč odvodený z bloku kľúčov AACS 2.1 tohto disku neprešiel overením a nebol použitý. Aktualizujte databázu kľúčov a skúste to znova.",
+        "E7109": "Blok kľúčov AACS tohto disku je nepodporovanej triedy, takže z neho nemožno odvodiť žiadny kľúč.",
         "E8000": "Nepodarilo sa pripojiť k serveru databázy kľúčov: {detail}",
         "E8001": "Sťahovanie databázy kľúčov zlyhalo (HTTP {detail}). Skúste aktualizáciu znova.",
         "E8002": "Databáza kľúčov je prázdna alebo neplatná. Znova ju stiahnite.",

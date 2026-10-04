@@ -298,6 +298,7 @@
         "E7106": "Bu diskin AACS 2.1 anahtar bloğunda varyant tablosu eksik, bu nedenle anahtarı türetilemiyor. Disk hasarlı olabilir.",
         "E7107": "Bu diskin AACS 2.1 anahtar bloğu kendi varyant anahtar verilerinin dışını gösteriyor, bu nedenle anahtarı türetilemiyor. Disk hasarlı olabilir.",
         "E7108": "Bu diskin AACS 2.1 anahtar bloğundan türetilen anahtar doğrulamayı geçemedi ve kullanılmadı. Anahtar veritabanınızı güncelleyip yeniden deneyin.",
+        "E7109": "Bu diskin AACS anahtar bloğu desteklenmeyen bir sınıfta olduğundan ondan anahtar türetilemez.",
         "E8000": "Anahtar veritabanı sunucusuna bağlanılamıyor: {detail}",
         "E8001": "Anahtar veritabanı indirmesi başarısız (HTTP {detail}). Güncellemeyi tekrar deneyin.",
         "E8002": "Anahtar veritabanı boş veya geçersiz. Yeniden indirin.",
