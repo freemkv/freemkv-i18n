@@ -75,7 +75,8 @@
         "capture_no_structure": "Không tìm thấy cấu trúc đĩa đọc được (BDMV / VIDEO_TS); không có gì để chia sẻ.",
         "capture_skipped": "Đã bỏ qua tệp đĩa {file}",
         "capture_summary": "Đã ghi lại cấu trúc đĩa: {files} tệp ({bytes} byte).",
-        "capture_unsafe_name": "tên tệp không an toàn"
+        "capture_unsafe_name": "tên tệp không an toàn",
+        "capture_aacs_unread": "Chưa ghi lại chẩn đoán AACS — đĩa đã được mã hóa nhưng được quét mà không có khóa."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Loại",
-            "desc": "Mô tả"
+            "desc": "Mô tả",
+            "duration": "Thời lượng",
+            "size": "Kích thước",
+            "item": "Mục",
+            "lang": "Ngôn ngữ",
+            "notes": "Ghi chú"
         },
         "tab": {
             "output": "Đầu ra",
@@ -608,6 +614,7 @@
             "keyserver_token": "Token dịch vụ khóa :",
             "language": "Ngôn ngữ giao diện :",
             "language_note": "Có hiệu lực sau khi bạn khởi động lại freemkv.",
+            "language_auto": "Tự động",
             "decrypt_threads": "Luồng giải mã :",
             "decrypt_threads_note": "0 = một luồng cho mỗi nhân CPU.",
             "log_detail": "Chi tiết nhật ký :",
@@ -619,6 +626,12 @@
             "test_connection": "Kiểm tra kết nối",
             "keydb_no_url": "Chưa đặt URL cập nhật keydb — hãy thêm ở trên rồi bấm Cập nhật.",
             "keydb_updating": "Đang cập nhật keydb… đang tải xuống, vui lòng đợi.",
+            "keydb_found": "Đã tìm thấy keydb — {kb} KB, cập nhật {age}",
+            "keydb_not_found": "Không tìm thấy keydb.cfg",
+            "keydb_age_today": "hôm nay",
+            "keydb_age_yesterday": "hôm qua",
+            "keydb_age_days": "{days} ngày trước",
+            "keydb_age_unknown": "không rõ",
             "lang_any": "Bất kỳ",
             "notify_when_rip_finished": "Thông báo khi trích xuất xong"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Đang lưu tất cả tiêu đề vào tệp {container}",
             "elapsed": "Đã trôi qua: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Còn lại: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "chương",
+            "word_track": "rãnh",
+            "word_video_track": "rãnh video",
+            "word_audio_track": "rãnh âm thanh",
+            "word_subtitle_track": "rãnh phụ đề"
         },
         "result": {
             "finished": "Đã hoàn tất",
@@ -711,7 +729,26 @@
             "reveal_failed": "Không thể mở thư mục trong File Explorer: {e}",
             "scan_not_started": "Không thể bắt đầu quét nguồn: {detail}",
             "scan_worker_stopped": "Tiến trình quét nguồn đã dừng trước khi trả về kết quả.",
-            "insert_disc_retry": "Hãy lắp đĩa vào ổ đĩa, rồi chọn lại “Bắt đầu trích xuất”. Chỉ mã định danh tập đĩa của đĩa được đọc; đĩa không bị trích xuất lại."
+            "insert_disc_retry": "Hãy lắp đĩa vào ổ đĩa, rồi chọn lại “Bắt đầu trích xuất”. Chỉ mã định danh tập đĩa của đĩa được đọc; đĩa không bị trích xuất lại.",
+            "keydb_worker_failed": "Cập nhật keydb thất bại — lỗi nội bộ",
+            "drive_scan_failed": "Không thể liệt kê các ổ quang (lỗi nội bộ).",
+            "bad_number_setting": "“{name}” phải là số nguyên, không phải “{value}”. Hãy sửa trong Cài đặt rồi bắt đầu lại.",
+            "open_url_refused": "Không thể mở {url}",
+            "update_worker_stopped": "Kiểm tra cập nhật thất bại: tiến trình đã dừng trước khi trả về kết quả",
+            "eject_worker_stopped": "Tiến trình đẩy đĩa ra đã dừng trước khi trả về kết quả",
+            "keydb_no_url": "Chưa đặt URL cập nhật keydb — hãy thêm trong Cài đặt ▸ Khóa",
+            "keydb_no_path": "Chưa đặt vị trí keydb.cfg — hãy thêm trong Cài đặt ▸ Khóa",
+            "keydb_download_failed": "Tải xuống thất bại: {error}",
+            "keydb_download_empty": "Tệp tải xuống trống",
+            "keydb_updated": "Đã cập nhật keydb — đã ghi {entries} mục ({kb} KB) vào {path}",
+            "keydb_rejected": "keydb bị từ chối: E{code}",
+            "update_failed": "Kiểm tra cập nhật thất bại: {error}",
+            "update_none_published": "Kiểm tra cập nhật: chưa có bản phát hành nào.",
+            "update_http_status": "Kiểm tra cập nhật thất bại: máy chủ trả về {code}",
+            "update_bad_response": "Kiểm tra cập nhật thất bại: phản hồi không hợp lệ ({error})",
+            "update_latest": "Bạn đang dùng phiên bản mới nhất ({current}).",
+            "update_available": "Có bản cập nhật: {latest} (bạn đang dùng {current}) — https://freemkv.org",
+            "update_no_version": "Kiểm tra cập nhật thất bại: không có phiên bản trong phản hồi"
         },
         "alert": {
             "rip_title": "Quá trình trích xuất đang diễn ra.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Sao lưu",
             "backup_msg": "Sao lưu toàn bộ đĩa (tất cả tiêu đề, đã giải mã) vào:",
             "open_prompt": "Mở",
-            "folder_msg": "Chọn một thư mục VIDEO_TS hoặc BDMV"
+            "folder_msg": "Chọn một thư mục VIDEO_TS hoặc BDMV",
+            "default_output_msg": "Chọn thư mục đầu ra mặc định",
+            "keydb_msg": "Chọn tệp keydb.cfg"
         },
         "about": {
             "version": "Phiên bản :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Đã trích xuất xong"
+        },
+        "dialog": {
+            "timer_failed": "freemkv không thể khởi động bộ hẹn giờ tiến trình ({error}). Quá trình trích xuất có thể vẫn đang chạy, nhưng cửa sổ này sẽ không cập nhật. Vui lòng khởi động lại freemkv."
+        },
+        "lang": {
+            "eng": "Tiếng Anh",
+            "spa": "Tiếng Tây Ban Nha",
+            "fra": "Tiếng Pháp",
+            "deu": "Tiếng Đức",
+            "ita": "Tiếng Ý",
+            "por": "Tiếng Bồ Đào Nha",
+            "nld": "Tiếng Hà Lan",
+            "swe": "Tiếng Thụy Điển",
+            "nor": "Tiếng Na Uy",
+            "dan": "Tiếng Đan Mạch",
+            "fin": "Tiếng Phần Lan",
+            "isl": "Tiếng Iceland",
+            "pol": "Tiếng Ba Lan",
+            "ces": "Tiếng Séc",
+            "slk": "Tiếng Slovak",
+            "hun": "Tiếng Hungary",
+            "ron": "Tiếng Romania",
+            "bul": "Tiếng Bulgaria",
+            "ell": "Tiếng Hy Lạp",
+            "rus": "Tiếng Nga",
+            "ukr": "Tiếng Ukraina",
+            "tur": "Tiếng Thổ Nhĩ Kỳ",
+            "heb": "Tiếng Do Thái",
+            "ara": "Tiếng Ả Rập",
+            "hin": "Tiếng Hindi",
+            "tha": "Tiếng Thái",
+            "vie": "Tiếng Việt",
+            "ind": "Tiếng Indonesia",
+            "zho": "Tiếng Trung",
+            "jpn": "Tiếng Nhật",
+            "kor": "Tiếng Hàn",
+            "cat": "Tiếng Catalan",
+            "hrv": "Tiếng Croatia",
+            "srp": "Tiếng Serbia",
+            "slv": "Tiếng Slovenia",
+            "est": "Tiếng Estonia",
+            "lav": "Tiếng Latvia",
+            "lit": "Tiếng Litva"
+        },
+        "item": {
+            "title": "Tiêu đề {num}",
+            "chapter": "1 chương",
+            "chapters": "{n} chương",
+            "chapter_list": "Chương",
+            "chapter_n": "Chương {n}",
+            "tracks": "{n} rãnh",
+            "forced": "Bắt buộc",
+            "play_all": "Phát tất cả",
+            "episode": "Tập"
+        },
+        "pick": {
+            "titles": "Tiêu đề",
+            "audio": "Âm thanh",
+            "subtitles": "Phụ đề",
+            "all": "Tất cả",
+            "none": "Không có",
+            "forced": "Chỉ bắt buộc",
+            "episodes": "Các tập"
         }
     },
     "warn": {

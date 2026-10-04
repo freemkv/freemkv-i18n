@@ -75,7 +75,8 @@
         "capture_no_structure": "Aucune structure de disque lisible (BDMV / VIDEO_TS) trouvée ; rien à partager.",
         "capture_skipped": "Fichier du disque ignoré : {file}",
         "capture_summary": "Structure du disque capturée : {files} fichiers ({bytes} octets).",
-        "capture_unsafe_name": "nom de fichier non sûr"
+        "capture_unsafe_name": "nom de fichier non sûr",
+        "capture_aacs_unread": "Diagnostics AACS non capturés — le disque est chiffré mais a été analysé sans clés."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Type",
-            "desc": "Description"
+            "desc": "Description",
+            "duration": "Durée",
+            "size": "Taille",
+            "item": "Élément",
+            "lang": "Langue",
+            "notes": "Remarques"
         },
         "tab": {
             "output": "Sortie",
@@ -608,6 +614,7 @@
             "keyserver_token": "Jeton du service de clés :",
             "language": "Langue de l'interface :",
             "language_note": "Prend effet après le redémarrage de freemkv.",
+            "language_auto": "Automatique",
             "decrypt_threads": "Threads de déchiffrement :",
             "decrypt_threads_note": "0 = un par cœur de processeur.",
             "log_detail": "Détail du journal :",
@@ -619,6 +626,12 @@
             "test_connection": "Tester la connexion",
             "keydb_no_url": "Aucune URL de mise à jour keydb définie — ajoutez-en une ci-dessus, puis cliquez sur Mettre à jour.",
             "keydb_updating": "Mise à jour de keydb… téléchargement en cours, veuillez patienter.",
+            "keydb_found": "keydb trouvé — {kb} KB, mis à jour {age}",
+            "keydb_not_found": "keydb.cfg introuvable",
+            "keydb_age_today": "aujourd'hui",
+            "keydb_age_yesterday": "hier",
+            "keydb_age_days": "il y a {days} jours",
+            "keydb_age_unknown": "à une date inconnue",
             "lang_any": "Toutes",
             "notify_when_rip_finished": "Notifier à la fin d'une extraction"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Enregistrement de tous les titres dans des fichiers {container}",
             "elapsed": "Écoulé : {hms}",
             "caption_eta": "{pct}%   {elapsed}   Restant : {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "chapitre",
+            "word_track": "piste",
+            "word_video_track": "piste vidéo",
+            "word_audio_track": "piste audio",
+            "word_subtitle_track": "piste de sous-titres"
         },
         "result": {
             "finished": "Terminé",
@@ -711,7 +729,26 @@
             "reveal_failed": "Impossible d'ouvrir le dossier dans l'Explorateur de fichiers : {e}",
             "scan_not_started": "Impossible de lancer l'analyse de la source : {detail}",
             "scan_worker_stopped": "Le processus d'analyse de la source s'est arrêté avant de renvoyer un résultat.",
-            "insert_disc_retry": "Insérez le disque dans un lecteur, puis choisissez à nouveau « Démarrer l'extraction ». Seul son identifiant de volume est lu ; il n'est pas extrait à nouveau."
+            "insert_disc_retry": "Insérez le disque dans un lecteur, puis choisissez à nouveau « Démarrer l'extraction ». Seul son identifiant de volume est lu ; il n'est pas extrait à nouveau.",
+            "keydb_worker_failed": "Échec de la mise à jour de keydb — erreur interne",
+            "drive_scan_failed": "Impossible de lister les lecteurs optiques (erreur interne).",
+            "bad_number_setting": "« {name} » doit être un nombre entier, pas « {value} ». Corrigez-le dans les Réglages, puis recommencez.",
+            "open_url_refused": "Impossible d'ouvrir {url}",
+            "update_worker_stopped": "Échec de la recherche de mises à jour : le processus de travail s'est arrêté avant de renvoyer un résultat",
+            "eject_worker_stopped": "le processus d'éjection s'est arrêté avant de renvoyer un résultat",
+            "keydb_no_url": "Aucune URL de mise à jour keydb définie — ajoutez-en une dans Réglages ▸ Clés",
+            "keydb_no_path": "Aucun emplacement keydb.cfg défini — ajoutez-en un dans Réglages ▸ Clés",
+            "keydb_download_failed": "Échec du téléchargement : {error}",
+            "keydb_download_empty": "Le téléchargement était vide",
+            "keydb_updated": "keydb mis à jour — {entries} entrées ({kb} KB) écrites dans {path}",
+            "keydb_rejected": "keydb rejeté : E{code}",
+            "update_failed": "Échec de la recherche de mises à jour : {error}",
+            "update_none_published": "Recherche de mises à jour : aucune version publiée pour le moment.",
+            "update_http_status": "Échec de la recherche de mises à jour : le serveur a renvoyé {code}",
+            "update_bad_response": "Échec de la recherche de mises à jour : réponse invalide ({error})",
+            "update_latest": "Vous utilisez la dernière version ({current}).",
+            "update_available": "Mise à jour disponible : {latest} (vous avez {current}) — https://freemkv.org",
+            "update_no_version": "Échec de la recherche de mises à jour : aucune version dans la réponse"
         },
         "alert": {
             "rip_title": "Une extraction est en cours.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Sauvegarder",
             "backup_msg": "Sauvegarder le disque entier (tous les titres, déchiffrés) vers :",
             "open_prompt": "Ouvrir",
-            "folder_msg": "Sélectionnez un dossier VIDEO_TS ou BDMV"
+            "folder_msg": "Sélectionnez un dossier VIDEO_TS ou BDMV",
+            "default_output_msg": "Choisissez le dossier de sortie par défaut",
+            "keydb_msg": "Choisissez le fichier keydb.cfg"
         },
         "about": {
             "version": "Version :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Extraction terminée"
+        },
+        "dialog": {
+            "timer_failed": "Impossible de démarrer le minuteur de progression de l’application ({error}). L'extraction est peut-être toujours en cours, mais cette fenêtre ne sera plus mise à jour. Veuillez redémarrer freemkv."
+        },
+        "lang": {
+            "eng": "Anglais",
+            "spa": "Espagnol",
+            "fra": "Français",
+            "deu": "Allemand",
+            "ita": "Italien",
+            "por": "Portugais",
+            "nld": "Néerlandais",
+            "swe": "Suédois",
+            "nor": "Norvégien",
+            "dan": "Danois",
+            "fin": "Finnois",
+            "isl": "Islandais",
+            "pol": "Polonais",
+            "ces": "Tchèque",
+            "slk": "Slovaque",
+            "hun": "Hongrois",
+            "ron": "Roumain",
+            "bul": "Bulgare",
+            "ell": "Grec",
+            "rus": "Russe",
+            "ukr": "Ukrainien",
+            "tur": "Turc",
+            "heb": "Hébreu",
+            "ara": "Arabe",
+            "hin": "Hindi",
+            "tha": "Thaï",
+            "vie": "Vietnamien",
+            "ind": "Indonésien",
+            "zho": "Chinois",
+            "jpn": "Japonais",
+            "kor": "Coréen",
+            "cat": "Catalan",
+            "hrv": "Croate",
+            "srp": "Serbe",
+            "slv": "Slovène",
+            "est": "Estonien",
+            "lav": "Letton",
+            "lit": "Lituanien"
+        },
+        "item": {
+            "title": "Titre {num}",
+            "chapter": "1 chapitre",
+            "chapters": "{n} chapitres",
+            "chapter_list": "Chapitres",
+            "chapter_n": "Chapitre {n}",
+            "tracks": "{n} pistes",
+            "forced": "Forcé",
+            "play_all": "Tout lire",
+            "episode": "Épisode"
+        },
+        "pick": {
+            "titles": "Titres",
+            "audio": "Audio",
+            "subtitles": "Sous-titres",
+            "all": "Tous",
+            "none": "Aucun",
+            "forced": "Forcés uniquement",
+            "episodes": "Épisodes"
         }
     },
     "warn": {

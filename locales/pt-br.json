@@ -75,7 +75,8 @@
         "capture_no_structure": "Nenhuma estrutura de disco legível (BDMV / VIDEO_TS) foi encontrada; nada para compartilhar.",
         "capture_skipped": "Arquivo do disco ignorado: {file}",
         "capture_summary": "Estrutura do disco capturada: {files} arquivos ({bytes} bytes).",
-        "capture_unsafe_name": "nome de arquivo inseguro"
+        "capture_unsafe_name": "nome de arquivo inseguro",
+        "capture_aacs_unread": "Diagnóstico de AACS não capturado — o disco está criptografado, mas foi escaneado sem chaves."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Tipo",
-            "desc": "Descrição"
+            "desc": "Descrição",
+            "duration": "Duração",
+            "size": "Tamanho",
+            "item": "Item",
+            "lang": "Idioma",
+            "notes": "Observações"
         },
         "tab": {
             "output": "Saída",
@@ -608,6 +614,7 @@
             "keyserver_token": "Token do serviço de chaves:",
             "language": "Idioma da interface:",
             "language_note": "Entra em vigor depois de reiniciar o freemkv.",
+            "language_auto": "Automático",
             "decrypt_threads": "Threads de descriptografia:",
             "decrypt_threads_note": "0 = uma por núcleo da CPU.",
             "log_detail": "Detalhe do log:",
@@ -619,6 +626,12 @@
             "test_connection": "Testar conexão",
             "keydb_no_url": "Nenhuma URL de atualização do keydb definida — adicione uma acima e clique em Atualizar.",
             "keydb_updating": "Atualizando o keydb… baixando, aguarde.",
+            "keydb_found": "keydb encontrado — {kb} KB, atualizado {age}",
+            "keydb_not_found": "keydb.cfg não encontrado",
+            "keydb_age_today": "hoje",
+            "keydb_age_yesterday": "ontem",
+            "keydb_age_days": "há {days} dias",
+            "keydb_age_unknown": "em data desconhecida",
             "lang_any": "Qualquer",
             "notify_when_rip_finished": "Notificar quando uma extração terminar"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Salvando todos os títulos em arquivos {container}",
             "elapsed": "Decorrido: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Restante: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "capítulo",
+            "word_track": "faixa",
+            "word_video_track": "faixa de vídeo",
+            "word_audio_track": "faixa de áudio",
+            "word_subtitle_track": "faixa de legendas"
         },
         "result": {
             "finished": "Concluído",
@@ -711,7 +729,26 @@
             "reveal_failed": "Não foi possível abrir a pasta no Explorador de Arquivos: {e}",
             "scan_not_started": "Não foi possível iniciar o escaneamento da fonte: {detail}",
             "scan_worker_stopped": "O processo de escaneamento da fonte parou antes de retornar um resultado.",
-            "insert_disc_retry": "Insira o disco em uma unidade e escolha “Iniciar extração” novamente. Apenas o ID do volume é lido; ele não é extraído novamente."
+            "insert_disc_retry": "Insira o disco em uma unidade e escolha “Iniciar extração” novamente. Apenas o ID do volume é lido; ele não é extraído novamente.",
+            "keydb_worker_failed": "Falha ao atualizar o keydb — erro interno",
+            "drive_scan_failed": "Não foi possível listar as unidades ópticas (erro interno).",
+            "bad_number_setting": "“{name}” deve ser um número inteiro, não “{value}”. Corrija em Configurações e comece novamente.",
+            "open_url_refused": "Não foi possível abrir {url}",
+            "update_worker_stopped": "Falha ao verificar atualizações: o processo de trabalho parou antes de retornar um resultado",
+            "eject_worker_stopped": "o processo de ejeção parou antes de retornar um resultado",
+            "keydb_no_url": "Nenhuma URL de atualização do keydb definida — adicione uma em Configurações ▸ Chaves",
+            "keydb_no_path": "Nenhum local do keydb.cfg definido — adicione um em Configurações ▸ Chaves",
+            "keydb_download_failed": "Falha no download: {error}",
+            "keydb_download_empty": "O download estava vazio",
+            "keydb_updated": "keydb atualizado — {entries} entradas ({kb} KB) gravadas em {path}",
+            "keydb_rejected": "keydb rejeitado: E{code}",
+            "update_failed": "Falha ao verificar atualizações: {error}",
+            "update_none_published": "Verificação de atualizações: nenhuma versão publicada ainda.",
+            "update_http_status": "Falha ao verificar atualizações: o servidor retornou {code}",
+            "update_bad_response": "Falha ao verificar atualizações: resposta inválida ({error})",
+            "update_latest": "Você está usando a versão mais recente ({current}).",
+            "update_available": "Atualização disponível: {latest} (você tem {current}) — https://freemkv.org",
+            "update_no_version": "Falha ao verificar atualizações: nenhuma versão na resposta"
         },
         "alert": {
             "rip_title": "Uma extração está em andamento.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Fazer backup",
             "backup_msg": "Fazer backup do disco inteiro (todos os títulos, descriptografado) para:",
             "open_prompt": "Abrir",
-            "folder_msg": "Selecione uma pasta VIDEO_TS ou BDMV"
+            "folder_msg": "Selecione uma pasta VIDEO_TS ou BDMV",
+            "default_output_msg": "Escolha a pasta de saída padrão",
+            "keydb_msg": "Escolha o arquivo keydb.cfg"
         },
         "about": {
             "version": "Versão:",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Extração concluída"
+        },
+        "dialog": {
+            "timer_failed": "O freemkv não conseguiu iniciar o temporizador de progresso ({error}). A extração ainda pode estar em andamento, mas esta janela não será atualizada. Reinicie o freemkv."
+        },
+        "lang": {
+            "eng": "Inglês",
+            "spa": "Espanhol",
+            "fra": "Francês",
+            "deu": "Alemão",
+            "ita": "Italiano",
+            "por": "Português",
+            "nld": "Holandês",
+            "swe": "Sueco",
+            "nor": "Norueguês",
+            "dan": "Dinamarquês",
+            "fin": "Finlandês",
+            "isl": "Islandês",
+            "pol": "Polonês",
+            "ces": "Tcheco",
+            "slk": "Eslovaco",
+            "hun": "Húngaro",
+            "ron": "Romeno",
+            "bul": "Búlgaro",
+            "ell": "Grego",
+            "rus": "Russo",
+            "ukr": "Ucraniano",
+            "tur": "Turco",
+            "heb": "Hebraico",
+            "ara": "Árabe",
+            "hin": "Hindi",
+            "tha": "Tailandês",
+            "vie": "Vietnamita",
+            "ind": "Indonésio",
+            "zho": "Chinês",
+            "jpn": "Japonês",
+            "kor": "Coreano",
+            "cat": "Catalão",
+            "hrv": "Croata",
+            "srp": "Sérvio",
+            "slv": "Esloveno",
+            "est": "Estoniano",
+            "lav": "Letão",
+            "lit": "Lituano"
+        },
+        "item": {
+            "title": "Título {num}",
+            "chapter": "1 capítulo",
+            "chapters": "{n} capítulos",
+            "chapter_list": "Capítulos",
+            "chapter_n": "Capítulo {n}",
+            "tracks": "{n} faixas",
+            "forced": "Forçada",
+            "play_all": "Reproduzir tudo",
+            "episode": "Episódio"
+        },
+        "pick": {
+            "titles": "Títulos",
+            "audio": "Áudio",
+            "subtitles": "Legendas",
+            "all": "Todos",
+            "none": "Nenhum",
+            "forced": "Somente forçadas",
+            "episodes": "Episódios"
         }
     },
     "warn": {

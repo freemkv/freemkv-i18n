@@ -75,7 +75,8 @@
         "capture_no_structure": "Nie znaleziono czytelnej struktury płyty (BDMV / VIDEO_TS); nie ma czego udostępnić.",
         "capture_skipped": "Pominięto plik płyty {file}",
         "capture_summary": "Przechwycono strukturę płyty — plików: {files}, bajtów: {bytes}.",
-        "capture_unsafe_name": "niebezpieczna nazwa pliku"
+        "capture_unsafe_name": "niebezpieczna nazwa pliku",
+        "capture_aacs_unread": "Nie zebrano diagnostyki AACS — płyta jest zaszyfrowana, ale została przeskanowana bez kluczy."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Typ",
-            "desc": "Opis"
+            "desc": "Opis",
+            "duration": "Czas trwania",
+            "size": "Rozmiar",
+            "item": "Element",
+            "lang": "Język",
+            "notes": "Uwagi"
         },
         "tab": {
             "output": "Wyjście",
@@ -608,6 +614,7 @@
             "keyserver_token": "Token usługi kluczy:",
             "language": "Język interfejsu:",
             "language_note": "Zmiana zacznie obowiązywać po ponownym uruchomieniu freemkv.",
+            "language_auto": "Automatycznie",
             "decrypt_threads": "Wątki deszyfrowania:",
             "decrypt_threads_note": "0 = jeden na rdzeń procesora.",
             "log_detail": "Szczegółowość dziennika:",
@@ -619,6 +626,12 @@
             "test_connection": "Testuj połączenie",
             "keydb_no_url": "Nie ustawiono adresu URL aktualizacji keydb — dodaj go powyżej, a następnie kliknij Aktualizuj.",
             "keydb_updating": "Aktualizowanie keydb… pobieranie, proszę czekać.",
+            "keydb_found": "keydb znaleziono — {kb} KB, zaktualizowano {age}",
+            "keydb_not_found": "nie znaleziono pliku keydb.cfg",
+            "keydb_age_today": "dzisiaj",
+            "keydb_age_yesterday": "wczoraj",
+            "keydb_age_days": "{days} dni temu",
+            "keydb_age_unknown": "w nieznanym czasie",
             "lang_any": "Dowolny",
             "notify_when_rip_finished": "Powiadom po zakończeniu zgrywania"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Zapisywanie wszystkich tytułów do plików {container}",
             "elapsed": "Upłynęło: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Pozostało: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "rozdziału",
+            "word_track": "ścieżki",
+            "word_video_track": "ścieżki wideo",
+            "word_audio_track": "ścieżki audio",
+            "word_subtitle_track": "ścieżki napisów"
         },
         "result": {
             "finished": "Zakończono",
@@ -711,7 +729,26 @@
             "reveal_failed": "Nie można otworzyć folderu w Eksploratorze plików: {e}",
             "scan_not_started": "Nie można rozpocząć skanowania źródła: {detail}",
             "scan_worker_stopped": "Proces skanowania źródła zatrzymał się przed zwróceniem wyniku.",
-            "insert_disc_retry": "Włóż płytę do napędu, a następnie ponownie wybierz „Rozpocznij zgrywanie”. Odczytywany jest tylko jej identyfikator woluminu; nie jest ona ponownie zgrywana."
+            "insert_disc_retry": "Włóż płytę do napędu, a następnie ponownie wybierz „Rozpocznij zgrywanie”. Odczytywany jest tylko jej identyfikator woluminu; nie jest ona ponownie zgrywana.",
+            "keydb_worker_failed": "Aktualizacja keydb nie powiodła się — błąd wewnętrzny",
+            "drive_scan_failed": "Nie można wyświetlić listy napędów optycznych (błąd wewnętrzny).",
+            "bad_number_setting": "„{name}” musi być liczbą całkowitą, a nie „{value}”. Popraw to w Ustawieniach, a następnie zacznij ponownie.",
+            "open_url_refused": "Nie można otworzyć {url}",
+            "update_worker_stopped": "Sprawdzanie aktualizacji nie powiodło się: proces roboczy zatrzymał się przed zwróceniem wyniku",
+            "eject_worker_stopped": "Proces wysuwania zatrzymał się przed zwróceniem wyniku",
+            "keydb_no_url": "Nie ustawiono adresu URL aktualizacji keydb — dodaj go w Ustawienia ▸ Klucze",
+            "keydb_no_path": "Nie ustawiono lokalizacji pliku keydb.cfg — dodaj ją w Ustawienia ▸ Klucze",
+            "keydb_download_failed": "Pobieranie nie powiodło się: {error}",
+            "keydb_download_empty": "Pobrany plik był pusty",
+            "keydb_updated": "keydb zaktualizowano — {entries} wpisów ({kb} KB) zapisano w {path}",
+            "keydb_rejected": "keydb odrzucono: E{code}",
+            "update_failed": "Sprawdzanie aktualizacji nie powiodło się: {error}",
+            "update_none_published": "Sprawdzanie aktualizacji: nie opublikowano jeszcze żadnych wydań.",
+            "update_http_status": "Sprawdzanie aktualizacji nie powiodło się: serwer zwrócił kod {code}",
+            "update_bad_response": "Sprawdzanie aktualizacji nie powiodło się: nieprawidłowa odpowiedź ({error})",
+            "update_latest": "Używasz najnowszej wersji ({current}).",
+            "update_available": "Dostępna aktualizacja: {latest} (masz {current}) — https://freemkv.org",
+            "update_no_version": "Sprawdzanie aktualizacji nie powiodło się: brak wersji w odpowiedzi"
         },
         "alert": {
             "rip_title": "Trwa zgrywanie.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Utwórz kopię zapasową",
             "backup_msg": "Utwórz kopię zapasową całej płyty (wszystkie tytuły, odszyfrowane) w:",
             "open_prompt": "Otwórz",
-            "folder_msg": "Wybierz folder VIDEO_TS lub BDMV"
+            "folder_msg": "Wybierz folder VIDEO_TS lub BDMV",
+            "default_output_msg": "Wybierz domyślny folder wyjściowy",
+            "keydb_msg": "Wybierz plik keydb.cfg"
         },
         "about": {
             "version": "Wersja:",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Zgrywanie zakończone"
+        },
+        "dialog": {
+            "timer_failed": "freemkv nie mógł uruchomić licznika postępu ({error}). Zgrywanie może nadal trwać, ale to okno nie będzie aktualizowane. Uruchom ponownie freemkv."
+        },
+        "lang": {
+            "eng": "Angielski",
+            "spa": "Hiszpański",
+            "fra": "Francuski",
+            "deu": "Niemiecki",
+            "ita": "Włoski",
+            "por": "Portugalski",
+            "nld": "Niderlandzki",
+            "swe": "Szwedzki",
+            "nor": "Norweski",
+            "dan": "Duński",
+            "fin": "Fiński",
+            "isl": "Islandzki",
+            "pol": "Polski",
+            "ces": "Czeski",
+            "slk": "Słowacki",
+            "hun": "Węgierski",
+            "ron": "Rumuński",
+            "bul": "Bułgarski",
+            "ell": "Grecki",
+            "rus": "Rosyjski",
+            "ukr": "Ukraiński",
+            "tur": "Turecki",
+            "heb": "Hebrajski",
+            "ara": "Arabski",
+            "hin": "Hindi",
+            "tha": "Tajski",
+            "vie": "Wietnamski",
+            "ind": "Indonezyjski",
+            "zho": "Chiński",
+            "jpn": "Japoński",
+            "kor": "Koreański",
+            "cat": "Kataloński",
+            "hrv": "Chorwacki",
+            "srp": "Serbski",
+            "slv": "Słoweński",
+            "est": "Estoński",
+            "lav": "Łotewski",
+            "lit": "Litewski"
+        },
+        "item": {
+            "title": "Tytuł {num}",
+            "chapter": "1 rozdział",
+            "chapters": "Rozdziały: {n}",
+            "chapter_list": "Rozdziały",
+            "chapter_n": "Rozdział {n}",
+            "tracks": "Ścieżki: {n}",
+            "forced": "Wymuszone",
+            "play_all": "Odtwórz wszystko",
+            "episode": "Odcinek"
+        },
+        "pick": {
+            "titles": "Tytuły",
+            "audio": "Dźwięk",
+            "subtitles": "Napisy",
+            "all": "Wszystkie",
+            "none": "Brak",
+            "forced": "Tylko wymuszone",
+            "episodes": "Odcinki"
         }
     },
     "warn": {

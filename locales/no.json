@@ -75,7 +75,8 @@
         "capture_no_structure": "Fant ingen lesbar platestruktur (BDMV / VIDEO_TS); ingenting å dele.",
         "capture_skipped": "Hoppet over platefilen {file}",
         "capture_summary": "Platestruktur fanget opp: {files} filer ({bytes} byte).",
-        "capture_unsafe_name": "utrygt filnavn"
+        "capture_unsafe_name": "utrygt filnavn",
+        "capture_aacs_unread": "AACS-diagnostikk ble ikke fanget opp — platen er kryptert, men ble skannet uten nøkler."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Type",
-            "desc": "Beskrivelse"
+            "desc": "Beskrivelse",
+            "duration": "Varighet",
+            "size": "Størrelse",
+            "item": "Element",
+            "lang": "Språk",
+            "notes": "Merknader"
         },
         "tab": {
             "output": "Utdata",
@@ -608,6 +614,7 @@
             "keyserver_token": "Nøkkeltjeneste-token:",
             "language": "Grensesnittspråk:",
             "language_note": "Trer i kraft etter at du starter freemkv på nytt.",
+            "language_auto": "Automatisk",
             "decrypt_threads": "Dekrypteringstråder:",
             "decrypt_threads_note": "0 = én per CPU-kjerne.",
             "log_detail": "Loggdetalj:",
@@ -619,6 +626,12 @@
             "test_connection": "Test tilkobling",
             "keydb_no_url": "Ingen keydb-oppdaterings-URL angitt — legg til en ovenfor og klikk Oppdater.",
             "keydb_updating": "Oppdaterer keydb… laster ned, vent litt.",
+            "keydb_found": "keydb funnet — {kb} KB, oppdatert {age}",
+            "keydb_not_found": "fant ingen keydb.cfg",
+            "keydb_age_today": "i dag",
+            "keydb_age_yesterday": "i går",
+            "keydb_age_days": "for {days} dager siden",
+            "keydb_age_unknown": "på ukjent tidspunkt",
             "lang_any": "Alle",
             "notify_when_rip_finished": "Varsle når en ripping er ferdig"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Lagrer alle titler til {container}-filer",
             "elapsed": "Medgått: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Gjenstår: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "kapittel",
+            "word_track": "spor",
+            "word_video_track": "videospor",
+            "word_audio_track": "lydspor",
+            "word_subtitle_track": "undertekstspor"
         },
         "result": {
             "finished": "Fullført",
@@ -711,7 +729,26 @@
             "reveal_failed": "Kunne ikke åpne mappen i Filutforsker: {e}",
             "scan_not_started": "Kunne ikke starte skanningen av kilden: {detail}",
             "scan_worker_stopped": "Skanneprosessen for kilden stoppet før den returnerte et resultat.",
-            "insert_disc_retry": "Sett platen inn i en stasjon, og velg «Start ripping» igjen. Bare Volum-ID-en leses; den rippes ikke på nytt."
+            "insert_disc_retry": "Sett platen inn i en stasjon, og velg «Start ripping» igjen. Bare Volum-ID-en leses; den rippes ikke på nytt.",
+            "keydb_worker_failed": "Oppdatering av keydb mislyktes — intern feil",
+            "drive_scan_failed": "Kunne ikke liste opp de optiske stasjonene (intern feil).",
+            "bad_number_setting": "«{name}» må være et heltall, ikke «{value}». Rett det i Innstillinger, og start på nytt.",
+            "open_url_refused": "Kunne ikke åpne {url}",
+            "update_worker_stopped": "Oppdateringssjekk mislyktes: arbeidsprosessen stoppet før den ga et resultat",
+            "eject_worker_stopped": "Utløsingsprosessen stoppet før den ga et resultat",
+            "keydb_no_url": "Ingen keydb-oppdaterings-URL angitt — legg til en under Innstillinger ▸ Nøkler",
+            "keydb_no_path": "Ingen plassering for keydb.cfg angitt — legg til en under Innstillinger ▸ Nøkler",
+            "keydb_download_failed": "Nedlasting mislyktes: {error}",
+            "keydb_download_empty": "Nedlastingen var tom",
+            "keydb_updated": "keydb oppdatert — {entries} oppføringer ({kb} KB) skrevet til {path}",
+            "keydb_rejected": "keydb avvist: E{code}",
+            "update_failed": "Oppdateringssjekk mislyktes: {error}",
+            "update_none_published": "Oppdateringssjekk: ingen utgivelser er publisert ennå.",
+            "update_http_status": "Oppdateringssjekk mislyktes: serveren returnerte {code}",
+            "update_bad_response": "Oppdateringssjekk mislyktes: ugyldig svar ({error})",
+            "update_latest": "Du kjører den nyeste versjonen ({current}).",
+            "update_available": "Oppdatering tilgjengelig: {latest} (du har {current}) — https://freemkv.org",
+            "update_no_version": "Oppdateringssjekk mislyktes: ingen versjon i svaret"
         },
         "alert": {
             "rip_title": "En ripping pågår.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Sikkerhetskopier",
             "backup_msg": "Sikkerhetskopier hele platen (alle titler, dekryptert) til:",
             "open_prompt": "Åpne",
-            "folder_msg": "Velg en VIDEO_TS- eller BDMV-mappe"
+            "folder_msg": "Velg en VIDEO_TS- eller BDMV-mappe",
+            "default_output_msg": "Velg standard utdatamappe",
+            "keydb_msg": "Velg filen keydb.cfg"
         },
         "about": {
             "version": "Versjon:",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Ripping fullført"
+        },
+        "dialog": {
+            "timer_failed": "freemkv kunne ikke starte fremdriftstidtakeren ({error}). Rippingen kan fortsatt pågå, men dette vinduet blir ikke oppdatert. Start freemkv på nytt."
+        },
+        "lang": {
+            "eng": "Engelsk",
+            "spa": "Spansk",
+            "fra": "Fransk",
+            "deu": "Tysk",
+            "ita": "Italiensk",
+            "por": "Portugisisk",
+            "nld": "Nederlandsk",
+            "swe": "Svensk",
+            "nor": "Norsk",
+            "dan": "Dansk",
+            "fin": "Finsk",
+            "isl": "Islandsk",
+            "pol": "Polsk",
+            "ces": "Tsjekkisk",
+            "slk": "Slovakisk",
+            "hun": "Ungarsk",
+            "ron": "Rumensk",
+            "bul": "Bulgarsk",
+            "ell": "Gresk",
+            "rus": "Russisk",
+            "ukr": "Ukrainsk",
+            "tur": "Tyrkisk",
+            "heb": "Hebraisk",
+            "ara": "Arabisk",
+            "hin": "Hindi",
+            "tha": "Thai",
+            "vie": "Vietnamesisk",
+            "ind": "Indonesisk",
+            "zho": "Kinesisk",
+            "jpn": "Japansk",
+            "kor": "Koreansk",
+            "cat": "Katalansk",
+            "hrv": "Kroatisk",
+            "srp": "Serbisk",
+            "slv": "Slovensk",
+            "est": "Estisk",
+            "lav": "Latvisk",
+            "lit": "Litauisk"
+        },
+        "item": {
+            "title": "Tittel {num}",
+            "chapter": "1 kapittel",
+            "chapters": "{n} kapitler",
+            "chapter_list": "Kapitler",
+            "chapter_n": "Kapittel {n}",
+            "tracks": "{n} spor",
+            "forced": "Tvunget",
+            "play_all": "Spill av alle",
+            "episode": "Episode"
+        },
+        "pick": {
+            "titles": "Titler",
+            "audio": "Lyd",
+            "subtitles": "Undertekster",
+            "all": "Alle",
+            "none": "Ingen",
+            "forced": "Bare tvungne",
+            "episodes": "Episoder"
         }
     },
     "warn": {

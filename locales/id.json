@@ -75,7 +75,8 @@
         "capture_no_structure": "Tidak ditemukan struktur disc yang dapat dibaca (BDMV / VIDEO_TS); tidak ada yang dibagikan.",
         "capture_skipped": "Berkas disc {file} dilewati",
         "capture_summary": "Struktur disc ditangkap: {files} berkas ({bytes} byte).",
-        "capture_unsafe_name": "nama berkas tidak aman"
+        "capture_unsafe_name": "nama berkas tidak aman",
+        "capture_aacs_unread": "Diagnostik AACS tidak ditangkap — disc terenkripsi tetapi dipindai tanpa kunci."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Tipe",
-            "desc": "Deskripsi"
+            "desc": "Deskripsi",
+            "duration": "Durasi",
+            "size": "Ukuran",
+            "item": "Item",
+            "lang": "Bahasa",
+            "notes": "Catatan"
         },
         "tab": {
             "output": "Keluaran",
@@ -608,6 +614,7 @@
             "keyserver_token": "Token layanan kunci :",
             "language": "Bahasa antarmuka :",
             "language_note": "Berlaku setelah Anda memulai ulang freemkv.",
+            "language_auto": "Otomatis",
             "decrypt_threads": "Thread dekripsi :",
             "decrypt_threads_note": "0 = satu per inti CPU.",
             "log_detail": "Detail log :",
@@ -619,6 +626,12 @@
             "test_connection": "Uji koneksi",
             "keydb_no_url": "URL pembaruan keydb belum diatur — tambahkan di atas, lalu klik Perbarui.",
             "keydb_updating": "Memperbarui keydb… mengunduh, mohon tunggu.",
+            "keydb_found": "keydb ditemukan — {kb} KB, diperbarui {age}",
+            "keydb_not_found": "keydb.cfg tidak ditemukan",
+            "keydb_age_today": "hari ini",
+            "keydb_age_yesterday": "kemarin",
+            "keydb_age_days": "{days} hari yang lalu",
+            "keydb_age_unknown": "tidak diketahui",
             "lang_any": "Apa saja",
             "notify_when_rip_finished": "Beri tahu saat rip selesai"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Menyimpan semua judul ke berkas {container}",
             "elapsed": "Berlalu: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Tersisa: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "bab",
+            "word_track": "trek",
+            "word_video_track": "trek video",
+            "word_audio_track": "trek audio",
+            "word_subtitle_track": "trek subjudul"
         },
         "result": {
             "finished": "Selesai",
@@ -711,7 +729,26 @@
             "reveal_failed": "Tidak dapat membuka folder di File Explorer: {e}",
             "scan_not_started": "Tidak dapat memulai pemindaian sumber: {detail}",
             "scan_worker_stopped": "Proses pemindaian sumber berhenti sebelum mengembalikan hasil.",
-            "insert_disc_retry": "Masukkan disc ke drive, lalu pilih “Mulai rip” lagi. Hanya Volume ID-nya yang dibaca; disc tidak dirip lagi."
+            "insert_disc_retry": "Masukkan disc ke drive, lalu pilih “Mulai rip” lagi. Hanya Volume ID-nya yang dibaca; disc tidak dirip lagi.",
+            "keydb_worker_failed": "Pembaruan keydb gagal — kesalahan internal",
+            "drive_scan_failed": "Tidak dapat menampilkan daftar drive optik (kesalahan internal).",
+            "bad_number_setting": "“{name}” harus berupa bilangan bulat, bukan “{value}”. Perbaiki di Pengaturan, lalu mulai lagi.",
+            "open_url_refused": "Tidak dapat membuka {url}",
+            "update_worker_stopped": "Pemeriksaan pembaruan gagal: proses berhenti sebelum mengembalikan hasil",
+            "eject_worker_stopped": "Proses pengeluaran berhenti sebelum mengembalikan hasil",
+            "keydb_no_url": "URL pembaruan keydb belum diatur — tambahkan di Pengaturan ▸ Kunci",
+            "keydb_no_path": "Lokasi keydb.cfg belum diatur — tambahkan di Pengaturan ▸ Kunci",
+            "keydb_download_failed": "Unduhan gagal: {error}",
+            "keydb_download_empty": "Unduhan kosong",
+            "keydb_updated": "keydb diperbarui — {entries} entri ({kb} KB) ditulis ke {path}",
+            "keydb_rejected": "keydb ditolak: E{code}",
+            "update_failed": "Pemeriksaan pembaruan gagal: {error}",
+            "update_none_published": "Pemeriksaan pembaruan: belum ada rilis yang dipublikasikan.",
+            "update_http_status": "Pemeriksaan pembaruan gagal: server mengembalikan {code}",
+            "update_bad_response": "Pemeriksaan pembaruan gagal: respons tidak valid ({error})",
+            "update_latest": "Anda menjalankan versi terbaru ({current}).",
+            "update_available": "Pembaruan tersedia: {latest} (Anda memakai {current}) — https://freemkv.org",
+            "update_no_version": "Pemeriksaan pembaruan gagal: tidak ada versi dalam respons"
         },
         "alert": {
             "rip_title": "Rip sedang berlangsung.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Cadangkan",
             "backup_msg": "Cadangkan seluruh disc (semua judul, terdekripsi) ke:",
             "open_prompt": "Buka",
-            "folder_msg": "Pilih folder VIDEO_TS atau BDMV"
+            "folder_msg": "Pilih folder VIDEO_TS atau BDMV",
+            "default_output_msg": "Pilih folder keluaran default",
+            "keydb_msg": "Pilih berkas keydb.cfg"
         },
         "about": {
             "version": "Versi :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Rip selesai"
+        },
+        "dialog": {
+            "timer_failed": "freemkv tidak dapat memulai pengatur waktu progresnya ({error}). Rip mungkin masih berjalan, tetapi jendela ini tidak akan diperbarui. Harap mulai ulang freemkv."
+        },
+        "lang": {
+            "eng": "Bahasa Inggris",
+            "spa": "Bahasa Spanyol",
+            "fra": "Bahasa Prancis",
+            "deu": "Bahasa Jerman",
+            "ita": "Bahasa Italia",
+            "por": "Bahasa Portugis",
+            "nld": "Bahasa Belanda",
+            "swe": "Bahasa Swedia",
+            "nor": "Bahasa Norwegia",
+            "dan": "Bahasa Denmark",
+            "fin": "Bahasa Finlandia",
+            "isl": "Bahasa Islandia",
+            "pol": "Bahasa Polandia",
+            "ces": "Bahasa Ceko",
+            "slk": "Bahasa Slovakia",
+            "hun": "Bahasa Hungaria",
+            "ron": "Bahasa Rumania",
+            "bul": "Bahasa Bulgaria",
+            "ell": "Bahasa Yunani",
+            "rus": "Bahasa Rusia",
+            "ukr": "Bahasa Ukraina",
+            "tur": "Bahasa Turki",
+            "heb": "Bahasa Ibrani",
+            "ara": "Bahasa Arab",
+            "hin": "Bahasa Hindi",
+            "tha": "Bahasa Thailand",
+            "vie": "Bahasa Vietnam",
+            "ind": "Bahasa Indonesia",
+            "zho": "Bahasa Tionghoa",
+            "jpn": "Bahasa Jepang",
+            "kor": "Bahasa Korea",
+            "cat": "Bahasa Katalan",
+            "hrv": "Bahasa Kroasia",
+            "srp": "Bahasa Serbia",
+            "slv": "Bahasa Slovenia",
+            "est": "Bahasa Estonia",
+            "lav": "Bahasa Latvia",
+            "lit": "Bahasa Lituania"
+        },
+        "item": {
+            "title": "Judul {num}",
+            "chapter": "1 bab",
+            "chapters": "{n} bab",
+            "chapter_list": "Bab",
+            "chapter_n": "Bab {n}",
+            "tracks": "{n} trek",
+            "forced": "Paksa",
+            "play_all": "Putar semua",
+            "episode": "Episode"
+        },
+        "pick": {
+            "titles": "Judul",
+            "audio": "Audio",
+            "subtitles": "Subtitel",
+            "all": "Semua",
+            "none": "Tidak ada",
+            "forced": "Hanya paksa",
+            "episodes": "Episode"
         }
     },
     "warn": {

@@ -75,7 +75,8 @@
         "capture_no_structure": "未找到可读取的光盘结构（BDMV / VIDEO_TS）；没有可分享的内容。",
         "capture_skipped": "已跳过光盘文件 {file}",
         "capture_summary": "已采集光盘结构：{files} 个文件（{bytes} 字节）。",
-        "capture_unsafe_name": "不安全的文件名"
+        "capture_unsafe_name": "不安全的文件名",
+        "capture_aacs_unread": "未采集 AACS 诊断信息 —— 光盘已加密，但扫描时未使用密钥。"
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "类型",
-            "desc": "描述"
+            "desc": "描述",
+            "duration": "时长",
+            "size": "大小",
+            "item": "项目",
+            "lang": "语言",
+            "notes": "备注"
         },
         "tab": {
             "output": "输出",
@@ -608,6 +614,7 @@
             "keyserver_token": "密钥服务令牌 ：",
             "language": "界面语言 ：",
             "language_note": "重启 freemkv 后生效。",
+            "language_auto": "自动",
             "decrypt_threads": "解密线程 ：",
             "decrypt_threads_note": "0 = 每个 CPU 核心一个。",
             "log_detail": "日志详细程度 ：",
@@ -619,6 +626,12 @@
             "test_connection": "测试连接",
             "keydb_no_url": "未设置 keydb 更新网址 — 请在上方添加，然后点击“更新”。",
             "keydb_updating": "正在更新 keydb… 正在下载，请稍候。",
+            "keydb_found": "已找到 keydb — {kb} KB，更新于{age}",
+            "keydb_not_found": "未找到 keydb.cfg",
+            "keydb_age_today": "今天",
+            "keydb_age_yesterday": "昨天",
+            "keydb_age_days": "{days} 天前",
+            "keydb_age_unknown": "未知",
             "lang_any": "任意",
             "notify_when_rip_finished": "抓取完成时通知"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "正在将所有标题保存到 {container} 文件",
             "elapsed": "已用时：{hms}",
             "caption_eta": "{pct}%   {elapsed}   剩余：{hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "章节",
+            "word_track": "轨道",
+            "word_video_track": "视频轨道",
+            "word_audio_track": "音频轨道",
+            "word_subtitle_track": "字幕轨道"
         },
         "result": {
             "finished": "已完成",
@@ -711,7 +729,26 @@
             "reveal_failed": "无法在文件资源管理器中打开文件夹：{e}",
             "scan_not_started": "无法开始扫描源：{detail}",
             "scan_worker_stopped": "源扫描进程在返回结果之前已停止。",
-            "insert_disc_retry": "请将光盘插入驱动器，然后再次选择“开始抓取”。只会读取其卷 ID；不会再次抓取。"
+            "insert_disc_retry": "请将光盘插入驱动器，然后再次选择“开始抓取”。只会读取其卷 ID；不会再次抓取。",
+            "keydb_worker_failed": "keydb 更新失败 —— 内部错误",
+            "drive_scan_failed": "无法列出光驱（内部错误）。",
+            "bad_number_setting": "“{name}”必须是整数，而不是“{value}”。请在设置中修正后重新开始。",
+            "open_url_refused": "无法打开 {url}",
+            "update_worker_stopped": "检查更新失败：工作进程在返回结果之前已停止",
+            "eject_worker_stopped": "弹出进程在返回结果之前已停止",
+            "keydb_no_url": "未设置 keydb 更新网址 — 请在 设置 ▸ 密钥 中添加",
+            "keydb_no_path": "未设置 keydb.cfg 位置 — 请在 设置 ▸ 密钥 中添加",
+            "keydb_download_failed": "下载失败：{error}",
+            "keydb_download_empty": "下载内容为空",
+            "keydb_updated": "keydb 已更新 — 已将 {entries} 个条目（{kb} KB）写入 {path}",
+            "keydb_rejected": "keydb 被拒绝：E{code}",
+            "update_failed": "检查更新失败：{error}",
+            "update_none_published": "检查更新：尚无已发布的版本。",
+            "update_http_status": "检查更新失败：服务器返回 {code}",
+            "update_bad_response": "检查更新失败：响应无效（{error}）",
+            "update_latest": "您正在运行最新版本（{current}）。",
+            "update_available": "有可用更新：{latest}（当前版本 {current}）— https://freemkv.org",
+            "update_no_version": "检查更新失败：响应中没有版本信息"
         },
         "alert": {
             "rip_title": "抓取正在进行中。",
@@ -725,7 +762,9 @@
             "backup_prompt": "备份",
             "backup_msg": "将整张光盘（所有标题，已解密）备份到：",
             "open_prompt": "打开",
-            "folder_msg": "选择一个 VIDEO_TS 或 BDMV 文件夹"
+            "folder_msg": "选择一个 VIDEO_TS 或 BDMV 文件夹",
+            "default_output_msg": "选择默认输出文件夹",
+            "keydb_msg": "选择 keydb.cfg 文件"
         },
         "about": {
             "version": "版本 ：",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "抓取完成"
+        },
+        "dialog": {
+            "timer_failed": "freemkv 无法启动进度计时器（{error}）。抓取可能仍在进行，但此窗口将不再更新。请重启 freemkv。"
+        },
+        "lang": {
+            "eng": "英语",
+            "spa": "西班牙语",
+            "fra": "法语",
+            "deu": "德语",
+            "ita": "意大利语",
+            "por": "葡萄牙语",
+            "nld": "荷兰语",
+            "swe": "瑞典语",
+            "nor": "挪威语",
+            "dan": "丹麦语",
+            "fin": "芬兰语",
+            "isl": "冰岛语",
+            "pol": "波兰语",
+            "ces": "捷克语",
+            "slk": "斯洛伐克语",
+            "hun": "匈牙利语",
+            "ron": "罗马尼亚语",
+            "bul": "保加利亚语",
+            "ell": "希腊语",
+            "rus": "俄语",
+            "ukr": "乌克兰语",
+            "tur": "土耳其语",
+            "heb": "希伯来语",
+            "ara": "阿拉伯语",
+            "hin": "印地语",
+            "tha": "泰语",
+            "vie": "越南语",
+            "ind": "印度尼西亚语",
+            "zho": "中文",
+            "jpn": "日语",
+            "kor": "韩语",
+            "cat": "加泰罗尼亚语",
+            "hrv": "克罗地亚语",
+            "srp": "塞尔维亚语",
+            "slv": "斯洛文尼亚语",
+            "est": "爱沙尼亚语",
+            "lav": "拉脱维亚语",
+            "lit": "立陶宛语"
+        },
+        "item": {
+            "title": "标题 {num}",
+            "chapter": "1 个章节",
+            "chapters": "{n} 个章节",
+            "chapter_list": "章节",
+            "chapter_n": "第 {n} 章",
+            "tracks": "{n} 条轨道",
+            "forced": "强制",
+            "play_all": "全部播放",
+            "episode": "剧集"
+        },
+        "pick": {
+            "titles": "标题",
+            "audio": "音频",
+            "subtitles": "字幕",
+            "all": "全部",
+            "none": "无",
+            "forced": "仅强制",
+            "episodes": "剧集"
         }
     },
     "warn": {

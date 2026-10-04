@@ -75,7 +75,8 @@
         "capture_no_structure": "읽을 수 있는 디스크 구조(BDMV / VIDEO_TS)를 찾지 못했습니다. 공유할 내용이 없습니다.",
         "capture_skipped": "디스크 파일 {file} 건너뜀",
         "capture_summary": "디스크 구조 수집됨: 파일 {files}개 ({bytes} 바이트).",
-        "capture_unsafe_name": "안전하지 않은 파일 이름"
+        "capture_unsafe_name": "안전하지 않은 파일 이름",
+        "capture_aacs_unread": "AACS 진단 정보를 수집하지 못했습니다 — 디스크가 암호화되어 있지만 키 없이 스캔되었습니다."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "유형",
-            "desc": "설명"
+            "desc": "설명",
+            "duration": "재생 시간",
+            "size": "크기",
+            "item": "항목",
+            "lang": "언어",
+            "notes": "메모"
         },
         "tab": {
             "output": "출력",
@@ -608,6 +614,7 @@
             "keyserver_token": "키 서비스 토큰 :",
             "language": "인터페이스 언어 :",
             "language_note": "freemkv를 다시 시작한 후 적용됩니다.",
+            "language_auto": "자동",
             "decrypt_threads": "복호화 스레드 :",
             "decrypt_threads_note": "0 = CPU 코어당 하나.",
             "log_detail": "로그 상세 :",
@@ -619,6 +626,12 @@
             "test_connection": "연결 테스트",
             "keydb_no_url": "keydb 업데이트 URL이 설정되지 않았습니다. 위에 입력한 후 업데이트를 클릭하세요.",
             "keydb_updating": "keydb 업데이트 중… 다운로드하고 있습니다. 잠시 기다려 주세요.",
+            "keydb_found": "keydb 발견 — {kb} KB, 업데이트: {age}",
+            "keydb_not_found": "keydb.cfg를 찾을 수 없음",
+            "keydb_age_today": "오늘",
+            "keydb_age_yesterday": "어제",
+            "keydb_age_days": "{days}일 전",
+            "keydb_age_unknown": "알 수 없음",
             "lang_any": "모두",
             "notify_when_rip_finished": "추출이 완료되면 알림"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "모든 타이틀을 {container} 파일로 저장 중",
             "elapsed": "경과: {hms}",
             "caption_eta": "{pct}%   {elapsed}   남음: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "챕터",
+            "word_track": "트랙",
+            "word_video_track": "비디오 트랙",
+            "word_audio_track": "오디오 트랙",
+            "word_subtitle_track": "자막 트랙"
         },
         "result": {
             "finished": "완료됨",
@@ -711,7 +729,26 @@
             "reveal_failed": "파일 탐색기에서 폴더를 열 수 없습니다: {e}",
             "scan_not_started": "소스 스캔을 시작할 수 없습니다: {detail}",
             "scan_worker_stopped": "소스 스캔 작업이 결과를 반환하기 전에 중지되었습니다.",
-            "insert_disc_retry": "디스크를 드라이브에 삽입한 후 “추출 시작”을 다시 선택하세요. 볼륨 ID만 읽으며 다시 추출되지 않습니다."
+            "insert_disc_retry": "디스크를 드라이브에 삽입한 후 “추출 시작”을 다시 선택하세요. 볼륨 ID만 읽으며 다시 추출되지 않습니다.",
+            "keydb_worker_failed": "keydb 업데이트 실패 — 내부 오류",
+            "drive_scan_failed": "광학 드라이브 목록을 가져올 수 없습니다(내부 오류).",
+            "bad_number_setting": "“{name}”은(는) “{value}”이(가) 아닌 정수여야 합니다. 설정에서 수정한 후 다시 시작하세요.",
+            "open_url_refused": "{url}을(를) 열 수 없습니다",
+            "update_worker_stopped": "업데이트 확인 실패: 결과를 반환하기 전에 작업이 중지되었습니다",
+            "eject_worker_stopped": "꺼내기 작업이 결과를 반환하기 전에 중지되었습니다",
+            "keydb_no_url": "keydb 업데이트 URL이 설정되지 않았습니다 — 설정 ▸ 키에서 추가하세요",
+            "keydb_no_path": "keydb.cfg 위치가 설정되지 않았습니다 — 설정 ▸ 키에서 추가하세요",
+            "keydb_download_failed": "다운로드 실패: {error}",
+            "keydb_download_empty": "다운로드한 내용이 비어 있습니다",
+            "keydb_updated": "keydb 업데이트 완료 — 항목 {entries}개({kb} KB)를 {path}에 기록했습니다",
+            "keydb_rejected": "keydb 거부됨: E{code}",
+            "update_failed": "업데이트 확인 실패: {error}",
+            "update_none_published": "업데이트 확인: 아직 공개된 릴리스가 없습니다.",
+            "update_http_status": "업데이트 확인 실패: 서버가 {code}을(를) 반환했습니다",
+            "update_bad_response": "업데이트 확인 실패: 잘못된 응답({error})",
+            "update_latest": "최신 버전({current})을 사용 중입니다.",
+            "update_available": "업데이트 가능: {latest}(현재 {current}) — https://freemkv.org",
+            "update_no_version": "업데이트 확인 실패: 응답에 버전 정보가 없습니다"
         },
         "alert": {
             "rip_title": "추출이 진행 중입니다.",
@@ -725,7 +762,9 @@
             "backup_prompt": "백업",
             "backup_msg": "디스크 전체(모든 타이틀, 복호화됨)를 다음으로 백업:",
             "open_prompt": "열기",
-            "folder_msg": "VIDEO_TS 또는 BDMV 폴더 선택"
+            "folder_msg": "VIDEO_TS 또는 BDMV 폴더 선택",
+            "default_output_msg": "기본 출력 폴더 선택",
+            "keydb_msg": "keydb.cfg 파일 선택"
         },
         "about": {
             "version": "버전 :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "추출 완료"
+        },
+        "dialog": {
+            "timer_failed": "freemkv가 진행률 타이머를 시작하지 못했습니다({error}). 추출이 계속 실행 중일 수 있지만 이 창은 업데이트되지 않습니다. freemkv를 다시 시작하세요."
+        },
+        "lang": {
+            "eng": "영어",
+            "spa": "스페인어",
+            "fra": "프랑스어",
+            "deu": "독일어",
+            "ita": "이탈리아어",
+            "por": "포르투갈어",
+            "nld": "네덜란드어",
+            "swe": "스웨덴어",
+            "nor": "노르웨이어",
+            "dan": "덴마크어",
+            "fin": "핀란드어",
+            "isl": "아이슬란드어",
+            "pol": "폴란드어",
+            "ces": "체코어",
+            "slk": "슬로바키아어",
+            "hun": "헝가리어",
+            "ron": "루마니아어",
+            "bul": "불가리아어",
+            "ell": "그리스어",
+            "rus": "러시아어",
+            "ukr": "우크라이나어",
+            "tur": "튀르키예어",
+            "heb": "히브리어",
+            "ara": "아랍어",
+            "hin": "힌디어",
+            "tha": "태국어",
+            "vie": "베트남어",
+            "ind": "인도네시아어",
+            "zho": "중국어",
+            "jpn": "일본어",
+            "kor": "한국어",
+            "cat": "카탈루냐어",
+            "hrv": "크로아티아어",
+            "srp": "세르비아어",
+            "slv": "슬로베니아어",
+            "est": "에스토니아어",
+            "lav": "라트비아어",
+            "lit": "리투아니아어"
+        },
+        "item": {
+            "title": "타이틀 {num}",
+            "chapter": "챕터 1개",
+            "chapters": "챕터 {n}개",
+            "chapter_list": "챕터",
+            "chapter_n": "챕터 {n}",
+            "tracks": "트랙 {n}개",
+            "forced": "강제",
+            "play_all": "모두 재생",
+            "episode": "에피소드"
+        },
+        "pick": {
+            "titles": "타이틀",
+            "audio": "오디오",
+            "subtitles": "자막",
+            "all": "모두",
+            "none": "없음",
+            "forced": "강제 자막만",
+            "episodes": "에피소드"
         }
     },
     "warn": {

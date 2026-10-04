@@ -40,7 +40,7 @@ jobs:
     outputs:
       v: ${{ steps.msrv.outputs.v }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - id: msrv
         shell: bash
         run: echo "v=$(grep -m1 '^rust-version' Cargo.toml | sed -E 's/.*\"([^\"]+)\".*/\1/')" >> "$GITHUB_OUTPUT"
@@ -54,7 +54,7 @@ jobs:
   changelog:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Require a CHANGELOG entry for the crate version on main
         shell: bash
         run: |
@@ -75,7 +75,7 @@ jobs:
     needs: resolve-msrv
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       # fmt runs on the pinned MSRV toolchain; clippy runs on stable. Linting on
       # stable makes new-lint debt a BLOCKING gate the pinned version would hide.
       # The MSRV pin is installed second so it stays the default toolchain (fmt
@@ -97,7 +97,7 @@ jobs:
     needs: resolve-msrv
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ needs.resolve-msrv.outputs.v }}
@@ -109,7 +109,7 @@ jobs:
   deny:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - uses: EmbarkStudios/cargo-deny-action@v2
         with:
@@ -134,7 +134,7 @@ jobs:
   error-code-drift:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       # ST-I0: `ref: github.ref_name` is `<n>/merge` on a pull_request run, which would
       # break this fetch on every i18n PR. Pair with libfreemkv's same-named branch so
       # paired changes (e.g. CC-I1) test together; else the PR's base branch, else dev.
@@ -142,7 +142,7 @@ jobs:
         id: lfref
         run: ci/pick-libfreemkv-ref.sh
       - name: Fetch libfreemkv error.rs
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: freemkv/libfreemkv
           ref: ${{ steps.lfref.outputs.ref }}
@@ -161,7 +161,7 @@ jobs:
     needs: resolve-msrv
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       # Pair with freemkv's same-named branch so paired changes test together; else dev.
       - name: Pick freemkv branch
         id: fmref
@@ -175,7 +175,7 @@ jobs:
           echo "freemkv ref: $ref"
           echo "ref=$ref" >> "$GITHUB_OUTPUT"
       - name: Fetch freemkv src/
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: freemkv/freemkv
           ref: ${{ steps.fmref.outputs.ref }}
@@ -210,7 +210,7 @@ jobs:
     if: github.ref_name == 'qa' || github.ref_name == 'main'
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ needs.resolve-msrv.outputs.v }}
@@ -229,7 +229,7 @@ jobs:
     needs: resolve-msrv
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ needs.resolve-msrv.outputs.v }}
@@ -262,7 +262,7 @@ jobs:
     if: github.ref_name == 'qa' || github.ref_name == 'main'
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ needs.resolve-msrv.outputs.v }}

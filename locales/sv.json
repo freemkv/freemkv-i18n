@@ -75,7 +75,8 @@
         "capture_no_structure": "Ingen läsbar skivstruktur (BDMV / VIDEO_TS) hittades; inget att dela.",
         "capture_skipped": "Hoppade över skivfilen {file}",
         "capture_summary": "Infångad skivstruktur: {files} filer ({bytes} byte).",
-        "capture_unsafe_name": "osäkert filnamn"
+        "capture_unsafe_name": "osäkert filnamn",
+        "capture_aacs_unread": "AACS-diagnostik inte infångad — skivan är krypterad men skannades utan nycklar."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Typ",
-            "desc": "Beskrivning"
+            "desc": "Beskrivning",
+            "duration": "Speltid",
+            "size": "Storlek",
+            "item": "Objekt",
+            "lang": "Språk",
+            "notes": "Anteckningar"
         },
         "tab": {
             "output": "Utdata",
@@ -608,6 +614,7 @@
             "keyserver_token": "Token för nyckeltjänst :",
             "language": "Gränssnittsspråk :",
             "language_note": "Träder i kraft efter att du startat om freemkv.",
+            "language_auto": "Automatiskt",
             "decrypt_threads": "Dekrypteringstrådar :",
             "decrypt_threads_note": "0 = en per CPU-kärna.",
             "log_detail": "Loggdetaljnivå :",
@@ -619,6 +626,12 @@
             "test_connection": "Testa anslutning",
             "keydb_no_url": "Ingen URL för keydb-uppdatering angiven — lägg till en ovan och klicka på Uppdatera.",
             "keydb_updating": "Uppdaterar keydb… hämtar, vänta.",
+            "keydb_found": "keydb hittad — {kb} KB, uppdaterad {age}",
+            "keydb_not_found": "ingen keydb.cfg hittades",
+            "keydb_age_today": "i dag",
+            "keydb_age_yesterday": "i går",
+            "keydb_age_days": "för {days} dagar sedan",
+            "keydb_age_unknown": "vid okänd tidpunkt",
             "lang_any": "Alla",
             "notify_when_rip_finished": "Meddela när en rippning är klar"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Sparar alla titlar till {container}-filer",
             "elapsed": "Förfluten tid: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Återstår: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "kapitel",
+            "word_track": "spår",
+            "word_video_track": "videospår",
+            "word_audio_track": "ljudspår",
+            "word_subtitle_track": "undertextspår"
         },
         "result": {
             "finished": "Slutförd",
@@ -711,7 +729,26 @@
             "reveal_failed": "Kunde inte öppna mappen i Utforskaren: {e}",
             "scan_not_started": "Kunde inte starta skanningen av källan: {detail}",
             "scan_worker_stopped": "Skanningsprocessen för källan stoppades innan den returnerade ett resultat.",
-            "insert_disc_retry": "Sätt i skivan i en enhet och välj ”Starta rippning” igen. Endast dess Volym-ID läses; den rippas inte igen."
+            "insert_disc_retry": "Sätt i skivan i en enhet och välj ”Starta rippning” igen. Endast dess Volym-ID läses; den rippas inte igen.",
+            "keydb_worker_failed": "Uppdatering av keydb misslyckades — internt fel",
+            "drive_scan_failed": "Kunde inte lista de optiska enheterna (internt fel).",
+            "bad_number_setting": "”{name}” måste vara ett heltal, inte ”{value}”. Rätta det i Inställningar och starta sedan igen.",
+            "open_url_refused": "Kunde inte öppna {url}",
+            "update_worker_stopped": "Sökning efter uppdateringar misslyckades: arbetsprocessen stoppades innan den returnerade ett resultat",
+            "eject_worker_stopped": "Utmatningsprocessen stoppades innan den returnerade ett resultat",
+            "keydb_no_url": "Ingen URL för keydb-uppdatering angiven — lägg till en under Inställningar ▸ Nycklar",
+            "keydb_no_path": "Ingen plats för keydb.cfg angiven — lägg till en under Inställningar ▸ Nycklar",
+            "keydb_download_failed": "Nedladdningen misslyckades: {error}",
+            "keydb_download_empty": "Nedladdningen var tom",
+            "keydb_updated": "keydb uppdaterad — {entries} poster ({kb} KB) skrivna till {path}",
+            "keydb_rejected": "keydb avvisades: E{code}",
+            "update_failed": "Sökning efter uppdateringar misslyckades: {error}",
+            "update_none_published": "Sökning efter uppdateringar: inga versioner har publicerats ännu.",
+            "update_http_status": "Sökning efter uppdateringar misslyckades: servern returnerade {code}",
+            "update_bad_response": "Sökning efter uppdateringar misslyckades: ogiltigt svar ({error})",
+            "update_latest": "Du kör den senaste versionen ({current}).",
+            "update_available": "Uppdatering tillgänglig: {latest} (du har {current}) — https://freemkv.org",
+            "update_no_version": "Sökning efter uppdateringar misslyckades: ingen version i svaret"
         },
         "alert": {
             "rip_title": "En rippning pågår.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Säkerhetskopiera",
             "backup_msg": "Säkerhetskopiera hela skivan (alla titlar, dekrypterade) till:",
             "open_prompt": "Öppna",
-            "folder_msg": "Välj en VIDEO_TS- eller BDMV-mapp"
+            "folder_msg": "Välj en VIDEO_TS- eller BDMV-mapp",
+            "default_output_msg": "Välj standardmapp för utdata",
+            "keydb_msg": "Välj filen keydb.cfg"
         },
         "about": {
             "version": "Version :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Rippning klar"
+        },
+        "dialog": {
+            "timer_failed": "freemkv kunde inte starta sin förloppstimer ({error}). Rippningen kan fortfarande pågå, men det här fönstret uppdateras inte. Starta om freemkv."
+        },
+        "lang": {
+            "eng": "Engelska",
+            "spa": "Spanska",
+            "fra": "Franska",
+            "deu": "Tyska",
+            "ita": "Italienska",
+            "por": "Portugisiska",
+            "nld": "Nederländska",
+            "swe": "Svenska",
+            "nor": "Norska",
+            "dan": "Danska",
+            "fin": "Finska",
+            "isl": "Isländska",
+            "pol": "Polska",
+            "ces": "Tjeckiska",
+            "slk": "Slovakiska",
+            "hun": "Ungerska",
+            "ron": "Rumänska",
+            "bul": "Bulgariska",
+            "ell": "Grekiska",
+            "rus": "Ryska",
+            "ukr": "Ukrainska",
+            "tur": "Turkiska",
+            "heb": "Hebreiska",
+            "ara": "Arabiska",
+            "hin": "Hindi",
+            "tha": "Thai",
+            "vie": "Vietnamesiska",
+            "ind": "Indonesiska",
+            "zho": "Kinesiska",
+            "jpn": "Japanska",
+            "kor": "Koreanska",
+            "cat": "Katalanska",
+            "hrv": "Kroatiska",
+            "srp": "Serbiska",
+            "slv": "Slovenska",
+            "est": "Estniska",
+            "lav": "Lettiska",
+            "lit": "Litauiska"
+        },
+        "item": {
+            "title": "Titel {num}",
+            "chapter": "1 kapitel",
+            "chapters": "{n} kapitel",
+            "chapter_list": "Kapitel",
+            "chapter_n": "Kapitel {n}",
+            "tracks": "{n} spår",
+            "forced": "Tvingad",
+            "play_all": "Spela alla",
+            "episode": "Avsnitt"
+        },
+        "pick": {
+            "titles": "Titlar",
+            "audio": "Ljud",
+            "subtitles": "Undertexter",
+            "all": "Alla",
+            "none": "Inga",
+            "forced": "Endast tvingade",
+            "episodes": "Avsnitt"
         }
     },
     "warn": {

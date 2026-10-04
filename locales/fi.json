@@ -75,7 +75,8 @@
         "capture_no_structure": "Luettavaa levyrakennetta (BDMV / VIDEO_TS) ei löytynyt; ei mitään jaettavaa.",
         "capture_skipped": "Ohitettiin levyn tiedosto {file}",
         "capture_summary": "Levyrakenne kaapattu: {files} tiedostoa ({bytes} tavua).",
-        "capture_unsafe_name": "vaarallinen tiedostonimi"
+        "capture_unsafe_name": "vaarallinen tiedostonimi",
+        "capture_aacs_unread": "AACS-diagnostiikkaa ei kaapattu — levy on salattu, mutta se skannattiin ilman avaimia."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Tyyppi",
-            "desc": "Kuvaus"
+            "desc": "Kuvaus",
+            "duration": "Kesto",
+            "size": "Koko",
+            "item": "Kohde",
+            "lang": "Kieli",
+            "notes": "Huomiot"
         },
         "tab": {
             "output": "Tuloste",
@@ -608,6 +614,7 @@
             "keyserver_token": "Avainpalvelun token :",
             "language": "Käyttöliittymän kieli :",
             "language_note": "Astuu voimaan freemkv:n uudelleenkäynnistyksen jälkeen.",
+            "language_auto": "Automaattinen",
             "decrypt_threads": "Salauksen purun säikeet :",
             "decrypt_threads_note": "0 = yksi per suoritinydin.",
             "log_detail": "Lokin tarkkuus :",
@@ -619,6 +626,12 @@
             "test_connection": "Testaa yhteys",
             "keydb_no_url": "keydb-päivitysosoitetta ei ole asetettu — lisää se yllä ja napsauta Päivitä.",
             "keydb_updating": "Päivitetään keydb… ladataan, odota.",
+            "keydb_found": "keydb löytyi — {kb} KB, päivitetty {age}",
+            "keydb_not_found": "keydb.cfg-tiedostoa ei löytynyt",
+            "keydb_age_today": "tänään",
+            "keydb_age_yesterday": "eilen",
+            "keydb_age_days": "{days} päivää sitten",
+            "keydb_age_unknown": "tuntematon ajankohta",
             "lang_any": "Mikä tahansa",
             "notify_when_rip_finished": "Ilmoita, kun rippaus valmistuu"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Tallennetaan kaikki nimikkeet {container}-tiedostoihin",
             "elapsed": "Kulunut: {hms}",
             "caption_eta": "{pct} %   {elapsed}   Jäljellä: {hms}",
-            "caption_no_eta": "{pct} %   {elapsed}"
+            "caption_no_eta": "{pct} %   {elapsed}",
+            "word_chapter": "luku",
+            "word_track": "raita",
+            "word_video_track": "videoraita",
+            "word_audio_track": "ääniraita",
+            "word_subtitle_track": "tekstitysraita"
         },
         "result": {
             "finished": "Valmis",
@@ -711,7 +729,26 @@
             "reveal_failed": "Kansiota ei voitu avata Resurssienhallinnassa: {e}",
             "scan_not_started": "Lähteen skannausta ei voitu aloittaa: {detail}",
             "scan_worker_stopped": "Lähteen skannaus pysähtyi ennen tuloksen palauttamista.",
-            "insert_disc_retry": "Aseta levy asemaan ja valitse uudelleen ”Aloita rippaus”. Vain sen taltion tunnus luetaan; sitä ei ripata uudelleen."
+            "insert_disc_retry": "Aseta levy asemaan ja valitse uudelleen ”Aloita rippaus”. Vain sen taltion tunnus luetaan; sitä ei ripata uudelleen.",
+            "keydb_worker_failed": "keydb-päivitys epäonnistui — sisäinen virhe",
+            "drive_scan_failed": "Optisia asemia ei voitu luetella (sisäinen virhe).",
+            "bad_number_setting": "Kohdan ”{name}” on oltava kokonaisluku, ei ”{value}”. Korjaa se Asetuksissa ja aloita sitten uudelleen.",
+            "open_url_refused": "Kohdetta {url} ei voitu avata",
+            "update_worker_stopped": "Päivitysten tarkistus epäonnistui: työprosessi pysähtyi ennen tuloksen palauttamista",
+            "eject_worker_stopped": "Poistoprosessi pysähtyi ennen tuloksen palauttamista",
+            "keydb_no_url": "keydb-päivitysosoitetta ei ole asetettu — lisää se kohdassa Asetukset ▸ Avaimet",
+            "keydb_no_path": "keydb.cfg-tiedoston sijaintia ei ole asetettu — lisää se kohdassa Asetukset ▸ Avaimet",
+            "keydb_download_failed": "Lataus epäonnistui: {error}",
+            "keydb_download_empty": "Lataus oli tyhjä",
+            "keydb_updated": "keydb päivitetty — {entries} merkintää ({kb} KB) kirjoitettu kohteeseen {path}",
+            "keydb_rejected": "keydb hylättiin: E{code}",
+            "update_failed": "Päivitysten tarkistus epäonnistui: {error}",
+            "update_none_published": "Päivitysten tarkistus: julkaisuja ei ole vielä julkaistu.",
+            "update_http_status": "Päivitysten tarkistus epäonnistui: palvelin palautti koodin {code}",
+            "update_bad_response": "Päivitysten tarkistus epäonnistui: virheellinen vastaus ({error})",
+            "update_latest": "Käytössäsi on uusin versio ({current}).",
+            "update_available": "Päivitys saatavilla: {latest} (sinulla on {current}) — https://freemkv.org",
+            "update_no_version": "Päivitysten tarkistus epäonnistui: vastauksessa ei ollut versiota"
         },
         "alert": {
             "rip_title": "Rippaus on käynnissä.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Varmuuskopioi",
             "backup_msg": "Varmuuskopioi koko levy (kaikki nimikkeet, salaus purettuna) kohteeseen:",
             "open_prompt": "Avaa",
-            "folder_msg": "Valitse VIDEO_TS- tai BDMV-kansio"
+            "folder_msg": "Valitse VIDEO_TS- tai BDMV-kansio",
+            "default_output_msg": "Valitse oletustulostekansio",
+            "keydb_msg": "Valitse keydb.cfg-tiedosto"
         },
         "about": {
             "version": "Versio :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Rippaus valmis"
+        },
+        "dialog": {
+            "timer_failed": "freemkv ei voinut käynnistää edistymisajastintaan ({error}). Rippaus saattaa olla yhä käynnissä, mutta tämä ikkuna ei päivity. Käynnistä freemkv uudelleen."
+        },
+        "lang": {
+            "eng": "Englanti",
+            "spa": "Espanja",
+            "fra": "Ranska",
+            "deu": "Saksa",
+            "ita": "Italia",
+            "por": "Portugali",
+            "nld": "Hollanti",
+            "swe": "Ruotsi",
+            "nor": "Norja",
+            "dan": "Tanska",
+            "fin": "Suomi",
+            "isl": "Islanti",
+            "pol": "Puola",
+            "ces": "Tšekki",
+            "slk": "Slovakki",
+            "hun": "Unkari",
+            "ron": "Romania",
+            "bul": "Bulgaria",
+            "ell": "Kreikka",
+            "rus": "Venäjä",
+            "ukr": "Ukraina",
+            "tur": "Turkki",
+            "heb": "Heprea",
+            "ara": "Arabia",
+            "hin": "Hindi",
+            "tha": "Thai",
+            "vie": "Vietnam",
+            "ind": "Indonesia",
+            "zho": "Kiina",
+            "jpn": "Japani",
+            "kor": "Korea",
+            "cat": "Katalaani",
+            "hrv": "Kroatia",
+            "srp": "Serbia",
+            "slv": "Sloveeni",
+            "est": "Viro",
+            "lav": "Latvia",
+            "lit": "Liettua"
+        },
+        "item": {
+            "title": "Nimike {num}",
+            "chapter": "1 luku",
+            "chapters": "{n} lukua",
+            "chapter_list": "Luvut",
+            "chapter_n": "Luku {n}",
+            "tracks": "{n} raitaa",
+            "forced": "Pakotettu",
+            "play_all": "Toista kaikki",
+            "episode": "Jakso"
+        },
+        "pick": {
+            "titles": "Nimikkeet",
+            "audio": "Ääni",
+            "subtitles": "Tekstitykset",
+            "all": "Kaikki",
+            "none": "Ei mitään",
+            "forced": "Vain pakotetut",
+            "episodes": "Jaksot"
         }
     },
     "warn": {

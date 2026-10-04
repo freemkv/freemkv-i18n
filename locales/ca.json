@@ -75,7 +75,8 @@
         "capture_no_structure": "No s'ha trobat cap estructura de disc llegible (BDMV / VIDEO_TS); no hi ha res per compartir.",
         "capture_skipped": "S'ha omès el fitxer del disc {file}",
         "capture_summary": "Estructura del disc capturada: {files} fitxers ({bytes} bytes).",
-        "capture_unsafe_name": "nom de fitxer no segur"
+        "capture_unsafe_name": "nom de fitxer no segur",
+        "capture_aacs_unread": "Diagnòstic AACS no capturat — el disc està xifrat però s'ha analitzat sense claus."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Tipus",
-            "desc": "Descripció"
+            "desc": "Descripció",
+            "duration": "Durada",
+            "size": "Mida",
+            "item": "Element",
+            "lang": "Idioma",
+            "notes": "Notes"
         },
         "tab": {
             "output": "Sortida",
@@ -608,6 +614,7 @@
             "keyserver_token": "Testimoni del servei de claus :",
             "language": "Idioma de la interfície :",
             "language_note": "Té efecte després de reiniciar el freemkv.",
+            "language_auto": "Automàtic",
             "decrypt_threads": "Fils de desxifratge :",
             "decrypt_threads_note": "0 = un per nucli de CPU.",
             "log_detail": "Detall del registre :",
@@ -619,6 +626,12 @@
             "test_connection": "Prova la connexió",
             "keydb_no_url": "No s'ha definit cap URL d'actualització de keydb — afegiu-ne una a dalt i feu clic a Actualitza.",
             "keydb_updating": "S'està actualitzant el keydb… s'està baixant, espereu.",
+            "keydb_found": "keydb trobat — {kb} KB, actualitzat {age}",
+            "keydb_not_found": "No s'ha trobat cap keydb.cfg",
+            "keydb_age_today": "avui",
+            "keydb_age_yesterday": "ahir",
+            "keydb_age_days": "fa {days} dies",
+            "keydb_age_unknown": "desconegut",
             "lang_any": "Qualsevol",
             "notify_when_rip_finished": "Notifica quan acabi una extracció"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "S'estan desant tots els títols a fitxers {container}",
             "elapsed": "Transcorregut: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Restant: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "capítol",
+            "word_track": "pista",
+            "word_video_track": "pista de vídeo",
+            "word_audio_track": "pista d'àudio",
+            "word_subtitle_track": "pista de subtítols"
         },
         "result": {
             "finished": "Finalitzat",
@@ -711,7 +729,26 @@
             "reveal_failed": "No s'ha pogut obrir la carpeta a l'Explorador de fitxers: {e}",
             "scan_not_started": "No s'ha pogut iniciar l'anàlisi de l'origen: {detail}",
             "scan_worker_stopped": "El procés d'anàlisi de l'origen s'ha aturat abans de retornar un resultat.",
-            "insert_disc_retry": "Inseriu el disc en una unitat i torneu a triar «Inicia l'extracció». Només se'n llegeix l'ID del volum; no es torna a extreure."
+            "insert_disc_retry": "Inseriu el disc en una unitat i torneu a triar «Inicia l'extracció». Només se'n llegeix l'ID del volum; no es torna a extreure.",
+            "keydb_worker_failed": "Ha fallat l'actualització del keydb — error intern",
+            "drive_scan_failed": "No s'han pogut llistar les unitats òptiques (error intern).",
+            "bad_number_setting": "«{name}» ha de ser un nombre enter, no «{value}». Corregiu-ho a Configuració i torneu a començar.",
+            "open_url_refused": "No s'ha pogut obrir {url}",
+            "update_worker_stopped": "La comprovació d'actualitzacions ha fallat: el procés s'ha aturat abans de retornar un resultat",
+            "eject_worker_stopped": "El procés d'expulsió s'ha aturat abans de retornar un resultat",
+            "keydb_no_url": "No s'ha definit cap URL d'actualització de keydb — afegiu-ne una a Configuració ▸ Claus",
+            "keydb_no_path": "No s'ha definit cap ubicació de keydb.cfg — afegiu-ne una a Configuració ▸ Claus",
+            "keydb_download_failed": "La baixada ha fallat: {error}",
+            "keydb_download_empty": "La baixada estava buida",
+            "keydb_updated": "keydb actualitzat — {entries} entrades ({kb} KB) escrites a {path}",
+            "keydb_rejected": "keydb rebutjat: E{code}",
+            "update_failed": "La comprovació d'actualitzacions ha fallat: {error}",
+            "update_none_published": "Comprovació d'actualitzacions: encara no s'ha publicat cap versió.",
+            "update_http_status": "La comprovació d'actualitzacions ha fallat: el servidor ha retornat {code}",
+            "update_bad_response": "La comprovació d'actualitzacions ha fallat: resposta no vàlida ({error})",
+            "update_latest": "Esteu executant la darrera versió ({current}).",
+            "update_available": "Actualització disponible: {latest} (teniu {current}) — https://freemkv.org",
+            "update_no_version": "La comprovació d'actualitzacions ha fallat: la resposta no conté cap versió"
         },
         "alert": {
             "rip_title": "Hi ha una extracció en curs.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Fes una còpia",
             "backup_msg": "Fes una còpia de seguretat de tot el disc (tots els títols, desxifrats) a:",
             "open_prompt": "Obre",
-            "folder_msg": "Seleccioneu una carpeta VIDEO_TS o BDMV"
+            "folder_msg": "Seleccioneu una carpeta VIDEO_TS o BDMV",
+            "default_output_msg": "Trieu la carpeta de sortida per defecte",
+            "keydb_msg": "Trieu el fitxer keydb.cfg"
         },
         "about": {
             "version": "Versió :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Extracció acabada"
+        },
+        "dialog": {
+            "timer_failed": "El freemkv no ha pogut iniciar el temporitzador de progrés ({error}). És possible que l'extracció encara estigui en curs, però aquesta finestra no s'actualitzarà. Reinicieu el freemkv."
+        },
+        "lang": {
+            "eng": "Anglès",
+            "spa": "Espanyol",
+            "fra": "Francès",
+            "deu": "Alemany",
+            "ita": "Italià",
+            "por": "Portuguès",
+            "nld": "Neerlandès",
+            "swe": "Suec",
+            "nor": "Noruec",
+            "dan": "Danès",
+            "fin": "Finès",
+            "isl": "Islandès",
+            "pol": "Polonès",
+            "ces": "Txec",
+            "slk": "Eslovac",
+            "hun": "Hongarès",
+            "ron": "Romanès",
+            "bul": "Búlgar",
+            "ell": "Grec",
+            "rus": "Rus",
+            "ukr": "Ucraïnès",
+            "tur": "Turc",
+            "heb": "Hebreu",
+            "ara": "Àrab",
+            "hin": "Hindi",
+            "tha": "Tai",
+            "vie": "Vietnamita",
+            "ind": "Indonesi",
+            "zho": "Xinès",
+            "jpn": "Japonès",
+            "kor": "Coreà",
+            "cat": "Català",
+            "hrv": "Croat",
+            "srp": "Serbi",
+            "slv": "Eslovè",
+            "est": "Estonià",
+            "lav": "Letó",
+            "lit": "Lituà"
+        },
+        "item": {
+            "title": "Títol {num}",
+            "chapter": "1 capítol",
+            "chapters": "{n} capítols",
+            "chapter_list": "Capítols",
+            "chapter_n": "Capítol {n}",
+            "tracks": "{n} pistes",
+            "forced": "Forçat",
+            "play_all": "Reproduir-ho tot",
+            "episode": "Episodi"
+        },
+        "pick": {
+            "titles": "Títols",
+            "audio": "Àudio",
+            "subtitles": "Subtítols",
+            "all": "Tot",
+            "none": "Cap",
+            "forced": "Només forçats",
+            "episodes": "Episodis"
         }
     },
     "warn": {

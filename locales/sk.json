@@ -75,7 +75,8 @@
         "capture_no_structure": "Nenašla sa žiadna čitateľná štruktúra disku (BDMV / VIDEO_TS); niet čo zdieľať.",
         "capture_skipped": "Preskočený súbor disku {file}",
         "capture_summary": "Štruktúra disku zachytená (počet súborov: {files}, {bytes} B).",
-        "capture_unsafe_name": "nebezpečný názov súboru"
+        "capture_unsafe_name": "nebezpečný názov súboru",
+        "capture_aacs_unread": "Diagnostika AACS nebola zachytená — disk je šifrovaný, ale bol naskenovaný bez kľúčov."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Typ",
-            "desc": "Popis"
+            "desc": "Popis",
+            "duration": "Trvanie",
+            "size": "Veľkosť",
+            "item": "Položka",
+            "lang": "Jazyk",
+            "notes": "Poznámky"
         },
         "tab": {
             "output": "Výstup",
@@ -608,6 +614,7 @@
             "keyserver_token": "Token služby kľúčov :",
             "language": "Jazyk rozhrania :",
             "language_note": "Prejaví sa po reštarte freemkv.",
+            "language_auto": "Automaticky",
             "decrypt_threads": "Vlákna dešifrovania :",
             "decrypt_threads_note": "0 = jedno na jadro CPU.",
             "log_detail": "Podrobnosť záznamu :",
@@ -619,6 +626,12 @@
             "test_connection": "Otestovať pripojenie",
             "keydb_no_url": "Nie je nastavená adresa URL na aktualizáciu keydb — zadajte ju vyššie a kliknite na Aktualizovať.",
             "keydb_updating": "Aktualizuje sa keydb… prebieha preberanie, čakajte.",
+            "keydb_found": "keydb nájdený — {kb} KB, aktualizovaný {age}",
+            "keydb_not_found": "súbor keydb.cfg sa nenašiel",
+            "keydb_age_today": "dnes",
+            "keydb_age_yesterday": "včera",
+            "keydb_age_days": "pred {days} dňami",
+            "keydb_age_unknown": "v neznámom čase",
             "lang_any": "Ľubovoľný",
             "notify_when_rip_finished": "Upozorniť po dokončení kopírovania"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Ukladajú sa všetky tituly do súborov {container}",
             "elapsed": "Uplynulo: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Zostáva: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "kapitoly",
+            "word_track": "stopy",
+            "word_video_track": "videostopy",
+            "word_audio_track": "zvukovej stopy",
+            "word_subtitle_track": "stopy titulkov"
         },
         "result": {
             "finished": "Dokončené",
@@ -711,7 +729,26 @@
             "reveal_failed": "Nepodarilo sa otvoriť priečinok v Prieskumníkovi: {e}",
             "scan_not_started": "Nepodarilo sa spustiť skenovanie zdroja: {detail}",
             "scan_worker_stopped": "Proces skenovania zdroja sa zastavil skôr, ako vrátil výsledok.",
-            "insert_disc_retry": "Vložte disk do jednotky a znova zvoľte „Spustiť kopírovanie“. Načíta sa iba jeho ID zväzku; disk sa znova neskopíruje."
+            "insert_disc_retry": "Vložte disk do jednotky a znova zvoľte „Spustiť kopírovanie“. Načíta sa iba jeho ID zväzku; disk sa znova neskopíruje.",
+            "keydb_worker_failed": "Aktualizácia keydb zlyhala — interná chyba",
+            "drive_scan_failed": "Nepodarilo sa zobraziť zoznam optických jednotiek (interná chyba).",
+            "bad_number_setting": "„{name}“ musí byť celé číslo, nie „{value}“. Opravte to v Nastaveniach a potom začnite znova.",
+            "open_url_refused": "Nepodarilo sa otvoriť {url}",
+            "update_worker_stopped": "Kontrola aktualizácií zlyhala: proces sa zastavil skôr, ako vrátil výsledok",
+            "eject_worker_stopped": "proces vysunutia sa zastavil skôr, ako vrátil výsledok",
+            "keydb_no_url": "Nie je nastavená adresa URL na aktualizáciu keydb — pridajte ju v časti Nastavenia ▸ Kľúče",
+            "keydb_no_path": "Nie je nastavené umiestnenie keydb.cfg — pridajte ho v časti Nastavenia ▸ Kľúče",
+            "keydb_download_failed": "Preberanie zlyhalo: {error}",
+            "keydb_download_empty": "Preberanie bolo prázdne",
+            "keydb_updated": "keydb aktualizovaný — {entries} záznamov ({kb} KB) zapísaných do {path}",
+            "keydb_rejected": "keydb zamietnutý: E{code}",
+            "update_failed": "Kontrola aktualizácií zlyhala: {error}",
+            "update_none_published": "Kontrola aktualizácií: zatiaľ nie sú publikované žiadne vydania.",
+            "update_http_status": "Kontrola aktualizácií zlyhala: server vrátil {code}",
+            "update_bad_response": "Kontrola aktualizácií zlyhala: neplatná odpoveď ({error})",
+            "update_latest": "Používate najnovšiu verziu ({current}).",
+            "update_available": "Je dostupná aktualizácia: {latest} (máte {current}) — https://freemkv.org",
+            "update_no_version": "Kontrola aktualizácií zlyhala: odpoveď neobsahuje verziu"
         },
         "alert": {
             "rip_title": "Prebieha kopírovanie.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Zálohovať",
             "backup_msg": "Zálohovať celý disk (všetky tituly, dešifrované) do:",
             "open_prompt": "Otvoriť",
-            "folder_msg": "Vyberte priečinok VIDEO_TS alebo BDMV"
+            "folder_msg": "Vyberte priečinok VIDEO_TS alebo BDMV",
+            "default_output_msg": "Zvoľte predvolený výstupný priečinok",
+            "keydb_msg": "Zvoľte súbor keydb.cfg"
         },
         "about": {
             "version": "Verzia :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Kopírovanie dokončené"
+        },
+        "dialog": {
+            "timer_failed": "freemkv nemohol spustiť časovač priebehu ({error}). Kopírovanie môže stále prebiehať, ale toto okno sa nebude aktualizovať. Reštartujte, prosím, freemkv."
+        },
+        "lang": {
+            "eng": "Angličtina",
+            "spa": "Španielčina",
+            "fra": "Francúzština",
+            "deu": "Nemčina",
+            "ita": "Taliančina",
+            "por": "Portugalčina",
+            "nld": "Holandčina",
+            "swe": "Švédčina",
+            "nor": "Nórčina",
+            "dan": "Dánčina",
+            "fin": "Fínčina",
+            "isl": "Islandčina",
+            "pol": "Poľština",
+            "ces": "Čeština",
+            "slk": "Slovenčina",
+            "hun": "Maďarčina",
+            "ron": "Rumunčina",
+            "bul": "Bulharčina",
+            "ell": "Gréčtina",
+            "rus": "Ruština",
+            "ukr": "Ukrajinčina",
+            "tur": "Turečtina",
+            "heb": "Hebrejčina",
+            "ara": "Arabčina",
+            "hin": "Hindčina",
+            "tha": "Thajčina",
+            "vie": "Vietnamčina",
+            "ind": "Indonézština",
+            "zho": "Čínština",
+            "jpn": "Japončina",
+            "kor": "Kórejčina",
+            "cat": "Katalánčina",
+            "hrv": "Chorvátčina",
+            "srp": "Srbčina",
+            "slv": "Slovinčina",
+            "est": "Estónčina",
+            "lav": "Lotyština",
+            "lit": "Litovčina"
+        },
+        "item": {
+            "title": "Titul {num}",
+            "chapter": "1 kapitola",
+            "chapters": "Kapitoly: {n}",
+            "chapter_list": "Kapitoly",
+            "chapter_n": "Kapitola {n}",
+            "tracks": "Stopy: {n}",
+            "forced": "Vynútené",
+            "play_all": "Prehrať všetko",
+            "episode": "Epizóda"
+        },
+        "pick": {
+            "titles": "Tituly",
+            "audio": "Zvuk",
+            "subtitles": "Titulky",
+            "all": "Všetky",
+            "none": "Žiadne",
+            "forced": "Len vynútené",
+            "episodes": "Epizódy"
         }
     },
     "warn": {

@@ -75,7 +75,8 @@
         "capture_no_structure": "Nem található olvasható lemezszerkezet (BDMV / VIDEO_TS); nincs mit megosztani.",
         "capture_skipped": "Kihagyott lemezfájl: {file}",
         "capture_summary": "Lemezszerkezet rögzítve: {files} fájl ({bytes} bájt).",
-        "capture_unsafe_name": "nem biztonságos fájlnév"
+        "capture_unsafe_name": "nem biztonságos fájlnév",
+        "capture_aacs_unread": "Az AACS-diagnosztika nem került rögzítésre — a lemez titkosított, de kulcsok nélkül lett beolvasva."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Típus",
-            "desc": "Leírás"
+            "desc": "Leírás",
+            "duration": "Időtartam",
+            "size": "Méret",
+            "item": "Elem",
+            "lang": "Nyelv",
+            "notes": "Megjegyzések"
         },
         "tab": {
             "output": "Kimenet",
@@ -608,6 +614,7 @@
             "keyserver_token": "Kulcsszolgáltatás tokenje:",
             "language": "Felület nyelve:",
             "language_note": "A freemkv újraindítása után lép életbe.",
+            "language_auto": "Automatikus",
             "decrypt_threads": "Visszafejtési szálak:",
             "decrypt_threads_note": "0 = CPU-magonként egy.",
             "log_detail": "Napló részletessége:",
@@ -619,6 +626,12 @@
             "test_connection": "Kapcsolat tesztelése",
             "keydb_no_url": "Nincs beállítva keydb frissítési URL — adjon meg egyet fent, majd kattintson a Frissítés gombra.",
             "keydb_updating": "keydb frissítése… letöltés folyamatban, kérem várjon.",
+            "keydb_found": "keydb megtalálva — {kb} KB, frissítve: {age}",
+            "keydb_not_found": "nem található keydb.cfg",
+            "keydb_age_today": "ma",
+            "keydb_age_yesterday": "tegnap",
+            "keydb_age_days": "{days} napja",
+            "keydb_age_unknown": "ismeretlen",
             "lang_any": "Bármely",
             "notify_when_rip_finished": "Értesítés a kimásolás befejezésekor"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Az összes cím mentése {container} fájlokba",
             "elapsed": "Eltelt: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Hátralévő: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "fejezet",
+            "word_track": "sáv",
+            "word_video_track": "videósáv",
+            "word_audio_track": "hangsáv",
+            "word_subtitle_track": "feliratsáv"
         },
         "result": {
             "finished": "Befejezve",
@@ -711,7 +729,26 @@
             "reveal_failed": "Nem sikerült megnyitni a mappát az Intézőben: {e}",
             "scan_not_started": "Nem sikerült elindítani a forrás beolvasását: {detail}",
             "scan_worker_stopped": "A forrásbeolvasó folyamat leállt, mielőtt eredményt adott volna.",
-            "insert_disc_retry": "Helyezd be a lemezt egy meghajtóba, majd válaszd újra a „Kimásolás indítása” pontot. Csak a kötetazonosítója olvasódik be; nem másolódik ki újra."
+            "insert_disc_retry": "Helyezd be a lemezt egy meghajtóba, majd válaszd újra a „Kimásolás indítása” pontot. Csak a kötetazonosítója olvasódik be; nem másolódik ki újra.",
+            "keydb_worker_failed": "A keydb frissítése sikertelen — belső hiba",
+            "drive_scan_failed": "Nem sikerült listázni az optikai meghajtókat (belső hiba).",
+            "bad_number_setting": "A(z) „{name}” értéke csak egész szám lehet, nem „{value}”. Javítsd a Beállításokban, majd kezdd újra.",
+            "open_url_refused": "Nem sikerült megnyitni: {url}",
+            "update_worker_stopped": "A frissítések keresése sikertelen: a folyamat leállt, mielőtt eredményt adott volna",
+            "eject_worker_stopped": "a kiadási folyamat leállt, mielőtt eredményt adott volna",
+            "keydb_no_url": "Nincs beállítva keydb frissítési URL — adjon meg egyet itt: Beállítások ▸ Kulcsok",
+            "keydb_no_path": "Nincs beállítva a keydb.cfg helye — adja meg itt: Beállítások ▸ Kulcsok",
+            "keydb_download_failed": "A letöltés sikertelen: {error}",
+            "keydb_download_empty": "A letöltés üres volt",
+            "keydb_updated": "keydb frissítve — {entries} bejegyzés ({kb} KB) kiírva ide: {path}",
+            "keydb_rejected": "keydb elutasítva: E{code}",
+            "update_failed": "A frissítések keresése sikertelen: {error}",
+            "update_none_published": "Frissítések keresése: még nem jelent meg kiadás.",
+            "update_http_status": "A frissítések keresése sikertelen: a kiszolgáló {code} kódot adott vissza",
+            "update_bad_response": "A frissítések keresése sikertelen: hibás válasz ({error})",
+            "update_latest": "A legújabb verziót használja ({current}).",
+            "update_available": "Frissítés érhető el: {latest} (jelenlegi: {current}) — https://freemkv.org",
+            "update_no_version": "A frissítések keresése sikertelen: a válaszban nincs verzió"
         },
         "alert": {
             "rip_title": "Kimásolás van folyamatban.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Mentés",
             "backup_msg": "A teljes lemez mentése (minden cím, visszafejtve) ide:",
             "open_prompt": "Megnyitás",
-            "folder_msg": "Válassz egy VIDEO_TS vagy BDMV mappát"
+            "folder_msg": "Válassz egy VIDEO_TS vagy BDMV mappát",
+            "default_output_msg": "Válaszd ki az alapértelmezett kimeneti mappát",
+            "keydb_msg": "Válaszd ki a keydb.cfg fájlt"
         },
         "about": {
             "version": "Verzió:",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Kimásolás kész"
+        },
+        "dialog": {
+            "timer_failed": "A freemkv nem tudta elindítani a folyamatjelző időzítőjét ({error}). A kimásolás még futhat, de ez az ablak nem frissül. Kérjük, indítsd újra a freemkv-t."
+        },
+        "lang": {
+            "eng": "Angol",
+            "spa": "Spanyol",
+            "fra": "Francia",
+            "deu": "Német",
+            "ita": "Olasz",
+            "por": "Portugál",
+            "nld": "Holland",
+            "swe": "Svéd",
+            "nor": "Norvég",
+            "dan": "Dán",
+            "fin": "Finn",
+            "isl": "Izlandi",
+            "pol": "Lengyel",
+            "ces": "Cseh",
+            "slk": "Szlovák",
+            "hun": "Magyar",
+            "ron": "Román",
+            "bul": "Bolgár",
+            "ell": "Görög",
+            "rus": "Orosz",
+            "ukr": "Ukrán",
+            "tur": "Török",
+            "heb": "Héber",
+            "ara": "Arab",
+            "hin": "Hindi",
+            "tha": "Thai",
+            "vie": "Vietnami",
+            "ind": "Indonéz",
+            "zho": "Kínai",
+            "jpn": "Japán",
+            "kor": "Koreai",
+            "cat": "Katalán",
+            "hrv": "Horvát",
+            "srp": "Szerb",
+            "slv": "Szlovén",
+            "est": "Észt",
+            "lav": "Lett",
+            "lit": "Litván"
+        },
+        "item": {
+            "title": "{num}. cím",
+            "chapter": "1 fejezet",
+            "chapters": "{n} fejezet",
+            "chapter_list": "Fejezetek",
+            "chapter_n": "{n}. fejezet",
+            "tracks": "{n} sáv",
+            "forced": "Kényszerített",
+            "play_all": "Összes lejátszása",
+            "episode": "Epizód"
+        },
+        "pick": {
+            "titles": "Címek",
+            "audio": "Hang",
+            "subtitles": "Feliratok",
+            "all": "Mind",
+            "none": "Nincs",
+            "forced": "Csak kényszerített",
+            "episodes": "Epizódok"
         }
     },
     "warn": {

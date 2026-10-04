@@ -75,7 +75,8 @@
         "capture_no_structure": "Okunabilir disk yapısı (BDMV / VIDEO_TS) bulunamadı; paylaşılacak bir şey yok.",
         "capture_skipped": "Disk dosyası atlandı: {file}",
         "capture_summary": "Disk yapısı yakalandı: {files} dosya ({bytes} bayt).",
-        "capture_unsafe_name": "güvenli olmayan dosya adı"
+        "capture_unsafe_name": "güvenli olmayan dosya adı",
+        "capture_aacs_unread": "AACS tanılama bilgileri yakalanmadı — disk şifreli ancak anahtarsız tarandı."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Tür",
-            "desc": "Açıklama"
+            "desc": "Açıklama",
+            "duration": "Süre",
+            "size": "Boyut",
+            "item": "Öğe",
+            "lang": "Dil",
+            "notes": "Notlar"
         },
         "tab": {
             "output": "Çıktı",
@@ -608,6 +614,7 @@
             "keyserver_token": "Anahtar hizmeti belirteci :",
             "language": "Arayüz dili :",
             "language_note": "freemkv'yi yeniden başlattıktan sonra etkili olur.",
+            "language_auto": "Otomatik",
             "decrypt_threads": "Şifre çözme iş parçacıkları :",
             "decrypt_threads_note": "0 = her CPU çekirdeği için bir tane.",
             "log_detail": "Günlük ayrıntısı :",
@@ -619,6 +626,12 @@
             "test_connection": "Bağlantıyı test et",
             "keydb_no_url": "keydb güncelleme adresi ayarlanmadı — yukarıya bir adres ekleyip Güncelle'ye tıklayın.",
             "keydb_updating": "keydb güncelleniyor… indiriliyor, lütfen bekleyin.",
+            "keydb_found": "keydb bulundu — {kb} KB, son güncelleme: {age}",
+            "keydb_not_found": "keydb.cfg bulunamadı",
+            "keydb_age_today": "bugün",
+            "keydb_age_yesterday": "dün",
+            "keydb_age_days": "{days} gün önce",
+            "keydb_age_unknown": "bilinmiyor",
             "lang_any": "Herhangi",
             "notify_when_rip_finished": "Kopyalama bitince bildir"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Tüm başlıklar {container} dosyalarına kaydediliyor",
             "elapsed": "Geçen süre: {hms}",
             "caption_eta": "%{pct}   {elapsed}   Kalan: {hms}",
-            "caption_no_eta": "%{pct}   {elapsed}"
+            "caption_no_eta": "%{pct}   {elapsed}",
+            "word_chapter": "bölüm",
+            "word_track": "iz",
+            "word_video_track": "video izi",
+            "word_audio_track": "ses izi",
+            "word_subtitle_track": "altyazı izi"
         },
         "result": {
             "finished": "Tamamlandı",
@@ -711,7 +729,26 @@
             "reveal_failed": "Klasör Dosya Gezgini'nde açılamadı: {e}",
             "scan_not_started": "Kaynak taraması başlatılamadı: {detail}",
             "scan_worker_stopped": "Kaynak tarama işlemi bir sonuç döndürmeden durdu.",
-            "insert_disc_retry": "Diski bir sürücüye takın, ardından tekrar “Kopyalamayı başlat”ı seçin. Yalnızca birim kimliği okunur; tekrar kopyalanmaz."
+            "insert_disc_retry": "Diski bir sürücüye takın, ardından tekrar “Kopyalamayı başlat”ı seçin. Yalnızca birim kimliği okunur; tekrar kopyalanmaz.",
+            "keydb_worker_failed": "keydb güncellemesi başarısız oldu — iç hata",
+            "drive_scan_failed": "Optik sürücüler listelenemedi (iç hata).",
+            "bad_number_setting": "“{name}” bir tam sayı olmalıdır, “{value}” değil. Ayarlar'da düzeltin, ardından yeniden başlayın.",
+            "open_url_refused": "{url} açılamadı",
+            "update_worker_stopped": "Güncelleme denetimi başarısız oldu: işlem bir sonuç döndürmeden durdu",
+            "eject_worker_stopped": "çıkarma işlemi bir sonuç döndürmeden durdu",
+            "keydb_no_url": "keydb güncelleme adresi ayarlanmadı — Ayarlar ▸ Anahtarlar bölümünden ekleyin",
+            "keydb_no_path": "keydb.cfg konumu ayarlanmadı — Ayarlar ▸ Anahtarlar bölümünden ekleyin",
+            "keydb_download_failed": "İndirme başarısız: {error}",
+            "keydb_download_empty": "İndirilen dosya boştu",
+            "keydb_updated": "keydb güncellendi — {entries} girdi ({kb} KB) {path} konumuna yazıldı",
+            "keydb_rejected": "keydb reddedildi: E{code}",
+            "update_failed": "Güncelleme denetimi başarısız oldu: {error}",
+            "update_none_published": "Güncelleme denetimi: henüz yayımlanmış sürüm yok.",
+            "update_http_status": "Güncelleme denetimi başarısız oldu: sunucu {code} döndürdü",
+            "update_bad_response": "Güncelleme denetimi başarısız oldu: geçersiz yanıt ({error})",
+            "update_latest": "En son sürümü kullanıyorsunuz ({current}).",
+            "update_available": "Güncelleme mevcut: {latest} (sizdeki: {current}) — https://freemkv.org",
+            "update_no_version": "Güncelleme denetimi başarısız oldu: yanıtta sürüm yok"
         },
         "alert": {
             "rip_title": "Bir kopyalama sürüyor.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Yedekle",
             "backup_msg": "Tüm diski (tüm başlıklar, şifresi çözülmüş) şuraya yedekle:",
             "open_prompt": "Aç",
-            "folder_msg": "Bir VIDEO_TS veya BDMV klasörü seçin"
+            "folder_msg": "Bir VIDEO_TS veya BDMV klasörü seçin",
+            "default_output_msg": "Varsayılan çıktı klasörünü seçin",
+            "keydb_msg": "keydb.cfg dosyasını seçin"
         },
         "about": {
             "version": "Sürüm :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Kopyalama tamamlandı"
+        },
+        "dialog": {
+            "timer_failed": "freemkv ilerleme zamanlayıcısını başlatamadı ({error}). Kopyalama hâlâ sürüyor olabilir, ancak bu pencere güncellenmeyecek. Lütfen freemkv'yi yeniden başlatın."
+        },
+        "lang": {
+            "eng": "İngilizce",
+            "spa": "İspanyolca",
+            "fra": "Fransızca",
+            "deu": "Almanca",
+            "ita": "İtalyanca",
+            "por": "Portekizce",
+            "nld": "Felemenkçe",
+            "swe": "İsveççe",
+            "nor": "Norveççe",
+            "dan": "Danca",
+            "fin": "Fince",
+            "isl": "İzlandaca",
+            "pol": "Lehçe",
+            "ces": "Çekçe",
+            "slk": "Slovakça",
+            "hun": "Macarca",
+            "ron": "Romence",
+            "bul": "Bulgarca",
+            "ell": "Yunanca",
+            "rus": "Rusça",
+            "ukr": "Ukraynaca",
+            "tur": "Türkçe",
+            "heb": "İbranice",
+            "ara": "Arapça",
+            "hin": "Hintçe",
+            "tha": "Tayca",
+            "vie": "Vietnamca",
+            "ind": "Endonezce",
+            "zho": "Çince",
+            "jpn": "Japonca",
+            "kor": "Korece",
+            "cat": "Katalanca",
+            "hrv": "Hırvatça",
+            "srp": "Sırpça",
+            "slv": "Slovence",
+            "est": "Estonca",
+            "lav": "Letonca",
+            "lit": "Litvanca"
+        },
+        "item": {
+            "title": "Başlık {num}",
+            "chapter": "1 bölüm",
+            "chapters": "{n} bölüm",
+            "chapter_list": "Bölümler",
+            "chapter_n": "Bölüm {n}",
+            "tracks": "{n} parça",
+            "forced": "Zorlanmış",
+            "play_all": "Tümünü oynat",
+            "episode": "Bölüm"
+        },
+        "pick": {
+            "titles": "Başlıklar",
+            "audio": "Ses",
+            "subtitles": "Altyazılar",
+            "all": "Tümü",
+            "none": "Hiçbiri",
+            "forced": "Yalnızca zorlanmış",
+            "episodes": "Bölümler"
         }
     },
     "warn": {

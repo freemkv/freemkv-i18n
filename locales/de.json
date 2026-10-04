@@ -75,7 +75,8 @@
         "capture_no_structure": "Keine lesbare Disc-Struktur (BDMV / VIDEO_TS) gefunden; nichts zu teilen.",
         "capture_skipped": "Disc-Datei {file} übersprungen",
         "capture_summary": "Disc-Struktur erfasst: {files} Dateien ({bytes} Bytes).",
-        "capture_unsafe_name": "unsicherer Dateiname"
+        "capture_unsafe_name": "unsicherer Dateiname",
+        "capture_aacs_unread": "AACS-Diagnose nicht erfasst — die Disc ist verschlüsselt, wurde aber ohne Schlüssel gescannt."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Typ",
-            "desc": "Beschreibung"
+            "desc": "Beschreibung",
+            "duration": "Länge",
+            "size": "Größe",
+            "item": "Element",
+            "lang": "Sprache",
+            "notes": "Hinweise"
         },
         "tab": {
             "output": "Ausgabe",
@@ -608,6 +614,7 @@
             "keyserver_token": "Schlüsseldienst-Token:",
             "language": "Sprache der Benutzeroberfläche:",
             "language_note": "Wird nach einem Neustart von freemkv wirksam.",
+            "language_auto": "Automatisch",
             "decrypt_threads": "Entschlüsselungs-Threads:",
             "decrypt_threads_note": "0 = einer pro CPU-Kern.",
             "log_detail": "Protokolldetailgrad:",
@@ -619,6 +626,12 @@
             "test_connection": "Verbindung testen",
             "keydb_no_url": "Keine keydb-Update-URL festgelegt — oben eine hinzufügen und auf Aktualisieren klicken.",
             "keydb_updating": "keydb wird aktualisiert… Download läuft, bitte warten.",
+            "keydb_found": "keydb gefunden — {kb} KB, aktualisiert {age}",
+            "keydb_not_found": "keydb.cfg nicht gefunden",
+            "keydb_age_today": "heute",
+            "keydb_age_yesterday": "gestern",
+            "keydb_age_days": "vor {days} Tagen",
+            "keydb_age_unknown": "zu unbekanntem Zeitpunkt",
             "lang_any": "Beliebig",
             "notify_when_rip_finished": "Benachrichtigen, wenn ein Rip abgeschlossen ist"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Alle Titel werden in {container}-Dateien gespeichert",
             "elapsed": "Vergangen: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Verbleibend: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "Kapitel",
+            "word_track": "Spur",
+            "word_video_track": "Videospur",
+            "word_audio_track": "Audiospur",
+            "word_subtitle_track": "Untertitelspur"
         },
         "result": {
             "finished": "Abgeschlossen",
@@ -711,7 +729,26 @@
             "reveal_failed": "Der Ordner konnte nicht im Explorer geöffnet werden: {e}",
             "scan_not_started": "Scan der Quelle konnte nicht gestartet werden: {detail}",
             "scan_worker_stopped": "Der Scan-Prozess für die Quelle wurde beendet, bevor er ein Ergebnis lieferte.",
-            "insert_disc_retry": "Legen Sie die Disc in ein Laufwerk ein und wählen Sie erneut „Rip starten“. Es wird nur deren Volume-ID gelesen; sie wird nicht erneut gerippt."
+            "insert_disc_retry": "Legen Sie die Disc in ein Laufwerk ein und wählen Sie erneut „Rip starten“. Es wird nur deren Volume-ID gelesen; sie wird nicht erneut gerippt.",
+            "keydb_worker_failed": "keydb-Aktualisierung fehlgeschlagen — interner Fehler",
+            "drive_scan_failed": "Die optischen Laufwerke konnten nicht aufgelistet werden (interner Fehler).",
+            "bad_number_setting": "„{name}“ muss eine ganze Zahl sein, nicht „{value}“. Korrigieren Sie dies in den Einstellungen und starten Sie dann erneut.",
+            "open_url_refused": "{url} konnte nicht geöffnet werden",
+            "update_worker_stopped": "Update-Suche fehlgeschlagen: Der Worker wurde beendet, bevor er ein Ergebnis lieferte",
+            "eject_worker_stopped": "Der Auswerfen-Prozess wurde beendet, bevor er ein Ergebnis lieferte",
+            "keydb_no_url": "Keine keydb-Update-URL festgelegt — in Einstellungen ▸ Schlüssel eine hinzufügen",
+            "keydb_no_path": "Kein keydb.cfg-Speicherort festgelegt — in Einstellungen ▸ Schlüssel einen hinzufügen",
+            "keydb_download_failed": "Download fehlgeschlagen: {error}",
+            "keydb_download_empty": "Der Download war leer",
+            "keydb_updated": "keydb aktualisiert — {entries} Einträge ({kb} KB) nach {path} geschrieben",
+            "keydb_rejected": "keydb abgelehnt: E{code}",
+            "update_failed": "Update-Suche fehlgeschlagen: {error}",
+            "update_none_published": "Update-Suche: Es wurden noch keine Releases veröffentlicht.",
+            "update_http_status": "Update-Suche fehlgeschlagen: Server antwortete mit {code}",
+            "update_bad_response": "Update-Suche fehlgeschlagen: ungültige Antwort ({error})",
+            "update_latest": "Sie verwenden die neueste Version ({current}).",
+            "update_available": "Update verfügbar: {latest} (Sie haben {current}) — https://freemkv.org",
+            "update_no_version": "Update-Suche fehlgeschlagen: keine Version in der Antwort"
         },
         "alert": {
             "rip_title": "Ein Rip läuft gerade.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Sichern",
             "backup_msg": "Die gesamte Disc (alle Titel, entschlüsselt) sichern nach:",
             "open_prompt": "Öffnen",
-            "folder_msg": "Wählen Sie einen VIDEO_TS- oder BDMV-Ordner"
+            "folder_msg": "Wählen Sie einen VIDEO_TS- oder BDMV-Ordner",
+            "default_output_msg": "Wählen Sie den Standard-Ausgabeordner",
+            "keydb_msg": "Wählen Sie die Datei keydb.cfg"
         },
         "about": {
             "version": "Version:",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Rip abgeschlossen"
+        },
+        "dialog": {
+            "timer_failed": "freemkv konnte seinen Fortschritts-Timer nicht starten ({error}). Der Rip läuft möglicherweise noch, aber dieses Fenster wird nicht mehr aktualisiert. Bitte starten Sie freemkv neu."
+        },
+        "lang": {
+            "eng": "Englisch",
+            "spa": "Spanisch",
+            "fra": "Französisch",
+            "deu": "Deutsch",
+            "ita": "Italienisch",
+            "por": "Portugiesisch",
+            "nld": "Niederländisch",
+            "swe": "Schwedisch",
+            "nor": "Norwegisch",
+            "dan": "Dänisch",
+            "fin": "Finnisch",
+            "isl": "Isländisch",
+            "pol": "Polnisch",
+            "ces": "Tschechisch",
+            "slk": "Slowakisch",
+            "hun": "Ungarisch",
+            "ron": "Rumänisch",
+            "bul": "Bulgarisch",
+            "ell": "Griechisch",
+            "rus": "Russisch",
+            "ukr": "Ukrainisch",
+            "tur": "Türkisch",
+            "heb": "Hebräisch",
+            "ara": "Arabisch",
+            "hin": "Hindi",
+            "tha": "Thailändisch",
+            "vie": "Vietnamesisch",
+            "ind": "Indonesisch",
+            "zho": "Chinesisch",
+            "jpn": "Japanisch",
+            "kor": "Koreanisch",
+            "cat": "Katalanisch",
+            "hrv": "Kroatisch",
+            "srp": "Serbisch",
+            "slv": "Slowenisch",
+            "est": "Estnisch",
+            "lav": "Lettisch",
+            "lit": "Litauisch"
+        },
+        "item": {
+            "title": "Titel {num}",
+            "chapter": "1 Kapitel",
+            "chapters": "{n} Kapitel",
+            "chapter_list": "Kapitel",
+            "chapter_n": "Kapitel {n}",
+            "tracks": "{n} Spuren",
+            "forced": "Erzwungen",
+            "play_all": "Alle abspielen",
+            "episode": "Folge"
+        },
+        "pick": {
+            "titles": "Titel",
+            "audio": "Audio",
+            "subtitles": "Untertitel",
+            "all": "Alle",
+            "none": "Keine",
+            "forced": "Nur erzwungene",
+            "episodes": "Folgen"
         }
     },
     "warn": {

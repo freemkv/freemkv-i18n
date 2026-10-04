@@ -75,7 +75,8 @@
         "capture_no_structure": "Nu s-a găsit nicio structură de disc lizibilă (BDMV / VIDEO_TS); nu există nimic de partajat.",
         "capture_skipped": "S-a omis fișierul de pe disc {file}",
         "capture_summary": "Structura discului a fost capturată: {files} fișiere ({bytes} octeți).",
-        "capture_unsafe_name": "nume de fișier nesigur"
+        "capture_unsafe_name": "nume de fișier nesigur",
+        "capture_aacs_unread": "Diagnosticul AACS nu a fost capturat — discul este criptat, dar a fost scanat fără chei."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Tip",
-            "desc": "Descriere"
+            "desc": "Descriere",
+            "duration": "Durată",
+            "size": "Dimensiune",
+            "item": "Element",
+            "lang": "Limbă",
+            "notes": "Note"
         },
         "tab": {
             "output": "Ieșire",
@@ -608,6 +614,7 @@
             "keyserver_token": "Token serviciu de chei :",
             "language": "Limba interfeței :",
             "language_note": "Are efect după ce repornești freemkv.",
+            "language_auto": "Automat",
             "decrypt_threads": "Fire de decriptare :",
             "decrypt_threads_note": "0 = câte unul per nucleu CPU.",
             "log_detail": "Detaliu jurnal :",
@@ -619,6 +626,12 @@
             "test_connection": "Testează conexiunea",
             "keydb_no_url": "Nu este setat niciun URL de actualizare keydb — adăugați unul mai sus, apoi faceți clic pe Actualizează.",
             "keydb_updating": "Se actualizează keydb… se descarcă, așteptați.",
+            "keydb_found": "keydb găsit — {kb} KB, actualizat {age}",
+            "keydb_not_found": "nu s-a găsit keydb.cfg",
+            "keydb_age_today": "azi",
+            "keydb_age_yesterday": "ieri",
+            "keydb_age_days": "acum {days} zile",
+            "keydb_age_unknown": "la o dată necunoscută",
             "lang_any": "Oricare",
             "notify_when_rip_finished": "Notifică la finalizarea unei extrageri"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Se salvează toate titlurile în fișiere {container}",
             "elapsed": "Timp scurs: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Rămas: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "capitol",
+            "word_track": "pistă",
+            "word_video_track": "pistă video",
+            "word_audio_track": "pistă audio",
+            "word_subtitle_track": "pistă de subtitrare"
         },
         "result": {
             "finished": "Finalizat",
@@ -711,7 +729,26 @@
             "reveal_failed": "Nu s-a putut deschide dosarul în Explorer: {e}",
             "scan_not_started": "Nu s-a putut porni scanarea sursei: {detail}",
             "scan_worker_stopped": "Procesul de scanare a sursei s-a oprit înainte de a returna un rezultat.",
-            "insert_disc_retry": "Introdu discul într-o unitate, apoi alege din nou „Începe extragerea”. Se citește doar ID-ul său de volum; nu este extras din nou."
+            "insert_disc_retry": "Introdu discul într-o unitate, apoi alege din nou „Începe extragerea”. Se citește doar ID-ul său de volum; nu este extras din nou.",
+            "keydb_worker_failed": "Actualizarea keydb a eșuat — eroare internă",
+            "drive_scan_failed": "Nu s-au putut lista unitățile optice (eroare internă).",
+            "bad_number_setting": "„{name}” trebuie să fie un număr întreg, nu „{value}”. Corectează în Setări, apoi pornește din nou.",
+            "open_url_refused": "Nu s-a putut deschide {url}",
+            "update_worker_stopped": "Verificarea actualizărilor a eșuat: procesul s-a oprit înainte de a returna un rezultat",
+            "eject_worker_stopped": "procesul de scoatere a discului s-a oprit înainte de a returna un rezultat",
+            "keydb_no_url": "Nu este setat niciun URL de actualizare keydb — adăugați unul în Setări ▸ Chei",
+            "keydb_no_path": "Nu este setată locația keydb.cfg — adăugați una în Setări ▸ Chei",
+            "keydb_download_failed": "Descărcarea a eșuat: {error}",
+            "keydb_download_empty": "Descărcarea a fost goală",
+            "keydb_updated": "keydb actualizat — {entries} intrări ({kb} KB) scrise în {path}",
+            "keydb_rejected": "keydb respins: E{code}",
+            "update_failed": "Verificarea actualizărilor a eșuat: {error}",
+            "update_none_published": "Verificarea actualizărilor: nu a fost publicată încă nicio versiune.",
+            "update_http_status": "Verificarea actualizărilor a eșuat: serverul a returnat {code}",
+            "update_bad_response": "Verificarea actualizărilor a eșuat: răspuns nevalid ({error})",
+            "update_latest": "Rulați cea mai recentă versiune ({current}).",
+            "update_available": "Actualizare disponibilă: {latest} (aveți {current}) — https://freemkv.org",
+            "update_no_version": "Verificarea actualizărilor a eșuat: niciun număr de versiune în răspuns"
         },
         "alert": {
             "rip_title": "O extragere este în curs.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Copie de rezervă",
             "backup_msg": "Fă o copie de rezervă a întregului disc (toate titlurile, decriptate) în:",
             "open_prompt": "Deschide",
-            "folder_msg": "Selectează un director VIDEO_TS sau BDMV"
+            "folder_msg": "Selectează un director VIDEO_TS sau BDMV",
+            "default_output_msg": "Alege directorul de ieșire implicit",
+            "keydb_msg": "Alege fișierul keydb.cfg"
         },
         "about": {
             "version": "Versiune :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Extragere finalizată"
+        },
+        "dialog": {
+            "timer_failed": "freemkv nu a putut porni cronometrul de progres ({error}). Extragerea poate rula în continuare, dar această fereastră nu se va actualiza. Te rugăm să repornești freemkv."
+        },
+        "lang": {
+            "eng": "Engleză",
+            "spa": "Spaniolă",
+            "fra": "Franceză",
+            "deu": "Germană",
+            "ita": "Italiană",
+            "por": "Portugheză",
+            "nld": "Neerlandeză",
+            "swe": "Suedeză",
+            "nor": "Norvegiană",
+            "dan": "Daneză",
+            "fin": "Finlandeză",
+            "isl": "Islandeză",
+            "pol": "Poloneză",
+            "ces": "Cehă",
+            "slk": "Slovacă",
+            "hun": "Maghiară",
+            "ron": "Română",
+            "bul": "Bulgară",
+            "ell": "Greacă",
+            "rus": "Rusă",
+            "ukr": "Ucraineană",
+            "tur": "Turcă",
+            "heb": "Ebraică",
+            "ara": "Arabă",
+            "hin": "Hindi",
+            "tha": "Thailandeză",
+            "vie": "Vietnameză",
+            "ind": "Indoneziană",
+            "zho": "Chineză",
+            "jpn": "Japoneză",
+            "kor": "Coreeană",
+            "cat": "Catalană",
+            "hrv": "Croată",
+            "srp": "Sârbă",
+            "slv": "Slovenă",
+            "est": "Estonă",
+            "lav": "Letonă",
+            "lit": "Lituaniană"
+        },
+        "item": {
+            "title": "Titlul {num}",
+            "chapter": "1 capitol",
+            "chapters": "{n} capitole",
+            "chapter_list": "Capitole",
+            "chapter_n": "Capitolul {n}",
+            "tracks": "{n} piste",
+            "forced": "Forțat",
+            "play_all": "Redă tot",
+            "episode": "Episod"
+        },
+        "pick": {
+            "titles": "Titluri",
+            "audio": "Audio",
+            "subtitles": "Subtitrări",
+            "all": "Toate",
+            "none": "Niciuna",
+            "forced": "Doar forțate",
+            "episodes": "Episoade"
         }
     },
     "warn": {

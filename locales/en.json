@@ -75,7 +75,8 @@
         "capture_no_structure": "No readable disc structure (BDMV / VIDEO_TS) was found; nothing to share.",
         "capture_skipped": "Skipped disc file {file}",
         "capture_summary": "Captured disc structure: {files} files ({bytes} bytes).",
-        "capture_unsafe_name": "unsafe file name"
+        "capture_unsafe_name": "unsafe file name",
+        "capture_aacs_unread": "AACS diagnostics not captured — the disc is encrypted but was scanned without keys."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Type",
-            "desc": "Description"
+            "desc": "Description",
+            "duration": "Length",
+            "size": "Size",
+            "item": "Item",
+            "lang": "Language",
+            "notes": "Notes"
         },
         "tab": {
             "output": "Output",
@@ -609,6 +615,7 @@
             "keyserver_token": "Key service token :",
             "language": "Interface language :",
             "language_note": "Takes effect after you restart freemkv.",
+            "language_auto": "Auto",
             "decrypt_threads": "Decrypt threads :",
             "decrypt_threads_note": "0 = one per CPU core.",
             "log_detail": "Log detail :",
@@ -620,6 +627,12 @@
             "test_connection": "Test connection",
             "keydb_no_url": "No keydb update URL set — add one above, then click Update.",
             "keydb_updating": "Updating keydb… downloading, please wait.",
+            "keydb_found": "keydb found — {kb} KB, updated {age}",
+            "keydb_not_found": "no keydb.cfg found",
+            "keydb_age_today": "today",
+            "keydb_age_yesterday": "yesterday",
+            "keydb_age_days": "{days} days ago",
+            "keydb_age_unknown": "unknown",
             "notify_when_rip_finished": "Notify when a rip finishes"
         },
         "btn": {
@@ -650,7 +663,12 @@
             "saving_overall": "Saving all titles to {container} files",
             "elapsed": "Elapsed: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Remaining: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "chapter",
+            "word_track": "track",
+            "word_video_track": "video track",
+            "word_audio_track": "audio track",
+            "word_subtitle_track": "subtitle track"
         },
         "result": {
             "finished": "Finished",
@@ -711,7 +729,26 @@
             "reveal_failed": "Could not open the folder in Explorer: {e}",
             "scan_not_started": "Could not start scanning the source: {detail}",
             "scan_worker_stopped": "Source scan worker stopped before returning a result.",
-            "insert_disc_retry": "Insert the disc into a drive, then choose “Start rip” again. Only its Volume ID is read; it is not ripped again."
+            "insert_disc_retry": "Insert the disc into a drive, then choose “Start rip” again. Only its Volume ID is read; it is not ripped again.",
+            "keydb_worker_failed": "keydb update failed — internal error",
+            "drive_scan_failed": "Could not list the optical drives (internal error).",
+            "bad_number_setting": "“{name}” must be a whole number, not “{value}”. Fix it in Settings, then start again.",
+            "open_url_refused": "Could not open {url}",
+            "update_worker_stopped": "Update check failed: worker stopped before returning a result",
+            "eject_worker_stopped": "eject worker stopped before returning a result",
+            "keydb_no_url": "No keydb update URL set — add one in Settings ▸ Keys",
+            "keydb_no_path": "No keydb.cfg location set — add one in Settings ▸ Keys",
+            "keydb_download_failed": "Download failed: {error}",
+            "keydb_download_empty": "Download was empty",
+            "keydb_updated": "keydb updated — {entries} entries ({kb} KB) written to {path}",
+            "keydb_rejected": "keydb rejected: E{code}",
+            "update_failed": "Update check failed: {error}",
+            "update_none_published": "Update check: no releases published yet.",
+            "update_http_status": "Update check failed: server returned {code}",
+            "update_bad_response": "Update check failed: bad response ({error})",
+            "update_latest": "You are running the latest version ({current}).",
+            "update_available": "Update available: {latest} (you have {current}) — https://freemkv.org",
+            "update_no_version": "Update check failed: no version in response"
         },
         "alert": {
             "rip_title": "A rip is in progress.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Back up",
             "backup_msg": "Back up the entire disc (all titles, decrypted) to:",
             "open_prompt": "Open",
-            "folder_msg": "Select a VIDEO_TS or BDMV folder"
+            "folder_msg": "Select a VIDEO_TS or BDMV folder",
+            "default_output_msg": "Choose the default output folder",
+            "keydb_msg": "Choose the keydb.cfg file"
         },
         "about": {
             "version": "Version :",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Rip finished"
+        },
+        "dialog": {
+            "timer_failed": "freemkv could not start its progress timer ({error}). The rip may still be running, but this window will not update. Please restart freemkv."
+        },
+        "lang": {
+            "eng": "English",
+            "spa": "Spanish",
+            "fra": "French",
+            "deu": "German",
+            "ita": "Italian",
+            "por": "Portuguese",
+            "nld": "Dutch",
+            "swe": "Swedish",
+            "nor": "Norwegian",
+            "dan": "Danish",
+            "fin": "Finnish",
+            "isl": "Icelandic",
+            "pol": "Polish",
+            "ces": "Czech",
+            "slk": "Slovak",
+            "hun": "Hungarian",
+            "ron": "Romanian",
+            "bul": "Bulgarian",
+            "ell": "Greek",
+            "rus": "Russian",
+            "ukr": "Ukrainian",
+            "tur": "Turkish",
+            "heb": "Hebrew",
+            "ara": "Arabic",
+            "hin": "Hindi",
+            "tha": "Thai",
+            "vie": "Vietnamese",
+            "ind": "Indonesian",
+            "zho": "Chinese",
+            "jpn": "Japanese",
+            "kor": "Korean",
+            "cat": "Catalan",
+            "hrv": "Croatian",
+            "srp": "Serbian",
+            "slv": "Slovenian",
+            "est": "Estonian",
+            "lav": "Latvian",
+            "lit": "Lithuanian"
+        },
+        "item": {
+            "title": "Title {num}",
+            "chapter": "1 chapter",
+            "chapters": "{n} chapters",
+            "chapter_list": "Chapters",
+            "chapter_n": "Chapter {n}",
+            "tracks": "{n} tracks",
+            "forced": "Forced",
+            "play_all": "Play all",
+            "episode": "Episode"
+        },
+        "pick": {
+            "titles": "Titles",
+            "audio": "Audio",
+            "subtitles": "Subtitles",
+            "all": "All",
+            "none": "None",
+            "forced": "Forced only",
+            "episodes": "Episodes"
         }
     },
     "warn": {

@@ -75,7 +75,8 @@
         "capture_no_structure": "Geen leesbare discstructuur (BDMV / VIDEO_TS) gevonden; niets om te delen.",
         "capture_skipped": "Discbestand {file} overgeslagen",
         "capture_summary": "Discstructuur vastgelegd: {files} bestanden ({bytes} bytes).",
-        "capture_unsafe_name": "onveilige bestandsnaam"
+        "capture_unsafe_name": "onveilige bestandsnaam",
+        "capture_aacs_unread": "AACS-diagnose niet vastgelegd — de disc is versleuteld maar werd zonder sleutels gescand."
     },
     "stream": {
         "purpose": {
@@ -563,7 +564,12 @@
         },
         "col": {
             "type": "Type",
-            "desc": "Omschrijving"
+            "desc": "Omschrijving",
+            "duration": "Duur",
+            "size": "Grootte",
+            "item": "Item",
+            "lang": "Taal",
+            "notes": "Opmerkingen"
         },
         "tab": {
             "output": "Uitvoer",
@@ -608,6 +614,7 @@
             "keyserver_token": "Token sleuteldienst:",
             "language": "Interfacetaal:",
             "language_note": "Wordt van kracht nadat u freemkv opnieuw start.",
+            "language_auto": "Automatisch",
             "decrypt_threads": "Ontsleutelingsthreads:",
             "decrypt_threads_note": "0 = één per CPU-kern.",
             "log_detail": "Logdetail:",
@@ -619,6 +626,12 @@
             "test_connection": "Verbinding testen",
             "keydb_no_url": "Geen keydb-update-URL ingesteld — voeg er hierboven een toe en klik op Bijwerken.",
             "keydb_updating": "keydb wordt bijgewerkt… downloaden, even geduld.",
+            "keydb_found": "keydb gevonden — {kb} KB, bijgewerkt {age}",
+            "keydb_not_found": "geen keydb.cfg gevonden",
+            "keydb_age_today": "vandaag",
+            "keydb_age_yesterday": "gisteren",
+            "keydb_age_days": "{days} dagen geleden",
+            "keydb_age_unknown": "op onbekende datum",
             "lang_any": "Alle",
             "notify_when_rip_finished": "Melding geven als een rip klaar is"
         },
@@ -650,7 +663,12 @@
             "saving_overall": "Alle titels opslaan naar {container}-bestanden",
             "elapsed": "Verstreken: {hms}",
             "caption_eta": "{pct}%   {elapsed}   Resterend: {hms}",
-            "caption_no_eta": "{pct}%   {elapsed}"
+            "caption_no_eta": "{pct}%   {elapsed}",
+            "word_chapter": "hoofdstuk",
+            "word_track": "spoor",
+            "word_video_track": "videospoor",
+            "word_audio_track": "audiospoor",
+            "word_subtitle_track": "ondertitelspoor"
         },
         "result": {
             "finished": "Voltooid",
@@ -711,7 +729,26 @@
             "reveal_failed": "Kon de map niet openen in Verkenner: {e}",
             "scan_not_started": "Kon het scannen van de bron niet starten: {detail}",
             "scan_worker_stopped": "Het scanproces voor de bron is gestopt voordat het een resultaat gaf.",
-            "insert_disc_retry": "Plaats de schijf in een station en kies opnieuw “Rip starten”. Alleen het Volume ID wordt gelezen; deze wordt niet opnieuw geript."
+            "insert_disc_retry": "Plaats de schijf in een station en kies opnieuw “Rip starten”. Alleen het Volume ID wordt gelezen; deze wordt niet opnieuw geript.",
+            "keydb_worker_failed": "keydb bijwerken mislukt — interne fout",
+            "drive_scan_failed": "Kon de optische stations niet weergeven (interne fout).",
+            "bad_number_setting": "“{name}” moet een geheel getal zijn, niet “{value}”. Corrigeer dit in Instellingen en start daarna opnieuw.",
+            "open_url_refused": "Kon {url} niet openen",
+            "update_worker_stopped": "Controle op updates mislukt: de worker is gestopt voordat er een resultaat was",
+            "eject_worker_stopped": "De worker voor uitwerpen is gestopt voordat er een resultaat was",
+            "keydb_no_url": "Geen keydb-update-URL ingesteld — voeg er een toe via Instellingen ▸ Sleutels",
+            "keydb_no_path": "Geen locatie voor keydb.cfg ingesteld — voeg er een toe via Instellingen ▸ Sleutels",
+            "keydb_download_failed": "Downloaden mislukt: {error}",
+            "keydb_download_empty": "Download was leeg",
+            "keydb_updated": "keydb bijgewerkt — {entries} items ({kb} KB) geschreven naar {path}",
+            "keydb_rejected": "keydb geweigerd: E{code}",
+            "update_failed": "Controle op updates mislukt: {error}",
+            "update_none_published": "Controle op updates: nog geen releases gepubliceerd.",
+            "update_http_status": "Controle op updates mislukt: server gaf {code} terug",
+            "update_bad_response": "Controle op updates mislukt: ongeldig antwoord ({error})",
+            "update_latest": "U gebruikt de nieuwste versie ({current}).",
+            "update_available": "Update beschikbaar: {latest} (u hebt {current}) — https://freemkv.org",
+            "update_no_version": "Controle op updates mislukt: geen versie in antwoord"
         },
         "alert": {
             "rip_title": "Er is een rip bezig.",
@@ -725,7 +762,9 @@
             "backup_prompt": "Back-uppen",
             "backup_msg": "Maak een back-up van de hele disc (alle titels, ontsleuteld) naar:",
             "open_prompt": "Openen",
-            "folder_msg": "Selecteer een VIDEO_TS- of BDMV-map"
+            "folder_msg": "Selecteer een VIDEO_TS- of BDMV-map",
+            "default_output_msg": "Kies de standaarduitvoermap",
+            "keydb_msg": "Kies het bestand keydb.cfg"
         },
         "about": {
             "version": "Versie:",
@@ -754,6 +793,69 @@
         },
         "notify": {
             "rip_finished_title": "Rip voltooid"
+        },
+        "dialog": {
+            "timer_failed": "freemkv kon de voortgangstimer niet starten ({error}). De rip loopt mogelijk nog, maar dit venster wordt niet bijgewerkt. Start freemkv opnieuw."
+        },
+        "lang": {
+            "eng": "Engels",
+            "spa": "Spaans",
+            "fra": "Frans",
+            "deu": "Duits",
+            "ita": "Italiaans",
+            "por": "Portugees",
+            "nld": "Nederlands",
+            "swe": "Zweeds",
+            "nor": "Noors",
+            "dan": "Deens",
+            "fin": "Fins",
+            "isl": "IJslands",
+            "pol": "Pools",
+            "ces": "Tsjechisch",
+            "slk": "Slowaaks",
+            "hun": "Hongaars",
+            "ron": "Roemeens",
+            "bul": "Bulgaars",
+            "ell": "Grieks",
+            "rus": "Russisch",
+            "ukr": "Oekraïens",
+            "tur": "Turks",
+            "heb": "Hebreeuws",
+            "ara": "Arabisch",
+            "hin": "Hindi",
+            "tha": "Thai",
+            "vie": "Vietnamees",
+            "ind": "Indonesisch",
+            "zho": "Chinees",
+            "jpn": "Japans",
+            "kor": "Koreaans",
+            "cat": "Catalaans",
+            "hrv": "Kroatisch",
+            "srp": "Servisch",
+            "slv": "Sloveens",
+            "est": "Estisch",
+            "lav": "Lets",
+            "lit": "Litouws"
+        },
+        "item": {
+            "title": "Titel {num}",
+            "chapter": "1 hoofdstuk",
+            "chapters": "{n} hoofdstukken",
+            "chapter_list": "Hoofdstukken",
+            "chapter_n": "Hoofdstuk {n}",
+            "tracks": "{n} sporen",
+            "forced": "Geforceerd",
+            "play_all": "Alles afspelen",
+            "episode": "Aflevering"
+        },
+        "pick": {
+            "titles": "Titels",
+            "audio": "Audio",
+            "subtitles": "Ondertitels",
+            "all": "Alle",
+            "none": "Geen",
+            "forced": "Alleen geforceerd",
+            "episodes": "Afleveringen"
         }
     },
     "warn": {
