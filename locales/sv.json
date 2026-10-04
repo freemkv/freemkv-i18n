@@ -841,6 +841,8 @@
             "title": "Titel {num}",
             "chapter": "1 kapitel",
             "chapters": "{n} kapitel",
+            "chapter_list": "Kapitel",
+            "chapter_n": "Kapitel {n}",
             "tracks": "{n} spår",
             "forced": "Tvingad",
             "play_all": "Spela alla",

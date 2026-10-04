@@ -841,6 +841,8 @@
             "title": "Titel {num}",
             "chapter": "1 kapitel",
             "chapters": "{n} kapitler",
+            "chapter_list": "Kapitler",
+            "chapter_n": "Kapitel {n}",
             "tracks": "{n} spor",
             "forced": "Tvungen",
             "play_all": "Afspil alle",

@@ -841,6 +841,8 @@
             "title": "{num}. cím",
             "chapter": "1 fejezet",
             "chapters": "{n} fejezet",
+            "chapter_list": "Fejezetek",
+            "chapter_n": "{n}. fejezet",
             "tracks": "{n} sáv",
             "forced": "Kényszerített",
             "play_all": "Összes lejátszása",

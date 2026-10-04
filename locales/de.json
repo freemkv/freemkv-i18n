@@ -841,6 +841,8 @@
             "title": "Titel {num}",
             "chapter": "1 Kapitel",
             "chapters": "{n} Kapitel",
+            "chapter_list": "Kapitel",
+            "chapter_n": "Kapitel {n}",
             "tracks": "{n} Spuren",
             "forced": "Erzwungen",
             "play_all": "Alle abspielen",

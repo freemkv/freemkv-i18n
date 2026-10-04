@@ -841,6 +841,8 @@
             "title": "Titolo {num}",
             "chapter": "1 capitolo",
             "chapters": "{n} capitoli",
+            "chapter_list": "Capitoli",
+            "chapter_n": "Capitolo {n}",
             "tracks": "{n} tracce",
             "forced": "Forzato",
             "play_all": "Riproduci tutto",

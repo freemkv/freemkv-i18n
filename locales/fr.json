@@ -841,6 +841,8 @@
             "title": "Titre {num}",
             "chapter": "1 chapitre",
             "chapters": "{n} chapitres",
+            "chapter_list": "Chapitres",
+            "chapter_n": "Chapitre {n}",
             "tracks": "{n} pistes",
             "forced": "Forcé",
             "play_all": "Tout lire",

@@ -841,6 +841,8 @@
             "title": "标题 {num}",
             "chapter": "1 个章节",
             "chapters": "{n} 个章节",
+            "chapter_list": "章节",
+            "chapter_n": "第 {n} 章",
             "tracks": "{n} 条轨道",
             "forced": "强制",
             "play_all": "全部播放",

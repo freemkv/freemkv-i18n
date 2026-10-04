@@ -841,6 +841,8 @@
             "title": "Nimike {num}",
             "chapter": "1 luku",
             "chapters": "{n} lukua",
+            "chapter_list": "Luvut",
+            "chapter_n": "Luku {n}",
             "tracks": "{n} raitaa",
             "forced": "Pakotettu",
             "play_all": "Toista kaikki",

@@ -841,6 +841,8 @@
             "title": "Тайтл {num}",
             "chapter": "1 глава",
             "chapters": "Глав: {n}",
+            "chapter_list": "Главы",
+            "chapter_n": "Глава {n}",
             "tracks": "Дорожек: {n}",
             "forced": "Форсированные",
             "play_all": "Воспроизвести всё",

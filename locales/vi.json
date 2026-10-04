@@ -841,6 +841,8 @@
             "title": "Tiêu đề {num}",
             "chapter": "1 chương",
             "chapters": "{n} chương",
+            "chapter_list": "Chương",
+            "chapter_n": "Chương {n}",
             "tracks": "{n} rãnh",
             "forced": "Bắt buộc",
             "play_all": "Phát tất cả",

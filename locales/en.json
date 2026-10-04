@@ -841,6 +841,8 @@
             "title": "Title {num}",
             "chapter": "1 chapter",
             "chapters": "{n} chapters",
+            "chapter_list": "Chapters",
+            "chapter_n": "Chapter {n}",
             "tracks": "{n} tracks",
             "forced": "Forced",
             "play_all": "Play all",

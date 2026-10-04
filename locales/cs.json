@@ -841,6 +841,8 @@
             "title": "Titul {num}",
             "chapter": "1 kapitola",
             "chapters": "Kapitoly: {n}",
+            "chapter_list": "Kapitoly",
+            "chapter_n": "Kapitola {n}",
             "tracks": "Stopy: {n}",
             "forced": "Vynucené",
             "play_all": "Přehrát vše",

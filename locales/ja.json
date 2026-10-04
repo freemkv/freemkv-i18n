@@ -841,6 +841,8 @@
             "title": "タイトル {num}",
             "chapter": "1 チャプター",
             "chapters": "{n} チャプター",
+            "chapter_list": "チャプター",
+            "chapter_n": "チャプター {n}",
             "tracks": "{n} トラック",
             "forced": "強制",
             "play_all": "すべて再生",

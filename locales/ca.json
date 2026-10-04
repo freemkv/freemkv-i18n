@@ -841,6 +841,8 @@
             "title": "Títol {num}",
             "chapter": "1 capítol",
             "chapters": "{n} capítols",
+            "chapter_list": "Capítols",
+            "chapter_n": "Capítol {n}",
             "tracks": "{n} pistes",
             "forced": "Forçat",
             "play_all": "Reproduir-ho tot",

@@ -841,6 +841,8 @@
             "title": "Tittel {num}",
             "chapter": "1 kapittel",
             "chapters": "{n} kapitler",
+            "chapter_list": "Kapitler",
+            "chapter_n": "Kapittel {n}",
             "tracks": "{n} spor",
             "forced": "Tvunget",
             "play_all": "Spill av alle",

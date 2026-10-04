@@ -841,6 +841,8 @@
             "title": "Tytuł {num}",
             "chapter": "1 rozdział",
             "chapters": "Rozdziały: {n}",
+            "chapter_list": "Rozdziały",
+            "chapter_n": "Rozdział {n}",
             "tracks": "Ścieżki: {n}",
             "forced": "Wymuszone",
             "play_all": "Odtwórz wszystko",

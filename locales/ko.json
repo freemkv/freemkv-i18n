@@ -841,6 +841,8 @@
             "title": "타이틀 {num}",
             "chapter": "챕터 1개",
             "chapters": "챕터 {n}개",
+            "chapter_list": "챕터",
+            "chapter_n": "챕터 {n}",
             "tracks": "트랙 {n}개",
             "forced": "강제",
             "play_all": "모두 재생",

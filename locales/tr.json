@@ -841,6 +841,8 @@
             "title": "Başlık {num}",
             "chapter": "1 bölüm",
             "chapters": "{n} bölüm",
+            "chapter_list": "Bölümler",
+            "chapter_n": "Bölüm {n}",
             "tracks": "{n} parça",
             "forced": "Zorlanmış",
             "play_all": "Tümünü oynat",

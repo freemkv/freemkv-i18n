@@ -841,6 +841,8 @@
             "title": "Titel {num}",
             "chapter": "1 hoofdstuk",
             "chapters": "{n} hoofdstukken",
+            "chapter_list": "Hoofdstukken",
+            "chapter_n": "Hoofdstuk {n}",
             "tracks": "{n} sporen",
             "forced": "Geforceerd",
             "play_all": "Alles afspelen",

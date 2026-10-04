@@ -841,6 +841,8 @@
             "title": "Титул {num}",
             "chapter": "1 розділ",
             "chapters": "Розділів: {n}",
+            "chapter_list": "Розділи",
+            "chapter_n": "Розділ {n}",
             "tracks": "Доріжок: {n}",
             "forced": "Примусові",
             "play_all": "Відтворити все",

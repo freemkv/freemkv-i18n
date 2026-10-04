@@ -841,6 +841,8 @@
             "title": "Judul {num}",
             "chapter": "1 bab",
             "chapters": "{n} bab",
+            "chapter_list": "Bab",
+            "chapter_n": "Bab {n}",
             "tracks": "{n} trek",
             "forced": "Paksa",
             "play_all": "Putar semua",

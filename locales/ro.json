@@ -841,6 +841,8 @@
             "title": "Titlul {num}",
             "chapter": "1 capitol",
             "chapters": "{n} capitole",
+            "chapter_list": "Capitole",
+            "chapter_n": "Capitolul {n}",
             "tracks": "{n} piste",
             "forced": "Forțat",
             "play_all": "Redă tot",
