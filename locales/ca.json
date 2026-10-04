@@ -298,6 +298,7 @@
         "E7106": "Al bloc de claus AACS 2.1 d'aquest disc li falta la taula de variants, de manera que no se'n pot derivar la clau. Pot ser que el disc estigui malmès.",
         "E7107": "El bloc de claus AACS 2.1 d'aquest disc apunta fora de les seves dades de claus de variants, de manera que no se'n pot derivar la clau. Pot ser que el disc estigui malmès.",
         "E7108": "La clau derivada del bloc de claus AACS 2.1 d'aquest disc no ha superat la verificació i no s'ha utilitzat. Actualitzeu la vostra base de dades de claus i torneu-ho a provar.",
+        "E7109": "El bloc de claus AACS d'aquest disc és d'una classe no compatible, de manera que no se'n pot derivar cap clau.",
         "E8000": "No es pot connectar al servidor de la base de dades de claus: {detail}",
         "E8001": "Ha fallat la baixada de la base de dades de claus (HTTP {detail}). Torneu a provar l'actualització.",
         "E8002": "La base de dades de claus és buida o no és vàlida. Torneu-la a baixar.",

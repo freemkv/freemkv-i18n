@@ -298,6 +298,7 @@
         "E7106": "Khối khóa AACS 2.1 của đĩa này thiếu bảng biến thể nên không thể suy ra khóa của đĩa. Đĩa có thể bị hỏng.",
         "E7107": "Khối khóa AACS 2.1 của đĩa này trỏ ra ngoài dữ liệu khóa biến thể của nó nên không thể suy ra khóa của đĩa. Đĩa có thể bị hỏng.",
         "E7108": "Khóa suy ra từ khối khóa AACS 2.1 của đĩa này không vượt qua kiểm tra và đã không được dùng. Hãy làm mới cơ sở dữ liệu khóa rồi thử lại.",
+        "E7109": "Khối khóa AACS của đĩa này thuộc một lớp không được hỗ trợ, nên không thể suy ra khóa nào từ nó.",
         "E8000": "Không thể kết nối tới máy chủ cơ sở dữ liệu khóa: {detail}",
         "E8001": "Tải cơ sở dữ liệu khóa thất bại (HTTP {detail}). Hãy thử cập nhật lại.",
         "E8002": "Cơ sở dữ liệu khóa trống hoặc không hợp lệ. Hãy tải lại.",

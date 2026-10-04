@@ -275,6 +275,7 @@
         "E7106": "Dem AACS-2.1-Schlüsselblock dieser Disc fehlt die Variantentabelle, daher kann ihr Schlüssel nicht abgeleitet werden. Die Disc ist möglicherweise beschädigt.",
         "E7107": "Der AACS-2.1-Schlüsselblock dieser Disc verweist außerhalb seiner Varianten-Schlüsseldaten, daher kann ihr Schlüssel nicht abgeleitet werden. Die Disc ist möglicherweise beschädigt.",
         "E7108": "Der aus dem AACS-2.1-Schlüsselblock dieser Disc abgeleitete Schlüssel hat die Prüfung nicht bestanden und wurde nicht verwendet. Aktualisieren Sie Ihre Schlüsseldatenbank und versuchen Sie es erneut.",
+        "E7109": "Der AACS-Schlüsselblock dieser Disc gehört zu einer nicht unterstützten Klasse, daher kann daraus kein Schlüssel abgeleitet werden.",
         "E8000": "Verbindung zum KEYDB-Server nicht möglich: {detail}",
         "E8001": "Der Download der Schlüsseldatenbank ist fehlgeschlagen (HTTP {detail}). Versuchen Sie die Aktualisierung erneut.",
         "E8002": "Die Schlüsseldatenbank ist leer oder ungültig. Laden Sie sie erneut herunter.",

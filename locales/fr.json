@@ -275,6 +275,7 @@
         "E7106": "Il manque la table des variantes dans le bloc de clés AACS 2.1 de ce disque, sa clé ne peut donc pas être dérivée. Le disque est peut-être endommagé.",
         "E7107": "Le bloc de clés AACS 2.1 de ce disque pointe en dehors de ses données de clés de variantes, sa clé ne peut donc pas être dérivée. Le disque est peut-être endommagé.",
         "E7108": "La clé dérivée du bloc de clés AACS 2.1 de ce disque a échoué à la vérification et n'a pas été utilisée. Actualisez votre base de données de clés et réessayez.",
+        "E7109": "Le bloc de clés AACS de ce disque est d'une classe non prise en charge ; aucune clé ne peut en être dérivée.",
         "E8000": "Impossible de se connecter au serveur KEYDB : {detail}",
         "E8001": "Le téléchargement de la base de clés a échoué (HTTP {detail}). Réessayez la mise à jour.",
         "E8002": "La base de clés est vide ou invalide. Retéléchargez-la.",

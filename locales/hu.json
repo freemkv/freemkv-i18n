@@ -298,6 +298,7 @@
         "E7106": "A lemez AACS 2.1 kulcsblokkjából hiányzik a változattábla, ezért a kulcsa nem származtatható. Lehet, hogy a lemez sérült.",
         "E7107": "A lemez AACS 2.1 kulcsblokkja a változatkulcs-adatain kívülre mutat, ezért a kulcsa nem származtatható. Lehet, hogy a lemez sérült.",
         "E7108": "A lemez AACS 2.1 kulcsblokkjából származtatott kulcs nem ment át az ellenőrzésen, ezért nem lett felhasználva. Frissítse a kulcsadatbázist, és próbálja újra.",
+        "E7109": "A lemez AACS-kulcsblokkja nem támogatott osztályba tartozik, így nem vezethető le belőle kulcs.",
         "E8000": "Nem sikerült csatlakozni a kulcsadatbázis-kiszolgálóhoz: {detail}",
         "E8001": "A kulcsadatbázis letöltése sikertelen (HTTP {detail}). Próbáld meg újra a frissítést.",
         "E8002": "A kulcsadatbázis üres vagy érvénytelen. Töltsd le újra.",

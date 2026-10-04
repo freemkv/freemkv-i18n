@@ -275,6 +275,7 @@
         "E7106": "Al bloque de claves AACS 2.1 de este disco le falta la tabla de variantes, por lo que no se puede derivar su clave. Es posible que el disco esté dañado.",
         "E7107": "El bloque de claves AACS 2.1 de este disco apunta fuera de sus datos de claves de variantes, por lo que no se puede derivar su clave. Es posible que el disco esté dañado.",
         "E7108": "La clave derivada del bloque de claves AACS 2.1 de este disco no superó la verificación y no se utilizó. Actualice su base de datos de claves y vuelva a intentarlo.",
+        "E7109": "El bloque de claves AACS de este disco es de una clase no compatible, por lo que no se puede derivar ninguna clave.",
         "E8000": "No se puede conectar al servidor KEYDB: {detail}",
         "E8001": "La descarga de la base de datos de claves falló (HTTP {detail}). Vuelva a intentar la actualización.",
         "E8002": "La base de datos de claves está vacía o no es válida. Vuelva a descargarla.",

@@ -298,6 +298,7 @@
         "E7106": "Skivans AACS 2.1-nyckelblock saknar sin varianttabell, så dess nyckel kan inte härledas. Skivan kan vara skadad.",
         "E7107": "Skivans AACS 2.1-nyckelblock pekar utanför sina variantnyckeldata, så dess nyckel kan inte härledas. Skivan kan vara skadad.",
         "E7108": "Nyckeln som härleddes från skivans AACS 2.1-nyckelblock klarade inte kontrollen och användes inte. Uppdatera din nyckeldatabas och försök igen.",
+        "E7109": "Skivans AACS-nyckelblock är av en klass som inte stöds, så ingen nyckel kan härledas från det.",
         "E8000": "Kan inte ansluta till nyckeldatabasservern: {detail}",
         "E8001": "Nedladdning av nyckeldatabas misslyckades (HTTP {detail}). Försök uppdateringen igen.",
         "E8002": "Nyckeldatabasen är tom eller ogiltig. Ladda ner den på nytt.",

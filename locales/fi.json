@@ -298,6 +298,7 @@
         "E7106": "Tämän levyn AACS 2.1 -avainlohkosta puuttuu varianttitaulukko, joten sen avainta ei voi johtaa. Levy saattaa olla vaurioitunut.",
         "E7107": "Tämän levyn AACS 2.1 -avainlohko viittaa varianttiavaintietojensa ulkopuolelle, joten sen avainta ei voi johtaa. Levy saattaa olla vaurioitunut.",
         "E7108": "Tämän levyn AACS 2.1 -avainlohkosta johdettu avain ei läpäissyt tarkistusta, eikä sitä käytetty. Päivitä avaintietokantasi ja yritä uudelleen.",
+        "E7109": "Levyn AACS-avainlohko on luokkaa, jota ei tueta, joten siitä ei voi johtaa avainta.",
         "E8000": "Avaintietokantapalvelimeen ei saada yhteyttä: {detail}",
         "E8001": "Avaintietokannan lataus epäonnistui (HTTP {detail}). Yritä päivitystä uudelleen.",
         "E8002": "Avaintietokanta on tyhjä tai virheellinen. Lataa se uudelleen.",

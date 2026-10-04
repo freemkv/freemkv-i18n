@@ -275,6 +275,7 @@
         "E7106": "Nel blocco di chiavi AACS 2.1 di questo disco manca la tabella delle varianti, quindi la sua chiave non può essere derivata. Il disco potrebbe essere danneggiato.",
         "E7107": "Il blocco di chiavi AACS 2.1 di questo disco punta al di fuori dei suoi dati delle chiavi di variante, quindi la sua chiave non può essere derivata. Il disco potrebbe essere danneggiato.",
         "E7108": "La chiave derivata dal blocco di chiavi AACS 2.1 di questo disco non ha superato la verifica e non è stata usata. Aggiorni il database delle chiavi e riprovi.",
+        "E7109": "Il blocco chiavi AACS di questo disco è di una classe non supportata, quindi non è possibile ricavarne alcuna chiave.",
         "E8000": "Impossibile connettersi al server KEYDB: {detail}",
         "E8001": "Il download del database delle chiavi non è riuscito (HTTP {detail}). Riprova l'aggiornamento.",
         "E8002": "Il database delle chiavi è vuoto o non valido. Scaricalo di nuovo.",

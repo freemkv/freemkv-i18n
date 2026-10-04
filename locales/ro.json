@@ -298,6 +298,7 @@
         "E7106": "Din blocul de chei AACS 2.1 al acestui disc lipsește tabelul de variante, așa că cheia sa nu poate fi derivată. Discul poate fi deteriorat.",
         "E7107": "Blocul de chei AACS 2.1 al acestui disc indică în afara datelor sale de chei de variante, așa că cheia sa nu poate fi derivată. Discul poate fi deteriorat.",
         "E7108": "Cheia derivată din blocul de chei AACS 2.1 al acestui disc nu a trecut verificarea și nu a fost folosită. Actualizați baza de date de chei și încercați din nou.",
+        "E7109": "Blocul de chei AACS al acestui disc este dintr-o clasă neacceptată, deci nu se poate deriva nicio cheie din el.",
         "E8000": "Nu se poate conecta la serverul bazei de date de chei: {detail}",
         "E8001": "Descărcarea bazei de date de chei a eșuat (HTTP {detail}). Încearcă din nou actualizarea.",
         "E8002": "Baza de date de chei este goală sau invalidă. Descarc-o din nou.",

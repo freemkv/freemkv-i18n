@@ -298,6 +298,7 @@
         "E7106": "W bloku kluczy AACS 2.1 tej płyty brakuje tabeli wariantów, więc nie można wyprowadzić jej klucza. Płyta może być uszkodzona.",
         "E7107": "Blok kluczy AACS 2.1 tej płyty wskazuje poza swoje dane kluczy wariantów, więc nie można wyprowadzić jej klucza. Płyta może być uszkodzona.",
         "E7108": "Klucz wyprowadzony z bloku kluczy AACS 2.1 tej płyty nie przeszedł weryfikacji i nie został użyty. Odśwież bazę kluczy i spróbuj ponownie.",
+        "E7109": "Blok kluczy AACS tej płyty należy do nieobsługiwanej klasy, więc nie można z niego wyprowadzić klucza.",
         "E8000": "Nie można połączyć się z serwerem bazy kluczy: {detail}",
         "E8001": "Pobieranie bazy kluczy nie powiodło się (HTTP {detail}). Spróbuj ponownie zaktualizować.",
         "E8002": "Baza kluczy jest pusta lub nieprawidłowa. Pobierz ją ponownie.",
