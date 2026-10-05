@@ -1,9 +1,11 @@
 # Changelog
 
-## [Unreleased]
+## [1.8.0] — Unreleased
 
 ### Added
 
+- `error.E7109` (an AACS key block of a class freemkv cannot process) in all 29 locales.
+- `gui.item.*` and `gui.col.item`/`lang`/`notes`: the title tree's item names (Title, Chapters, Chapter N, Play all, Forced) and its Item, Language and Notes columns, in all 29 locales.
 - `error.E9077`–`error.E9084` (libfreemkv's remux verify, incomplete mux, staging path, staged copy size, lost copy/verify worker, multipass-requires-raw, unknown stream language and remux target exists codes) in all 29 locales.
 - 36 keys freemkv looked up with an English fallback, translated in all 29 locales: `gui.log.*` (eject, folder/URL/file-chooser and scan failures), `gui.menu.cut`/`paste`, `gui.btn.show_folder`, `gui.notify.rip_finished_title`, `gui.set.notify_when_rip_finished`, `disc.capture_*`, `drive.share_image_note`/`structure_unreadable`/`submit_affirmative`, four `error.*`, `mux.undelivered_header`, `share.*`.
 - CI `freemkv-key-drift`: fails when a freemkv fallback key is missing from en.json or its English differs.
