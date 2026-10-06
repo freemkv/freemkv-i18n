@@ -4,7 +4,7 @@
 
 use serde_json::Value;
 use std::collections::HashMap;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
 #[derive(Debug, Clone, PartialEq)]
 enum Tok {
@@ -599,6 +599,23 @@ fn rust_files(dir: &Path, out: &mut Vec<std::path::PathBuf>) {
     }
 }
 
+/// Files declared as `#[cfg(test)] #[path = "x.rs"] mod ...;` side files. They are test code,
+/// which `strip_tests_and_uses` drops when it is inline, so they are not scanned as call sites.
+fn cfg_test_side_files(sources: &[(PathBuf, String)]) -> std::collections::HashSet<PathBuf> {
+    let mut out = std::collections::HashSet::new();
+    for (path, text) in sources {
+        let flat: String = text.split_whitespace().collect();
+        let mut rest = flat.as_str();
+        while let Some(at) = rest.find("#[cfg(test)]#[path=\"") {
+            rest = &rest[at + "#[cfg(test)]#[path=\"".len()..];
+            if let Some(end) = rest.find('"') {
+                out.insert(path.parent().unwrap().join(&rest[..end]));
+            }
+        }
+    }
+    out
+}
+
 #[test]
 fn freemkv_fallback_keys_ship_in_english_with_the_same_text() {
     let Some(src) = std::env::var_os("FREEMKV_SRC") else {
@@ -610,6 +627,12 @@ fn freemkv_fallback_keys_ship_in_english_with_the_same_text() {
     let mut files = Vec::new();
     rust_files(Path::new(&src), &mut files);
     files.sort();
+    let sources: Vec<(PathBuf, String)> = files
+        .iter()
+        .map(|f| (f.clone(), std::fs::read_to_string(f).unwrap()))
+        .collect();
+    let side_tests = cfg_test_side_files(&sources);
+    files.retain(|f| !side_tests.contains(f));
     let mut checked: Vec<(String, String, String)> = Vec::new();
     let mut problems = Vec::new();
     let mut used = vec![false; ALLOWLIST.len()];
