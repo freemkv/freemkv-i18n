@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.1] — Unreleased
+
+### Changed
+
+- The freemkv key-drift check skips `#[cfg(test)] #[path]` test side files, as it skipped inline test modules. Unit tests live in side files. No catalogue change.
+
 ## [1.8.0] — 2026-10-05
 
 ### Added
