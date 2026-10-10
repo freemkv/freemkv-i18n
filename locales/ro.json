@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Selectează titlul (începe de la 1, repetabil). Implicit: titlul principal (titlul 1); folosește -t all pentru fiecare titlu.",
             "audio": "  -a, --audio LANGS   Păstrează doar aceste limbi audio (nume sau coduri ISO, separate prin virgulă, fără sensibilitate la majuscule) sau all/none. Implicit: păstrează toate.",
+            "presentation_language": "      --presentation-language de  Alege o prezentare lingvistică creată de autor; independent de --audio all",
             "subtitles": "  -s, --subtitles LANGS  Păstrează doar aceste limbi de subtitrare (nume sau coduri ISO, separate prin virgulă, fără sensibilitate la majuscule) sau all/none. Implicit: păstrează toate.",
             "keydb": "      --keydb PATH    Calea KEYDB.cfg (sursă locală de chei)",
             "key_url_1": "      --key-url URL   URL de bază al serviciului de chei online (doar https).",

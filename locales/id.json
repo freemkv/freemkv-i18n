@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Pilih judul (berbasis 1, dapat diulang). Default: judul utama (judul 1); gunakan -t all untuk setiap judul.",
             "audio": "  -a, --audio LANGS   Simpan hanya bahasa audio ini (nama atau kode ISO, dipisah koma, tidak peka huruf besar-kecil), atau all/none. Default: simpan semua.",
+            "presentation_language": "      --presentation-language de  Pilih presentasi bahasa buatan pembuat; tidak bergantung pada --audio all",
             "subtitles": "  -s, --subtitles LANGS  Simpan hanya bahasa subtitle ini (nama atau kode ISO, dipisah koma, tidak peka huruf besar-kecil), atau all/none. Default: simpan semua.",
             "keydb": "      --keydb PATH    Path KEYDB.cfg (sumber kunci lokal)",
             "key_url_1": "      --key-url URL   URL dasar layanan kunci online (hanya https).",

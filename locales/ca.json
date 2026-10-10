@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Selecciona el títol (des d'1, repetible). Per defecte: el títol principal (títol 1); useu -t all per a tots els títols.",
             "audio": "  -a, --audio LANGS   Conserva només aquests idiomes d'àudio (noms o codis ISO, separats per comes, sense distingir majúscules), o all/none. Per defecte: conserva'ls tots.",
+            "presentation_language": "      --presentation-language de  Tria una presentació d'idioma creada per l'autor; independent de --audio all",
             "subtitles": "  -s, --subtitles LANGS  Conserva només aquests idiomes de subtítols (noms o codis ISO, separats per comes, sense distingir majúscules), o all/none. Per defecte: conserva'ls tots.",
             "keydb": "      --keydb PATH    Camí de KEYDB.cfg (font de claus local)",
             "key_url_1": "      --key-url URL   URL base del servei de claus en línia (només https).",

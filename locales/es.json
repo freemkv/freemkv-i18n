@@ -475,6 +475,7 @@
         "flag": {
             "title": "  -t, --title N       Seleccionar título (base 1, repetible). Predeterminado: el título principal (título 1); usa -t all para todos.",
             "audio": "  -a, --audio IDIOMAS Conservar solo estos idiomas de audio (nombres o códigos ISO, separados por comas, sin distinción de mayúsculas), o all/none. Predeterminado: conservar todos.",
+            "presentation_language": "      --presentation-language de  Elegir una presentación de idioma creada por el autor; independiente de --audio all",
             "subtitles": "  -s, --subtitles IDIOMAS  Conservar solo estos idiomas de subtítulos (nombres o códigos ISO, separados por comas, sin distinción de mayúsculas), o all/none. Predeterminado: conservar todos.",
             "keydb": "      --keydb RUTA    Ruta a KEYDB.cfg (fuente de claves local)",
             "key_url_1": "      --key-url URL   URL base del servicio de claves en línea (solo https).",

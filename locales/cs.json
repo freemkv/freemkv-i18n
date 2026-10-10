@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Vybrat titul (od 1, opakovatelné). Výchozí: hlavní titul (titul 1); pro každý titul použijte -t all.",
             "audio": "  -a, --audio LANGS   Ponechat pouze tyto jazyky zvuku (názvy nebo kódy ISO, oddělené čárkami, bez ohledu na velikost písmen), nebo all/none. Výchozí: ponechat vše.",
+            "presentation_language": "      --presentation-language de  Vybrat jazykovou prezentaci připravenou autorem; nezávisí na --audio all",
             "subtitles": "  -s, --subtitles LANGS  Ponechat pouze tyto jazyky titulků (názvy nebo kódy ISO, oddělené čárkami, bez ohledu na velikost písmen), nebo all/none. Výchozí: ponechat vše.",
             "keydb": "      --keydb PATH    Cesta ke KEYDB.cfg (lokální zdroj klíčů)",
             "key_url_1": "      --key-url URL   Základní URL online služby klíčů (pouze https).",

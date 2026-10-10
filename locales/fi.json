@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Valitse nimike (1-pohjainen, toistettava). Oletus: päänimike (nimike 1); käytä -t all kaikille nimikkeille.",
             "audio": "  -a, --audio LANGS   Säilytä vain nämä äänikielet (nimet tai ISO-koodit, pilkuin eroteltuina, kirjainkoolla ei väliä) tai all/none. Oletus: säilytä kaikki.",
+            "presentation_language": "      --presentation-language de  Valitse tekijän laatima kieliversio; riippumaton valinnasta --audio all",
             "subtitles": "  -s, --subtitles LANGS  Säilytä vain nämä tekstityskielet (nimet tai ISO-koodit, pilkuin eroteltuina, kirjainkoolla ei väliä) tai all/none. Oletus: säilytä kaikki.",
             "keydb": "      --keydb PATH    KEYDB.cfg-polku (paikallinen avainlähde)",
             "key_url_1": "      --key-url URL   Verkkoavainpalvelun perus-URL (vain https).",

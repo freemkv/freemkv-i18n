@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Vælg titel (1-baseret, kan gentages). Standard: hovedtitlen (titel 1); brug -t all for hver titel.",
             "audio": "  -a, --audio LANGS   Behold kun disse lydsprog (navne eller ISO-koder, kommasepareret, versalufølsomt), eller all/none. Standard: behold alle.",
+            "presentation_language": "      --presentation-language de  Vælg en sprogpræsentation lavet af forfatteren; uafhængig af --audio all",
             "subtitles": "  -s, --subtitles LANGS  Behold kun disse undertekstsprog (navne eller ISO-koder, kommasepareret, versalufølsomt), eller all/none. Standard: behold alle.",
             "keydb": "      --keydb PATH    KEYDB.cfg-sti (lokal nøglekilde)",
             "key_url_1": "      --key-url URL   Basis-URL for online nøgletjeneste (kun https).",

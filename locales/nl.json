@@ -475,6 +475,7 @@
         "flag": {
             "title": "  -t, --title N       Titel selecteren (basis 1, herhaalbaar). Standaard: de hoofdtitel (titel 1); -t all voor alle titels.",
             "audio": "  -a, --audio TALEN   Alleen deze audiotalen behouden (namen of ISO-codes, kommagescheiden, niet hoofdlettergevoelig), of all/none. Standaard: alle behouden.",
+            "presentation_language": "      --presentation-language de  Kies een door de maker samengestelde taalversie; onafhankelijk van --audio all",
             "subtitles": "  -s, --subtitles TALEN    Alleen deze ondertiteltalen behouden (namen of ISO-codes, kommagescheiden, niet hoofdlettergevoelig), of all/none. Standaard: alle behouden.",
             "keydb": "      --keydb PAD     KEYDB.cfg-pad (lokale sleutelbron)",
             "key_url_1": "      --key-url URL   Basis-URL van de online sleuteldienst (alleen https).",

@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Vybrať titul (od 1, opakovateľné). Predvolene: hlavný titul (titul 1); použite -t all pre každý titul.",
             "audio": "  -a, --audio LANGS   Zachovať iba tieto jazyky zvuku (názvy alebo kódy ISO, oddelené čiarkou, nerozlišuje veľkosť písmen), alebo all/none. Predvolene: zachovať všetky.",
+            "presentation_language": "      --presentation-language de  Vybrať jazykovú prezentáciu pripravenú autorom; nezávisí od --audio all",
             "subtitles": "  -s, --subtitles LANGS  Zachovať iba tieto jazyky titulkov (názvy alebo kódy ISO, oddelené čiarkou, nerozlišuje veľkosť písmen), alebo all/none. Predvolene: zachovať všetky.",
             "keydb": "      --keydb PATH    Cesta KEYDB.cfg (lokálny zdroj kľúčov)",
             "key_url_1": "      --key-url URL   Základná URL online služby kľúčov (iba https).",

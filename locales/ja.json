@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       タイトルを選択（1 始まり、繰り返し可）。デフォルト: メインタイトル（タイトル 1）。すべてのタイトルには -t all を使用。",
             "audio": "  -a, --audio LANGS   これらの音声言語のみを保持（名称または ISO コード、カンマ区切り、大文字小文字を区別しない）、または all/none。デフォルト: すべて保持。",
+            "presentation_language": "      --presentation-language de  制作者が用意した言語版を選択（--audio all とは独立）",
             "subtitles": "  -s, --subtitles LANGS  これらの字幕言語のみを保持（名称または ISO コード、カンマ区切り、大文字小文字を区別しない）、または all/none。デフォルト: すべて保持。",
             "keydb": "      --keydb PATH    KEYDB.cfg のパス（ローカルキーソース）",
             "key_url_1": "      --key-url URL   オンライン鍵サービスのベース URL (https のみ)。",

@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Chọn tiêu đề (đánh số từ 1, lặp lại được). Mặc định: tiêu đề chính (tiêu đề 1); dùng -t all cho mọi tiêu đề.",
             "audio": "  -a, --audio LANGS   Chỉ giữ các ngôn ngữ âm thanh này (tên hoặc mã ISO, phân tách bằng dấu phẩy, không phân biệt hoa thường), hoặc all/none. Mặc định: giữ tất cả.",
+            "presentation_language": "      --presentation-language de  Chọn bản trình bày ngôn ngữ do tác giả soạn; độc lập với --audio all",
             "subtitles": "  -s, --subtitles LANGS  Chỉ giữ các ngôn ngữ phụ đề này (tên hoặc mã ISO, phân tách bằng dấu phẩy, không phân biệt hoa thường), hoặc all/none. Mặc định: giữ tất cả.",
             "keydb": "      --keydb PATH    Đường dẫn KEYDB.cfg (nguồn khóa cục bộ)",
             "key_url_1": "      --key-url URL   URL cơ sở của dịch vụ khoá trực tuyến (chỉ https).",

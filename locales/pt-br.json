@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Seleciona o título (com base em 1, repetível). Padrão: o título principal (título 1); use -t all para todos os títulos.",
             "audio": "  -a, --audio LANGS   Mantém apenas estes idiomas de áudio (nomes ou códigos ISO, separados por vírgula, sem distinção de maiúsculas/minúsculas), ou all/none. Padrão: manter todos.",
+            "presentation_language": "      --presentation-language de  Escolher uma apresentação de idioma criada pelo autor; independente de --audio all",
             "subtitles": "  -s, --subtitles LANGS  Mantém apenas estes idiomas de legenda (nomes ou códigos ISO, separados por vírgula, sem distinção de maiúsculas/minúsculas), ou all/none. Padrão: manter todos.",
             "keydb": "      --keydb PATH    Caminho do KEYDB.cfg (fonte de chaves local)",
             "key_url_1": "      --key-url URL   URL base do serviço de chaves online (apenas https).",

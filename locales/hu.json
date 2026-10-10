@@ -507,6 +507,7 @@
         "flag": {
             "title": "  -t, --title N       Cím kiválasztása (1-alapú, ismételhető). Alapértelmezés: a fő cím (1. cím); minden címhez használd a -t all kapcsolót.",
             "audio": "  -a, --audio LANGS   Csak ezeket a hangnyelveket tartsd meg (nevek vagy ISO-kódok, vesszővel elválasztva, kis- és nagybetűre érzéketlen), vagy all/none. Alapértelmezés: mind megtartva.",
+            "presentation_language": "      --presentation-language de  Szerzői nyelvi változat kiválasztása; független a --audio all beállítástól",
             "subtitles": "  -s, --subtitles LANGS  Csak ezeket a feliratnyelveket tartsd meg (nevek vagy ISO-kódok, vesszővel elválasztva, kis- és nagybetűre érzéketlen), vagy all/none. Alapértelmezés: mind megtartva.",
             "keydb": "      --keydb PATH    KEYDB.cfg elérési út (helyi kulcsforrás)",
             "key_url_1": "      --key-url URL   Az online kulcsszolgáltatás alap-URL-je (csak https).",

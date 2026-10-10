@@ -475,6 +475,7 @@
         "flag": {
             "title": "  -t, --title N       Titel auswählen (1-basiert, wiederholbar). Standard: der Hauptfilm (Titel 1); -t all für alle Titel.",
             "audio": "  -a, --audio SPR     Nur diese Audiosprachen behalten (Namen oder ISO-Codes, kommagetrennt, Groß-/Kleinschreibung egal), oder all/none. Standard: alle behalten.",
+            "presentation_language": "      --presentation-language de  Eine vom Autor erstellte Sprachfassung wählen; unabhängig von --audio all",
             "subtitles": "  -s, --subtitles SPR    Nur diese Untertitelsprachen behalten (Namen oder ISO-Codes, kommagetrennt, Groß-/Kleinschreibung egal), oder all/none. Standard: alle behalten.",
             "keydb": "      --keydb PFAD    KEYDB.cfg-Pfad (lokale Schlüsselquelle)",
             "key_url_1": "      --key-url URL   Basis-URL des Online-Schlüsseldienstes (nur https).",
