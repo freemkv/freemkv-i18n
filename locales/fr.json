@@ -426,6 +426,19 @@
         "title_changed": "Le titre {num} a changé entre deux analyses : attendu {expected}, le lecteur indique maintenant {found}. La liste des titres du disque a changé pendant l'extraction ; rien n'a été écrit pour ce titre.",
         "presentation_needs_scan": "La sélection par langue de présentation nécessite un disque analysé ; choisissez --title explicitement.",
         "selection_review": "La sélection du titre doit être vérifiée : {reason} ; choisissez --title explicitement.",
+        "selection_review_reason": {
+            "missing_episode_roster": "le disque n'a pas de liste d'épisodes d'origine",
+            "incomplete_episode_roster": "la liste d'épisodes d'origine du disque est incomplète",
+            "conflicting_episode_roster": "les listes d'épisodes d'origine du disque sont en conflit",
+            "invalid_episode_roster": "la liste d'épisodes d'origine du disque n'est pas valide",
+            "incomplete_launch_proof": "la séquence de lancement du disque est incomplète",
+            "invalid_launch_proof": "la séquence de lancement du disque n'est pas valide",
+            "missing_presentation_language": "le disque n'a pas de présentation dans la langue demandée",
+            "invalid_presentation_language": "la langue de présentation n'est pas valide",
+            "unmatched_presentation_language": "aucune présentation ne correspond à la langue de présentation",
+            "ambiguous_presentation_language": "plusieurs présentations correspondent à la langue de présentation",
+            "no_titles": "le disque n'a aucun titre exploitable"
+        },
         "plan": {
             "no_titles": "le disque n'a aucun titre exploitable",
             "no_outputs": "le plan n'a aucune sortie",

@@ -449,6 +449,19 @@
         "title_changed": "Judul {num} berubah di antara pemindaian: diharapkan {expected}, drive sekarang melaporkan {found}. Daftar judul disc berubah selama rip; tidak ada yang ditulis untuk judul ini.",
         "presentation_needs_scan": "Pemilihan berdasarkan bahasa presentasi memerlukan disc yang telah dipindai; pilih --title secara eksplisit.",
         "selection_review": "Pemilihan judul perlu ditinjau: {reason}; pilih --title secara eksplisit.",
+        "selection_review_reason": {
+            "missing_episode_roster": "disc tidak memiliki daftar episode bawaan",
+            "incomplete_episode_roster": "daftar episode bawaan disc tidak lengkap",
+            "conflicting_episode_roster": "daftar episode bawaan disc saling bertentangan",
+            "invalid_episode_roster": "daftar episode bawaan disc tidak valid",
+            "incomplete_launch_proof": "urutan peluncuran disc tidak lengkap",
+            "invalid_launch_proof": "urutan peluncuran disc tidak valid",
+            "missing_presentation_language": "disc tidak memiliki presentasi dalam bahasa yang diminta",
+            "invalid_presentation_language": "bahasa presentasi tidak valid",
+            "unmatched_presentation_language": "tidak ada presentasi yang cocok dengan bahasa presentasi",
+            "ambiguous_presentation_language": "lebih dari satu presentasi cocok dengan bahasa presentasi",
+            "no_titles": "disc tidak memiliki judul yang dapat digunakan"
+        },
         "plan": {
             "no_titles": "disc tidak memiliki judul yang dapat digunakan",
             "no_outputs": "rencana tidak memiliki output",

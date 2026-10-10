@@ -449,6 +449,19 @@
         "title_changed": "El títol {num} ha canviat entre anàlisis: s'esperava {expected}, però la unitat ara informa {found}. La llista de títols del disc ha canviat durant l'extracció; no s'ha escrit res per a aquest títol.",
         "presentation_needs_scan": "La selecció per llengua de presentació requereix un disc escanejat; trieu --title explícitament.",
         "selection_review": "La selecció del títol necessita revisió: {reason}; trieu --title explícitament.",
+        "selection_review_reason": {
+            "missing_episode_roster": "el disc no té una llista d'episodis original",
+            "incomplete_episode_roster": "la llista d'episodis original del disc és incompleta",
+            "conflicting_episode_roster": "les llistes d'episodis originals del disc es contradiuen",
+            "invalid_episode_roster": "la llista d'episodis original del disc no és vàlida",
+            "incomplete_launch_proof": "la seqüència d'inici del disc és incompleta",
+            "invalid_launch_proof": "la seqüència d'inici del disc no és vàlida",
+            "missing_presentation_language": "el disc no té cap presentació en la llengua sol·licitada",
+            "invalid_presentation_language": "la llengua de presentació no és vàlida",
+            "unmatched_presentation_language": "cap presentació coincideix amb la llengua de presentació",
+            "ambiguous_presentation_language": "més d'una presentació coincideix amb la llengua de presentació",
+            "no_titles": "el disc no té cap títol utilitzable"
+        },
         "plan": {
             "no_titles": "el disc no té cap títol utilitzable",
             "no_outputs": "el pla no té cap sortida",

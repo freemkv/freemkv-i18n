@@ -449,6 +449,19 @@
         "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano.",
         "presentation_needs_scan": "Wybór według języka prezentacji wymaga zeskanowanej płyty; wybierz jawnie --title.",
         "selection_review": "Wybór tytułu wymaga sprawdzenia: {reason}; wybierz jawnie --title.",
+        "selection_review_reason": {
+            "missing_episode_roster": "płyta nie ma oryginalnej listy odcinków",
+            "incomplete_episode_roster": "oryginalna lista odcinków na płycie jest niekompletna",
+            "conflicting_episode_roster": "oryginalne listy odcinków na płycie są ze sobą sprzeczne",
+            "invalid_episode_roster": "oryginalna lista odcinków na płycie jest nieprawidłowa",
+            "incomplete_launch_proof": "sekwencja uruchamiania płyty jest niekompletna",
+            "invalid_launch_proof": "sekwencja uruchamiania płyty jest nieprawidłowa",
+            "missing_presentation_language": "płyta nie ma prezentacji w żądanym języku",
+            "invalid_presentation_language": "język prezentacji jest nieprawidłowy",
+            "unmatched_presentation_language": "żadna prezentacja nie pasuje do języka prezentacji",
+            "ambiguous_presentation_language": "do języka prezentacji pasuje więcej niż jedna prezentacja",
+            "no_titles": "płyta nie ma żadnych użytecznych tytułów"
+        },
         "plan": {
             "no_titles": "płyta nie ma żadnych użytecznych tytułów",
             "no_outputs": "plan nie ma żadnych wyjść",

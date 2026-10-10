@@ -449,6 +449,19 @@
         "title_changed": "타이틀 {num}이(가) 스캔 사이에 변경되었습니다: 예상 {expected}, 드라이브의 현재 보고 {found}. 추출 중 디스크의 타이틀 목록이 바뀌었습니다. 이 타이틀에는 아무것도 기록되지 않았습니다.",
         "presentation_needs_scan": "프레젠테이션 언어로 선택하려면 스캔된 디스크가 필요합니다. --title을 명시적으로 지정하세요.",
         "selection_review": "타이틀 선택을 검토해야 합니다: {reason}. --title을 명시적으로 지정하세요.",
+        "selection_review_reason": {
+            "missing_episode_roster": "디스크에 저작된 에피소드 목록이 없습니다",
+            "incomplete_episode_roster": "디스크의 저작된 에피소드 목록이 불완전합니다",
+            "conflicting_episode_roster": "디스크의 저작된 에피소드 목록이 서로 충돌합니다",
+            "invalid_episode_roster": "디스크의 저작된 에피소드 목록이 올바르지 않습니다",
+            "incomplete_launch_proof": "디스크의 시작 시퀀스가 불완전합니다",
+            "invalid_launch_proof": "디스크의 시작 시퀀스가 올바르지 않습니다",
+            "missing_presentation_language": "디스크에 요청한 언어의 프레젠테이션이 없습니다",
+            "invalid_presentation_language": "프레젠테이션 언어가 올바르지 않습니다",
+            "unmatched_presentation_language": "프레젠테이션 언어와 일치하는 프레젠테이션이 없습니다",
+            "ambiguous_presentation_language": "프레젠테이션 언어와 일치하는 프레젠테이션이 둘 이상입니다",
+            "no_titles": "디스크에 사용할 수 있는 타이틀이 없습니다"
+        },
         "plan": {
             "no_titles": "디스크에 사용할 수 있는 타이틀이 없습니다",
             "no_outputs": "계획에 출력이 없습니다",

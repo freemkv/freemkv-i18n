@@ -449,6 +449,19 @@
         "title_changed": "Titel {num} ändrades mellan skanningarna: förväntade {expected}, enheten rapporterar nu {found}. Titellistan ändrades under rippningen; inget skrevs för den här titeln.",
         "presentation_needs_scan": "Val efter presentationsspråk kräver en skannad skiva; välj --title uttryckligen.",
         "selection_review": "Titelvalet behöver granskas: {reason}; välj --title uttryckligen.",
+        "selection_review_reason": {
+            "missing_episode_roster": "skivan har ingen ursprunglig avsnittslista",
+            "incomplete_episode_roster": "skivans ursprungliga avsnittslista är ofullständig",
+            "conflicting_episode_roster": "skivans ursprungliga avsnittslistor är motstridiga",
+            "invalid_episode_roster": "skivans ursprungliga avsnittslista är ogiltig",
+            "incomplete_launch_proof": "skivans startsekvens är ofullständig",
+            "invalid_launch_proof": "skivans startsekvens är ogiltig",
+            "missing_presentation_language": "skivan har ingen presentation på det begärda språket",
+            "invalid_presentation_language": "presentationsspråket är inte giltigt",
+            "unmatched_presentation_language": "ingen presentation matchar presentationsspråket",
+            "ambiguous_presentation_language": "fler än en presentation matchar presentationsspråket",
+            "no_titles": "skivan har inga användbara titlar"
+        },
         "plan": {
             "no_titles": "skivan har inga användbara titlar",
             "no_outputs": "planen har inga utdata",

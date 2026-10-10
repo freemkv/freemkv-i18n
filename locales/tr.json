@@ -449,6 +449,19 @@
         "title_changed": "Başlık {num} taramalar arasında değişti: beklenen {expected}, sürücü şimdi {found} bildiriyor. Başlık listesi kopyalama sırasında değişti; bu başlık için hiçbir şey yazılmadı.",
         "presentation_needs_scan": "Sunum diline göre seçim, taranmış bir disk gerektirir; --title seçeneğini açıkça belirtin.",
         "selection_review": "Başlık seçiminin gözden geçirilmesi gerekiyor: {reason}; --title seçeneğini açıkça belirtin.",
+        "selection_review_reason": {
+            "missing_episode_roster": "diskte özgün bir bölüm listesi yok",
+            "incomplete_episode_roster": "diskin özgün bölüm listesi eksik",
+            "conflicting_episode_roster": "diskin özgün bölüm listeleri çelişiyor",
+            "invalid_episode_roster": "diskin özgün bölüm listesi geçersiz",
+            "incomplete_launch_proof": "diskin başlatma sırası eksik",
+            "invalid_launch_proof": "diskin başlatma sırası geçersiz",
+            "missing_presentation_language": "diskte istenen dilde sunum yok",
+            "invalid_presentation_language": "sunum dili geçerli değil",
+            "unmatched_presentation_language": "hiçbir sunum sunum diliyle eşleşmiyor",
+            "ambiguous_presentation_language": "birden fazla sunum sunum diliyle eşleşiyor",
+            "no_titles": "diskte kullanılabilir başlık yok"
+        },
         "plan": {
             "no_titles": "diskte kullanılabilir başlık yok",
             "no_outputs": "planda çıktı yok",

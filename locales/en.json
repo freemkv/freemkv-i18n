@@ -449,6 +449,19 @@
         "title_changed": "Title {num} changed between scans: expected {expected}, the drive now reports {found}. The disc list moved under the rip; nothing was written for this title.",
         "presentation_needs_scan": "Presentation-language selection requires a scanned disc; choose --title explicitly.",
         "selection_review": "Title selection needs review: {reason}; choose --title explicitly.",
+        "selection_review_reason": {
+            "missing_episode_roster": "the disc has no authored episode list",
+            "incomplete_episode_roster": "the disc's authored episode list is incomplete",
+            "conflicting_episode_roster": "the disc's authored episode lists conflict",
+            "invalid_episode_roster": "the disc's authored episode list is invalid",
+            "incomplete_launch_proof": "the disc's launch sequence is incomplete",
+            "invalid_launch_proof": "the disc's launch sequence is invalid",
+            "missing_presentation_language": "the disc has no presentation in the requested language",
+            "invalid_presentation_language": "the presentation language is not valid",
+            "unmatched_presentation_language": "no presentation matches the presentation language",
+            "ambiguous_presentation_language": "more than one presentation matches the presentation language",
+            "no_titles": "the disc has no usable titles"
+        },
         "plan": {
             "no_titles": "the disc has no usable titles",
             "no_outputs": "the plan has no outputs",

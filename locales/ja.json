@@ -449,6 +449,19 @@
         "title_changed": "タイトル {num} がスキャン間で変化しました: 期待値 {expected}、ドライブの現在の報告 {found}。リッピング中にディスクのタイトル一覧が変わりました。このタイトルには何も書き込まれていません。",
         "presentation_needs_scan": "プレゼンテーション言語による選択にはスキャン済みのディスクが必要です。--title を明示的に指定してください。",
         "selection_review": "タイトルの選択を確認する必要があります: {reason}。--title を明示的に指定してください。",
+        "selection_review_reason": {
+            "missing_episode_roster": "ディスクにオーサリングされたエピソード一覧がありません",
+            "incomplete_episode_roster": "ディスクのオーサリングされたエピソード一覧が不完全です",
+            "conflicting_episode_roster": "ディスクのオーサリングされたエピソード一覧が競合しています",
+            "invalid_episode_roster": "ディスクのオーサリングされたエピソード一覧が無効です",
+            "incomplete_launch_proof": "ディスクの起動シーケンスが不完全です",
+            "invalid_launch_proof": "ディスクの起動シーケンスが無効です",
+            "missing_presentation_language": "ディスクに要求された言語のプレゼンテーションがありません",
+            "invalid_presentation_language": "プレゼンテーション言語が無効です",
+            "unmatched_presentation_language": "プレゼンテーション言語に一致するプレゼンテーションがありません",
+            "ambiguous_presentation_language": "プレゼンテーション言語に一致するプレゼンテーションが複数あります",
+            "no_titles": "ディスクに使用可能なタイトルがありません"
+        },
         "plan": {
             "no_titles": "ディスクに使用可能なタイトルがありません",
             "no_outputs": "プランに出力がありません",

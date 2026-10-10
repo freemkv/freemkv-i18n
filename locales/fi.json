@@ -449,6 +449,19 @@
         "title_changed": "Nimike {num} muuttui skannausten välillä: odotettiin {expected}, asema ilmoittaa nyt {found}. Levyn nimikeluettelo muuttui rippauksen aikana; tälle nimikkeelle ei kirjoitettu mitään.",
         "presentation_needs_scan": "Esityskielen mukainen valinta vaatii skannatun levyn; valitse --title erikseen.",
         "selection_review": "Nimikkeen valinta pitää tarkistaa: {reason}; valitse --title erikseen.",
+        "selection_review_reason": {
+            "missing_episode_roster": "levyllä ei ole alkuperäistä jaksoluetteloa",
+            "incomplete_episode_roster": "levyn alkuperäinen jaksoluettelo on epätäydellinen",
+            "conflicting_episode_roster": "levyn alkuperäiset jaksoluettelot ovat ristiriidassa",
+            "invalid_episode_roster": "levyn alkuperäinen jaksoluettelo on virheellinen",
+            "incomplete_launch_proof": "levyn käynnistysjakso on epätäydellinen",
+            "invalid_launch_proof": "levyn käynnistysjakso on virheellinen",
+            "missing_presentation_language": "levyllä ei ole esitystä pyydetyllä kielellä",
+            "invalid_presentation_language": "esityskieli ei kelpaa",
+            "unmatched_presentation_language": "mikään esitys ei vastaa esityskieltä",
+            "ambiguous_presentation_language": "useampi kuin yksi esitys vastaa esityskieltä",
+            "no_titles": "levyllä ei ole käyttökelpoisia nimikkeitä"
+        },
         "plan": {
             "no_titles": "levyllä ei ole käyttökelpoisia nimikkeitä",
             "no_outputs": "suunnitelmassa ei ole tulosteita",

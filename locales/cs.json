@@ -449,6 +449,19 @@
         "title_changed": "Titul {num} se mezi prohledáními změnil: očekáváno {expected}, mechanika nyní hlásí {found}. Seznam titulů na disku se během ripování změnil; pro tento titul nebylo nic zapsáno.",
         "presentation_needs_scan": "Výběr podle jazyka prezentace vyžaduje naskenovaný disk; zvolte --title výslovně.",
         "selection_review": "Výběr titulu je třeba zkontrolovat: {reason}; zvolte --title výslovně.",
+        "selection_review_reason": {
+            "missing_episode_roster": "disk nemá původní seznam epizod",
+            "incomplete_episode_roster": "původní seznam epizod na disku je neúplný",
+            "conflicting_episode_roster": "původní seznamy epizod na disku si odporují",
+            "invalid_episode_roster": "původní seznam epizod na disku je neplatný",
+            "incomplete_launch_proof": "spouštěcí sekvence disku je neúplná",
+            "invalid_launch_proof": "spouštěcí sekvence disku je neplatná",
+            "missing_presentation_language": "disk nemá prezentaci v požadovaném jazyce",
+            "invalid_presentation_language": "jazyk prezentace není platný",
+            "unmatched_presentation_language": "žádná prezentace neodpovídá jazyku prezentace",
+            "ambiguous_presentation_language": "jazyku prezentace odpovídá více než jedna prezentace",
+            "no_titles": "disk nemá žádné použitelné tituly"
+        },
         "plan": {
             "no_titles": "disk nemá žádné použitelné tituly",
             "no_outputs": "plán nemá žádné výstupy",

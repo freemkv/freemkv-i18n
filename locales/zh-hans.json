@@ -449,6 +449,19 @@
         "title_changed": "标题 {num} 在两次扫描之间发生了变化：预期为 {expected}，驱动器现在报告 {found}。抓取期间标题列表发生了变化；此标题未写入任何内容。",
         "presentation_needs_scan": "按演示语言选择需要已扫描的光盘；请明确指定 --title。",
         "selection_review": "标题选择需要复核：{reason}；请明确指定 --title。",
+        "selection_review_reason": {
+            "missing_episode_roster": "光盘没有原始剧集列表",
+            "incomplete_episode_roster": "光盘的原始剧集列表不完整",
+            "conflicting_episode_roster": "光盘的原始剧集列表相互冲突",
+            "invalid_episode_roster": "光盘的原始剧集列表无效",
+            "incomplete_launch_proof": "光盘的启动序列不完整",
+            "invalid_launch_proof": "光盘的启动序列无效",
+            "missing_presentation_language": "光盘没有所请求语言的演示",
+            "invalid_presentation_language": "演示语言无效",
+            "unmatched_presentation_language": "没有与演示语言匹配的演示",
+            "ambiguous_presentation_language": "有多个演示与演示语言匹配",
+            "no_titles": "光盘没有可用的标题"
+        },
         "plan": {
             "no_titles": "光盘没有可用的标题",
             "no_outputs": "计划没有输出",

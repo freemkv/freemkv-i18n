@@ -426,6 +426,19 @@
         "title_changed": "Titel {num} is tussen scans gewijzigd: verwacht {expected}, het station meldt nu {found}. De titellijst van de disc is tijdens het rippen veranderd; voor deze titel is niets geschreven.",
         "presentation_needs_scan": "Selectie op presentatietaal vereist een gescande schijf; kies expliciet --title.",
         "selection_review": "De titelselectie moet worden gecontroleerd: {reason}; kies expliciet --title.",
+        "selection_review_reason": {
+            "missing_episode_roster": "de schijf heeft geen oorspronkelijke afleveringslijst",
+            "incomplete_episode_roster": "de oorspronkelijke afleveringslijst van de schijf is onvolledig",
+            "conflicting_episode_roster": "de oorspronkelijke afleveringslijsten van de schijf spreken elkaar tegen",
+            "invalid_episode_roster": "de oorspronkelijke afleveringslijst van de schijf is ongeldig",
+            "incomplete_launch_proof": "de startvolgorde van de schijf is onvolledig",
+            "invalid_launch_proof": "de startvolgorde van de schijf is ongeldig",
+            "missing_presentation_language": "de schijf heeft geen presentatie in de gevraagde taal",
+            "invalid_presentation_language": "de presentatietaal is niet geldig",
+            "unmatched_presentation_language": "geen enkele presentatie komt overeen met de presentatietaal",
+            "ambiguous_presentation_language": "meer dan één presentatie komt overeen met de presentatietaal",
+            "no_titles": "de schijf heeft geen bruikbare titels"
+        },
         "plan": {
             "no_titles": "de schijf heeft geen bruikbare titels",
             "no_outputs": "het plan heeft geen uitvoer",

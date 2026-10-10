@@ -449,6 +449,19 @@
         "title_changed": "O título {num} mudou entre os escaneamentos: esperado {expected}, a unidade agora informa {found}. A lista de títulos do disco mudou durante a extração; nada foi gravado para este título.",
         "presentation_needs_scan": "A seleção por idioma de apresentação exige um disco escaneado; escolha --title explicitamente.",
         "selection_review": "A seleção de título precisa de revisão: {reason}; escolha --title explicitamente.",
+        "selection_review_reason": {
+            "missing_episode_roster": "o disco não tem uma lista de episódios original",
+            "incomplete_episode_roster": "a lista de episódios original do disco está incompleta",
+            "conflicting_episode_roster": "as listas de episódios originais do disco entram em conflito",
+            "invalid_episode_roster": "a lista de episódios original do disco é inválida",
+            "incomplete_launch_proof": "a sequência de inicialização do disco está incompleta",
+            "invalid_launch_proof": "a sequência de inicialização do disco é inválida",
+            "missing_presentation_language": "o disco não tem uma apresentação no idioma solicitado",
+            "invalid_presentation_language": "o idioma de apresentação não é válido",
+            "unmatched_presentation_language": "nenhuma apresentação corresponde ao idioma de apresentação",
+            "ambiguous_presentation_language": "mais de uma apresentação corresponde ao idioma de apresentação",
+            "no_titles": "o disco não tem títulos utilizáveis"
+        },
         "plan": {
             "no_titles": "o disco não tem títulos utilizáveis",
             "no_outputs": "o plano não tem saídas",

@@ -449,6 +449,19 @@
         "title_changed": "Tittel {num} endret seg mellom skanningene: forventet {expected}, stasjonen rapporterer nå {found}. Tittellisten på platen endret seg under rippingen; ingenting ble skrevet for denne tittelen.",
         "presentation_needs_scan": "Valg etter presentasjonsspråk krever en skannet plate; velg --title eksplisitt.",
         "selection_review": "Tittelvalget må gjennomgås: {reason}; velg --title eksplisitt.",
+        "selection_review_reason": {
+            "missing_episode_roster": "platen har ingen opprinnelig episodeliste",
+            "incomplete_episode_roster": "platens opprinnelige episodeliste er ufullstendig",
+            "conflicting_episode_roster": "platens opprinnelige episodelister er i konflikt",
+            "invalid_episode_roster": "platens opprinnelige episodeliste er ugyldig",
+            "incomplete_launch_proof": "platens oppstartssekvens er ufullstendig",
+            "invalid_launch_proof": "platens oppstartssekvens er ugyldig",
+            "missing_presentation_language": "platen har ingen presentasjon på det ønskede språket",
+            "invalid_presentation_language": "presentasjonsspråket er ikke gyldig",
+            "unmatched_presentation_language": "ingen presentasjon samsvarer med presentasjonsspråket",
+            "ambiguous_presentation_language": "mer enn én presentasjon samsvarer med presentasjonsspråket",
+            "no_titles": "platen har ingen brukbare titler"
+        },
         "plan": {
             "no_titles": "platen har ingen brukbare titler",
             "no_outputs": "planen har ingen utdata",

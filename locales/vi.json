@@ -449,6 +449,19 @@
         "title_changed": "Tiêu đề {num} đã thay đổi giữa các lần quét: dự kiến {expected}, ổ đĩa hiện báo {found}. Danh sách tiêu đề đã thay đổi trong khi trích xuất; không có gì được ghi cho tiêu đề này.",
         "presentation_needs_scan": "Việc chọn theo ngôn ngữ trình chiếu cần đĩa đã được quét; hãy chọn --title một cách rõ ràng.",
         "selection_review": "Việc chọn tiêu đề cần được xem xét: {reason}; hãy chọn --title một cách rõ ràng.",
+        "selection_review_reason": {
+            "missing_episode_roster": "đĩa không có danh sách tập gốc",
+            "incomplete_episode_roster": "danh sách tập gốc của đĩa không đầy đủ",
+            "conflicting_episode_roster": "các danh sách tập gốc của đĩa mâu thuẫn nhau",
+            "invalid_episode_roster": "danh sách tập gốc của đĩa không hợp lệ",
+            "incomplete_launch_proof": "trình tự khởi chạy của đĩa không đầy đủ",
+            "invalid_launch_proof": "trình tự khởi chạy của đĩa không hợp lệ",
+            "missing_presentation_language": "đĩa không có bản trình chiếu bằng ngôn ngữ được yêu cầu",
+            "invalid_presentation_language": "ngôn ngữ trình chiếu không hợp lệ",
+            "unmatched_presentation_language": "không có bản trình chiếu nào khớp với ngôn ngữ trình chiếu",
+            "ambiguous_presentation_language": "có nhiều hơn một bản trình chiếu khớp với ngôn ngữ trình chiếu",
+            "no_titles": "đĩa không có tiêu đề nào dùng được"
+        },
         "plan": {
             "no_titles": "đĩa không có tiêu đề nào dùng được",
             "no_outputs": "kế hoạch không có đầu ra nào",

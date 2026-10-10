@@ -426,6 +426,19 @@
         "title_changed": "Titel {num} hat sich zwischen den Scans geändert: erwartet {expected}, das Laufwerk meldet jetzt {found}. Die Titelliste der Disc hat sich während des Rips geändert; für diesen Titel wurde nichts geschrieben.",
         "presentation_needs_scan": "Die Auswahl nach Präsentationssprache erfordert eine gescannte Disc; wähle --title ausdrücklich.",
         "selection_review": "Die Titelauswahl muss geprüft werden: {reason}; wähle --title ausdrücklich.",
+        "selection_review_reason": {
+            "missing_episode_roster": "die Disc enthält keine vorgegebene Episodenliste",
+            "incomplete_episode_roster": "die vorgegebene Episodenliste der Disc ist unvollständig",
+            "conflicting_episode_roster": "die vorgegebenen Episodenlisten der Disc widersprechen sich",
+            "invalid_episode_roster": "die vorgegebene Episodenliste der Disc ist ungültig",
+            "incomplete_launch_proof": "die Startsequenz der Disc ist unvollständig",
+            "invalid_launch_proof": "die Startsequenz der Disc ist ungültig",
+            "missing_presentation_language": "die Disc enthält keine Präsentation in der gewünschten Sprache",
+            "invalid_presentation_language": "die Präsentationssprache ist ungültig",
+            "unmatched_presentation_language": "keine Präsentation entspricht der Präsentationssprache",
+            "ambiguous_presentation_language": "mehr als eine Präsentation entspricht der Präsentationssprache",
+            "no_titles": "die Disc hat keine verwendbaren Titel"
+        },
         "plan": {
             "no_titles": "die Disc hat keine verwendbaren Titel",
             "no_outputs": "der Plan enthält keine Ausgaben",

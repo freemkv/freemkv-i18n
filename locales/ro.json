@@ -449,6 +449,19 @@
         "title_changed": "Titlul {num} s-a schimbat între scanări: se aștepta {expected}, iar unitatea raportează acum {found}. Lista de titluri a discului s-a modificat în timpul extragerii; nu s-a scris nimic pentru acest titlu.",
         "presentation_needs_scan": "Selecția după limba de prezentare necesită un disc scanat; alege explicit --title.",
         "selection_review": "Selecția titlului necesită verificare: {reason}; alege explicit --title.",
+        "selection_review_reason": {
+            "missing_episode_roster": "discul nu are o listă de episoade originală",
+            "incomplete_episode_roster": "lista de episoade originală a discului este incompletă",
+            "conflicting_episode_roster": "listele de episoade originale ale discului sunt în conflict",
+            "invalid_episode_roster": "lista de episoade originală a discului nu este validă",
+            "incomplete_launch_proof": "secvența de pornire a discului este incompletă",
+            "invalid_launch_proof": "secvența de pornire a discului nu este validă",
+            "missing_presentation_language": "discul nu are o prezentare în limba solicitată",
+            "invalid_presentation_language": "limba de prezentare nu este validă",
+            "unmatched_presentation_language": "nicio prezentare nu corespunde limbii de prezentare",
+            "ambiguous_presentation_language": "mai multe prezentări corespund limbii de prezentare",
+            "no_titles": "discul nu are titluri utilizabile"
+        },
         "plan": {
             "no_titles": "discul nu are titluri utilizabile",
             "no_outputs": "planul nu are ieșiri",

@@ -449,6 +449,19 @@
         "title_changed": "A(z) {num}. cím megváltozott a beolvasások között: várt {expected}, a meghajtó most ezt jelenti: {found}. A lemez címlistája megváltozott kimásolás közben; ehhez a címhez semmi nem lett kiírva.",
         "presentation_needs_scan": "A megjelenítési nyelv szerinti választáshoz beolvasott lemez szükséges; adja meg kifejezetten a --title kapcsolót.",
         "selection_review": "A cím kiválasztását felül kell vizsgálni: {reason}; adja meg kifejezetten a --title kapcsolót.",
+        "selection_review_reason": {
+            "missing_episode_roster": "a lemezen nincs eredeti epizódlista",
+            "incomplete_episode_roster": "a lemez eredeti epizódlistája hiányos",
+            "conflicting_episode_roster": "a lemez eredeti epizódlistái ellentmondanak egymásnak",
+            "invalid_episode_roster": "a lemez eredeti epizódlistája érvénytelen",
+            "incomplete_launch_proof": "a lemez indítási sorozata hiányos",
+            "invalid_launch_proof": "a lemez indítási sorozata érvénytelen",
+            "missing_presentation_language": "a lemezen nincs megjelenítés a kért nyelven",
+            "invalid_presentation_language": "a megjelenítési nyelv érvénytelen",
+            "unmatched_presentation_language": "egyetlen megjelenítés sem felel meg a megjelenítési nyelvnek",
+            "ambiguous_presentation_language": "egynél több megjelenítés felel meg a megjelenítési nyelvnek",
+            "no_titles": "a lemezen nincs használható cím"
+        },
         "plan": {
             "no_titles": "a lemezen nincs használható cím",
             "no_outputs": "a tervben nincs kimenet",

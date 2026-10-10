@@ -449,6 +449,19 @@
         "title_changed": "標題 {num} 在兩次掃描之間有所變更：預期為 {expected}，光碟機目前回報 {found}。擷取期間標題清單已變更；此標題未寫入任何內容。",
         "presentation_needs_scan": "依簡報語言選擇需要已掃描的光碟；請明確指定 --title。",
         "selection_review": "標題選擇需要複核：{reason}；請明確指定 --title。",
+        "selection_review_reason": {
+            "missing_episode_roster": "光碟沒有原始劇集清單",
+            "incomplete_episode_roster": "光碟的原始劇集清單不完整",
+            "conflicting_episode_roster": "光碟的原始劇集清單相互衝突",
+            "invalid_episode_roster": "光碟的原始劇集清單無效",
+            "incomplete_launch_proof": "光碟的啟動序列不完整",
+            "invalid_launch_proof": "光碟的啟動序列無效",
+            "missing_presentation_language": "光碟沒有所要求語言的簡報",
+            "invalid_presentation_language": "簡報語言無效",
+            "unmatched_presentation_language": "沒有與簡報語言相符的簡報",
+            "ambiguous_presentation_language": "有多個簡報與簡報語言相符",
+            "no_titles": "光碟沒有可用的標題"
+        },
         "plan": {
             "no_titles": "光碟沒有可用的標題",
             "no_outputs": "計畫沒有輸出",

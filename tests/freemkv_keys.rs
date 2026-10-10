@@ -882,3 +882,81 @@ fn unresolvable_sites_are_reported_and_tables_are_read() {
         [("gui.format.iso".to_string(), "Whole disc".to_string())]
     );
 }
+
+/// Quoted string literals that start a `"..." =>` match arm in `body`.
+fn match_arm_keys(body: &str) -> Vec<String> {
+    body.lines()
+        .filter_map(|l| {
+            let l = l.trim();
+            let rest = l.strip_prefix('"')?;
+            let (key, tail) = rest.split_once('"')?;
+            tail.trim_start().starts_with("=>").then(|| key.to_string())
+        })
+        .collect()
+}
+
+/// The quoted string literal on the right of each `Self::Variant => "..."` arm in `body`.
+fn match_arm_values(body: &str) -> Vec<String> {
+    body.lines()
+        .filter_map(|l| {
+            let (_, rhs) = l.split_once("=>")?;
+            let rest = rhs.trim().strip_prefix('"')?;
+            Some(rest.split_once('"')?.0.to_string())
+        })
+        .collect()
+}
+
+/// The text of `fn name` from its signature to the next top-level `}` line.
+fn fn_body<'a>(src: &'a str, name: &str) -> &'a str {
+    let start = src
+        .find(&format!("fn {name}("))
+        .unwrap_or_else(|| panic!("fn {name} not found"));
+    let rest = &src[start..];
+    let end = rest
+        .find("\n    }\n")
+        .or_else(|| rest.find("\n}\n"))
+        .unwrap_or(rest.len());
+    &rest[..end]
+}
+
+/// Every selection-review reason the engine can emit (`SelectionReviewReason::key()`) plus
+/// freemkv's own `no-titles` must have an `error.selection_review_reason.<snake>` entry in
+/// en.json, so a new reason cannot ship untranslated. The key is the kebab key with `-` -> `_`,
+/// exactly as `review_reason_text` builds it.
+#[test]
+fn every_selection_review_reason_has_an_english_key() {
+    let Some(engine) = std::env::var_os("FREEMKV_ENGINE_SRC") else {
+        eprintln!("FREEMKV_ENGINE_SRC not set; skipping the selection-review reason key check");
+        return;
+    };
+    let engine_src = std::fs::read_to_string(Path::new(&engine).join("selection.rs")).unwrap();
+    let mut reasons = match_arm_values(fn_body(&engine_src, "key"));
+    assert!(
+        !reasons.is_empty(),
+        "found no SelectionReviewReason::key() arms"
+    );
+    if let Some(src) = std::env::var_os("FREEMKV_SRC") {
+        let strings = std::fs::read_to_string(Path::new(&src).join("strings.rs")).unwrap();
+        reasons.extend(match_arm_keys(fn_body(&strings, "review_reason_text")));
+    } else {
+        reasons.push("no-titles".into());
+    }
+    reasons.sort();
+    reasons.dedup();
+    let en_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("locales/en.json");
+    let en: Value = serde_json::from_str(&std::fs::read_to_string(en_path).unwrap()).unwrap();
+    let missing: Vec<String> = reasons
+        .iter()
+        .map(|r| format!("error.selection_review_reason.{}", r.replace('-', "_")))
+        .filter(|k| {
+            k.split('.')
+                .try_fold(&en, |v, part| v.get(part))
+                .and_then(Value::as_str)
+                .is_none()
+        })
+        .collect();
+    assert!(
+        missing.is_empty(),
+        "missing en.json reason keys: {missing:?}"
+    );
+}
