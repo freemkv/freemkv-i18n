@@ -436,6 +436,7 @@
         "E9083": "'{detail}' 不是 freemkv 能识别的语言。请更正语言，或使用 all/none。",
         "E9084": "{detail} 已存在。请移动或删除它，或选择替换它。",
         "E9085": "读取批大小为 0，无法读取任何内容。请至少设置为 1 个扇区。",
+        "E9086": "自动标题选择需要复核（{detail}），因此未进行任何翻录。请明确选择标题。",
         "no_lang_match_subtitle_forced": "此标题中没有与 '{requested}' 匹配的强制字幕（可用的强制字幕：{available}）。请更正语言，或使用 all/none。",
         "log_level_out_of_range": "--log-level：值 0 超出范围 (1–4)，已忽略",
         "log_level_not_a_number": "--log-level：需要 1–4 的数字，收到 '{value}'，已忽略",
