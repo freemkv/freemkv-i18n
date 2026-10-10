@@ -423,7 +423,16 @@
         "disc_scan_all_titles_failed": "Error: no se ha podido escanear el disco para obtener la lista de títulos, por lo que `-t all` no puede saber qué títulos extraer. No se ha extraído nada: compruebe el disco y la unidad e inténtelo de nuevo.",
         "log_file_needs_value": "--log-file: requiere una ruta (p. ej. --log-file freemkv.log)",
         "mux_failed_generic": "Error de multiplexado (E{code}).",
-        "title_changed": "El título {num} ha cambiado entre escaneos: se esperaba {expected} y la unidad indica ahora {found}. La lista de títulos del disco ha cambiado durante la extracción; no se ha escrito nada para este título."
+        "title_changed": "El título {num} ha cambiado entre escaneos: se esperaba {expected} y la unidad indica ahora {found}. La lista de títulos del disco ha cambiado durante la extracción; no se ha escrito nada para este título.",
+        "presentation_needs_scan": "La selección por idioma de presentación requiere un disco analizado; elige --title explícitamente.",
+        "selection_review": "La selección de título necesita revisión: {reason}; elige --title explícitamente.",
+        "plan": {
+            "no_titles": "el disco no tiene títulos utilizables",
+            "no_outputs": "el plan no tiene salidas",
+            "duplicate_output": "dos salidas usarían el mismo nombre de archivo: {name}",
+            "later_disc_start": "La numeración de episodios de un disco posterior necesita un primer episodio confirmado; el número de disco y las duraciones no lo determinan.",
+            "episode_range": "La numeración de episodios está fuera del rango admitido."
+        }
     },
     "usage": {
         "synopsis_1": "Uso: freemkv <origen> <destino> [opciones]",
@@ -588,6 +597,8 @@
             "keep_iso": "Conservar ISO intermedio:",
             "auto_eject": "Expulsar el disco al terminar:",
             "default_selection": "Selección predeterminada:",
+            "persist_stream_preferences": "Recordar las opciones de audio y subtítulos",
+            "presentation_language": "Idioma de presentación (de / en; vacío = preferencia de audio)",
             "sel_main": "Solo película principal",
             "sel_all": "Todos los títulos",
             "sel_longest": "Título más largo",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "No hay disco insertado",
             "empty_subtitle": "Inserte un disco, o abra un archivo, carpeta o imagen ISO.",
-            "detail_default": "Abra una imagen de disco para ver sus títulos."
+            "detail_default": "Abra una imagen de disco para ver sus títulos.",
+            "disc_ready_title": "Disco insertado",
+            "open_source_title": "Abrir una fuente",
+            "disc_ready": "Disco insertado — listo para abrir.",
+            "no_disc": "No se detectó ningún disco."
         },
         "progress": {
             "saving_current": "Guardando en archivo {container}",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — listo",
             "source_closed": "Origen cerrado",
+            "keydb_dir_failed": "no se puede crear el directorio de keydb {path}: {error} (freemkv debe poder escribir en el directorio)",
+            "keydb_replace_failed": "{message} — {dest}: no se puede reemplazar keydb.cfg; comprueba los permisos de escritura del directorio y el acceso del entorno aislado",
             "cancelling": "Cancelando …",
             "nothing_eject": "Nada que expulsar: el origen es un archivo, no una unidad.",
             "checking_updates": "Buscando actualizaciones …",

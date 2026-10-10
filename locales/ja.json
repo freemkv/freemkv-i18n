@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "エラー: タイトル一覧を取得するためのディスクのスキャンができなかったため、`-t all` はどのタイトルをリッピングすべきか判断できません。何もリッピングされていません — ディスクとドライブを確認して再試行してください。",
         "log_file_needs_value": "--log-file: パスが必要です（例: --log-file freemkv.log）",
         "mux_failed_generic": "多重化に失敗しました（E{code}）。",
-        "title_changed": "タイトル {num} がスキャン間で変化しました: 期待値 {expected}、ドライブの現在の報告 {found}。リッピング中にディスクのタイトル一覧が変わりました。このタイトルには何も書き込まれていません。"
+        "title_changed": "タイトル {num} がスキャン間で変化しました: 期待値 {expected}、ドライブの現在の報告 {found}。リッピング中にディスクのタイトル一覧が変わりました。このタイトルには何も書き込まれていません。",
+        "presentation_needs_scan": "プレゼンテーション言語による選択にはスキャン済みのディスクが必要です。--title を明示的に指定してください。",
+        "selection_review": "タイトルの選択を確認する必要があります: {reason}。--title を明示的に指定してください。",
+        "plan": {
+            "no_titles": "ディスクに使用可能なタイトルがありません",
+            "no_outputs": "プランに出力がありません",
+            "duplicate_output": "2つの出力が同じファイル名を使用します: {name}",
+            "later_disc_start": "後続ディスクのエピソード番号付けには確定した最初のエピソードが必要です。ディスク番号と再生時間からは決定できません。",
+            "episode_range": "エピソード番号がサポート範囲外です。"
+        }
     },
     "usage": {
         "synopsis_1": "使い方: freemkv <source> <dest> [flags]",
@@ -588,6 +597,8 @@
             "keep_iso": "中間 ISO を保持 :",
             "auto_eject": "完了時にディスクを取り出す :",
             "default_selection": "デフォルト選択 :",
+            "persist_stream_preferences": "音声と字幕の選択を記憶する",
+            "presentation_language": "プレゼンテーション言語 (de / en、空欄 = 音声の優先設定)",
             "sel_main": "メイン作品のみ",
             "sel_all": "すべてのタイトル",
             "sel_longest": "最長のタイトル",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "ディスクが挿入されていません",
             "empty_subtitle": "ディスクを挿入するか、ファイル、フォルダ、または ISO イメージを開いてください。",
-            "detail_default": "ディスクイメージを開いてタイトルを表示します。"
+            "detail_default": "ディスクイメージを開いてタイトルを表示します。",
+            "disc_ready_title": "ディスクが挿入されました",
+            "open_source_title": "ソースを開く",
+            "disc_ready": "ディスクが挿入されました — 開く準備ができました。",
+            "no_disc": "ディスクが検出されません。"
         },
         "progress": {
             "saving_current": "{container} ファイルに保存中",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — 準備完了",
             "source_closed": "ソースを閉じました",
+            "keydb_dir_failed": "keydb ディレクトリ {path} を作成できません: {error}（freemkv が書き込める必要があります）",
+            "keydb_replace_failed": "{message} — {dest}: keydb.cfg を置き換えられません。ディレクトリの書き込み権限とサンドボックスのアクセスを確認してください",
             "cancelling": "キャンセル中 …",
             "nothing_eject": "取り出すものがありません — ソースはドライブではなくファイルです。",
             "checking_updates": "アップデートを確認中 …",

@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Feil: kunne ikke skanne platen for å liste titlene, så `-t all` kan ikke vite hvilke titler som skal rippes. Ingenting ble rippet — sjekk platen og stasjonen og prøv igjen.",
         "log_file_needs_value": "--log-file: krever en sti (f.eks. --log-file freemkv.log)",
         "mux_failed_generic": "Muxing mislyktes (E{code}).",
-        "title_changed": "Tittel {num} endret seg mellom skanningene: forventet {expected}, stasjonen rapporterer nå {found}. Tittellisten på platen endret seg under rippingen; ingenting ble skrevet for denne tittelen."
+        "title_changed": "Tittel {num} endret seg mellom skanningene: forventet {expected}, stasjonen rapporterer nå {found}. Tittellisten på platen endret seg under rippingen; ingenting ble skrevet for denne tittelen.",
+        "presentation_needs_scan": "Valg etter presentasjonsspråk krever en skannet plate; velg --title eksplisitt.",
+        "selection_review": "Tittelvalget må gjennomgås: {reason}; velg --title eksplisitt.",
+        "plan": {
+            "no_titles": "platen har ingen brukbare titler",
+            "no_outputs": "planen har ingen utdata",
+            "duplicate_output": "to utdata ville brukt samme filnavn: {name}",
+            "later_disc_start": "Episodenummerering på en senere plate krever en bekreftet første episode; platenummer og spilletider fastslår den ikke.",
+            "episode_range": "Episodenummereringen er utenfor det støttede området."
+        }
     },
     "usage": {
         "synopsis_1": "Bruk: freemkv <source> <dest> [flagg]",
@@ -588,6 +597,8 @@
             "keep_iso": "Behold mellomliggende ISO:",
             "auto_eject": "Løs ut platen når ferdig:",
             "default_selection": "Standard utvalg:",
+            "persist_stream_preferences": "Husk valg av lyd og undertekster",
+            "presentation_language": "Presentasjonsspråk (de / en; tomt = lydpreferanse)",
             "sel_main": "Kun hovedfilm",
             "sel_all": "Alle titler",
             "sel_longest": "Lengste tittel",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Ingen plate satt inn",
             "empty_subtitle": "Sett inn en plate, eller åpne en fil, mappe eller et ISO-bilde.",
-            "detail_default": "Åpne et platebilde for å se titlene."
+            "detail_default": "Åpne et platebilde for å se titlene.",
+            "disc_ready_title": "Plate satt inn",
+            "open_source_title": "Åpne en kilde",
+            "disc_ready": "Plate satt inn — klar til å åpnes.",
+            "no_disc": "Ingen plate funnet."
         },
         "progress": {
             "saving_current": "Lagrer til {container}-fil",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — klar",
             "source_closed": "Kilde lukket",
+            "keydb_dir_failed": "kan ikke opprette keydb-mappen {path}: {error} (mappen må være skrivbar for freemkv)",
+            "keydb_replace_failed": "{message} — {dest}: kan ikke erstatte keydb.cfg; sjekk skrivetilgangen til mappen og sandkasse-tilgangen",
             "cancelling": "Avbryter …",
             "nothing_eject": "Ingenting å løse ut — kilden er en fil, ikke en stasjon.",
             "checking_updates": "Ser etter oppdateringer …",

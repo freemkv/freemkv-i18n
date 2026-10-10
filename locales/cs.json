@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Chyba: disk se nepodařilo prohledat a vypsat jeho tituly, takže `-t all` nemůže zjistit, které tituly ripovat. Nic nebylo ripováno — zkontrolujte disk a mechaniku a zkuste to znovu.",
         "log_file_needs_value": "--log-file: vyžaduje cestu (např. --log-file freemkv.log)",
         "mux_failed_generic": "Muxování selhalo (E{code}).",
-        "title_changed": "Titul {num} se mezi prohledáními změnil: očekáváno {expected}, mechanika nyní hlásí {found}. Seznam titulů na disku se během ripování změnil; pro tento titul nebylo nic zapsáno."
+        "title_changed": "Titul {num} se mezi prohledáními změnil: očekáváno {expected}, mechanika nyní hlásí {found}. Seznam titulů na disku se během ripování změnil; pro tento titul nebylo nic zapsáno.",
+        "presentation_needs_scan": "Výběr podle jazyka prezentace vyžaduje naskenovaný disk; zvolte --title výslovně.",
+        "selection_review": "Výběr titulu je třeba zkontrolovat: {reason}; zvolte --title výslovně.",
+        "plan": {
+            "no_titles": "disk nemá žádné použitelné tituly",
+            "no_outputs": "plán nemá žádné výstupy",
+            "duplicate_output": "dva výstupy by použily stejný název souboru: {name}",
+            "later_disc_start": "Číslování epizod na pozdějším disku vyžaduje potvrzenou první epizodu; číslo disku a délky stop ji neurčují.",
+            "episode_range": "Číslování epizod je mimo podporovaný rozsah."
+        }
     },
     "usage": {
         "synopsis_1": "Použití: freemkv <zdroj> <cíl> [příznaky]",
@@ -588,6 +597,8 @@
             "keep_iso": "Zachovat mezilehlé ISO :",
             "auto_eject": "Po dokončení vysunout disk :",
             "default_selection": "Výchozí výběr :",
+            "persist_stream_preferences": "Pamatovat si volby zvuku a titulků",
+            "presentation_language": "Jazyk prezentace (de / en; prázdné = preference zvuku)",
             "sel_main": "Pouze hlavní film",
             "sel_all": "Všechny tituly",
             "sel_longest": "Nejdelší titul",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Není vložen žádný disk",
             "empty_subtitle": "Vložte disk, nebo otevřete soubor, složku či obraz ISO.",
-            "detail_default": "Otevřete obraz disku pro zobrazení jeho titulů."
+            "detail_default": "Otevřete obraz disku pro zobrazení jeho titulů.",
+            "disc_ready_title": "Disk vložen",
+            "open_source_title": "Otevřít zdroj",
+            "disc_ready": "Disk vložen — připraven k otevření.",
+            "no_disc": "Nebyl zjištěn žádný disk."
         },
         "progress": {
             "saving_current": "Ukládání do souboru {container}",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — připraveno",
             "source_closed": "Zdroj uzavřen",
+            "keydb_dir_failed": "nelze vytvořit adresář keydb {path}: {error} (do adresáře musí být freemkv povoleno zapisovat)",
+            "keydb_replace_failed": "{message} — {dest}: nelze nahradit keydb.cfg; zkontrolujte oprávnění k zápisu do adresáře a přístup v sandboxu",
             "cancelling": "Rušení …",
             "nothing_eject": "Není co vysunout — zdrojem je soubor, nikoli mechanika.",
             "checking_updates": "Kontrola aktualizací …",

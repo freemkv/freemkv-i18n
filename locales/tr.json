@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Hata: başlıkları listelemek için disk taranamadı, bu yüzden `-t all` hangi başlıkların kopyalanacağını bilemiyor. Hiçbir şey kopyalanmadı — diski ve sürücüyü kontrol edip tekrar deneyin.",
         "log_file_needs_value": "--log-file: bir yol gerektirir (örneğin --log-file freemkv.log)",
         "mux_failed_generic": "Mux başarısız (E{code}).",
-        "title_changed": "Başlık {num} taramalar arasında değişti: beklenen {expected}, sürücü şimdi {found} bildiriyor. Başlık listesi kopyalama sırasında değişti; bu başlık için hiçbir şey yazılmadı."
+        "title_changed": "Başlık {num} taramalar arasında değişti: beklenen {expected}, sürücü şimdi {found} bildiriyor. Başlık listesi kopyalama sırasında değişti; bu başlık için hiçbir şey yazılmadı.",
+        "presentation_needs_scan": "Sunum diline göre seçim, taranmış bir disk gerektirir; --title seçeneğini açıkça belirtin.",
+        "selection_review": "Başlık seçiminin gözden geçirilmesi gerekiyor: {reason}; --title seçeneğini açıkça belirtin.",
+        "plan": {
+            "no_titles": "diskte kullanılabilir başlık yok",
+            "no_outputs": "planda çıktı yok",
+            "duplicate_output": "iki çıktı aynı dosya adını kullanacak: {name}",
+            "later_disc_start": "Sonraki disklerde bölüm numaralandırması, onaylanmış bir İlk bölüm gerektirir; disk numarası ve süreler bunu belirlemez.",
+            "episode_range": "Bölüm numaralandırması desteklenen aralığın dışında."
+        }
     },
     "usage": {
         "synopsis_1": "Kullanım: freemkv <source> <dest> [flags]",
@@ -588,6 +597,8 @@
             "keep_iso": "Ara ISO'yu koru :",
             "auto_eject": "Bitince diski çıkar :",
             "default_selection": "Varsayılan seçim :",
+            "persist_stream_preferences": "Ses ve altyazı seçimlerini hatırla",
+            "presentation_language": "Sunum dili (de / en; boş = ses tercihi)",
             "sel_main": "Yalnızca ana film",
             "sel_all": "Tüm başlıklar",
             "sel_longest": "En uzun başlık",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Disk takılı değil",
             "empty_subtitle": "Bir disk takın ya da bir dosya, klasör veya ISO imajı açın.",
-            "detail_default": "Başlıklarını görmek için bir disk imajı açın."
+            "detail_default": "Başlıklarını görmek için bir disk imajı açın.",
+            "disc_ready_title": "Disk takıldı",
+            "open_source_title": "Bir kaynak aç",
+            "disc_ready": "Disk takıldı — açmaya hazır.",
+            "no_disc": "Disk algılanmadı."
         },
         "progress": {
             "saving_current": "{container} dosyasına kaydediliyor",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — hazır",
             "source_closed": "Kaynak kapatıldı",
+            "keydb_dir_failed": "keydb dizini {path} oluşturulamıyor: {error} (dizine freemkv tarafından yazılabilmesi gerekir)",
+            "keydb_replace_failed": "{message} — {dest}: keydb.cfg değiştirilemiyor; dizinin yazma izinlerini ve korumalı alan erişimini kontrol edin",
             "cancelling": "İptal ediliyor …",
             "nothing_eject": "Çıkarılacak bir şey yok — kaynak bir dosya, sürücü değil.",
             "checking_updates": "Güncellemeler denetleniyor …",

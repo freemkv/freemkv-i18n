@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Virhe: levyä ei voitu skannata nimikkeiden luetteloimiseksi, joten `-t all` ei tiedä, mitkä nimikkeet ripataan. Mitään ei ripattu — tarkista levy ja asema ja yritä uudelleen.",
         "log_file_needs_value": "--log-file: vaatii polun (esim. --log-file freemkv.log)",
         "mux_failed_generic": "Muksaus epäonnistui (E{code}).",
-        "title_changed": "Nimike {num} muuttui skannausten välillä: odotettiin {expected}, asema ilmoittaa nyt {found}. Levyn nimikeluettelo muuttui rippauksen aikana; tälle nimikkeelle ei kirjoitettu mitään."
+        "title_changed": "Nimike {num} muuttui skannausten välillä: odotettiin {expected}, asema ilmoittaa nyt {found}. Levyn nimikeluettelo muuttui rippauksen aikana; tälle nimikkeelle ei kirjoitettu mitään.",
+        "presentation_needs_scan": "Esityskielen mukainen valinta vaatii skannatun levyn; valitse --title erikseen.",
+        "selection_review": "Nimikkeen valinta pitää tarkistaa: {reason}; valitse --title erikseen.",
+        "plan": {
+            "no_titles": "levyllä ei ole käyttökelpoisia nimikkeitä",
+            "no_outputs": "suunnitelmassa ei ole tulosteita",
+            "duplicate_output": "kaksi tulostetta käyttäisi samaa tiedostonimeä: {name}",
+            "later_disc_start": "Myöhemmän levyn jaksonumerointi vaatii vahvistetun ensimmäisen jakson; levyn numero ja kestot eivät sitä määritä.",
+            "episode_range": "Jaksonumerointi on tuetun alueen ulkopuolella."
+        }
     },
     "usage": {
         "synopsis_1": "Käyttö: freemkv <source> <dest> [flags]",
@@ -588,6 +597,8 @@
             "keep_iso": "Säilytä väliaikainen ISO :",
             "auto_eject": "Poista levy valmistuttua :",
             "default_selection": "Oletusvalinta :",
+            "persist_stream_preferences": "Muista ääni- ja tekstitysvalinnat",
+            "presentation_language": "Esityskieli (de / en; tyhjä = äänen asetus)",
             "sel_main": "Vain pääelokuva",
             "sel_all": "Kaikki nimikkeet",
             "sel_longest": "Pisin nimike",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Levyä ei asetettu",
             "empty_subtitle": "Aseta levy tai avaa tiedosto, kansio tai ISO-levykuva.",
-            "detail_default": "Avaa levykuva nähdäksesi sen nimikkeet."
+            "detail_default": "Avaa levykuva nähdäksesi sen nimikkeet.",
+            "disc_ready_title": "Levy asetettu",
+            "open_source_title": "Avaa lähde",
+            "disc_ready": "Levy asetettu — valmis avattavaksi.",
+            "no_disc": "Levyä ei havaittu."
         },
         "progress": {
             "saving_current": "Tallennetaan {container}-tiedostoon",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — valmis",
             "source_closed": "Lähde suljettu",
+            "keydb_dir_failed": "keydb-hakemistoa {path} ei voi luoda: {error} (hakemiston on oltava freemkv:n kirjoitettavissa)",
+            "keydb_replace_failed": "{message} — {dest}: keydb.cfg:tä ei voi korvata; tarkista hakemiston kirjoitusoikeudet ja hiekkalaatikon käyttöoikeudet",
             "cancelling": "Peruutetaan …",
             "nothing_eject": "Ei mitään poistettavaa — lähde on tiedosto, ei asema.",
             "checking_updates": "Tarkistetaan päivityksiä …",

@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Kesalahan: tidak dapat memindai disc untuk mendaftar judulnya, sehingga `-t all` tidak dapat mengetahui judul mana yang harus dirip. Tidak ada yang dirip — periksa disc dan drive lalu coba lagi.",
         "log_file_needs_value": "--log-file: memerlukan path (mis. --log-file freemkv.log)",
         "mux_failed_generic": "Mux gagal (E{code}).",
-        "title_changed": "Judul {num} berubah di antara pemindaian: diharapkan {expected}, drive sekarang melaporkan {found}. Daftar judul disc berubah selama rip; tidak ada yang ditulis untuk judul ini."
+        "title_changed": "Judul {num} berubah di antara pemindaian: diharapkan {expected}, drive sekarang melaporkan {found}. Daftar judul disc berubah selama rip; tidak ada yang ditulis untuk judul ini.",
+        "presentation_needs_scan": "Pemilihan berdasarkan bahasa presentasi memerlukan disc yang telah dipindai; pilih --title secara eksplisit.",
+        "selection_review": "Pemilihan judul perlu ditinjau: {reason}; pilih --title secara eksplisit.",
+        "plan": {
+            "no_titles": "disc tidak memiliki judul yang dapat digunakan",
+            "no_outputs": "rencana tidak memiliki output",
+            "duplicate_output": "dua output akan memakai nama file yang sama: {name}",
+            "later_disc_start": "Penomoran episode disc berikutnya memerlukan Episode pertama yang dikonfirmasi; nomor disc dan durasi tidak menentukannya.",
+            "episode_range": "Penomoran episode berada di luar rentang yang didukung."
+        }
     },
     "usage": {
         "synopsis_1": "Penggunaan: freemkv <source> <dest> [flags]",
@@ -588,6 +597,8 @@
             "keep_iso": "Simpan ISO perantara :",
             "auto_eject": "Keluarkan disc saat selesai :",
             "default_selection": "Pilihan default :",
+            "persist_stream_preferences": "Ingat pilihan audio dan subtitel",
+            "presentation_language": "Bahasa presentasi (de / en; kosong = preferensi audio)",
             "sel_main": "Film utama saja",
             "sel_all": "Semua judul",
             "sel_longest": "Judul terpanjang",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Tidak ada disc dimasukkan",
             "empty_subtitle": "Masukkan disc, atau buka berkas, folder, atau image ISO.",
-            "detail_default": "Buka image disc untuk melihat judulnya."
+            "detail_default": "Buka image disc untuk melihat judulnya.",
+            "disc_ready_title": "Disc dimasukkan",
+            "open_source_title": "Buka sumber",
+            "disc_ready": "Disc dimasukkan — siap dibuka.",
+            "no_disc": "Tidak ada disc terdeteksi."
         },
         "progress": {
             "saving_current": "Menyimpan ke berkas {container}",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — siap",
             "source_closed": "Sumber ditutup",
+            "keydb_dir_failed": "tidak dapat membuat direktori keydb {path}: {error} (direktori harus dapat ditulis oleh freemkv)",
+            "keydb_replace_failed": "{message} — {dest}: tidak dapat mengganti keydb.cfg; periksa izin tulis direktori dan akses sandbox",
             "cancelling": "Membatalkan …",
             "nothing_eject": "Tidak ada yang dikeluarkan — sumbernya adalah berkas, bukan drive.",
             "checking_updates": "Memeriksa pembaruan …",

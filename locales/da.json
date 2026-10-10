@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Fejl: disken kunne ikke scannes for at vise dens titler, så `-t all` kan ikke vide, hvilke titler der skal rippes. Intet blev rippet — kontrollér disken og drevet, og prøv igen.",
         "log_file_needs_value": "--log-file: kræver en sti (f.eks. --log-file freemkv.log)",
         "mux_failed_generic": "Muxing mislykkedes (E{code}).",
-        "title_changed": "Titel {num} ændrede sig mellem scanninger: forventede {expected}, men drevet rapporterer nu {found}. Diskens titelliste ændrede sig under rippet; intet blev skrevet for denne titel."
+        "title_changed": "Titel {num} ændrede sig mellem scanninger: forventede {expected}, men drevet rapporterer nu {found}. Diskens titelliste ændrede sig under rippet; intet blev skrevet for denne titel.",
+        "presentation_needs_scan": "Valg efter præsentationssprog kræver en scannet disk; vælg --title eksplicit.",
+        "selection_review": "Titelvalget skal gennemgås: {reason}; vælg --title eksplicit.",
+        "plan": {
+            "no_titles": "disken har ingen brugbare titler",
+            "no_outputs": "planen har ingen outputs",
+            "duplicate_output": "to outputs ville bruge det samme filnavn: {name}",
+            "later_disc_start": "Afsnitsnummerering på en senere disk kræver et bekræftet første afsnit; disknummer og spilletider fastlægger det ikke.",
+            "episode_range": "Afsnitsnummereringen er uden for det understøttede interval."
+        }
     },
     "usage": {
         "synopsis_1": "Brug: freemkv <kilde> <dest> [flag]",
@@ -588,6 +597,8 @@
             "keep_iso": "Behold mellemliggende ISO :",
             "auto_eject": "Skub disken ud når færdig :",
             "default_selection": "Standardvalg :",
+            "persist_stream_preferences": "Husk valg af lyd og undertekster",
+            "presentation_language": "Præsentationssprog (de / en; tomt = lydpræference)",
             "sel_main": "Kun hovedfilmen",
             "sel_all": "Alle titler",
             "sel_longest": "Længste titel",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Ingen disk indsat",
             "empty_subtitle": "Indsæt en disk, eller åbn en fil, mappe eller et ISO-image.",
-            "detail_default": "Åbn et diskimage for at se dets titler."
+            "detail_default": "Åbn et diskimage for at se dets titler.",
+            "disc_ready_title": "Disk indsat",
+            "open_source_title": "Åbn en kilde",
+            "disc_ready": "Disk indsat — klar til åbning.",
+            "no_disc": "Ingen disk fundet."
         },
         "progress": {
             "saving_current": "Gemmer til {container}-fil",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — klar",
             "source_closed": "Kilde lukket",
+            "keydb_dir_failed": "kan ikke oprette keydb-mappen {path}: {error} (mappen skal kunne skrives til af freemkv)",
+            "keydb_replace_failed": "{message} — {dest}: kan ikke erstatte keydb.cfg; kontrollér mappens skriverettigheder og sandbox-adgang",
             "cancelling": "Annullerer …",
             "nothing_eject": "Intet at skubbe ud — kilden er en fil, ikke et drev.",
             "checking_updates": "Søger efter opdateringer …",

@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Fel: kunde inte skanna skivan för att lista dess titlar, så `-t all` kan inte veta vilka titlar som ska rippas. Inget rippades — kontrollera skivan och enheten och försök igen.",
         "log_file_needs_value": "--log-file: kräver en sökväg (t.ex. --log-file freemkv.log)",
         "mux_failed_generic": "Muxning misslyckades (E{code}).",
-        "title_changed": "Titel {num} ändrades mellan skanningarna: förväntade {expected}, enheten rapporterar nu {found}. Titellistan ändrades under rippningen; inget skrevs för den här titeln."
+        "title_changed": "Titel {num} ändrades mellan skanningarna: förväntade {expected}, enheten rapporterar nu {found}. Titellistan ändrades under rippningen; inget skrevs för den här titeln.",
+        "presentation_needs_scan": "Val efter presentationsspråk kräver en skannad skiva; välj --title uttryckligen.",
+        "selection_review": "Titelvalet behöver granskas: {reason}; välj --title uttryckligen.",
+        "plan": {
+            "no_titles": "skivan har inga användbara titlar",
+            "no_outputs": "planen har inga utdata",
+            "duplicate_output": "två utdata skulle använda samma filnamn: {name}",
+            "later_disc_start": "Avsnittsnumrering på en senare skiva kräver ett bekräftat första avsnitt; skivnummer och speltider fastställer det inte.",
+            "episode_range": "Avsnittsnumreringen ligger utanför det som stöds."
+        }
     },
     "usage": {
         "synopsis_1": "Användning: freemkv <källa> <mål> [flaggor]",
@@ -588,6 +597,8 @@
             "keep_iso": "Behåll mellanliggande ISO :",
             "auto_eject": "Mata ut skivan när klar :",
             "default_selection": "Standardurval :",
+            "persist_stream_preferences": "Kom ihåg val av ljud och undertexter",
+            "presentation_language": "Presentationsspråk (de / en; tomt = ljudpreferens)",
             "sel_main": "Endast huvudfilm",
             "sel_all": "Alla titlar",
             "sel_longest": "Längsta titel",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Ingen skiva isatt",
             "empty_subtitle": "Sätt i en skiva, eller öppna en fil, mapp eller ISO-avbild.",
-            "detail_default": "Öppna en skivavbild för att se dess titlar."
+            "detail_default": "Öppna en skivavbild för att se dess titlar.",
+            "disc_ready_title": "Skiva isatt",
+            "open_source_title": "Öppna en källa",
+            "disc_ready": "Skiva isatt — redo att öppnas.",
+            "no_disc": "Ingen skiva hittades."
         },
         "progress": {
             "saving_current": "Sparar till {container}-fil",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — redo",
             "source_closed": "Källa stängd",
+            "keydb_dir_failed": "kan inte skapa keydb-katalogen {path}: {error} (katalogen måste vara skrivbar för freemkv)",
+            "keydb_replace_failed": "{message} — {dest}: kan inte ersätta keydb.cfg; kontrollera katalogens skrivbehörighet och sandlådeåtkomst",
             "cancelling": "Avbryter …",
             "nothing_eject": "Inget att mata ut — källan är en fil, inte en enhet.",
             "checking_updates": "Söker efter uppdateringar …",

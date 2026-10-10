@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "错误：无法扫描光盘以列出其标题，因此 `-t all` 无法确定要抓取哪些标题。未抓取任何内容 —— 请检查光盘和驱动器后重试。",
         "log_file_needs_value": "--log-file：需要一个路径（例如 --log-file freemkv.log）",
         "mux_failed_generic": "复用失败（E{code}）。",
-        "title_changed": "标题 {num} 在两次扫描之间发生了变化：预期为 {expected}，驱动器现在报告 {found}。抓取期间标题列表发生了变化；此标题未写入任何内容。"
+        "title_changed": "标题 {num} 在两次扫描之间发生了变化：预期为 {expected}，驱动器现在报告 {found}。抓取期间标题列表发生了变化；此标题未写入任何内容。",
+        "presentation_needs_scan": "按演示语言选择需要已扫描的光盘；请明确指定 --title。",
+        "selection_review": "标题选择需要复核：{reason}；请明确指定 --title。",
+        "plan": {
+            "no_titles": "光盘没有可用的标题",
+            "no_outputs": "计划没有输出",
+            "duplicate_output": "两个输出将使用相同的文件名：{name}",
+            "later_disc_start": "后续光盘的剧集编号需要已确认的第一集；光盘编号和时长无法确定。",
+            "episode_range": "剧集编号超出支持范围。"
+        }
     },
     "usage": {
         "synopsis_1": "用法：freemkv <source> <dest> [flags]",
@@ -588,6 +597,8 @@
             "keep_iso": "保留中间 ISO ：",
             "auto_eject": "完成后弹出光盘：",
             "default_selection": "默认选择 ：",
+            "persist_stream_preferences": "记住音频和字幕选择",
+            "presentation_language": "演示语言（de / en；留空 = 音频偏好）",
             "sel_main": "仅正片",
             "sel_all": "全部标题",
             "sel_longest": "最长标题",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "未插入光盘",
             "empty_subtitle": "请插入光盘，或打开文件、文件夹或 ISO 镜像。",
-            "detail_default": "打开一个光盘镜像以查看其标题。"
+            "detail_default": "打开一个光盘镜像以查看其标题。",
+            "disc_ready_title": "已插入光盘",
+            "open_source_title": "打开源",
+            "disc_ready": "已插入光盘 — 可以打开。",
+            "no_disc": "未检测到光盘。"
         },
         "progress": {
             "saving_current": "正在保存到 {container} 文件",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} —— 就绪",
             "source_closed": "源已关闭",
+            "keydb_dir_failed": "无法创建 keydb 目录 {path}：{error}（freemkv 必须能写入该目录）",
+            "keydb_replace_failed": "{message} — {dest}：无法替换 keydb.cfg；请检查目录的写入权限和沙盒访问权限",
             "cancelling": "正在取消……",
             "nothing_eject": "无可弹出的内容 —— 源是文件，而非驱动器。",
             "checking_updates": "正在检查更新……",

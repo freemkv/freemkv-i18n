@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Error: no s'ha pogut analitzar el disc per llistar-ne els títols, de manera que `-t all` no pot saber quins títols cal extreure. No s'ha extret res — comproveu el disc i la unitat i torneu-ho a provar.",
         "log_file_needs_value": "--log-file: requereix un camí (p. ex. --log-file freemkv.log)",
         "mux_failed_generic": "El multiplexatge ha fallat (E{code}).",
-        "title_changed": "El títol {num} ha canviat entre anàlisis: s'esperava {expected}, però la unitat ara informa {found}. La llista de títols del disc ha canviat durant l'extracció; no s'ha escrit res per a aquest títol."
+        "title_changed": "El títol {num} ha canviat entre anàlisis: s'esperava {expected}, però la unitat ara informa {found}. La llista de títols del disc ha canviat durant l'extracció; no s'ha escrit res per a aquest títol.",
+        "presentation_needs_scan": "La selecció per llengua de presentació requereix un disc escanejat; trieu --title explícitament.",
+        "selection_review": "La selecció del títol necessita revisió: {reason}; trieu --title explícitament.",
+        "plan": {
+            "no_titles": "el disc no té cap títol utilitzable",
+            "no_outputs": "el pla no té cap sortida",
+            "duplicate_output": "dues sortides farien servir el mateix nom de fitxer: {name}",
+            "later_disc_start": "La numeració d'episodis d'un disc posterior necessita un primer episodi confirmat; el número de disc i les durades no el determinen.",
+            "episode_range": "La numeració d'episodis és fora de l'interval admès."
+        }
     },
     "usage": {
         "synopsis_1": "Ús: freemkv <origen> <destinació> [indicadors]",
@@ -588,6 +597,8 @@
             "keep_iso": "Conserva la ISO intermèdia :",
             "auto_eject": "Expulsa el disc en acabar :",
             "default_selection": "Selecció per defecte :",
+            "persist_stream_preferences": "Recorda les opcions d'àudio i subtítols",
+            "presentation_language": "Llengua de presentació (de / en; buit = preferència d'àudio)",
             "sel_main": "Només la pel·lícula principal",
             "sel_all": "Tots els títols",
             "sel_longest": "Títol més llarg",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Cap disc inserit",
             "empty_subtitle": "Inseriu un disc, o obriu un fitxer, una carpeta o una imatge ISO.",
-            "detail_default": "Obriu una imatge de disc per veure'n els títols."
+            "detail_default": "Obriu una imatge de disc per veure'n els títols.",
+            "disc_ready_title": "Disc inserit",
+            "open_source_title": "Obre una font",
+            "disc_ready": "Disc inserit — a punt per obrir.",
+            "no_disc": "No s'ha detectat cap disc."
         },
         "progress": {
             "saving_current": "S'està desant al fitxer {container}",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — a punt",
             "source_closed": "Origen tancat",
+            "keydb_dir_failed": "no es pot crear el directori de keydb {path}: {error} (freemkv ha de poder escriure al directori)",
+            "keydb_replace_failed": "{message} — {dest}: no es pot substituir keydb.cfg; comproveu els permisos d'escriptura del directori i l'accés de l'entorn aïllat",
             "cancelling": "S'està cancel·lant …",
             "nothing_eject": "Res a expulsar — l'origen és un fitxer, no una unitat.",
             "checking_updates": "S'estan comprovant les actualitzacions …",

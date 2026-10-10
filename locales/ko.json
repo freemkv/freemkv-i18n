@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "오류: 타이틀 목록을 얻기 위해 디스크를 스캔할 수 없어 `-t all`이 추출할 타이틀을 알 수 없습니다. 아무것도 추출되지 않았습니다 — 디스크와 드라이브를 확인하고 다시 시도하세요.",
         "log_file_needs_value": "--log-file: 경로가 필요합니다(예: --log-file freemkv.log)",
         "mux_failed_generic": "먹싱 실패 (E{code}).",
-        "title_changed": "타이틀 {num}이(가) 스캔 사이에 변경되었습니다: 예상 {expected}, 드라이브의 현재 보고 {found}. 추출 중 디스크의 타이틀 목록이 바뀌었습니다. 이 타이틀에는 아무것도 기록되지 않았습니다."
+        "title_changed": "타이틀 {num}이(가) 스캔 사이에 변경되었습니다: 예상 {expected}, 드라이브의 현재 보고 {found}. 추출 중 디스크의 타이틀 목록이 바뀌었습니다. 이 타이틀에는 아무것도 기록되지 않았습니다.",
+        "presentation_needs_scan": "프레젠테이션 언어로 선택하려면 스캔된 디스크가 필요합니다. --title을 명시적으로 지정하세요.",
+        "selection_review": "타이틀 선택을 검토해야 합니다: {reason}. --title을 명시적으로 지정하세요.",
+        "plan": {
+            "no_titles": "디스크에 사용할 수 있는 타이틀이 없습니다",
+            "no_outputs": "계획에 출력이 없습니다",
+            "duplicate_output": "두 출력이 같은 파일 이름을 사용하게 됩니다: {name}",
+            "later_disc_start": "이후 디스크의 에피소드 번호 매기기에는 확정된 첫 에피소드가 필요하며, 디스크 번호와 재생 시간으로는 정할 수 없습니다.",
+            "episode_range": "에피소드 번호가 지원되는 범위를 벗어났습니다."
+        }
     },
     "usage": {
         "synopsis_1": "사용법: freemkv <source> <dest> [flags]",
@@ -588,6 +597,8 @@
             "keep_iso": "중간 ISO 유지 :",
             "auto_eject": "완료 시 디스크 꺼내기 :",
             "default_selection": "기본 선택 :",
+            "persist_stream_preferences": "오디오 및 자막 선택 기억",
+            "presentation_language": "프레젠테이션 언어 (de / en, 비워 두면 오디오 선호 설정)",
             "sel_main": "메인 영상만",
             "sel_all": "모든 타이틀",
             "sel_longest": "가장 긴 타이틀",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "삽입된 디스크 없음",
             "empty_subtitle": "디스크를 넣거나 파일, 폴더 또는 ISO 이미지를 여세요.",
-            "detail_default": "디스크 이미지를 열면 타이틀을 볼 수 있습니다."
+            "detail_default": "디스크 이미지를 열면 타이틀을 볼 수 있습니다.",
+            "disc_ready_title": "디스크가 삽입됨",
+            "open_source_title": "소스 열기",
+            "disc_ready": "디스크가 삽입됨 — 열 준비가 되었습니다.",
+            "no_disc": "디스크가 감지되지 않았습니다."
         },
         "progress": {
             "saving_current": "{container} 파일로 저장 중",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — 준비됨",
             "source_closed": "소스 닫힘",
+            "keydb_dir_failed": "keydb 디렉터리 {path}을(를) 만들 수 없습니다: {error} (freemkv가 디렉터리에 쓸 수 있어야 합니다)",
+            "keydb_replace_failed": "{message} — {dest}: keydb.cfg를 바꿀 수 없습니다. 디렉터리 쓰기 권한과 샌드박스 접근을 확인하세요",
             "cancelling": "취소 중 …",
             "nothing_eject": "꺼낼 것 없음 — 소스가 드라이브가 아니라 파일입니다.",
             "checking_updates": "업데이트 확인 중 …",

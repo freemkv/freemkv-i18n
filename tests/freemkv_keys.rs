@@ -518,6 +518,13 @@ const ALLOWLIST: &[(&str, &str, usize, Covered, &str)] = &[
         Covered::PrefixedPairTable("PICKER_LANGUAGES", "gui.lang."),
         "gui.lang.<code> keys come from the picker's (code, English name) table",
     ),
+    (
+        "strings.rs",
+        "review_reason_text",
+        1,
+        Covered::Forwarder,
+        "error.selection_review_reason.<reason> keys are built from the review reason key",
+    ),
 ];
 
 /// The ALLOWLIST lookup (I005): matched on `(file, fn)`, then validated against the

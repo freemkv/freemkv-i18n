@@ -423,7 +423,16 @@
         "disc_scan_all_titles_failed": "Fehler: Die Disc konnte nicht gescannt werden, um ihre Titel aufzulisten, daher kann `-t all` nicht wissen, welche Titel gerippt werden sollen. Es wurde nichts gerippt — prüfen Sie Disc und Laufwerk und versuchen Sie es erneut.",
         "log_file_needs_value": "--log-file: benötigt einen Pfad (z. B. --log-file freemkv.log)",
         "mux_failed_generic": "Muxen fehlgeschlagen (E{code}).",
-        "title_changed": "Titel {num} hat sich zwischen den Scans geändert: erwartet {expected}, das Laufwerk meldet jetzt {found}. Die Titelliste der Disc hat sich während des Rips geändert; für diesen Titel wurde nichts geschrieben."
+        "title_changed": "Titel {num} hat sich zwischen den Scans geändert: erwartet {expected}, das Laufwerk meldet jetzt {found}. Die Titelliste der Disc hat sich während des Rips geändert; für diesen Titel wurde nichts geschrieben.",
+        "presentation_needs_scan": "Die Auswahl nach Präsentationssprache erfordert eine gescannte Disc; wähle --title ausdrücklich.",
+        "selection_review": "Die Titelauswahl muss geprüft werden: {reason}; wähle --title ausdrücklich.",
+        "plan": {
+            "no_titles": "die Disc hat keine verwendbaren Titel",
+            "no_outputs": "der Plan enthält keine Ausgaben",
+            "duplicate_output": "zwei Ausgaben würden denselben Dateinamen verwenden: {name}",
+            "later_disc_start": "Die Episodennummerierung späterer Discs benötigt eine bestätigte erste Episode; Disc-Nummer und Laufzeiten legen sie nicht fest.",
+            "episode_range": "Die Episodennummerierung liegt außerhalb des unterstützten Bereichs."
+        }
     },
     "usage": {
         "synopsis_1": "Verwendung: freemkv <quelle> <ziel> [optionen]",
@@ -588,6 +597,8 @@
             "keep_iso": "Zwischen-ISO behalten:",
             "auto_eject": "Disc nach Abschluss auswerfen:",
             "default_selection": "Standardauswahl:",
+            "persist_stream_preferences": "Audio- und Untertitelauswahl merken",
+            "presentation_language": "Präsentationssprache (de / en; leer = Audio-Präferenz)",
             "sel_main": "Nur Hauptfilm",
             "sel_all": "Alle Titel",
             "sel_longest": "Längster Titel",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Keine Disc eingelegt",
             "empty_subtitle": "Legen Sie eine Disc ein oder öffnen Sie eine Datei, einen Ordner oder ein ISO-Abbild.",
-            "detail_default": "Öffnen Sie ein Disc-Abbild, um seine Titel zu sehen."
+            "detail_default": "Öffnen Sie ein Disc-Abbild, um seine Titel zu sehen.",
+            "disc_ready_title": "Disc eingelegt",
+            "open_source_title": "Quelle öffnen",
+            "disc_ready": "Disc eingelegt — bereit zum Öffnen.",
+            "no_disc": "Keine Disc erkannt."
         },
         "progress": {
             "saving_current": "Wird in {container}-Datei gespeichert",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — bereit",
             "source_closed": "Quelle geschlossen",
+            "keydb_dir_failed": "Das keydb-Verzeichnis {path} kann nicht erstellt werden: {error} (das Verzeichnis muss für freemkv beschreibbar sein)",
+            "keydb_replace_failed": "{message} — {dest}: keydb.cfg kann nicht ersetzt werden; prüfe die Schreibrechte des Verzeichnisses und den Sandbox-Zugriff",
             "cancelling": "Wird abgebrochen …",
             "nothing_eject": "Nichts auszuwerfen — die Quelle ist eine Datei, kein Laufwerk.",
             "checking_updates": "Suche nach Updates …",

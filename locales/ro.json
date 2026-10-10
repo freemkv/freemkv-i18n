@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Eroare: discul nu a putut fi scanat pentru a-i lista titlurile, așa că `-t all` nu poate ști ce titluri să extragă. Nu s-a extras nimic — verifică discul și unitatea și încearcă din nou.",
         "log_file_needs_value": "--log-file: necesită o cale (de ex. --log-file freemkv.log)",
         "mux_failed_generic": "Multiplexarea a eșuat (E{code}).",
-        "title_changed": "Titlul {num} s-a schimbat între scanări: se aștepta {expected}, iar unitatea raportează acum {found}. Lista de titluri a discului s-a modificat în timpul extragerii; nu s-a scris nimic pentru acest titlu."
+        "title_changed": "Titlul {num} s-a schimbat între scanări: se aștepta {expected}, iar unitatea raportează acum {found}. Lista de titluri a discului s-a modificat în timpul extragerii; nu s-a scris nimic pentru acest titlu.",
+        "presentation_needs_scan": "Selecția după limba de prezentare necesită un disc scanat; alege explicit --title.",
+        "selection_review": "Selecția titlului necesită verificare: {reason}; alege explicit --title.",
+        "plan": {
+            "no_titles": "discul nu are titluri utilizabile",
+            "no_outputs": "planul nu are ieșiri",
+            "duplicate_output": "două ieșiri ar folosi același nume de fișier: {name}",
+            "later_disc_start": "Numerotarea episoadelor de pe un disc ulterior necesită un prim episod confirmat; numărul discului și duratele nu îl stabilesc.",
+            "episode_range": "Numerotarea episoadelor este în afara intervalului acceptat."
+        }
     },
     "usage": {
         "synopsis_1": "Utilizare: freemkv <source> <dest> [flags]",
@@ -588,6 +597,8 @@
             "keep_iso": "Păstrează ISO-ul intermediar :",
             "auto_eject": "Scoate discul la finalizare :",
             "default_selection": "Selecție implicită :",
+            "persist_stream_preferences": "Reține alegerile pentru audio și subtitrări",
+            "presentation_language": "Limba de prezentare (de / en; gol = preferința audio)",
             "sel_main": "Doar filmul principal",
             "sel_all": "Toate titlurile",
             "sel_longest": "Cel mai lung titlu",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Niciun disc introdus",
             "empty_subtitle": "Introdu un disc sau deschide un fișier, un director sau o imagine ISO.",
-            "detail_default": "Deschide o imagine de disc pentru a-i vedea titlurile."
+            "detail_default": "Deschide o imagine de disc pentru a-i vedea titlurile.",
+            "disc_ready_title": "Disc introdus",
+            "open_source_title": "Deschide o sursă",
+            "disc_ready": "Disc introdus — gata de deschidere.",
+            "no_disc": "Nu a fost detectat niciun disc."
         },
         "progress": {
             "saving_current": "Se salvează în fișierul {container}",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — pregătit",
             "source_closed": "Sursă închisă",
+            "keydb_dir_failed": "nu se poate crea directorul keydb {path}: {error} (directorul trebuie să poată fi scris de freemkv)",
+            "keydb_replace_failed": "{message} — {dest}: nu se poate înlocui keydb.cfg; verifică permisiunile de scriere ale directorului și accesul sandbox",
             "cancelling": "Se anulează …",
             "nothing_eject": "Nimic de scos — sursa este un fișier, nu o unitate.",
             "checking_updates": "Se verifică actualizări …",

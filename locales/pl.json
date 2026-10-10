@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Błąd: nie udało się przeskanować płyty, aby wyświetlić listę tytułów, więc `-t all` nie może ustalić, które tytuły zgrać. Nic nie zostało zgrane — sprawdź płytę i napęd, a następnie spróbuj ponownie.",
         "log_file_needs_value": "--log-file: wymaga ścieżki (np. --log-file freemkv.log)",
         "mux_failed_generic": "Multipleksowanie nie powiodło się (E{code}).",
-        "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano."
+        "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano.",
+        "presentation_needs_scan": "Wybór według języka prezentacji wymaga zeskanowanej płyty; wybierz jawnie --title.",
+        "selection_review": "Wybór tytułu wymaga sprawdzenia: {reason}; wybierz jawnie --title.",
+        "plan": {
+            "no_titles": "płyta nie ma żadnych użytecznych tytułów",
+            "no_outputs": "plan nie ma żadnych wyjść",
+            "duplicate_output": "dwa wyjścia użyłyby tej samej nazwy pliku: {name}",
+            "later_disc_start": "Numeracja odcinków na kolejnej płycie wymaga potwierdzonego pierwszego odcinka; numer płyty i czasy trwania go nie określają.",
+            "episode_range": "Numeracja odcinków jest poza obsługiwanym zakresem."
+        }
     },
     "usage": {
         "synopsis_1": "Sposób użycia: freemkv <źródło> <cel> [flagi]",
@@ -588,6 +597,8 @@
             "keep_iso": "Zachowaj pośredni obraz ISO:",
             "auto_eject": "Wysuń płytę po zakończeniu:",
             "default_selection": "Domyślny wybór:",
+            "persist_stream_preferences": "Zapamiętuj wybór dźwięku i napisów",
+            "presentation_language": "Język prezentacji (de / en; puste = preferencja dźwięku)",
             "sel_main": "Tylko główny film",
             "sel_all": "Wszystkie tytuły",
             "sel_longest": "Najdłuższy tytuł",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Nie włożono płyty",
             "empty_subtitle": "Włóż płytę lub otwórz plik, folder albo obraz ISO.",
-            "detail_default": "Otwórz obraz płyty, aby zobaczyć jej tytuły."
+            "detail_default": "Otwórz obraz płyty, aby zobaczyć jej tytuły.",
+            "disc_ready_title": "Włożono płytę",
+            "open_source_title": "Otwórz źródło",
+            "disc_ready": "Włożono płytę — gotowa do otwarcia.",
+            "no_disc": "Nie wykryto płyty."
         },
         "progress": {
             "saving_current": "Zapisywanie do pliku {container}",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — gotowy",
             "source_closed": "Źródło zamknięte",
+            "keydb_dir_failed": "nie można utworzyć katalogu keydb {path}: {error} (freemkv musi mieć prawo zapisu w tym katalogu)",
+            "keydb_replace_failed": "{message} — {dest}: nie można zastąpić keydb.cfg; sprawdź uprawnienia zapisu w katalogu i dostęp w piaskownicy",
             "cancelling": "Anulowanie…",
             "nothing_eject": "Nie ma czego wysunąć — źródło jest plikiem, a nie napędem.",
             "checking_updates": "Sprawdzanie aktualizacji…",

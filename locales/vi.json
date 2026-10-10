@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Lỗi: không thể quét đĩa để liệt kê các tiêu đề, nên `-t all` không biết cần trích xuất tiêu đề nào. Chưa trích xuất gì — hãy kiểm tra đĩa và ổ đĩa rồi thử lại.",
         "log_file_needs_value": "--log-file: cần một đường dẫn (ví dụ --log-file freemkv.log)",
         "mux_failed_generic": "Mux thất bại (E{code}).",
-        "title_changed": "Tiêu đề {num} đã thay đổi giữa các lần quét: dự kiến {expected}, ổ đĩa hiện báo {found}. Danh sách tiêu đề đã thay đổi trong khi trích xuất; không có gì được ghi cho tiêu đề này."
+        "title_changed": "Tiêu đề {num} đã thay đổi giữa các lần quét: dự kiến {expected}, ổ đĩa hiện báo {found}. Danh sách tiêu đề đã thay đổi trong khi trích xuất; không có gì được ghi cho tiêu đề này.",
+        "presentation_needs_scan": "Việc chọn theo ngôn ngữ trình chiếu cần đĩa đã được quét; hãy chọn --title một cách rõ ràng.",
+        "selection_review": "Việc chọn tiêu đề cần được xem xét: {reason}; hãy chọn --title một cách rõ ràng.",
+        "plan": {
+            "no_titles": "đĩa không có tiêu đề nào dùng được",
+            "no_outputs": "kế hoạch không có đầu ra nào",
+            "duplicate_output": "hai đầu ra sẽ dùng cùng một tên tệp: {name}",
+            "later_disc_start": "Việc đánh số tập của đĩa sau cần một Tập đầu tiên đã được xác nhận; số đĩa và thời lượng không xác định được điều này.",
+            "episode_range": "Việc đánh số tập nằm ngoài phạm vi được hỗ trợ."
+        }
     },
     "usage": {
         "synopsis_1": "Cách dùng: freemkv <source> <dest> [flags]",
@@ -588,6 +597,8 @@
             "keep_iso": "Giữ ISO trung gian :",
             "auto_eject": "Đẩy đĩa ra khi hoàn tất :",
             "default_selection": "Lựa chọn mặc định :",
+            "persist_stream_preferences": "Ghi nhớ lựa chọn âm thanh và phụ đề",
+            "presentation_language": "Ngôn ngữ trình chiếu (de / en; để trống = ưu tiên âm thanh)",
             "sel_main": "Chỉ phim chính",
             "sel_all": "Tất cả tiêu đề",
             "sel_longest": "Tiêu đề dài nhất",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Chưa đưa đĩa vào",
             "empty_subtitle": "Đưa một đĩa vào, hoặc mở một tệp, thư mục hay ảnh ISO.",
-            "detail_default": "Mở một ảnh đĩa để xem các tiêu đề của nó."
+            "detail_default": "Mở một ảnh đĩa để xem các tiêu đề của nó.",
+            "disc_ready_title": "Đã cho đĩa vào",
+            "open_source_title": "Mở một nguồn",
+            "disc_ready": "Đã cho đĩa vào — sẵn sàng để mở.",
+            "no_disc": "Không phát hiện đĩa."
         },
         "progress": {
             "saving_current": "Đang lưu vào tệp {container}",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — sẵn sàng",
             "source_closed": "Nguồn đã đóng",
+            "keydb_dir_failed": "không thể tạo thư mục keydb {path}: {error} (freemkv phải ghi được vào thư mục này)",
+            "keydb_replace_failed": "{message} — {dest}: không thể thay thế keydb.cfg; hãy kiểm tra quyền ghi của thư mục và quyền truy cập sandbox",
             "cancelling": "Đang hủy …",
             "nothing_eject": "Không có gì để đẩy ra — nguồn là một tệp, không phải ổ đĩa.",
             "checking_updates": "Đang kiểm tra cập nhật …",

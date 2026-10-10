@@ -423,7 +423,16 @@
         "disc_scan_all_titles_failed": "Fout: kon de disc niet scannen om de titels op te sommen, dus `-t all` weet niet welke titels geript moeten worden. Er is niets geript — controleer de disc en het station en probeer het opnieuw.",
         "log_file_needs_value": "--log-file: vereist een pad (bijv. --log-file freemkv.log)",
         "mux_failed_generic": "Muxen mislukt (E{code}).",
-        "title_changed": "Titel {num} is tussen scans gewijzigd: verwacht {expected}, het station meldt nu {found}. De titellijst van de disc is tijdens het rippen veranderd; voor deze titel is niets geschreven."
+        "title_changed": "Titel {num} is tussen scans gewijzigd: verwacht {expected}, het station meldt nu {found}. De titellijst van de disc is tijdens het rippen veranderd; voor deze titel is niets geschreven.",
+        "presentation_needs_scan": "Selectie op presentatietaal vereist een gescande schijf; kies expliciet --title.",
+        "selection_review": "De titelselectie moet worden gecontroleerd: {reason}; kies expliciet --title.",
+        "plan": {
+            "no_titles": "de schijf heeft geen bruikbare titels",
+            "no_outputs": "het plan heeft geen uitvoer",
+            "duplicate_output": "twee uitvoerbestanden zouden dezelfde bestandsnaam gebruiken: {name}",
+            "later_disc_start": "Afleveringsnummering van een latere schijf vereist een bevestigde eerste aflevering; schijfnummer en speelduur bepalen die niet.",
+            "episode_range": "De afleveringsnummering valt buiten het ondersteunde bereik."
+        }
     },
     "usage": {
         "synopsis_1": "Gebruik: freemkv <bron> <doel> [opties]",
@@ -588,6 +597,8 @@
             "keep_iso": "Tussenliggende ISO behouden:",
             "auto_eject": "Schijf uitwerpen als klaar:",
             "default_selection": "Standaardselectie:",
+            "persist_stream_preferences": "Keuzes voor audio en ondertitels onthouden",
+            "presentation_language": "Presentatietaal (de / en; leeg = audiovoorkeur)",
             "sel_main": "Alleen hoofdfilm",
             "sel_all": "Alle titels",
             "sel_longest": "Langste titel",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Geen disc geplaatst",
             "empty_subtitle": "Plaats een disc, of open een bestand, map of ISO-image.",
-            "detail_default": "Open een disc-image om de titels ervan te zien."
+            "detail_default": "Open een disc-image om de titels ervan te zien.",
+            "disc_ready_title": "Schijf geplaatst",
+            "open_source_title": "Een bron openen",
+            "disc_ready": "Schijf geplaatst — klaar om te openen.",
+            "no_disc": "Geen schijf gedetecteerd."
         },
         "progress": {
             "saving_current": "Opslaan naar {container}-bestand",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — gereed",
             "source_closed": "Bron gesloten",
+            "keydb_dir_failed": "kan keydb-map {path} niet aanmaken: {error} (de map moet beschrijfbaar zijn voor freemkv)",
+            "keydb_replace_failed": "{message} — {dest}: kan keydb.cfg niet vervangen; controleer de schrijfrechten van de map en de sandbox-toegang",
             "cancelling": "Annuleren …",
             "nothing_eject": "Niets om uit te werpen — de bron is een bestand, geen drive.",
             "checking_updates": "Controleren op updates …",

@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Error: could not scan the disc to list its titles, so `-t all` cannot know which titles to rip. Nothing was ripped — check the disc and drive and try again.",
         "log_file_needs_value": "--log-file: requires a path (e.g. --log-file freemkv.log)",
         "mux_failed_generic": "Mux failed (E{code}).",
-        "title_changed": "Title {num} changed between scans: expected {expected}, the drive now reports {found}. The disc list moved under the rip; nothing was written for this title."
+        "title_changed": "Title {num} changed between scans: expected {expected}, the drive now reports {found}. The disc list moved under the rip; nothing was written for this title.",
+        "presentation_needs_scan": "Presentation-language selection requires a scanned disc; choose --title explicitly.",
+        "selection_review": "Title selection needs review: {reason}; choose --title explicitly.",
+        "plan": {
+            "no_titles": "the disc has no usable titles",
+            "no_outputs": "the plan has no outputs",
+            "duplicate_output": "two outputs would use the same file name: {name}",
+            "later_disc_start": "Later-disc episode numbering needs a confirmed First episode; disc number and runtimes do not establish it.",
+            "episode_range": "Episode numbering is outside the supported range."
+        }
     },
     "usage": {
         "synopsis_1": "Usage: freemkv <source> <dest> [flags]",
@@ -588,6 +597,8 @@
             "keep_iso": "Keep intermediate ISO :",
             "auto_eject": "Eject disc when done :",
             "default_selection": "Default selection :",
+            "persist_stream_preferences": "Remember audio and subtitle choices",
+            "presentation_language": "Presentation language (de / en; blank = audio preference)",
             "sel_main": "Main film only",
             "sel_all": "All titles",
             "sel_longest": "Longest title",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "No disc inserted",
             "empty_subtitle": "Insert a disc, or open a file, folder or ISO image.",
-            "detail_default": "Open a disc image to see its titles."
+            "detail_default": "Open a disc image to see its titles.",
+            "disc_ready_title": "Disc inserted",
+            "open_source_title": "Open a source",
+            "disc_ready": "Disc inserted — ready to open.",
+            "no_disc": "No disc detected."
         },
         "progress": {
             "saving_current": "Saving to {container} file",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — ready",
             "source_closed": "Source closed",
+            "keydb_dir_failed": "cannot create keydb directory {path}: {error} (the directory must be writable by freemkv)",
+            "keydb_replace_failed": "{message} — {dest}: cannot replace keydb.cfg; check directory write permissions and sandbox access",
             "cancelling": "Cancelling …",
             "nothing_eject": "Nothing to eject — the source is a file, not a drive.",
             "checking_updates": "Checking for updates …",

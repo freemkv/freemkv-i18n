@@ -446,7 +446,16 @@
         "disc_scan_all_titles_failed": "Hiba: nem sikerült beolvasni a lemezt a címek listázásához, így a `-t all` nem tudja, mely címeket kell kimásolni. Semmi nem lett kimásolva — ellenőrizd a lemezt és a meghajtót, majd próbáld újra.",
         "log_file_needs_value": "--log-file: elérési utat igényel (pl. --log-file freemkv.log)",
         "mux_failed_generic": "A muxolás sikertelen (E{code}).",
-        "title_changed": "A(z) {num}. cím megváltozott a beolvasások között: várt {expected}, a meghajtó most ezt jelenti: {found}. A lemez címlistája megváltozott kimásolás közben; ehhez a címhez semmi nem lett kiírva."
+        "title_changed": "A(z) {num}. cím megváltozott a beolvasások között: várt {expected}, a meghajtó most ezt jelenti: {found}. A lemez címlistája megváltozott kimásolás közben; ehhez a címhez semmi nem lett kiírva.",
+        "presentation_needs_scan": "A megjelenítési nyelv szerinti választáshoz beolvasott lemez szükséges; adja meg kifejezetten a --title kapcsolót.",
+        "selection_review": "A cím kiválasztását felül kell vizsgálni: {reason}; adja meg kifejezetten a --title kapcsolót.",
+        "plan": {
+            "no_titles": "a lemezen nincs használható cím",
+            "no_outputs": "a tervben nincs kimenet",
+            "duplicate_output": "két kimenet ugyanazt a fájlnevet használná: {name}",
+            "later_disc_start": "A későbbi lemezek epizódszámozásához megerősített első epizód kell; a lemez száma és a hossz nem határozza meg.",
+            "episode_range": "Az epizódszámozás a támogatott tartományon kívül esik."
+        }
     },
     "usage": {
         "synopsis_1": "Használat: freemkv <forrás> <cél> [kapcsolók]",
@@ -588,6 +597,8 @@
             "keep_iso": "Köztes ISO megtartása:",
             "auto_eject": "Lemez kiadása befejezéskor:",
             "default_selection": "Alapértelmezett kijelölés:",
+            "persist_stream_preferences": "Hang- és feliratválasztás megjegyzése",
+            "presentation_language": "Megjelenítési nyelv (de / en; üres = hangbeállítás)",
             "sel_main": "Csak a főfilm",
             "sel_all": "Összes cím",
             "sel_longest": "Leghosszabb cím",
@@ -659,7 +670,11 @@
         "page": {
             "empty_title": "Nincs behelyezett lemez",
             "empty_subtitle": "Helyezz be egy lemezt, vagy nyiss meg egy fájlt, mappát vagy ISO-képfájlt.",
-            "detail_default": "Nyiss meg egy lemezképet a címei megtekintéséhez."
+            "detail_default": "Nyiss meg egy lemezképet a címei megtekintéséhez.",
+            "disc_ready_title": "Lemez behelyezve",
+            "open_source_title": "Forrás megnyitása",
+            "disc_ready": "Lemez behelyezve — megnyitásra kész.",
+            "no_disc": "Nem található lemez."
         },
         "progress": {
             "saving_current": "Mentés {container} fájlba",
@@ -691,6 +706,8 @@
         "log": {
             "ready": "freemkv {version} — kész",
             "source_closed": "Forrás bezárva",
+            "keydb_dir_failed": "nem hozható létre a keydb könyvtár: {path}: {error} (a könyvtárnak írhatónak kell lennie a freemkv számára)",
+            "keydb_replace_failed": "{message} — {dest}: a keydb.cfg nem cserélhető le; ellenőrizze a könyvtár írási jogosultságait és a sandbox-hozzáférést",
             "cancelling": "Megszakítás…",
             "nothing_eject": "Nincs mit kiadni — a forrás egy fájl, nem meghajtó.",
             "checking_updates": "Frissítések keresése…",
