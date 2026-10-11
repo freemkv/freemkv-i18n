@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} misslyckades: {cause}",
         "fatal_diagnostic_hint": "För en diagnostiklogg, kör om med --log-level 3 (skriver ./log.txt).",
         "flag_needs_value": "Fel: {flag} kräver ett värde (t.ex. {example}).",
+        "presentation_language_unknown": "Okänt presentationsspråk \"{value}\". Använd en ISO 639-språkkod som en, de eller fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Fel: ogiltig titel '{value}' — titlar är 1-baserade och måste vara ett tal >= 1.",
         "interrupted_incomplete": "Avbruten — utdata är ofullständig och slutfördes inte.",

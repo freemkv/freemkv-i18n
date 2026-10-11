@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} に失敗しました: {cause}",
         "fatal_diagnostic_hint": "診断ログを取得するには、--log-level 3 を付けて再実行してください（./log.txt に書き込まれます）。",
         "flag_needs_value": "エラー: {flag} には値が必要です（例: {example}）。",
+        "presentation_language_unknown": "プレゼンテーション言語「{value}」は不明です。en、de、fra などの ISO 639 言語コードを指定してください。",
         "generic": "{code} {detail}",
         "invalid_title": "エラー: 無効なタイトル '{value}' です — タイトルは 1 始まりで、1 以上の数値である必要があります。",
         "interrupted_incomplete": "中断されました — 出力は不完全で、確定処理は行われていません。",

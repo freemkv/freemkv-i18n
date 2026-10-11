@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} a eșuat: {cause}",
         "fatal_diagnostic_hint": "Pentru un jurnal de diagnosticare, rulează din nou cu --log-level 3 (scrie ./log.txt).",
         "flag_needs_value": "Eroare: {flag} necesită o valoare (de ex. {example}).",
+        "presentation_language_unknown": "Limbă de prezentare necunoscută „{value}”. Folosiți un cod de limbă ISO 639, precum en, de sau fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Eroare: titlu invalid '{value}' — titlurile încep de la 1, trebuie să fie un număr >= 1.",
         "interrupted_incomplete": "Întrerupt — ieșirea este incompletă și nu a fost finalizată.",

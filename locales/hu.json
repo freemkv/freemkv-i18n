@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} sikertelen: {cause}",
         "fatal_diagnostic_hint": "Diagnosztikai naplóhoz futtasd újra a --log-level 3 kapcsolóval (a ./log.txt fájlba ír).",
         "flag_needs_value": "Hiba: a(z) {flag} kapcsolóhoz érték szükséges (pl. {example}).",
+        "presentation_language_unknown": "Ismeretlen megjelenítési nyelv: „{value}”. Használj ISO 639 nyelvkódot, például en, de vagy fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Hiba: érvénytelen cím: „{value}” — a címek 1-alapúak, >= 1 értékű számnak kell lenniük.",
         "interrupted_incomplete": "Megszakítva — a kimenet hiányos, és nem lett véglegesítve.",

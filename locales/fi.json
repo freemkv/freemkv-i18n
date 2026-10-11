@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} epäonnistui: {cause}",
         "fatal_diagnostic_hint": "Diagnostiikkalokia varten suorita uudelleen valitsimella --log-level 3 (kirjoittaa ./log.txt).",
         "flag_needs_value": "Virhe: {flag} vaatii arvon (esim. {example}).",
+        "presentation_language_unknown": "Tuntematon esityskieli \"{value}\". Käytä ISO 639 -kielikoodia, kuten en, de tai fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Virhe: virheellinen nimike '{value}' — nimikkeet ovat 1-pohjaisia ja niiden on oltava luku >= 1.",
         "interrupted_incomplete": "Keskeytetty — tuloste on epätäydellinen eikä sitä viimeistelty.",

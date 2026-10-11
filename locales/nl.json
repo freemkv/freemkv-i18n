@@ -343,6 +343,7 @@
         "fatal_header": "{level}: {op} mislukt: {cause}",
         "fatal_diagnostic_hint": "Voer voor een diagnoselogboek opnieuw uit met --log-level 3 (schrijft ./log.txt).",
         "flag_needs_value": "Fout: {flag} vereist een waarde (bijv. {example}).",
+        "presentation_language_unknown": "Onbekende presentatietaal \"{value}\". Gebruik een ISO 639-taalcode zoals en, de of fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Fout: ongeldige titel '{value}' — titels beginnen bij 1, moet een getal >= 1 zijn.",
         "interrupted_incomplete": "Onderbroken — de uitvoer is onvolledig en is niet afgerond.",

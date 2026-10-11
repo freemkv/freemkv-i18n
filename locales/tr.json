@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} başarısız: {cause}",
         "fatal_diagnostic_hint": "Tanılama günlüğü için --log-level 3 ile yeniden çalıştırın (./log.txt yazar).",
         "flag_needs_value": "Hata: {flag} bir değer gerektirir (örneğin {example}).",
+        "presentation_language_unknown": "Bilinmeyen sunum dili \"{value}\". en, de veya fra gibi bir ISO 639 dil kodu kullanın.",
         "generic": "{code} {detail}",
         "invalid_title": "Hata: geçersiz başlık '{value}' — başlıklar 1 tabanlıdır, >= 1 olan bir sayı olmalıdır.",
         "interrupted_incomplete": "Kesintiye uğradı — çıktı eksik ve sonlandırılmadı.",

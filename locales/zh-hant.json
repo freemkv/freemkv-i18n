@@ -366,6 +366,7 @@
         "fatal_header": "{level}：{op} 失敗：{cause}",
         "fatal_diagnostic_hint": "若要取得診斷紀錄，請以 --log-level 3 重新執行（會寫入 ./log.txt）。",
         "flag_needs_value": "錯誤：{flag} 需要一個值（例如 {example}）。",
+        "presentation_language_unknown": "未知的簡報語言「{value}」。請使用 ISO 639 語言代碼，例如 en、de 或 fra。",
         "generic": "{code} {detail}",
         "invalid_title": "錯誤：無效的標題 '{value}' — 標題從 1 起算，必須是 >= 1 的數字。",
         "interrupted_incomplete": "已中斷 — 輸出不完整且未定案。",

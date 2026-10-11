@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} zlyhalo: {cause}",
         "fatal_diagnostic_hint": "Pre diagnostický záznam spustite znova s --log-level 3 (zapíše ./log.txt).",
         "flag_needs_value": "Chyba: {flag} vyžaduje hodnotu (napr. {example}).",
+        "presentation_language_unknown": "Neznámy jazyk prezentácie „{value}“. Použite kód jazyka podľa ISO 639, napríklad en, de alebo fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Chyba: neplatný titul '{value}' — tituly sú číslované od 1, musí to byť číslo >= 1.",
         "interrupted_incomplete": "Prerušené — výstup je neúplný a nebol dokončený.",

@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} thất bại: {cause}",
         "fatal_diagnostic_hint": "Để có nhật ký chẩn đoán, chạy lại với --log-level 3 (ghi vào ./log.txt).",
         "flag_needs_value": "Lỗi: {flag} cần một giá trị (ví dụ {example}).",
+        "presentation_language_unknown": "Không nhận ra ngôn ngữ trình bày \"{value}\". Hãy dùng mã ngôn ngữ ISO 639 như en, de hoặc fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Lỗi: tiêu đề không hợp lệ '{value}' — tiêu đề đánh số từ 1, phải là số >= 1.",
         "interrupted_incomplete": "Bị gián đoạn — đầu ra chưa hoàn chỉnh và không được hoàn tất.",

@@ -366,6 +366,7 @@
         "fatal_header": "{level}：{op} 失败：{cause}",
         "fatal_diagnostic_hint": "如需诊断日志，请使用 --log-level 3 重新运行（写入 ./log.txt）。",
         "flag_needs_value": "错误：{flag} 需要一个值（例如 {example}）。",
+        "presentation_language_unknown": "未知的演示语言“{value}”。请使用 ISO 639 语言代码，例如 en、de 或 fra。",
         "generic": "{code} {detail}",
         "invalid_title": "错误：无效的标题 '{value}' —— 标题从 1 起，必须是 >= 1 的数字。",
         "interrupted_incomplete": "已中断 —— 输出不完整且未最终化。",

@@ -343,6 +343,7 @@
         "fatal_header": "{level}: {op} non riuscita: {cause}",
         "fatal_diagnostic_hint": "Per un registro di diagnostica, riesegui con --log-level 3 (scrive ./log.txt).",
         "flag_needs_value": "Errore: {flag} richiede un valore (es. {example}).",
+        "presentation_language_unknown": "Lingua di presentazione sconosciuta \"{value}\". Usa un codice lingua ISO 639, come en, de o fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Errore: titolo non valido '{value}' — i titoli partono da 1, deve essere un numero >= 1.",
         "interrupted_incomplete": "Interrotto — l'output e incompleto e non e stato finalizzato.",

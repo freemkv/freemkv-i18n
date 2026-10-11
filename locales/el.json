@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} απέτυχε: {cause}",
         "fatal_diagnostic_hint": "Για διαγνωστικό αρχείο καταγραφής, εκτελέστε ξανά με --log-level 3 (εγγράφει ./log.txt).",
         "flag_needs_value": "Σφάλμα: το {flag} απαιτεί τιμή (π.χ. {example}).",
+        "presentation_language_unknown": "Άγνωστη γλώσσα παρουσίασης «{value}». Χρησιμοποιήστε έναν κωδικό γλώσσας ISO 639, όπως en, de ή fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Σφάλμα: μη έγκυρος τίτλος '{value}' — οι τίτλοι έχουν βάση το 1, πρέπει να είναι αριθμός >= 1.",
         "interrupted_incomplete": "Διακόπηκε — η έξοδος είναι ημιτελής και δεν οριστικοποιήθηκε.",

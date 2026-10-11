@@ -366,6 +366,7 @@
         "fatal_header": "{level}: operacja {op} nie powiodła się: {cause}",
         "fatal_diagnostic_hint": "Aby uzyskać dziennik diagnostyczny, uruchom ponownie z opcją --log-level 3 (zapisuje ./log.txt).",
         "flag_needs_value": "Błąd: {flag} wymaga wartości (np. {example}).",
+        "presentation_language_unknown": "Nieznany język prezentacji „{value}”. Użyj kodu języka ISO 639, takiego jak en, de lub fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Błąd: nieprawidłowy tytuł „{value}” — tytuły są numerowane od 1 i muszą być liczbą >= 1.",
         "interrupted_incomplete": "Przerwano — wynik jest niekompletny i nie został sfinalizowany.",

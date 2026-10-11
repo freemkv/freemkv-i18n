@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} gagal: {cause}",
         "fatal_diagnostic_hint": "Untuk log diagnostik, jalankan ulang dengan --log-level 3 (menulis ./log.txt).",
         "flag_needs_value": "Kesalahan: {flag} memerlukan nilai (mis. {example}).",
+        "presentation_language_unknown": "Bahasa presentasi \"{value}\" tidak dikenal. Gunakan kode bahasa ISO 639 seperti en, de, atau fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Kesalahan: judul '{value}' tidak valid — judul berbasis 1, harus angka >= 1.",
         "interrupted_incomplete": "Terputus — keluaran tidak lengkap dan tidak difinalisasi.",

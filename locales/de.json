@@ -343,6 +343,7 @@
         "fatal_header": "{level}: {op} fehlgeschlagen: {cause}",
         "fatal_diagnostic_hint": "Für ein Diagnoseprotokoll erneut mit --log-level 3 ausführen (schreibt ./log.txt).",
         "flag_needs_value": "Fehler: {flag} benötigt einen Wert (z. B. {example}).",
+        "presentation_language_unknown": "Unbekannte Präsentationssprache „{value}“. Verwende einen ISO-639-Sprachcode wie en, de oder fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Fehler: ungültiger Titel '{value}' — Titel sind 1-basiert und müssen eine Zahl >= 1 sein.",
         "interrupted_incomplete": "Abgebrochen — die Ausgabe ist unvollständig und wurde nicht abgeschlossen.",

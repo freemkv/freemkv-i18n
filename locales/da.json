@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} mislykkedes: {cause}",
         "fatal_diagnostic_hint": "For en diagnostisk log, kør igen med --log-level 3 (skriver ./log.txt).",
         "flag_needs_value": "Fejl: {flag} kræver en værdi (f.eks. {example}).",
+        "presentation_language_unknown": "Ukendt præsentationssprog \"{value}\". Brug en ISO 639-sprogkode som en, de eller fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Fejl: ugyldig titel '{value}' — titler er 1-baserede og skal være et tal >= 1.",
         "interrupted_incomplete": "Afbrudt — output er ufuldstændigt og blev ikke færdiggjort.",

@@ -366,6 +366,7 @@
         "fatal_header": "{level}: {op} failed: {cause}",
         "fatal_diagnostic_hint": "For a diagnostic log, re-run with --log-level 3 (writes ./log.txt).",
         "flag_needs_value": "Error: {flag} requires a value (e.g. {example}).",
+        "presentation_language_unknown": "Unknown presentation language \"{value}\". Use an ISO 639 language code such as en, de or fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Error: invalid title '{value}' — titles are 1-based, must be a number >= 1.",
         "interrupted_incomplete": "Interrupted — output is incomplete and was not finalized.",
