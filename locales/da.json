@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: kræver en sti (f.eks. --log-file freemkv.log)",
         "mux_failed_generic": "Muxing mislykkedes (E{code}).",
         "title_changed": "Titel {num} ændrede sig mellem scanninger: forventede {expected}, men drevet rapporterer nu {found}. Diskens titelliste ændrede sig under rippet; intet blev skrevet for denne titel.",
-        "presentation_needs_scan": "Valg efter præsentationssprog kræver en scannet disk; vælg --title eksplicit.",
-        "selection_review": "Titelvalget skal gennemgås: {reason}; vælg --title eksplicit.",
         "selection_review_reason": {
             "missing_episode_roster": "disken har ingen oprindelig afsnitsliste",
             "incomplete_episode_roster": "disken oprindelige afsnitsliste er ufuldstændig",
             "conflicting_episode_roster": "disken oprindelige afsnitslister er i konflikt",
-            "invalid_episode_roster": "disken oprindelige afsnitsliste er ugyldig",
-            "incomplete_launch_proof": "diskens startsekvens er ufuldstændig",
-            "invalid_launch_proof": "diskens startsekvens er ugyldig",
-            "missing_presentation_language": "disken har ingen præsentation på det ønskede sprog",
-            "invalid_presentation_language": "præsentationssproget er ikke gyldigt",
-            "unmatched_presentation_language": "ingen præsentation matcher præsentationssproget",
-            "ambiguous_presentation_language": "mere end én præsentation matcher præsentationssproget",
-            "no_titles": "disken har ingen brugbare titler"
+            "invalid_episode_roster": "disken oprindelige afsnitsliste er ugyldig"
         },
         "plan": {
             "no_titles": "disken har ingen brugbare titler",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Vælg titel (1-baseret, kan gentages). Standard: hovedtitlen (titel 1); brug -t all for hver titel.",
             "audio": "  -a, --audio LANGS   Behold kun disse lydsprog (navne eller ISO-koder, kommasepareret, versalufølsomt), eller all/none. Standard: behold alle.",
-            "presentation_language": "      --presentation-language de  Vælg en sprogpræsentation lavet af forfatteren; uafhængig af --audio all",
+            "presentation_language": "      --presentation-language de  Foretræk filmens version på dette sprog (beholder titel 0, hvis der ikke er nogen)",
             "subtitles": "  -s, --subtitles LANGS  Behold kun disse undertekstsprog (navne eller ISO-koder, kommasepareret, versalufølsomt), eller all/none. Standard: behold alle.",
             "keydb": "      --keydb PATH    KEYDB.cfg-sti (lokal nøglekilde)",
             "key_url_1": "      --key-url URL   Basis-URL for online nøgletjeneste (kun https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Fremskridt bevaret",
         "finishing": "Afslutter …",
         "artifact_lock_failed": "Kunne ikke tage låsen på {name}; en anden proces bruger den muligvis."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Genstarter: igangværende arbejde stopper ved næste sikre punkt, og derefter genstarter serveren.",
+            "no_supervisor": "Genstart er ikke tilgængelig: denne server blev ikke startet som en tjeneste, så intet ville starte den igen. Genstart den selv i stedet."
+        }
     }
 }

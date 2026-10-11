@@ -424,20 +424,11 @@
         "log_file_needs_value": "--log-file: vereist een pad (bijv. --log-file freemkv.log)",
         "mux_failed_generic": "Muxen mislukt (E{code}).",
         "title_changed": "Titel {num} is tussen scans gewijzigd: verwacht {expected}, het station meldt nu {found}. De titellijst van de disc is tijdens het rippen veranderd; voor deze titel is niets geschreven.",
-        "presentation_needs_scan": "Selectie op presentatietaal vereist een gescande schijf; kies expliciet --title.",
-        "selection_review": "De titelselectie moet worden gecontroleerd: {reason}; kies expliciet --title.",
         "selection_review_reason": {
             "missing_episode_roster": "de schijf heeft geen oorspronkelijke afleveringslijst",
             "incomplete_episode_roster": "de oorspronkelijke afleveringslijst van de schijf is onvolledig",
             "conflicting_episode_roster": "de oorspronkelijke afleveringslijsten van de schijf spreken elkaar tegen",
-            "invalid_episode_roster": "de oorspronkelijke afleveringslijst van de schijf is ongeldig",
-            "incomplete_launch_proof": "de startvolgorde van de schijf is onvolledig",
-            "invalid_launch_proof": "de startvolgorde van de schijf is ongeldig",
-            "missing_presentation_language": "de schijf heeft geen presentatie in de gevraagde taal",
-            "invalid_presentation_language": "de presentatietaal is niet geldig",
-            "unmatched_presentation_language": "geen enkele presentatie komt overeen met de presentatietaal",
-            "ambiguous_presentation_language": "meer dan één presentatie komt overeen met de presentatietaal",
-            "no_titles": "de schijf heeft geen bruikbare titels"
+            "invalid_episode_roster": "de oorspronkelijke afleveringslijst van de schijf is ongeldig"
         },
         "plan": {
             "no_titles": "de schijf heeft geen bruikbare titels",
@@ -498,7 +489,7 @@
         "flag": {
             "title": "  -t, --title N       Titel selecteren (basis 1, herhaalbaar). Standaard: de hoofdtitel (titel 1); -t all voor alle titels.",
             "audio": "  -a, --audio TALEN   Alleen deze audiotalen behouden (namen of ISO-codes, kommagescheiden, niet hoofdlettergevoelig), of all/none. Standaard: alle behouden.",
-            "presentation_language": "      --presentation-language de  Kies een door de maker samengestelde taalversie; onafhankelijk van --audio all",
+            "presentation_language": "      --presentation-language de  Geef de voorkeur aan de versie van de film in deze taal (behoudt titel 0 als er geen is)",
             "subtitles": "  -s, --subtitles TALEN    Alleen deze ondertiteltalen behouden (namen of ISO-codes, kommagescheiden, niet hoofdlettergevoelig), of all/none. Standaard: alle behouden.",
             "keydb": "      --keydb PAD     KEYDB.cfg-pad (lokale sleutelbron)",
             "key_url_1": "      --key-url URL   Basis-URL van de online sleuteldienst (alleen https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Voortgang blijft behouden",
         "finishing": "Bezig met afronden …",
         "artifact_lock_failed": "Kon de vergrendeling op {name} niet verkrijgen; mogelijk wordt het door een ander proces gebruikt."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Opnieuw opstarten: lopend werk stopt op het volgende veilige punt, daarna start de server opnieuw op.",
+            "no_supervisor": "Herstarten is niet beschikbaar: deze server is niet als service gestart, dus niets zou hem weer starten. Start hem zelf opnieuw op."
+        }
     }
 }

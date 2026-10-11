@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: requiere una ruta (p. ej. --log-file freemkv.log)",
         "mux_failed_generic": "Falló el multiplexado (E{code}).",
         "title_changed": "El título {num} cambió entre escaneos: se esperaba {expected}, pero la unidad ahora reporta {found}. La lista de títulos del disco cambió durante la extracción; no se escribió nada para este título.",
-        "presentation_needs_scan": "La selección por idioma de presentación requiere un disco escaneado; elige --title explícitamente.",
-        "selection_review": "La selección de título necesita revisión: {reason}; elige --title explícitamente.",
         "selection_review_reason": {
             "missing_episode_roster": "el disco no tiene una lista de episodios original",
             "incomplete_episode_roster": "la lista de episodios original del disco está incompleta",
             "conflicting_episode_roster": "las listas de episodios originales del disco se contradicen",
-            "invalid_episode_roster": "la lista de episodios original del disco no es válida",
-            "incomplete_launch_proof": "la secuencia de inicio del disco está incompleta",
-            "invalid_launch_proof": "la secuencia de inicio del disco no es válida",
-            "missing_presentation_language": "el disco no tiene una presentación en el idioma solicitado",
-            "invalid_presentation_language": "el idioma de presentación no es válido",
-            "unmatched_presentation_language": "ninguna presentación coincide con el idioma de presentación",
-            "ambiguous_presentation_language": "más de una presentación coincide con el idioma de presentación",
-            "no_titles": "el disco no tiene títulos utilizables"
+            "invalid_episode_roster": "la lista de episodios original del disco no es válida"
         },
         "plan": {
             "no_titles": "el disco no tiene títulos utilizables",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Seleccionar título (base 1, repetible). Por defecto: el título principal (título 1); usa -t all para todos los títulos.",
             "audio": "  -a, --audio LANGS   Conservar solo estos idiomas de audio (nombres o códigos ISO, separados por comas, sin distinguir mayúsculas), o all/none. Por defecto: conservar todos.",
-            "presentation_language": "      --presentation-language de  Elegir una presentación de idioma creada por el autor; independiente de --audio all",
+            "presentation_language": "      --presentation-language de  Preferir la versión de la película en este idioma (conserva el título 0 si no hay ninguna)",
             "subtitles": "  -s, --subtitles LANGS  Conservar solo estos idiomas de subtítulos (nombres o códigos ISO, separados por comas, sin distinguir mayúsculas), o all/none. Por defecto: conservar todos.",
             "keydb": "      --keydb PATH    Ruta de KEYDB.cfg (fuente de claves local)",
             "key_url_1": "      --key-url URL   URL base del servicio de claves en línea (solo https).",
@@ -918,5 +909,11 @@
         "progress_kept": "El progreso se conserva",
         "finishing": "Finalizando …",
         "artifact_lock_failed": "No se pudo tomar el bloqueo de {name}; es posible que otro proceso lo esté usando."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Reiniciando: el trabajo en curso se detiene en el siguiente punto seguro y después el servidor se reinicia.",
+            "no_supervisor": "El reinicio no está disponible: este servidor no se inició como servicio, así que nada volvería a iniciarlo. Reinícialo tú mismo."
+        }
     }
 }

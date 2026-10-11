@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: vyžaduje cestu (např. --log-file freemkv.log)",
         "mux_failed_generic": "Muxování selhalo (E{code}).",
         "title_changed": "Titul {num} se mezi prohledáními změnil: očekáváno {expected}, mechanika nyní hlásí {found}. Seznam titulů na disku se během ripování změnil; pro tento titul nebylo nic zapsáno.",
-        "presentation_needs_scan": "Výběr podle jazyka prezentace vyžaduje naskenovaný disk; zvolte --title výslovně.",
-        "selection_review": "Výběr titulu je třeba zkontrolovat: {reason}; zvolte --title výslovně.",
         "selection_review_reason": {
             "missing_episode_roster": "disk nemá původní seznam epizod",
             "incomplete_episode_roster": "původní seznam epizod na disku je neúplný",
             "conflicting_episode_roster": "původní seznamy epizod na disku si odporují",
-            "invalid_episode_roster": "původní seznam epizod na disku je neplatný",
-            "incomplete_launch_proof": "spouštěcí sekvence disku je neúplná",
-            "invalid_launch_proof": "spouštěcí sekvence disku je neplatná",
-            "missing_presentation_language": "disk nemá prezentaci v požadovaném jazyce",
-            "invalid_presentation_language": "jazyk prezentace není platný",
-            "unmatched_presentation_language": "žádná prezentace neodpovídá jazyku prezentace",
-            "ambiguous_presentation_language": "jazyku prezentace odpovídá více než jedna prezentace",
-            "no_titles": "disk nemá žádné použitelné tituly"
+            "invalid_episode_roster": "původní seznam epizod na disku je neplatný"
         },
         "plan": {
             "no_titles": "disk nemá žádné použitelné tituly",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Vybrat titul (od 1, opakovatelné). Výchozí: hlavní titul (titul 1); pro každý titul použijte -t all.",
             "audio": "  -a, --audio LANGS   Ponechat pouze tyto jazyky zvuku (názvy nebo kódy ISO, oddělené čárkami, bez ohledu na velikost písmen), nebo all/none. Výchozí: ponechat vše.",
-            "presentation_language": "      --presentation-language de  Vybrat jazykovou prezentaci připravenou autorem; nezávisí na --audio all",
+            "presentation_language": "      --presentation-language de  Preferovat verzi filmu v tomto jazyce (pokud žádná není, ponechá titul 0)",
             "subtitles": "  -s, --subtitles LANGS  Ponechat pouze tyto jazyky titulků (názvy nebo kódy ISO, oddělené čárkami, bez ohledu na velikost písmen), nebo all/none. Výchozí: ponechat vše.",
             "keydb": "      --keydb PATH    Cesta ke KEYDB.cfg (lokální zdroj klíčů)",
             "key_url_1": "      --key-url URL   Základní URL online služby klíčů (pouze https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Postup zachován",
         "finishing": "Dokončování …",
         "artifact_lock_failed": "Nepodařilo se získat zámek na {name}; může jej používat jiný proces."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Restartuje se: probíhající práce se zastaví v nejbližším bezpečném bodě a poté se server restartuje.",
+            "no_supervisor": "Restart není dostupný: tento server nebyl spuštěn jako služba, takže by ho nic znovu nespustilo. Restartujte ho sami."
+        }
     }
 }

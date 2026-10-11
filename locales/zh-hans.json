@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file：需要一个路径（例如 --log-file freemkv.log）",
         "mux_failed_generic": "复用失败（E{code}）。",
         "title_changed": "标题 {num} 在两次扫描之间发生了变化：预期为 {expected}，驱动器现在报告 {found}。抓取期间标题列表发生了变化；此标题未写入任何内容。",
-        "presentation_needs_scan": "按演示语言选择需要已扫描的光盘；请明确指定 --title。",
-        "selection_review": "标题选择需要复核：{reason}；请明确指定 --title。",
         "selection_review_reason": {
             "missing_episode_roster": "光盘没有原始剧集列表",
             "incomplete_episode_roster": "光盘的原始剧集列表不完整",
             "conflicting_episode_roster": "光盘的原始剧集列表相互冲突",
-            "invalid_episode_roster": "光盘的原始剧集列表无效",
-            "incomplete_launch_proof": "光盘的启动序列不完整",
-            "invalid_launch_proof": "光盘的启动序列无效",
-            "missing_presentation_language": "光盘没有所请求语言的演示",
-            "invalid_presentation_language": "演示语言无效",
-            "unmatched_presentation_language": "没有与演示语言匹配的演示",
-            "ambiguous_presentation_language": "有多个演示与演示语言匹配",
-            "no_titles": "光盘没有可用的标题"
+            "invalid_episode_roster": "光盘的原始剧集列表无效"
         },
         "plan": {
             "no_titles": "光盘没有可用的标题",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       选择标题（从 1 起，可重复）。默认：主标题（标题 1）；用 -t all 选择每个标题。",
             "audio": "  -a, --audio LANGS   仅保留这些音频语言（名称或 ISO 代码，逗号分隔，不区分大小写），或 all/none。默认：全部保留。",
-            "presentation_language": "      --presentation-language de  选择作者制作的语言版本；与 --audio all 无关",
+            "presentation_language": "      --presentation-language de  优先选择该语言的影片版本（没有时保留标题 0）",
             "subtitles": "  -s, --subtitles LANGS  仅保留这些字幕语言（名称或 ISO 代码，逗号分隔，不区分大小写），或 all/none。默认：全部保留。",
             "keydb": "      --keydb PATH    KEYDB.cfg 路径（本地密钥源）",
             "key_url_1": "      --key-url URL   在线密钥服务的基础 URL（仅 https）。",
@@ -918,5 +909,11 @@
         "progress_kept": "进度已保留",
         "finishing": "正在完成……",
         "artifact_lock_failed": "无法获取 {name} 的锁；可能有其他进程正在使用它。"
+    },
+    "server": {
+        "reboot": {
+            "restarting": "正在重启：运行中的任务会在下一个安全点停止，随后服务器重启。",
+            "no_supervisor": "无法重启：此服务器不是作为服务启动的，重启后没有任何机制再将其拉起。请自行重启。"
+        }
     }
 }

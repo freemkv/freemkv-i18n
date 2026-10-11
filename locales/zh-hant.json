@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file：需要路徑（例如 --log-file freemkv.log）",
         "mux_failed_generic": "多工失敗（E{code}）。",
         "title_changed": "標題 {num} 在兩次掃描之間有所變更：預期為 {expected}，光碟機目前回報 {found}。擷取期間標題清單已變更；此標題未寫入任何內容。",
-        "presentation_needs_scan": "依簡報語言選擇需要已掃描的光碟；請明確指定 --title。",
-        "selection_review": "標題選擇需要複核：{reason}；請明確指定 --title。",
         "selection_review_reason": {
             "missing_episode_roster": "光碟沒有原始劇集清單",
             "incomplete_episode_roster": "光碟的原始劇集清單不完整",
             "conflicting_episode_roster": "光碟的原始劇集清單相互衝突",
-            "invalid_episode_roster": "光碟的原始劇集清單無效",
-            "incomplete_launch_proof": "光碟的啟動序列不完整",
-            "invalid_launch_proof": "光碟的啟動序列無效",
-            "missing_presentation_language": "光碟沒有所要求語言的簡報",
-            "invalid_presentation_language": "簡報語言無效",
-            "unmatched_presentation_language": "沒有與簡報語言相符的簡報",
-            "ambiguous_presentation_language": "有多個簡報與簡報語言相符",
-            "no_titles": "光碟沒有可用的標題"
+            "invalid_episode_roster": "光碟的原始劇集清單無效"
         },
         "plan": {
             "no_titles": "光碟沒有可用的標題",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       選擇標題（從 1 起算，可重複）。預設：主標題（標題 1）；使用 -t all 以擷取每個標題。",
             "audio": "  -a, --audio LANGS   僅保留這些音訊語言（名稱或 ISO 代碼，以逗號分隔，不分大小寫），或 all/none。預設：全部保留。",
-            "presentation_language": "      --presentation-language de  選擇作者製作的語言版本；與 --audio all 無關",
+            "presentation_language": "      --presentation-language de  優先選擇該語言的影片版本（沒有時保留標題 0）",
             "subtitles": "  -s, --subtitles LANGS  僅保留這些字幕語言（名稱或 ISO 代碼，以逗號分隔，不分大小寫），或 all/none。預設：全部保留。",
             "keydb": "      --keydb PATH    KEYDB.cfg 路徑（本機金鑰來源）",
             "key_url_1": "      --key-url URL   線上金鑰服務的基礎 URL（僅 https）。",
@@ -918,5 +909,11 @@
         "progress_kept": "進度已保留",
         "finishing": "完成中…",
         "artifact_lock_failed": "無法取得 {name} 的鎖定；可能有其他程序正在使用它。"
+    },
+    "server": {
+        "reboot": {
+            "restarting": "正在重新啟動：執行中的工作會在下一個安全點停止，隨後伺服器重新啟動。",
+            "no_supervisor": "無法重新啟動：此伺服器並非以服務方式啟動，重新啟動後沒有任何機制會再將其啟動。請自行重新啟動。"
+        }
     }
 }

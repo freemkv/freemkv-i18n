@@ -424,20 +424,11 @@
         "log_file_needs_value": "--log-file : nécessite un chemin (par ex. --log-file freemkv.log)",
         "mux_failed_generic": "Échec du multiplexage (E{code}).",
         "title_changed": "Le titre {num} a changé entre deux analyses : attendu {expected}, le lecteur indique maintenant {found}. La liste des titres du disque a changé pendant l'extraction ; rien n'a été écrit pour ce titre.",
-        "presentation_needs_scan": "La sélection par langue de présentation nécessite un disque analysé ; choisissez --title explicitement.",
-        "selection_review": "La sélection du titre doit être vérifiée : {reason} ; choisissez --title explicitement.",
         "selection_review_reason": {
             "missing_episode_roster": "le disque n'a pas de liste d'épisodes d'origine",
             "incomplete_episode_roster": "la liste d'épisodes d'origine du disque est incomplète",
             "conflicting_episode_roster": "les listes d'épisodes d'origine du disque sont en conflit",
-            "invalid_episode_roster": "la liste d'épisodes d'origine du disque n'est pas valide",
-            "incomplete_launch_proof": "la séquence de lancement du disque est incomplète",
-            "invalid_launch_proof": "la séquence de lancement du disque n'est pas valide",
-            "missing_presentation_language": "le disque n'a pas de présentation dans la langue demandée",
-            "invalid_presentation_language": "la langue de présentation n'est pas valide",
-            "unmatched_presentation_language": "aucune présentation ne correspond à la langue de présentation",
-            "ambiguous_presentation_language": "plusieurs présentations correspondent à la langue de présentation",
-            "no_titles": "le disque n'a aucun titre exploitable"
+            "invalid_episode_roster": "la liste d'épisodes d'origine du disque n'est pas valide"
         },
         "plan": {
             "no_titles": "le disque n'a aucun titre exploitable",
@@ -498,7 +489,7 @@
         "flag": {
             "title": "  -t, --title N       Sélectionner le titre (base 1, répétable). Défaut : le titre principal (titre 1) ; -t all pour tous.",
             "audio": "  -a, --audio LANGUES Ne garder que ces langues audio (noms ou codes ISO, séparés par des virgules, insensible à la casse), ou all/none. Défaut : tout garder.",
-            "presentation_language": "      --presentation-language de  Choisir une présentation linguistique prévue par l'auteur ; indépendant de --audio all",
+            "presentation_language": "      --presentation-language de  Préférer la version du film dans cette langue (conserve le titre 0 s'il n'y en a pas)",
             "subtitles": "  -s, --subtitles LANGUES  Ne garder que ces langues de sous-titres (noms ou codes ISO, séparés par des virgules, insensible à la casse), ou all/none. Défaut : tout garder.",
             "keydb": "      --keydb CHEMIN  Chemin vers KEYDB.cfg (source de clés locale)",
             "key_url_1": "      --key-url URL   URL de base du service de clés en ligne (https uniquement).",
@@ -918,5 +909,11 @@
         "progress_kept": "La progression est conservée",
         "finishing": "Finalisation …",
         "artifact_lock_failed": "Impossible d'obtenir le verrou sur {name} ; un autre processus l'utilise peut-être."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Redémarrage : les travaux en cours s'arrêtent au prochain point sûr, puis le serveur redémarre.",
+            "no_supervisor": "Le redémarrage n'est pas disponible : ce serveur n'a pas été lancé en tant que service, donc rien ne le relancerait. Redémarrez-le vous-même."
+        }
     }
 }

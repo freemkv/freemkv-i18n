@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: bir yol gerektirir (örneğin --log-file freemkv.log)",
         "mux_failed_generic": "Mux başarısız (E{code}).",
         "title_changed": "Başlık {num} taramalar arasında değişti: beklenen {expected}, sürücü şimdi {found} bildiriyor. Başlık listesi kopyalama sırasında değişti; bu başlık için hiçbir şey yazılmadı.",
-        "presentation_needs_scan": "Sunum diline göre seçim, taranmış bir disk gerektirir; --title seçeneğini açıkça belirtin.",
-        "selection_review": "Başlık seçiminin gözden geçirilmesi gerekiyor: {reason}; --title seçeneğini açıkça belirtin.",
         "selection_review_reason": {
             "missing_episode_roster": "diskte özgün bir bölüm listesi yok",
             "incomplete_episode_roster": "diskin özgün bölüm listesi eksik",
             "conflicting_episode_roster": "diskin özgün bölüm listeleri çelişiyor",
-            "invalid_episode_roster": "diskin özgün bölüm listesi geçersiz",
-            "incomplete_launch_proof": "diskin başlatma sırası eksik",
-            "invalid_launch_proof": "diskin başlatma sırası geçersiz",
-            "missing_presentation_language": "diskte istenen dilde sunum yok",
-            "invalid_presentation_language": "sunum dili geçerli değil",
-            "unmatched_presentation_language": "hiçbir sunum sunum diliyle eşleşmiyor",
-            "ambiguous_presentation_language": "birden fazla sunum sunum diliyle eşleşiyor",
-            "no_titles": "diskte kullanılabilir başlık yok"
+            "invalid_episode_roster": "diskin özgün bölüm listesi geçersiz"
         },
         "plan": {
             "no_titles": "diskte kullanılabilir başlık yok",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Başlık seç (1 tabanlı, tekrarlanabilir). Varsayılan: ana başlık (başlık 1); her başlık için -t all kullanın.",
             "audio": "  -a, --audio LANGS   Yalnızca bu ses dillerini tut (adlar veya ISO kodları, virgülle ayrılmış, büyük/küçük harf duyarsız) ya da all/none. Varsayılan: tümünü tut.",
-            "presentation_language": "      --presentation-language de  Yapımcının hazırladığı dil sunumunu seç; --audio all ayarından bağımsız",
+            "presentation_language": "      --presentation-language de  Filmin bu dildeki sürümünü tercih et (yoksa 0. başlığı korur)",
             "subtitles": "  -s, --subtitles LANGS  Yalnızca bu altyazı dillerini tut (adlar veya ISO kodları, virgülle ayrılmış, büyük/küçük harf duyarsız) ya da all/none. Varsayılan: tümünü tut.",
             "keydb": "      --keydb PATH    KEYDB.cfg yolu (yerel anahtar kaynağı)",
             "key_url_1": "      --key-url URL   Çevrimiçi anahtar hizmeti temel URL'si (yalnızca https).",
@@ -918,5 +909,11 @@
         "progress_kept": "İlerleme korunur",
         "finishing": "Tamamlanıyor …",
         "artifact_lock_failed": "{name} üzerindeki kilit alınamadı; başka bir işlem onu kullanıyor olabilir."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Yeniden başlatılıyor: çalışan işler bir sonraki güvenli noktada durur, ardından sunucu yeniden başlar.",
+            "no_supervisor": "Yeniden başlatma kullanılamıyor: bu sunucu bir hizmet olarak başlatılmadı, bu yüzden onu yeniden başlatacak bir şey yok. Bunun yerine sunucuyu kendiniz yeniden başlatın."
+        }
     }
 }

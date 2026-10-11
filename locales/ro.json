@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: necesită o cale (de ex. --log-file freemkv.log)",
         "mux_failed_generic": "Multiplexarea a eșuat (E{code}).",
         "title_changed": "Titlul {num} s-a schimbat între scanări: se aștepta {expected}, iar unitatea raportează acum {found}. Lista de titluri a discului s-a modificat în timpul extragerii; nu s-a scris nimic pentru acest titlu.",
-        "presentation_needs_scan": "Selecția după limba de prezentare necesită un disc scanat; alege explicit --title.",
-        "selection_review": "Selecția titlului necesită verificare: {reason}; alege explicit --title.",
         "selection_review_reason": {
             "missing_episode_roster": "discul nu are o listă de episoade originală",
             "incomplete_episode_roster": "lista de episoade originală a discului este incompletă",
             "conflicting_episode_roster": "listele de episoade originale ale discului sunt în conflict",
-            "invalid_episode_roster": "lista de episoade originală a discului nu este validă",
-            "incomplete_launch_proof": "secvența de pornire a discului este incompletă",
-            "invalid_launch_proof": "secvența de pornire a discului nu este validă",
-            "missing_presentation_language": "discul nu are o prezentare în limba solicitată",
-            "invalid_presentation_language": "limba de prezentare nu este validă",
-            "unmatched_presentation_language": "nicio prezentare nu corespunde limbii de prezentare",
-            "ambiguous_presentation_language": "mai multe prezentări corespund limbii de prezentare",
-            "no_titles": "discul nu are titluri utilizabile"
+            "invalid_episode_roster": "lista de episoade originală a discului nu este validă"
         },
         "plan": {
             "no_titles": "discul nu are titluri utilizabile",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Selectează titlul (începe de la 1, repetabil). Implicit: titlul principal (titlul 1); folosește -t all pentru fiecare titlu.",
             "audio": "  -a, --audio LANGS   Păstrează doar aceste limbi audio (nume sau coduri ISO, separate prin virgulă, fără sensibilitate la majuscule) sau all/none. Implicit: păstrează toate.",
-            "presentation_language": "      --presentation-language de  Alege o prezentare lingvistică creată de autor; independent de --audio all",
+            "presentation_language": "      --presentation-language de  Preferă versiunea filmului în această limbă (păstrează titlul 0 dacă nu există niciuna)",
             "subtitles": "  -s, --subtitles LANGS  Păstrează doar aceste limbi de subtitrare (nume sau coduri ISO, separate prin virgulă, fără sensibilitate la majuscule) sau all/none. Implicit: păstrează toate.",
             "keydb": "      --keydb PATH    Calea KEYDB.cfg (sursă locală de chei)",
             "key_url_1": "      --key-url URL   URL de bază al serviciului de chei online (doar https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Progresul este păstrat",
         "finishing": "Se finalizează …",
         "artifact_lock_failed": "Nu s-a putut obține blocarea pentru {name}; este posibil să fie folosit de un alt proces."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Se repornește: lucrările în curs se opresc la următorul punct sigur, apoi serverul repornește.",
+            "no_supervisor": "Repornirea nu este disponibilă: acest server nu a fost pornit ca serviciu, deci nimic nu l-ar porni din nou. Repornește-l tu însuți."
+        }
     }
 }

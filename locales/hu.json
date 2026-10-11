@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: elérési utat igényel (pl. --log-file freemkv.log)",
         "mux_failed_generic": "A muxolás sikertelen (E{code}).",
         "title_changed": "A(z) {num}. cím megváltozott a beolvasások között: várt {expected}, a meghajtó most ezt jelenti: {found}. A lemez címlistája megváltozott kimásolás közben; ehhez a címhez semmi nem lett kiírva.",
-        "presentation_needs_scan": "A megjelenítési nyelv szerinti választáshoz beolvasott lemez szükséges; adja meg kifejezetten a --title kapcsolót.",
-        "selection_review": "A cím kiválasztását felül kell vizsgálni: {reason}; adja meg kifejezetten a --title kapcsolót.",
         "selection_review_reason": {
             "missing_episode_roster": "a lemezen nincs eredeti epizódlista",
             "incomplete_episode_roster": "a lemez eredeti epizódlistája hiányos",
             "conflicting_episode_roster": "a lemez eredeti epizódlistái ellentmondanak egymásnak",
-            "invalid_episode_roster": "a lemez eredeti epizódlistája érvénytelen",
-            "incomplete_launch_proof": "a lemez indítási sorozata hiányos",
-            "invalid_launch_proof": "a lemez indítási sorozata érvénytelen",
-            "missing_presentation_language": "a lemezen nincs megjelenítés a kért nyelven",
-            "invalid_presentation_language": "a megjelenítési nyelv érvénytelen",
-            "unmatched_presentation_language": "egyetlen megjelenítés sem felel meg a megjelenítési nyelvnek",
-            "ambiguous_presentation_language": "egynél több megjelenítés felel meg a megjelenítési nyelvnek",
-            "no_titles": "a lemezen nincs használható cím"
+            "invalid_episode_roster": "a lemez eredeti epizódlistája érvénytelen"
         },
         "plan": {
             "no_titles": "a lemezen nincs használható cím",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Cím kiválasztása (1-alapú, ismételhető). Alapértelmezés: a fő cím (1. cím); minden címhez használd a -t all kapcsolót.",
             "audio": "  -a, --audio LANGS   Csak ezeket a hangnyelveket tartsd meg (nevek vagy ISO-kódok, vesszővel elválasztva, kis- és nagybetűre érzéketlen), vagy all/none. Alapértelmezés: mind megtartva.",
-            "presentation_language": "      --presentation-language de  Szerzői nyelvi változat kiválasztása; független a --audio all beállítástól",
+            "presentation_language": "      --presentation-language de  A film ilyen nyelvű változatának előnyben részesítése (ha nincs ilyen, a 0. cím marad)",
             "subtitles": "  -s, --subtitles LANGS  Csak ezeket a feliratnyelveket tartsd meg (nevek vagy ISO-kódok, vesszővel elválasztva, kis- és nagybetűre érzéketlen), vagy all/none. Alapértelmezés: mind megtartva.",
             "keydb": "      --keydb PATH    KEYDB.cfg elérési út (helyi kulcsforrás)",
             "key_url_1": "      --key-url URL   Az online kulcsszolgáltatás alap-URL-je (csak https).",
@@ -918,5 +909,11 @@
         "progress_kept": "A haladás megmarad",
         "finishing": "Befejezés…",
         "artifact_lock_failed": "Nem sikerült zárolni a(z) {name} elemet; lehet, hogy egy másik folyamat használja."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Újraindítás: a folyamatban lévő munka a következő biztonságos pontnál leáll, majd a kiszolgáló újraindul.",
+            "no_supervisor": "Az újraindítás nem érhető el: ezt a kiszolgálót nem szolgáltatásként indították el, így semmi sem indítaná újra. Indítsa újra saját kezűleg."
+        }
     }
 }

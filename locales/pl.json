@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: wymaga ścieżki (np. --log-file freemkv.log)",
         "mux_failed_generic": "Multipleksowanie nie powiodło się (E{code}).",
         "title_changed": "Tytuł {num} zmienił się między skanowaniami: oczekiwano {expected}, a napęd zgłasza teraz {found}. Lista tytułów płyty zmieniła się w trakcie zgrywania; dla tego tytułu nic nie zapisano.",
-        "presentation_needs_scan": "Wybór według języka prezentacji wymaga zeskanowanej płyty; wybierz jawnie --title.",
-        "selection_review": "Wybór tytułu wymaga sprawdzenia: {reason}; wybierz jawnie --title.",
         "selection_review_reason": {
             "missing_episode_roster": "płyta nie ma oryginalnej listy odcinków",
             "incomplete_episode_roster": "oryginalna lista odcinków na płycie jest niekompletna",
             "conflicting_episode_roster": "oryginalne listy odcinków na płycie są ze sobą sprzeczne",
-            "invalid_episode_roster": "oryginalna lista odcinków na płycie jest nieprawidłowa",
-            "incomplete_launch_proof": "sekwencja uruchamiania płyty jest niekompletna",
-            "invalid_launch_proof": "sekwencja uruchamiania płyty jest nieprawidłowa",
-            "missing_presentation_language": "płyta nie ma prezentacji w żądanym języku",
-            "invalid_presentation_language": "język prezentacji jest nieprawidłowy",
-            "unmatched_presentation_language": "żadna prezentacja nie pasuje do języka prezentacji",
-            "ambiguous_presentation_language": "do języka prezentacji pasuje więcej niż jedna prezentacja",
-            "no_titles": "płyta nie ma żadnych użytecznych tytułów"
+            "invalid_episode_roster": "oryginalna lista odcinków na płycie jest nieprawidłowa"
         },
         "plan": {
             "no_titles": "płyta nie ma żadnych użytecznych tytułów",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Wybierz tytuł (numeracja od 1, można powtarzać). Domyślnie: główny tytuł (tytuł 1); użyj -t all dla wszystkich tytułów.",
             "audio": "  -a, --audio LANGS   Zachowaj tylko te języki dźwięku (nazwy lub kody ISO, oddzielone przecinkami, bez rozróżniania wielkości liter) albo all/none. Domyślnie: zachowaj wszystkie.",
-            "presentation_language": "      --presentation-language de  Wybierz wersję językową przygotowaną przez autora; niezależnie od --audio all",
+            "presentation_language": "      --presentation-language de  Preferuj wersję filmu w tym języku (zachowuje tytuł 0, gdy brak takiej wersji)",
             "subtitles": "  -s, --subtitles LANGS  Zachowaj tylko te języki napisów (nazwy lub kody ISO, oddzielone przecinkami, bez rozróżniania wielkości liter) albo all/none. Domyślnie: zachowaj wszystkie.",
             "keydb": "      --keydb PATH    Ścieżka KEYDB.cfg (lokalne źródło kluczy)",
             "key_url_1": "      --key-url URL   Bazowy adres URL usługi kluczy online (tylko https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Postęp zostaje zachowany",
         "finishing": "Kończenie…",
         "artifact_lock_failed": "Nie udało się uzyskać blokady na {name}; może być używany przez inny proces."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Ponowne uruchamianie: trwające prace zatrzymają się w najbliższym bezpiecznym punkcie, po czym serwer uruchomi się ponownie.",
+            "no_supervisor": "Restart jest niedostępny: ten serwer nie został uruchomiony jako usługa, więc nic by go nie uruchomiło ponownie. Zrestartuj go samodzielnie."
+        }
     }
 }

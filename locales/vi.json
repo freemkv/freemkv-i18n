@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: cần một đường dẫn (ví dụ --log-file freemkv.log)",
         "mux_failed_generic": "Mux thất bại (E{code}).",
         "title_changed": "Tiêu đề {num} đã thay đổi giữa các lần quét: dự kiến {expected}, ổ đĩa hiện báo {found}. Danh sách tiêu đề đã thay đổi trong khi trích xuất; không có gì được ghi cho tiêu đề này.",
-        "presentation_needs_scan": "Việc chọn theo ngôn ngữ trình chiếu cần đĩa đã được quét; hãy chọn --title một cách rõ ràng.",
-        "selection_review": "Việc chọn tiêu đề cần được xem xét: {reason}; hãy chọn --title một cách rõ ràng.",
         "selection_review_reason": {
             "missing_episode_roster": "đĩa không có danh sách tập gốc",
             "incomplete_episode_roster": "danh sách tập gốc của đĩa không đầy đủ",
             "conflicting_episode_roster": "các danh sách tập gốc của đĩa mâu thuẫn nhau",
-            "invalid_episode_roster": "danh sách tập gốc của đĩa không hợp lệ",
-            "incomplete_launch_proof": "trình tự khởi chạy của đĩa không đầy đủ",
-            "invalid_launch_proof": "trình tự khởi chạy của đĩa không hợp lệ",
-            "missing_presentation_language": "đĩa không có bản trình chiếu bằng ngôn ngữ được yêu cầu",
-            "invalid_presentation_language": "ngôn ngữ trình chiếu không hợp lệ",
-            "unmatched_presentation_language": "không có bản trình chiếu nào khớp với ngôn ngữ trình chiếu",
-            "ambiguous_presentation_language": "có nhiều hơn một bản trình chiếu khớp với ngôn ngữ trình chiếu",
-            "no_titles": "đĩa không có tiêu đề nào dùng được"
+            "invalid_episode_roster": "danh sách tập gốc của đĩa không hợp lệ"
         },
         "plan": {
             "no_titles": "đĩa không có tiêu đề nào dùng được",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Chọn tiêu đề (đánh số từ 1, lặp lại được). Mặc định: tiêu đề chính (tiêu đề 1); dùng -t all cho mọi tiêu đề.",
             "audio": "  -a, --audio LANGS   Chỉ giữ các ngôn ngữ âm thanh này (tên hoặc mã ISO, phân tách bằng dấu phẩy, không phân biệt hoa thường), hoặc all/none. Mặc định: giữ tất cả.",
-            "presentation_language": "      --presentation-language de  Chọn bản trình bày ngôn ngữ do tác giả soạn; độc lập với --audio all",
+            "presentation_language": "      --presentation-language de  Ưu tiên phiên bản phim bằng ngôn ngữ này (giữ tiêu đề 0 nếu không có)",
             "subtitles": "  -s, --subtitles LANGS  Chỉ giữ các ngôn ngữ phụ đề này (tên hoặc mã ISO, phân tách bằng dấu phẩy, không phân biệt hoa thường), hoặc all/none. Mặc định: giữ tất cả.",
             "keydb": "      --keydb PATH    Đường dẫn KEYDB.cfg (nguồn khóa cục bộ)",
             "key_url_1": "      --key-url URL   URL cơ sở của dịch vụ khoá trực tuyến (chỉ https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Tiến độ được giữ lại",
         "finishing": "Đang hoàn tất …",
         "artifact_lock_failed": "Không thể khóa {name}; có thể một tiến trình khác đang sử dụng nó."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Đang khởi động lại: các tác vụ đang chạy sẽ dừng ở điểm an toàn kế tiếp, sau đó máy chủ khởi động lại.",
+            "no_supervisor": "Không thể khởi động lại: máy chủ này không được chạy như một dịch vụ nên không có gì khởi động nó trở lại. Hãy tự khởi động lại."
+        }
     }
 }

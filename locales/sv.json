@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: kräver en sökväg (t.ex. --log-file freemkv.log)",
         "mux_failed_generic": "Muxning misslyckades (E{code}).",
         "title_changed": "Titel {num} ändrades mellan skanningarna: förväntade {expected}, enheten rapporterar nu {found}. Titellistan ändrades under rippningen; inget skrevs för den här titeln.",
-        "presentation_needs_scan": "Val efter presentationsspråk kräver en skannad skiva; välj --title uttryckligen.",
-        "selection_review": "Titelvalet behöver granskas: {reason}; välj --title uttryckligen.",
         "selection_review_reason": {
             "missing_episode_roster": "skivan har ingen ursprunglig avsnittslista",
             "incomplete_episode_roster": "skivans ursprungliga avsnittslista är ofullständig",
             "conflicting_episode_roster": "skivans ursprungliga avsnittslistor är motstridiga",
-            "invalid_episode_roster": "skivans ursprungliga avsnittslista är ogiltig",
-            "incomplete_launch_proof": "skivans startsekvens är ofullständig",
-            "invalid_launch_proof": "skivans startsekvens är ogiltig",
-            "missing_presentation_language": "skivan har ingen presentation på det begärda språket",
-            "invalid_presentation_language": "presentationsspråket är inte giltigt",
-            "unmatched_presentation_language": "ingen presentation matchar presentationsspråket",
-            "ambiguous_presentation_language": "fler än en presentation matchar presentationsspråket",
-            "no_titles": "skivan har inga användbara titlar"
+            "invalid_episode_roster": "skivans ursprungliga avsnittslista är ogiltig"
         },
         "plan": {
             "no_titles": "skivan har inga användbara titlar",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Välj titel (1-baserad, upprepbar). Standard: huvudtiteln (titel 1); använd -t all för varje titel.",
             "audio": "  -a, --audio LANGS   Behåll endast dessa ljudspråk (namn eller ISO-koder, kommaseparerade, skiftlägesokänsliga), eller all/none. Standard: behåll alla.",
-            "presentation_language": "      --presentation-language de  Välj en språkversion skapad av upphovspersonen; oberoende av --audio all",
+            "presentation_language": "      --presentation-language de  Föredra filmens version på det här språket (behåller titel 0 om det inte finns någon)",
             "subtitles": "  -s, --subtitles LANGS  Behåll endast dessa undertextspråk (namn eller ISO-koder, kommaseparerade, skiftlägesokänsliga), eller all/none. Standard: behåll alla.",
             "keydb": "      --keydb PATH    KEYDB.cfg-sökväg (lokal nyckelkälla)",
             "key_url_1": "      --key-url URL   Bas-URL för nyckeltjänsten online (endast https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Förloppet behålls",
         "finishing": "Avslutar …",
         "artifact_lock_failed": "Det gick inte att låsa {name}; en annan process kan använda den."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Startar om: pågående arbete stoppas vid nästa säkra punkt, därefter startar servern om.",
+            "no_supervisor": "Omstart är inte tillgänglig: den här servern startades inte som en tjänst, så ingenting skulle starta den igen. Starta om den själv i stället."
+        }
     }
 }

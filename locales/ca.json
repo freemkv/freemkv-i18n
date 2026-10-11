@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: requereix un camí (p. ex. --log-file freemkv.log)",
         "mux_failed_generic": "El multiplexatge ha fallat (E{code}).",
         "title_changed": "El títol {num} ha canviat entre anàlisis: s'esperava {expected}, però la unitat ara informa {found}. La llista de títols del disc ha canviat durant l'extracció; no s'ha escrit res per a aquest títol.",
-        "presentation_needs_scan": "La selecció per llengua de presentació requereix un disc escanejat; trieu --title explícitament.",
-        "selection_review": "La selecció del títol necessita revisió: {reason}; trieu --title explícitament.",
         "selection_review_reason": {
             "missing_episode_roster": "el disc no té una llista d'episodis original",
             "incomplete_episode_roster": "la llista d'episodis original del disc és incompleta",
             "conflicting_episode_roster": "les llistes d'episodis originals del disc es contradiuen",
-            "invalid_episode_roster": "la llista d'episodis original del disc no és vàlida",
-            "incomplete_launch_proof": "la seqüència d'inici del disc és incompleta",
-            "invalid_launch_proof": "la seqüència d'inici del disc no és vàlida",
-            "missing_presentation_language": "el disc no té cap presentació en la llengua sol·licitada",
-            "invalid_presentation_language": "la llengua de presentació no és vàlida",
-            "unmatched_presentation_language": "cap presentació coincideix amb la llengua de presentació",
-            "ambiguous_presentation_language": "més d'una presentació coincideix amb la llengua de presentació",
-            "no_titles": "el disc no té cap títol utilitzable"
+            "invalid_episode_roster": "la llista d'episodis original del disc no és vàlida"
         },
         "plan": {
             "no_titles": "el disc no té cap títol utilitzable",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Selecciona el títol (des d'1, repetible). Per defecte: el títol principal (títol 1); useu -t all per a tots els títols.",
             "audio": "  -a, --audio LANGS   Conserva només aquests idiomes d'àudio (noms o codis ISO, separats per comes, sense distingir majúscules), o all/none. Per defecte: conserva'ls tots.",
-            "presentation_language": "      --presentation-language de  Tria una presentació d'idioma creada per l'autor; independent de --audio all",
+            "presentation_language": "      --presentation-language de  Prefereix la versió de la pel·lícula en aquest idioma (conserva el títol 0 si no n'hi ha cap)",
             "subtitles": "  -s, --subtitles LANGS  Conserva només aquests idiomes de subtítols (noms o codis ISO, separats per comes, sense distingir majúscules), o all/none. Per defecte: conserva'ls tots.",
             "keydb": "      --keydb PATH    Camí de KEYDB.cfg (font de claus local)",
             "key_url_1": "      --key-url URL   URL base del servei de claus en línia (només https).",
@@ -918,5 +909,11 @@
         "progress_kept": "El progrés es conserva",
         "finishing": "S'està acabant …",
         "artifact_lock_failed": "No s'ha pogut obtenir el bloqueig de {name}; és possible que un altre procés l'estigui utilitzant."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Reiniciant: la feina en curs s'atura al següent punt segur i després el servidor es reinicia.",
+            "no_supervisor": "El reinici no està disponible: aquest servidor no s'ha iniciat com a servei, de manera que res el tornaria a iniciar. Reinicieu-lo vosaltres mateixos."
+        }
     }
 }

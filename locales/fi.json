@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: vaatii polun (esim. --log-file freemkv.log)",
         "mux_failed_generic": "Muksaus epäonnistui (E{code}).",
         "title_changed": "Nimike {num} muuttui skannausten välillä: odotettiin {expected}, asema ilmoittaa nyt {found}. Levyn nimikeluettelo muuttui rippauksen aikana; tälle nimikkeelle ei kirjoitettu mitään.",
-        "presentation_needs_scan": "Esityskielen mukainen valinta vaatii skannatun levyn; valitse --title erikseen.",
-        "selection_review": "Nimikkeen valinta pitää tarkistaa: {reason}; valitse --title erikseen.",
         "selection_review_reason": {
             "missing_episode_roster": "levyllä ei ole alkuperäistä jaksoluetteloa",
             "incomplete_episode_roster": "levyn alkuperäinen jaksoluettelo on epätäydellinen",
             "conflicting_episode_roster": "levyn alkuperäiset jaksoluettelot ovat ristiriidassa",
-            "invalid_episode_roster": "levyn alkuperäinen jaksoluettelo on virheellinen",
-            "incomplete_launch_proof": "levyn käynnistysjakso on epätäydellinen",
-            "invalid_launch_proof": "levyn käynnistysjakso on virheellinen",
-            "missing_presentation_language": "levyllä ei ole esitystä pyydetyllä kielellä",
-            "invalid_presentation_language": "esityskieli ei kelpaa",
-            "unmatched_presentation_language": "mikään esitys ei vastaa esityskieltä",
-            "ambiguous_presentation_language": "useampi kuin yksi esitys vastaa esityskieltä",
-            "no_titles": "levyllä ei ole käyttökelpoisia nimikkeitä"
+            "invalid_episode_roster": "levyn alkuperäinen jaksoluettelo on virheellinen"
         },
         "plan": {
             "no_titles": "levyllä ei ole käyttökelpoisia nimikkeitä",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Valitse nimike (1-pohjainen, toistettava). Oletus: päänimike (nimike 1); käytä -t all kaikille nimikkeille.",
             "audio": "  -a, --audio LANGS   Säilytä vain nämä äänikielet (nimet tai ISO-koodit, pilkuin eroteltuina, kirjainkoolla ei väliä) tai all/none. Oletus: säilytä kaikki.",
-            "presentation_language": "      --presentation-language de  Valitse tekijän laatima kieliversio; riippumaton valinnasta --audio all",
+            "presentation_language": "      --presentation-language de  Suosi elokuvan tämänkielistä versiota (säilyttää nimikkeen 0, jos sellaista ei ole)",
             "subtitles": "  -s, --subtitles LANGS  Säilytä vain nämä tekstityskielet (nimet tai ISO-koodit, pilkuin eroteltuina, kirjainkoolla ei väliä) tai all/none. Oletus: säilytä kaikki.",
             "keydb": "      --keydb PATH    KEYDB.cfg-polku (paikallinen avainlähde)",
             "key_url_1": "      --key-url URL   Verkkoavainpalvelun perus-URL (vain https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Edistyminen säilyy",
         "finishing": "Viimeistellään …",
         "artifact_lock_failed": "Kohteen {name} lukitusta ei saatu; toinen prosessi saattaa käyttää sitä."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Käynnistetään uudelleen: käynnissä oleva työ pysähtyy seuraavassa turvallisessa kohdassa, minkä jälkeen palvelin käynnistyy uudelleen.",
+            "no_supervisor": "Uudelleenkäynnistys ei ole käytettävissä: tätä palvelinta ei käynnistetty palveluna, joten mikään ei käynnistäisi sitä uudelleen. Käynnistä se itse uudelleen."
+        }
     }
 }

@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: パスが必要です（例: --log-file freemkv.log）",
         "mux_failed_generic": "多重化に失敗しました（E{code}）。",
         "title_changed": "タイトル {num} がスキャン間で変化しました: 期待値 {expected}、ドライブの現在の報告 {found}。リッピング中にディスクのタイトル一覧が変わりました。このタイトルには何も書き込まれていません。",
-        "presentation_needs_scan": "プレゼンテーション言語による選択にはスキャン済みのディスクが必要です。--title を明示的に指定してください。",
-        "selection_review": "タイトルの選択を確認する必要があります: {reason}。--title を明示的に指定してください。",
         "selection_review_reason": {
             "missing_episode_roster": "ディスクにオーサリングされたエピソード一覧がありません",
             "incomplete_episode_roster": "ディスクのオーサリングされたエピソード一覧が不完全です",
             "conflicting_episode_roster": "ディスクのオーサリングされたエピソード一覧が競合しています",
-            "invalid_episode_roster": "ディスクのオーサリングされたエピソード一覧が無効です",
-            "incomplete_launch_proof": "ディスクの起動シーケンスが不完全です",
-            "invalid_launch_proof": "ディスクの起動シーケンスが無効です",
-            "missing_presentation_language": "ディスクに要求された言語のプレゼンテーションがありません",
-            "invalid_presentation_language": "プレゼンテーション言語が無効です",
-            "unmatched_presentation_language": "プレゼンテーション言語に一致するプレゼンテーションがありません",
-            "ambiguous_presentation_language": "プレゼンテーション言語に一致するプレゼンテーションが複数あります",
-            "no_titles": "ディスクに使用可能なタイトルがありません"
+            "invalid_episode_roster": "ディスクのオーサリングされたエピソード一覧が無効です"
         },
         "plan": {
             "no_titles": "ディスクに使用可能なタイトルがありません",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       タイトルを選択（1 始まり、繰り返し可）。デフォルト: メインタイトル（タイトル 1）。すべてのタイトルには -t all を使用。",
             "audio": "  -a, --audio LANGS   これらの音声言語のみを保持（名称または ISO コード、カンマ区切り、大文字小文字を区別しない）、または all/none。デフォルト: すべて保持。",
-            "presentation_language": "      --presentation-language de  制作者が用意した言語版を選択（--audio all とは独立）",
+            "presentation_language": "      --presentation-language de  この言語の映画バージョンを優先（該当がなければタイトル 0 を維持）",
             "subtitles": "  -s, --subtitles LANGS  これらの字幕言語のみを保持（名称または ISO コード、カンマ区切り、大文字小文字を区別しない）、または all/none。デフォルト: すべて保持。",
             "keydb": "      --keydb PATH    KEYDB.cfg のパス（ローカルキーソース）",
             "key_url_1": "      --key-url URL   オンライン鍵サービスのベース URL (https のみ)。",
@@ -918,5 +909,11 @@
         "progress_kept": "進捗は保持されます",
         "finishing": "終了処理中 …",
         "artifact_lock_failed": "{name} のロックを取得できませんでした。別のプロセスが使用している可能性があります。"
+    },
+    "server": {
+        "reboot": {
+            "restarting": "再起動中: 実行中の作業は次の安全な地点で停止し、その後サーバーが再起動します。",
+            "no_supervisor": "再起動は利用できません: このサーバーはサービスとして起動されていないため、再び起動するものがありません。代わりに手動で再起動してください。"
+        }
     }
 }

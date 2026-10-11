@@ -447,20 +447,11 @@
         "log_file_needs_value": "--log-file: memerlukan path (mis. --log-file freemkv.log)",
         "mux_failed_generic": "Mux gagal (E{code}).",
         "title_changed": "Judul {num} berubah di antara pemindaian: diharapkan {expected}, drive sekarang melaporkan {found}. Daftar judul disc berubah selama rip; tidak ada yang ditulis untuk judul ini.",
-        "presentation_needs_scan": "Pemilihan berdasarkan bahasa presentasi memerlukan disc yang telah dipindai; pilih --title secara eksplisit.",
-        "selection_review": "Pemilihan judul perlu ditinjau: {reason}; pilih --title secara eksplisit.",
         "selection_review_reason": {
             "missing_episode_roster": "disc tidak memiliki daftar episode bawaan",
             "incomplete_episode_roster": "daftar episode bawaan disc tidak lengkap",
             "conflicting_episode_roster": "daftar episode bawaan disc saling bertentangan",
-            "invalid_episode_roster": "daftar episode bawaan disc tidak valid",
-            "incomplete_launch_proof": "urutan peluncuran disc tidak lengkap",
-            "invalid_launch_proof": "urutan peluncuran disc tidak valid",
-            "missing_presentation_language": "disc tidak memiliki presentasi dalam bahasa yang diminta",
-            "invalid_presentation_language": "bahasa presentasi tidak valid",
-            "unmatched_presentation_language": "tidak ada presentasi yang cocok dengan bahasa presentasi",
-            "ambiguous_presentation_language": "lebih dari satu presentasi cocok dengan bahasa presentasi",
-            "no_titles": "disc tidak memiliki judul yang dapat digunakan"
+            "invalid_episode_roster": "daftar episode bawaan disc tidak valid"
         },
         "plan": {
             "no_titles": "disc tidak memiliki judul yang dapat digunakan",
@@ -530,7 +521,7 @@
         "flag": {
             "title": "  -t, --title N       Pilih judul (berbasis 1, dapat diulang). Default: judul utama (judul 1); gunakan -t all untuk setiap judul.",
             "audio": "  -a, --audio LANGS   Simpan hanya bahasa audio ini (nama atau kode ISO, dipisah koma, tidak peka huruf besar-kecil), atau all/none. Default: simpan semua.",
-            "presentation_language": "      --presentation-language de  Pilih presentasi bahasa buatan pembuat; tidak bergantung pada --audio all",
+            "presentation_language": "      --presentation-language de  Utamakan versi film dalam bahasa ini (tetap memakai judul 0 jika tidak ada)",
             "subtitles": "  -s, --subtitles LANGS  Simpan hanya bahasa subtitle ini (nama atau kode ISO, dipisah koma, tidak peka huruf besar-kecil), atau all/none. Default: simpan semua.",
             "keydb": "      --keydb PATH    Path KEYDB.cfg (sumber kunci lokal)",
             "key_url_1": "      --key-url URL   URL dasar layanan kunci online (hanya https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Kemajuan tetap disimpan",
         "finishing": "Menyelesaikan …",
         "artifact_lock_failed": "Tidak dapat mengambil kunci pada {name}; mungkin sedang digunakan oleh proses lain."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Memulai ulang: pekerjaan yang berjalan berhenti pada titik aman berikutnya, lalu server dimulai ulang.",
+            "no_supervisor": "Mulai ulang tidak tersedia: server ini tidak dijalankan sebagai layanan, sehingga tidak ada yang akan menjalankannya lagi. Mulai ulang sendiri."
+        }
     }
 }

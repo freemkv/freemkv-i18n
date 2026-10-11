@@ -424,20 +424,11 @@
         "log_file_needs_value": "--log-file: benötigt einen Pfad (z. B. --log-file freemkv.log)",
         "mux_failed_generic": "Muxen fehlgeschlagen (E{code}).",
         "title_changed": "Titel {num} hat sich zwischen den Scans geändert: erwartet {expected}, das Laufwerk meldet jetzt {found}. Die Titelliste der Disc hat sich während des Rips geändert; für diesen Titel wurde nichts geschrieben.",
-        "presentation_needs_scan": "Die Auswahl nach Präsentationssprache erfordert eine gescannte Disc; wähle --title ausdrücklich.",
-        "selection_review": "Die Titelauswahl muss geprüft werden: {reason}; wähle --title ausdrücklich.",
         "selection_review_reason": {
             "missing_episode_roster": "die Disc enthält keine vorgegebene Episodenliste",
             "incomplete_episode_roster": "die vorgegebene Episodenliste der Disc ist unvollständig",
             "conflicting_episode_roster": "die vorgegebenen Episodenlisten der Disc widersprechen sich",
-            "invalid_episode_roster": "die vorgegebene Episodenliste der Disc ist ungültig",
-            "incomplete_launch_proof": "die Startsequenz der Disc ist unvollständig",
-            "invalid_launch_proof": "die Startsequenz der Disc ist ungültig",
-            "missing_presentation_language": "die Disc enthält keine Präsentation in der gewünschten Sprache",
-            "invalid_presentation_language": "die Präsentationssprache ist ungültig",
-            "unmatched_presentation_language": "keine Präsentation entspricht der Präsentationssprache",
-            "ambiguous_presentation_language": "mehr als eine Präsentation entspricht der Präsentationssprache",
-            "no_titles": "die Disc hat keine verwendbaren Titel"
+            "invalid_episode_roster": "die vorgegebene Episodenliste der Disc ist ungültig"
         },
         "plan": {
             "no_titles": "die Disc hat keine verwendbaren Titel",
@@ -498,7 +489,7 @@
         "flag": {
             "title": "  -t, --title N       Titel auswählen (1-basiert, wiederholbar). Standard: der Hauptfilm (Titel 1); -t all für alle Titel.",
             "audio": "  -a, --audio SPR     Nur diese Audiosprachen behalten (Namen oder ISO-Codes, kommagetrennt, Groß-/Kleinschreibung egal), oder all/none. Standard: alle behalten.",
-            "presentation_language": "      --presentation-language de  Eine vom Autor erstellte Sprachfassung wählen; unabhängig von --audio all",
+            "presentation_language": "      --presentation-language de  Die Fassung des Films in dieser Sprache bevorzugen (behält Titel 0, wenn es keine gibt)",
             "subtitles": "  -s, --subtitles SPR    Nur diese Untertitelsprachen behalten (Namen oder ISO-Codes, kommagetrennt, Groß-/Kleinschreibung egal), oder all/none. Standard: alle behalten.",
             "keydb": "      --keydb PFAD    KEYDB.cfg-Pfad (lokale Schlüsselquelle)",
             "key_url_1": "      --key-url URL   Basis-URL des Online-Schlüsseldienstes (nur https).",
@@ -918,5 +909,11 @@
         "progress_kept": "Fortschritt bleibt erhalten",
         "finishing": "Wird abgeschlossen …",
         "artifact_lock_failed": "Die Sperre für {name} konnte nicht übernommen werden; möglicherweise wird sie von einem anderen Prozess verwendet."
+    },
+    "server": {
+        "reboot": {
+            "restarting": "Neustart: laufende Arbeiten stoppen am nächsten sicheren Punkt, danach startet der Server neu.",
+            "no_supervisor": "Neustart nicht verfügbar: Dieser Server wurde nicht als Dienst gestartet, daher würde ihn nichts wieder starten. Starten Sie ihn stattdessen selbst neu."
+        }
     }
 }
