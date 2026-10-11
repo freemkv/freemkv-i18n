@@ -469,6 +469,11 @@
             },
             "review_held": "Titelvalget skal gennemgås før muxing: {reason}. Der blev ikke valgt nogen reservetitel.",
             "review_retained": "Den gemte ISO og planen bevares."
+        },
+        "staging": {
+            "listing_incomplete": "kan ikke undersøge mellemlageret: nogle poster i mellemlagermappen kunne ikke læses",
+            "entry_unreadable": "kan ikke undersøge mellemlagerposten {name}: {error}",
+            "mux_job_busy": "Et drev bruger lige nu denne rips mellemlagerjob; den blev ikke muxet og forbliver i mellemlageret."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} blev ændret, mens dette remux kørte; den blev ikke rørt",
-            "episode_alone": "{path} er en episode fra en disk, der blev delt op i flere filer, og dens titel kan ikke skelnes fra de andre, så intet blev skrevet. Brug «Change match» på dens ISO for at remuxe hele disken.",
+            "episode_unplanned": "{path} er et afsnit af en disk, der blev delt op i flere filer, og denne remux kunne ikke finde ud af, hvilken af diskens titler det er, så der blev ikke skrevet noget. Brug «Change match» på dens ISO for at remuxe hele disken.",
+            "landing_not_recorded": "Den nye fil til {path} blev ikke lagt på plads, fordi dens placering ikke kunne registreres ({error}). Vælg «Retry», når konfigurationsmappen igen tager imod skrivninger.",
+            "library_folder_empty": "biblioteksmappen {path} er tom (er delingen monteret?); der blev ikke skrevet noget",
+            "library_folder_unreadable": "biblioteksmappen {path} kan ikke læses ({error}); der blev ikke skrevet noget",
             "links_not_saved": "{path} er på plads, men library-links.json i konfigurationsmappen kunne ikke opdateres ({error}). Ret filen eller mappens tilladelser, og vælg derefter «Retry».",
+            "matches_unreadable": "de gemte match (library-matches.json i {dir}) kan ikke læses: {error}",
+            "no_title_plan": "denne remux har ingen titelplan; der blev ikke skrevet noget",
             "plan": {
                 "correction_review": "Det rettede match skal gennemgås: {reason}",
                 "review": "Titelplanen skal gennemgås før remux: {reason}"
             },
             "plan_not_saved": "remux-planen kunne ikke gemmes i {path} i konfigurationsmappen: {error}",
+            "queue_damaged": "{path} er beskadiget ({error}) og kunne ikke lægges til side ({aside_error}); remux-køen er sat på hold, og filen efterlades, som den er.",
+            "queue_unreadable": "{path} kan ikke læses ({error}); remux-køen er sat på hold, og filen efterlades, som den er. Ret konfigurationsmappen; den læses igen hvert minut.",
             "retire": {
                 "folder_missing": "mappen for {path} blev ikke fundet (er delingen monteret?); den blev ikke fjernet",
                 "kept": "Alle {new} nye filer er på plads. {count} gammel/gamle fil(er) lavet fra denne ISO blev beholdt, fordi de blev ændret efter denne rettelse begyndte, eller ikke længere er registreret som lavet fra den: {paths}. De spores ikke længere; slet dem selv, hvis du ikke vil have dem.",
@@ -954,7 +966,9 @@
                 "unchanged": "Din eksisterende MKV er uændret."
             },
             "stale_match": "Det gemte match for {path} blev bekræftet for en tidligere disk arkiveret på den sti, så intet blev skrevet. Åbn «Change match» igen for denne disk.",
-            "target_changed": "{error}. Biblioteksfilen {path} blev ændret, efter dette remux begyndte, eller den færdige MKV var allerede kopieret ind, så den blev ikke rørt."
+            "target_changed": "{error}. Biblioteksfilen {path} blev ændret, efter dette remux begyndte, eller den færdige MKV var allerede kopieret ind, så den blev ikke rørt.",
+            "tv_folder_empty": "tv-mappen {path} er tom (er delingen monteret?); der blev ikke skrevet noget",
+            "tv_folder_unreadable": "tv-mappen {path} kan ikke læses ({error}); der blev ikke skrevet noget"
         }
     }
 }

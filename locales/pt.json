@@ -446,6 +446,11 @@
             },
             "review_held": "A seleção de títulos precisa de revisão antes da multiplexagem: {reason}. Não foi selecionado nenhum título alternativo.",
             "review_retained": "O ISO e o plano guardados foram mantidos."
+        },
+        "staging": {
+            "listing_incomplete": "não é possível inspecionar a área intermédia: algumas entradas da pasta intermédia não puderam ser lidas",
+            "entry_unreadable": "não é possível inspecionar a entrada intermédia {name}: {error}",
+            "mux_job_busy": "Uma unidade está a usar neste momento o trabalho intermédio deste rip; não foi feito o mux e permanece na área intermédia."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} foi alterado enquanto este remux decorria; não foi tocado",
-            "episode_alone": "{path} é um episódio de um disco dividido em vários ficheiros, e o seu título não pode ser distinguido dos outros, por isso nada foi escrito. Use «Change match» na respetiva ISO para fazer o remux do disco inteiro.",
+            "episode_unplanned": "{path} é um episódio de um disco que foi dividido em vários ficheiros, e este remux não conseguiu descobrir qual dos títulos do disco é, pelo que não foi escrito nada. Use «Change match» na respetiva ISO para fazer o remux do disco inteiro.",
+            "landing_not_recorded": "O novo ficheiro de {path} não foi colocado no lugar porque não foi possível registar o seu destino ({error}). Escolha «Retry» quando a pasta de configuração voltar a aceitar escritas.",
+            "library_folder_empty": "a pasta da biblioteca {path} está vazia (a partilha está montada?); não foi escrito nada",
+            "library_folder_unreadable": "a pasta da biblioteca {path} não pode ser lida ({error}); não foi escrito nada",
             "links_not_saved": "{path} está no lugar, mas não foi possível atualizar library-links.json na pasta de configuração ({error}). Corrija esse ficheiro ou as permissões da respetiva pasta e, em seguida, escolha «Retry».",
+            "matches_unreadable": "as correspondências guardadas (library-matches.json em {dir}) não podem ser lidas: {error}",
+            "no_title_plan": "este remux não tem plano de títulos; não foi escrito nada",
             "plan": {
                 "correction_review": "A correspondência corrigida precisa de revisão: {reason}",
                 "review": "O plano de títulos precisa de revisão antes do remux: {reason}"
             },
             "plan_not_saved": "não foi possível guardar o plano de remux em {path} na pasta de configuração: {error}",
+            "queue_damaged": "{path} está danificado ({error}) e não foi possível pô-lo de parte ({aside_error}); a fila de remux fica retida e o ficheiro é deixado como está.",
+            "queue_unreadable": "{path} não pode ser lido ({error}); a fila de remux fica retida e o ficheiro é deixado como está. Corrija a pasta de configuração; é lida novamente de minuto a minuto.",
             "retire": {
                 "folder_missing": "a pasta de {path} não foi encontrada (a partilha está montada?); não foi removido",
                 "kept": "Os {new} novos ficheiros estão no lugar. Foram mantidos {count} ficheiro(s) antigo(s) criado(s) a partir desta ISO porque foram alterados depois de esta correção começar ou já não estão registados como criados a partir dela: {paths}. Já não são acompanhados; elimine-os manualmente se não os quiser.",
@@ -954,7 +966,9 @@
                 "unchanged": "O seu MKV existente não foi alterado."
             },
             "stale_match": "A correspondência guardada para {path} foi confirmada para um disco anterior arquivado nesse caminho, por isso nada foi escrito. Abra novamente «Change match» para este disco.",
-            "target_changed": "{error}. O ficheiro da biblioteca {path} foi alterado depois de este remux começar, ou o MKV concluído já tinha sido copiado, por isso não foi tocado."
+            "target_changed": "{error}. O ficheiro da biblioteca {path} foi alterado depois de este remux começar, ou o MKV concluído já tinha sido copiado, por isso não foi tocado.",
+            "tv_folder_empty": "a pasta de séries {path} está vazia (a partilha está montada?); não foi escrito nada",
+            "tv_folder_unreadable": "a pasta de séries {path} não pode ser lida ({error}); não foi escrito nada"
         }
     }
 }

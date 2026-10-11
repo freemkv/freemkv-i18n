@@ -469,6 +469,11 @@
             },
             "review_held": "A cím kiválasztását a muxolás előtt felül kell vizsgálni: {reason}. Nem lett kiválasztva tartalék cím.",
             "review_retained": "A mentett ISO és a terv megmarad."
+        },
+        "staging": {
+            "listing_incomplete": "az előkészítő terület nem vizsgálható: az előkészítő mappa néhány bejegyzése nem volt olvasható",
+            "entry_unreadable": "a(z) {name} előkészítő bejegyzés nem vizsgálható: {error}",
+            "mux_job_busy": "Egy meghajtó éppen használja ennek a ripnek az előkészítő feladatát; nem lett muxolva, és az előkészítő területen marad."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} megváltozott a remux közben; nem nyúltunk hozzá",
-            "episode_alone": "{path} egy több fájlra bontott lemez egyik epizódja, és a címe nem különböztethető meg a többitől, ezért semmi sem lett kiírva. A teljes lemez remuxolásához használja a(z) „Change match” funkciót az ISO-fájlján.",
+            "episode_unplanned": "A(z) {path} egy több fájlra bontott lemez egyik epizódja, és ez a remux nem tudta megállapítani, hogy a lemez melyik címe, ezért semmi sem íródott. A teljes lemez remuxolásához használja a(z) „Change match” funkciót az ISO-fájlján.",
+            "landing_not_recorded": "A(z) {path} új fájlja nem került a helyére, mert a végleges helyét nem sikerült rögzíteni ({error}). Válassza a következőt: „Retry”, amint a konfigurációs mappa ismét fogad írást.",
+            "library_folder_empty": "a(z) {path} könyvtármappa üres (csatolva van a megosztás?); semmi sem íródott",
+            "library_folder_unreadable": "a(z) {path} könyvtármappa nem olvasható ({error}); semmi sem íródott",
             "links_not_saved": "{path} a helyén van, de a konfigurációs mappában lévő library-links.json nem frissíthető ({error}). Javítsa ki a fájlt vagy a mappája jogosultságait, majd válassza a következőt: „Retry”.",
+            "matches_unreadable": "a mentett egyezések (library-matches.json itt: {dir}) nem olvashatók: {error}",
+            "no_title_plan": "ennek a remuxnak nincs címterve; semmi sem íródott",
             "plan": {
                 "correction_review": "A javított egyezést ellenőrizni kell: {reason}",
                 "review": "A címtervet a remux előtt ellenőrizni kell: {reason}"
             },
             "plan_not_saved": "a remuxterv nem menthető ide: {path} a konfigurációs mappában: {error}",
+            "queue_damaged": "A(z) {path} sérült ({error}), és nem sikerült félretenni ({aside_error}); a remux-sor fel van függesztve, a fájl érintetlen marad.",
+            "queue_unreadable": "A(z) {path} nem olvasható ({error}); a remux-sor fel van függesztve, a fájl érintetlen marad. Javítsa ki a konfigurációs mappát; percenként újra beolvassa.",
             "retire": {
                 "folder_missing": "{path} mappája nem található (csatolva van a megosztás?); nem lett eltávolítva",
                 "kept": "Mind a(z) {new} új fájl a helyén van. Ebből az ISO-ból készült {count} régi fájl megmaradt, mert a javítás kezdete után megváltozott, vagy már nincs nyilvántartva mint belőle készült: {paths}. Ezeket már nem követjük; törölje őket saját maga, ha nincs rájuk szüksége.",
@@ -954,7 +966,9 @@
                 "unchanged": "A meglévő MKV-fájl változatlan."
             },
             "stale_match": "A(z) {path} fájlhoz mentett egyezést egy korábbi, ugyanezen az útvonalon tárolt lemezhez erősítették meg, ezért semmi sem lett kiírva. Nyissa meg újra a(z) „Change match” funkciót ehhez a lemezhez.",
-            "target_changed": "{error}. A(z) {path} könyvtárfájl megváltozott a remux kezdete után, vagy a kész MKV már be lett másolva, ezért nem nyúltunk hozzá."
+            "target_changed": "{error}. A(z) {path} könyvtárfájl megváltozott a remux kezdete után, vagy a kész MKV már be lett másolva, ezért nem nyúltunk hozzá.",
+            "tv_folder_empty": "a(z) {path} sorozatmappa üres (csatolva van a megosztás?); semmi sem íródott",
+            "tv_folder_unreadable": "a(z) {path} sorozatmappa nem olvasható ({error}); semmi sem íródott"
         }
     }
 }

@@ -469,6 +469,11 @@
             },
             "review_held": "Başlık seçimi muxlamadan önce incelenmelidir: {reason}. Yedek başlık seçilmedi.",
             "review_retained": "Kaydedilen ISO ve plan korunuyor."
+        },
+        "staging": {
+            "listing_incomplete": "hazırlık alanı incelenemiyor: hazırlık klasöründeki bazı girdiler okunamadı",
+            "entry_unreadable": "{name} hazırlık girdisi incelenemiyor: {error}",
+            "mux_job_busy": "Bir sürücü şu anda bu rip'in hazırlık işini kullanıyor; mux yapılmadı ve hazırlık alanında kalıyor."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} bu remux sürerken değişti; ona dokunulmadı",
-            "episode_alone": "{path}, birden çok dosyaya bölünmüş bir diskin tek bir bölümüdür ve başlığı diğerlerinden ayırt edilemiyor, bu yüzden hiçbir şey yazılmadı. Diskin tamamını remux etmek için ISO'sunda «Change match» kullanın.",
+            "episode_unplanned": "{path}, birden çok dosyaya bölünmüş bir diskin tek bir bölümüdür ve bu remux diskin hangi başlığı olduğunu bulamadı, bu yüzden hiçbir şey yazılmadı. Diskin tamamını remux etmek için ISO'sunda «Change match» kullanın.",
+            "landing_not_recorded": "{path} için yeni dosya yerine konmadı, çünkü yerleştirilmesi kaydedilemedi ({error}). Yapılandırma klasörü yazmaları yeniden kabul ettiğinde «Retry» seçin.",
+            "library_folder_empty": "kitaplık klasörü {path} boş (paylaşım bağlı mı?); hiçbir şey yazılmadı",
+            "library_folder_unreadable": "kitaplık klasörü {path} okunamıyor ({error}); hiçbir şey yazılmadı",
             "links_not_saved": "{path} yerinde, ancak yapılandırma klasöründeki library-links.json güncellenemedi ({error}). Bu dosyayı veya klasörünün izinlerini düzeltin, ardından «Retry» seçin.",
+            "matches_unreadable": "kayıtlı eşleşmeler ({dir} içindeki library-matches.json) okunamıyor: {error}",
+            "no_title_plan": "bu remux'un başlık planı yok; hiçbir şey yazılmadı",
             "plan": {
                 "correction_review": "Düzeltilen eşleşmenin gözden geçirilmesi gerekiyor: {reason}",
                 "review": "Başlık planının remux öncesinde gözden geçirilmesi gerekiyor: {reason}"
             },
             "plan_not_saved": "remux planı yapılandırma klasöründeki {path} konumuna kaydedilemedi: {error}",
+            "queue_damaged": "{path} hasarlı ({error}) ve kenara alınamadı ({aside_error}); remux kuyruğu bekletiliyor ve dosya olduğu gibi bırakılıyor.",
+            "queue_unreadable": "{path} okunamıyor ({error}); remux kuyruğu bekletiliyor ve dosya olduğu gibi bırakılıyor. Yapılandırma klasörünü düzeltin; her dakika yeniden okunur.",
             "retire": {
                 "folder_missing": "{path} klasörü bulunamıyor (paylaşım bağlı mı?); kaldırılmadı",
                 "kept": "{new} yeni dosyanın tamamı yerinde. Bu ISO'dan yapılan {count} eski dosya, bu düzeltme başladıktan sonra değiştiği veya artık ondan yapılmış olarak kayıtlı olmadığı için tutuldu: {paths}. Artık izlenmiyorlar; istemiyorsanız kendiniz silin.",
@@ -954,7 +966,9 @@
                 "unchanged": "Mevcut MKV'niz değişmedi."
             },
             "stale_match": "{path} için kaydedilen eşleşme, o yolda daha önce arşivlenmiş bir disk için onaylanmıştı, bu yüzden hiçbir şey yazılmadı. Bu disk için «Change match» işlemini yeniden açın.",
-            "target_changed": "{error}. Kitaplık dosyası {path} bu remux başladıktan sonra değişti ya da tamamlanan MKV zaten kopyalanmıştı, bu yüzden ona dokunulmadı."
+            "target_changed": "{error}. Kitaplık dosyası {path} bu remux başladıktan sonra değişti ya da tamamlanan MKV zaten kopyalanmıştı, bu yüzden ona dokunulmadı.",
+            "tv_folder_empty": "TV klasörü {path} boş (paylaşım bağlı mı?); hiçbir şey yazılmadı",
+            "tv_folder_unreadable": "TV klasörü {path} okunamıyor ({error}); hiçbir şey yazılmadı"
         }
     }
 }

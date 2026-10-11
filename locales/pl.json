@@ -469,6 +469,11 @@
             },
             "review_held": "Wybór tytułu wymaga sprawdzenia przed muxowaniem: {reason}. Nie wybrano żadnego tytułu zastępczego.",
             "review_retained": "Zapisany obraz ISO i plan zostały zachowane."
+        },
+        "staging": {
+            "listing_incomplete": "nie można sprawdzić obszaru przejściowego: nie udało się odczytać niektórych wpisów w folderze przejściowym",
+            "entry_unreadable": "nie można sprawdzić wpisu obszaru przejściowego {name}: {error}",
+            "mux_job_busy": "Napęd właśnie używa zadania przejściowego tego ripu; nie został zmuksowany i pozostaje w obszarze przejściowym."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} zmienił się podczas tego remuksu; nie został naruszony",
-            "episode_alone": "{path} to jeden odcinek płyty podzielonej na kilka plików, a jego tytułu nie da się odróżnić od pozostałych, więc nic nie zostało zapisane. Użyj „Change match” dla jej pliku ISO, aby wykonać remuks całej płyty.",
+            "episode_unplanned": "{path} to jeden odcinek z płyty podzielonej na kilka plików, a ten remuks nie mógł ustalić, którym tytułem płyty jest, więc nic nie zostało zapisane. Użyj „Change match” dla jej pliku ISO, aby wykonać remuks całej płyty.",
+            "landing_not_recorded": "Nowy plik dla {path} nie został umieszczony na miejscu, ponieważ nie udało się zapisać jego lokalizacji ({error}). Wybierz „Retry”, gdy folder konfiguracji znów będzie przyjmował zapis.",
+            "library_folder_empty": "folder biblioteki {path} jest pusty (czy udział jest zamontowany?); nic nie zostało zapisane",
+            "library_folder_unreadable": "nie można odczytać folderu biblioteki {path} ({error}); nic nie zostało zapisane",
             "links_not_saved": "{path} jest na miejscu, ale nie udało się zaktualizować pliku library-links.json w folderze konfiguracji ({error}). Napraw ten plik lub uprawnienia jego folderu, a następnie wybierz „Retry”.",
+            "matches_unreadable": "nie można odczytać zapisanych dopasowań (library-matches.json w {dir}): {error}",
+            "no_title_plan": "ten remuks nie ma planu tytułów; nic nie zostało zapisane",
             "plan": {
                 "correction_review": "Poprawione dopasowanie wymaga sprawdzenia: {reason}",
                 "review": "Plan tytułów wymaga sprawdzenia przed remuksem: {reason}"
             },
             "plan_not_saved": "nie udało się zapisać planu remuksu w {path} w folderze konfiguracji: {error}",
+            "queue_damaged": "Plik {path} jest uszkodzony ({error}) i nie udało się go odłożyć na bok ({aside_error}); kolejka remuksu jest wstrzymana, a plik pozostaje bez zmian.",
+            "queue_unreadable": "Plik {path} nie może zostać odczytany ({error}); kolejka remuksu jest wstrzymana, a plik pozostaje bez zmian. Napraw folder konfiguracji; jest on odczytywany ponownie co minutę.",
             "retire": {
                 "folder_missing": "nie można znaleźć folderu pliku {path} (czy udział jest zamontowany?); nie został usunięty",
                 "kept": "Wszystkie nowe pliki ({new}) są na miejscu. Zachowano stare pliki utworzone z tego ISO ({count}), ponieważ zmieniły się po rozpoczęciu tej poprawki lub nie są już zapisane jako z niego utworzone: {paths}. Nie są już śledzone; usuń je samodzielnie, jeśli ich nie chcesz.",
@@ -954,7 +966,9 @@
                 "unchanged": "Twój istniejący plik MKV nie został zmieniony."
             },
             "stale_match": "Dopasowanie zapisane dla {path} zostało potwierdzone dla wcześniejszej płyty zapisanej pod tą ścieżką, więc nic nie zostało zapisane. Otwórz ponownie „Change match” dla tej płyty.",
-            "target_changed": "{error}. Plik biblioteki {path} zmienił się po rozpoczęciu tego remuksu albo gotowy plik MKV został już skopiowany, więc nie został naruszony."
+            "target_changed": "{error}. Plik biblioteki {path} zmienił się po rozpoczęciu tego remuksu albo gotowy plik MKV został już skopiowany, więc nie został naruszony.",
+            "tv_folder_empty": "folder seriali {path} jest pusty (czy udział jest zamontowany?); nic nie zostało zapisane",
+            "tv_folder_unreadable": "nie można odczytać folderu seriali {path} ({error}); nic nie zostało zapisane"
         }
     }
 }

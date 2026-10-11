@@ -469,6 +469,11 @@
             },
             "review_held": "Výběr titulu vyžaduje před muxováním kontrolu: {reason}. Nebyl vybrán žádný náhradní titul.",
             "review_retained": "Uložený ISO a plán zůstávají zachovány."
+        },
+        "staging": {
+            "listing_incomplete": "nelze zkontrolovat přípravnou oblast: některé položky v přípravné složce se nepodařilo přečíst",
+            "entry_unreadable": "nelze zkontrolovat položku přípravné oblasti {name}: {error}",
+            "mux_job_busy": "Jednotka právě používá přípravnou úlohu tohoto ripu; nebyla zmuxována a zůstává v přípravné oblasti."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} se během tohoto remuxu změnil; nebyl změněn",
-            "episode_alone": "{path} je jedna epizoda disku, který byl rozdělen do více souborů, a její titul nelze odlišit od ostatních, proto nebylo nic zapsáno. Použijte „Change match“ na jeho ISO a proveďte remux celého disku.",
+            "episode_unplanned": "{path} je jedna epizoda disku rozděleného do více souborů a tento remux nemohl zjistit, který z titulů disku to je, takže nebylo nic zapsáno. Použijte „Change match“ na jeho ISO a proveďte remux celého disku.",
+            "landing_not_recorded": "Nový soubor pro {path} nebyl umístěn, protože se nepodařilo zaznamenat jeho umístění ({error}). Jakmile bude složka s konfigurací opět přijímat zápisy, zvolte „Retry“.",
+            "library_folder_empty": "složka knihovny {path} je prázdná (je sdílená položka připojena?); nic nebylo zapsáno",
+            "library_folder_unreadable": "složku knihovny {path} nelze přečíst ({error}); nic nebylo zapsáno",
             "links_not_saved": "{path} je na místě, ale soubor library-links.json ve složce s konfigurací se nepodařilo aktualizovat ({error}). Opravte tento soubor nebo oprávnění jeho složky a potom zvolte „Retry“.",
+            "matches_unreadable": "uložené shody (library-matches.json ve složce {dir}) nelze přečíst: {error}",
+            "no_title_plan": "tento remux nemá plán titulů; nic nebylo zapsáno",
             "plan": {
                 "correction_review": "Opravené přiřazení je třeba zkontrolovat: {reason}",
                 "review": "Plán titulů je třeba před remuxem zkontrolovat: {reason}"
             },
             "plan_not_saved": "plán remuxu se nepodařilo uložit do {path} ve složce s konfigurací: {error}",
+            "queue_damaged": "Soubor {path} je poškozen ({error}) a nepodařilo se ho odložit stranou ({aside_error}); fronta remuxu je pozastavena a soubor zůstává beze změny.",
+            "queue_unreadable": "Soubor {path} nelze přečíst ({error}); fronta remuxu je pozastavena a soubor zůstává beze změny. Opravte složku s konfigurací; čte se znovu každou minutu.",
             "retire": {
                 "folder_missing": "složku souboru {path} nelze najít (je sdílená složka připojena?); nebyl odstraněn",
                 "kept": "Všech {new} nových souborů je na místě. {count} starých souborů vytvořených z tohoto ISO bylo ponecháno, protože se změnily po zahájení této opravy nebo už nejsou vedeny jako vytvořené z něj: {paths}. Už nejsou sledovány; pokud je nechcete, odstraňte je sami.",
@@ -954,7 +966,9 @@
                 "unchanged": "Váš stávající soubor MKV je beze změny."
             },
             "stale_match": "Přiřazení uložené pro {path} bylo potvrzeno pro dřívější disk uložený na této cestě, proto nebylo nic zapsáno. Otevřete pro tento disk znovu „Change match“.",
-            "target_changed": "{error}. Soubor knihovny {path} se po zahájení tohoto remuxu změnil, nebo už byl dokončený soubor MKV zkopírován, proto nebyl změněn."
+            "target_changed": "{error}. Soubor knihovny {path} se po zahájení tohoto remuxu změnil, nebo už byl dokončený soubor MKV zkopírován, proto nebyl změněn.",
+            "tv_folder_empty": "složka seriálů {path} je prázdná (je sdílená položka připojena?); nic nebylo zapsáno",
+            "tv_folder_unreadable": "složku seriálů {path} nelze přečíst ({error}); nic nebylo zapsáno"
         }
     }
 }

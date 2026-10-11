@@ -469,6 +469,11 @@
             },
             "review_held": "混流前需要审核标题选择：{reason}。未选择备用标题。",
             "review_retained": "已保存的 ISO 和计划将被保留。"
+        },
+        "staging": {
+            "listing_incomplete": "无法检查暂存区：暂存文件夹中的部分条目无法读取",
+            "entry_unreadable": "无法检查暂存条目 {name}：{error}",
+            "mux_job_busy": "有驱动器正在使用此次 rip 的暂存任务；它未被 mux，仍保留在暂存区。"
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} 在此次 remux 运行期间已更改；未动它",
-            "episode_alone": "{path} 是一张被拆分为多个文件的光盘中的一集，其标题无法与其他标题区分，因此未写入任何内容。请对其 ISO 使用“Change match”来 remux 整张光盘。",
+            "episode_unplanned": "{path} 是一张被拆分为多个文件的光盘中的一集，而此次 remux 无法确定它是光盘中的哪个标题，因此未写入任何内容。请对其 ISO 使用“Change match”来 remux 整张光盘。",
+            "landing_not_recorded": "{path} 的新文件未放到位，因为无法记录其落点（{error}）。待配置文件夹重新可写入后，请选择“Retry”。",
+            "library_folder_empty": "媒体库文件夹 {path} 为空（共享是否已挂载？）；未写入任何内容",
+            "library_folder_unreadable": "媒体库文件夹 {path} 无法读取（{error}）；未写入任何内容",
             "links_not_saved": "{path} 已就位，但无法更新配置文件夹中的 library-links.json（{error}）。请修复该文件或其文件夹的权限，然后选择“Retry”。",
+            "matches_unreadable": "已保存的匹配（{dir} 中的 library-matches.json）无法读取：{error}",
+            "no_title_plan": "此次 remux 没有标题计划；未写入任何内容",
             "plan": {
                 "correction_review": "更正的匹配需要复查：{reason}",
                 "review": "remux 之前需要复查标题计划：{reason}"
             },
             "plan_not_saved": "无法将 remux 计划保存到配置文件夹中的 {path}：{error}",
+            "queue_damaged": "{path} 已损坏（{error}），且无法移到一旁（{aside_error}）；remux 队列已被暂停，文件保持原样。",
+            "queue_unreadable": "{path} 无法读取（{error}）；remux 队列已被暂停，文件保持原样。请修复配置文件夹；它每分钟会重新读取一次。",
             "retire": {
                 "folder_missing": "找不到 {path} 所在的文件夹（共享是否已挂载？）；未将其删除",
                 "kept": "全部 {new} 个新文件均已就位。由此 ISO 生成的 {count} 个旧文件被保留，因为它们在此次更正开始后发生了更改，或不再记录为由它生成：{paths}。它们不再被跟踪；如不需要，请自行删除。",
@@ -954,7 +966,9 @@
                 "unchanged": "您现有的 MKV 未改变。"
             },
             "stale_match": "为 {path} 保存的匹配是针对之前存放在该路径的另一张光盘确认的，因此未写入任何内容。请为这张光盘重新打开“Change match”。",
-            "target_changed": "{error}。媒体库文件 {path} 在此次 remux 开始后已更改，或完成的 MKV 已被复制进去，因此未动它。"
+            "target_changed": "{error}。媒体库文件 {path} 在此次 remux 开始后已更改，或完成的 MKV 已被复制进去，因此未动它。",
+            "tv_folder_empty": "电视文件夹 {path} 为空（共享是否已挂载？）；未写入任何内容",
+            "tv_folder_unreadable": "电视文件夹 {path} 无法读取（{error}）；未写入任何内容"
         }
     }
 }

@@ -469,6 +469,11 @@
             },
             "review_held": "La selecció de títols necessita revisió abans del muxing: {reason}. No s'ha seleccionat cap títol alternatiu.",
             "review_retained": "L'ISO i el pla desats es conserven."
+        },
+        "staging": {
+            "listing_incomplete": "no es pot inspeccionar l'àrea intermèdia: no s'han pogut llegir algunes entrades de la carpeta intermèdia",
+            "entry_unreadable": "no es pot inspeccionar l'entrada intermèdia {name}: {error}",
+            "mux_job_busy": "Una unitat està fent servir ara mateix la tasca intermèdia d'aquest rip; no s'ha muxat i continua a l'àrea intermèdia."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} ha canviat mentre s'executava aquest remux; no s'ha tocat",
-            "episode_alone": "{path} és un episodi d'un disc que es va dividir en diversos fitxers, i el seu títol no es pot distingir dels altres, de manera que no s'ha escrit res. Feu servir «Change match» a la seva ISO per fer el remux del disc sencer.",
+            "episode_unplanned": "{path} és un episodi d'un disc que s'ha dividit en diversos fitxers, i aquest remux no ha pogut trobar quin dels títols del disc és, així que no s'ha escrit res. Feu servir «Change match» a la seva ISO per fer el remux del disc sencer.",
+            "landing_not_recorded": "El fitxer nou de {path} no s'ha col·locat perquè no s'ha pogut registrar la seva ubicació ({error}). Trieu «Retry» quan la carpeta de configuració torni a acceptar escriptures.",
+            "library_folder_empty": "la carpeta de la biblioteca {path} és buida (la compartició està muntada?); no s'ha escrit res",
+            "library_folder_unreadable": "la carpeta de la biblioteca {path} no es pot llegir ({error}); no s'ha escrit res",
             "links_not_saved": "{path} és al seu lloc, però no s'ha pogut actualitzar library-links.json a la carpeta de configuració ({error}). Corregiu aquest fitxer o els permisos de la seva carpeta i després trieu «Retry».",
+            "matches_unreadable": "no es poden llegir les coincidències desades (library-matches.json a {dir}): {error}",
+            "no_title_plan": "aquest remux no té pla de títols; no s'ha escrit res",
             "plan": {
                 "correction_review": "La coincidència corregida s'ha de revisar: {reason}",
                 "review": "El pla de títols s'ha de revisar abans del remux: {reason}"
             },
             "plan_not_saved": "no s'ha pogut desar el pla de remux a {path} a la carpeta de configuració: {error}",
+            "queue_damaged": "{path} està malmès ({error}) i no s'ha pogut apartar ({aside_error}); la cua de remux queda retinguda i el fitxer es deixa tal com està.",
+            "queue_unreadable": "{path} no es pot llegir ({error}); la cua de remux queda retinguda i el fitxer es deixa tal com està. Arregleu la carpeta de configuració; es torna a llegir cada minut.",
             "retire": {
                 "folder_missing": "no es troba la carpeta de {path} (està muntat el recurs compartit?); no s'ha eliminat",
                 "kept": "Els {new} fitxers nous són al seu lloc. S'han conservat {count} fitxer(s) antic(s) creat(s) a partir d'aquesta ISO perquè han canviat després de començar aquesta correcció o ja no consten com a creats a partir d'ella: {paths}. Ja no se'n fa el seguiment; elimineu-los vosaltres mateixos si no els voleu.",
@@ -954,7 +966,9 @@
                 "unchanged": "El vostre MKV existent no ha canviat."
             },
             "stale_match": "La coincidència desada per a {path} es va confirmar per a un disc anterior arxivat en aquest camí, de manera que no s'ha escrit res. Torneu a obrir «Change match» per a aquest disc.",
-            "target_changed": "{error}. El fitxer de la biblioteca {path} ha canviat després de començar aquest remux, o el MKV acabat ja s'havia copiat, de manera que no s'ha tocat."
+            "target_changed": "{error}. El fitxer de la biblioteca {path} ha canviat després de començar aquest remux, o el MKV acabat ja s'havia copiat, de manera que no s'ha tocat.",
+            "tv_folder_empty": "la carpeta de sèries {path} és buida (la compartició està muntada?); no s'ha escrit res",
+            "tv_folder_unreadable": "la carpeta de sèries {path} no es pot llegir ({error}); no s'ha escrit res"
         }
     }
 }

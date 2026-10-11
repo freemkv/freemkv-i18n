@@ -446,6 +446,11 @@
             },
             "review_held": "La selección de títulos necesita revisión antes del muxing: {reason}. No se seleccionó ningún título alternativo.",
             "review_retained": "La ISO y el plan guardados se conservan."
+        },
+        "staging": {
+            "listing_incomplete": "no se puede inspeccionar el área intermedia: no se pudieron leer algunas entradas de la carpeta intermedia",
+            "entry_unreadable": "no se puede inspeccionar la entrada intermedia {name}: {error}",
+            "mux_job_busy": "Una unidad está usando ahora mismo el trabajo intermedio de este rip; no se ha muxeado y permanece en el área intermedia."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} cambió mientras se ejecutaba este remux; no se ha tocado",
-            "episode_alone": "{path} es un episodio de un disco que se dividió en varios archivos, y su título no se puede distinguir de los demás, así que no se ha escrito nada. Use «Change match» en su ISO para hacer el remux del disco completo.",
+            "episode_unplanned": "{path} es un episodio de un disco que se dividió en varios archivos, y este remux no pudo averiguar de qué título del disco se trata, así que no se ha escrito nada. Use «Change match» en su ISO para hacer el remux del disco completo.",
+            "landing_not_recorded": "El archivo nuevo de {path} no se colocó porque no se pudo registrar su ubicación ({error}). Elija «Retry» cuando la carpeta de configuración vuelva a aceptar escrituras.",
+            "library_folder_empty": "la carpeta de la biblioteca {path} está vacía (¿está montado el recurso compartido?); no se ha escrito nada",
+            "library_folder_unreadable": "la carpeta de la biblioteca {path} no se puede leer ({error}); no se ha escrito nada",
             "links_not_saved": "{path} está en su sitio, pero no se pudo actualizar library-links.json en la carpeta de configuración ({error}). Corrija ese archivo o los permisos de su carpeta y luego elija «Retry».",
+            "matches_unreadable": "no se pueden leer las coincidencias guardadas (library-matches.json en {dir}): {error}",
+            "no_title_plan": "este remux no tiene plan de títulos; no se ha escrito nada",
             "plan": {
                 "correction_review": "La coincidencia corregida necesita revisión: {reason}",
                 "review": "El plan de títulos necesita revisión antes del remux: {reason}"
             },
             "plan_not_saved": "no se pudo guardar el plan de remux en {path} en la carpeta de configuración: {error}",
+            "queue_damaged": "{path} está dañado ({error}) y no se pudo apartar ({aside_error}); la cola de remux queda retenida y el archivo se deja como está.",
+            "queue_unreadable": "{path} no se puede leer ({error}); la cola de remux queda retenida y el archivo se deja como está. Arregle la carpeta de configuración; se vuelve a leer cada minuto.",
             "retire": {
                 "folder_missing": "no se encuentra la carpeta de {path} (¿está montado el recurso compartido?); no se ha eliminado",
                 "kept": "Los {new} archivos nuevos están en su sitio. Se conservaron {count} archivo(s) antiguo(s) creado(s) a partir de esta ISO porque cambiaron después de empezar esta corrección o ya no constan como creados a partir de ella: {paths}. Ya no se les hace seguimiento; elimínelos usted mismo si no los quiere.",
@@ -954,7 +966,9 @@
                 "unchanged": "Su MKV existente no ha cambiado."
             },
             "stale_match": "La coincidencia guardada para {path} se confirmó para un disco anterior archivado en esa ruta, así que no se ha escrito nada. Vuelva a abrir «Change match» para este disco.",
-            "target_changed": "{error}. El archivo de la biblioteca {path} cambió después de empezar este remux, o el MKV terminado ya se había copiado, así que no se ha tocado."
+            "target_changed": "{error}. El archivo de la biblioteca {path} cambió después de empezar este remux, o el MKV terminado ya se había copiado, así que no se ha tocado.",
+            "tv_folder_empty": "la carpeta de series {path} está vacía (¿está montado el recurso compartido?); no se ha escrito nada",
+            "tv_folder_unreadable": "la carpeta de series {path} no se puede leer ({error}); no se ha escrito nada"
         }
     }
 }

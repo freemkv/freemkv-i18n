@@ -446,6 +446,11 @@
             },
             "review_held": "La sélection du titre doit être vérifiée avant le muxage : {reason}. Aucun titre de repli n'a été sélectionné.",
             "review_retained": "L'ISO et le plan enregistrés sont conservés."
+        },
+        "staging": {
+            "listing_incomplete": "impossible d'inspecter la zone intermédiaire : certaines entrées du dossier intermédiaire n'ont pas pu être lues",
+            "entry_unreadable": "impossible d'inspecter l'entrée intermédiaire {name} : {error}",
+            "mux_job_busy": "Un lecteur utilise actuellement la tâche intermédiaire de ce rip ; elle n'a pas été muxée et reste dans la zone intermédiaire."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} a été modifié pendant ce remux ; il n'a pas été touché",
-            "episode_alone": "{path} est un épisode d'un disque découpé en plusieurs fichiers, et son titre ne peut pas être distingué des autres ; rien n'a donc été écrit. Utilisez «Change match» sur son ISO pour remuxer le disque entier.",
+            "episode_unplanned": "{path} est un épisode d'un disque découpé en plusieurs fichiers, et ce remux n'a pas pu déterminer de quel titre du disque il s'agit ; rien n'a donc été écrit. Utilisez «Change match» sur son ISO pour remuxer le disque entier.",
+            "landing_not_recorded": "Le nouveau fichier de {path} n'a pas été mis en place, car son emplacement n'a pas pu être enregistré ({error}). Choisissez «Retry» lorsque le dossier de configuration acceptera de nouveau les écritures.",
+            "library_folder_empty": "le dossier de la bibliothèque {path} est vide (le partage est-il monté ?) ; rien n'a été écrit",
+            "library_folder_unreadable": "le dossier de la bibliothèque {path} est illisible ({error}) ; rien n'a été écrit",
             "links_not_saved": "{path} est en place, mais library-links.json dans le dossier de configuration n'a pas pu être mis à jour ({error}). Corrigez ce fichier ou les autorisations de son dossier, puis choisissez «Retry».",
+            "matches_unreadable": "les correspondances enregistrées (library-matches.json dans {dir}) sont illisibles : {error}",
+            "no_title_plan": "ce remux n'a pas de plan de titres ; rien n'a été écrit",
             "plan": {
                 "correction_review": "La correspondance corrigée doit être vérifiée : {reason}",
                 "review": "Le plan des titres doit être vérifié avant le remux : {reason}"
             },
             "plan_not_saved": "le plan de remux n'a pas pu être enregistré dans {path} dans le dossier de configuration : {error}",
+            "queue_damaged": "{path} est endommagé ({error}) et n'a pas pu être mis de côté ({aside_error}) ; la file de remux est suspendue et le fichier est laissé tel quel.",
+            "queue_unreadable": "{path} est illisible ({error}) ; la file de remux est suspendue et le fichier est laissé tel quel. Corrigez le dossier de configuration ; il est relu chaque minute.",
             "retire": {
                 "folder_missing": "le dossier de {path} est introuvable (le partage est-il monté ?) ; il n'a pas été supprimé",
                 "kept": "Les {new} nouveaux fichiers sont en place. {count} ancien(s) fichier(s) créé(s) à partir de cette ISO ont été conservés, car ils ont changé après le début de cette correction ou ne sont plus enregistrés comme créés à partir d'elle : {paths}. Ils ne sont plus suivis ; supprimez-les vous-même si vous n'en voulez plus.",
@@ -954,7 +966,9 @@
                 "unchanged": "Votre MKV existant n'a pas été modifié."
             },
             "stale_match": "La correspondance enregistrée pour {path} a été confirmée pour un disque précédent rangé à ce chemin ; rien n'a donc été écrit. Ouvrez de nouveau «Change match» pour ce disque.",
-            "target_changed": "{error}. Le fichier de bibliothèque {path} a changé après le début de ce remux, ou le MKV terminé avait déjà été copié ; il n'a donc pas été touché."
+            "target_changed": "{error}. Le fichier de bibliothèque {path} a changé après le début de ce remux, ou le MKV terminé avait déjà été copié ; il n'a donc pas été touché.",
+            "tv_folder_empty": "le dossier des séries {path} est vide (le partage est-il monté ?) ; rien n'a été écrit",
+            "tv_folder_unreadable": "le dossier des séries {path} est illisible ({error}) ; rien n'a été écrit"
         }
     }
 }

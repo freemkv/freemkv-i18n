@@ -469,6 +469,11 @@
             },
             "review_held": "マルチプレクスの前にタイトルの選択を確認する必要があります: {reason}。代替タイトルは選択されませんでした。",
             "review_retained": "保存済みのISOとプランは保持されます。"
+        },
+        "staging": {
+            "listing_incomplete": "ステージングを検査できません: ステージングフォルダー内の一部のエントリを読み取れませんでした",
+            "entry_unreadable": "ステージングのエントリ {name} を検査できません: {error}",
+            "mux_job_busy": "ドライブがこのリップのステージングジョブを現在使用中です。mux は行われず、ステージングに残ります。"
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} はこの remux の実行中に変更されたため、手を付けていません",
-            "episode_alone": "{path} は複数のファイルに分割されたディスクの 1 エピソードで、そのタイトルをほかと区別できないため、何も書き込んでいません。ディスク全体を remux するには、その ISO で「Change match」を使用してください。",
+            "episode_unplanned": "{path} は複数のファイルに分割されたディスクの 1 エピソードですが、この remux ではディスクのどのタイトルに当たるか特定できなかったため、何も書き込んでいません。ディスク全体を remux するには、その ISO で「Change match」を使用してください。",
+            "landing_not_recorded": "{path} の新しいファイルは、配置先を記録できなかったため ({error})、配置されませんでした。設定フォルダーが再び書き込みを受け付けるようになったら、「Retry」を選んでください。",
+            "library_folder_empty": "ライブラリフォルダー {path} が空です (共有はマウントされていますか?)。何も書き込んでいません",
+            "library_folder_unreadable": "ライブラリフォルダー {path} を読み取れません ({error})。何も書き込んでいません",
             "links_not_saved": "{path} は配置されましたが、設定フォルダーの library-links.json を更新できませんでした（{error}）。そのファイルかフォルダーのアクセス権を修正してから、「Retry」を選んでください。",
+            "matches_unreadable": "保存済みの一致情報 ({dir} の library-matches.json) を読み取れません: {error}",
+            "no_title_plan": "この remux にはタイトル計画がありません。何も書き込んでいません",
             "plan": {
                 "correction_review": "修正した一致の確認が必要です: {reason}",
                 "review": "remux の前にタイトル計画の確認が必要です: {reason}"
             },
             "plan_not_saved": "remux 計画を設定フォルダーの {path} に保存できませんでした: {error}",
+            "queue_damaged": "{path} が破損しており ({error})、退避もできませんでした ({aside_error})。remux キューを保留し、ファイルはそのまま残します。",
+            "queue_unreadable": "{path} を読み取れません ({error})。remux キューを保留し、ファイルはそのまま残します。設定フォルダーを修復してください。1 分ごとに再読み込みされます。",
             "retire": {
                 "folder_missing": "{path} のフォルダーが見つかりません（共有はマウントされていますか？）。削除していません",
                 "kept": "{new} 個の新しいファイルはすべて配置済みです。この ISO から作られた古いファイル {count} 個は、この修正の開始後に変更されたか、もうこの ISO から作られたものとして記録されていないため残しました: {paths}。これらはもう追跡されません。不要な場合はご自身で削除してください。",
@@ -954,7 +966,9 @@
                 "unchanged": "既存の MKV は変更されていません。"
             },
             "stale_match": "{path} に保存された一致は、同じパスに以前保存されていた別のディスクに対して確定されたものなので、何も書き込んでいません。このディスクについて「Change match」をもう一度開いてください。",
-            "target_changed": "{error}。ライブラリファイル {path} がこの remux の開始後に変更されたか、完成した MKV がすでにコピーされていたため、手を付けていません。"
+            "target_changed": "{error}。ライブラリファイル {path} がこの remux の開始後に変更されたか、完成した MKV がすでにコピーされていたため、手を付けていません。",
+            "tv_folder_empty": "TV フォルダー {path} が空です (共有はマウントされていますか?)。何も書き込んでいません",
+            "tv_folder_unreadable": "TV フォルダー {path} を読み取れません ({error})。何も書き込んでいません"
         }
     }
 }

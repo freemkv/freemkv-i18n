@@ -469,6 +469,11 @@
             },
             "review_held": "Výber titulu vyžaduje pred muxovaním kontrolu: {reason}. Nebol vybraný žiadny náhradný titul.",
             "review_retained": "Uložený ISO a plán zostávajú zachované."
+        },
+        "staging": {
+            "listing_incomplete": "nedá sa skontrolovať prípravná oblasť: niektoré položky v prípravnom priečinku sa nepodarilo prečítať",
+            "entry_unreadable": "nedá sa skontrolovať položka prípravnej oblasti {name}: {error}",
+            "mux_job_busy": "Jednotka práve používa prípravnú úlohu tohto ripu; nebola zmuxovaná a zostáva v prípravnej oblasti."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} sa počas tohto remuxu zmenil; nebol zmenený",
-            "episode_alone": "{path} je jedna epizóda disku, ktorý bol rozdelený do viacerých súborov, a jej titul sa nedá odlíšiť od ostatných, preto sa nič nezapísalo. Použite „Change match“ na jeho ISO a vykonajte remux celého disku.",
+            "episode_unplanned": "{path} je jedna epizóda disku rozdeleného do viacerých súborov a tento remux nedokázal zistiť, ktorý z titulov disku to je, takže sa nič nezapísalo. Použite „Change match“ na jeho ISO a vykonajte remux celého disku.",
+            "landing_not_recorded": "Nový súbor pre {path} nebol umiestnený, pretože sa nepodarilo zaznamenať jeho umiestnenie ({error}). Keď priečinok s konfiguráciou opäť prijíma zápisy, zvoľte „Retry“.",
+            "library_folder_empty": "priečinok knižnice {path} je prázdny (je zdieľaná položka pripojená?); nič sa nezapísalo",
+            "library_folder_unreadable": "priečinok knižnice {path} sa nedá prečítať ({error}); nič sa nezapísalo",
             "links_not_saved": "{path} je na mieste, ale súbor library-links.json v priečinku s konfiguráciou sa nepodarilo aktualizovať ({error}). Opravte tento súbor alebo oprávnenia jeho priečinka a potom zvoľte „Retry“.",
+            "matches_unreadable": "uložené zhody (library-matches.json v priečinku {dir}) sa nedajú prečítať: {error}",
+            "no_title_plan": "tento remux nemá plán titulov; nič sa nezapísalo",
             "plan": {
                 "correction_review": "Opravené priradenie treba skontrolovať: {reason}",
                 "review": "Plán titulov treba pred remuxom skontrolovať: {reason}"
             },
             "plan_not_saved": "plán remuxu sa nepodarilo uložiť do {path} v priečinku s konfiguráciou: {error}",
+            "queue_damaged": "Súbor {path} je poškodený ({error}) a nepodarilo sa ho odložiť nabok ({aside_error}); fronta remuxu je pozastavená a súbor zostáva nezmenený.",
+            "queue_unreadable": "Súbor {path} sa nedá prečítať ({error}); fronta remuxu je pozastavená a súbor zostáva nezmenený. Opravte priečinok s konfiguráciou; číta sa znova každú minútu.",
             "retire": {
                 "folder_missing": "priečinok súboru {path} sa nenašiel (je zdieľaný priečinok pripojený?); nebol odstránený",
                 "kept": "Všetkých {new} nových súborov je na mieste. {count} starých súborov vytvorených z tohto ISO sa ponechalo, pretože sa zmenili po začatí tejto opravy alebo už nie sú vedené ako vytvorené z neho: {paths}. Už nie sú sledované; ak ich nechcete, odstráňte ich sami.",
@@ -954,7 +966,9 @@
                 "unchanged": "Váš existujúci súbor MKV je bez zmeny."
             },
             "stale_match": "Priradenie uložené pre {path} bolo potvrdené pre skorší disk uložený na tejto ceste, preto sa nič nezapísalo. Otvorte pre tento disk znova „Change match“.",
-            "target_changed": "{error}. Súbor knižnice {path} sa po začatí tohto remuxu zmenil alebo už bol dokončený súbor MKV skopírovaný, preto nebol zmenený."
+            "target_changed": "{error}. Súbor knižnice {path} sa po začatí tohto remuxu zmenil alebo už bol dokončený súbor MKV skopírovaný, preto nebol zmenený.",
+            "tv_folder_empty": "priečinok so seriálmi {path} je prázdny (je zdieľaná položka pripojená?); nič sa nezapísalo",
+            "tv_folder_unreadable": "priečinok so seriálmi {path} sa nedá prečítať ({error}); nič sa nezapísalo"
         }
     }
 }

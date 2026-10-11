@@ -469,6 +469,11 @@
             },
             "review_held": "Titelvalet behöver granskas före muxning: {reason}. Ingen reservtitel valdes.",
             "review_retained": "Den sparade ISO-filen och planen behålls."
+        },
+        "staging": {
+            "listing_incomplete": "kan inte granska mellanlagret: vissa poster i mellanlagringsmappen kunde inte läsas",
+            "entry_unreadable": "kan inte granska mellanlagerposten {name}: {error}",
+            "mux_job_busy": "En enhet använder just nu mellanlagerjobbet för denna rip; den muxades inte och ligger kvar i mellanlagret."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} ändrades medan denna remux kördes; den rördes inte",
-            "episode_alone": "{path} är ett avsnitt från en skiva som delades upp i flera filer, och dess titel går inte att skilja från de andra, så inget skrevs. Använd «Change match» på dess ISO för att remuxa hela skivan.",
+            "episode_unplanned": "{path} är ett avsnitt av en skiva som delades upp i flera filer, och denna remux kunde inte ta reda på vilken av skivans titlar det är, så inget skrevs. Använd «Change match» på dess ISO för att remuxa hela skivan.",
+            "landing_not_recorded": "Den nya filen för {path} lades inte på plats eftersom dess placering inte kunde registreras ({error}). Välj «Retry» när konfigurationsmappen åter tar emot skrivningar.",
+            "library_folder_empty": "biblioteksmappen {path} är tom (är resursen monterad?); inget skrevs",
+            "library_folder_unreadable": "biblioteksmappen {path} kan inte läsas ({error}); inget skrevs",
             "links_not_saved": "{path} är på plats, men library-links.json i konfigurationsmappen kunde inte uppdateras ({error}). Åtgärda filen eller mappens behörigheter och välj sedan «Retry».",
+            "matches_unreadable": "de sparade matchningarna (library-matches.json i {dir}) kan inte läsas: {error}",
+            "no_title_plan": "denna remux har ingen titelplan; inget skrevs",
             "plan": {
                 "correction_review": "Den rättade matchningen behöver granskas: {reason}",
                 "review": "Titelplanen behöver granskas före remux: {reason}"
             },
             "plan_not_saved": "remuxplanen kunde inte sparas i {path} i konfigurationsmappen: {error}",
+            "queue_damaged": "{path} är skadad ({error}) och kunde inte läggas åt sidan ({aside_error}); remuxkön hålls kvar och filen lämnas som den är.",
+            "queue_unreadable": "{path} kan inte läsas ({error}); remuxkön hålls kvar och filen lämnas som den är. Åtgärda konfigurationsmappen; den läses om varje minut.",
             "retire": {
                 "folder_missing": "mappen för {path} hittades inte (är utdelningen monterad?); den togs inte bort",
                 "kept": "Alla {new} nya filer är på plats. {count} gammal/gamla fil(er) gjord(a) från denna ISO behölls eftersom de ändrades efter att denna rättelse började, eller inte längre är registrerade som gjorda från den: {paths}. De spåras inte längre; ta bort dem själv om du inte vill ha dem.",
@@ -954,7 +966,9 @@
                 "unchanged": "Din befintliga MKV är oförändrad."
             },
             "stale_match": "Matchningen som sparats för {path} bekräftades för en tidigare skiva arkiverad på den sökvägen, så inget skrevs. Öppna «Change match» igen för denna skiva.",
-            "target_changed": "{error}. Biblioteksfilen {path} ändrades efter att denna remux började, eller så hade den färdiga MKV-filen redan kopierats in, så den rördes inte."
+            "target_changed": "{error}. Biblioteksfilen {path} ändrades efter att denna remux började, eller så hade den färdiga MKV-filen redan kopierats in, så den rördes inte.",
+            "tv_folder_empty": "tv-mappen {path} är tom (är resursen monterad?); inget skrevs",
+            "tv_folder_unreadable": "tv-mappen {path} kan inte läsas ({error}); inget skrevs"
         }
     }
 }

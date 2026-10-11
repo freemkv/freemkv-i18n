@@ -446,6 +446,11 @@
             },
             "review_held": "La selezione del titolo richiede una revisione prima del muxing: {reason}. Non è stato selezionato alcun titolo di ripiego.",
             "review_retained": "L'ISO e il piano salvati vengono conservati."
+        },
+        "staging": {
+            "listing_incomplete": "impossibile ispezionare l'area di staging: alcune voci della cartella di staging non sono state lette",
+            "entry_unreadable": "impossibile ispezionare la voce di staging {name}: {error}",
+            "mux_job_busy": "Un'unità sta usando in questo momento il lavoro di staging di questo rip; non è stato eseguito il mux e resta in staging."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} è cambiato mentre questo remux era in corso; non è stato toccato",
-            "episode_alone": "{path} è un episodio di un disco suddiviso in più file e il suo titolo non si distingue dagli altri, quindi non è stato scritto nulla. Usa «Change match» sulla sua ISO per eseguire il remux dell'intero disco.",
+            "episode_unplanned": "{path} è un episodio di un disco suddiviso in più file, e questo remux non è riuscito a trovare a quale titolo del disco corrisponda, quindi non è stato scritto nulla. Usa «Change match» sulla sua ISO per eseguire il remux dell'intero disco.",
+            "landing_not_recorded": "Il nuovo file per {path} non è stato posizionato perché non è stato possibile registrarne la collocazione ({error}). Scegli «Retry» quando la cartella di configurazione tornerà ad accettare scritture.",
+            "library_folder_empty": "la cartella della libreria {path} è vuota (la condivisione è montata?); non è stato scritto nulla",
+            "library_folder_unreadable": "la cartella della libreria {path} non può essere letta ({error}); non è stato scritto nulla",
             "links_not_saved": "{path} è al suo posto, ma non è stato possibile aggiornare library-links.json nella cartella di configurazione ({error}). Correggi quel file o i permessi della sua cartella, poi scegli «Retry».",
+            "matches_unreadable": "le corrispondenze salvate (library-matches.json in {dir}) non possono essere lette: {error}",
+            "no_title_plan": "questo remux non ha un piano dei titoli; non è stato scritto nulla",
             "plan": {
                 "correction_review": "La corrispondenza corretta va verificata: {reason}",
                 "review": "Il piano dei titoli va verificato prima del remux: {reason}"
             },
             "plan_not_saved": "non è stato possibile salvare il piano di remux in {path} nella cartella di configurazione: {error}",
+            "queue_damaged": "{path} è danneggiato ({error}) e non è stato possibile metterlo da parte ({aside_error}); la coda di remux è sospesa e il file viene lasciato così com'è.",
+            "queue_unreadable": "{path} non può essere letto ({error}); la coda di remux è sospesa e il file viene lasciato così com'è. Correggi la cartella di configurazione; viene riletta ogni minuto.",
             "retire": {
                 "folder_missing": "la cartella di {path} non è stata trovata (la condivisione è montata?); non è stato rimosso",
                 "kept": "Tutti i {new} nuovi file sono al loro posto. {count} vecchio/i file creato/i da questa ISO è/sono stato/i mantenuto/i perché è/sono cambiato/i dopo l'inizio di questa correzione o non risulta/no più creato/i da essa: {paths}. Non sono più tracciati; eliminali tu se non ti servono.",
@@ -954,7 +966,9 @@
                 "unchanged": "Il tuo MKV esistente non è stato modificato."
             },
             "stale_match": "La corrispondenza salvata per {path} è stata confermata per un disco precedente archiviato in quel percorso, quindi non è stato scritto nulla. Apri di nuovo «Change match» per questo disco.",
-            "target_changed": "{error}. Il file della libreria {path} è cambiato dopo l'inizio di questo remux, oppure l'MKV finito era già stato copiato, quindi non è stato toccato."
+            "target_changed": "{error}. Il file della libreria {path} è cambiato dopo l'inizio di questo remux, oppure l'MKV finito era già stato copiato, quindi non è stato toccato.",
+            "tv_folder_empty": "la cartella delle serie TV {path} è vuota (la condivisione è montata?); non è stato scritto nulla",
+            "tv_folder_unreadable": "la cartella delle serie TV {path} non può essere letta ({error}); non è stato scritto nulla"
         }
     }
 }

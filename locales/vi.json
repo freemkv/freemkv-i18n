@@ -469,6 +469,11 @@
             },
             "review_held": "Việc chọn tiêu đề cần được xem xét trước khi muxing: {reason}. Không có tiêu đề dự phòng nào được chọn.",
             "review_retained": "ISO và kế hoạch đã lưu được giữ lại."
+        },
+        "staging": {
+            "listing_incomplete": "không thể kiểm tra khu vực tạm: một số mục trong thư mục tạm không đọc được",
+            "entry_unreadable": "không thể kiểm tra mục tạm {name}: {error}",
+            "mux_job_busy": "Một ổ đĩa đang dùng tác vụ tạm của bản rip này; nó chưa được mux và vẫn nằm trong khu vực tạm."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} đã thay đổi trong khi remux này chạy; tệp không bị động đến",
-            "episode_alone": "{path} là một tập của một đĩa đã được tách thành nhiều tệp, và tựa của nó không thể phân biệt với các tựa khác, nên không có gì được ghi. Hãy dùng «Change match» trên ISO của nó để remux toàn bộ đĩa.",
+            "episode_unplanned": "{path} là một tập của đĩa đã được tách thành nhiều tệp, và remux này không tìm ra đó là tiêu đề nào của đĩa, nên không có gì được ghi. Hãy dùng «Change match» trên ISO của nó để remux toàn bộ đĩa.",
+            "landing_not_recorded": "Tệp mới của {path} chưa được đặt vào vị trí vì không ghi nhận được vị trí của nó ({error}). Hãy chọn «Retry» khi thư mục cấu hình nhận ghi trở lại.",
+            "library_folder_empty": "thư mục thư viện {path} trống (thư mục chia sẻ đã được gắn chưa?); không có gì được ghi",
+            "library_folder_unreadable": "thư mục thư viện {path} không đọc được ({error}); không có gì được ghi",
             "links_not_saved": "{path} đã nằm đúng chỗ, nhưng không thể cập nhật library-links.json trong thư mục cấu hình ({error}). Hãy sửa tệp đó hoặc quyền của thư mục chứa nó, rồi chọn «Retry».",
+            "matches_unreadable": "không đọc được các kết quả khớp đã lưu (library-matches.json trong {dir}): {error}",
+            "no_title_plan": "remux này không có kế hoạch tiêu đề; không có gì được ghi",
             "plan": {
                 "correction_review": "Kết quả khớp đã sửa cần được xem lại: {reason}",
                 "review": "Kế hoạch tựa cần được xem lại trước khi remux: {reason}"
             },
             "plan_not_saved": "không thể lưu kế hoạch remux vào {path} trong thư mục cấu hình: {error}",
+            "queue_damaged": "{path} bị hỏng ({error}) và không thể tách riêng ra ({aside_error}); hàng đợi remux bị giữ lại và tệp được để nguyên.",
+            "queue_unreadable": "{path} không đọc được ({error}); hàng đợi remux bị giữ lại và tệp được để nguyên. Hãy sửa thư mục cấu hình; thư mục này được đọc lại mỗi phút.",
             "retire": {
                 "folder_missing": "không tìm thấy thư mục của {path} (chia sẻ đã được gắn chưa?); tệp chưa bị xóa",
                 "kept": "Tất cả {new} tệp mới đã nằm đúng chỗ. {count} tệp cũ tạo từ ISO này được giữ lại vì chúng đã thay đổi sau khi lần sửa này bắt đầu, hoặc không còn được ghi nhận là tạo từ nó: {paths}. Chúng không còn được theo dõi; hãy tự xóa nếu bạn không cần.",
@@ -954,7 +966,9 @@
                 "unchanged": "MKV hiện có của bạn không thay đổi."
             },
             "stale_match": "Kết quả khớp đã lưu cho {path} được xác nhận cho một đĩa trước đó được lưu tại đường dẫn này, nên không có gì được ghi. Hãy mở lại «Change match» cho đĩa này.",
-            "target_changed": "{error}. Tệp thư viện {path} đã thay đổi sau khi remux này bắt đầu, hoặc MKV hoàn tất đã được sao chép vào, nên tệp không bị động đến."
+            "target_changed": "{error}. Tệp thư viện {path} đã thay đổi sau khi remux này bắt đầu, hoặc MKV hoàn tất đã được sao chép vào, nên tệp không bị động đến.",
+            "tv_folder_empty": "thư mục TV {path} trống (thư mục chia sẻ đã được gắn chưa?); không có gì được ghi",
+            "tv_folder_unreadable": "thư mục TV {path} không đọc được ({error}); không có gì được ghi"
         }
     }
 }

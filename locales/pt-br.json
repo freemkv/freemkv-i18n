@@ -469,6 +469,11 @@
             },
             "review_held": "A seleção de títulos precisa de revisão antes da multiplexação: {reason}. Nenhum título alternativo foi selecionado.",
             "review_retained": "O ISO e o plano salvos foram mantidos."
+        },
+        "staging": {
+            "listing_incomplete": "não é possível inspecionar a área intermediária: algumas entradas da pasta intermediária não puderam ser lidas",
+            "entry_unreadable": "não é possível inspecionar a entrada intermediária {name}: {error}",
+            "mux_job_busy": "Uma unidade está usando agora o trabalho intermediário deste rip; ele não passou por mux e permanece na área intermediária."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} foi alterado enquanto este remux era executado; não foi tocado",
-            "episode_alone": "{path} é um episódio de um disco dividido em vários arquivos, e o título dele não pode ser distinguido dos outros, então nada foi gravado. Use «Change match» na ISO dele para fazer o remux do disco inteiro.",
+            "episode_unplanned": "{path} é um episódio de um disco que foi dividido em vários arquivos, e este remux não conseguiu descobrir qual título do disco ele é, então nada foi gravado. Use «Change match» na ISO dele para fazer o remux do disco inteiro.",
+            "landing_not_recorded": "O novo arquivo de {path} não foi colocado no lugar porque não foi possível registrar o seu destino ({error}). Escolha «Retry» quando a pasta de configuração voltar a aceitar gravações.",
+            "library_folder_empty": "a pasta da biblioteca {path} está vazia (o compartilhamento está montado?); nada foi gravado",
+            "library_folder_unreadable": "a pasta da biblioteca {path} não pode ser lida ({error}); nada foi gravado",
             "links_not_saved": "{path} está no lugar, mas não foi possível atualizar library-links.json na pasta de configuração ({error}). Corrija esse arquivo ou as permissões da pasta dele e depois escolha «Retry».",
+            "matches_unreadable": "as correspondências salvas (library-matches.json em {dir}) não podem ser lidas: {error}",
+            "no_title_plan": "este remux não tem plano de títulos; nada foi gravado",
             "plan": {
                 "correction_review": "A correspondência corrigida precisa de revisão: {reason}",
                 "review": "O plano de títulos precisa de revisão antes do remux: {reason}"
             },
             "plan_not_saved": "não foi possível salvar o plano de remux em {path} na pasta de configuração: {error}",
+            "queue_damaged": "{path} está danificado ({error}) e não pôde ser separado ({aside_error}); a fila de remux fica retida e o arquivo é deixado como está.",
+            "queue_unreadable": "{path} não pode ser lido ({error}); a fila de remux fica retida e o arquivo é deixado como está. Corrija a pasta de configuração; ela é lida de novo a cada minuto.",
             "retire": {
                 "folder_missing": "a pasta de {path} não foi encontrada (o compartilhamento está montado?); não foi removido",
                 "kept": "Os {new} novos arquivos estão no lugar. {count} arquivo(s) antigo(s) criado(s) a partir desta ISO foram mantidos porque mudaram depois que esta correção começou ou não estão mais registrados como criados a partir dela: {paths}. Eles não são mais acompanhados; exclua-os você mesmo se não os quiser.",
@@ -954,7 +966,9 @@
                 "unchanged": "Seu MKV existente não foi alterado."
             },
             "stale_match": "A correspondência salva para {path} foi confirmada para um disco anterior arquivado nesse caminho, então nada foi gravado. Abra «Change match» novamente para este disco.",
-            "target_changed": "{error}. O arquivo da biblioteca {path} mudou depois que este remux começou, ou o MKV concluído já tinha sido copiado, então ele não foi tocado."
+            "target_changed": "{error}. O arquivo da biblioteca {path} mudou depois que este remux começou, ou o MKV concluído já tinha sido copiado, então ele não foi tocado.",
+            "tv_folder_empty": "a pasta de séries {path} está vazia (o compartilhamento está montado?); nada foi gravado",
+            "tv_folder_unreadable": "a pasta de séries {path} não pode ser lida ({error}); nada foi gravado"
         }
     }
 }

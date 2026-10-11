@@ -446,6 +446,11 @@
             },
             "review_held": "De titelselectie moet worden gecontroleerd vóór het muxen: {reason}. Er is geen terugvaltitel geselecteerd.",
             "review_retained": "De opgeslagen ISO en het plan blijven bewaard."
+        },
+        "staging": {
+            "listing_incomplete": "kan de tussenopslag niet inspecteren: sommige items in de tussenopslagmap konden niet worden gelezen",
+            "entry_unreadable": "kan het item {name} in de tussenopslag niet inspecteren: {error}",
+            "mux_job_busy": "Een station gebruikt op dit moment de tussenopslagtaak van deze rip; die is niet gemuxt en blijft in de tussenopslag."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} is gewijzigd terwijl deze remux liep; het is niet aangeraakt",
-            "episode_alone": "{path} is één aflevering van een schijf die in meerdere bestanden is opgesplitst, en de titel ervan is niet van de andere te onderscheiden, dus er is niets geschreven. Gebruik «Change match» op de ISO ervan om de hele schijf te remuxen.",
+            "episode_unplanned": "{path} is één aflevering van een schijf die in meerdere bestanden is gesplitst, en deze remux kon niet vinden welke titel van de schijf het is, dus er is niets geschreven. Gebruik «Change match» op de ISO ervan om de hele schijf te remuxen.",
+            "landing_not_recorded": "Het nieuwe bestand voor {path} is niet op zijn plaats gezet omdat de plaatsing niet kon worden vastgelegd ({error}). Kies «Retry» zodra de configuratiemap weer schrijfacties accepteert.",
+            "library_folder_empty": "de bibliotheekmap {path} is leeg (is de share gekoppeld?); er is niets geschreven",
+            "library_folder_unreadable": "de bibliotheekmap {path} kan niet worden gelezen ({error}); er is niets geschreven",
             "links_not_saved": "{path} staat op zijn plek, maar library-links.json in de configuratiemap kon niet worden bijgewerkt ({error}). Herstel dat bestand of de rechten van de map en kies daarna «Retry».",
+            "matches_unreadable": "de opgeslagen koppelingen (library-matches.json in {dir}) kunnen niet worden gelezen: {error}",
+            "no_title_plan": "deze remux heeft geen titelplan; er is niets geschreven",
             "plan": {
                 "correction_review": "De gecorrigeerde koppeling moet worden gecontroleerd: {reason}",
                 "review": "Het titelplan moet vóór de remux worden gecontroleerd: {reason}"
             },
             "plan_not_saved": "het remuxplan kon niet worden opgeslagen in {path} in de configuratiemap: {error}",
+            "queue_damaged": "{path} is beschadigd ({error}) en kon niet opzijgezet worden ({aside_error}); de remuxwachtrij wordt vastgehouden en het bestand blijft zoals het is.",
+            "queue_unreadable": "{path} kan niet worden gelezen ({error}); de remuxwachtrij wordt vastgehouden en het bestand blijft zoals het is. Herstel de configuratiemap; die wordt elke minuut opnieuw gelezen.",
             "retire": {
                 "folder_missing": "de map van {path} is niet gevonden (is de share gekoppeld?); het is niet verwijderd",
                 "kept": "Alle {new} nieuwe bestanden staan op hun plek. {count} oud(e) bestand(en) gemaakt van deze ISO is/zijn behouden omdat ze zijn gewijzigd nadat deze correctie begon, of niet meer geregistreerd staan als daarvan gemaakt: {paths}. Ze worden niet meer gevolgd; verwijder ze zelf als u ze niet wilt houden.",
@@ -954,7 +966,9 @@
                 "unchanged": "Uw bestaande MKV is ongewijzigd."
             },
             "stale_match": "De voor {path} opgeslagen koppeling is bevestigd voor een eerdere schijf die op dat pad was opgeslagen, dus er is niets geschreven. Open «Change match» opnieuw voor deze schijf.",
-            "target_changed": "{error}. Het bibliotheekbestand {path} is gewijzigd nadat deze remux begon, of de voltooide MKV was al overgezet, dus het is niet aangeraakt."
+            "target_changed": "{error}. Het bibliotheekbestand {path} is gewijzigd nadat deze remux begon, of de voltooide MKV was al overgezet, dus het is niet aangeraakt.",
+            "tv_folder_empty": "de tv-map {path} is leeg (is de share gekoppeld?); er is niets geschreven",
+            "tv_folder_unreadable": "de tv-map {path} kan niet worden gelezen ({error}); er is niets geschreven"
         }
     }
 }

@@ -469,6 +469,11 @@
             },
             "review_held": "Pemilihan judul perlu ditinjau sebelum muxing: {reason}. Tidak ada judul cadangan yang dipilih.",
             "review_retained": "ISO dan rencana yang tersimpan dipertahankan."
+        },
+        "staging": {
+            "listing_incomplete": "tidak dapat memeriksa staging: beberapa entri di folder staging tidak dapat dibaca",
+            "entry_unreadable": "tidak dapat memeriksa entri staging {name}: {error}",
+            "mux_job_busy": "Sebuah drive sedang menggunakan pekerjaan staging rip ini; belum di-mux dan tetap berada di staging."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} berubah saat remux ini berjalan; berkas itu tidak disentuh",
-            "episode_alone": "{path} adalah satu episode dari disk yang dipecah menjadi beberapa berkas, dan judulnya tidak dapat dibedakan dari yang lain, jadi tidak ada yang ditulis. Gunakan «Change match» pada ISO-nya untuk me-remux seluruh disk.",
+            "episode_unplanned": "{path} adalah satu episode dari disk yang dipecah menjadi beberapa berkas, dan remux ini tidak dapat menemukan judul disk yang mana, sehingga tidak ada yang ditulis. Gunakan «Change match» pada ISO-nya untuk me-remux seluruh disk.",
+            "landing_not_recorded": "Berkas baru untuk {path} tidak ditempatkan karena lokasinya tidak dapat dicatat ({error}). Pilih «Retry» setelah folder konfigurasi dapat menerima penulisan lagi.",
+            "library_folder_empty": "folder pustaka {path} kosong (apakah share sudah di-mount?); tidak ada yang ditulis",
+            "library_folder_unreadable": "folder pustaka {path} tidak dapat dibaca ({error}); tidak ada yang ditulis",
             "links_not_saved": "{path} sudah ada di tempatnya, tetapi library-links.json di folder konfigurasi tidak dapat diperbarui ({error}). Perbaiki berkas itu atau izin foldernya, lalu pilih «Retry».",
+            "matches_unreadable": "kecocokan yang tersimpan (library-matches.json di {dir}) tidak dapat dibaca: {error}",
+            "no_title_plan": "remux ini tidak memiliki rencana judul; tidak ada yang ditulis",
             "plan": {
                 "correction_review": "Kecocokan yang dikoreksi perlu ditinjau: {reason}",
                 "review": "Rencana judul perlu ditinjau sebelum remux: {reason}"
             },
             "plan_not_saved": "rencana remux tidak dapat disimpan ke {path} di folder konfigurasi: {error}",
+            "queue_damaged": "{path} rusak ({error}) dan tidak dapat disisihkan ({aside_error}); antrean remux ditahan dan berkas dibiarkan apa adanya.",
+            "queue_unreadable": "{path} tidak dapat dibaca ({error}); antrean remux ditahan dan berkas dibiarkan apa adanya. Perbaiki folder konfigurasi; folder itu dibaca ulang setiap menit.",
             "retire": {
                 "folder_missing": "folder {path} tidak ditemukan (apakah share sudah di-mount?); berkas itu tidak dihapus",
                 "kept": "Semua {new} berkas baru sudah di tempatnya. {count} berkas lama yang dibuat dari ISO ini dipertahankan karena berubah setelah koreksi ini dimulai, atau tidak lagi tercatat sebagai dibuat darinya: {paths}. Berkas-berkas itu tidak lagi dilacak; hapus sendiri jika tidak diinginkan.",
@@ -954,7 +966,9 @@
                 "unchanged": "MKV Anda yang ada tidak berubah."
             },
             "stale_match": "Kecocokan yang disimpan untuk {path} dikonfirmasi untuk disk sebelumnya yang diarsipkan di jalur itu, jadi tidak ada yang ditulis. Buka «Change match» lagi untuk disk ini.",
-            "target_changed": "{error}. Berkas pustaka {path} berubah setelah remux ini dimulai, atau MKV yang selesai sudah disalin, jadi berkas itu tidak disentuh."
+            "target_changed": "{error}. Berkas pustaka {path} berubah setelah remux ini dimulai, atau MKV yang selesai sudah disalin, jadi berkas itu tidak disentuh.",
+            "tv_folder_empty": "folder TV {path} kosong (apakah share sudah di-mount?); tidak ada yang ditulis",
+            "tv_folder_unreadable": "folder TV {path} tidak dapat dibaca ({error}); tidak ada yang ditulis"
         }
     }
 }

@@ -469,6 +469,11 @@
             },
             "review_held": "Tittelvalget må gjennomgås før muxing: {reason}. Ingen reservetittel ble valgt.",
             "review_retained": "Den lagrede ISO-en og planen beholdes."
+        },
+        "staging": {
+            "listing_incomplete": "kan ikke undersøke mellomlageret: noen oppføringer i mellomlagermappen kunne ikke leses",
+            "entry_unreadable": "kan ikke undersøke mellomlageroppføringen {name}: {error}",
+            "mux_job_busy": "En stasjon bruker akkurat nå mellomlagerjobben til denne ripen; den ble ikke muxet og blir liggende i mellomlageret."
         }
     },
     "usage": {
@@ -930,13 +935,20 @@
         },
         "library": {
             "changed_during": "{path} ble endret mens denne remuxen kjørte; den ble ikke rørt",
-            "episode_alone": "{path} er én episode fra en plate som ble delt i flere filer, og tittelen kan ikke skilles fra de andre, så ingenting ble skrevet. Bruk «Change match» på ISO-en for å remuxe hele platen.",
+            "episode_unplanned": "{path} er én episode av en plate som ble delt i flere filer, og denne remuxen kunne ikke finne ut hvilken av platens titler det er, så ingenting ble skrevet. Bruk «Change match» på ISO-en for å remuxe hele platen.",
+            "landing_not_recorded": "Den nye filen for {path} ble ikke lagt på plass fordi plasseringen ikke kunne registreres ({error}). Velg «Retry» når konfigurasjonsmappen tar imot skriving igjen.",
+            "library_folder_empty": "bibliotekmappen {path} er tom (er delingen montert?); ingenting ble skrevet",
+            "library_folder_unreadable": "bibliotekmappen {path} kan ikke leses ({error}); ingenting ble skrevet",
             "links_not_saved": "{path} er på plass, men library-links.json i konfigurasjonsmappen kunne ikke oppdateres ({error}). Rett filen eller tillatelsene for mappen, og velg deretter «Retry».",
+            "matches_unreadable": "de lagrede treffene (library-matches.json i {dir}) kan ikke leses: {error}",
+            "no_title_plan": "denne remuxen har ingen titelplan; ingenting ble skrevet",
             "plan": {
                 "correction_review": "Det rettede treffet må gjennomgås: {reason}",
                 "review": "Tittelplanen må gjennomgås før remux: {reason}"
             },
             "plan_not_saved": "remux-planen kunne ikke lagres i {path} i konfigurasjonsmappen: {error}",
+            "queue_damaged": "{path} er skadet ({error}) og kunne ikke settes til side ({aside_error}); remux-køen er satt på vent, og filen blir liggende som den er.",
+            "queue_unreadable": "{path} kan ikke leses ({error}); remux-køen er satt på vent, og filen blir liggende som den er. Rett opp konfigurasjonsmappen; den leses på nytt hvert minutt.",
             "retire": {
                 "folder_missing": "mappen til {path} ble ikke funnet (er delingen montert?); den ble ikke fjernet",
                 "kept": "Alle {new} nye filer er på plass. {count} gammel/gamle fil(er) laget fra denne ISO-en ble beholdt fordi de ble endret etter at denne rettingen startet, eller ikke lenger er registrert som laget fra den: {paths}. De spores ikke lenger; slett dem selv hvis du ikke vil ha dem.",
@@ -954,7 +966,9 @@
                 "unchanged": "Den eksisterende MKV-en din er uendret."
             },
             "stale_match": "Treffet som er lagret for {path}, ble bekreftet for en tidligere plate arkivert på den banen, så ingenting ble skrevet. Åpne «Change match» på nytt for denne platen.",
-            "target_changed": "{error}. Bibliotekfilen {path} ble endret etter at denne remuxen startet, eller den ferdige MKV-en var allerede kopiert inn, så den ble ikke rørt."
+            "target_changed": "{error}. Bibliotekfilen {path} ble endret etter at denne remuxen startet, eller den ferdige MKV-en var allerede kopiert inn, så den ble ikke rørt.",
+            "tv_folder_empty": "TV-mappen {path} er tom (er delingen montert?); ingenting ble skrevet",
+            "tv_folder_unreadable": "TV-mappen {path} kan ikke leses ({error}); ingenting ble skrevet"
         }
     }
 }
