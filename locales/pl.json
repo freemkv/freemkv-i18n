@@ -468,13 +468,17 @@
                 "first_episode": "Ustaw „First episode” podczas poprawiania dopasowania."
             },
             "review_held": "Wybór tytułu wymaga sprawdzenia przed muxowaniem: {reason}. Nie wybrano żadnego tytułu zastępczego.",
-            "review_retained": "Zapisany obraz ISO i plan zostały zachowane."
+            "review_retained": "Zapisany obraz ISO i plan zostały zachowane.",
+            "review_unsaved": "Wstrzymania do przeglądu nie udało się zapisać ({error}); nagranie zostaje zachowane. Napraw udział obszaru przejściowego, a następnie wznów płytę przyciskiem „Resume“."
         },
         "staging": {
             "listing_incomplete": "nie można sprawdzić obszaru przejściowego: nie udało się odczytać niektórych wpisów w folderze przejściowym",
             "entry_unreadable": "nie można sprawdzić wpisu obszaru przejściowego {name}: {error}",
             "mux_job_busy": "Napęd właśnie używa zadania przejściowego tego ripu; nie został zmuksowany i pozostaje w obszarze przejściowym.",
-            "root_missing": "brak folderu przejściowego {path} – czy udział jest zamontowany?"
+            "root_missing": "brak folderu przejściowego {path} – czy udział jest zamontowany?",
+            "share_unmounted": "nie można utworzyć obszaru przejściowego: jego udział sieciowy nie jest zamontowany",
+            "unlisted": "nie można sprawdzić obszaru przejściowego: nie udało się wyświetlić zawartości folderu przejściowego",
+            "duplicate_match": "więcej niż jeden wpis w obszarze przejściowym pasuje do tej płyty; zachowaj oba i przed kontynuowaniem rozwiąż duplikat"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "folder biblioteki {path} jest pusty (czy udział jest zamontowany?); nic nie zostało zapisane",
             "library_folder_unreadable": "nie można odczytać folderu biblioteki {path} ({error}); nic nie zostało zapisane",
             "links_not_saved": "{path} jest na miejscu, ale nie udało się zaktualizować pliku library-links.json w folderze konfiguracji ({error}). Napraw ten plik lub uprawnienia jego folderu, a następnie wybierz „Retry”.",
+            "links_unreadable": "Pliku {file} w folderze konfiguracji nie udało się odczytać ({error}), więc nie wiadomo, które pliki utworzył ten ISO; nic nie zostało zapisane. Napraw ten plik lub uprawnienia jego folderu, a następnie wybierz „Retry“.",
             "matches_unreadable": "nie można odczytać zapisanych dopasowań (library-matches.json w {dir}): {error}",
             "no_title_plan": "ten remuks nie ma planu tytułów; nic nie zostało zapisane",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "nie udało się zapisać planu remuksu w {path} w folderze konfiguracji: {error}",
             "queue_damaged": "Plik {path} jest uszkodzony ({error}) i nie udało się go odłożyć na bok ({aside_error}); kolejka remuksu jest wstrzymana, a plik pozostaje bez zmian.",
             "queue_unreadable": "Plik {path} nie może zostać odczytany ({error}); kolejka remuksu jest wstrzymana, a plik pozostaje bez zmian. Napraw folder konfiguracji; jest on odczytywany ponownie co minutę.",
+            "nothing_queued": "{reason} Nic nie zostało dodane do kolejki.",
+            "queue_held_hint": "Nic w kolejce remuksu nie jest uruchamiane ani zmieniane, dopóki ten plik nie będzie mógł zostać odczytany.",
+            "folder_failed": "{message} Folder: {path}.",
             "retire": {
                 "folder_missing": "nie można znaleźć folderu pliku {path} (czy udział jest zamontowany?); nie został usunięty",
                 "kept": "Wszystkie nowe pliki ({new}) są na miejscu. Zachowano stare pliki utworzone z tego ISO ({count}), ponieważ zmieniły się po rozpoczęciu tej poprawki lub nie są już zapisane jako z niego utworzone: {paths}. Nie są już śledzone; usuń je samodzielnie, jeśli ich nie chcesz.",

@@ -468,13 +468,17 @@
                 "first_episode": "Defina «First episode» ao corrigir a correspondência."
             },
             "review_held": "A seleção de títulos precisa de revisão antes da multiplexação: {reason}. Nenhum título alternativo foi selecionado.",
-            "review_retained": "O ISO e o plano salvos foram mantidos."
+            "review_retained": "O ISO e o plano salvos foram mantidos.",
+            "review_unsaved": "Não foi possível salvar a retenção para revisão ({error}); a captura é mantida. Corrija o compartilhamento intermediário e depois retome o disco com «Resume»."
         },
         "staging": {
             "listing_incomplete": "não é possível inspecionar a área intermediária: algumas entradas da pasta intermediária não puderam ser lidas",
             "entry_unreadable": "não é possível inspecionar a entrada intermediária {name}: {error}",
             "mux_job_busy": "Uma unidade está usando agora o trabalho intermediário deste rip; ele não passou por mux e permanece na área intermediária.",
-            "root_missing": "a pasta intermediária {path} não existe – o compartilhamento está montado?"
+            "root_missing": "a pasta intermediária {path} não existe – o compartilhamento está montado?",
+            "share_unmounted": "não é possível criar a área intermediária: o compartilhamento de rede dela não está montado",
+            "unlisted": "não é possível inspecionar a área intermediária: não foi possível listar a pasta intermediária",
+            "duplicate_match": "mais de uma entrada intermediária corresponde a este disco; mantenha as duas e resolva a duplicata antes de continuar"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "a pasta da biblioteca {path} está vazia (o compartilhamento está montado?); nada foi gravado",
             "library_folder_unreadable": "a pasta da biblioteca {path} não pode ser lida ({error}); nada foi gravado",
             "links_not_saved": "{path} está no lugar, mas não foi possível atualizar library-links.json na pasta de configuração ({error}). Corrija esse arquivo ou as permissões da pasta dele e depois escolha «Retry».",
+            "links_unreadable": "Não foi possível ler {file} na pasta de configuração ({error}), então não se sabe quais arquivos esta ISO gerou; nada foi gravado. Corrija esse arquivo ou as permissões da pasta dele e depois escolha «Retry».",
             "matches_unreadable": "as correspondências salvas (library-matches.json em {dir}) não podem ser lidas: {error}",
             "no_title_plan": "este remux não tem plano de títulos; nada foi gravado",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "não foi possível salvar o plano de remux em {path} na pasta de configuração: {error}",
             "queue_damaged": "{path} está danificado ({error}) e não pôde ser separado ({aside_error}); a fila de remux fica retida e o arquivo é deixado como está.",
             "queue_unreadable": "{path} não pode ser lido ({error}); a fila de remux fica retida e o arquivo é deixado como está. Corrija a pasta de configuração; ela é lida de novo a cada minuto.",
+            "nothing_queued": "{reason} Nada foi colocado na fila.",
+            "queue_held_hint": "Nada na fila de remux é executado ou alterado até que este arquivo possa ser lido.",
+            "folder_failed": "{message} Pasta: {path}.",
             "retire": {
                 "folder_missing": "a pasta de {path} não foi encontrada (o compartilhamento está montado?); não foi removido",
                 "kept": "Os {new} novos arquivos estão no lugar. {count} arquivo(s) antigo(s) criado(s) a partir desta ISO foram mantidos porque mudaram depois que esta correção começou ou não estão mais registrados como criados a partir dela: {paths}. Eles não são mais acompanhados; exclua-os você mesmo se não os quiser.",

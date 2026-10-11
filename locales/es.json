@@ -445,13 +445,17 @@
                 "first_episode": "Defina «First episode» al corregir su coincidencia."
             },
             "review_held": "La selección de títulos necesita revisión antes del muxing: {reason}. No se seleccionó ningún título alternativo.",
-            "review_retained": "La ISO y el plan guardados se conservan."
+            "review_retained": "La ISO y el plan guardados se conservan.",
+            "review_unsaved": "No se pudo guardar la retención de revisión ({error}); la captura se conserva. Corrija el recurso compartido intermedio y luego reanude el disco con «Resume»."
         },
         "staging": {
             "listing_incomplete": "no se puede inspeccionar el área intermedia: no se pudieron leer algunas entradas de la carpeta intermedia",
             "entry_unreadable": "no se puede inspeccionar la entrada intermedia {name}: {error}",
             "mux_job_busy": "Una unidad está usando ahora mismo el trabajo intermedio de este rip; no se ha muxeado y permanece en el área intermedia.",
-            "root_missing": "falta la carpeta intermedia {path}: ¿está montado el recurso compartido?"
+            "root_missing": "falta la carpeta intermedia {path}: ¿está montado el recurso compartido?",
+            "share_unmounted": "no se puede crear el área intermedia: su recurso compartido de red no está montado",
+            "unlisted": "no se puede inspeccionar el área intermedia: no se pudo listar la carpeta intermedia",
+            "duplicate_match": "más de una entrada intermedia coincide con este disco; conserve ambas y resuelva el duplicado antes de continuar"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "la carpeta de la biblioteca {path} está vacía (¿está montado el recurso compartido?); no se ha escrito nada",
             "library_folder_unreadable": "la carpeta de la biblioteca {path} no se puede leer ({error}); no se ha escrito nada",
             "links_not_saved": "{path} está en su sitio, pero no se pudo actualizar library-links.json en la carpeta de configuración ({error}). Corrija ese archivo o los permisos de su carpeta y luego elija «Retry».",
+            "links_unreadable": "No se pudo leer {file} en la carpeta de configuración ({error}), así que se desconoce qué archivos creó esta ISO; no se ha escrito nada. Corrija ese archivo o los permisos de su carpeta y luego elija «Retry».",
             "matches_unreadable": "no se pueden leer las coincidencias guardadas (library-matches.json en {dir}): {error}",
             "no_title_plan": "este remux no tiene plan de títulos; no se ha escrito nada",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "no se pudo guardar el plan de remux en {path} en la carpeta de configuración: {error}",
             "queue_damaged": "{path} está dañado ({error}) y no se pudo apartar ({aside_error}); la cola de remux queda retenida y el archivo se deja como está.",
             "queue_unreadable": "{path} no se puede leer ({error}); la cola de remux queda retenida y el archivo se deja como está. Arregle la carpeta de configuración; se vuelve a leer cada minuto.",
+            "nothing_queued": "{reason} No se puso nada en la cola.",
+            "queue_held_hint": "Nada de la cola de remux se ejecuta ni cambia hasta que se pueda leer este archivo.",
+            "folder_failed": "{message} Carpeta: {path}.",
             "retire": {
                 "folder_missing": "no se encuentra la carpeta de {path} (¿está montado el recurso compartido?); no se ha eliminado",
                 "kept": "Los {new} archivos nuevos están en su sitio. Se conservaron {count} archivo(s) antiguo(s) creado(s) a partir de esta ISO porque cambiaron después de empezar esta corrección o ya no constan como creados a partir de ella: {paths}. Ya no se les hace seguimiento; elimínelos usted mismo si no los quiere.",

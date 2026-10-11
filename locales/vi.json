@@ -468,13 +468,17 @@
                 "first_episode": "Hãy đặt «First episode» khi bạn sửa kết quả khớp."
             },
             "review_held": "Việc chọn tiêu đề cần được xem xét trước khi muxing: {reason}. Không có tiêu đề dự phòng nào được chọn.",
-            "review_retained": "ISO và kế hoạch đã lưu được giữ lại."
+            "review_retained": "ISO và kế hoạch đã lưu được giữ lại.",
+            "review_unsaved": "Không thể lưu trạng thái giữ để xem xét ({error}); bản ghi vẫn được giữ lại. Hãy sửa thư mục chia sẻ của khu vực tạm, rồi tiếp tục đĩa bằng «Resume»."
         },
         "staging": {
             "listing_incomplete": "không thể kiểm tra khu vực tạm: một số mục trong thư mục tạm không đọc được",
             "entry_unreadable": "không thể kiểm tra mục tạm {name}: {error}",
             "mux_job_busy": "Một ổ đĩa đang dùng tác vụ tạm của bản rip này; nó chưa được mux và vẫn nằm trong khu vực tạm.",
-            "root_missing": "thư mục tạm {path} bị thiếu – chia sẻ đã được gắn kết chưa?"
+            "root_missing": "thư mục tạm {path} bị thiếu – chia sẻ đã được gắn kết chưa?",
+            "share_unmounted": "không thể tạo khu vực tạm: thư mục chia sẻ mạng của nó chưa được gắn kết",
+            "unlisted": "không thể kiểm tra khu vực tạm: không thể liệt kê thư mục tạm",
+            "duplicate_match": "có nhiều hơn một mục trong khu vực tạm khớp với đĩa này; hãy giữ cả hai và xử lý mục trùng lặp trước khi tiếp tục"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "thư mục thư viện {path} trống (thư mục chia sẻ đã được gắn chưa?); không có gì được ghi",
             "library_folder_unreadable": "thư mục thư viện {path} không đọc được ({error}); không có gì được ghi",
             "links_not_saved": "{path} đã nằm đúng chỗ, nhưng không thể cập nhật library-links.json trong thư mục cấu hình ({error}). Hãy sửa tệp đó hoặc quyền của thư mục chứa nó, rồi chọn «Retry».",
+            "links_unreadable": "Không thể đọc {file} trong thư mục cấu hình ({error}), nên không biết ISO này đã tạo những tệp nào; không có gì được ghi. Hãy sửa tệp đó hoặc quyền của thư mục chứa nó, rồi chọn «Retry».",
             "matches_unreadable": "không đọc được các kết quả khớp đã lưu (library-matches.json trong {dir}): {error}",
             "no_title_plan": "remux này không có kế hoạch tiêu đề; không có gì được ghi",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "không thể lưu kế hoạch remux vào {path} trong thư mục cấu hình: {error}",
             "queue_damaged": "{path} bị hỏng ({error}) và không thể tách riêng ra ({aside_error}); hàng đợi remux bị giữ lại và tệp được để nguyên.",
             "queue_unreadable": "{path} không đọc được ({error}); hàng đợi remux bị giữ lại và tệp được để nguyên. Hãy sửa thư mục cấu hình; thư mục này được đọc lại mỗi phút.",
+            "nothing_queued": "{reason} Không có gì được xếp vào hàng đợi.",
+            "queue_held_hint": "Không có gì trong hàng đợi remux được chạy hoặc thay đổi cho đến khi tệp này đọc được.",
+            "folder_failed": "{message} Thư mục: {path}.",
             "retire": {
                 "folder_missing": "không tìm thấy thư mục của {path} (chia sẻ đã được gắn chưa?); tệp chưa bị xóa",
                 "kept": "Tất cả {new} tệp mới đã nằm đúng chỗ. {count} tệp cũ tạo từ ISO này được giữ lại vì chúng đã thay đổi sau khi lần sửa này bắt đầu, hoặc không còn được ghi nhận là tạo từ nó: {paths}. Chúng không còn được theo dõi; hãy tự xóa nếu bạn không cần.",

@@ -445,13 +445,17 @@
                 "first_episode": "Stel «First episode» in wanneer u de koppeling corrigeert."
             },
             "review_held": "De titelselectie moet worden gecontroleerd vóór het muxen: {reason}. Er is geen terugvaltitel geselecteerd.",
-            "review_retained": "De opgeslagen ISO en het plan blijven bewaard."
+            "review_retained": "De opgeslagen ISO en het plan blijven bewaard.",
+            "review_unsaved": "De beoordelingsblokkade kon niet worden opgeslagen ({error}); de opname blijft bewaard. Herstel de share van de tussenopslag en hervat de schijf daarna met «Resume»."
         },
         "staging": {
             "listing_incomplete": "kan de tussenopslag niet inspecteren: sommige items in de tussenopslagmap konden niet worden gelezen",
             "entry_unreadable": "kan het item {name} in de tussenopslag niet inspecteren: {error}",
             "mux_job_busy": "Een station gebruikt op dit moment de tussenopslagtaak van deze rip; die is niet gemuxt en blijft in de tussenopslag.",
-            "root_missing": "tussenopslagmap {path} ontbreekt – is de share gekoppeld?"
+            "root_missing": "tussenopslagmap {path} ontbreekt – is de share gekoppeld?",
+            "share_unmounted": "kan tussenopslag niet aanmaken: de netwerkshare ervan is niet gekoppeld",
+            "unlisted": "kan tussenopslag niet inspecteren: de tussenopslagmap kon niet worden weergegeven",
+            "duplicate_match": "meer dan één item in de tussenopslag komt overeen met deze schijf; bewaar beide en los het duplicaat op voordat u doorgaat"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "de bibliotheekmap {path} is leeg (is de share gekoppeld?); er is niets geschreven",
             "library_folder_unreadable": "de bibliotheekmap {path} kan niet worden gelezen ({error}); er is niets geschreven",
             "links_not_saved": "{path} staat op zijn plek, maar library-links.json in de configuratiemap kon niet worden bijgewerkt ({error}). Herstel dat bestand of de rechten van de map en kies daarna «Retry».",
+            "links_unreadable": "{file} in de configuratiemap kon niet worden gelezen ({error}), dus het is onbekend welke bestanden deze ISO heeft gemaakt; er is niets geschreven. Herstel dat bestand of de rechten van de map en kies daarna «Retry».",
             "matches_unreadable": "de opgeslagen koppelingen (library-matches.json in {dir}) kunnen niet worden gelezen: {error}",
             "no_title_plan": "deze remux heeft geen titelplan; er is niets geschreven",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "het remuxplan kon niet worden opgeslagen in {path} in de configuratiemap: {error}",
             "queue_damaged": "{path} is beschadigd ({error}) en kon niet opzijgezet worden ({aside_error}); de remuxwachtrij wordt vastgehouden en het bestand blijft zoals het is.",
             "queue_unreadable": "{path} kan niet worden gelezen ({error}); de remuxwachtrij wordt vastgehouden en het bestand blijft zoals het is. Herstel de configuratiemap; die wordt elke minuut opnieuw gelezen.",
+            "nothing_queued": "{reason} Er is niets in de wachtrij gezet.",
+            "queue_held_hint": "Niets in de remuxwachtrij wordt uitgevoerd of gewijzigd totdat dit bestand kan worden gelezen.",
+            "folder_failed": "{message} Map: {path}.",
             "retire": {
                 "folder_missing": "de map van {path} is niet gevonden (is de share gekoppeld?); het is niet verwijderd",
                 "kept": "Alle {new} nieuwe bestanden staan op hun plek. {count} oud(e) bestand(en) gemaakt van deze ISO is/zijn behouden omdat ze zijn gewijzigd nadat deze correctie begon, of niet meer geregistreerd staan als daarvan gemaakt: {paths}. Ze worden niet meer gevolgd; verwijder ze zelf als u ze niet wilt houden.",

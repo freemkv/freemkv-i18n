@@ -468,13 +468,17 @@
                 "first_episode": "Pri oprave priradenia nastavte „First episode“."
             },
             "review_held": "Výber titulu vyžaduje pred muxovaním kontrolu: {reason}. Nebol vybraný žiadny náhradný titul.",
-            "review_retained": "Uložený ISO a plán zostávajú zachované."
+            "review_retained": "Uložený ISO a plán zostávajú zachované.",
+            "review_unsaved": "Pozastavenie na kontrolu sa nepodarilo uložiť ({error}); záznam je zachovaný. Opravte prípravný zdieľaný zväzok a potom disk obnovte tlačidlom „Resume“."
         },
         "staging": {
             "listing_incomplete": "nedá sa skontrolovať prípravná oblasť: niektoré položky v prípravnom priečinku sa nepodarilo prečítať",
             "entry_unreadable": "nedá sa skontrolovať položka prípravnej oblasti {name}: {error}",
             "mux_job_busy": "Jednotka práve používa prípravnú úlohu tohto ripu; nebola zmuxovaná a zostáva v prípravnej oblasti.",
-            "root_missing": "prípravný priečinok {path} chýba – je zdieľaný zväzok pripojený?"
+            "root_missing": "prípravný priečinok {path} chýba – je zdieľaný zväzok pripojený?",
+            "share_unmounted": "nedá sa vytvoriť prípravná oblasť: jej sieťový zdieľaný zväzok nie je pripojený",
+            "unlisted": "nedá sa skontrolovať prípravná oblasť: zoznam súborov prípravného priečinka sa nepodarilo načítať",
+            "duplicate_match": "tomuto disku zodpovedá viac ako jedna položka v prípravnej oblasti; ponechajte obe a pred pokračovaním vyriešte duplicitu"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "priečinok knižnice {path} je prázdny (je zdieľaná položka pripojená?); nič sa nezapísalo",
             "library_folder_unreadable": "priečinok knižnice {path} sa nedá prečítať ({error}); nič sa nezapísalo",
             "links_not_saved": "{path} je na mieste, ale súbor library-links.json v priečinku s konfiguráciou sa nepodarilo aktualizovať ({error}). Opravte tento súbor alebo oprávnenia jeho priečinka a potom zvoľte „Retry“.",
+            "links_unreadable": "Súbor {file} v priečinku s konfiguráciou sa nepodarilo prečítať ({error}), takže nie je známe, ktoré súbory toto ISO vytvorilo; nič sa nezapísalo. Opravte tento súbor alebo oprávnenia jeho priečinka a potom zvoľte „Retry“.",
             "matches_unreadable": "uložené zhody (library-matches.json v priečinku {dir}) sa nedajú prečítať: {error}",
             "no_title_plan": "tento remux nemá plán titulov; nič sa nezapísalo",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "plán remuxu sa nepodarilo uložiť do {path} v priečinku s konfiguráciou: {error}",
             "queue_damaged": "Súbor {path} je poškodený ({error}) a nepodarilo sa ho odložiť nabok ({aside_error}); fronta remuxu je pozastavená a súbor zostáva nezmenený.",
             "queue_unreadable": "Súbor {path} sa nedá prečítať ({error}); fronta remuxu je pozastavená a súbor zostáva nezmenený. Opravte priečinok s konfiguráciou; číta sa znova každú minútu.",
+            "nothing_queued": "{reason} Nič sa nezaradilo do frontu.",
+            "queue_held_hint": "Nič vo fronte remuxu sa nespustí ani nezmení, kým sa tento súbor nebude dať prečítať.",
+            "folder_failed": "{message} Priečinok: {path}.",
             "retire": {
                 "folder_missing": "priečinok súboru {path} sa nenašiel (je zdieľaný priečinok pripojený?); nebol odstránený",
                 "kept": "Všetkých {new} nových súborov je na mieste. {count} starých súborov vytvorených z tohto ISO sa ponechalo, pretože sa zmenili po začatí tejto opravy alebo už nie sú vedené ako vytvorené z neho: {paths}. Už nie sú sledované; ak ich nechcete, odstráňte ich sami.",

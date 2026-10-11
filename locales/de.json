@@ -445,13 +445,17 @@
                 "first_episode": "Legen Sie beim Korrigieren der Zuordnung „First episode“ fest."
             },
             "review_held": "Die Titelauswahl muss vor dem Muxen geprüft werden: {reason}. Es wurde kein Ersatztitel ausgewählt.",
-            "review_retained": "Die gespeicherte ISO und der Plan bleiben erhalten."
+            "review_retained": "Die gespeicherte ISO und der Plan bleiben erhalten.",
+            "review_unsaved": "Die Prüfsperre konnte nicht gespeichert werden ({error}); die Aufnahme bleibt erhalten. Beheben Sie das Problem mit der Zwischenlager-Freigabe und setzen Sie die Disc dann mit „Resume“ fort."
         },
         "staging": {
             "listing_incomplete": "das Zwischenlager kann nicht geprüft werden: einige Einträge im Zwischenordner konnten nicht gelesen werden",
             "entry_unreadable": "der Eintrag {name} im Zwischenlager kann nicht geprüft werden: {error}",
             "mux_job_busy": "Ein Laufwerk verwendet gerade den Zwischenlager-Auftrag dieses Rips; er wurde nicht gemuxt und bleibt im Zwischenlager.",
-            "root_missing": "Zwischenlager-Ordner {path} fehlt – ist die Freigabe eingebunden?"
+            "root_missing": "Zwischenlager-Ordner {path} fehlt – ist die Freigabe eingebunden?",
+            "share_unmounted": "Zwischenlager kann nicht erstellt werden: die zugehörige Netzwerkfreigabe ist nicht eingebunden",
+            "unlisted": "Zwischenlager kann nicht geprüft werden: der Zwischenlager-Ordner konnte nicht aufgelistet werden",
+            "duplicate_match": "mehr als ein Zwischenlager-Eintrag passt zu dieser Disc; behalten Sie beide und beheben Sie das Duplikat, bevor Sie fortfahren"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "der Bibliotheksordner {path} ist leer (ist die Freigabe eingehängt?); es wurde nichts geschrieben",
             "library_folder_unreadable": "der Bibliotheksordner {path} kann nicht gelesen werden ({error}); es wurde nichts geschrieben",
             "links_not_saved": "{path} ist vorhanden, aber library-links.json im Konfigurationsordner konnte nicht aktualisiert werden ({error}). Beheben Sie das Problem mit dieser Datei oder den Berechtigungen ihres Ordners und wählen Sie dann „Retry“.",
+            "links_unreadable": "{file} im Konfigurationsordner konnte nicht gelesen werden ({error}), daher ist unbekannt, welche Dateien diese ISO erzeugt hat; es wurde nichts geschrieben. Beheben Sie das Problem mit dieser Datei oder den Berechtigungen ihres Ordners und wählen Sie dann „Retry“.",
             "matches_unreadable": "die gespeicherten Zuordnungen (library-matches.json in {dir}) können nicht gelesen werden: {error}",
             "no_title_plan": "dieser Remux hat keinen Titelplan; es wurde nichts geschrieben",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "der Remux-Plan konnte nicht in {path} im Konfigurationsordner gespeichert werden: {error}",
             "queue_damaged": "{path} ist beschädigt ({error}) und konnte nicht beiseitegelegt werden ({aside_error}); die Remux-Warteschlange wird angehalten und die Datei bleibt unverändert.",
             "queue_unreadable": "{path} kann nicht gelesen werden ({error}); die Remux-Warteschlange wird angehalten und die Datei bleibt unverändert. Beheben Sie das Problem im Konfigurationsordner; er wird jede Minute erneut gelesen.",
+            "nothing_queued": "{reason} Es wurde nichts in die Warteschlange gestellt.",
+            "queue_held_hint": "Nichts in der Remux-Warteschlange wird ausgeführt oder geändert, bis diese Datei gelesen werden kann.",
+            "folder_failed": "{message} Ordner: {path}.",
             "retire": {
                 "folder_missing": "der Ordner von {path} wurde nicht gefunden (ist die Freigabe eingehängt?); die Datei wurde nicht entfernt",
                 "kept": "Alle {new} neuen Dateien sind vorhanden. {count} alte Datei(en) aus dieser ISO wurden behalten, weil sie sich nach Beginn dieser Korrektur geändert haben oder nicht mehr als daraus erstellt verzeichnet sind: {paths}. Sie werden nicht mehr verfolgt; löschen Sie sie selbst, wenn Sie sie nicht mehr brauchen.",

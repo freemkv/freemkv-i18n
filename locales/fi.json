@@ -468,13 +468,17 @@
                 "first_episode": "Aseta ”First episode”, kun korjaat vastaavuuden."
             },
             "review_held": "Nimikkeen valinta on tarkistettava ennen muxausta: {reason}. Varanimikettä ei valittu.",
-            "review_retained": "Tallennettu ISO ja suunnitelma säilytetään."
+            "review_retained": "Tallennettu ISO ja suunnitelma säilytetään.",
+            "review_unsaved": "Tarkistuspidätystä ei voitu tallentaa ({error}); tallenne säilytetään. Korjaa välivaiheen jako ja jatka sitten levyä valinnalla ”Resume”."
         },
         "staging": {
             "listing_incomplete": "välivaiheen kansiota ei voi tarkastaa: joitakin sen kohteita ei voitu lukea",
             "entry_unreadable": "välivaiheen kohdetta {name} ei voi tarkastaa: {error}",
             "mux_job_busy": "Asema käyttää juuri tämän ripin välivaiheen työtä; sitä ei muxattu, ja se pysyy välivaiheessa.",
-            "root_missing": "välivaihekansio {path} puuttuu – onko jaettu resurssi liitetty?"
+            "root_missing": "välivaihekansio {path} puuttuu – onko jaettu resurssi liitetty?",
+            "share_unmounted": "välivaihetta ei voi luoda: sen verkkojakoa ei ole liitetty",
+            "unlisted": "välivaihetta ei voi tarkastaa: välivaihekansion sisältöä ei voitu listata",
+            "duplicate_match": "useampi kuin yksi välivaihekohde vastaa tätä levyä; säilytä molemmat ja ratkaise kaksoiskappale ennen jatkamista"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "kirjastokansio {path} on tyhjä (onko jako liitetty?); mitään ei kirjoitettu",
             "library_folder_unreadable": "kirjastokansiota {path} ei voi lukea ({error}); mitään ei kirjoitettu",
             "links_not_saved": "{path} on paikallaan, mutta library-links.json-tiedostoa ei voitu päivittää asetuskansiossa ({error}). Korjaa tiedosto tai sen kansion käyttöoikeudet ja valitse sitten ”Retry”.",
+            "links_unreadable": "Tiedostoa {file} asetuskansiossa ei voitu lukea ({error}), joten ei tiedetä, mitkä tiedostot tämä ISO teki; mitään ei kirjoitettu. Korjaa tiedosto tai sen kansion käyttöoikeudet ja valitse sitten ”Retry”.",
             "matches_unreadable": "tallennettuja vastaavuuksia (library-matches.json kansiossa {dir}) ei voi lukea: {error}",
             "no_title_plan": "tällä remuxilla ei ole nimikesuunnitelmaa; mitään ei kirjoitettu",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "remux-suunnitelmaa ei voitu tallentaa kohteeseen {path} asetuskansiossa: {error}",
             "queue_damaged": "{path} on vioittunut ({error}) eikä sitä voitu siirtää sivuun ({aside_error}); remux-jono on pysäytetty ja tiedosto jätetään ennalleen.",
             "queue_unreadable": "{path} ei ole luettavissa ({error}); remux-jono on pysäytetty ja tiedosto jätetään ennalleen. Korjaa asetuskansio; se luetaan uudelleen minuutin välein.",
+            "nothing_queued": "{reason} Mitään ei lisätty jonoon.",
+            "queue_held_hint": "Mikään remux-jonossa ei suoritu tai muutu, ennen kuin tämä tiedosto voidaan lukea.",
+            "folder_failed": "{message} Kansio: {path}.",
             "retire": {
                 "folder_missing": "kohteen {path} kansiota ei löydy (onko jako liitetty?); sitä ei poistettu",
                 "kept": "Kaikki {new} uutta tiedostoa ovat paikallaan. {count} tästä ISO-tiedostosta tehtyä vanhaa tiedostoa säilytettiin, koska ne muuttuivat tämän korjauksen alettua tai niitä ei enää ole kirjattu siitä tehdyiksi: {paths}. Niitä ei enää seurata; poista ne itse, jos et tarvitse niitä.",

@@ -445,13 +445,17 @@
                 "first_episode": "Imposta «First episode» quando correggi la corrispondenza."
             },
             "review_held": "La selezione del titolo richiede una revisione prima del muxing: {reason}. Non è stato selezionato alcun titolo di ripiego.",
-            "review_retained": "L'ISO e il piano salvati vengono conservati."
+            "review_retained": "L'ISO e il piano salvati vengono conservati.",
+            "review_unsaved": "Non è stato possibile salvare il blocco per la revisione ({error}); l'acquisizione viene conservata. Correggi la condivisione di staging, poi riprendi il disco con «Resume»."
         },
         "staging": {
             "listing_incomplete": "impossibile ispezionare l'area di staging: alcune voci della cartella di staging non sono state lette",
             "entry_unreadable": "impossibile ispezionare la voce di staging {name}: {error}",
             "mux_job_busy": "Un'unità sta usando in questo momento il lavoro di staging di questo rip; non è stato eseguito il mux e resta in staging.",
-            "root_missing": "la cartella di staging {path} non esiste: la condivisione è montata?"
+            "root_missing": "la cartella di staging {path} non esiste: la condivisione è montata?",
+            "share_unmounted": "impossibile creare lo staging: la sua condivisione di rete non è montata",
+            "unlisted": "impossibile ispezionare lo staging: non è stato possibile elencare la cartella di staging",
+            "duplicate_match": "più di una voce di staging corrisponde a questo disco; conserva entrambe e risolvi il duplicato prima di continuare"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "la cartella della libreria {path} è vuota (la condivisione è montata?); non è stato scritto nulla",
             "library_folder_unreadable": "la cartella della libreria {path} non può essere letta ({error}); non è stato scritto nulla",
             "links_not_saved": "{path} è al suo posto, ma non è stato possibile aggiornare library-links.json nella cartella di configurazione ({error}). Correggi quel file o i permessi della sua cartella, poi scegli «Retry».",
+            "links_unreadable": "Non è stato possibile leggere {file} nella cartella di configurazione ({error}), quindi non si sa quali file abbia creato questa ISO; non è stato scritto nulla. Correggi quel file o i permessi della sua cartella, poi scegli «Retry».",
             "matches_unreadable": "le corrispondenze salvate (library-matches.json in {dir}) non possono essere lette: {error}",
             "no_title_plan": "questo remux non ha un piano dei titoli; non è stato scritto nulla",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "non è stato possibile salvare il piano di remux in {path} nella cartella di configurazione: {error}",
             "queue_damaged": "{path} è danneggiato ({error}) e non è stato possibile metterlo da parte ({aside_error}); la coda di remux è sospesa e il file viene lasciato così com'è.",
             "queue_unreadable": "{path} non può essere letto ({error}); la coda di remux è sospesa e il file viene lasciato così com'è. Correggi la cartella di configurazione; viene riletta ogni minuto.",
+            "nothing_queued": "{reason} Non è stato messo in coda nulla.",
+            "queue_held_hint": "Nulla nella coda di remux viene eseguito o modificato finché questo file non può essere letto.",
+            "folder_failed": "{message} Cartella: {path}.",
             "retire": {
                 "folder_missing": "la cartella di {path} non è stata trovata (la condivisione è montata?); non è stato rimosso",
                 "kept": "Tutti i {new} nuovi file sono al loro posto. {count} vecchio/i file creato/i da questa ISO è/sono stato/i mantenuto/i perché è/sono cambiato/i dopo l'inizio di questa correzione o non risulta/no più creato/i da essa: {paths}. Non sono più tracciati; eliminali tu se non ti servono.",

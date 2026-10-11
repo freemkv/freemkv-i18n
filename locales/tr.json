@@ -468,13 +468,17 @@
                 "first_episode": "Eşleşmeyi düzeltirken «First episode» alanını ayarlayın."
             },
             "review_held": "Başlık seçimi muxlamadan önce incelenmelidir: {reason}. Yedek başlık seçilmedi.",
-            "review_retained": "Kaydedilen ISO ve plan korunuyor."
+            "review_retained": "Kaydedilen ISO ve plan korunuyor.",
+            "review_unsaved": "İnceleme beklemesi kaydedilemedi ({error}); yakalama korunuyor. Hazırlık paylaşımını düzeltin, ardından diski «Resume» ile sürdürün."
         },
         "staging": {
             "listing_incomplete": "hazırlık alanı incelenemiyor: hazırlık klasöründeki bazı girdiler okunamadı",
             "entry_unreadable": "{name} hazırlık girdisi incelenemiyor: {error}",
             "mux_job_busy": "Bir sürücü şu anda bu rip'in hazırlık işini kullanıyor; mux yapılmadı ve hazırlık alanında kalıyor.",
-            "root_missing": "hazırlık klasörü {path} eksik – paylaşım bağlı mı?"
+            "root_missing": "hazırlık klasörü {path} eksik – paylaşım bağlı mı?",
+            "share_unmounted": "hazırlık alanı oluşturulamıyor: ağ paylaşımı bağlı değil",
+            "unlisted": "hazırlık alanı incelenemiyor: hazırlık klasörü listelenemedi",
+            "duplicate_match": "birden fazla hazırlık girdisi bu diskle eşleşiyor; ikisini de koruyun ve devam etmeden önce yinelemeyi çözün"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "kitaplık klasörü {path} boş (paylaşım bağlı mı?); hiçbir şey yazılmadı",
             "library_folder_unreadable": "kitaplık klasörü {path} okunamıyor ({error}); hiçbir şey yazılmadı",
             "links_not_saved": "{path} yerinde, ancak yapılandırma klasöründeki library-links.json güncellenemedi ({error}). Bu dosyayı veya klasörünün izinlerini düzeltin, ardından «Retry» seçin.",
+            "links_unreadable": "Yapılandırma klasöründeki {file} okunamadı ({error}), bu yüzden bu ISO'nun hangi dosyaları oluşturduğu bilinmiyor; hiçbir şey yazılmadı. Bu dosyayı veya klasörünün izinlerini düzeltin, ardından «Retry» seçin.",
             "matches_unreadable": "kayıtlı eşleşmeler ({dir} içindeki library-matches.json) okunamıyor: {error}",
             "no_title_plan": "bu remux'un başlık planı yok; hiçbir şey yazılmadı",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "remux planı yapılandırma klasöründeki {path} konumuna kaydedilemedi: {error}",
             "queue_damaged": "{path} hasarlı ({error}) ve kenara alınamadı ({aside_error}); remux kuyruğu bekletiliyor ve dosya olduğu gibi bırakılıyor.",
             "queue_unreadable": "{path} okunamıyor ({error}); remux kuyruğu bekletiliyor ve dosya olduğu gibi bırakılıyor. Yapılandırma klasörünü düzeltin; her dakika yeniden okunur.",
+            "nothing_queued": "{reason} Kuyruğa hiçbir şey eklenmedi.",
+            "queue_held_hint": "Bu dosya okunabilene kadar remux kuyruğundaki hiçbir şey çalışmaz veya değişmez.",
+            "folder_failed": "{message} Klasör: {path}.",
             "retire": {
                 "folder_missing": "{path} klasörü bulunamıyor (paylaşım bağlı mı?); kaldırılmadı",
                 "kept": "{new} yeni dosyanın tamamı yerinde. Bu ISO'dan yapılan {count} eski dosya, bu düzeltme başladıktan sonra değiştiği veya artık ondan yapılmış olarak kayıtlı olmadığı için tutuldu: {paths}. Artık izlenmiyorlar; istemiyorsanız kendiniz silin.",

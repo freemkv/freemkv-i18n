@@ -468,13 +468,17 @@
                 "first_episode": "Set the First episode when you correct its match."
             },
             "review_held": "Title selection needs review before muxing: {reason}. No fallback title was selected.",
-            "review_retained": "The saved ISO and plan are retained."
+            "review_retained": "The saved ISO and plan are retained.",
+            "review_unsaved": "The review hold could not be saved ({error}); the capture is kept. Fix the staging share, then Resume the disc."
         },
         "staging": {
             "listing_incomplete": "cannot inspect staging: some entries in the staging folder could not be read",
             "entry_unreadable": "cannot inspect staging entry {name}: {error}",
             "mux_job_busy": "A drive is using this rip's staging job right now; it was not muxed and stays staged.",
-            "root_missing": "staging folder {path} is missing — is the share mounted?"
+            "root_missing": "staging folder {path} is missing — is the share mounted?",
+            "share_unmounted": "cannot create staging: its network share is not mounted",
+            "unlisted": "cannot inspect staging: the staging folder could not be listed",
+            "duplicate_match": "more than one staging entry matches this disc; keep both and resolve the duplicate before continuing"
         }
     },
     "usage": {
@@ -955,6 +959,9 @@
             "stale_match": "The match saved for {path} was confirmed for an earlier disc filed at that path, so nothing was written. Open Change match again for this disc.",
             "queue_damaged": "{path} is damaged ({error}) and could not be set aside ({aside_error}); the remux queue is held and the file is left as it is.",
             "queue_unreadable": "{path} cannot be read ({error}); the remux queue is held and the file is left as it is. Fix the config folder; it is read again every minute.",
+            "nothing_queued": "{reason} Nothing was queued.",
+            "queue_held_hint": "Nothing in the remux queue runs or changes until this file can be read.",
+            "folder_failed": "{message} Folder: {path}.",
             "tv_folder_empty": "the TV folder {path} is empty (is the share mounted?); nothing was written",
             "library_folder_empty": "the library folder {path} is empty (is the share mounted?); nothing was written",
             "tv_folder_unreadable": "the TV folder {path} cannot be read ({error}); nothing was written",
@@ -970,6 +977,7 @@
             },
             "changed_during": "{path} changed while this remux ran; it was not touched",
             "links_not_saved": "{path} is in place, but library-links.json in the config folder could not be updated ({error}). Fix that file or its folder's permissions, then Retry.",
+            "links_unreadable": "{file} in the config folder could not be read ({error}), so which files this ISO made is unknown; nothing was written. Fix that file or its folder's permissions, then Retry.",
             "safe": {
                 "retained": "The source ISO is retained.",
                 "retire_done": "Every new file is in place; run Change match again to remove the old files made from this ISO that remain. The source ISO is retained.",

@@ -468,13 +468,17 @@
                 "first_episode": "Ange «First episode» när du rättar matchningen."
             },
             "review_held": "Titelvalet behöver granskas före muxning: {reason}. Ingen reservtitel valdes.",
-            "review_retained": "Den sparade ISO-filen och planen behålls."
+            "review_retained": "Den sparade ISO-filen och planen behålls.",
+            "review_unsaved": "Granskningsspärren kunde inte sparas ({error}); inspelningen behålls. Åtgärda mellanlagrets resurs och återuppta sedan skivan med «Resume»."
         },
         "staging": {
             "listing_incomplete": "kan inte granska mellanlagret: vissa poster i mellanlagringsmappen kunde inte läsas",
             "entry_unreadable": "kan inte granska mellanlagerposten {name}: {error}",
             "mux_job_busy": "En enhet använder just nu mellanlagerjobbet för denna rip; den muxades inte och ligger kvar i mellanlagret.",
-            "root_missing": "mellanlagermappen {path} saknas – är resursen monterad?"
+            "root_missing": "mellanlagermappen {path} saknas – är resursen monterad?",
+            "share_unmounted": "det går inte att skapa mellanlager: dess nätverksresurs är inte monterad",
+            "unlisted": "det går inte att inspektera mellanlager: mellanlagermappen kunde inte listas",
+            "duplicate_match": "fler än en post i mellanlagret matchar den här skivan; behåll båda och lös dubbletten innan du fortsätter"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "biblioteksmappen {path} är tom (är resursen monterad?); inget skrevs",
             "library_folder_unreadable": "biblioteksmappen {path} kan inte läsas ({error}); inget skrevs",
             "links_not_saved": "{path} är på plats, men library-links.json i konfigurationsmappen kunde inte uppdateras ({error}). Åtgärda filen eller mappens behörigheter och välj sedan «Retry».",
+            "links_unreadable": "{file} i konfigurationsmappen kunde inte läsas ({error}), så det är okänt vilka filer denna ISO skapade; inget skrevs. Åtgärda filen eller mappens behörigheter och välj sedan «Retry».",
             "matches_unreadable": "de sparade matchningarna (library-matches.json i {dir}) kan inte läsas: {error}",
             "no_title_plan": "denna remux har ingen titelplan; inget skrevs",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "remuxplanen kunde inte sparas i {path} i konfigurationsmappen: {error}",
             "queue_damaged": "{path} är skadad ({error}) och kunde inte läggas åt sidan ({aside_error}); remuxkön hålls kvar och filen lämnas som den är.",
             "queue_unreadable": "{path} kan inte läsas ({error}); remuxkön hålls kvar och filen lämnas som den är. Åtgärda konfigurationsmappen; den läses om varje minut.",
+            "nothing_queued": "{reason} Inget köades.",
+            "queue_held_hint": "Inget i remuxkön körs eller ändras förrän den här filen kan läsas.",
+            "folder_failed": "{message} Mapp: {path}.",
             "retire": {
                 "folder_missing": "mappen för {path} hittades inte (är utdelningen monterad?); den togs inte bort",
                 "kept": "Alla {new} nya filer är på plats. {count} gammal/gamla fil(er) gjord(a) från denna ISO behölls eftersom de ändrades efter att denna rättelse började, eller inte längre är registrerade som gjorda från den: {paths}. De spåras inte längre; ta bort dem själv om du inte vill ha dem.",

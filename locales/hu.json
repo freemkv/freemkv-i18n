@@ -468,13 +468,17 @@
                 "first_episode": "Az egyezés javításakor adja meg a következőt: „First episode”."
             },
             "review_held": "A cím kiválasztását a muxolás előtt felül kell vizsgálni: {reason}. Nem lett kiválasztva tartalék cím.",
-            "review_retained": "A mentett ISO és a terv megmarad."
+            "review_retained": "A mentett ISO és a terv megmarad.",
+            "review_unsaved": "Az átvizsgálási tartást nem sikerült elmenteni ({error}); a felvétel megmarad. Javítsa ki az előkészítő megosztást, majd folytassa a lemezt a következővel: „Resume”."
         },
         "staging": {
             "listing_incomplete": "az előkészítő terület nem vizsgálható: az előkészítő mappa néhány bejegyzése nem volt olvasható",
             "entry_unreadable": "a(z) {name} előkészítő bejegyzés nem vizsgálható: {error}",
             "mux_job_busy": "Egy meghajtó éppen használja ennek a ripnek az előkészítő feladatát; nem lett muxolva, és az előkészítő területen marad.",
-            "root_missing": "a(z) {path} előkészítő mappa hiányzik – csatolva van a megosztás?"
+            "root_missing": "a(z) {path} előkészítő mappa hiányzik – csatolva van a megosztás?",
+            "share_unmounted": "nem hozható létre az előkészítő terület: a hálózati megosztása nincs csatolva",
+            "unlisted": "nem vizsgálható az előkészítő terület: az előkészítő mappa tartalma nem listázható",
+            "duplicate_match": "egynél több előkészítő bejegyzés felel meg ennek a lemeznek; tartsa meg mindkettőt, és a folytatás előtt oldja fel az ismétlődést"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "a(z) {path} könyvtármappa üres (csatolva van a megosztás?); semmi sem íródott",
             "library_folder_unreadable": "a(z) {path} könyvtármappa nem olvasható ({error}); semmi sem íródott",
             "links_not_saved": "{path} a helyén van, de a konfigurációs mappában lévő library-links.json nem frissíthető ({error}). Javítsa ki a fájlt vagy a mappája jogosultságait, majd válassza a következőt: „Retry”.",
+            "links_unreadable": "A konfigurációs mappában lévő {file} nem olvasható ({error}), ezért nem ismert, hogy ez az ISO mely fájlokat hozta létre; semmi sem íródott. Javítsa ki a fájlt vagy a mappája jogosultságait, majd válassza a következőt: „Retry”.",
             "matches_unreadable": "a mentett egyezések (library-matches.json itt: {dir}) nem olvashatók: {error}",
             "no_title_plan": "ennek a remuxnak nincs címterve; semmi sem íródott",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "a remuxterv nem menthető ide: {path} a konfigurációs mappában: {error}",
             "queue_damaged": "A(z) {path} sérült ({error}), és nem sikerült félretenni ({aside_error}); a remux-sor fel van függesztve, a fájl érintetlen marad.",
             "queue_unreadable": "A(z) {path} nem olvasható ({error}); a remux-sor fel van függesztve, a fájl érintetlen marad. Javítsa ki a konfigurációs mappát; percenként újra beolvassa.",
+            "nothing_queued": "{reason} Semmi sem került a sorba.",
+            "queue_held_hint": "A remux-sorban semmi sem fut és semmi sem változik, amíg ez a fájl nem olvasható.",
+            "folder_failed": "{message} Mappa: {path}.",
             "retire": {
                 "folder_missing": "{path} mappája nem található (csatolva van a megosztás?); nem lett eltávolítva",
                 "kept": "Mind a(z) {new} új fájl a helyén van. Ebből az ISO-ból készült {count} régi fájl megmaradt, mert a javítás kezdete után megváltozott, vagy már nincs nyilvántartva mint belőle készült: {paths}. Ezeket már nem követjük; törölje őket saját maga, ha nincs rájuk szüksége.",

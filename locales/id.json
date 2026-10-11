@@ -468,13 +468,17 @@
                 "first_episode": "Tetapkan «First episode» saat Anda memperbaiki kecocokannya."
             },
             "review_held": "Pemilihan judul perlu ditinjau sebelum muxing: {reason}. Tidak ada judul cadangan yang dipilih.",
-            "review_retained": "ISO dan rencana yang tersimpan dipertahankan."
+            "review_retained": "ISO dan rencana yang tersimpan dipertahankan.",
+            "review_unsaved": "Penahanan peninjauan tidak dapat disimpan ({error}); hasil tangkapan tetap disimpan. Perbaiki share staging, lalu lanjutkan disk dengan «Resume»."
         },
         "staging": {
             "listing_incomplete": "tidak dapat memeriksa staging: beberapa entri di folder staging tidak dapat dibaca",
             "entry_unreadable": "tidak dapat memeriksa entri staging {name}: {error}",
             "mux_job_busy": "Sebuah drive sedang menggunakan pekerjaan staging rip ini; belum di-mux dan tetap berada di staging.",
-            "root_missing": "folder staging {path} tidak ada – apakah share sudah di-mount?"
+            "root_missing": "folder staging {path} tidak ada – apakah share sudah di-mount?",
+            "share_unmounted": "tidak dapat membuat staging: share jaringannya belum di-mount",
+            "unlisted": "tidak dapat memeriksa staging: folder staging tidak dapat didaftar",
+            "duplicate_match": "lebih dari satu entri staging cocok dengan disk ini; simpan keduanya dan selesaikan duplikatnya sebelum melanjutkan"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "folder pustaka {path} kosong (apakah share sudah di-mount?); tidak ada yang ditulis",
             "library_folder_unreadable": "folder pustaka {path} tidak dapat dibaca ({error}); tidak ada yang ditulis",
             "links_not_saved": "{path} sudah ada di tempatnya, tetapi library-links.json di folder konfigurasi tidak dapat diperbarui ({error}). Perbaiki berkas itu atau izin foldernya, lalu pilih «Retry».",
+            "links_unreadable": "{file} di folder konfigurasi tidak dapat dibaca ({error}), sehingga tidak diketahui berkas mana yang dibuat ISO ini; tidak ada yang ditulis. Perbaiki berkas itu atau izin foldernya, lalu pilih «Retry».",
             "matches_unreadable": "kecocokan yang tersimpan (library-matches.json di {dir}) tidak dapat dibaca: {error}",
             "no_title_plan": "remux ini tidak memiliki rencana judul; tidak ada yang ditulis",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "rencana remux tidak dapat disimpan ke {path} di folder konfigurasi: {error}",
             "queue_damaged": "{path} rusak ({error}) dan tidak dapat disisihkan ({aside_error}); antrean remux ditahan dan berkas dibiarkan apa adanya.",
             "queue_unreadable": "{path} tidak dapat dibaca ({error}); antrean remux ditahan dan berkas dibiarkan apa adanya. Perbaiki folder konfigurasi; folder itu dibaca ulang setiap menit.",
+            "nothing_queued": "{reason} Tidak ada yang diantrekan.",
+            "queue_held_hint": "Tidak ada yang dalam antrean remux yang berjalan atau berubah sampai berkas ini dapat dibaca.",
+            "folder_failed": "{message} Folder: {path}.",
             "retire": {
                 "folder_missing": "folder {path} tidak ditemukan (apakah share sudah di-mount?); berkas itu tidak dihapus",
                 "kept": "Semua {new} berkas baru sudah di tempatnya. {count} berkas lama yang dibuat dari ISO ini dipertahankan karena berubah setelah koreksi ini dimulai, atau tidak lagi tercatat sebagai dibuat darinya: {paths}. Berkas-berkas itu tidak lagi dilacak; hapus sendiri jika tidak diinginkan.",

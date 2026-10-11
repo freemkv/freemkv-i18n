@@ -468,13 +468,17 @@
                 "first_episode": "更正匹配时请设置“First episode”。"
             },
             "review_held": "混流前需要审核标题选择：{reason}。未选择备用标题。",
-            "review_retained": "已保存的 ISO 和计划将被保留。"
+            "review_retained": "已保存的 ISO 和计划将被保留。",
+            "review_unsaved": "无法保存审核暂停状态（{error}）；捕获内容已保留。请修复暂存共享，然后选择“Resume”以继续处理该光盘。"
         },
         "staging": {
             "listing_incomplete": "无法检查暂存区：暂存文件夹中的部分条目无法读取",
             "entry_unreadable": "无法检查暂存条目 {name}：{error}",
             "mux_job_busy": "有驱动器正在使用此次 rip 的暂存任务；它未被 mux，仍保留在暂存区。",
-            "root_missing": "暂存文件夹 {path} 缺失——共享是否已挂载？"
+            "root_missing": "暂存文件夹 {path} 缺失——共享是否已挂载？",
+            "share_unmounted": "无法创建暂存区：其网络共享未挂载",
+            "unlisted": "无法检查暂存区：无法列出暂存文件夹",
+            "duplicate_match": "有多个暂存条目与此光盘匹配；请两者都保留，并在继续之前解决重复问题"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "媒体库文件夹 {path} 为空（共享是否已挂载？）；未写入任何内容",
             "library_folder_unreadable": "媒体库文件夹 {path} 无法读取（{error}）；未写入任何内容",
             "links_not_saved": "{path} 已就位，但无法更新配置文件夹中的 library-links.json（{error}）。请修复该文件或其文件夹的权限，然后选择“Retry”。",
+            "links_unreadable": "无法读取配置文件夹中的 {file}（{error}），因此不知道此 ISO 生成了哪些文件；未写入任何内容。请修复该文件或其文件夹的权限，然后选择“Retry”。",
             "matches_unreadable": "已保存的匹配（{dir} 中的 library-matches.json）无法读取：{error}",
             "no_title_plan": "此次 remux 没有标题计划；未写入任何内容",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "无法将 remux 计划保存到配置文件夹中的 {path}：{error}",
             "queue_damaged": "{path} 已损坏（{error}），且无法移到一旁（{aside_error}）；remux 队列已被暂停，文件保持原样。",
             "queue_unreadable": "{path} 无法读取（{error}）；remux 队列已被暂停，文件保持原样。请修复配置文件夹；它每分钟会重新读取一次。",
+            "nothing_queued": "{reason} 未将任何内容加入队列。",
+            "queue_held_hint": "在能够读取此文件之前，remux 队列中的任何内容都不会运行或更改。",
+            "folder_failed": "{message} 文件夹：{path}。",
             "retire": {
                 "folder_missing": "找不到 {path} 所在的文件夹（共享是否已挂载？）；未将其删除",
                 "kept": "全部 {new} 个新文件均已就位。由此 ISO 生成的 {count} 个旧文件被保留，因为它们在此次更正开始后发生了更改，或不再记录为由它生成：{paths}。它们不再被跟踪；如不需要，请自行删除。",

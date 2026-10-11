@@ -468,13 +468,17 @@
                 "first_episode": "Setați «First episode» când corectați potrivirea."
             },
             "review_held": "Selecția titlului necesită verificare înainte de muxare: {reason}. Nu a fost selectat niciun titlu de rezervă.",
-            "review_retained": "ISO-ul și planul salvate sunt păstrate."
+            "review_retained": "ISO-ul și planul salvate sunt păstrate.",
+            "review_unsaved": "Reținerea pentru revizuire nu a putut fi salvată ({error}); captura este păstrată. Reparați partajarea intermediară, apoi reluați discul cu «Resume»."
         },
         "staging": {
             "listing_incomplete": "zona intermediară nu poate fi inspectată: unele intrări din folderul intermediar nu au putut fi citite",
             "entry_unreadable": "intrarea intermediară {name} nu poate fi inspectată: {error}",
             "mux_job_busy": "O unitate folosește chiar acum lucrarea intermediară a acestui rip; nu a fost făcut mux și rămâne în zona intermediară.",
-            "root_missing": "folderul intermediar {path} lipsește – este montată partajarea?"
+            "root_missing": "folderul intermediar {path} lipsește – este montată partajarea?",
+            "share_unmounted": "nu se poate crea zona intermediară: partajarea de rețea a acesteia nu este montată",
+            "unlisted": "nu se poate inspecta zona intermediară: folderul intermediar nu a putut fi listat",
+            "duplicate_match": "mai multe intrări din zona intermediară se potrivesc cu acest disc; păstrați-le pe ambele și rezolvați duplicatul înainte de a continua"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "folderul bibliotecii {path} este gol (este montată partajarea?); nu s-a scris nimic",
             "library_folder_unreadable": "folderul bibliotecii {path} nu poate fi citit ({error}); nu s-a scris nimic",
             "links_not_saved": "{path} este la locul lui, dar library-links.json din folderul de configurare nu a putut fi actualizat ({error}). Reparați acel fișier sau permisiunile folderului său, apoi alegeți «Retry».",
+            "links_unreadable": "{file} din folderul de configurare nu a putut fi citit ({error}), așa că nu se știe ce fișiere a creat acest ISO; nu s-a scris nimic. Reparați acel fișier sau permisiunile folderului său, apoi alegeți «Retry».",
             "matches_unreadable": "potrivirile salvate (library-matches.json din {dir}) nu pot fi citite: {error}",
             "no_title_plan": "acest remux nu are plan de titluri; nu s-a scris nimic",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "planul de remux nu a putut fi salvat în {path} din folderul de configurare: {error}",
             "queue_damaged": "{path} este deteriorat ({error}) și nu a putut fi pus deoparte ({aside_error}); coada de remux este reținută, iar fișierul este lăsat așa cum este.",
             "queue_unreadable": "{path} nu poate fi citit ({error}); coada de remux este reținută, iar fișierul este lăsat așa cum este. Remediați folderul de configurare; este citit din nou în fiecare minut.",
+            "nothing_queued": "{reason} Nu s-a pus nimic în coadă.",
+            "queue_held_hint": "Nimic din coada de remux nu rulează și nu se schimbă până când acest fișier nu poate fi citit.",
+            "folder_failed": "{message} Folder: {path}.",
             "retire": {
                 "folder_missing": "folderul lui {path} nu poate fi găsit (este montată partajarea?); nu a fost eliminat",
                 "kept": "Toate cele {new} fișiere noi sunt la locul lor. {count} fișier(e) vechi create din acest ISO au fost păstrate deoarece s-au modificat după începerea acestei corecturi sau nu mai sunt înregistrate ca fiind create din el: {paths}. Nu mai sunt urmărite; ștergeți-le dumneavoastră dacă nu le doriți.",

@@ -468,13 +468,17 @@
                 "first_episode": "Definiu «First episode» quan en corregiu la coincidència."
             },
             "review_held": "La selecció de títols necessita revisió abans del muxing: {reason}. No s'ha seleccionat cap títol alternatiu.",
-            "review_retained": "L'ISO i el pla desats es conserven."
+            "review_retained": "L'ISO i el pla desats es conserven.",
+            "review_unsaved": "No s'ha pogut desar la retenció de revisió ({error}); la captura es conserva. Corregiu el recurs compartit intermedi i després reprengueu el disc amb «Resume»."
         },
         "staging": {
             "listing_incomplete": "no es pot inspeccionar l'àrea intermèdia: no s'han pogut llegir algunes entrades de la carpeta intermèdia",
             "entry_unreadable": "no es pot inspeccionar l'entrada intermèdia {name}: {error}",
             "mux_job_busy": "Una unitat està fent servir ara mateix la tasca intermèdia d'aquest rip; no s'ha muxat i continua a l'àrea intermèdia.",
-            "root_missing": "la carpeta intermèdia {path} no hi és: s'ha muntat el recurs compartit?"
+            "root_missing": "la carpeta intermèdia {path} no hi és: s'ha muntat el recurs compartit?",
+            "share_unmounted": "no es pot crear l'àrea intermèdia: el seu recurs compartit de xarxa no està muntat",
+            "unlisted": "no es pot inspeccionar l'àrea intermèdia: no s'ha pogut llistar la carpeta intermèdia",
+            "duplicate_match": "més d'una entrada intermèdia coincideix amb aquest disc; conserveu-les totes dues i resoleu el duplicat abans de continuar"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "la carpeta de la biblioteca {path} és buida (la compartició està muntada?); no s'ha escrit res",
             "library_folder_unreadable": "la carpeta de la biblioteca {path} no es pot llegir ({error}); no s'ha escrit res",
             "links_not_saved": "{path} és al seu lloc, però no s'ha pogut actualitzar library-links.json a la carpeta de configuració ({error}). Corregiu aquest fitxer o els permisos de la seva carpeta i després trieu «Retry».",
+            "links_unreadable": "{file} a la carpeta de configuració no s'ha pogut llegir ({error}), així que no se sap quins fitxers ha creat aquesta ISO; no s'ha escrit res. Corregiu aquest fitxer o els permisos de la seva carpeta i després trieu «Retry».",
             "matches_unreadable": "no es poden llegir les coincidències desades (library-matches.json a {dir}): {error}",
             "no_title_plan": "aquest remux no té pla de títols; no s'ha escrit res",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "no s'ha pogut desar el pla de remux a {path} a la carpeta de configuració: {error}",
             "queue_damaged": "{path} està malmès ({error}) i no s'ha pogut apartar ({aside_error}); la cua de remux queda retinguda i el fitxer es deixa tal com està.",
             "queue_unreadable": "{path} no es pot llegir ({error}); la cua de remux queda retinguda i el fitxer es deixa tal com està. Arregleu la carpeta de configuració; es torna a llegir cada minut.",
+            "nothing_queued": "{reason} No s'ha posat res a la cua.",
+            "queue_held_hint": "Res de la cua de remux s'executa ni canvia fins que es pugui llegir aquest fitxer.",
+            "folder_failed": "{message} Carpeta: {path}.",
             "retire": {
                 "folder_missing": "no es troba la carpeta de {path} (està muntat el recurs compartit?); no s'ha eliminat",
                 "kept": "Els {new} fitxers nous són al seu lloc. S'han conservat {count} fitxer(s) antic(s) creat(s) a partir d'aquesta ISO perquè han canviat després de començar aquesta correcció o ja no consten com a creats a partir d'ella: {paths}. Ja no se'n fa el seguiment; elimineu-los vosaltres mateixos si no els voleu.",

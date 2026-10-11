@@ -468,13 +468,17 @@
                 "first_episode": "Angiv «First episode», når du retter dens match."
             },
             "review_held": "Titelvalget skal gennemgås før muxing: {reason}. Der blev ikke valgt nogen reservetitel.",
-            "review_retained": "Den gemte ISO og planen bevares."
+            "review_retained": "Den gemte ISO og planen bevares.",
+            "review_unsaved": "Holdet til gennemgang kunne ikke gemmes ({error}); optagelsen er bevaret. Ret mellemlagerets netværksdrev, og genoptag derefter disken med «Resume»."
         },
         "staging": {
             "listing_incomplete": "kan ikke undersøge mellemlageret: nogle poster i mellemlagermappen kunne ikke læses",
             "entry_unreadable": "kan ikke undersøge mellemlagerposten {name}: {error}",
             "mux_job_busy": "Et drev bruger lige nu denne rips mellemlagerjob; den blev ikke muxet og forbliver i mellemlageret.",
-            "root_missing": "mellemlagermappen {path} mangler – er netværksdrevet monteret?"
+            "root_missing": "mellemlagermappen {path} mangler – er netværksdrevet monteret?",
+            "share_unmounted": "kan ikke oprette mellemlager: dets netværksdrev er ikke monteret",
+            "unlisted": "kan ikke undersøge mellemlager: mellemlagermappen kunne ikke vises",
+            "duplicate_match": "mere end ét mellemlagerelement matcher denne disk; behold begge, og løs dubletten, før du fortsætter"
         }
     },
     "usage": {
@@ -951,6 +955,7 @@
             "library_folder_empty": "biblioteksmappen {path} er tom (er delingen monteret?); der blev ikke skrevet noget",
             "library_folder_unreadable": "biblioteksmappen {path} kan ikke læses ({error}); der blev ikke skrevet noget",
             "links_not_saved": "{path} er på plads, men library-links.json i konfigurationsmappen kunne ikke opdateres ({error}). Ret filen eller mappens tilladelser, og vælg derefter «Retry».",
+            "links_unreadable": "{file} i konfigurationsmappen kunne ikke læses ({error}), så det er ukendt, hvilke filer denne ISO har lavet; der blev ikke skrevet noget. Ret filen eller mappens tilladelser, og vælg derefter «Retry».",
             "matches_unreadable": "de gemte match (library-matches.json i {dir}) kan ikke læses: {error}",
             "no_title_plan": "denne remux har ingen titelplan; der blev ikke skrevet noget",
             "plan": {
@@ -960,6 +965,9 @@
             "plan_not_saved": "remux-planen kunne ikke gemmes i {path} i konfigurationsmappen: {error}",
             "queue_damaged": "{path} er beskadiget ({error}) og kunne ikke lægges til side ({aside_error}); remux-køen er sat på hold, og filen efterlades, som den er.",
             "queue_unreadable": "{path} kan ikke læses ({error}); remux-køen er sat på hold, og filen efterlades, som den er. Ret konfigurationsmappen; den læses igen hvert minut.",
+            "nothing_queued": "{reason} Intet blev sat i kø.",
+            "queue_held_hint": "Intet i remux-køen kører eller ændres, før denne fil kan læses.",
+            "folder_failed": "{message} Mappe: {path}.",
             "retire": {
                 "folder_missing": "mappen for {path} blev ikke fundet (er delingen monteret?); den blev ikke fjernet",
                 "kept": "Alle {new} nye filer er på plads. {count} gammel/gamle fil(er) lavet fra denne ISO blev beholdt, fordi de blev ændret efter denne rettelse begyndte, eller ikke længere er registreret som lavet fra den: {paths}. De spores ikke længere; slet dem selv, hvis du ikke vil have dem.",
