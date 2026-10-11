@@ -469,6 +469,7 @@
             },
             "review_held": "Titelvalget skal gennemgås før muxing: {reason}. Der blev ikke valgt nogen reservetitel.",
             "review_retained": "Den gemte ISO og planen bevares.",
+            "review_hold_failed": "Holdet til gennemgang kunne ikke gemmes: {error}",
             "review_unsaved": "Holdet til gennemgang kunne ikke gemmes ({error}); optagelsen er bevaret. Ret mellemlagerets netværksdrev, og genoptag derefter disken med «Resume»."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "kan ikke undersøge mellemlagerposten {name}: {error}",
             "mux_job_busy": "Et drev bruger lige nu denne rips mellemlagerjob; den blev ikke muxet og forbliver i mellemlageret.",
             "root_missing": "mellemlagermappen {path} mangler – er netværksdrevet monteret?",
+            "root_unusable": "mellemlagermappen {path} kan ikke bruges: {detail}",
             "share_unmounted": "kan ikke oprette mellemlager: dets netværksdrev er ikke monteret",
             "unlisted": "kan ikke undersøge mellemlager: mellemlagermappen kunne ikke vises",
             "duplicate_match": "mere end ét mellemlagerelement matcher denne disk; behold begge, og løs dubletten, før du fortsætter"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Filerne er leveret. Undersøg ændrede eller uplanlagte artefakter i mellemlageret; de slettes ikke automatisk. Oprydningen forsøges igen efter en pause og venter derefter på «Retry».",
             "size_mismatch_hint": "Kontrollér destinationens filsystem for ENOSPC / korte skrivninger. Mover fjerner kun sin midlertidige fil og forsøger igen efter 30 s og derefter efter 2 min; derefter venter den på «Retry» (hvis en dst-fil er tilbage, så fjern den).",
             "post_copy_invalid_hint": "Kopien har den rigtige størrelse, men bestod ikke en format- eller læsbarhedskontrol (afkortet header/slutning, forkert TS-synk eller ulæselig dst); se device_system.log for den konkrete kontrol. Mover fjerner kun sin midlertidige fil og forsøger igen efter 30 s og derefter efter 2 min; derefter venter den på «Retry» (hvis en dst-fil er tilbage, så fjern den).",
-            "folder_create_failed_hint": "Kontrollér, at destinationsdrevet er monteret og skrivbart: et drev, der er faldet ud eller blevet monteret igen siden kontrollen, afviser også dette. Det forsøges igen i næste gennemløb; intet blev flyttet.",
+            "folder_create_failed_hint": "Kontrollér, at destinationsdrevet er monteret og skrivbart: et drev, der er faldet ud eller blevet monteret igen siden kontrollen, afviser også dette. Det forsøges igen efter 30 s og derefter efter 2 min; derefter venter det på «Retry». Intet blev flyttet.",
             "reservations_unreadable": "kan ikke læse de navne, som andre rips leveringer har reserveret: {error}",
             "reservations_unreadable_hint": "Intet er flyttet eller navngivet endnu. Det forsøges igen i næste gennemløb; hvis det fortsætter, så reparer mellemlageret eller den anden rips leveringsjournal."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "biblioteksmappen {path} kan ikke læses ({error}); der blev ikke skrevet noget",
             "links_not_saved": "{path} er på plads, men library-links.json i konfigurationsmappen kunne ikke opdateres ({error}). Ret filen eller mappens tilladelser, og vælg derefter «Retry».",
             "links_unreadable": "{file} i konfigurationsmappen kunne ikke læses ({error}), så det er ukendt, hvilke filer denne ISO har lavet; der blev ikke skrevet noget. Ret filen eller mappens tilladelser, og vælg derefter «Retry».",
+            "iso_unresponsive": "Kilde-ISO-mappen {path} svarer ikke – netværksdrevet kan være nede eller hængt.",
+            "kept_copy_to": "Færdiggør remux af {iso}, som er gemt i {kept}: kopierer den til {target}",
+            "kept_copy": "Færdiggør remux af {iso}, som er gemt i {kept}",
             "matches_unreadable": "de gemte match (library-matches.json i {dir}) kan ikke læses: {error}",
             "no_title_plan": "denne remux har ingen titelplan; der blev ikke skrevet noget",
             "plan": {

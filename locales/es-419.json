@@ -469,6 +469,7 @@
             },
             "review_held": "La selección de títulos necesita revisión antes del muxing: {reason}. No se seleccionó ningún título alternativo.",
             "review_retained": "La ISO y el plan guardados se conservan.",
+            "review_hold_failed": "No se pudo guardar la retención de revisión: {error}",
             "review_unsaved": "No se pudo guardar la retención de revisión ({error}); la captura se conserva. Corrige el recurso compartido intermedio y luego reanuda el disco con «Resume»."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "no se puede inspeccionar la entrada intermedia {name}: {error}",
             "mux_job_busy": "Una unidad está usando en este momento el trabajo intermedio de este rip; no se muxeó y permanece en el área intermedia.",
             "root_missing": "falta la carpeta intermedia {path}: ¿está montado el recurso compartido?",
+            "root_unusable": "no se puede usar la carpeta intermedia {path}: {detail}",
             "share_unmounted": "no se puede crear el área intermedia: su recurso compartido de red no está montado",
             "unlisted": "no se puede inspeccionar el área intermedia: no se pudo listar la carpeta intermedia",
             "duplicate_match": "más de una entrada intermedia coincide con este disco; conserva ambas y resuelve el duplicado antes de continuar"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Los archivos se han entregado. Revisa los artefactos del área intermedia que hayan cambiado o no estuvieran previstos; no se eliminan automáticamente. La limpieza se reintenta tras una espera y después espera a «Retry».",
             "size_mismatch_hint": "Comprueba si el sistema de archivos de destino tiene ENOSPC / escrituras cortas. El mover solo elimina su archivo temporal y vuelve a intentarlo a los 30 s y luego a los 2 min; después espera a «Retry» (si queda un archivo dst, elimínalo).",
             "post_copy_invalid_hint": "La copia tiene el tamaño correcto, pero no superó una comprobación de formato o legibilidad (cabecera o final truncados, sincronización TS incorrecta o dst ilegible); consulta device_system.log para ver la comprobación concreta. El mover solo elimina su archivo temporal y vuelve a intentarlo a los 30 s y luego a los 2 min; después espera a «Retry» (si queda un archivo dst, elimínalo).",
-            "folder_create_failed_hint": "Comprueba que el recurso compartido de destino esté montado y sea escribible: un recurso que se ha desconectado o se ha vuelto a montar desde su comprobación también lo rechaza. Se vuelve a intentar en la siguiente pasada; no se movió nada.",
+            "folder_create_failed_hint": "Comprueba que el recurso compartido de destino esté montado y sea escribible: un recurso que se ha desconectado o se ha vuelto a montar desde su comprobación también lo rechaza. Se vuelve a intentar a los 30 s y luego a los 2 min; después espera a «Retry». No se movió nada.",
             "reservations_unreadable": "no se pueden leer los nombres que reservaron las entregas de otros rips: {error}",
             "reservations_unreadable_hint": "Todavía no se ha movido ni nombrado nada. Se vuelve a intentar en la siguiente pasada; si persiste, repara el almacenamiento intermedio o el diario de entrega del otro rip."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "la carpeta de la biblioteca {path} no se puede leer ({error}); no se escribió nada",
             "links_not_saved": "{path} está en su lugar, pero no se pudo actualizar library-links.json en la carpeta de configuración ({error}). Corrige ese archivo o los permisos de su carpeta y luego elige «Retry».",
             "links_unreadable": "No se pudo leer {file} en la carpeta de configuración ({error}), así que se desconoce qué archivos creó esta ISO; no se escribió nada. Corrige ese archivo o los permisos de su carpeta y luego elige «Retry».",
+            "iso_unresponsive": "La carpeta ISO de origen {path} no responde: el recurso compartido de red puede estar caído o bloqueado.",
+            "kept_copy_to": "Finalizando el remux de {iso} conservado en {kept}: copiándolo a {target}",
+            "kept_copy": "Finalizando el remux de {iso} conservado en {kept}",
             "matches_unreadable": "no se pueden leer las coincidencias guardadas (library-matches.json en {dir}): {error}",
             "no_title_plan": "este remux no tiene plan de títulos; no se escribió nada",
             "plan": {

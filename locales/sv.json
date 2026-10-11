@@ -469,6 +469,7 @@
             },
             "review_held": "Titelvalet behöver granskas före muxning: {reason}. Ingen reservtitel valdes.",
             "review_retained": "Den sparade ISO-filen och planen behålls.",
+            "review_hold_failed": "Granskningsspärren kunde inte sparas: {error}",
             "review_unsaved": "Granskningsspärren kunde inte sparas ({error}); inspelningen behålls. Åtgärda mellanlagrets resurs och återuppta sedan skivan med «Resume»."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "kan inte granska mellanlagerposten {name}: {error}",
             "mux_job_busy": "En enhet använder just nu mellanlagerjobbet för denna rip; den muxades inte och ligger kvar i mellanlagret.",
             "root_missing": "mellanlagermappen {path} saknas – är resursen monterad?",
+            "root_unusable": "mellanlagermappen {path} kan inte användas: {detail}",
             "share_unmounted": "det går inte att skapa mellanlager: dess nätverksresurs är inte monterad",
             "unlisted": "det går inte att inspektera mellanlager: mellanlagermappen kunde inte listas",
             "duplicate_match": "fler än en post i mellanlagret matchar den här skivan; behåll båda och lös dubbletten innan du fortsätter"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Filerna är levererade. Granska ändrade eller oplanerade artefakter i mellanlagret; de tas inte bort automatiskt. Rensningen försöks igen efter en paus och väntar sedan på «Retry».",
             "size_mismatch_hint": "Kontrollera målets filsystem för ENOSPC / ofullständiga skrivningar. Mover tar bara bort sin temporära fil och försöker igen efter 30 s och sedan efter 2 min; därefter väntar den på «Retry» (om en dst-fil blir kvar, ta bort den).",
             "post_copy_invalid_hint": "Kopian har rätt storlek men klarade inte en format- eller läsbarhetskontroll (avkortad header/slut, felaktig TS-synk eller oläsbar dst); se device_system.log för den specifika kontrollen. Mover tar bara bort sin temporära fil och försöker igen efter 30 s och sedan efter 2 min; därefter väntar den på «Retry» (om en dst-fil blir kvar, ta bort den).",
-            "folder_create_failed_hint": "Kontrollera att målresursen är monterad och skrivbar: en resurs som har tappats eller monterats om sedan kontrollen avvisar också detta. Det försöks igen vid nästa genomgång; inget flyttades.",
+            "folder_create_failed_hint": "Kontrollera att målresursen är monterad och skrivbar: en resurs som har tappats eller monterats om sedan kontrollen avvisar också detta. Det försöks igen efter 30 s och sedan efter 2 min; därefter väntar det på «Retry». Inget flyttades.",
             "reservations_unreadable": "det går inte att läsa namnen som andra rips leveranser har reserverat: {error}",
             "reservations_unreadable_hint": "Inget har flyttats eller namngetts ännu. Det försöks igen vid nästa genomgång; om det kvarstår, reparera mellanlagret eller den andra ripens leveransjournal."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "biblioteksmappen {path} kan inte läsas ({error}); inget skrevs",
             "links_not_saved": "{path} är på plats, men library-links.json i konfigurationsmappen kunde inte uppdateras ({error}). Åtgärda filen eller mappens behörigheter och välj sedan «Retry».",
             "links_unreadable": "{file} i konfigurationsmappen kunde inte läsas ({error}), så det är okänt vilka filer denna ISO skapade; inget skrevs. Åtgärda filen eller mappens behörigheter och välj sedan «Retry».",
+            "iso_unresponsive": "Källmappen för ISO {path} svarar inte – nätverksresursen kan vara nere eller hänga sig.",
+            "kept_copy_to": "Slutför remux av {iso} som behålls i {kept}: kopierar den till {target}",
+            "kept_copy": "Slutför remux av {iso} som behålls i {kept}",
             "matches_unreadable": "de sparade matchningarna (library-matches.json i {dir}) kan inte läsas: {error}",
             "no_title_plan": "denna remux har ingen titelplan; inget skrevs",
             "plan": {

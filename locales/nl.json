@@ -446,6 +446,7 @@
             },
             "review_held": "De titelselectie moet worden gecontroleerd vóór het muxen: {reason}. Er is geen terugvaltitel geselecteerd.",
             "review_retained": "De opgeslagen ISO en het plan blijven bewaard.",
+            "review_hold_failed": "De beoordelingsblokkade kon niet worden opgeslagen: {error}",
             "review_unsaved": "De beoordelingsblokkade kon niet worden opgeslagen ({error}); de opname blijft bewaard. Herstel de share van de tussenopslag en hervat de schijf daarna met «Resume»."
         },
         "staging": {
@@ -453,6 +454,7 @@
             "entry_unreadable": "kan het item {name} in de tussenopslag niet inspecteren: {error}",
             "mux_job_busy": "Een station gebruikt op dit moment de tussenopslagtaak van deze rip; die is niet gemuxt en blijft in de tussenopslag.",
             "root_missing": "tussenopslagmap {path} ontbreekt – is de share gekoppeld?",
+            "root_unusable": "tussenopslagmap {path} kan niet worden gebruikt: {detail}",
             "share_unmounted": "kan tussenopslag niet aanmaken: de netwerkshare ervan is niet gekoppeld",
             "unlisted": "kan tussenopslag niet inspecteren: de tussenopslagmap kon niet worden weergegeven",
             "duplicate_match": "meer dan één item in de tussenopslag komt overeen met deze schijf; bewaar beide en los het duplicaat op voordat u doorgaat"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "De bestanden zijn geleverd. Controleer gewijzigde of ongeplande artefacten in de tussenopslag; ze worden niet automatisch verwijderd. Het opruimen wordt na een wachttijd opnieuw geprobeerd en wacht daarna op «Retry».",
             "size_mismatch_hint": "Controleer het doelbestandssysteem op ENOSPC / onvolledige schrijfbewerkingen. De mover verwijdert alleen zijn tijdelijke bestand en probeert het na 30 s opnieuw en daarna na 2 min; daarna wacht hij op «Retry» (als er een dst-bestand overblijft, verwijder dat dan).",
             "post_copy_invalid_hint": "De kopie heeft de juiste grootte, maar is niet door een controle op indeling/leesbaarheid gekomen (afgekapte header of staart, onjuiste TS-synchronisatie of onleesbaar dst); zie device_system.log voor de specifieke controle. De mover verwijdert alleen zijn tijdelijke bestand en probeert het na 30 s opnieuw en daarna na 2 min; daarna wacht hij op «Retry» (als er een dst-bestand overblijft, verwijder dat dan).",
-            "folder_create_failed_hint": "Controleer of de doelshare is gekoppeld en beschrijfbaar: een share die sinds de controle is weggevallen of opnieuw is gekoppeld, weigert dit ook. Het wordt bij de volgende ronde opnieuw geprobeerd; er is niets verplaatst.",
+            "folder_create_failed_hint": "Controleer of de doelshare is gekoppeld en beschrijfbaar: een share die sinds de controle is weggevallen of opnieuw is gekoppeld, weigert dit ook. Het wordt na 30 s opnieuw geprobeerd en daarna na 2 min; daarna wacht het op «Retry». Er is niets verplaatst.",
             "reservations_unreadable": "de namen die de leveringen van andere rips hebben gereserveerd kunnen niet worden gelezen: {error}",
             "reservations_unreadable_hint": "Er is nog niets verplaatst of benoemd. Het wordt bij de volgende ronde opnieuw geprobeerd; als dit blijft aanhouden, herstel dan de tussenopslag of het leveringsjournaal van de andere rip."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "de bibliotheekmap {path} kan niet worden gelezen ({error}); er is niets geschreven",
             "links_not_saved": "{path} staat op zijn plek, maar library-links.json in de configuratiemap kon niet worden bijgewerkt ({error}). Herstel dat bestand of de rechten van de map en kies daarna «Retry».",
             "links_unreadable": "{file} in de configuratiemap kon niet worden gelezen ({error}), dus het is onbekend welke bestanden deze ISO heeft gemaakt; er is niets geschreven. Herstel dat bestand of de rechten van de map en kies daarna «Retry».",
+            "iso_unresponsive": "De bron-ISO-map {path} reageert niet – de netwerkshare is mogelijk uitgevallen of vastgelopen.",
+            "kept_copy_to": "Remux van {iso} afronden, bewaard in {kept}: wordt gekopieerd naar {target}",
+            "kept_copy": "Remux van {iso} afronden, bewaard in {kept}",
             "matches_unreadable": "de opgeslagen koppelingen (library-matches.json in {dir}) kunnen niet worden gelezen: {error}",
             "no_title_plan": "deze remux heeft geen titelplan; er is niets geschreven",
             "plan": {

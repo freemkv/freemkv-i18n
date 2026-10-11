@@ -469,6 +469,7 @@
             },
             "review_held": "La selecció de títols necessita revisió abans del muxing: {reason}. No s'ha seleccionat cap títol alternatiu.",
             "review_retained": "L'ISO i el pla desats es conserven.",
+            "review_hold_failed": "No s'ha pogut desar la retenció de revisió: {error}",
             "review_unsaved": "No s'ha pogut desar la retenció de revisió ({error}); la captura es conserva. Corregiu el recurs compartit intermedi i després reprengueu el disc amb «Resume»."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "no es pot inspeccionar l'entrada intermèdia {name}: {error}",
             "mux_job_busy": "Una unitat està fent servir ara mateix la tasca intermèdia d'aquest rip; no s'ha muxat i continua a l'àrea intermèdia.",
             "root_missing": "la carpeta intermèdia {path} no hi és: s'ha muntat el recurs compartit?",
+            "root_unusable": "no es pot utilitzar la carpeta intermèdia {path}: {detail}",
             "share_unmounted": "no es pot crear l'àrea intermèdia: el seu recurs compartit de xarxa no està muntat",
             "unlisted": "no es pot inspeccionar l'àrea intermèdia: no s'ha pogut llistar la carpeta intermèdia",
             "duplicate_match": "més d'una entrada intermèdia coincideix amb aquest disc; conserveu-les totes dues i resoleu el duplicat abans de continuar"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Els fitxers s'han lliurat. Reviseu els artefactes de l'àrea intermèdia que han canviat o no estaven previstos; no se suprimeixen automàticament. El desmuntatge es reintenta després d'una espera i després espera «Retry».",
             "size_mismatch_hint": "Comproveu el sistema de fitxers de destinació per detectar ENOSPC / escriptures curtes. El mover només elimina el seu fitxer temporal i ho torna a provar al cap de 30 s i després de 2 min; després espera «Retry» (si hi queda un fitxer dst, elimineu-lo).",
             "post_copy_invalid_hint": "La còpia té la mida correcta, però no ha superat una comprovació de format o llegibilitat (capçalera o final truncats, sincronització TS incorrecta o dst il·legible); consulteu device_system.log per veure la comprovació concreta. El mover només elimina el seu fitxer temporal i ho torna a provar al cap de 30 s i després de 2 min; després espera «Retry» (si hi queda un fitxer dst, elimineu-lo).",
-            "folder_create_failed_hint": "Comproveu que el recurs compartit de destinació estigui muntat i sigui escriptible: un recurs que s'ha desconnectat o remuntat des de la seva comprovació també ho refusa. Es torna a provar a la passada següent; no s'ha mogut res.",
+            "folder_create_failed_hint": "Comproveu que el recurs compartit de destinació estigui muntat i sigui escriptible: un recurs que s'ha desconnectat o remuntat des de la seva comprovació també ho refusa. Es torna a provar al cap de 30 s i després de 2 min; després espera «Retry». No s'ha mogut res.",
             "reservations_unreadable": "no es poden llegir els noms que han reservat les entregues d'altres rips: {error}",
             "reservations_unreadable_hint": "Encara no s'ha mogut ni anomenat res. Es torna a provar a la passada següent; si persisteix, repareu l'emmagatzematge intermedi o el diari d'entrega de l'altre rip."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "la carpeta de la biblioteca {path} no es pot llegir ({error}); no s'ha escrit res",
             "links_not_saved": "{path} és al seu lloc, però no s'ha pogut actualitzar library-links.json a la carpeta de configuració ({error}). Corregiu aquest fitxer o els permisos de la seva carpeta i després trieu «Retry».",
             "links_unreadable": "{file} a la carpeta de configuració no s'ha pogut llegir ({error}), així que no se sap quins fitxers ha creat aquesta ISO; no s'ha escrit res. Corregiu aquest fitxer o els permisos de la seva carpeta i després trieu «Retry».",
+            "iso_unresponsive": "La carpeta ISO d'origen {path} no respon: el recurs compartit de xarxa pot estar fora de servei o bloquejat.",
+            "kept_copy_to": "S'està acabant el remux de {iso} conservat a {kept}: es copia a {target}",
+            "kept_copy": "S'està acabant el remux de {iso} conservat a {kept}",
             "matches_unreadable": "no es poden llegir les coincidències desades (library-matches.json a {dir}): {error}",
             "no_title_plan": "aquest remux no té pla de títols; no s'ha escrit res",
             "plan": {

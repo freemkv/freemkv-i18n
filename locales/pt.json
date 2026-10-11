@@ -446,6 +446,7 @@
             },
             "review_held": "A seleção de títulos precisa de revisão antes da multiplexagem: {reason}. Não foi selecionado nenhum título alternativo.",
             "review_retained": "O ISO e o plano guardados foram mantidos.",
+            "review_hold_failed": "Não foi possível guardar a retenção para revisão: {error}",
             "review_unsaved": "Não foi possível guardar a retenção para revisão ({error}); a captura é mantida. Corrija a partilha intermédia e, em seguida, retome o disco com «Resume»."
         },
         "staging": {
@@ -453,6 +454,7 @@
             "entry_unreadable": "não é possível inspecionar a entrada intermédia {name}: {error}",
             "mux_job_busy": "Uma unidade está a usar neste momento o trabalho intermédio deste rip; não foi feito o mux e permanece na área intermédia.",
             "root_missing": "a pasta intermédia {path} não existe – a partilha está montada?",
+            "root_unusable": "a pasta intermédia {path} não pode ser utilizada: {detail}",
             "share_unmounted": "não é possível criar a área intermédia: a respetiva partilha de rede não está montada",
             "unlisted": "não é possível inspecionar a área intermédia: não foi possível listar a pasta intermédia",
             "duplicate_match": "mais de uma entrada intermédia corresponde a este disco; mantenha ambas e resolva a duplicação antes de continuar"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Os ficheiros foram entregues. Inspecione os artefactos da área intermédia que mudaram ou não estavam previstos; não são eliminados automaticamente. A limpeza é tentada novamente após uma espera e depois aguarda «Retry».",
             "size_mismatch_hint": "Verifique o sistema de ficheiros de destino quanto a ENOSPC / escritas incompletas. O mover remove apenas o próprio ficheiro temporário e tenta novamente após 30 s e depois após 2 min; em seguida, aguarda «Retry» (se um ficheiro dst permanecer, remova-o).",
             "post_copy_invalid_hint": "A cópia tem o tamanho correto, mas falhou numa verificação de formato/legibilidade (cabeçalho ou final truncado, sincronização TS incorreta ou dst ilegível); consulte device_system.log para a verificação específica. O mover remove apenas o próprio ficheiro temporário e tenta novamente após 30 s e depois após 2 min; em seguida, aguarda «Retry» (se um ficheiro dst permanecer, remova-o).",
-            "folder_create_failed_hint": "Verifique se a partilha de destino está montada e gravável: uma partilha que caiu ou foi remontada desde a sua verificação também recusa isto. Será tentado novamente na próxima passagem; nada foi movido.",
+            "folder_create_failed_hint": "Verifique se a partilha de destino está montada e gravável: uma partilha que caiu ou foi remontada desde a sua verificação também recusa isto. Será tentado novamente após 30 s e depois após 2 min; em seguida, aguarda «Retry». Nada foi movido.",
             "reservations_unreadable": "não é possível ler os nomes reservados pelas entregas de outros rips: {error}",
             "reservations_unreadable_hint": "Ainda nada foi movido ou nomeado. Será tentado novamente na próxima passagem; se persistir, repare o armazenamento intermédio ou o diário de entrega do outro rip."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "a pasta da biblioteca {path} não pode ser lida ({error}); não foi escrito nada",
             "links_not_saved": "{path} está no lugar, mas não foi possível atualizar library-links.json na pasta de configuração ({error}). Corrija esse ficheiro ou as permissões da respetiva pasta e, em seguida, escolha «Retry».",
             "links_unreadable": "Não foi possível ler {file} na pasta de configuração ({error}), pelo que não se sabe quais os ficheiros que esta ISO criou; não foi escrito nada. Corrija esse ficheiro ou as permissões da respetiva pasta e, em seguida, escolha «Retry».",
+            "iso_unresponsive": "A pasta ISO de origem {path} não está a responder – a partilha de rede pode estar inativa ou bloqueada.",
+            "kept_copy_to": "A concluir o remux de {iso} mantido em {kept}: a copiar para {target}",
+            "kept_copy": "A concluir o remux de {iso} mantido em {kept}",
             "matches_unreadable": "as correspondências guardadas (library-matches.json em {dir}) não podem ser lidas: {error}",
             "no_title_plan": "este remux não tem plano de títulos; não foi escrito nada",
             "plan": {

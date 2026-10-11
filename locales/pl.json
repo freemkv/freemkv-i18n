@@ -469,6 +469,7 @@
             },
             "review_held": "Wybór tytułu wymaga sprawdzenia przed muxowaniem: {reason}. Nie wybrano żadnego tytułu zastępczego.",
             "review_retained": "Zapisany obraz ISO i plan zostały zachowane.",
+            "review_hold_failed": "Wstrzymania do przeglądu nie udało się zapisać: {error}",
             "review_unsaved": "Wstrzymania do przeglądu nie udało się zapisać ({error}); nagranie zostaje zachowane. Napraw udział obszaru przejściowego, a następnie wznów płytę przyciskiem „Resume“."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "nie można sprawdzić wpisu obszaru przejściowego {name}: {error}",
             "mux_job_busy": "Napęd właśnie używa zadania przejściowego tego ripu; nie został zmuksowany i pozostaje w obszarze przejściowym.",
             "root_missing": "brak folderu przejściowego {path} – czy udział jest zamontowany?",
+            "root_unusable": "nie można użyć folderu przejściowego {path}: {detail}",
             "share_unmounted": "nie można utworzyć obszaru przejściowego: jego udział sieciowy nie jest zamontowany",
             "unlisted": "nie można sprawdzić obszaru przejściowego: nie udało się wyświetlić zawartości folderu przejściowego",
             "duplicate_match": "więcej niż jeden wpis w obszarze przejściowym pasuje do tej płyty; zachowaj oba i przed kontynuowaniem rozwiąż duplikat"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Pliki zostały dostarczone. Sprawdź zmienione lub nieplanowane artefakty w obszarze przejściowym; nie są usuwane automatycznie. Sprzątanie jest ponawiane po przerwie, a potem czeka na „Retry”.",
             "size_mismatch_hint": "Sprawdź docelowy system plików pod kątem ENOSPC / niepełnych zapisów. Mover usuwa tylko swój plik tymczasowy i ponawia próbę po 30 s, potem po 2 min; następnie czeka na „Retry” (jeśli pozostanie plik dst, usuń go).",
             "post_copy_invalid_hint": "Kopia ma prawidłowy rozmiar, ale nie przeszła kontroli formatu/czytelności (obcięty nagłówek lub koniec, błędna synchronizacja TS albo nieczytelny dst); konkretną kontrolę znajdziesz w device_system.log. Mover usuwa tylko swój plik tymczasowy i ponawia próbę po 30 s, potem po 2 min; następnie czeka na „Retry” (jeśli pozostanie plik dst, usuń go).",
-            "folder_create_failed_hint": "Sprawdź, czy docelowy udział jest zamontowany i zapisywalny: udział, który został odłączony lub zamontowany ponownie od czasu sprawdzenia, też to odrzuci. Próba zostanie ponowiona w następnym przebiegu; nic nie zostało przeniesione.",
+            "folder_create_failed_hint": "Sprawdź, czy docelowy udział jest zamontowany i zapisywalny: udział, który został odłączony lub zamontowany ponownie od czasu sprawdzenia, też to odrzuci. Próba zostanie ponowiona po 30 s, potem po 2 min; następnie czeka na „Retry”. Nic nie zostało przeniesione.",
             "reservations_unreadable": "nie można odczytać nazw zarezerwowanych przez dostarczenia innych ripów: {error}",
             "reservations_unreadable_hint": "Nic nie zostało jeszcze przeniesione ani nazwane. Próba zostanie ponowiona w następnym przebiegu; jeśli problem się utrzymuje, napraw magazyn przejściowy lub dziennik dostarczania innego ripu."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "nie można odczytać folderu biblioteki {path} ({error}); nic nie zostało zapisane",
             "links_not_saved": "{path} jest na miejscu, ale nie udało się zaktualizować pliku library-links.json w folderze konfiguracji ({error}). Napraw ten plik lub uprawnienia jego folderu, a następnie wybierz „Retry”.",
             "links_unreadable": "Pliku {file} w folderze konfiguracji nie udało się odczytać ({error}), więc nie wiadomo, które pliki utworzył ten ISO; nic nie zostało zapisane. Napraw ten plik lub uprawnienia jego folderu, a następnie wybierz „Retry“.",
+            "iso_unresponsive": "Folder źródłowy ISO {path} nie odpowiada – udział sieciowy może nie działać lub się zawiesić.",
+            "kept_copy_to": "Kończenie remuksu {iso} zachowanego w {kept}: kopiowanie do {target}",
+            "kept_copy": "Kończenie remuksu {iso} zachowanego w {kept}",
             "matches_unreadable": "nie można odczytać zapisanych dopasowań (library-matches.json w {dir}): {error}",
             "no_title_plan": "ten remuks nie ma planu tytułów; nic nie zostało zapisane",
             "plan": {

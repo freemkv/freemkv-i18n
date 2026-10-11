@@ -469,6 +469,7 @@
             },
             "review_held": "Výběr titulu vyžaduje před muxováním kontrolu: {reason}. Nebyl vybrán žádný náhradní titul.",
             "review_retained": "Uložený ISO a plán zůstávají zachovány.",
+            "review_hold_failed": "Pozastavení kvůli kontrole se nepodařilo uložit: {error}",
             "review_unsaved": "Pozastavení kvůli kontrole se nepodařilo uložit ({error}); záznam je zachován. Opravte přípravný sdílený svazek a poté disk obnovte tlačítkem „Resume“."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "nelze zkontrolovat položku přípravné oblasti {name}: {error}",
             "mux_job_busy": "Jednotka právě používá přípravnou úlohu tohoto ripu; nebyla zmuxována a zůstává v přípravné oblasti.",
             "root_missing": "přípravná složka {path} chybí – je sdílený svazek připojen?",
+            "root_unusable": "přípravnou složku {path} nelze použít: {detail}",
             "share_unmounted": "nelze vytvořit přípravnou oblast: její síťový sdílený svazek není připojen",
             "unlisted": "nelze zkontrolovat přípravnou oblast: seznam souborů přípravné složky nelze načíst",
             "duplicate_match": "tomuto disku odpovídá více než jedna položka v přípravné oblasti; ponechte obě a před pokračováním vyřešte duplicitu"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Soubory jsou doručeny. Zkontrolujte změněné nebo neplánované artefakty v přípravné oblasti; automaticky se nemažou. Úklid se po prodlevě zopakuje a poté čeká na „Retry“.",
             "size_mismatch_hint": "Zkontrolujte, zda se na cílovém souborovém systému nevyskytuje ENOSPC / zkrácené zápisy. Mover odstraní jen svůj dočasný soubor a zkusí to znovu po 30 s, poté po 2 min; potom čeká na „Retry“ (pokud zůstane soubor dst, odstraňte jej).",
             "post_copy_invalid_hint": "Kopie má správnou velikost, ale neprošla kontrolou formátu či čitelnosti (useknutá hlavička nebo konec, chybná synchronizace TS nebo nečitelný dst); konkrétní kontrolu najdete v device_system.log. Mover odstraní jen svůj dočasný soubor a zkusí to znovu po 30 s, poté po 2 min; potom čeká na „Retry“ (pokud zůstane soubor dst, odstraňte jej).",
-            "folder_create_failed_hint": "Zkontrolujte, zda je cílové sdílené úložiště připojeno a zapisovatelné: odmítne to i úložiště, které od své kontroly vypadlo nebo bylo znovu připojeno. Při dalším průchodu se to zkusí znovu; nic nebylo přesunuto.",
+            "folder_create_failed_hint": "Zkontrolujte, zda je cílové sdílené úložiště připojeno a zapisovatelné: odmítne to i úložiště, které od své kontroly vypadlo nebo bylo znovu připojeno. Zkusí se to znovu po 30 s, poté po 2 min; potom čeká na „Retry“. Nic nebylo přesunuto.",
             "reservations_unreadable": "nelze přečíst názvy rezervované doručeními jiných ripů: {error}",
             "reservations_unreadable_hint": "Zatím nic nebylo přesunuto ani pojmenováno. Při dalším průchodu se to zkusí znovu; pokud problém přetrvá, opravte přípravné úložiště nebo žurnál doručení druhého ripu."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "složku knihovny {path} nelze přečíst ({error}); nic nebylo zapsáno",
             "links_not_saved": "{path} je na místě, ale soubor library-links.json ve složce s konfigurací se nepodařilo aktualizovat ({error}). Opravte tento soubor nebo oprávnění jeho složky a potom zvolte „Retry“.",
             "links_unreadable": "Soubor {file} ve složce s konfigurací se nepodařilo přečíst ({error}), takže není známo, které soubory toto ISO vytvořilo; nic nebylo zapsáno. Opravte tento soubor nebo oprávnění jeho složky a potom zvolte „Retry“.",
+            "iso_unresponsive": "Zdrojová složka ISO {path} neodpovídá – sdílené síťové úložiště může být nedostupné nebo zaseknuté.",
+            "kept_copy_to": "Dokončuje se remux souboru {iso} uloženého v {kept}: kopíruje se do {target}",
+            "kept_copy": "Dokončuje se remux souboru {iso} uloženého v {kept}",
             "matches_unreadable": "uložené shody (library-matches.json ve složce {dir}) nelze přečíst: {error}",
             "no_title_plan": "tento remux nemá plán titulů; nic nebylo zapsáno",
             "plan": {

@@ -469,6 +469,7 @@
             },
             "review_held": "Tittelvalget må gjennomgås før muxing: {reason}. Ingen reservetittel ble valgt.",
             "review_retained": "Den lagrede ISO-en og planen beholdes.",
+            "review_hold_failed": "Gjennomgangsstoppen kunne ikke lagres: {error}",
             "review_unsaved": "Gjennomgangsstoppen kunne ikke lagres ({error}); opptaket beholdes. Rett opp delingen for mellomlageret, og gjenoppta deretter platen med «Resume»."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "kan ikke undersøke mellomlageroppføringen {name}: {error}",
             "mux_job_busy": "En stasjon bruker akkurat nå mellomlagerjobben til denne ripen; den ble ikke muxet og blir liggende i mellomlageret.",
             "root_missing": "mellomlagermappen {path} mangler – er delingen montert?",
+            "root_unusable": "mellomlagermappen {path} kan ikke brukes: {detail}",
             "share_unmounted": "kan ikke opprette mellomlager: nettverksdelingen er ikke montert",
             "unlisted": "kan ikke undersøke mellomlager: mellomlagermappen kunne ikke listes",
             "duplicate_match": "mer enn én mellomlageroppføring samsvarer med denne platen; behold begge og løs duplikatet før du fortsetter"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Filene er levert. Undersøk endrede eller uplanlagte artefakter i mellomlageret; de slettes ikke automatisk. Oppryddingen prøves igjen etter en pause og venter deretter på «Retry».",
             "size_mismatch_hint": "Kontroller filsystemet på målet for ENOSPC / ufullstendige skrivinger. Mover fjerner bare sin midlertidige fil og prøver igjen etter 30 s og deretter etter 2 min; etter det venter den på «Retry» (hvis en dst-fil blir liggende, fjern den).",
             "post_copy_invalid_hint": "Kopien har riktig størrelse, men besto ikke en format- eller lesbarhetskontroll (avkortet header/slutt, feil TS-synk eller uleselig dst); se device_system.log for den konkrete kontrollen. Mover fjerner bare sin midlertidige fil og prøver igjen etter 30 s og deretter etter 2 min; etter det venter den på «Retry» (hvis en dst-fil blir liggende, fjern den).",
-            "folder_create_failed_hint": "Kontroller at målets deling er montert og skrivbar: en deling som har falt ut eller blitt montert på nytt siden kontrollen, avviser også dette. Det prøves igjen i neste runde; ingenting ble flyttet.",
+            "folder_create_failed_hint": "Kontroller at målets deling er montert og skrivbar: en deling som har falt ut eller blitt montert på nytt siden kontrollen, avviser også dette. Det prøves igjen etter 30 s og deretter etter 2 min; etter det venter det på «Retry». Ingenting ble flyttet.",
             "reservations_unreadable": "kan ikke lese navnene som andre rips leveranser har reservert: {error}",
             "reservations_unreadable_hint": "Ingenting er flyttet eller navngitt ennå. Det prøves igjen i neste runde; hvis det vedvarer, reparer mellomlageret eller leveringsjournalen til den andre ripen."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "bibliotekmappen {path} kan ikke leses ({error}); ingenting ble skrevet",
             "links_not_saved": "{path} er på plass, men library-links.json i konfigurasjonsmappen kunne ikke oppdateres ({error}). Rett filen eller tillatelsene for mappen, og velg deretter «Retry».",
             "links_unreadable": "{file} i konfigurasjonsmappen kunne ikke leses ({error}), så det er ukjent hvilke filer denne ISO-en laget; ingenting ble skrevet. Rett filen eller tillatelsene for mappen, og velg deretter «Retry».",
+            "iso_unresponsive": "Kilde-ISO-mappen {path} svarer ikke – nettverksdelingen kan være nede eller henge.",
+            "kept_copy_to": "Fullfører remux av {iso} som er beholdt i {kept}: kopierer den til {target}",
+            "kept_copy": "Fullfører remux av {iso} som er beholdt i {kept}",
             "matches_unreadable": "de lagrede treffene (library-matches.json i {dir}) kan ikke leses: {error}",
             "no_title_plan": "denne remuxen har ingen titelplan; ingenting ble skrevet",
             "plan": {

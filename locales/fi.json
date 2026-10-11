@@ -469,6 +469,7 @@
             },
             "review_held": "Nimikkeen valinta on tarkistettava ennen muxausta: {reason}. Varanimikettä ei valittu.",
             "review_retained": "Tallennettu ISO ja suunnitelma säilytetään.",
+            "review_hold_failed": "Tarkistuspidätystä ei voitu tallentaa: {error}",
             "review_unsaved": "Tarkistuspidätystä ei voitu tallentaa ({error}); tallenne säilytetään. Korjaa välivaiheen jako ja jatka sitten levyä valinnalla ”Resume”."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "välivaiheen kohdetta {name} ei voi tarkastaa: {error}",
             "mux_job_busy": "Asema käyttää juuri tämän ripin välivaiheen työtä; sitä ei muxattu, ja se pysyy välivaiheessa.",
             "root_missing": "välivaihekansio {path} puuttuu – onko jaettu resurssi liitetty?",
+            "root_unusable": "välivaihekansiota {path} ei voi käyttää: {detail}",
             "share_unmounted": "välivaihetta ei voi luoda: sen verkkojakoa ei ole liitetty",
             "unlisted": "välivaihetta ei voi tarkastaa: välivaihekansion sisältöä ei voitu listata",
             "duplicate_match": "useampi kuin yksi välivaihekohde vastaa tätä levyä; säilytä molemmat ja ratkaise kaksoiskappale ennen jatkamista"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Tiedostot on toimitettu. Tarkista välivaiheen muuttuneet tai suunnittelemattomat tiedostot; niitä ei poisteta automaattisesti. Purku yritetään uudelleen viiveen jälkeen ja odottaa sitten valintaa ”Retry”.",
             "size_mismatch_hint": "Tarkista kohteen tiedostojärjestelmä: ENOSPC / vajaat kirjoitukset. Mover poistaa vain oman väliaikaistiedostonsa ja yrittää uudelleen 30 s ja sen jälkeen 2 min kuluttua; sen jälkeen se odottaa valintaa ”Retry” (jos dst-tiedosto jää jäljelle, poista se).",
             "post_copy_invalid_hint": "Kopion koko on oikea, mutta se ei läpäissyt muoto- tai luettavuustarkistusta (katkennut otsake tai loppu, virheellinen TS-synkronointi tai lukukelvoton dst); tarkka tarkistus on tiedostossa device_system.log. Mover poistaa vain oman väliaikaistiedostonsa ja yrittää uudelleen 30 s ja sen jälkeen 2 min kuluttua; sen jälkeen se odottaa valintaa ”Retry” (jos dst-tiedosto jää jäljelle, poista se).",
-            "folder_create_failed_hint": "Tarkista, että kohteen jaettu resurssi on liitetty ja kirjoitettavissa: myös resurssi, joka on irronnut tai liitetty uudelleen tarkistuksensa jälkeen, kieltäytyy tästä. Yritys toistetaan seuraavalla kierroksella; mitään ei siirretty.",
+            "folder_create_failed_hint": "Tarkista, että kohteen jaettu resurssi on liitetty ja kirjoitettavissa: myös resurssi, joka on irronnut tai liitetty uudelleen tarkistuksensa jälkeen, kieltäytyy tästä. Yritys toistetaan 30 s ja sen jälkeen 2 min kuluttua; sen jälkeen se odottaa valintaa ”Retry”. Mitään ei siirretty.",
             "reservations_unreadable": "muiden ripien toimitusten varaamia nimiä ei voi lukea: {error}",
             "reservations_unreadable_hint": "Mitään ei ole vielä siirretty tai nimetty. Yritys toistetaan seuraavalla kierroksella; jos ongelma jatkuu, korjaa välivaiheen tallennustila tai toisen ripin toimituslokki."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "kirjastokansiota {path} ei voi lukea ({error}); mitään ei kirjoitettu",
             "links_not_saved": "{path} on paikallaan, mutta library-links.json-tiedostoa ei voitu päivittää asetuskansiossa ({error}). Korjaa tiedosto tai sen kansion käyttöoikeudet ja valitse sitten ”Retry”.",
             "links_unreadable": "Tiedostoa {file} asetuskansiossa ei voitu lukea ({error}), joten ei tiedetä, mitkä tiedostot tämä ISO teki; mitään ei kirjoitettu. Korjaa tiedosto tai sen kansion käyttöoikeudet ja valitse sitten ”Retry”.",
+            "iso_unresponsive": "Lähde-ISO-kansio {path} ei vastaa – verkkojako voi olla poissa käytöstä tai jumissa.",
+            "kept_copy_to": "Viimeistellään tiedoston {iso} remux, joka on säilytetty kohteessa {kept}: kopioidaan kohteeseen {target}",
+            "kept_copy": "Viimeistellään tiedoston {iso} remux, joka on säilytetty kohteessa {kept}",
             "matches_unreadable": "tallennettuja vastaavuuksia (library-matches.json kansiossa {dir}) ei voi lukea: {error}",
             "no_title_plan": "tällä remuxilla ei ole nimikesuunnitelmaa; mitään ei kirjoitettu",
             "plan": {

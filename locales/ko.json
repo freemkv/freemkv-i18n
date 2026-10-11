@@ -469,6 +469,7 @@
             },
             "review_held": "먹싱하기 전에 타이틀 선택을 검토해야 합니다: {reason}. 대체 타이틀은 선택되지 않았습니다.",
             "review_retained": "저장된 ISO와 계획은 유지됩니다.",
+            "review_hold_failed": "검토 보류를 저장할 수 없습니다: {error}",
             "review_unsaved": "검토 보류를 저장할 수 없습니다({error}). 캡처는 유지됩니다. 스테이징 공유를 고친 다음 \"Resume\"을(를) 선택해 디스크를 다시 시작하세요."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "스테이징 항목 {name}을(를) 검사할 수 없습니다: {error}",
             "mux_job_busy": "드라이브가 지금 이 립의 스테이징 작업을 사용 중입니다. mux하지 않았으며 스테이징에 그대로 남습니다.",
             "root_missing": "스테이징 폴더 {path}을(를) 찾을 수 없습니다. 공유가 마운트되어 있나요?",
+            "root_unusable": "스테이징 폴더 {path}을(를) 사용할 수 없습니다: {detail}",
             "share_unmounted": "스테이징을 만들 수 없습니다. 네트워크 공유가 마운트되어 있지 않습니다",
             "unlisted": "스테이징을 검사할 수 없습니다. 스테이징 폴더의 목록을 가져올 수 없습니다",
             "duplicate_match": "이 디스크와 일치하는 스테이징 항목이 둘 이상입니다. 둘 다 유지하고 중복을 해결한 뒤 계속하세요"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "파일은 전달되었습니다. 변경되었거나 계획되지 않은 스테이징 산출물을 확인하세요. 이 항목은 자동으로 삭제되지 않습니다. 정리 작업은 일정 시간 후 다시 시도되며, 그 이후에는 \"Retry\"을(를) 기다립니다.",
             "size_mismatch_hint": "대상 파일 시스템에서 ENOSPC / 불완전한 쓰기가 있는지 확인하세요. mover는 임시 파일만 제거하고 30 s 후, 이어서 2 min 후에 다시 시도하며, 그 이후에는 \"Retry\"을(를) 기다립니다(dst 파일이 남아 있으면 제거하세요).",
             "post_copy_invalid_hint": "복사본의 크기는 올바르지만 형식/읽기 가능 여부 검사(헤더 또는 끝부분 잘림, 잘못된 TS 동기화, 읽을 수 없는 dst)를 통과하지 못했습니다. 구체적인 검사는 device_system.log를 참조하세요. mover는 임시 파일만 제거하고 30 s 후, 이어서 2 min 후에 다시 시도하며, 그 이후에는 \"Retry\"을(를) 기다립니다(dst 파일이 남아 있으면 제거하세요).",
-            "folder_create_failed_hint": "대상 공유가 마운트되어 있고 쓰기 가능한지 확인하세요. 확인 이후 연결이 끊겼거나 다시 마운트된 공유도 이 작업을 거부합니다. 다음 패스에서 다시 시도되며 아무것도 이동되지 않았습니다.",
+            "folder_create_failed_hint": "대상 공유가 마운트되어 있고 쓰기 가능한지 확인하세요. 확인 이후 연결이 끊겼거나 다시 마운트된 공유도 이 작업을 거부합니다. 30 s 후, 이어서 2 min 후에 다시 시도되며, 그 이후에는 \"Retry\"을(를) 기다립니다. 아무것도 이동되지 않았습니다.",
             "reservations_unreadable": "다른 립의 전달이 예약한 이름을 읽을 수 없습니다: {error}",
             "reservations_unreadable_hint": "아직 아무것도 이동하거나 이름을 지정하지 않았습니다. 다음 패스에서 다시 시도됩니다. 문제가 계속되면 스테이징 스토리지 또는 다른 립의 전달 저널을 복구하세요."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "라이브러리 폴더 {path}을(를) 읽을 수 없습니다({error}). 아무것도 쓰지 않았습니다",
             "links_not_saved": "{path}은(는) 제자리에 있지만 설정 폴더의 library-links.json을 업데이트할 수 없습니다({error}). 해당 파일이나 폴더 권한을 고친 다음 \"Retry\"을(를) 선택하세요.",
             "links_unreadable": "설정 폴더의 {file}을(를) 읽을 수 없어({error}) 이 ISO가 만든 파일을 알 수 없으므로 아무것도 쓰지 않았습니다. 해당 파일이나 폴더 권한을 고친 다음 \"Retry\"을(를) 선택하세요.",
+            "iso_unresponsive": "원본 ISO 폴더 {path}이(가) 응답하지 않습니다. 네트워크 공유가 중단되었거나 멈췄을 수 있습니다.",
+            "kept_copy_to": "{kept}에 보관된 {iso}의 remux를 마무리하는 중: {target}(으)로 복사 중",
+            "kept_copy": "{kept}에 보관된 {iso}의 remux를 마무리하는 중",
             "matches_unreadable": "저장된 매치({dir}의 library-matches.json)를 읽을 수 없습니다: {error}",
             "no_title_plan": "이 remux에는 타이틀 계획이 없습니다. 아무것도 쓰지 않았습니다",
             "plan": {

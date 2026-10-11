@@ -469,6 +469,7 @@
             },
             "review_held": "Title selection needs review before muxing: {reason}. No fallback title was selected.",
             "review_retained": "The saved ISO and plan are retained.",
+            "review_hold_failed": "Could not save the review hold: {error}",
             "review_unsaved": "The review hold could not be saved ({error}); the capture is kept. Fix the staging share, then Resume the disc."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "cannot inspect staging entry {name}: {error}",
             "mux_job_busy": "A drive is using this rip's staging job right now; it was not muxed and stays staged.",
             "root_missing": "staging folder {path} is missing — is the share mounted?",
+            "root_unusable": "staging folder {path} cannot be used: {detail}",
             "share_unmounted": "cannot create staging: its network share is not mounted",
             "unlisted": "cannot inspect staging: the staging folder could not be listed",
             "duplicate_match": "more than one staging entry matches this disc; keep both and resolve the duplicate before continuing"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "The files are delivered. Inspect changed or unplanned staging artifacts; they are not automatically deleted. The teardown retries after a backoff, then waits for Retry.",
             "size_mismatch_hint": "Check the destination filesystem for ENOSPC / short writes. The mover removes only its temp file and tries again after 30 s, then 2 min; after that it waits for Retry (if a dst file remains, remove it).",
             "post_copy_invalid_hint": "The copy is the correct size but failed a format/readability check (truncated header/tail, bad TS sync, or unreadable dst); see device_system.log for the specific check. The mover removes only its temp file and tries again after 30 s, then 2 min; after that it waits for Retry (if a dst file remains, remove it).",
-            "folder_create_failed_hint": "Check that the destination share is mounted and writable: a share that dropped or was remounted since its check refuses this too. It is tried again on the next pass; nothing was moved.",
+            "folder_create_failed_hint": "Check that the destination share is mounted and writable: a share that dropped or was remounted since its check refuses this too. It is tried again after 30 s, then 2 min; after that it waits for Retry. Nothing was moved.",
             "reservations_unreadable": "cannot read the names other rips' deliveries reserved: {error}",
             "reservations_unreadable_hint": "Nothing was moved or named yet. It is tried again on the next pass; if this persists, repair the staging storage or the other rip's delivery journal."
         },
@@ -978,6 +980,9 @@
             "changed_during": "{path} changed while this remux ran; it was not touched",
             "links_not_saved": "{path} is in place, but library-links.json in the config folder could not be updated ({error}). Fix that file or its folder's permissions, then Retry.",
             "links_unreadable": "{file} in the config folder could not be read ({error}), so which files this ISO made is unknown; nothing was written. Fix that file or its folder's permissions, then Retry.",
+            "iso_unresponsive": "The source ISO folder {path} is not responding — the network share may be down or hung.",
+            "kept_copy_to": "Finishing the remux of {iso} kept at {kept}: copying it to {target}",
+            "kept_copy": "Finishing the remux of {iso} kept at {kept}",
             "safe": {
                 "retained": "The source ISO is retained.",
                 "retire_done": "Every new file is in place; run Change match again to remove the old files made from this ISO that remain. The source ISO is retained.",

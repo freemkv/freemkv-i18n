@@ -469,6 +469,7 @@
             },
             "review_held": "Výber titulu vyžaduje pred muxovaním kontrolu: {reason}. Nebol vybraný žiadny náhradný titul.",
             "review_retained": "Uložený ISO a plán zostávajú zachované.",
+            "review_hold_failed": "Pozastavenie na kontrolu sa nepodarilo uložiť: {error}",
             "review_unsaved": "Pozastavenie na kontrolu sa nepodarilo uložiť ({error}); záznam je zachovaný. Opravte prípravný zdieľaný zväzok a potom disk obnovte tlačidlom „Resume“."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "nedá sa skontrolovať položka prípravnej oblasti {name}: {error}",
             "mux_job_busy": "Jednotka práve používa prípravnú úlohu tohto ripu; nebola zmuxovaná a zostáva v prípravnej oblasti.",
             "root_missing": "prípravný priečinok {path} chýba – je zdieľaný zväzok pripojený?",
+            "root_unusable": "prípravný priečinok {path} sa nedá použiť: {detail}",
             "share_unmounted": "nedá sa vytvoriť prípravná oblasť: jej sieťový zdieľaný zväzok nie je pripojený",
             "unlisted": "nedá sa skontrolovať prípravná oblasť: zoznam súborov prípravného priečinka sa nepodarilo načítať",
             "duplicate_match": "tomuto disku zodpovedá viac ako jedna položka v prípravnej oblasti; ponechajte obe a pred pokračovaním vyriešte duplicitu"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Súbory sú doručené. Skontrolujte zmenené alebo neplánované artefakty v prípravnej oblasti; automaticky sa nemažú. Upratanie sa po oneskorení zopakuje a potom čaká na „Retry“.",
             "size_mismatch_hint": "Skontrolujte, či sa v cieľovom súborovom systéme nevyskytuje ENOSPC / skrátené zápisy. Mover odstráni len svoj dočasný súbor a skúsi to znova po 30 s, potom po 2 min; potom čaká na „Retry“ (ak zostane súbor dst, odstráňte ho).",
             "post_copy_invalid_hint": "Kópia má správnu veľkosť, ale neprešla kontrolou formátu alebo čitateľnosti (orezaná hlavička alebo koniec, chybná synchronizácia TS alebo nečitateľný dst); konkrétnu kontrolu nájdete v device_system.log. Mover odstráni len svoj dočasný súbor a skúsi to znova po 30 s, potom po 2 min; potom čaká na „Retry“ (ak zostane súbor dst, odstráňte ho).",
-            "folder_create_failed_hint": "Skontrolujte, či je cieľové zdieľané úložisko pripojené a zapisovateľné: odmietne to aj úložisko, ktoré od svojej kontroly vypadlo alebo bolo znova pripojené. Pri ďalšom prechode sa to skúsi znova; nič sa nepresunulo.",
+            "folder_create_failed_hint": "Skontrolujte, či je cieľové zdieľané úložisko pripojené a zapisovateľné: odmietne to aj úložisko, ktoré od svojej kontroly vypadlo alebo bolo znova pripojené. Skúsi sa to znova po 30 s, potom po 2 min; potom čaká na „Retry“. Nič sa nepresunulo.",
             "reservations_unreadable": "nedajú sa prečítať názvy rezervované doručeniami iných ripov: {error}",
             "reservations_unreadable_hint": "Zatiaľ sa nič nepresunulo ani nepomenovalo. Pri ďalšom prechode sa to skúsi znova; ak problém pretrváva, opravte prípravné úložisko alebo žurnál doručenia druhého ripu."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "priečinok knižnice {path} sa nedá prečítať ({error}); nič sa nezapísalo",
             "links_not_saved": "{path} je na mieste, ale súbor library-links.json v priečinku s konfiguráciou sa nepodarilo aktualizovať ({error}). Opravte tento súbor alebo oprávnenia jeho priečinka a potom zvoľte „Retry“.",
             "links_unreadable": "Súbor {file} v priečinku s konfiguráciou sa nepodarilo prečítať ({error}), takže nie je známe, ktoré súbory toto ISO vytvorilo; nič sa nezapísalo. Opravte tento súbor alebo oprávnenia jeho priečinka a potom zvoľte „Retry“.",
+            "iso_unresponsive": "Zdrojový priečinok ISO {path} neodpovedá – sieťové zdieľané úložisko môže byť nedostupné alebo zaseknuté.",
+            "kept_copy_to": "Dokončuje sa remux súboru {iso} uloženého v {kept}: kopíruje sa do {target}",
+            "kept_copy": "Dokončuje sa remux súboru {iso} uloženého v {kept}",
             "matches_unreadable": "uložené zhody (library-matches.json v priečinku {dir}) sa nedajú prečítať: {error}",
             "no_title_plan": "tento remux nemá plán titulov; nič sa nezapísalo",
             "plan": {

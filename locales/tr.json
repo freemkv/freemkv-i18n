@@ -469,6 +469,7 @@
             },
             "review_held": "Başlık seçimi muxlamadan önce incelenmelidir: {reason}. Yedek başlık seçilmedi.",
             "review_retained": "Kaydedilen ISO ve plan korunuyor.",
+            "review_hold_failed": "İnceleme beklemesi kaydedilemedi: {error}",
             "review_unsaved": "İnceleme beklemesi kaydedilemedi ({error}); yakalama korunuyor. Hazırlık paylaşımını düzeltin, ardından diski «Resume» ile sürdürün."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "{name} hazırlık girdisi incelenemiyor: {error}",
             "mux_job_busy": "Bir sürücü şu anda bu rip'in hazırlık işini kullanıyor; mux yapılmadı ve hazırlık alanında kalıyor.",
             "root_missing": "hazırlık klasörü {path} eksik – paylaşım bağlı mı?",
+            "root_unusable": "hazırlık klasörü {path} kullanılamıyor: {detail}",
             "share_unmounted": "hazırlık alanı oluşturulamıyor: ağ paylaşımı bağlı değil",
             "unlisted": "hazırlık alanı incelenemiyor: hazırlık klasörü listelenemedi",
             "duplicate_match": "birden fazla hazırlık girdisi bu diskle eşleşiyor; ikisini de koruyun ve devam etmeden önce yinelemeyi çözün"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Dosyalar teslim edildi. Hazırlık alanında değişen veya planlanmamış öğeleri inceleyin; bunlar otomatik olarak silinmez. Temizlik bir bekleme sonrasında yeniden denenir, ardından «Retry» seçeneğini bekler.",
             "size_mismatch_hint": "Hedef dosya sistemini ENOSPC / eksik yazmalar açısından denetleyin. Mover yalnızca kendi geçici dosyasını kaldırır ve 30 s sonra, ardından 2 min sonra yeniden dener; sonrasında «Retry» seçeneğini bekler (bir dst dosyası kalırsa kaldırın).",
             "post_copy_invalid_hint": "Kopyanın boyutu doğru ancak biçim/okunabilirlik denetiminden geçemedi (kesik üstbilgi veya son, hatalı TS senkronu ya da okunamayan dst); ayrıntılı denetim için device_system.log dosyasına bakın. Mover yalnızca kendi geçici dosyasını kaldırır ve 30 s sonra, ardından 2 min sonra yeniden dener; sonrasında «Retry» seçeneğini bekler (bir dst dosyası kalırsa kaldırın).",
-            "folder_create_failed_hint": "Hedef paylaşımın bağlı ve yazılabilir olduğunu denetleyin: denetiminden sonra bağlantısı kopan veya yeniden bağlanan bir paylaşım da bunu reddeder. Sonraki turda yeniden denenir; hiçbir şey taşınmadı.",
+            "folder_create_failed_hint": "Hedef paylaşımın bağlı ve yazılabilir olduğunu denetleyin: denetiminden sonra bağlantısı kopan veya yeniden bağlanan bir paylaşım da bunu reddeder. 30 s sonra, ardından 2 min sonra yeniden denenir; sonrasında «Retry» seçeneğini bekler. Hiçbir şey taşınmadı.",
             "reservations_unreadable": "diğer rip'lerin teslimatlarının ayırdığı adlar okunamıyor: {error}",
             "reservations_unreadable_hint": "Henüz hiçbir şey taşınmadı veya adlandırılmadı. Sonraki turda yeniden denenir; sürerse hazırlık depolamasını veya diğer rip'in teslimat günlüğünü onarın."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "kitaplık klasörü {path} okunamıyor ({error}); hiçbir şey yazılmadı",
             "links_not_saved": "{path} yerinde, ancak yapılandırma klasöründeki library-links.json güncellenemedi ({error}). Bu dosyayı veya klasörünün izinlerini düzeltin, ardından «Retry» seçin.",
             "links_unreadable": "Yapılandırma klasöründeki {file} okunamadı ({error}), bu yüzden bu ISO'nun hangi dosyaları oluşturduğu bilinmiyor; hiçbir şey yazılmadı. Bu dosyayı veya klasörünün izinlerini düzeltin, ardından «Retry» seçin.",
+            "iso_unresponsive": "Kaynak ISO klasörü {path} yanıt vermiyor – ağ paylaşımı kapalı olabilir veya takılmış olabilir.",
+            "kept_copy_to": "{kept} konumunda tutulan {iso} dosyasının remux işlemi tamamlanıyor: {target} konumuna kopyalanıyor",
+            "kept_copy": "{kept} konumunda tutulan {iso} dosyasının remux işlemi tamamlanıyor",
             "matches_unreadable": "kayıtlı eşleşmeler ({dir} içindeki library-matches.json) okunamıyor: {error}",
             "no_title_plan": "bu remux'un başlık planı yok; hiçbir şey yazılmadı",
             "plan": {

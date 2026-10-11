@@ -469,6 +469,7 @@
             },
             "review_held": "Selecția titlului necesită verificare înainte de muxare: {reason}. Nu a fost selectat niciun titlu de rezervă.",
             "review_retained": "ISO-ul și planul salvate sunt păstrate.",
+            "review_hold_failed": "Reținerea pentru revizuire nu a putut fi salvată: {error}",
             "review_unsaved": "Reținerea pentru revizuire nu a putut fi salvată ({error}); captura este păstrată. Reparați partajarea intermediară, apoi reluați discul cu «Resume»."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "intrarea intermediară {name} nu poate fi inspectată: {error}",
             "mux_job_busy": "O unitate folosește chiar acum lucrarea intermediară a acestui rip; nu a fost făcut mux și rămâne în zona intermediară.",
             "root_missing": "folderul intermediar {path} lipsește – este montată partajarea?",
+            "root_unusable": "folderul intermediar {path} nu poate fi utilizat: {detail}",
             "share_unmounted": "nu se poate crea zona intermediară: partajarea de rețea a acesteia nu este montată",
             "unlisted": "nu se poate inspecta zona intermediară: folderul intermediar nu a putut fi listat",
             "duplicate_match": "mai multe intrări din zona intermediară se potrivesc cu acest disc; păstrați-le pe ambele și rezolvați duplicatul înainte de a continua"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Fișierele au fost livrate. Inspectați artefactele din zona intermediară care s-au modificat sau nu erau planificate; nu sunt șterse automat. Demontarea se reîncearcă după o pauză, apoi așteaptă «Retry».",
             "size_mismatch_hint": "Verificați sistemul de fișiere de destinație pentru ENOSPC / scrieri incomplete. Mover-ul șterge doar fișierul său temporar și reîncearcă după 30 s, apoi după 2 min; după aceea așteaptă «Retry» (dacă rămâne un fișier dst, ștergeți-l).",
             "post_copy_invalid_hint": "Copia are dimensiunea corectă, dar nu a trecut o verificare de format/lizibilitate (antet sau final trunchiat, sincronizare TS greșită sau dst ilizibil); consultați device_system.log pentru verificarea concretă. Mover-ul șterge doar fișierul său temporar și reîncearcă după 30 s, apoi după 2 min; după aceea așteaptă «Retry» (dacă rămâne un fișier dst, ștergeți-l).",
-            "folder_create_failed_hint": "Verificați dacă partajarea de destinație este montată și inscriptibilă: o partajare care s-a deconectat sau a fost remontată de la verificarea sa refuză și aceasta. Se reîncearcă la următoarea trecere; nu s-a mutat nimic.",
+            "folder_create_failed_hint": "Verificați dacă partajarea de destinație este montată și inscriptibilă: o partajare care s-a deconectat sau a fost remontată de la verificarea sa refuză și aceasta. Se reîncearcă după 30 s, apoi după 2 min; după aceea așteaptă «Retry». Nu s-a mutat nimic.",
             "reservations_unreadable": "nu se pot citi numele rezervate de livrările altor rip-uri: {error}",
             "reservations_unreadable_hint": "Încă nu s-a mutat și nu s-a denumit nimic. Se reîncearcă la următoarea trecere; dacă problema persistă, reparați stocarea intermediară sau jurnalul de livrare al celuilalt rip."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "folderul bibliotecii {path} nu poate fi citit ({error}); nu s-a scris nimic",
             "links_not_saved": "{path} este la locul lui, dar library-links.json din folderul de configurare nu a putut fi actualizat ({error}). Reparați acel fișier sau permisiunile folderului său, apoi alegeți «Retry».",
             "links_unreadable": "{file} din folderul de configurare nu a putut fi citit ({error}), așa că nu se știe ce fișiere a creat acest ISO; nu s-a scris nimic. Reparați acel fișier sau permisiunile folderului său, apoi alegeți «Retry».",
+            "iso_unresponsive": "Folderul ISO sursă {path} nu răspunde – partajarea de rețea poate fi oprită sau blocată.",
+            "kept_copy_to": "Se finalizează remux-ul pentru {iso}, păstrat în {kept}: se copiază în {target}",
+            "kept_copy": "Se finalizează remux-ul pentru {iso}, păstrat în {kept}",
             "matches_unreadable": "potrivirile salvate (library-matches.json din {dir}) nu pot fi citite: {error}",
             "no_title_plan": "acest remux nu are plan de titluri; nu s-a scris nimic",
             "plan": {

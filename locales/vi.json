@@ -469,6 +469,7 @@
             },
             "review_held": "Việc chọn tiêu đề cần được xem xét trước khi muxing: {reason}. Không có tiêu đề dự phòng nào được chọn.",
             "review_retained": "ISO và kế hoạch đã lưu được giữ lại.",
+            "review_hold_failed": "Không thể lưu trạng thái giữ để xem xét: {error}",
             "review_unsaved": "Không thể lưu trạng thái giữ để xem xét ({error}); bản ghi vẫn được giữ lại. Hãy sửa thư mục chia sẻ của khu vực tạm, rồi tiếp tục đĩa bằng «Resume»."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "không thể kiểm tra mục tạm {name}: {error}",
             "mux_job_busy": "Một ổ đĩa đang dùng tác vụ tạm của bản rip này; nó chưa được mux và vẫn nằm trong khu vực tạm.",
             "root_missing": "thư mục tạm {path} bị thiếu – chia sẻ đã được gắn kết chưa?",
+            "root_unusable": "không thể dùng thư mục tạm {path}: {detail}",
             "share_unmounted": "không thể tạo khu vực tạm: thư mục chia sẻ mạng của nó chưa được gắn kết",
             "unlisted": "không thể kiểm tra khu vực tạm: không thể liệt kê thư mục tạm",
             "duplicate_match": "có nhiều hơn một mục trong khu vực tạm khớp với đĩa này; hãy giữ cả hai và xử lý mục trùng lặp trước khi tiếp tục"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Các tệp đã được chuyển giao. Hãy kiểm tra các mục trong khu vực tạm đã thay đổi hoặc không nằm trong kế hoạch; chúng không bị xóa tự động. Bước dọn dẹp được thử lại sau một khoảng chờ, rồi chờ «Retry».",
             "size_mismatch_hint": "Kiểm tra hệ thống tệp đích về ENOSPC / ghi thiếu. Mover chỉ xóa tệp tạm của nó và thử lại sau 30 s, rồi sau 2 min; sau đó chờ «Retry» (nếu còn lại tệp dst, hãy xóa nó).",
             "post_copy_invalid_hint": "Bản sao có kích thước đúng nhưng không qua được bước kiểm tra định dạng/khả năng đọc (header hoặc phần cuối bị cắt, đồng bộ TS sai, hoặc dst không đọc được); xem device_system.log để biết bước kiểm tra cụ thể. Mover chỉ xóa tệp tạm của nó và thử lại sau 30 s, rồi sau 2 min; sau đó chờ «Retry» (nếu còn lại tệp dst, hãy xóa nó).",
-            "folder_create_failed_hint": "Kiểm tra xem chia sẻ đích đã được gắn kết và có thể ghi hay chưa: chia sẻ bị ngắt hoặc được gắn kết lại kể từ lần kiểm tra cũng sẽ từ chối việc này. Sẽ được thử lại ở lượt tiếp theo; chưa có gì được di chuyển.",
+            "folder_create_failed_hint": "Kiểm tra xem chia sẻ đích đã được gắn kết và có thể ghi hay chưa: chia sẻ bị ngắt hoặc được gắn kết lại kể từ lần kiểm tra cũng sẽ từ chối việc này. Sẽ được thử lại sau 30 s, rồi sau 2 min; sau đó nó chờ «Retry». Chưa có gì được di chuyển.",
             "reservations_unreadable": "không thể đọc các tên mà các lần chuyển giao của những bản rip khác đã đặt trước: {error}",
             "reservations_unreadable_hint": "Chưa có gì được di chuyển hoặc đặt tên. Sẽ được thử lại ở lượt tiếp theo; nếu vẫn tiếp diễn, hãy sửa bộ nhớ tạm hoặc nhật ký chuyển giao của bản rip kia."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "thư mục thư viện {path} không đọc được ({error}); không có gì được ghi",
             "links_not_saved": "{path} đã nằm đúng chỗ, nhưng không thể cập nhật library-links.json trong thư mục cấu hình ({error}). Hãy sửa tệp đó hoặc quyền của thư mục chứa nó, rồi chọn «Retry».",
             "links_unreadable": "Không thể đọc {file} trong thư mục cấu hình ({error}), nên không biết ISO này đã tạo những tệp nào; không có gì được ghi. Hãy sửa tệp đó hoặc quyền của thư mục chứa nó, rồi chọn «Retry».",
+            "iso_unresponsive": "Thư mục ISO nguồn {path} không phản hồi – chia sẻ mạng có thể đã ngừng hoạt động hoặc bị treo.",
+            "kept_copy_to": "Đang hoàn tất remux của {iso} được giữ tại {kept}: đang sao chép sang {target}",
+            "kept_copy": "Đang hoàn tất remux của {iso} được giữ tại {kept}",
             "matches_unreadable": "không đọc được các kết quả khớp đã lưu (library-matches.json trong {dir}): {error}",
             "no_title_plan": "remux này không có kế hoạch tiêu đề; không có gì được ghi",
             "plan": {

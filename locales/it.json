@@ -446,6 +446,7 @@
             },
             "review_held": "La selezione del titolo richiede una revisione prima del muxing: {reason}. Non è stato selezionato alcun titolo di ripiego.",
             "review_retained": "L'ISO e il piano salvati vengono conservati.",
+            "review_hold_failed": "Non è stato possibile salvare il blocco per la revisione: {error}",
             "review_unsaved": "Non è stato possibile salvare il blocco per la revisione ({error}); l'acquisizione viene conservata. Correggi la condivisione di staging, poi riprendi il disco con «Resume»."
         },
         "staging": {
@@ -453,6 +454,7 @@
             "entry_unreadable": "impossibile ispezionare la voce di staging {name}: {error}",
             "mux_job_busy": "Un'unità sta usando in questo momento il lavoro di staging di questo rip; non è stato eseguito il mux e resta in staging.",
             "root_missing": "la cartella di staging {path} non esiste: la condivisione è montata?",
+            "root_unusable": "la cartella di staging {path} non può essere usata: {detail}",
             "share_unmounted": "impossibile creare lo staging: la sua condivisione di rete non è montata",
             "unlisted": "impossibile ispezionare lo staging: non è stato possibile elencare la cartella di staging",
             "duplicate_match": "più di una voce di staging corrisponde a questo disco; conserva entrambe e risolvi il duplicato prima di continuare"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "I file sono stati consegnati. Esamina gli artefatti dello staging modificati o non pianificati; non vengono eliminati automaticamente. Lo smontaggio viene ritentato dopo un'attesa, poi attende «Retry».",
             "size_mismatch_hint": "Controlla il filesystem di destinazione per ENOSPC / scritture parziali. Il mover rimuove solo il proprio file temporaneo e ritenta dopo 30 s, poi dopo 2 min; dopo di che attende «Retry» (se rimane un file dst, rimuovilo).",
             "post_copy_invalid_hint": "La copia ha la dimensione corretta ma non ha superato un controllo di formato/leggibilità (intestazione o coda troncata, sincronizzazione TS errata o dst illeggibile); consulta device_system.log per il controllo specifico. Il mover rimuove solo il proprio file temporaneo e ritenta dopo 30 s, poi dopo 2 min; dopo di che attende «Retry» (se rimane un file dst, rimuovilo).",
-            "folder_create_failed_hint": "Controlla che la condivisione di destinazione sia montata e scrivibile: anche una condivisione che si è disconnessa o è stata rimontata dopo il suo controllo rifiuta questa operazione. Viene ritentata al passaggio successivo; non è stato spostato nulla.",
+            "folder_create_failed_hint": "Controlla che la condivisione di destinazione sia montata e scrivibile: anche una condivisione che si è disconnessa o è stata rimontata dopo il suo controllo rifiuta questa operazione. Viene ritentata dopo 30 s, poi dopo 2 min; dopo di che attende «Retry». Non è stato spostato nulla.",
             "reservations_unreadable": "impossibile leggere i nomi riservati dalle consegne di altri rip: {error}",
             "reservations_unreadable_hint": "Non è stato ancora spostato né nominato nulla. Viene ritentato al passaggio successivo; se il problema persiste, ripara l'archiviazione di staging o il giornale di consegna dell'altro rip."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "la cartella della libreria {path} non può essere letta ({error}); non è stato scritto nulla",
             "links_not_saved": "{path} è al suo posto, ma non è stato possibile aggiornare library-links.json nella cartella di configurazione ({error}). Correggi quel file o i permessi della sua cartella, poi scegli «Retry».",
             "links_unreadable": "Non è stato possibile leggere {file} nella cartella di configurazione ({error}), quindi non si sa quali file abbia creato questa ISO; non è stato scritto nulla. Correggi quel file o i permessi della sua cartella, poi scegli «Retry».",
+            "iso_unresponsive": "La cartella ISO di origine {path} non risponde: la condivisione di rete potrebbe essere inattiva o bloccata.",
+            "kept_copy_to": "Completamento del remux di {iso} conservato in {kept}: copia in {target}",
+            "kept_copy": "Completamento del remux di {iso} conservato in {kept}",
             "matches_unreadable": "le corrispondenze salvate (library-matches.json in {dir}) non possono essere lette: {error}",
             "no_title_plan": "questo remux non ha un piano dei titoli; non è stato scritto nulla",
             "plan": {

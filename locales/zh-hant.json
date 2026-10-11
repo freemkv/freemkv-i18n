@@ -469,6 +469,7 @@
             },
             "review_held": "混流前需要審核標題選擇：{reason}。未選擇備用標題。",
             "review_retained": "已儲存的 ISO 與計畫將被保留。",
+            "review_hold_failed": "無法儲存審核暫停狀態：{error}",
             "review_unsaved": "無法儲存審核暫停狀態（{error}）；擷取內容已保留。請修正暫存共用，然後選擇「Resume」以繼續處理該光碟。"
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "無法檢查暫存項目 {name}：{error}",
             "mux_job_busy": "有光碟機正在使用此次 rip 的暫存工作；它未被 mux，仍保留在暫存區。",
             "root_missing": "暫存資料夾 {path} 遺失——共用是否已掛載？",
+            "root_unusable": "無法使用暫存資料夾 {path}：{detail}",
             "share_unmounted": "無法建立暫存區：其網路共用未掛載",
             "unlisted": "無法檢查暫存區：無法列出暫存資料夾",
             "duplicate_match": "有多個暫存項目與此光碟相符；請兩者都保留，並在繼續之前解決重複問題"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "檔案已交付。請檢查已變更或計畫外的暫存產物；它們不會被自動刪除。清理會在一段退避後重試，之後等待「Retry」。",
             "size_mismatch_hint": "請檢查目標檔案系統是否出現 ENOSPC / 寫入不完整。mover 只會刪除自己的暫存檔，並在 30 s 後重試，接著在 2 min 後再試；之後等待「Retry」（若仍殘留 dst 檔案，請將其刪除）。",
             "post_copy_invalid_hint": "副本大小正確，但未通過格式/可讀性檢查（標頭或結尾被截斷、TS 同步錯誤或 dst 無法讀取）；具體檢查請查看 device_system.log。mover 只會刪除自己的暫存檔，並在 30 s 後重試，接著在 2 min 後再試；之後等待「Retry」（若仍殘留 dst 檔案，請將其刪除）。",
-            "folder_create_failed_hint": "請檢查目標共用是否已掛載且可寫入：自檢查以來中斷或重新掛載的共用同樣會拒絕此操作。下一輪會再次嘗試；未移動任何內容。",
+            "folder_create_failed_hint": "請檢查目標共用是否已掛載且可寫入：自檢查以來中斷或重新掛載的共用同樣會拒絕此操作。會在 30 s 後重試，接著在 2 min 後再試；之後等待「Retry」。未移動任何內容。",
             "reservations_unreadable": "無法讀取其他 rip 的交付所預留的名稱：{error}",
             "reservations_unreadable_hint": "尚未移動或命名任何內容。下一輪會再次嘗試；若問題持續，請修復暫存儲存空間或另一個 rip 的交付日誌。"
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "媒體庫資料夾 {path} 無法讀取（{error}）；未寫入任何內容",
             "links_not_saved": "{path} 已就位，但無法更新設定資料夾中的 library-links.json（{error}）。請修正該檔案或其資料夾的權限，然後選擇「Retry」。",
             "links_unreadable": "無法讀取設定資料夾中的 {file}（{error}），因此不知道此 ISO 產生了哪些檔案；未寫入任何內容。請修正該檔案或其資料夾的權限，然後選擇「Retry」。",
+            "iso_unresponsive": "來源 ISO 資料夾 {path} 沒有回應——網路共用可能已離線或當機。",
+            "kept_copy_to": "正在完成保留在 {kept} 的 {iso} 的 remux：正在將其複製到 {target}",
+            "kept_copy": "正在完成保留在 {kept} 的 {iso} 的 remux",
             "matches_unreadable": "已儲存的比對（{dir} 中的 library-matches.json）無法讀取：{error}",
             "no_title_plan": "此次 remux 沒有標題計畫；未寫入任何內容",
             "plan": {

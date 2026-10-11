@@ -446,6 +446,7 @@
             },
             "review_held": "Die Titelauswahl muss vor dem Muxen geprüft werden: {reason}. Es wurde kein Ersatztitel ausgewählt.",
             "review_retained": "Die gespeicherte ISO und der Plan bleiben erhalten.",
+            "review_hold_failed": "Die Prüfsperre konnte nicht gespeichert werden: {error}",
             "review_unsaved": "Die Prüfsperre konnte nicht gespeichert werden ({error}); die Aufnahme bleibt erhalten. Beheben Sie das Problem mit der Zwischenlager-Freigabe und setzen Sie die Disc dann mit „Resume“ fort."
         },
         "staging": {
@@ -453,6 +454,7 @@
             "entry_unreadable": "der Eintrag {name} im Zwischenlager kann nicht geprüft werden: {error}",
             "mux_job_busy": "Ein Laufwerk verwendet gerade den Zwischenlager-Auftrag dieses Rips; er wurde nicht gemuxt und bleibt im Zwischenlager.",
             "root_missing": "Zwischenlager-Ordner {path} fehlt – ist die Freigabe eingebunden?",
+            "root_unusable": "Zwischenlager-Ordner {path} kann nicht verwendet werden: {detail}",
             "share_unmounted": "Zwischenlager kann nicht erstellt werden: die zugehörige Netzwerkfreigabe ist nicht eingebunden",
             "unlisted": "Zwischenlager kann nicht geprüft werden: der Zwischenlager-Ordner konnte nicht aufgelistet werden",
             "duplicate_match": "mehr als ein Zwischenlager-Eintrag passt zu dieser Disc; behalten Sie beide und beheben Sie das Duplikat, bevor Sie fortfahren"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Die Dateien sind zugestellt. Prüfen Sie geänderte oder ungeplante Artefakte im Zwischenlager; sie werden nicht automatisch gelöscht. Der Abbau wird nach einer Wartezeit wiederholt und wartet danach auf „Retry“.",
             "size_mismatch_hint": "Prüfen Sie das Zieldateisystem auf ENOSPC / unvollständige Schreibvorgänge. Der Mover entfernt nur seine temporäre Datei und versucht es nach 30 s und danach nach 2 min erneut; anschließend wartet er auf „Retry“ (bleibt eine dst-Datei zurück, entfernen Sie sie).",
             "post_copy_invalid_hint": "Die Kopie hat die richtige Größe, hat aber eine Format- oder Lesbarkeitsprüfung nicht bestanden (abgeschnittener Header/Schluss, fehlerhafte TS-Synchronisation oder unlesbare dst); die genaue Prüfung steht in device_system.log. Der Mover entfernt nur seine temporäre Datei und versucht es nach 30 s und danach nach 2 min erneut; anschließend wartet er auf „Retry“ (bleibt eine dst-Datei zurück, entfernen Sie sie).",
-            "folder_create_failed_hint": "Prüfen Sie, ob die Ziel-Freigabe eingebunden und beschreibbar ist: Eine Freigabe, die seit ihrer Prüfung getrennt oder neu eingebunden wurde, verweigert dies ebenfalls. Es wird im nächsten Durchlauf erneut versucht; es wurde nichts verschoben.",
+            "folder_create_failed_hint": "Prüfen Sie, ob die Ziel-Freigabe eingebunden und beschreibbar ist: Eine Freigabe, die seit ihrer Prüfung getrennt oder neu eingebunden wurde, verweigert dies ebenfalls. Es wird nach 30 s und danach nach 2 min erneut versucht; anschließend wartet es auf „Retry“. Es wurde nichts verschoben.",
             "reservations_unreadable": "die von den Zustellungen anderer Rips reservierten Namen können nicht gelesen werden: {error}",
             "reservations_unreadable_hint": "Es wurde noch nichts verschoben oder benannt. Es wird im nächsten Durchlauf erneut versucht; besteht das Problem weiter, reparieren Sie das Zwischenlager oder das Zustellungsjournal des anderen Rips."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "der Bibliotheksordner {path} kann nicht gelesen werden ({error}); es wurde nichts geschrieben",
             "links_not_saved": "{path} ist vorhanden, aber library-links.json im Konfigurationsordner konnte nicht aktualisiert werden ({error}). Beheben Sie das Problem mit dieser Datei oder den Berechtigungen ihres Ordners und wählen Sie dann „Retry“.",
             "links_unreadable": "{file} im Konfigurationsordner konnte nicht gelesen werden ({error}), daher ist unbekannt, welche Dateien diese ISO erzeugt hat; es wurde nichts geschrieben. Beheben Sie das Problem mit dieser Datei oder den Berechtigungen ihres Ordners und wählen Sie dann „Retry“.",
+            "iso_unresponsive": "Der Quell-ISO-Ordner {path} antwortet nicht – die Netzwerkfreigabe ist möglicherweise ausgefallen oder hängt.",
+            "kept_copy_to": "Der Remux von {iso}, abgelegt in {kept}, wird abgeschlossen: Kopie nach {target}",
+            "kept_copy": "Der Remux von {iso}, abgelegt in {kept}, wird abgeschlossen",
             "matches_unreadable": "die gespeicherten Zuordnungen (library-matches.json in {dir}) können nicht gelesen werden: {error}",
             "no_title_plan": "dieser Remux hat keinen Titelplan; es wurde nichts geschrieben",
             "plan": {

@@ -469,6 +469,7 @@
             },
             "review_held": "Pemilihan judul perlu ditinjau sebelum muxing: {reason}. Tidak ada judul cadangan yang dipilih.",
             "review_retained": "ISO dan rencana yang tersimpan dipertahankan.",
+            "review_hold_failed": "Penahanan peninjauan tidak dapat disimpan: {error}",
             "review_unsaved": "Penahanan peninjauan tidak dapat disimpan ({error}); hasil tangkapan tetap disimpan. Perbaiki share staging, lalu lanjutkan disk dengan «Resume»."
         },
         "staging": {
@@ -476,6 +477,7 @@
             "entry_unreadable": "tidak dapat memeriksa entri staging {name}: {error}",
             "mux_job_busy": "Sebuah drive sedang menggunakan pekerjaan staging rip ini; belum di-mux dan tetap berada di staging.",
             "root_missing": "folder staging {path} tidak ada – apakah share sudah di-mount?",
+            "root_unusable": "folder staging {path} tidak dapat digunakan: {detail}",
             "share_unmounted": "tidak dapat membuat staging: share jaringannya belum di-mount",
             "unlisted": "tidak dapat memeriksa staging: folder staging tidak dapat didaftar",
             "duplicate_match": "lebih dari satu entri staging cocok dengan disk ini; simpan keduanya dan selesaikan duplikatnya sebelum melanjutkan"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "File sudah dikirim. Periksa artefak staging yang berubah atau tidak direncanakan; artefak itu tidak dihapus otomatis. Teardown dicoba lagi setelah jeda, lalu menunggu «Retry».",
             "size_mismatch_hint": "Periksa filesystem tujuan untuk ENOSPC / penulisan pendek. Mover hanya menghapus file sementaranya dan mencoba lagi setelah 30 s, lalu 2 min; setelah itu menunggu «Retry» (jika file dst tersisa, hapus).",
             "post_copy_invalid_hint": "Salinan berukuran benar tetapi gagal pemeriksaan format/keterbacaan (header/ekor terpotong, sinkronisasi TS salah, atau dst tidak terbaca); lihat device_system.log untuk pemeriksaan spesifiknya. Mover hanya menghapus file sementaranya dan mencoba lagi setelah 30 s, lalu 2 min; setelah itu menunggu «Retry» (jika file dst tersisa, hapus).",
-            "folder_create_failed_hint": "Pastikan share tujuan di-mount dan dapat ditulis: share yang terputus atau di-mount ulang sejak pemeriksaannya juga akan menolak ini. Akan dicoba lagi pada lintasan berikutnya; tidak ada yang dipindahkan.",
+            "folder_create_failed_hint": "Pastikan share tujuan di-mount dan dapat ditulis: share yang terputus atau di-mount ulang sejak pemeriksaannya juga akan menolak ini. Akan dicoba lagi setelah 30 s, lalu 2 min; setelah itu menunggu «Retry». Tidak ada yang dipindahkan.",
             "reservations_unreadable": "tidak dapat membaca nama yang dicadangkan oleh pengiriman rip lain: {error}",
             "reservations_unreadable_hint": "Belum ada yang dipindahkan atau diberi nama. Akan dicoba lagi pada lintasan berikutnya; jika berlanjut, perbaiki penyimpanan staging atau jurnal pengiriman rip lainnya."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "folder pustaka {path} tidak dapat dibaca ({error}); tidak ada yang ditulis",
             "links_not_saved": "{path} sudah ada di tempatnya, tetapi library-links.json di folder konfigurasi tidak dapat diperbarui ({error}). Perbaiki berkas itu atau izin foldernya, lalu pilih «Retry».",
             "links_unreadable": "{file} di folder konfigurasi tidak dapat dibaca ({error}), sehingga tidak diketahui berkas mana yang dibuat ISO ini; tidak ada yang ditulis. Perbaiki berkas itu atau izin foldernya, lalu pilih «Retry».",
+            "iso_unresponsive": "Folder ISO sumber {path} tidak merespons – share jaringan mungkin mati atau hang.",
+            "kept_copy_to": "Menyelesaikan remux {iso} yang disimpan di {kept}: menyalinnya ke {target}",
+            "kept_copy": "Menyelesaikan remux {iso} yang disimpan di {kept}",
             "matches_unreadable": "kecocokan yang tersimpan (library-matches.json di {dir}) tidak dapat dibaca: {error}",
             "no_title_plan": "remux ini tidak memiliki rencana judul; tidak ada yang ditulis",
             "plan": {

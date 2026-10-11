@@ -446,6 +446,7 @@
             },
             "review_held": "La sélection du titre doit être vérifiée avant le muxage : {reason}. Aucun titre de repli n'a été sélectionné.",
             "review_retained": "L'ISO et le plan enregistrés sont conservés.",
+            "review_hold_failed": "La suspension pour vérification n'a pas pu être enregistrée : {error}",
             "review_unsaved": "La suspension pour vérification n'a pas pu être enregistrée ({error}) ; la capture est conservée. Corrigez le partage intermédiaire, puis reprenez le disque avec «Resume»."
         },
         "staging": {
@@ -453,6 +454,7 @@
             "entry_unreadable": "impossible d'inspecter l'entrée intermédiaire {name} : {error}",
             "mux_job_busy": "Un lecteur utilise actuellement la tâche intermédiaire de ce rip ; elle n'a pas été muxée et reste dans la zone intermédiaire.",
             "root_missing": "le dossier intermédiaire {path} est introuvable : le partage est-il monté ?",
+            "root_unusable": "le dossier intermédiaire {path} est inutilisable : {detail}",
             "share_unmounted": "impossible de créer la zone intermédiaire : son partage réseau n'est pas monté",
             "unlisted": "impossible d'inspecter la zone intermédiaire : le dossier intermédiaire n'a pas pu être listé",
             "duplicate_match": "plus d'une entrée intermédiaire correspond à ce disque ; conservez-les toutes les deux et résolvez le doublon avant de continuer"
@@ -944,7 +946,7 @@
             "teardown_cleanup_hint": "Les fichiers sont livrés. Examinez les artefacts de la zone intermédiaire modifiés ou non prévus ; ils ne sont pas supprimés automatiquement. Le nettoyage est retenté après un délai, puis attend «Retry».",
             "size_mismatch_hint": "Vérifiez le système de fichiers de destination (ENOSPC / écritures incomplètes). Le mover ne supprime que son fichier temporaire et réessaie après 30 s, puis 2 min ; ensuite il attend «Retry» (si un fichier dst subsiste, supprimez-le).",
             "post_copy_invalid_hint": "La copie a la bonne taille, mais n'a pas passé un contrôle de format ou de lisibilité (en-tête ou fin tronqués, mauvaise synchronisation TS ou dst illisible) ; consultez device_system.log pour le contrôle précis. Le mover ne supprime que son fichier temporaire et réessaie après 30 s, puis 2 min ; ensuite il attend «Retry» (si un fichier dst subsiste, supprimez-le).",
-            "folder_create_failed_hint": "Vérifiez que le partage de destination est monté et accessible en écriture : un partage qui s'est déconnecté ou a été remonté depuis sa vérification refuse aussi cette opération. Elle est retentée au prochain passage ; rien n'a été déplacé.",
+            "folder_create_failed_hint": "Vérifiez que le partage de destination est monté et accessible en écriture : un partage qui s'est déconnecté ou a été remonté depuis sa vérification refuse aussi cette opération. Elle est retentée après 30 s, puis 2 min ; ensuite elle attend «Retry». Rien n'a été déplacé.",
             "reservations_unreadable": "impossible de lire les noms réservés par les livraisons des autres rips : {error}",
             "reservations_unreadable_hint": "Rien n'a encore été déplacé ni nommé. Elle est retentée au prochain passage ; si le problème persiste, réparez le stockage intermédiaire ou le journal de livraison de l'autre rip."
         },
@@ -956,6 +958,9 @@
             "library_folder_unreadable": "le dossier de la bibliothèque {path} est illisible ({error}) ; rien n'a été écrit",
             "links_not_saved": "{path} est en place, mais library-links.json dans le dossier de configuration n'a pas pu être mis à jour ({error}). Corrigez ce fichier ou les autorisations de son dossier, puis choisissez «Retry».",
             "links_unreadable": "{file} dans le dossier de configuration n'a pas pu être lu ({error}) ; on ignore donc quels fichiers cette ISO a créés et rien n'a été écrit. Corrigez ce fichier ou les autorisations de son dossier, puis choisissez «Retry».",
+            "iso_unresponsive": "Le dossier ISO source {path} ne répond pas : le partage réseau est peut-être hors service ou bloqué.",
+            "kept_copy_to": "Finalisation du remux de {iso} conservé dans {kept} : copie vers {target}",
+            "kept_copy": "Finalisation du remux de {iso} conservé dans {kept}",
             "matches_unreadable": "les correspondances enregistrées (library-matches.json dans {dir}) sont illisibles : {error}",
             "no_title_plan": "ce remux n'a pas de plan de titres ; rien n'a été écrit",
             "plan": {
