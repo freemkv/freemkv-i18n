@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.9.0] — 2026-10-11
+
+### Added
+
+- **Texts for everything new in freemkv 1.9.0, in every locale**: presentation language (the `--presentation-language` help and usage lines, and its error), title-selection review (E9086 and one reason text per engine review reason), the Library's Change match, TV remux and retire messages, queue and folder holds, staging-folder and listing errors, delivery retry hints, Reboot refusals (no service manager, too soon), the unlocker line in `info`, and the Review-hold save failure.
+
+### Changed
+
+- Hints quote English-only UI labels ("Retry", "Change match", …) verbatim, so they match the buttons in every locale. German uses the formal register throughout.
+- The test that every engine selection-review reason has a text now runs in CI against freemkv-engine's source.
+
+### Removed
+
+- Keys no app reads any more (`gui.item.play_all`, `server.library.episode_alone` and the retired selection-review keys).
+
 ## [1.8.3] — 2026-10-08
 
 ### Changed
