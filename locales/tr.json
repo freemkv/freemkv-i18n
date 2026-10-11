@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Hedef klasörün izinlerini, boş alanını ve bağlantısını denetleyin. Teslimatın kendi satırı ne zaman yeniden deneneceğini gösterir."
+        },
+        "library": {
+            "changed_during": "{path} bu remux sürerken değişti; ona dokunulmadı",
+            "episode_alone": "{path}, birden çok dosyaya bölünmüş bir diskin tek bir bölümüdür ve başlığı diğerlerinden ayırt edilemiyor, bu yüzden hiçbir şey yazılmadı. Diskin tamamını remux etmek için ISO'sunda «Change match» kullanın.",
+            "links_not_saved": "{path} yerinde, ancak yapılandırma klasöründeki library-links.json güncellenemedi ({error}). Bu dosyayı veya klasörünün izinlerini düzeltin, ardından «Retry» seçin.",
+            "plan": {
+                "correction_review": "Düzeltilen eşleşmenin gözden geçirilmesi gerekiyor: {reason}",
+                "review": "Başlık planının remux öncesinde gözden geçirilmesi gerekiyor: {reason}"
+            },
+            "plan_not_saved": "remux planı yapılandırma klasöründeki {path} konumuna kaydedilemedi: {error}",
+            "retire": {
+                "folder_missing": "{path} klasörü bulunamıyor (paylaşım bağlı mı?); kaldırılmadı",
+                "kept": "{new} yeni dosyanın tamamı yerinde. Bu ISO'dan yapılan {count} eski dosya, bu düzeltme başladıktan sonra değiştiği veya artık ondan yapılmış olarak kayıtlı olmadığı için tutuldu: {paths}. Artık izlenmiyorlar; istemiyorsanız kendiniz silin.",
+                "new_missing": "yeni dosya {path} bulunamıyor (paylaşım bağlı mı?); hiçbir eski dosya kaldırılmadı",
+                "new_not_regular": "yeni dosya {path} artık normal bir dosya değil; hiçbir eski dosya kaldırılmadı",
+                "outside": "{path} kitaplık klasörlerinde değil; kaldırılmadı"
+            },
+            "safe": {
+                "landed": "Yeni MKV kitaplıkta.",
+                "nothing_written": "Kitaplığa hiçbir MKV yazılmadı.",
+                "outputs": "Kaynak ISO korunuyor. Tamamlanan çıktılar kitaplıkta kalır; tamamlanmamış çıktılar yeniden denenebilir.",
+                "retained": "Kaynak ISO korunuyor.",
+                "retire_done": "Tüm yeni dosyalar yerinde; bu ISO'dan yapılan ve kalan eski dosyaları kaldırmak için «Change match» işlemini yeniden çalıştırın. Kaynak ISO korunuyor.",
+                "retire_pending": "Kaynak ISO korunuyor. Bu ISO'dan yapılan eski dosyalar yalnızca tüm yeni dosyalar yerine geldikten sonra ve yalnızca değişmemişlerse kaldırılır; bitirmek için «Change match» işlemini yeniden çalıştırın.",
+                "unchanged": "Mevcut MKV'niz değişmedi."
+            },
+            "stale_match": "{path} için kaydedilen eşleşme, o yolda daha önce arşivlenmiş bir disk için onaylanmıştı, bu yüzden hiçbir şey yazılmadı. Bu disk için «Change match» işlemini yeniden açın.",
+            "target_changed": "{error}. Kitaplık dosyası {path} bu remux başladıktan sonra değişti ya da tamamlanan MKV zaten kopyalanmıştı, bu yüzden ona dokunulmadı."
         }
     }
 }

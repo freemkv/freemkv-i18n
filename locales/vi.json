@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Kiểm tra quyền, dung lượng trống và việc gắn kết của thư mục đích. Dòng của chính lần chuyển giao cho biết khi nào sẽ thử lại."
+        },
+        "library": {
+            "changed_during": "{path} đã thay đổi trong khi remux này chạy; tệp không bị động đến",
+            "episode_alone": "{path} là một tập của một đĩa đã được tách thành nhiều tệp, và tựa của nó không thể phân biệt với các tựa khác, nên không có gì được ghi. Hãy dùng «Change match» trên ISO của nó để remux toàn bộ đĩa.",
+            "links_not_saved": "{path} đã nằm đúng chỗ, nhưng không thể cập nhật library-links.json trong thư mục cấu hình ({error}). Hãy sửa tệp đó hoặc quyền của thư mục chứa nó, rồi chọn «Retry».",
+            "plan": {
+                "correction_review": "Kết quả khớp đã sửa cần được xem lại: {reason}",
+                "review": "Kế hoạch tựa cần được xem lại trước khi remux: {reason}"
+            },
+            "plan_not_saved": "không thể lưu kế hoạch remux vào {path} trong thư mục cấu hình: {error}",
+            "retire": {
+                "folder_missing": "không tìm thấy thư mục của {path} (chia sẻ đã được gắn chưa?); tệp chưa bị xóa",
+                "kept": "Tất cả {new} tệp mới đã nằm đúng chỗ. {count} tệp cũ tạo từ ISO này được giữ lại vì chúng đã thay đổi sau khi lần sửa này bắt đầu, hoặc không còn được ghi nhận là tạo từ nó: {paths}. Chúng không còn được theo dõi; hãy tự xóa nếu bạn không cần.",
+                "new_missing": "không tìm thấy tệp mới {path} (chia sẻ đã được gắn chưa?); không có tệp cũ nào bị xóa",
+                "new_not_regular": "tệp mới {path} không còn là tệp thông thường; không có tệp cũ nào bị xóa",
+                "outside": "{path} không nằm trong các thư mục thư viện; tệp chưa bị xóa"
+            },
+            "safe": {
+                "landed": "MKV mới đã có trong thư viện.",
+                "nothing_written": "Không có MKV nào được ghi vào thư viện.",
+                "outputs": "ISO nguồn được giữ lại. Các đầu ra đã hoàn tất vẫn ở trong thư viện; các đầu ra chưa xong có thể thử lại.",
+                "retained": "ISO nguồn được giữ lại.",
+                "retire_done": "Tất cả tệp mới đã nằm đúng chỗ; hãy chạy lại «Change match» để xóa các tệp cũ tạo từ ISO này còn sót lại. ISO nguồn được giữ lại.",
+                "retire_pending": "ISO nguồn được giữ lại. Các tệp cũ tạo từ ISO này chỉ bị xóa sau khi mọi tệp mới đã nằm đúng chỗ, và chỉ khi chúng không thay đổi; hãy chạy lại «Change match» để hoàn tất.",
+                "unchanged": "MKV hiện có của bạn không thay đổi."
+            },
+            "stale_match": "Kết quả khớp đã lưu cho {path} được xác nhận cho một đĩa trước đó được lưu tại đường dẫn này, nên không có gì được ghi. Hãy mở lại «Change match» cho đĩa này.",
+            "target_changed": "{error}. Tệp thư viện {path} đã thay đổi sau khi remux này bắt đầu, hoặc MKV hoàn tất đã được sao chép vào, nên tệp không bị động đến."
         }
     }
 }

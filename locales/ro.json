@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Verificați permisiunile, spațiul liber și montarea folderului de destinație. Rândul livrării arată când se va încerca din nou."
+        },
+        "library": {
+            "changed_during": "{path} s-a modificat cât timp rula acest remux; nu a fost atins",
+            "episode_alone": "{path} este un episod dintr-un disc împărțit în mai multe fișiere, iar titlul său nu poate fi deosebit de celelalte, așa că nu s-a scris nimic. Folosiți «Change match» pe ISO-ul său pentru a face remux întregului disc.",
+            "links_not_saved": "{path} este la locul lui, dar library-links.json din folderul de configurare nu a putut fi actualizat ({error}). Reparați acel fișier sau permisiunile folderului său, apoi alegeți «Retry».",
+            "plan": {
+                "correction_review": "Potrivirea corectată trebuie verificată: {reason}",
+                "review": "Planul de titluri trebuie verificat înainte de remux: {reason}"
+            },
+            "plan_not_saved": "planul de remux nu a putut fi salvat în {path} din folderul de configurare: {error}",
+            "retire": {
+                "folder_missing": "folderul lui {path} nu poate fi găsit (este montată partajarea?); nu a fost eliminat",
+                "kept": "Toate cele {new} fișiere noi sunt la locul lor. {count} fișier(e) vechi create din acest ISO au fost păstrate deoarece s-au modificat după începerea acestei corecturi sau nu mai sunt înregistrate ca fiind create din el: {paths}. Nu mai sunt urmărite; ștergeți-le dumneavoastră dacă nu le doriți.",
+                "new_missing": "fișierul nou {path} nu poate fi găsit (este montată partajarea?); niciun fișier vechi nu a fost eliminat",
+                "new_not_regular": "fișierul nou {path} nu mai este un fișier obișnuit; niciun fișier vechi nu a fost eliminat",
+                "outside": "{path} nu se află în folderele bibliotecii; nu a fost eliminat"
+            },
+            "safe": {
+                "landed": "Noul MKV este în bibliotecă.",
+                "nothing_written": "Niciun MKV nu a fost scris în bibliotecă.",
+                "outputs": "ISO-ul sursă este păstrat. Ieșirile finalizate rămân în bibliotecă; ieșirile nefinalizate pot fi reîncercate.",
+                "retained": "ISO-ul sursă este păstrat.",
+                "retire_done": "Toate fișierele noi sunt la locul lor; rulați din nou «Change match» pentru a elimina fișierele vechi create din acest ISO care au rămas. ISO-ul sursă este păstrat.",
+                "retire_pending": "ISO-ul sursă este păstrat. Fișierele vechi create din acest ISO sunt eliminate doar după ce toate fișierele noi sunt la locul lor și doar dacă nu s-au modificat; rulați din nou «Change match» pentru a termina.",
+                "unchanged": "MKV-ul dumneavoastră existent nu a fost modificat."
+            },
+            "stale_match": "Potrivirea salvată pentru {path} a fost confirmată pentru un disc anterior arhivat la acea cale, așa că nu s-a scris nimic. Deschideți din nou «Change match» pentru acest disc.",
+            "target_changed": "{error}. Fișierul din bibliotecă {path} s-a modificat după începerea acestui remux sau MKV-ul finalizat fusese deja copiat, așa că nu a fost atins."
         }
     }
 }

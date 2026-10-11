@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Periksa izin, ruang kosong, dan mount folder tujuan. Baris pengiriman itu sendiri menunjukkan kapan akan dicoba lagi."
+        },
+        "library": {
+            "changed_during": "{path} berubah saat remux ini berjalan; berkas itu tidak disentuh",
+            "episode_alone": "{path} adalah satu episode dari disk yang dipecah menjadi beberapa berkas, dan judulnya tidak dapat dibedakan dari yang lain, jadi tidak ada yang ditulis. Gunakan «Change match» pada ISO-nya untuk me-remux seluruh disk.",
+            "links_not_saved": "{path} sudah ada di tempatnya, tetapi library-links.json di folder konfigurasi tidak dapat diperbarui ({error}). Perbaiki berkas itu atau izin foldernya, lalu pilih «Retry».",
+            "plan": {
+                "correction_review": "Kecocokan yang dikoreksi perlu ditinjau: {reason}",
+                "review": "Rencana judul perlu ditinjau sebelum remux: {reason}"
+            },
+            "plan_not_saved": "rencana remux tidak dapat disimpan ke {path} di folder konfigurasi: {error}",
+            "retire": {
+                "folder_missing": "folder {path} tidak ditemukan (apakah share sudah di-mount?); berkas itu tidak dihapus",
+                "kept": "Semua {new} berkas baru sudah di tempatnya. {count} berkas lama yang dibuat dari ISO ini dipertahankan karena berubah setelah koreksi ini dimulai, atau tidak lagi tercatat sebagai dibuat darinya: {paths}. Berkas-berkas itu tidak lagi dilacak; hapus sendiri jika tidak diinginkan.",
+                "new_missing": "berkas baru {path} tidak ditemukan (apakah share sudah di-mount?); tidak ada berkas lama yang dihapus",
+                "new_not_regular": "berkas baru {path} bukan lagi berkas biasa; tidak ada berkas lama yang dihapus",
+                "outside": "{path} tidak berada di folder pustaka; berkas itu tidak dihapus"
+            },
+            "safe": {
+                "landed": "MKV baru sudah ada di pustaka.",
+                "nothing_written": "Tidak ada MKV yang ditulis ke pustaka.",
+                "outputs": "ISO sumber dipertahankan. Keluaran yang selesai tetap ada di pustaka; keluaran yang belum selesai dapat dicoba lagi.",
+                "retained": "ISO sumber dipertahankan.",
+                "retire_done": "Semua berkas baru sudah di tempatnya; jalankan «Change match» lagi untuk menghapus berkas lama dari ISO ini yang tersisa. ISO sumber dipertahankan.",
+                "retire_pending": "ISO sumber dipertahankan. Berkas lama yang dibuat dari ISO ini hanya dihapus setelah semua berkas baru di tempatnya, dan hanya jika tidak berubah; jalankan «Change match» lagi untuk menyelesaikan.",
+                "unchanged": "MKV Anda yang ada tidak berubah."
+            },
+            "stale_match": "Kecocokan yang disimpan untuk {path} dikonfirmasi untuk disk sebelumnya yang diarsipkan di jalur itu, jadi tidak ada yang ditulis. Buka «Change match» lagi untuk disk ini.",
+            "target_changed": "{error}. Berkas pustaka {path} berubah setelah remux ini dimulai, atau MKV yang selesai sudah disalin, jadi berkas itu tidak disentuh."
         }
     }
 }

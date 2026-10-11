@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Prüfen Sie Berechtigungen, freien Speicher und Einbindung des Zielordners. Die Zeile der Zustellung selbst zeigt, wann es erneut versucht wird."
+        },
+        "library": {
+            "changed_during": "{path} wurde geändert, während dieser Remux lief; die Datei wurde nicht angetastet",
+            "episode_alone": "{path} ist eine Episode einer Disc, die in mehrere Dateien aufgeteilt wurde, und ihr Titel lässt sich nicht von den anderen unterscheiden, daher wurde nichts geschrieben. Verwenden Sie „Change match“ für ihre ISO, um die ganze Disc zu remuxen.",
+            "links_not_saved": "{path} ist vorhanden, aber library-links.json im Konfigurationsordner konnte nicht aktualisiert werden ({error}). Beheben Sie das Problem mit dieser Datei oder den Berechtigungen ihres Ordners und wählen Sie dann „Retry“.",
+            "plan": {
+                "correction_review": "Die korrigierte Zuordnung muss geprüft werden: {reason}",
+                "review": "Der Titelplan muss vor dem Remux geprüft werden: {reason}"
+            },
+            "plan_not_saved": "der Remux-Plan konnte nicht in {path} im Konfigurationsordner gespeichert werden: {error}",
+            "retire": {
+                "folder_missing": "der Ordner von {path} wurde nicht gefunden (ist die Freigabe eingehängt?); die Datei wurde nicht entfernt",
+                "kept": "Alle {new} neuen Dateien sind vorhanden. {count} alte Datei(en) aus dieser ISO wurden behalten, weil sie sich nach Beginn dieser Korrektur geändert haben oder nicht mehr als daraus erstellt verzeichnet sind: {paths}. Sie werden nicht mehr verfolgt; löschen Sie sie selbst, wenn Sie sie nicht mehr brauchen.",
+                "new_missing": "die neue Datei {path} wurde nicht gefunden (ist die Freigabe eingehängt?); keine alte Datei wurde entfernt",
+                "new_not_regular": "die neue Datei {path} ist keine reguläre Datei mehr; keine alte Datei wurde entfernt",
+                "outside": "{path} liegt nicht in den Bibliotheksordnern; die Datei wurde nicht entfernt"
+            },
+            "safe": {
+                "landed": "Die neue MKV ist in der Bibliothek.",
+                "nothing_written": "Es wurde keine MKV in die Bibliothek geschrieben.",
+                "outputs": "Die Quell-ISO bleibt erhalten. Fertige Ausgaben bleiben in der Bibliothek; nicht fertige Ausgaben können erneut versucht werden.",
+                "retained": "Die Quell-ISO bleibt erhalten.",
+                "retire_done": "Alle neuen Dateien sind vorhanden; führen Sie „Change match“ erneut aus, um die verbliebenen alten Dateien aus dieser ISO zu entfernen. Die Quell-ISO bleibt erhalten.",
+                "retire_pending": "Die Quell-ISO bleibt erhalten. Alte Dateien aus dieser ISO werden erst entfernt, wenn alle neuen Dateien vorhanden sind, und nur, wenn sie unverändert sind; führen Sie „Change match“ erneut aus, um den Vorgang abzuschließen.",
+                "unchanged": "Ihre vorhandene MKV ist unverändert."
+            },
+            "stale_match": "Die für {path} gespeicherte Zuordnung wurde für eine frühere Disc unter diesem Pfad bestätigt, daher wurde nichts geschrieben. Öffnen Sie „Change match“ für diese Disc erneut.",
+            "target_changed": "{error}. Die Bibliotheksdatei {path} hat sich nach Beginn dieses Remux geändert, oder die fertige MKV wurde bereits übernommen; sie wurde daher nicht angetastet."
         }
     }
 }

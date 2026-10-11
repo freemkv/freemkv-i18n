@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Controlla i permessi, lo spazio libero e il montaggio della cartella di destinazione. La riga della consegna indica quando verrà ritentata."
+        },
+        "library": {
+            "changed_during": "{path} è cambiato mentre questo remux era in corso; non è stato toccato",
+            "episode_alone": "{path} è un episodio di un disco suddiviso in più file e il suo titolo non si distingue dagli altri, quindi non è stato scritto nulla. Usa «Change match» sulla sua ISO per eseguire il remux dell'intero disco.",
+            "links_not_saved": "{path} è al suo posto, ma non è stato possibile aggiornare library-links.json nella cartella di configurazione ({error}). Correggi quel file o i permessi della sua cartella, poi scegli «Retry».",
+            "plan": {
+                "correction_review": "La corrispondenza corretta va verificata: {reason}",
+                "review": "Il piano dei titoli va verificato prima del remux: {reason}"
+            },
+            "plan_not_saved": "non è stato possibile salvare il piano di remux in {path} nella cartella di configurazione: {error}",
+            "retire": {
+                "folder_missing": "la cartella di {path} non è stata trovata (la condivisione è montata?); non è stato rimosso",
+                "kept": "Tutti i {new} nuovi file sono al loro posto. {count} vecchio/i file creato/i da questa ISO è/sono stato/i mantenuto/i perché è/sono cambiato/i dopo l'inizio di questa correzione o non risulta/no più creato/i da essa: {paths}. Non sono più tracciati; eliminali tu se non ti servono.",
+                "new_missing": "il nuovo file {path} non è stato trovato (la condivisione è montata?); nessun vecchio file è stato rimosso",
+                "new_not_regular": "il nuovo file {path} non è più un file normale; nessun vecchio file è stato rimosso",
+                "outside": "{path} non è nelle cartelle della libreria; non è stato rimosso"
+            },
+            "safe": {
+                "landed": "Il nuovo MKV è nella libreria.",
+                "nothing_written": "Nessun MKV è stato scritto nella libreria.",
+                "outputs": "La ISO di origine viene conservata. Gli output completati restano nella libreria; quelli non completati possono essere riprovati.",
+                "retained": "La ISO di origine viene conservata.",
+                "retire_done": "Tutti i nuovi file sono al loro posto; esegui di nuovo «Change match» per rimuovere i vecchi file creati da questa ISO che restano. La ISO di origine viene conservata.",
+                "retire_pending": "La ISO di origine viene conservata. I vecchi file creati da questa ISO vengono rimossi solo dopo che tutti i nuovi file sono al loro posto, e solo se non sono cambiati; esegui di nuovo «Change match» per completare.",
+                "unchanged": "Il tuo MKV esistente non è stato modificato."
+            },
+            "stale_match": "La corrispondenza salvata per {path} è stata confermata per un disco precedente archiviato in quel percorso, quindi non è stato scritto nulla. Apri di nuovo «Change match» per questo disco.",
+            "target_changed": "{error}. Il file della libreria {path} è cambiato dopo l'inizio di questo remux, oppure l'MKV finito era già stato copiato, quindi non è stato toccato."
         }
     }
 }

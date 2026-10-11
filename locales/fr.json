@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Vérifiez les autorisations, l'espace libre et le montage du dossier de destination. La ligne de la livraison indique quand elle sera retentée."
+        },
+        "library": {
+            "changed_during": "{path} a été modifié pendant ce remux ; il n'a pas été touché",
+            "episode_alone": "{path} est un épisode d'un disque découpé en plusieurs fichiers, et son titre ne peut pas être distingué des autres ; rien n'a donc été écrit. Utilisez «Change match» sur son ISO pour remuxer le disque entier.",
+            "links_not_saved": "{path} est en place, mais library-links.json dans le dossier de configuration n'a pas pu être mis à jour ({error}). Corrigez ce fichier ou les autorisations de son dossier, puis choisissez «Retry».",
+            "plan": {
+                "correction_review": "La correspondance corrigée doit être vérifiée : {reason}",
+                "review": "Le plan des titres doit être vérifié avant le remux : {reason}"
+            },
+            "plan_not_saved": "le plan de remux n'a pas pu être enregistré dans {path} dans le dossier de configuration : {error}",
+            "retire": {
+                "folder_missing": "le dossier de {path} est introuvable (le partage est-il monté ?) ; il n'a pas été supprimé",
+                "kept": "Les {new} nouveaux fichiers sont en place. {count} ancien(s) fichier(s) créé(s) à partir de cette ISO ont été conservés, car ils ont changé après le début de cette correction ou ne sont plus enregistrés comme créés à partir d'elle : {paths}. Ils ne sont plus suivis ; supprimez-les vous-même si vous n'en voulez plus.",
+                "new_missing": "le nouveau fichier {path} est introuvable (le partage est-il monté ?) ; aucun ancien fichier n'a été supprimé",
+                "new_not_regular": "le nouveau fichier {path} n'est plus un fichier ordinaire ; aucun ancien fichier n'a été supprimé",
+                "outside": "{path} n'est pas dans les dossiers de la bibliothèque ; il n'a pas été supprimé"
+            },
+            "safe": {
+                "landed": "Le nouveau MKV est dans la bibliothèque.",
+                "nothing_written": "Aucun MKV n'a été écrit dans la bibliothèque.",
+                "outputs": "L'ISO source est conservée. Les sorties terminées restent dans la bibliothèque ; les sorties inachevées peuvent être relancées.",
+                "retained": "L'ISO source est conservée.",
+                "retire_done": "Tous les nouveaux fichiers sont en place ; relancez «Change match» pour supprimer les anciens fichiers créés à partir de cette ISO qui restent. L'ISO source est conservée.",
+                "retire_pending": "L'ISO source est conservée. Les anciens fichiers créés à partir de cette ISO ne sont supprimés qu'une fois tous les nouveaux fichiers en place, et seulement s'ils n'ont pas changé ; relancez «Change match» pour terminer.",
+                "unchanged": "Votre MKV existant n'a pas été modifié."
+            },
+            "stale_match": "La correspondance enregistrée pour {path} a été confirmée pour un disque précédent rangé à ce chemin ; rien n'a donc été écrit. Ouvrez de nouveau «Change match» pour ce disque.",
+            "target_changed": "{error}. Le fichier de bibliothèque {path} a changé après le début de ce remux, ou le MKV terminé avait déjà été copié ; il n'a donc pas été touché."
         }
     }
 }

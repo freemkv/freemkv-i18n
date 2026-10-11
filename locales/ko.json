@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "대상 폴더의 권한, 여유 공간, 마운트를 확인하세요. 다시 시도하는 시점은 전달 항목 자체의 행에 표시됩니다."
+        },
+        "library": {
+            "changed_during": "이 remux가 실행되는 동안 {path}이(가) 변경되어 건드리지 않았습니다",
+            "episode_alone": "{path}은(는) 여러 파일로 나뉜 디스크의 한 에피소드이며, 그 타이틀을 다른 타이틀과 구별할 수 없어 아무것도 쓰지 않았습니다. 디스크 전체를 remux하려면 해당 ISO에서 \"Change match\"을(를) 사용하세요.",
+            "links_not_saved": "{path}은(는) 제자리에 있지만 설정 폴더의 library-links.json을 업데이트할 수 없습니다({error}). 해당 파일이나 폴더 권한을 고친 다음 \"Retry\"을(를) 선택하세요.",
+            "plan": {
+                "correction_review": "수정한 일치 항목을 검토해야 합니다: {reason}",
+                "review": "remux 전에 타이틀 계획을 검토해야 합니다: {reason}"
+            },
+            "plan_not_saved": "설정 폴더의 {path}에 remux 계획을 저장할 수 없습니다: {error}",
+            "retire": {
+                "folder_missing": "{path}의 폴더를 찾을 수 없습니다(공유가 마운트되어 있나요?). 제거하지 않았습니다",
+                "kept": "새 파일 {new}개가 모두 제자리에 있습니다. 이 ISO로 만든 이전 파일 {count}개는 이 수정이 시작된 뒤 변경되었거나 더 이상 이 ISO로 만든 것으로 기록되어 있지 않아 남겨 두었습니다: {paths}. 더 이상 추적하지 않으니 필요 없으면 직접 삭제하세요.",
+                "new_missing": "새 파일 {path}을(를) 찾을 수 없습니다(공유가 마운트되어 있나요?). 이전 파일을 제거하지 않았습니다",
+                "new_not_regular": "새 파일 {path}이(가) 더 이상 일반 파일이 아닙니다. 이전 파일을 제거하지 않았습니다",
+                "outside": "{path}은(는) 라이브러리 폴더 안에 없습니다. 제거하지 않았습니다"
+            },
+            "safe": {
+                "landed": "새 MKV가 라이브러리에 있습니다.",
+                "nothing_written": "라이브러리에 MKV를 쓰지 않았습니다.",
+                "outputs": "원본 ISO는 유지됩니다. 완료된 출력은 라이브러리에 남고, 완료되지 않은 출력은 다시 시도할 수 있습니다.",
+                "retained": "원본 ISO는 유지됩니다.",
+                "retire_done": "새 파일이 모두 제자리에 있습니다. 이 ISO로 만든 이전 파일 중 남은 것을 제거하려면 \"Change match\"을(를) 다시 실행하세요. 원본 ISO는 유지됩니다.",
+                "retire_pending": "원본 ISO는 유지됩니다. 이 ISO로 만든 이전 파일은 새 파일이 모두 제자리에 있은 뒤에만, 그리고 변경되지 않은 경우에만 제거됩니다. 마치려면 \"Change match\"을(를) 다시 실행하세요.",
+                "unchanged": "기존 MKV는 변경되지 않았습니다."
+            },
+            "stale_match": "{path}에 저장된 일치 항목은 같은 경로에 이전에 보관된 디스크에 대해 확인된 것이라 아무것도 쓰지 않았습니다. 이 디스크에 대해 \"Change match\"을(를) 다시 여세요.",
+            "target_changed": "{error}. 이 remux가 시작된 뒤 라이브러리 파일 {path}이(가) 변경되었거나 완성된 MKV가 이미 복사되어 건드리지 않았습니다."
         }
     }
 }

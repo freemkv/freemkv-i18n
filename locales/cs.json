@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Zkontrolujte oprávnění, volné místo a připojení cílové složky. Řádek samotného doručení ukazuje, kdy se to zkusí znovu."
+        },
+        "library": {
+            "changed_during": "{path} se během tohoto remuxu změnil; nebyl změněn",
+            "episode_alone": "{path} je jedna epizoda disku, který byl rozdělen do více souborů, a její titul nelze odlišit od ostatních, proto nebylo nic zapsáno. Použijte „Change match“ na jeho ISO a proveďte remux celého disku.",
+            "links_not_saved": "{path} je na místě, ale soubor library-links.json ve složce s konfigurací se nepodařilo aktualizovat ({error}). Opravte tento soubor nebo oprávnění jeho složky a potom zvolte „Retry“.",
+            "plan": {
+                "correction_review": "Opravené přiřazení je třeba zkontrolovat: {reason}",
+                "review": "Plán titulů je třeba před remuxem zkontrolovat: {reason}"
+            },
+            "plan_not_saved": "plán remuxu se nepodařilo uložit do {path} ve složce s konfigurací: {error}",
+            "retire": {
+                "folder_missing": "složku souboru {path} nelze najít (je sdílená složka připojena?); nebyl odstraněn",
+                "kept": "Všech {new} nových souborů je na místě. {count} starých souborů vytvořených z tohoto ISO bylo ponecháno, protože se změnily po zahájení této opravy nebo už nejsou vedeny jako vytvořené z něj: {paths}. Už nejsou sledovány; pokud je nechcete, odstraňte je sami.",
+                "new_missing": "nový soubor {path} nelze najít (je sdílená složka připojena?); žádný starý soubor nebyl odstraněn",
+                "new_not_regular": "nový soubor {path} už není běžný soubor; žádný starý soubor nebyl odstraněn",
+                "outside": "{path} není ve složkách knihovny; nebyl odstraněn"
+            },
+            "safe": {
+                "landed": "Nový soubor MKV je v knihovně.",
+                "nothing_written": "Do knihovny nebyl zapsán žádný soubor MKV.",
+                "outputs": "Zdrojové ISO zůstává zachováno. Dokončené výstupy zůstávají v knihovně; nedokončené výstupy lze zkusit znovu.",
+                "retained": "Zdrojové ISO zůstává zachováno.",
+                "retire_done": "Všechny nové soubory jsou na místě; spusťte znovu „Change match“ a odstraňte zbývající staré soubory vytvořené z tohoto ISO. Zdrojové ISO zůstává zachováno.",
+                "retire_pending": "Zdrojové ISO zůstává zachováno. Staré soubory vytvořené z tohoto ISO se odstraní až poté, co budou všechny nové soubory na místě, a jen pokud se nezměnily; dokončete to opětovným spuštěním „Change match“.",
+                "unchanged": "Váš stávající soubor MKV je beze změny."
+            },
+            "stale_match": "Přiřazení uložené pro {path} bylo potvrzeno pro dřívější disk uložený na této cestě, proto nebylo nic zapsáno. Otevřete pro tento disk znovu „Change match“.",
+            "target_changed": "{error}. Soubor knihovny {path} se po zahájení tohoto remuxu změnil, nebo už byl dokončený soubor MKV zkopírován, proto nebyl změněn."
         }
     }
 }

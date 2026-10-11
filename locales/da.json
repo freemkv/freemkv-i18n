@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Kontrollér destinationsmappens rettigheder, ledige plads og montering. Leveringens egen række viser, hvornår det forsøges igen."
+        },
+        "library": {
+            "changed_during": "{path} blev ændret, mens dette remux kørte; den blev ikke rørt",
+            "episode_alone": "{path} er en episode fra en disk, der blev delt op i flere filer, og dens titel kan ikke skelnes fra de andre, så intet blev skrevet. Brug «Change match» på dens ISO for at remuxe hele disken.",
+            "links_not_saved": "{path} er på plads, men library-links.json i konfigurationsmappen kunne ikke opdateres ({error}). Ret filen eller mappens tilladelser, og vælg derefter «Retry».",
+            "plan": {
+                "correction_review": "Det rettede match skal gennemgås: {reason}",
+                "review": "Titelplanen skal gennemgås før remux: {reason}"
+            },
+            "plan_not_saved": "remux-planen kunne ikke gemmes i {path} i konfigurationsmappen: {error}",
+            "retire": {
+                "folder_missing": "mappen for {path} blev ikke fundet (er delingen monteret?); den blev ikke fjernet",
+                "kept": "Alle {new} nye filer er på plads. {count} gammel/gamle fil(er) lavet fra denne ISO blev beholdt, fordi de blev ændret efter denne rettelse begyndte, eller ikke længere er registreret som lavet fra den: {paths}. De spores ikke længere; slet dem selv, hvis du ikke vil have dem.",
+                "new_missing": "den nye fil {path} blev ikke fundet (er delingen monteret?); ingen gammel fil blev fjernet",
+                "new_not_regular": "den nye fil {path} er ikke længere en almindelig fil; ingen gammel fil blev fjernet",
+                "outside": "{path} ligger ikke i biblioteksmapperne; den blev ikke fjernet"
+            },
+            "safe": {
+                "landed": "Den nye MKV er i biblioteket.",
+                "nothing_written": "Der blev ikke skrevet nogen MKV til biblioteket.",
+                "outputs": "Kilde-ISO'en bevares. Færdige output bliver i biblioteket; ufærdige output kan prøves igen.",
+                "retained": "Kilde-ISO'en bevares.",
+                "retire_done": "Alle nye filer er på plads; kør «Change match» igen for at fjerne de resterende gamle filer lavet fra denne ISO. Kilde-ISO'en bevares.",
+                "retire_pending": "Kilde-ISO'en bevares. Gamle filer lavet fra denne ISO fjernes først, når alle nye filer er på plads, og kun hvis de er uændrede; kør «Change match» igen for at gøre det færdigt.",
+                "unchanged": "Din eksisterende MKV er uændret."
+            },
+            "stale_match": "Det gemte match for {path} blev bekræftet for en tidligere disk arkiveret på den sti, så intet blev skrevet. Åbn «Change match» igen for denne disk.",
+            "target_changed": "{error}. Biblioteksfilen {path} blev ændret, efter dette remux begyndte, eller den færdige MKV var allerede kopieret ind, så den blev ikke rørt."
         }
     }
 }

@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Check the destination folder's permissions, free space and mount. The delivery's own row shows when it is tried again."
+        },
+        "library": {
+            "retire": {
+                "new_not_regular": "the new file {path} is no longer a regular file; no old file was removed",
+                "new_missing": "the new file {path} cannot be found (is the share mounted?); no old file was removed",
+                "folder_missing": "the folder of {path} cannot be found (is the share mounted?); it was not removed",
+                "outside": "{path} is not under the library folders; it was not removed",
+                "kept": "All {new} new files are in place. {count} old file(s) made from this ISO were kept because they changed after this correction started, or are no longer recorded as made from it: {paths}. They are no longer tracked; delete them yourself if they are not wanted."
+            },
+            "stale_match": "The match saved for {path} was confirmed for an earlier disc filed at that path, so nothing was written. Open Change match again for this disc.",
+            "episode_alone": "{path} is one episode of a disc that was split into several files, and its title cannot be told apart from the others, so nothing was written. Use Change match on its ISO to remux the whole disc.",
+            "plan_not_saved": "the remux plan could not be saved to {path} in the config folder: {error}",
+            "plan": {
+                "correction_review": "Corrected match needs review: {reason}",
+                "review": "Title plan needs review before remux: {reason}"
+            },
+            "changed_during": "{path} changed while this remux ran; it was not touched",
+            "links_not_saved": "{path} is in place, but library-links.json in the config folder could not be updated ({error}). Fix that file or its folder's permissions, then Retry.",
+            "safe": {
+                "retained": "The source ISO is retained.",
+                "retire_done": "Every new file is in place; run Change match again to remove the old files made from this ISO that remain. The source ISO is retained.",
+                "retire_pending": "The source ISO is retained. Old files made from this ISO are removed only after every new file is in place, and only if unchanged; run Change match again to finish.",
+                "outputs": "The source ISO is retained. Completed outputs remain in the library; unfinished outputs can be retried.",
+                "landed": "The new MKV is in the library.",
+                "unchanged": "Your existing MKV is unchanged.",
+                "nothing_written": "No MKV was written to the library."
+            },
+            "target_changed": "{error}. The library file {path} changed after this remux began, or the finished MKV was already copied in, so it was not touched."
         }
     }
 }

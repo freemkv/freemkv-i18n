@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Sprawdź uprawnienia, wolne miejsce i zamontowanie folderu docelowego. Wiersz samego dostarczenia pokazuje, kiedy nastąpi ponowna próba."
+        },
+        "library": {
+            "changed_during": "{path} zmienił się podczas tego remuksu; nie został naruszony",
+            "episode_alone": "{path} to jeden odcinek płyty podzielonej na kilka plików, a jego tytułu nie da się odróżnić od pozostałych, więc nic nie zostało zapisane. Użyj „Change match” dla jej pliku ISO, aby wykonać remuks całej płyty.",
+            "links_not_saved": "{path} jest na miejscu, ale nie udało się zaktualizować pliku library-links.json w folderze konfiguracji ({error}). Napraw ten plik lub uprawnienia jego folderu, a następnie wybierz „Retry”.",
+            "plan": {
+                "correction_review": "Poprawione dopasowanie wymaga sprawdzenia: {reason}",
+                "review": "Plan tytułów wymaga sprawdzenia przed remuksem: {reason}"
+            },
+            "plan_not_saved": "nie udało się zapisać planu remuksu w {path} w folderze konfiguracji: {error}",
+            "retire": {
+                "folder_missing": "nie można znaleźć folderu pliku {path} (czy udział jest zamontowany?); nie został usunięty",
+                "kept": "Wszystkie nowe pliki ({new}) są na miejscu. Zachowano stare pliki utworzone z tego ISO ({count}), ponieważ zmieniły się po rozpoczęciu tej poprawki lub nie są już zapisane jako z niego utworzone: {paths}. Nie są już śledzone; usuń je samodzielnie, jeśli ich nie chcesz.",
+                "new_missing": "nie można znaleźć nowego pliku {path} (czy udział jest zamontowany?); żaden stary plik nie został usunięty",
+                "new_not_regular": "nowy plik {path} nie jest już zwykłym plikiem; żaden stary plik nie został usunięty",
+                "outside": "{path} nie znajduje się w folderach biblioteki; nie został usunięty"
+            },
+            "safe": {
+                "landed": "Nowy plik MKV jest w bibliotece.",
+                "nothing_written": "Do biblioteki nie zapisano żadnego pliku MKV.",
+                "outputs": "Źródłowy plik ISO zostaje zachowany. Ukończone wyniki pozostają w bibliotece; nieukończone można ponowić.",
+                "retained": "Źródłowy plik ISO zostaje zachowany.",
+                "retire_done": "Wszystkie nowe pliki są na miejscu; uruchom ponownie „Change match”, aby usunąć pozostałe stare pliki utworzone z tego ISO. Źródłowy plik ISO zostaje zachowany.",
+                "retire_pending": "Źródłowy plik ISO zostaje zachowany. Stare pliki utworzone z tego ISO są usuwane dopiero wtedy, gdy wszystkie nowe pliki są na miejscu, i tylko jeśli się nie zmieniły; uruchom ponownie „Change match”, aby dokończyć.",
+                "unchanged": "Twój istniejący plik MKV nie został zmieniony."
+            },
+            "stale_match": "Dopasowanie zapisane dla {path} zostało potwierdzone dla wcześniejszej płyty zapisanej pod tą ścieżką, więc nic nie zostało zapisane. Otwórz ponownie „Change match” dla tej płyty.",
+            "target_changed": "{error}. Plik biblioteki {path} zmienił się po rozpoczęciu tego remuksu albo gotowy plik MKV został już skopiowany, więc nie został naruszony."
         }
     }
 }

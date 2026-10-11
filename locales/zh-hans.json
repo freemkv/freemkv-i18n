@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "请检查目标文件夹的权限、可用空间和挂载。何时重试会显示在该交付自身的行中。"
+        },
+        "library": {
+            "changed_during": "{path} 在此次 remux 运行期间已更改；未动它",
+            "episode_alone": "{path} 是一张被拆分为多个文件的光盘中的一集，其标题无法与其他标题区分，因此未写入任何内容。请对其 ISO 使用“Change match”来 remux 整张光盘。",
+            "links_not_saved": "{path} 已就位，但无法更新配置文件夹中的 library-links.json（{error}）。请修复该文件或其文件夹的权限，然后选择“Retry”。",
+            "plan": {
+                "correction_review": "更正的匹配需要复查：{reason}",
+                "review": "remux 之前需要复查标题计划：{reason}"
+            },
+            "plan_not_saved": "无法将 remux 计划保存到配置文件夹中的 {path}：{error}",
+            "retire": {
+                "folder_missing": "找不到 {path} 所在的文件夹（共享是否已挂载？）；未将其删除",
+                "kept": "全部 {new} 个新文件均已就位。由此 ISO 生成的 {count} 个旧文件被保留，因为它们在此次更正开始后发生了更改，或不再记录为由它生成：{paths}。它们不再被跟踪；如不需要，请自行删除。",
+                "new_missing": "找不到新文件 {path}（共享是否已挂载？）；未删除任何旧文件",
+                "new_not_regular": "新文件 {path} 已不再是普通文件；未删除任何旧文件",
+                "outside": "{path} 不在媒体库文件夹中；未将其删除"
+            },
+            "safe": {
+                "landed": "新的 MKV 已在媒体库中。",
+                "nothing_written": "未向媒体库写入任何 MKV。",
+                "outputs": "源 ISO 已保留。已完成的输出保留在媒体库中；未完成的输出可以重试。",
+                "retained": "源 ISO 已保留。",
+                "retire_done": "所有新文件均已就位；请再次运行“Change match”以删除由此 ISO 生成的剩余旧文件。源 ISO 已保留。",
+                "retire_pending": "源 ISO 已保留。由此 ISO 生成的旧文件只会在所有新文件就位后、且仅在未更改时才会删除；请再次运行“Change match”以完成。",
+                "unchanged": "您现有的 MKV 未改变。"
+            },
+            "stale_match": "为 {path} 保存的匹配是针对之前存放在该路径的另一张光盘确认的，因此未写入任何内容。请为这张光盘重新打开“Change match”。",
+            "target_changed": "{error}。媒体库文件 {path} 在此次 remux 开始后已更改，或完成的 MKV 已被复制进去，因此未动它。"
         }
     }
 }

@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Tarkista kohdekansion käyttöoikeudet, vapaa tila ja liitos. Toimituksen oma rivi näyttää, milloin sitä yritetään uudelleen."
+        },
+        "library": {
+            "changed_during": "{path} muuttui tämän remuxin aikana; siihen ei koskettu",
+            "episode_alone": "{path} on yksi jakso levyltä, joka jaettiin useaksi tiedostoksi, eikä sen nimikettä voi erottaa muista, joten mitään ei kirjoitettu. Käytä ”Change match”-toimintoa sen ISO-tiedostoon remuxataksesi koko levyn.",
+            "links_not_saved": "{path} on paikallaan, mutta library-links.json-tiedostoa ei voitu päivittää asetuskansiossa ({error}). Korjaa tiedosto tai sen kansion käyttöoikeudet ja valitse sitten ”Retry”.",
+            "plan": {
+                "correction_review": "Korjattu vastaavuus on tarkistettava: {reason}",
+                "review": "Nimikesuunnitelma on tarkistettava ennen remuxia: {reason}"
+            },
+            "plan_not_saved": "remux-suunnitelmaa ei voitu tallentaa kohteeseen {path} asetuskansiossa: {error}",
+            "retire": {
+                "folder_missing": "kohteen {path} kansiota ei löydy (onko jako liitetty?); sitä ei poistettu",
+                "kept": "Kaikki {new} uutta tiedostoa ovat paikallaan. {count} tästä ISO-tiedostosta tehtyä vanhaa tiedostoa säilytettiin, koska ne muuttuivat tämän korjauksen alettua tai niitä ei enää ole kirjattu siitä tehdyiksi: {paths}. Niitä ei enää seurata; poista ne itse, jos et tarvitse niitä.",
+                "new_missing": "uutta tiedostoa {path} ei löydy (onko jako liitetty?); vanhoja tiedostoja ei poistettu",
+                "new_not_regular": "uusi tiedosto {path} ei ole enää tavallinen tiedosto; vanhoja tiedostoja ei poistettu",
+                "outside": "{path} ei ole kirjaston kansioissa; sitä ei poistettu"
+            },
+            "safe": {
+                "landed": "Uusi MKV on kirjastossa.",
+                "nothing_written": "Kirjastoon ei kirjoitettu MKV-tiedostoa.",
+                "outputs": "Lähde-ISO säilytetään. Valmiit tulosteet jäävät kirjastoon; keskeneräisiä tulosteita voi yrittää uudelleen.",
+                "retained": "Lähde-ISO säilytetään.",
+                "retire_done": "Kaikki uudet tiedostot ovat paikallaan; suorita ”Change match” uudelleen poistaaksesi jäljellä olevat tästä ISO-tiedostosta tehdyt vanhat tiedostot. Lähde-ISO säilytetään.",
+                "retire_pending": "Lähde-ISO säilytetään. Tästä ISO-tiedostosta tehdyt vanhat tiedostot poistetaan vasta, kun kaikki uudet tiedostot ovat paikallaan, ja vain jos ne ovat muuttumattomia; suorita ”Change match” uudelleen viimeistelläksesi.",
+                "unchanged": "Nykyinen MKV-tiedostosi on ennallaan."
+            },
+            "stale_match": "Kohteelle {path} tallennettu vastaavuus vahvistettiin aiemmalle levylle, joka oli arkistoitu samaan polkuun, joten mitään ei kirjoitettu. Avaa ”Change match” uudelleen tälle levylle.",
+            "target_changed": "{error}. Kirjaston tiedosto {path} muuttui tämän remuxin alettua, tai valmis MKV oli jo kopioitu, joten siihen ei koskettu."
         }
     }
 }

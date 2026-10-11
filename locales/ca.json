@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Comproveu els permisos, l'espai lliure i el muntatge de la carpeta de destinació. La fila de l'entrega mostra quan es tornarà a provar."
+        },
+        "library": {
+            "changed_during": "{path} ha canviat mentre s'executava aquest remux; no s'ha tocat",
+            "episode_alone": "{path} és un episodi d'un disc que es va dividir en diversos fitxers, i el seu títol no es pot distingir dels altres, de manera que no s'ha escrit res. Feu servir «Change match» a la seva ISO per fer el remux del disc sencer.",
+            "links_not_saved": "{path} és al seu lloc, però no s'ha pogut actualitzar library-links.json a la carpeta de configuració ({error}). Corregiu aquest fitxer o els permisos de la seva carpeta i després trieu «Retry».",
+            "plan": {
+                "correction_review": "La coincidència corregida s'ha de revisar: {reason}",
+                "review": "El pla de títols s'ha de revisar abans del remux: {reason}"
+            },
+            "plan_not_saved": "no s'ha pogut desar el pla de remux a {path} a la carpeta de configuració: {error}",
+            "retire": {
+                "folder_missing": "no es troba la carpeta de {path} (està muntat el recurs compartit?); no s'ha eliminat",
+                "kept": "Els {new} fitxers nous són al seu lloc. S'han conservat {count} fitxer(s) antic(s) creat(s) a partir d'aquesta ISO perquè han canviat després de començar aquesta correcció o ja no consten com a creats a partir d'ella: {paths}. Ja no se'n fa el seguiment; elimineu-los vosaltres mateixos si no els voleu.",
+                "new_missing": "no es troba el fitxer nou {path} (està muntat el recurs compartit?); no s'ha eliminat cap fitxer antic",
+                "new_not_regular": "el fitxer nou {path} ja no és un fitxer normal; no s'ha eliminat cap fitxer antic",
+                "outside": "{path} no és a les carpetes de la biblioteca; no s'ha eliminat"
+            },
+            "safe": {
+                "landed": "El nou MKV és a la biblioteca.",
+                "nothing_written": "No s'ha escrit cap MKV a la biblioteca.",
+                "outputs": "Es conserva la ISO d'origen. Les sortides completades es queden a la biblioteca; les sortides inacabades es poden tornar a provar.",
+                "retained": "Es conserva la ISO d'origen.",
+                "retire_done": "Tots els fitxers nous són al seu lloc; torneu a executar «Change match» per eliminar els fitxers antics creats a partir d'aquesta ISO que quedin. Es conserva la ISO d'origen.",
+                "retire_pending": "Es conserva la ISO d'origen. Els fitxers antics creats a partir d'aquesta ISO només s'eliminen quan tots els fitxers nous són al seu lloc, i només si no han canviat; torneu a executar «Change match» per acabar.",
+                "unchanged": "El vostre MKV existent no ha canviat."
+            },
+            "stale_match": "La coincidència desada per a {path} es va confirmar per a un disc anterior arxivat en aquest camí, de manera que no s'ha escrit res. Torneu a obrir «Change match» per a aquest disc.",
+            "target_changed": "{error}. El fitxer de la biblioteca {path} ha canviat després de començar aquest remux, o el MKV acabat ja s'havia copiat, de manera que no s'ha tocat."
         }
     }
 }

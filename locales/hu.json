@@ -927,6 +927,34 @@
         },
         "mover": {
             "destination_step_failed": "Ellenőrizze a célmappa jogosultságait, szabad helyét és csatolását. A kézbesítés saját sora mutatja, mikor próbálkozik újra."
+        },
+        "library": {
+            "changed_during": "{path} megváltozott a remux közben; nem nyúltunk hozzá",
+            "episode_alone": "{path} egy több fájlra bontott lemez egyik epizódja, és a címe nem különböztethető meg a többitől, ezért semmi sem lett kiírva. A teljes lemez remuxolásához használja a(z) „Change match” funkciót az ISO-fájlján.",
+            "links_not_saved": "{path} a helyén van, de a konfigurációs mappában lévő library-links.json nem frissíthető ({error}). Javítsa ki a fájlt vagy a mappája jogosultságait, majd válassza a következőt: „Retry”.",
+            "plan": {
+                "correction_review": "A javított egyezést ellenőrizni kell: {reason}",
+                "review": "A címtervet a remux előtt ellenőrizni kell: {reason}"
+            },
+            "plan_not_saved": "a remuxterv nem menthető ide: {path} a konfigurációs mappában: {error}",
+            "retire": {
+                "folder_missing": "{path} mappája nem található (csatolva van a megosztás?); nem lett eltávolítva",
+                "kept": "Mind a(z) {new} új fájl a helyén van. Ebből az ISO-ból készült {count} régi fájl megmaradt, mert a javítás kezdete után megváltozott, vagy már nincs nyilvántartva mint belőle készült: {paths}. Ezeket már nem követjük; törölje őket saját maga, ha nincs rájuk szüksége.",
+                "new_missing": "a(z) {path} új fájl nem található (csatolva van a megosztás?); egyetlen régi fájl sem lett eltávolítva",
+                "new_not_regular": "a(z) {path} új fájl már nem normál fájl; egyetlen régi fájl sem lett eltávolítva",
+                "outside": "{path} nincs a könyvtár mappáiban; nem lett eltávolítva"
+            },
+            "safe": {
+                "landed": "Az új MKV a könyvtárban van.",
+                "nothing_written": "Nem került MKV a könyvtárba.",
+                "outputs": "A forrás-ISO megmarad. A kész kimenetek a könyvtárban maradnak; a befejezetlen kimenetek újrapróbálhatók.",
+                "retained": "A forrás-ISO megmarad.",
+                "retire_done": "Minden új fájl a helyén van; futtassa újra a(z) „Change match” funkciót az ebből az ISO-ból készült megmaradt régi fájlok eltávolításához. A forrás-ISO megmarad.",
+                "retire_pending": "A forrás-ISO megmarad. Az ebből az ISO-ból készült régi fájlok csak akkor kerülnek eltávolításra, ha minden új fájl a helyén van, és csak ha nem változtak; a befejezéshez futtassa újra a(z) „Change match” funkciót.",
+                "unchanged": "A meglévő MKV-fájl változatlan."
+            },
+            "stale_match": "A(z) {path} fájlhoz mentett egyezést egy korábbi, ugyanezen az útvonalon tárolt lemezhez erősítették meg, ezért semmi sem lett kiírva. Nyissa meg újra a(z) „Change match” funkciót ehhez a lemezhez.",
+            "target_changed": "{error}. A(z) {path} könyvtárfájl megváltozott a remux kezdete után, vagy a kész MKV már be lett másolva, ezért nem nyúltunk hozzá."
         }
     }
 }
