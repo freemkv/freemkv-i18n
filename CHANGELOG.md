@@ -1,10 +1,10 @@
 # Changelog
 
-## [1.9.0] — 2026-10-11
+## [1.8.4] — 2026-10-11
 
 ### Added
 
-- **Texts for everything new in freemkv 1.9.0, in every locale**: presentation language (the `--presentation-language` help and usage lines, and its error), title-selection review (E9086 and one reason text per engine review reason), the Library's Change match, TV remux and retire messages, queue and folder holds, staging-folder and listing errors, delivery retry hints, Reboot refusals (no service manager, too soon), the unlocker line in `info`, and the Review-hold save failure.
+- **Texts for everything new in freemkv 1.8.4, in every locale**: presentation language (the `--presentation-language` help and usage lines, and its error), title-selection review (E9086 and one reason text per engine review reason), the Library's Change match, TV remux and retire messages, queue and folder holds, staging-folder and listing errors, delivery retry hints, Reboot refusals (no service manager, too soon), the unlocker line in `info`, and the Review-hold save failure.
 
 ### Changed
 
