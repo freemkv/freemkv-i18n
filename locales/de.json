@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Neustart: laufende Arbeiten stoppen am nächsten sicheren Punkt, danach startet der Server neu.",
-            "no_supervisor": "Neustart nicht verfügbar: Dieser Server wurde nicht als Dienst gestartet, daher würde ihn nichts wieder starten. Starten Sie ihn stattdessen selbst neu."
+            "no_supervisor": "Neustart nicht verfügbar: Kein Dienstmanager startet diesen Server wieder, nachdem er beendet wurde. Starten Sie ihn stattdessen selbst neu.",
+            "too_soon": "Neustart ist eine Minute nach dem Start des Servers oder nach der letzten Neustart-Anforderung nicht verfügbar. Versuchen Sie es gleich noch einmal."
         }
     }
 }

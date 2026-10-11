@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Đang khởi động lại: các tác vụ đang chạy sẽ dừng ở điểm an toàn kế tiếp, sau đó máy chủ khởi động lại.",
-            "no_supervisor": "Không thể khởi động lại: máy chủ này không được chạy như một dịch vụ nên không có gì khởi động nó trở lại. Hãy tự khởi động lại."
+            "no_supervisor": "Không thể khởi động lại: không có trình quản lý dịch vụ nào khởi động lại máy chủ này sau khi nó dừng. Hãy tự khởi động lại.",
+            "too_soon": "Không thể khởi động lại trong một phút sau khi máy chủ khởi động hoặc sau yêu cầu khởi động lại gần nhất. Hãy thử lại sau ít phút."
         }
     }
 }

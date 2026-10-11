@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Startar om: pågående arbete stoppas vid nästa säkra punkt, därefter startar servern om.",
-            "no_supervisor": "Omstart är inte tillgänglig: den här servern startades inte som en tjänst, så ingenting skulle starta den igen. Starta om den själv i stället."
+            "no_supervisor": "Omstart är inte tillgänglig: ingen tjänsthanterare startar den här servern igen när den har stoppats. Starta om den själv i stället.",
+            "too_soon": "Omstart är inte tillgänglig under en minut efter att servern startat eller efter den senaste begäran om omstart. Försök igen om en stund."
         }
     }
 }

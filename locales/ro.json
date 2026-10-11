@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Se repornește: lucrările în curs se opresc la următorul punct sigur, apoi serverul repornește.",
-            "no_supervisor": "Repornirea nu este disponibilă: acest server nu a fost pornit ca serviciu, deci nimic nu l-ar porni din nou. Repornește-l tu însuți."
+            "no_supervisor": "Repornirea nu este disponibilă: niciun manager de servicii nu va porni din nou acest server după ce se oprește. Repornește-l tu însuți.",
+            "too_soon": "Repornirea nu este disponibilă timp de un minut după pornirea serverului sau după ultima cerere de repornire. Încearcă din nou în curând."
         }
     }
 }

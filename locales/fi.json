@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Käynnistetään uudelleen: käynnissä oleva työ pysähtyy seuraavassa turvallisessa kohdassa, minkä jälkeen palvelin käynnistyy uudelleen.",
-            "no_supervisor": "Uudelleenkäynnistys ei ole käytettävissä: tätä palvelinta ei käynnistetty palveluna, joten mikään ei käynnistäisi sitä uudelleen. Käynnistä se itse uudelleen."
+            "no_supervisor": "Uudelleenkäynnistys ei ole käytettävissä: mikään palveluhallinta ei käynnistä tätä palvelinta uudelleen sen pysähdyttyä. Käynnistä se itse uudelleen.",
+            "too_soon": "Uudelleenkäynnistys ei ole käytettävissä minuuttiin palvelimen käynnistymisen tai viimeisimmän uudelleenkäynnistyspyynnön jälkeen. Yritä hetken kuluttua uudelleen."
         }
     }
 }

@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Yeniden başlatılıyor: çalışan işler bir sonraki güvenli noktada durur, ardından sunucu yeniden başlar.",
-            "no_supervisor": "Yeniden başlatma kullanılamıyor: bu sunucu bir hizmet olarak başlatılmadı, bu yüzden onu yeniden başlatacak bir şey yok. Bunun yerine sunucuyu kendiniz yeniden başlatın."
+            "no_supervisor": "Yeniden başlatma kullanılamıyor: bu sunucu durduktan sonra onu yeniden başlatacak bir hizmet yöneticisi yok. Bunun yerine sunucuyu kendiniz yeniden başlatın.",
+            "too_soon": "Yeniden başlatma, sunucu başladıktan veya son yeniden başlatma isteğinden sonra bir dakika boyunca kullanılamaz. Kısa süre sonra yeniden deneyin."
         }
     }
 }

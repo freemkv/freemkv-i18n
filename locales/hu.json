@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Újraindítás: a folyamatban lévő munka a következő biztonságos pontnál leáll, majd a kiszolgáló újraindul.",
-            "no_supervisor": "Az újraindítás nem érhető el: ezt a kiszolgálót nem szolgáltatásként indították el, így semmi sem indítaná újra. Indítsa újra saját kezűleg."
+            "no_supervisor": "Az újraindítás nem érhető el: leállása után egyetlen szolgáltatáskezelő sem indítja újra ezt a kiszolgálót. Indítsa újra saját kezűleg.",
+            "too_soon": "Az újraindítás a kiszolgáló indulása vagy a legutóbbi újraindítási kérés után egy percig nem érhető el. Próbálja újra hamarosan."
         }
     }
 }

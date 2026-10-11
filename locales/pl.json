@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Ponowne uruchamianie: trwające prace zatrzymają się w najbliższym bezpiecznym punkcie, po czym serwer uruchomi się ponownie.",
-            "no_supervisor": "Restart jest niedostępny: ten serwer nie został uruchomiony jako usługa, więc nic by go nie uruchomiło ponownie. Zrestartuj go samodzielnie."
+            "no_supervisor": "Restart jest niedostępny: żaden menedżer usług nie uruchomi ponownie tego serwera po jego zatrzymaniu. Zrestartuj go samodzielnie.",
+            "too_soon": "Restart jest niedostępny przez minutę po uruchomieniu serwera lub po ostatnim żądaniu restartu. Spróbuj ponownie za chwilę."
         }
     }
 }

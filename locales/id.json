@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Memulai ulang: pekerjaan yang berjalan berhenti pada titik aman berikutnya, lalu server dimulai ulang.",
-            "no_supervisor": "Mulai ulang tidak tersedia: server ini tidak dijalankan sebagai layanan, sehingga tidak ada yang akan menjalankannya lagi. Mulai ulang sendiri."
+            "no_supervisor": "Mulai ulang tidak tersedia: tidak ada pengelola layanan yang akan menjalankan server ini lagi setelah berhenti. Mulai ulang sendiri.",
+            "too_soon": "Mulai ulang tidak tersedia selama satu menit setelah server berjalan atau setelah permintaan mulai ulang terakhir. Coba lagi sebentar lagi."
         }
     }
 }

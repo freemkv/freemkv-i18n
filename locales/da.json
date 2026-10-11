@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Genstarter: igangværende arbejde stopper ved næste sikre punkt, og derefter genstarter serveren.",
-            "no_supervisor": "Genstart er ikke tilgængelig: denne server blev ikke startet som en tjeneste, så intet ville starte den igen. Genstart den selv i stedet."
+            "no_supervisor": "Genstart er ikke tilgængelig: ingen tjenestestyring starter denne server igen, når den er stoppet. Genstart den selv i stedet.",
+            "too_soon": "Genstart er ikke tilgængelig i et minut efter, at serveren er startet, eller efter den seneste anmodning om genstart. Prøv igen om lidt."
         }
     }
 }

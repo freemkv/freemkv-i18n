@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Reiniciando: el trabajo en curso se detiene en el siguiente punto seguro y después el servidor se reinicia.",
-            "no_supervisor": "El reinicio no está disponible: este servidor no se inició como servicio, así que nada volvería a iniciarlo. Reinícialo tú mismo."
+            "no_supervisor": "El reinicio no está disponible: ningún administrador de servicios volverá a iniciar este servidor después de que se detenga. Reinícialo tú mismo.",
+            "too_soon": "El reinicio no está disponible durante un minuto después de que se inicia el servidor o después de la última solicitud de reinicio. Vuelve a intentarlo en un momento."
         }
     }
 }

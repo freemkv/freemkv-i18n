@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Opnieuw opstarten: lopend werk stopt op het volgende veilige punt, daarna start de server opnieuw op.",
-            "no_supervisor": "Herstarten is niet beschikbaar: deze server is niet als service gestart, dus niets zou hem weer starten. Start hem zelf opnieuw op."
+            "no_supervisor": "Herstarten is niet beschikbaar: geen servicebeheer start deze server opnieuw nadat hij is gestopt. Start hem zelf opnieuw op.",
+            "too_soon": "Herstarten is een minuut lang niet beschikbaar nadat de server is gestart of na het laatste herstartverzoek. Probeer het zo opnieuw."
         }
     }
 }

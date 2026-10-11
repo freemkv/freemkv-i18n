@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Restartuje se: probíhající práce se zastaví v nejbližším bezpečném bodě a poté se server restartuje.",
-            "no_supervisor": "Restart není dostupný: tento server nebyl spuštěn jako služba, takže by ho nic znovu nespustilo. Restartujte ho sami."
+            "no_supervisor": "Restart není dostupný: žádný správce služeb tento server po zastavení znovu nespustí. Restartujte ho sami.",
+            "too_soon": "Restart není dostupný minutu po spuštění serveru nebo po posledním požadavku na restart. Zkuste to za chvíli znovu."
         }
     }
 }

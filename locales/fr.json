@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Redémarrage : les travaux en cours s'arrêtent au prochain point sûr, puis le serveur redémarre.",
-            "no_supervisor": "Le redémarrage n'est pas disponible : ce serveur n'a pas été lancé en tant que service, donc rien ne le relancerait. Redémarrez-le vous-même."
+            "no_supervisor": "Le redémarrage n'est pas disponible : aucun gestionnaire de services ne relancera ce serveur après son arrêt. Redémarrez-le vous-même.",
+            "too_soon": "Le redémarrage n'est pas disponible pendant une minute après le démarrage du serveur ou après la dernière demande de redémarrage. Réessayez dans un instant."
         }
     }
 }

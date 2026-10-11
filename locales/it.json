@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Riavvio in corso: i lavori in esecuzione si fermano al prossimo punto sicuro, poi il server si riavvia.",
-            "no_supervisor": "Il riavvio non è disponibile: questo server non è stato avviato come servizio, quindi nulla lo riavvierebbe. Riavvialo tu stesso."
+            "no_supervisor": "Il riavvio non è disponibile: nessun gestore di servizi riavvierà questo server dopo l'arresto. Riavvialo tu stesso.",
+            "too_soon": "Il riavvio non è disponibile per un minuto dopo l'avvio del server o dopo l'ultima richiesta di riavvio. Riprova tra poco."
         }
     }
 }

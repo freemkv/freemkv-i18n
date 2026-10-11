@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Restarting: running work stops at its next safe point, then the server restarts.",
-            "no_supervisor": "Reboot is unavailable: this server was not started as a service, so nothing would start it again. Restart it yourself instead."
+            "no_supervisor": "Reboot is unavailable: no service manager will start this server again after it stops. Restart it yourself instead.",
+            "too_soon": "Reboot is unavailable for a minute after the server starts or after the last reboot request. Try again shortly."
         }
     }
 }

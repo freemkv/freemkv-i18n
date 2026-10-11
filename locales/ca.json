@@ -922,7 +922,8 @@
     "server": {
         "reboot": {
             "restarting": "Reiniciant: la feina en curs s'atura al següent punt segur i després el servidor es reinicia.",
-            "no_supervisor": "El reinici no està disponible: aquest servidor no s'ha iniciat com a servei, de manera que res el tornaria a iniciar. Reinicieu-lo vosaltres mateixos."
+            "no_supervisor": "El reinici no està disponible: cap gestor de serveis tornarà a iniciar aquest servidor després que s'aturi. Reinicieu-lo vosaltres mateixos.",
+            "too_soon": "El reinici no està disponible durant un minut després que el servidor s'iniciï o després de l'última sol·licitud de reinici. Torneu-ho a provar d'aquí a poc."
         }
     }
 }
