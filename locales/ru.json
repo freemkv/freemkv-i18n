@@ -366,7 +366,7 @@
         "fatal_header": "{level}: сбой {op}: {cause}",
         "fatal_diagnostic_hint": "Для диагностического журнала перезапустите с --log-level 3 (записывает ./log.txt).",
         "flag_needs_value": "Ошибка: {flag} требует значения (например, {example}).",
-        "presentation_language_unknown": "Неизвестный язык представления «{value}». Укажите код языка по ISO 639, например en, de или fra.",
+        "presentation_language_unknown": "Неизвестный язык презентации «{value}». Укажите код языка по ISO 639, например en, de или fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Ошибка: недопустимый тайтл «{value}» — тайтлы нумеруются с 1 и должны быть числом >= 1.",
         "interrupted_incomplete": "Прервано — вывод неполон и не был финализирован.",

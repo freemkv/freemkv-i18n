@@ -366,7 +366,7 @@
         "fatal_header": "{level}: {op} не вдалося: {cause}",
         "fatal_diagnostic_hint": "Для діагностичного журналу перезапустіть із --log-level 3 (записує ./log.txt).",
         "flag_needs_value": "Помилка: {flag} потребує значення (напр., {example}).",
-        "presentation_language_unknown": "Невідома мова подання «{value}». Використайте код мови ISO 639, наприклад en, de або fra.",
+        "presentation_language_unknown": "Невідома мова презентації «{value}». Використайте код мови ISO 639, наприклад en, de або fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Помилка: недійсний розділ '{value}' — розділи нумеруються від 1, має бути числом >= 1.",
         "interrupted_incomplete": "Перервано — вивід неповний і не був фіналізований.",

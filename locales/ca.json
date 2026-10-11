@@ -366,7 +366,7 @@
         "fatal_header": "{level}: ha fallat {op}: {cause}",
         "fatal_diagnostic_hint": "Per obtenir un registre de diagnòstic, torneu a executar amb --log-level 3 (escriu ./log.txt).",
         "flag_needs_value": "Error: {flag} requereix un valor (p. ex. {example}).",
-        "presentation_language_unknown": "Idioma de presentació desconegut «{value}». Feu servir un codi d'idioma ISO 639, com ara en, de o fra.",
+        "presentation_language_unknown": "Llengua de presentació desconeguda «{value}». Feu servir un codi d'idioma ISO 639, com ara en, de o fra.",
         "generic": "{code} {detail}",
         "invalid_title": "Error: títol no vàlid «{value}» — els títols comencen per 1 i han de ser un nombre >= 1.",
         "interrupted_incomplete": "Interromput — la sortida és incompleta i no s'ha finalitzat.",

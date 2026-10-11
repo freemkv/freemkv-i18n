@@ -366,7 +366,7 @@
         "fatal_header": "{level}: {op} 실패: {cause}",
         "fatal_diagnostic_hint": "진단 로그를 남기려면 --log-level 3으로 다시 실행하세요 (./log.txt에 기록됨).",
         "flag_needs_value": "오류: {flag}에는 값이 필요합니다 (예: {example}).",
-        "presentation_language_unknown": "알 수 없는 표시 언어 \"{value}\"입니다. en, de, fra와 같은 ISO 639 언어 코드를 사용하세요.",
+        "presentation_language_unknown": "알 수 없는 프레젠테이션 언어 \"{value}\"입니다. en, de, fra와 같은 ISO 639 언어 코드를 사용하세요.",
         "generic": "{code} {detail}",
         "invalid_title": "오류: 잘못된 타이틀 '{value}' — 타이틀은 1부터 시작하며 1 이상의 숫자여야 합니다.",
         "interrupted_incomplete": "중단됨 — 출력이 불완전하며 완료 처리되지 않았습니다.",
