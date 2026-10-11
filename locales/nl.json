@@ -161,7 +161,8 @@
         "same_path": "Uitvoerpad is hetzelfde als invoer. Geef een ander uitvoerbestand op.",
         "remuxing": "Remuxen...",
         "done": "klaar",
-        "remuxed": "Geremuxed: {size} GB in {time}s ({speed} MB/s)"
+        "remuxed": "Geremuxed: {size} GB in {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "TMDB was niet bereikbaar om deze disc te plannen; probeer het opnieuw zodra het weer beschikbaar is"
     },
     "keys": {
         "updated": "Bijgewerkt: {entries} vermeldingen, {bytes} bytes",
@@ -435,7 +436,13 @@
             "no_outputs": "het plan heeft geen uitvoer",
             "duplicate_output": "twee uitvoerbestanden zouden dezelfde bestandsnaam gebruiken: {name}",
             "later_disc_start": "Afleveringsnummering van een latere schijf vereist een bevestigde eerste aflevering; schijfnummer en speelduur bepalen die niet.",
-            "episode_range": "De afleveringsnummering valt buiten het ondersteunde bereik."
+            "episode_range": "De afleveringsnummering valt buiten het ondersteunde bereik.",
+            "action": {
+                "roster": "Als het een film is, corrigeer dan de koppeling naar de film; om het als één titel te rippen, schakelt u in Instellingen «TV-seizoenen automatisch rippen» uit.",
+                "first_episode": "Stel de Eerste aflevering in wanneer u de koppeling corrigeert."
+            },
+            "review_held": "De titelselectie moet worden gecontroleerd vóór het muxen: {reason}. Er is geen terugvaltitel geselecteerd.",
+            "review_retained": "De opgeslagen ISO en het plan blijven bewaard."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Hoofdstuk {n}",
             "tracks": "{n} sporen",
             "forced": "Geforceerd",
-            "play_all": "Alles afspelen",
             "episode": "Aflevering"
         },
         "pick": {

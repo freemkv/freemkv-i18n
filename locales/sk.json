@@ -161,7 +161,8 @@
         "same_path": "Výstupná cesta je rovnaká ako vstupná. Zadajte iný výstupný súbor.",
         "remuxing": "Remuxuje sa...",
         "done": "hotovo",
-        "remuxed": "Remuxované: {size} GB za {time}s ({speed} MB/s)"
+        "remuxed": "Remuxované: {size} GB za {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "K TMDB sa nepodarilo pripojiť, aby sa dal naplánovať tento disk; skúste to znova, keď bude opäť dostupná"
     },
     "keys": {
         "updated": "Aktualizované (počet položiek: {entries}, {bytes} B)",
@@ -458,7 +459,13 @@
             "no_outputs": "plán nemá žiadne výstupy",
             "duplicate_output": "dva výstupy by použili rovnaký názov súboru: {name}",
             "later_disc_start": "Číslovanie epizód na neskoršom disku vyžaduje potvrdenú prvú epizódu; číslo disku a dĺžky ju neurčujú.",
-            "episode_range": "Číslovanie epizód je mimo podporovaného rozsahu."
+            "episode_range": "Číslovanie epizód je mimo podporovaného rozsahu.",
+            "action": {
+                "roster": "Ak ide o film, opravte jeho priradenie k filmu; ak ho chcete ripovať ako jeden titul, vypnite v Nastaveniach voľbu „Automaticky ripovať sezóny seriálov“.",
+                "first_episode": "Pri oprave priradenia nastavte Prvú epizódu."
+            },
+            "review_held": "Výber titulu vyžaduje pred muxovaním kontrolu: {reason}. Nebol vybraný žiadny náhradný titul.",
+            "review_retained": "Uložený ISO a plán zostávajú zachované."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Kapitola {n}",
             "tracks": "Stopy: {n}",
             "forced": "Vynútené",
-            "play_all": "Prehrať všetko",
             "episode": "Epizóda"
         },
         "pick": {

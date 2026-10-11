@@ -161,7 +161,8 @@
         "same_path": "Đường dẫn đầu ra trùng với đầu vào. Hãy chỉ định tệp đầu ra khác.",
         "remuxing": "Đang remux...",
         "done": "xong",
-        "remuxed": "Đã remux: {size} GB trong {time}s ({speed} MB/s)"
+        "remuxed": "Đã remux: {size} GB trong {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "Không thể kết nối tới TMDB để lập kế hoạch cho đĩa này; hãy thử lại khi dịch vụ hoạt động trở lại"
     },
     "keys": {
         "updated": "Đã cập nhật: {entries} mục, {bytes} byte",
@@ -458,7 +459,13 @@
             "no_outputs": "kế hoạch không có đầu ra nào",
             "duplicate_output": "hai đầu ra sẽ dùng cùng một tên tệp: {name}",
             "later_disc_start": "Việc đánh số tập của đĩa sau cần một Tập đầu tiên đã được xác nhận; số đĩa và thời lượng không xác định được điều này.",
-            "episode_range": "Việc đánh số tập nằm ngoài phạm vi được hỗ trợ."
+            "episode_range": "Việc đánh số tập nằm ngoài phạm vi được hỗ trợ.",
+            "action": {
+                "roster": "Nếu là phim, hãy sửa kết quả khớp thành phim; để rip thành một tiêu đề, hãy tắt «Tự động rip các mùa phim truyền hình» trong Cài đặt.",
+                "first_episode": "Hãy đặt Tập đầu tiên khi bạn sửa kết quả khớp."
+            },
+            "review_held": "Việc chọn tiêu đề cần được xem xét trước khi muxing: {reason}. Không có tiêu đề dự phòng nào được chọn.",
+            "review_retained": "ISO và kế hoạch đã lưu được giữ lại."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Chương {n}",
             "tracks": "{n} rãnh",
             "forced": "Bắt buộc",
-            "play_all": "Phát tất cả",
             "episode": "Tập"
         },
         "pick": {

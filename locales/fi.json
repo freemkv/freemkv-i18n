@@ -161,7 +161,8 @@
         "same_path": "Tulostepolku on sama kuin syöte. Määritä eri tulostetiedosto.",
         "remuxing": "Muksataan uudelleen...",
         "done": "valmis",
-        "remuxed": "Muksattu uudelleen: {size} Gt ajassa {time} s ({speed} Mt/s)"
+        "remuxed": "Muksattu uudelleen: {size} Gt ajassa {time} s ({speed} Mt/s)",
+        "tmdb_unreachable": "TMDB:hen ei saatu yhteyttä tämän levyn suunnittelemiseksi; yritä uudelleen, kun palvelu on taas käytettävissä"
     },
     "keys": {
         "updated": "Päivitetty: {entries} merkintää, {bytes} tavua",
@@ -458,7 +459,13 @@
             "no_outputs": "suunnitelmassa ei ole tulosteita",
             "duplicate_output": "kaksi tulostetta käyttäisi samaa tiedostonimeä: {name}",
             "later_disc_start": "Myöhemmän levyn jaksonumerointi vaatii vahvistetun ensimmäisen jakson; levyn numero ja kestot eivät sitä määritä.",
-            "episode_range": "Jaksonumerointi on tuetun alueen ulkopuolella."
+            "episode_range": "Jaksonumerointi on tuetun alueen ulkopuolella.",
+            "action": {
+                "roster": "Jos kyseessä on elokuva, korjaa sen vastaavuus elokuvaan; jos haluat rippaa sen yhtenä nimikkeenä, poista Asetuksista käytöstä ”Rippaa TV-kaudet automaattisesti”.",
+                "first_episode": "Aseta Ensimmäinen jakso, kun korjaat vastaavuuden."
+            },
+            "review_held": "Nimikkeen valinta on tarkistettava ennen muxausta: {reason}. Varanimikettä ei valittu.",
+            "review_retained": "Tallennettu ISO ja suunnitelma säilytetään."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Luku {n}",
             "tracks": "{n} raitaa",
             "forced": "Pakotettu",
-            "play_all": "Toista kaikki",
             "episode": "Jakso"
         },
         "pick": {

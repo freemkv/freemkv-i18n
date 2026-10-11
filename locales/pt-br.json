@@ -161,7 +161,8 @@
         "same_path": "O caminho de saída é igual ao de entrada. Especifique um arquivo de saída diferente.",
         "remuxing": "Fazendo remux...",
         "done": "concluído",
-        "remuxed": "Remux concluído: {size} GB em {time}s ({speed} MB/s)"
+        "remuxed": "Remux concluído: {size} GB em {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "Não foi possível acessar o TMDB para planejar este disco; tente novamente quando ele voltar"
     },
     "keys": {
         "updated": "Atualizado: {entries} entradas, {bytes} bytes",
@@ -458,7 +459,13 @@
             "no_outputs": "o plano não tem saídas",
             "duplicate_output": "duas saídas usariam o mesmo nome de arquivo: {name}",
             "later_disc_start": "A numeração de episódios de discos posteriores exige um primeiro episódio confirmado; o número do disco e as durações não o determinam.",
-            "episode_range": "A numeração de episódios está fora do intervalo compatível."
+            "episode_range": "A numeração de episódios está fora do intervalo compatível.",
+            "action": {
+                "roster": "Se for um filme, corrija a correspondência para o filme; para extraí-lo como um único título, desative «Extrair temporadas de TV automaticamente» em Configurações.",
+                "first_episode": "Defina o Primeiro episódio ao corrigir a correspondência."
+            },
+            "review_held": "A seleção de títulos precisa de revisão antes da multiplexação: {reason}. Nenhum título alternativo foi selecionado.",
+            "review_retained": "O ISO e o plano salvos foram mantidos."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Capítulo {n}",
             "tracks": "{n} faixas",
             "forced": "Forçada",
-            "play_all": "Reproduzir tudo",
             "episode": "Episódio"
         },
         "pick": {

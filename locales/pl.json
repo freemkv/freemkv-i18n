@@ -161,7 +161,8 @@
         "same_path": "Ścieżka wyjściowa jest taka sama jak wejściowa. Podaj inny plik wyjściowy.",
         "remuxing": "Multipleksowanie…",
         "done": "gotowe",
-        "remuxed": "Zmultipleksowano: {size} GB w {time} s ({speed} MB/s)"
+        "remuxed": "Zmultipleksowano: {size} GB w {time} s ({speed} MB/s)",
+        "tmdb_unreachable": "Nie udało się połączyć z TMDB, aby zaplanować ten dysk; spróbuj ponownie, gdy usługa będzie znów dostępna"
     },
     "keys": {
         "updated": "Zaktualizowano (liczba wpisów: {entries}, {bytes} B)",
@@ -458,7 +459,13 @@
             "no_outputs": "plan nie ma żadnych wyjść",
             "duplicate_output": "dwa wyjścia użyłyby tej samej nazwy pliku: {name}",
             "later_disc_start": "Numeracja odcinków na kolejnej płycie wymaga potwierdzonego pierwszego odcinka; numer płyty i czasy trwania go nie określają.",
-            "episode_range": "Numeracja odcinków jest poza obsługiwanym zakresem."
+            "episode_range": "Numeracja odcinków jest poza obsługiwanym zakresem.",
+            "action": {
+                "roster": "Jeśli to film, popraw jego dopasowanie do filmu; aby zripować go jako jeden tytuł, wyłącz w Ustawieniach opcję „Automatycznie ripuj sezony seriali”.",
+                "first_episode": "Ustaw Pierwszy odcinek podczas poprawiania dopasowania."
+            },
+            "review_held": "Wybór tytułu wymaga sprawdzenia przed muxowaniem: {reason}. Nie wybrano żadnego tytułu zastępczego.",
+            "review_retained": "Zapisany obraz ISO i plan zostały zachowane."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Rozdział {n}",
             "tracks": "Ścieżki: {n}",
             "forced": "Wymuszone",
-            "play_all": "Odtwórz wszystko",
             "episode": "Odcinek"
         },
         "pick": {

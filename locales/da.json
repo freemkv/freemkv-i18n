@@ -161,7 +161,8 @@
         "same_path": "Outputsti er den samme som input. Angiv en anden outputfil.",
         "remuxing": "Remuxer...",
         "done": "færdig",
-        "remuxed": "Remuxet: {size} GB på {time}s ({speed} MB/s)"
+        "remuxed": "Remuxet: {size} GB på {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "TMDB kunne ikke nås for at planlægge denne disc; prøv igen, når den er tilbage"
     },
     "keys": {
         "updated": "Opdateret: {entries} poster, {bytes} byte",
@@ -458,7 +459,13 @@
             "no_outputs": "planen har ingen outputs",
             "duplicate_output": "to outputs ville bruge det samme filnavn: {name}",
             "later_disc_start": "Afsnitsnummerering på en senere disk kræver et bekræftet første afsnit; disknummer og spilletider fastlægger det ikke.",
-            "episode_range": "Afsnitsnummereringen er uden for det understøttede interval."
+            "episode_range": "Afsnitsnummereringen er uden for det understøttede interval.",
+            "action": {
+                "roster": "Hvis det er en film, så ret dens match til filmen; for at rippe den som én titel skal du slå «Rip tv-sæsoner automatisk» fra i Indstillinger.",
+                "first_episode": "Angiv Første afsnit, når du retter dens match."
+            },
+            "review_held": "Titelvalget skal gennemgås før muxing: {reason}. Der blev ikke valgt nogen reservetitel.",
+            "review_retained": "Den gemte ISO og planen bevares."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Kapitel {n}",
             "tracks": "{n} spor",
             "forced": "Tvungen",
-            "play_all": "Afspil alle",
             "episode": "Afsnit"
         },
         "pick": {

@@ -161,7 +161,8 @@
         "same_path": "输出路径与输入相同。请指定不同的输出文件。",
         "remuxing": "正在重新复用……",
         "done": "完成",
-        "remuxed": "已重新复用：{size} GB，耗时 {time} 秒（{speed} MB/s）"
+        "remuxed": "已重新复用：{size} GB，耗时 {time} 秒（{speed} MB/s）",
+        "tmdb_unreachable": "无法连接到 TMDB 来规划此光盘；请在其恢复后重试"
     },
     "keys": {
         "updated": "已更新：{entries} 条目，{bytes} 字节",
@@ -458,7 +459,13 @@
             "no_outputs": "计划没有输出",
             "duplicate_output": "两个输出将使用相同的文件名：{name}",
             "later_disc_start": "后续光盘的剧集编号需要已确认的第一集；光盘编号和时长无法确定。",
-            "episode_range": "剧集编号超出支持范围。"
+            "episode_range": "剧集编号超出支持范围。",
+            "action": {
+                "roster": "如果这是电影，请将其匹配更正为该电影；若要将其作为单个标题抓取，请在“设置”中关闭“自动抓取电视剧季”。",
+                "first_episode": "更正匹配时请设置“第一集”。"
+            },
+            "review_held": "混流前需要审核标题选择：{reason}。未选择备用标题。",
+            "review_retained": "已保存的 ISO 和计划将被保留。"
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "第 {n} 章",
             "tracks": "{n} 条轨道",
             "forced": "强制",
-            "play_all": "全部播放",
             "episode": "剧集"
         },
         "pick": {

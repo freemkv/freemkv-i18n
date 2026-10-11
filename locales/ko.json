@@ -161,7 +161,8 @@
         "same_path": "출력 경로가 입력과 같습니다. 다른 출력 파일을 지정하세요.",
         "remuxing": "리먹싱 중...",
         "done": "완료",
-        "remuxed": "리먹싱됨: {time}초 동안 {size} GB ({speed} MB/s)"
+        "remuxed": "리먹싱됨: {time}초 동안 {size} GB ({speed} MB/s)",
+        "tmdb_unreachable": "이 디스크를 계획하기 위해 TMDB에 연결할 수 없습니다. 다시 연결되면 재시도하세요"
     },
     "keys": {
         "updated": "업데이트됨: 항목 {entries}개, {bytes} 바이트",
@@ -458,7 +459,13 @@
             "no_outputs": "계획에 출력이 없습니다",
             "duplicate_output": "두 출력이 같은 파일 이름을 사용하게 됩니다: {name}",
             "later_disc_start": "이후 디스크의 에피소드 번호 매기기에는 확정된 첫 에피소드가 필요하며, 디스크 번호와 재생 시간으로는 정할 수 없습니다.",
-            "episode_range": "에피소드 번호가 지원되는 범위를 벗어났습니다."
+            "episode_range": "에피소드 번호가 지원되는 범위를 벗어났습니다.",
+            "action": {
+                "roster": "영화라면 일치 항목을 영화로 수정하세요. 하나의 타이틀로 립하려면 설정에서 \"TV 시즌 자동 립\"을 끄세요.",
+                "first_episode": "일치 항목을 수정할 때 첫 번째 에피소드를 설정하세요."
+            },
+            "review_held": "먹싱하기 전에 타이틀 선택을 검토해야 합니다: {reason}. 대체 타이틀은 선택되지 않았습니다.",
+            "review_retained": "저장된 ISO와 계획은 유지됩니다."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "챕터 {n}",
             "tracks": "트랙 {n}개",
             "forced": "강제",
-            "play_all": "모두 재생",
             "episode": "에피소드"
         },
         "pick": {

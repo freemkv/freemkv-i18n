@@ -161,7 +161,8 @@
         "same_path": "Le chemin de sortie est identique a l'entree. Specifiez un fichier de sortie different.",
         "remuxing": "Remuxage...",
         "done": "termine",
-        "remuxed": "Remuxe : {size} Go en {time}s ({speed} Mo/s)"
+        "remuxed": "Remuxe : {size} Go en {time}s ({speed} Mo/s)",
+        "tmdb_unreachable": "TMDB est injoignable pour planifier ce disque ; réessayez une fois qu'il sera de nouveau disponible"
     },
     "keys": {
         "updated": "Mis a jour : {entries} entrees, {bytes} octets",
@@ -435,7 +436,13 @@
             "no_outputs": "le plan n'a aucune sortie",
             "duplicate_output": "deux sorties utiliseraient le même nom de fichier : {name}",
             "later_disc_start": "La numérotation des épisodes d'un disque ultérieur nécessite un premier épisode confirmé ; le numéro du disque et les durées ne le déterminent pas.",
-            "episode_range": "La numérotation des épisodes est hors de la plage prise en charge."
+            "episode_range": "La numérotation des épisodes est hors de la plage prise en charge.",
+            "action": {
+                "roster": "S'il s'agit d'un film, corrigez sa correspondance avec le film ; pour l'extraire comme un seul titre, désactivez « Extraire automatiquement les saisons TV » dans les Réglages.",
+                "first_episode": "Définissez le Premier épisode lorsque vous corrigez sa correspondance."
+            },
+            "review_held": "La sélection du titre doit être vérifiée avant le muxage : {reason}. Aucun titre de repli n'a été sélectionné.",
+            "review_retained": "L'ISO et le plan enregistrés sont conservés."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Chapitre {n}",
             "tracks": "{n} pistes",
             "forced": "Forcé",
-            "play_all": "Tout lire",
             "episode": "Épisode"
         },
         "pick": {

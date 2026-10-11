@@ -161,7 +161,8 @@
         "same_path": "Çıktı yolu girdiyle aynı. Farklı bir çıktı dosyası belirtin.",
         "remuxing": "Yeniden muxlanıyor...",
         "done": "tamam",
-        "remuxed": "Yeniden muxlandı: {time}sn içinde {size} GB ({speed} MB/sn)"
+        "remuxed": "Yeniden muxlandı: {time}sn içinde {size} GB ({speed} MB/sn)",
+        "tmdb_unreachable": "Bu diski planlamak için TMDB'ye ulaşılamadı; tekrar erişilebilir olduğunda yeniden deneyin"
     },
     "keys": {
         "updated": "Güncellendi: {entries} girdi, {bytes} bayt",
@@ -458,7 +459,13 @@
             "no_outputs": "planda çıktı yok",
             "duplicate_output": "iki çıktı aynı dosya adını kullanacak: {name}",
             "later_disc_start": "Sonraki disklerde bölüm numaralandırması, onaylanmış bir İlk bölüm gerektirir; disk numarası ve süreler bunu belirlemez.",
-            "episode_range": "Bölüm numaralandırması desteklenen aralığın dışında."
+            "episode_range": "Bölüm numaralandırması desteklenen aralığın dışında.",
+            "action": {
+                "roster": "Bir film ise eşleşmesini filme göre düzeltin; tek bir başlık olarak rip etmek için Ayarlar'da «TV sezonlarını otomatik rip et» seçeneğini kapatın.",
+                "first_episode": "Eşleşmeyi düzeltirken İlk bölümü ayarlayın."
+            },
+            "review_held": "Başlık seçimi muxlamadan önce incelenmelidir: {reason}. Yedek başlık seçilmedi.",
+            "review_retained": "Kaydedilen ISO ve plan korunuyor."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Bölüm {n}",
             "tracks": "{n} parça",
             "forced": "Zorlanmış",
-            "play_all": "Tümünü oynat",
             "episode": "Bölüm"
         },
         "pick": {

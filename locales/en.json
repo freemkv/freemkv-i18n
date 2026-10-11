@@ -161,7 +161,8 @@
         "same_path": "Output path same as input. Specify a different output file.",
         "remuxing": "Remuxing...",
         "done": "done",
-        "remuxed": "Remuxed: {size} GB in {time}s ({speed} MB/s)"
+        "remuxed": "Remuxed: {size} GB in {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "TMDB could not be reached to plan this disc; retry once it is back"
     },
     "keys": {
         "updated": "Updated: {entries} entries, {bytes} bytes",
@@ -458,7 +459,13 @@
             "no_outputs": "the plan has no outputs",
             "duplicate_output": "two outputs would use the same file name: {name}",
             "later_disc_start": "Later-disc episode numbering needs a confirmed First episode; disc number and runtimes do not establish it.",
-            "episode_range": "Episode numbering is outside the supported range."
+            "episode_range": "Episode numbering is outside the supported range.",
+            "action": {
+                "roster": "If it is a film, correct its match to the movie; to rip it as one title, turn off \"Rip TV seasons automatically\" in Settings.",
+                "first_episode": "Set the First episode when you correct its match."
+            },
+            "review_held": "Title selection needs review before muxing: {reason}. No fallback title was selected.",
+            "review_retained": "The saved ISO and plan are retained."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Chapter {n}",
             "tracks": "{n} tracks",
             "forced": "Forced",
-            "play_all": "Play all",
             "episode": "Episode"
         },
         "pick": {

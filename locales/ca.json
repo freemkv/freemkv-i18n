@@ -161,7 +161,8 @@
         "same_path": "El camí de sortida és igual que el d'entrada. Especifiqueu un fitxer de sortida diferent.",
         "remuxing": "S'està remultiplexant...",
         "done": "fet",
-        "remuxed": "Remultiplexat: {size} GB en {time}s ({speed} MB/s)"
+        "remuxed": "Remultiplexat: {size} GB en {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "No s'ha pogut contactar amb TMDB per planificar aquest disc; torneu-ho a provar quan torni a estar disponible"
     },
     "keys": {
         "updated": "Actualitzat: {entries} entrades, {bytes} bytes",
@@ -458,7 +459,13 @@
             "no_outputs": "el pla no té cap sortida",
             "duplicate_output": "dues sortides farien servir el mateix nom de fitxer: {name}",
             "later_disc_start": "La numeració d'episodis d'un disc posterior necessita un primer episodi confirmat; el número de disc i les durades no el determinen.",
-            "episode_range": "La numeració d'episodis és fora de l'interval admès."
+            "episode_range": "La numeració d'episodis és fora de l'interval admès.",
+            "action": {
+                "roster": "Si és una pel·lícula, corregiu-ne la coincidència amb la pel·lícula; per extreure-la com un sol títol, desactiveu «Extreu automàticament les temporades de sèries» a la Configuració.",
+                "first_episode": "Definiu el Primer episodi quan en corregiu la coincidència."
+            },
+            "review_held": "La selecció de títols necessita revisió abans del muxing: {reason}. No s'ha seleccionat cap títol alternatiu.",
+            "review_retained": "L'ISO i el pla desats es conserven."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Capítol {n}",
             "tracks": "{n} pistes",
             "forced": "Forçat",
-            "play_all": "Reproduir-ho tot",
             "episode": "Episodi"
         },
         "pick": {

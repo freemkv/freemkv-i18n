@@ -161,7 +161,8 @@
         "same_path": "Utdatasökväg samma som indata. Ange en annan utdatafil.",
         "remuxing": "Muxar om...",
         "done": "klar",
-        "remuxed": "Ommuxad: {size} GB på {time}s ({speed} MB/s)"
+        "remuxed": "Ommuxad: {size} GB på {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "TMDB kunde inte nås för att planera den här skivan; försök igen när den är tillbaka"
     },
     "keys": {
         "updated": "Uppdaterad: {entries} poster, {bytes} byte",
@@ -458,7 +459,13 @@
             "no_outputs": "planen har inga utdata",
             "duplicate_output": "två utdata skulle använda samma filnamn: {name}",
             "later_disc_start": "Avsnittsnumrering på en senare skiva kräver ett bekräftat första avsnitt; skivnummer och speltider fastställer det inte.",
-            "episode_range": "Avsnittsnumreringen ligger utanför det som stöds."
+            "episode_range": "Avsnittsnumreringen ligger utanför det som stöds.",
+            "action": {
+                "roster": "Om det är en film, rätta matchningen till filmen; för att rippa den som en enda titel, stäng av «Rippa TV-säsonger automatiskt» i Inställningar.",
+                "first_episode": "Ange Första avsnittet när du rättar matchningen."
+            },
+            "review_held": "Titelvalet behöver granskas före muxning: {reason}. Ingen reservtitel valdes.",
+            "review_retained": "Den sparade ISO-filen och planen behålls."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Kapitel {n}",
             "tracks": "{n} spår",
             "forced": "Tvingad",
-            "play_all": "Spela alla",
             "episode": "Avsnitt"
         },
         "pick": {

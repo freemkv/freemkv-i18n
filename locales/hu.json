@@ -161,7 +161,8 @@
         "same_path": "A kimeneti út megegyezik a bemenettel. Adj meg másik kimeneti fájlt.",
         "remuxing": "Újramuxolás…",
         "done": "kész",
-        "remuxed": "Újramuxolva: {size} GB {time} mp alatt ({speed} MB/s)"
+        "remuxed": "Újramuxolva: {size} GB {time} mp alatt ({speed} MB/s)",
+        "tmdb_unreachable": "A TMDB nem érhető el a lemez megtervezéséhez; próbálja újra, amint ismét elérhető"
     },
     "keys": {
         "updated": "Frissítve: {entries} bejegyzés, {bytes} bájt",
@@ -458,7 +459,13 @@
             "no_outputs": "a tervben nincs kimenet",
             "duplicate_output": "két kimenet ugyanazt a fájlnevet használná: {name}",
             "later_disc_start": "A későbbi lemezek epizódszámozásához megerősített első epizód kell; a lemez száma és a hossz nem határozza meg.",
-            "episode_range": "Az epizódszámozás a támogatott tartományon kívül esik."
+            "episode_range": "Az epizódszámozás a támogatott tartományon kívül esik.",
+            "action": {
+                "roster": "Ha film, javítsa az egyezését a filmre; ha egyetlen címként szeretné rippelni, kapcsolja ki a Beállításokban a „TV-évadok automatikus rippelése” beállítást.",
+                "first_episode": "Az egyezés javításakor adja meg az Első epizódot."
+            },
+            "review_held": "A cím kiválasztását a muxolás előtt felül kell vizsgálni: {reason}. Nem lett kiválasztva tartalék cím.",
+            "review_retained": "A mentett ISO és a terv megmarad."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "{n}. fejezet",
             "tracks": "{n} sáv",
             "forced": "Kényszerített",
-            "play_all": "Összes lejátszása",
             "episode": "Epizód"
         },
         "pick": {

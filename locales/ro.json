@@ -161,7 +161,8 @@
         "same_path": "Calea de ieșire este identică cu cea de intrare. Specifică un fișier de ieșire diferit.",
         "remuxing": "Se remultiplexează...",
         "done": "gata",
-        "remuxed": "Remultiplexat: {size} GB în {time}s ({speed} MB/s)"
+        "remuxed": "Remultiplexat: {size} GB în {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "TMDB nu a putut fi contactat pentru a planifica acest disc; reîncercați când va fi din nou disponibil"
     },
     "keys": {
         "updated": "Actualizat: {entries} intrări, {bytes} octeți",
@@ -458,7 +459,13 @@
             "no_outputs": "planul nu are ieșiri",
             "duplicate_output": "două ieșiri ar folosi același nume de fișier: {name}",
             "later_disc_start": "Numerotarea episoadelor de pe un disc ulterior necesită un prim episod confirmat; numărul discului și duratele nu îl stabilesc.",
-            "episode_range": "Numerotarea episoadelor este în afara intervalului acceptat."
+            "episode_range": "Numerotarea episoadelor este în afara intervalului acceptat.",
+            "action": {
+                "roster": "Dacă este un film, corectați potrivirea la film; pentru a-l extrage ca un singur titlu, dezactivați «Extrage automat sezoanele TV» în Setări.",
+                "first_episode": "Setați Primul episod când corectați potrivirea."
+            },
+            "review_held": "Selecția titlului necesită verificare înainte de muxare: {reason}. Nu a fost selectat niciun titlu de rezervă.",
+            "review_retained": "ISO-ul și planul salvate sunt păstrate."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Capitolul {n}",
             "tracks": "{n} piste",
             "forced": "Forțat",
-            "play_all": "Redă tot",
             "episode": "Episod"
         },
         "pick": {

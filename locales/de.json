@@ -161,7 +161,8 @@
         "same_path": "Ausgabepfad identisch mit Eingabe. Geben Sie eine andere Ausgabedatei an.",
         "remuxing": "Remuxen...",
         "done": "fertig",
-        "remuxed": "Remux abgeschlossen: {size} GB in {time}s ({speed} MB/s)"
+        "remuxed": "Remux abgeschlossen: {size} GB in {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "TMDB war nicht erreichbar, um diese Disc zu planen; versuchen Sie es erneut, sobald der Dienst wieder verfügbar ist"
     },
     "keys": {
         "updated": "Aktualisiert: {entries} Einträge, {bytes} Bytes",
@@ -435,7 +436,13 @@
             "no_outputs": "der Plan enthält keine Ausgaben",
             "duplicate_output": "zwei Ausgaben würden denselben Dateinamen verwenden: {name}",
             "later_disc_start": "Die Episodennummerierung späterer Discs benötigt eine bestätigte erste Episode; Disc-Nummer und Laufzeiten legen sie nicht fest.",
-            "episode_range": "Die Episodennummerierung liegt außerhalb des unterstützten Bereichs."
+            "episode_range": "Die Episodennummerierung liegt außerhalb des unterstützten Bereichs.",
+            "action": {
+                "roster": "Handelt es sich um einen Film, korrigieren Sie die Zuordnung zum Film; um ihn als einen Titel zu rippen, deaktivieren Sie in den Einstellungen „TV-Staffeln automatisch rippen“.",
+                "first_episode": "Legen Sie beim Korrigieren der Zuordnung die erste Episode fest."
+            },
+            "review_held": "Die Titelauswahl muss vor dem Muxen geprüft werden: {reason}. Es wurde kein Ersatztitel ausgewählt.",
+            "review_retained": "Die gespeicherte ISO und der Plan bleiben erhalten."
         }
     },
     "usage": {
@@ -711,7 +718,7 @@
             "ready": "freemkv {version} — bereit",
             "source_closed": "Quelle geschlossen",
             "keydb_dir_failed": "Das keydb-Verzeichnis {path} kann nicht erstellt werden: {error} (das Verzeichnis muss für freemkv beschreibbar sein)",
-            "keydb_replace_failed": "{message} — {dest}: keydb.cfg kann nicht ersetzt werden; prüfe die Schreibrechte des Verzeichnisses und den Sandbox-Zugriff",
+            "keydb_replace_failed": "{message} — {dest}: keydb.cfg kann nicht ersetzt werden; prüfen Sie die Schreibrechte des Verzeichnisses und den Sandbox-Zugriff",
             "cancelling": "Wird abgebrochen …",
             "nothing_eject": "Nichts auszuwerfen — die Quelle ist eine Datei, kein Laufwerk.",
             "checking_updates": "Suche nach Updates …",
@@ -869,7 +876,6 @@
             "chapter_n": "Kapitel {n}",
             "tracks": "{n} Spuren",
             "forced": "Erzwungen",
-            "play_all": "Alle abspielen",
             "episode": "Folge"
         },
         "pick": {

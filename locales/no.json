@@ -161,7 +161,8 @@
         "same_path": "Utdatabane lik inndata. Angi en annen utdatafil.",
         "remuxing": "Remuxer …",
         "done": "ferdig",
-        "remuxed": "Remuxet: {size} GB på {time}s ({speed} MB/s)"
+        "remuxed": "Remuxet: {size} GB på {time}s ({speed} MB/s)",
+        "tmdb_unreachable": "TMDB kunne ikke nås for å planlegge denne platen; prøv igjen når den er tilbake"
     },
     "keys": {
         "updated": "Oppdatert: {entries} oppføringer, {bytes} byte",
@@ -458,7 +459,13 @@
             "no_outputs": "planen har ingen utdata",
             "duplicate_output": "to utdata ville brukt samme filnavn: {name}",
             "later_disc_start": "Episodenummerering på en senere plate krever en bekreftet første episode; platenummer og spilletider fastslår den ikke.",
-            "episode_range": "Episodenummereringen er utenfor det støttede området."
+            "episode_range": "Episodenummereringen er utenfor det støttede området.",
+            "action": {
+                "roster": "Hvis det er en film, må du rette treffet til filmen; for å rippe den som én tittel, slå av «Rip TV-sesonger automatisk» i Innstillinger.",
+                "first_episode": "Angi Første episode når du retter treffet."
+            },
+            "review_held": "Tittelvalget må gjennomgås før muxing: {reason}. Ingen reservetittel ble valgt.",
+            "review_retained": "Den lagrede ISO-en og planen beholdes."
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "Kapittel {n}",
             "tracks": "{n} spor",
             "forced": "Tvunget",
-            "play_all": "Spill av alle",
             "episode": "Episode"
         },
         "pick": {

@@ -161,7 +161,8 @@
         "same_path": "輸出路徑與輸入相同。請指定不同的輸出檔案。",
         "remuxing": "重新多工中…",
         "done": "完成",
-        "remuxed": "已重新多工：{size} GB，耗時 {time} 秒（{speed} MB/s）"
+        "remuxed": "已重新多工：{size} GB，耗時 {time} 秒（{speed} MB/s）",
+        "tmdb_unreachable": "無法連線到 TMDB 以規劃此光碟；請在其恢復後重試"
     },
     "keys": {
         "updated": "已更新：{entries} 筆項目，{bytes} 位元組",
@@ -458,7 +459,13 @@
             "no_outputs": "計畫沒有輸出",
             "duplicate_output": "兩個輸出將使用相同的檔案名稱：{name}",
             "later_disc_start": "後續光碟的劇集編號需要已確認的第一集；光碟編號和時長無法確定。",
-            "episode_range": "劇集編號超出支援範圍。"
+            "episode_range": "劇集編號超出支援範圍。",
+            "action": {
+                "roster": "如果這是電影，請將其比對更正為該電影；若要將其作為單一標題擷取，請在「設定」中關閉「自動擷取電視影集季」。",
+                "first_episode": "更正比對時請設定「第一集」。"
+            },
+            "review_held": "混流前需要審核標題選擇：{reason}。未選擇備用標題。",
+            "review_retained": "已儲存的 ISO 與計畫將被保留。"
         }
     },
     "usage": {
@@ -869,7 +876,6 @@
             "chapter_n": "第 {n} 章",
             "tracks": "{n} 條軌道",
             "forced": "強制",
-            "play_all": "全部播放",
             "episode": "劇集"
         },
         "pick": {
