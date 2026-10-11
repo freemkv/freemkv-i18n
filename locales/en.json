@@ -947,6 +947,7 @@
             "size_mismatch_hint": "Check the destination filesystem for ENOSPC / short writes. The mover removes only its temp file and tries again after 30 s, then 2 min; after that it waits for Retry (if a dst file remains, remove it).",
             "post_copy_invalid_hint": "The copy is the correct size but failed a format/readability check (truncated header/tail, bad TS sync, or unreadable dst); see device_system.log for the specific check. The mover removes only its temp file and tries again after 30 s, then 2 min; after that it waits for Retry (if a dst file remains, remove it).",
             "folder_create_failed_hint": "Check that the destination share is mounted and writable: a share that dropped or was remounted since its check refuses this too. It is tried again after 30 s, then 2 min; after that it waits for Retry. Nothing was moved.",
+            "folder_recreate_failed_hint": "Check that the destination share is mounted and writable: a share that dropped or was remounted since its check refuses this too. It waits for Retry to make the folder again. Nothing was moved.",
             "reservations_unreadable": "cannot read the names other rips' deliveries reserved: {error}",
             "reservations_unreadable_hint": "Nothing was moved or named yet. It is tried again on the next pass; if this persists, repair the staging storage or the other rip's delivery journal."
         },

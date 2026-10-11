@@ -947,6 +947,7 @@
             "size_mismatch_hint": "Skontrolujte, či sa v cieľovom súborovom systéme nevyskytuje ENOSPC / skrátené zápisy. Mover odstráni len svoj dočasný súbor a skúsi to znova po 30 s, potom po 2 min; potom čaká na „Retry“ (ak zostane súbor dst, odstráňte ho).",
             "post_copy_invalid_hint": "Kópia má správnu veľkosť, ale neprešla kontrolou formátu alebo čitateľnosti (orezaná hlavička alebo koniec, chybná synchronizácia TS alebo nečitateľný dst); konkrétnu kontrolu nájdete v device_system.log. Mover odstráni len svoj dočasný súbor a skúsi to znova po 30 s, potom po 2 min; potom čaká na „Retry“ (ak zostane súbor dst, odstráňte ho).",
             "folder_create_failed_hint": "Skontrolujte, či je cieľové zdieľané úložisko pripojené a zapisovateľné: odmietne to aj úložisko, ktoré od svojej kontroly vypadlo alebo bolo znova pripojené. Skúsi sa to znova po 30 s, potom po 2 min; potom čaká na „Retry“. Nič sa nepresunulo.",
+            "folder_recreate_failed_hint": "Skontrolujte, či je cieľové zdieľané úložisko pripojené a zapisovateľné: odmietne to aj úložisko, ktoré od svojej kontroly vypadlo alebo bolo znova pripojené. Čaká na „Retry“, aby priečinok vytvorilo znova. Nič sa nepresunulo.",
             "reservations_unreadable": "nedajú sa prečítať názvy rezervované doručeniami iných ripov: {error}",
             "reservations_unreadable_hint": "Zatiaľ sa nič nepresunulo ani nepomenovalo. Pri ďalšom prechode sa to skúsi znova; ak problém pretrváva, opravte prípravné úložisko alebo žurnál doručenia druhého ripu."
         },

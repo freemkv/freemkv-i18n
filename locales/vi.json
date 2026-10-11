@@ -947,6 +947,7 @@
             "size_mismatch_hint": "Kiểm tra hệ thống tệp đích về ENOSPC / ghi thiếu. Mover chỉ xóa tệp tạm của nó và thử lại sau 30 s, rồi sau 2 min; sau đó chờ «Retry» (nếu còn lại tệp dst, hãy xóa nó).",
             "post_copy_invalid_hint": "Bản sao có kích thước đúng nhưng không qua được bước kiểm tra định dạng/khả năng đọc (header hoặc phần cuối bị cắt, đồng bộ TS sai, hoặc dst không đọc được); xem device_system.log để biết bước kiểm tra cụ thể. Mover chỉ xóa tệp tạm của nó và thử lại sau 30 s, rồi sau 2 min; sau đó chờ «Retry» (nếu còn lại tệp dst, hãy xóa nó).",
             "folder_create_failed_hint": "Kiểm tra xem chia sẻ đích đã được gắn kết và có thể ghi hay chưa: chia sẻ bị ngắt hoặc được gắn kết lại kể từ lần kiểm tra cũng sẽ từ chối việc này. Sẽ được thử lại sau 30 s, rồi sau 2 min; sau đó nó chờ «Retry». Chưa có gì được di chuyển.",
+            "folder_recreate_failed_hint": "Kiểm tra xem chia sẻ đích đã được gắn kết và có thể ghi hay chưa: chia sẻ bị ngắt hoặc được gắn kết lại kể từ lần kiểm tra cũng sẽ từ chối việc này. Nó chờ «Retry» để tạo lại thư mục. Chưa có gì được di chuyển.",
             "reservations_unreadable": "không thể đọc các tên mà các lần chuyển giao của những bản rip khác đã đặt trước: {error}",
             "reservations_unreadable_hint": "Chưa có gì được di chuyển hoặc đặt tên. Sẽ được thử lại ở lượt tiếp theo; nếu vẫn tiếp diễn, hãy sửa bộ nhớ tạm hoặc nhật ký chuyển giao của bản rip kia."
         },

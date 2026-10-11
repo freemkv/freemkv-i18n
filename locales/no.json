@@ -947,6 +947,7 @@
             "size_mismatch_hint": "Kontroller filsystemet på målet for ENOSPC / ufullstendige skrivinger. Mover fjerner bare sin midlertidige fil og prøver igjen etter 30 s og deretter etter 2 min; etter det venter den på «Retry» (hvis en dst-fil blir liggende, fjern den).",
             "post_copy_invalid_hint": "Kopien har riktig størrelse, men besto ikke en format- eller lesbarhetskontroll (avkortet header/slutt, feil TS-synk eller uleselig dst); se device_system.log for den konkrete kontrollen. Mover fjerner bare sin midlertidige fil og prøver igjen etter 30 s og deretter etter 2 min; etter det venter den på «Retry» (hvis en dst-fil blir liggende, fjern den).",
             "folder_create_failed_hint": "Kontroller at målets deling er montert og skrivbar: en deling som har falt ut eller blitt montert på nytt siden kontrollen, avviser også dette. Det prøves igjen etter 30 s og deretter etter 2 min; etter det venter det på «Retry». Ingenting ble flyttet.",
+            "folder_recreate_failed_hint": "Kontroller at målets deling er montert og skrivbar: en deling som har falt ut eller blitt montert på nytt siden kontrollen, avviser også dette. Det venter på «Retry» for å opprette mappen på nytt. Ingenting ble flyttet.",
             "reservations_unreadable": "kan ikke lese navnene som andre rips leveranser har reservert: {error}",
             "reservations_unreadable_hint": "Ingenting er flyttet eller navngitt ennå. Det prøves igjen i neste runde; hvis det vedvarer, reparer mellomlageret eller leveringsjournalen til den andre ripen."
         },

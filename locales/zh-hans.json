@@ -947,6 +947,7 @@
             "size_mismatch_hint": "请检查目标文件系统是否出现 ENOSPC / 写入不完整。mover 只会删除自己的临时文件，并在 30 s 后重试，然后在 2 min 后再试；之后等待“Retry”（如果仍残留 dst 文件，请将其删除）。",
             "post_copy_invalid_hint": "副本大小正确，但未通过格式/可读性检查（头部或尾部被截断、TS 同步错误或 dst 无法读取）；具体检查请查看 device_system.log。mover 只会删除自己的临时文件，并在 30 s 后重试，然后在 2 min 后再试；之后等待“Retry”（如果仍残留 dst 文件，请将其删除）。",
             "folder_create_failed_hint": "请检查目标共享是否已挂载且可写：自检查以来断开或重新挂载的共享同样会拒绝此操作。会在 30 s 后重试，然后在 2 min 后再试；之后等待“Retry”。未移动任何内容。",
+            "folder_recreate_failed_hint": "请检查目标共享是否已挂载且可写：自检查以来断开或重新挂载的共享同样会拒绝此操作。会等待“Retry”后再重新创建该文件夹。未移动任何内容。",
             "reservations_unreadable": "无法读取其他 rip 的交付所预留的名称：{error}",
             "reservations_unreadable_hint": "尚未移动或命名任何内容。下一轮会再次尝试；如果问题持续，请修复暂存存储或另一个 rip 的交付日志。"
         },

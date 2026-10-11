@@ -947,6 +947,7 @@
             "size_mismatch_hint": "Periksa filesystem tujuan untuk ENOSPC / penulisan pendek. Mover hanya menghapus file sementaranya dan mencoba lagi setelah 30 s, lalu 2 min; setelah itu menunggu «Retry» (jika file dst tersisa, hapus).",
             "post_copy_invalid_hint": "Salinan berukuran benar tetapi gagal pemeriksaan format/keterbacaan (header/ekor terpotong, sinkronisasi TS salah, atau dst tidak terbaca); lihat device_system.log untuk pemeriksaan spesifiknya. Mover hanya menghapus file sementaranya dan mencoba lagi setelah 30 s, lalu 2 min; setelah itu menunggu «Retry» (jika file dst tersisa, hapus).",
             "folder_create_failed_hint": "Pastikan share tujuan di-mount dan dapat ditulis: share yang terputus atau di-mount ulang sejak pemeriksaannya juga akan menolak ini. Akan dicoba lagi setelah 30 s, lalu 2 min; setelah itu menunggu «Retry». Tidak ada yang dipindahkan.",
+            "folder_recreate_failed_hint": "Pastikan share tujuan di-mount dan dapat ditulis: share yang terputus atau di-mount ulang sejak pemeriksaannya juga akan menolak ini. Menunggu «Retry» untuk membuat folder lagi. Tidak ada yang dipindahkan.",
             "reservations_unreadable": "tidak dapat membaca nama yang dicadangkan oleh pengiriman rip lain: {error}",
             "reservations_unreadable_hint": "Belum ada yang dipindahkan atau diberi nama. Akan dicoba lagi pada lintasan berikutnya; jika berlanjut, perbaiki penyimpanan staging atau jurnal pengiriman rip lainnya."
         },
