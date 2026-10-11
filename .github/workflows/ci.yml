@@ -181,6 +181,14 @@ jobs:
           ref: ${{ steps.fmref.outputs.ref }}
           path: .freemkv-src
           sparse-checkout: src
+      # The selection-review reason keys come from the engine's selection.rs.
+      - name: Fetch freemkv-engine src/
+        uses: actions/checkout@v7
+        with:
+          repository: freemkv/freemkv-engine
+          ref: dev
+          path: .freemkv-engine-src
+          sparse-checkout: src
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: ${{ needs.resolve-msrv.outputs.v }}
@@ -190,6 +198,7 @@ jobs:
       - run: cargo test --test freemkv_keys
         env:
           FREEMKV_SRC: .freemkv-src/src
+          FREEMKV_ENGINE_SRC: .freemkv-engine-src/src
 
   # build.rs walks `locales/` and emits Rust source. Path handling in a build
   # script is exactly the kind of thing that works on Linux and fails on

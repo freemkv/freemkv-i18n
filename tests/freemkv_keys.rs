@@ -883,18 +883,6 @@ fn unresolvable_sites_are_reported_and_tables_are_read() {
     );
 }
 
-/// Quoted string literals that start a `"..." =>` match arm in `body`.
-fn match_arm_keys(body: &str) -> Vec<String> {
-    body.lines()
-        .filter_map(|l| {
-            let l = l.trim();
-            let rest = l.strip_prefix('"')?;
-            let (key, tail) = rest.split_once('"')?;
-            tail.trim_start().starts_with("=>").then(|| key.to_string())
-        })
-        .collect()
-}
-
 /// The quoted string literal on the right of each `Self::Variant => "..."` arm in `body`.
 fn match_arm_values(body: &str) -> Vec<String> {
     body.lines()
@@ -919,9 +907,8 @@ fn fn_body<'a>(src: &'a str, name: &str) -> &'a str {
     &rest[..end]
 }
 
-/// Every selection-review reason the engine can emit (`SelectionReviewReason::key()`) plus
-/// freemkv's own `no-titles` must have an `error.selection_review_reason.<snake>` entry in
-/// en.json, so a new reason cannot ship untranslated. The key is the kebab key with `-` -> `_`,
+/// Every selection-review reason the engine can emit (`SelectionReviewReason::key()`) must have
+/// an `error.selection_review_reason.<snake>` entry in en.json, so a new reason cannot ship untranslated. The key is the kebab key with `-` -> `_`,
 /// exactly as `review_reason_text` builds it.
 #[test]
 fn every_selection_review_reason_has_an_english_key() {
@@ -935,12 +922,6 @@ fn every_selection_review_reason_has_an_english_key() {
         !reasons.is_empty(),
         "found no SelectionReviewReason::key() arms"
     );
-    if let Some(src) = std::env::var_os("FREEMKV_SRC") {
-        let strings = std::fs::read_to_string(Path::new(&src).join("strings.rs")).unwrap();
-        reasons.extend(match_arm_keys(fn_body(&strings, "review_reason_text")));
-    } else {
-        reasons.push("no-titles".into());
-    }
     reasons.sort();
     reasons.dedup();
     let en_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("locales/en.json");
