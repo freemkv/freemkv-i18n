@@ -959,6 +959,7 @@
             "library_folder_unreadable": "le dossier de la bibliothèque {path} est illisible ({error}) ; rien n'a été écrit",
             "links_not_saved": "{path} est en place, mais library-links.json dans le dossier de configuration n'a pas pu être mis à jour ({error}). Corrigez ce fichier ou les autorisations de son dossier, puis choisissez «Retry».",
             "links_unreadable": "{file} dans le dossier de configuration n'a pas pu être lu ({error}) ; on ignore donc quels fichiers cette ISO a créés et rien n'a été écrit. Corrigez ce fichier ou les autorisations de son dossier, puis choisissez «Retry».",
+            "links_unreadable_nothing_queued": "{path} ne peut pas être lu ({error}) ; rien n'a été mis en file d'attente. Corrigez ce fichier ou les autorisations de son dossier, puis réessayez.",
             "iso_unresponsive": "Le dossier ISO source {path} ne répond pas : le partage réseau est peut-être hors service ou bloqué.",
             "kept_copy_to": "Finalisation du remux de {iso} conservé dans {kept} : copie vers {target}",
             "kept_copy": "Finalisation du remux de {iso} conservé dans {kept}",

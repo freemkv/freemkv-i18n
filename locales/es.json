@@ -959,6 +959,7 @@
             "library_folder_unreadable": "la carpeta de la biblioteca {path} no se puede leer ({error}); no se ha escrito nada",
             "links_not_saved": "{path} está en su sitio, pero no se pudo actualizar library-links.json en la carpeta de configuración ({error}). Corrija ese archivo o los permisos de su carpeta y luego elija «Retry».",
             "links_unreadable": "No se pudo leer {file} en la carpeta de configuración ({error}), así que se desconoce qué archivos creó esta ISO; no se ha escrito nada. Corrija ese archivo o los permisos de su carpeta y luego elija «Retry».",
+            "links_unreadable_nothing_queued": "No se puede leer {path} ({error}); no se ha puesto nada en la cola. Corrige ese archivo o los permisos de su carpeta y vuelve a intentarlo.",
             "iso_unresponsive": "La carpeta ISO de origen {path} no responde: el recurso compartido de red puede estar caído o bloqueado.",
             "kept_copy_to": "Finalizando el remux de {iso} conservado en {kept}: copiándolo a {target}",
             "kept_copy": "Finalizando el remux de {iso} conservado en {kept}",

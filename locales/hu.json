@@ -959,6 +959,7 @@
             "library_folder_unreadable": "a(z) {path} könyvtármappa nem olvasható ({error}); semmi sem íródott",
             "links_not_saved": "{path} a helyén van, de a konfigurációs mappában lévő library-links.json nem frissíthető ({error}). Javítsa ki a fájlt vagy a mappája jogosultságait, majd válassza a következőt: „Retry”.",
             "links_unreadable": "A konfigurációs mappában lévő {file} nem olvasható ({error}), ezért nem ismert, hogy ez az ISO mely fájlokat hozta létre; semmi sem íródott. Javítsa ki a fájlt vagy a mappája jogosultságait, majd válassza a következőt: „Retry”.",
+            "links_unreadable_nothing_queued": "A(z) {path} nem olvasható ({error}); semmi sem került sorba. Javítsa ezt a fájlt vagy a mappája jogosultságait, majd próbálja újra.",
             "iso_unresponsive": "A forrás ISO-mappa ({path}) nem válaszol – a hálózati megosztás lehet, hogy leállt vagy lefagyott.",
             "kept_copy_to": "A(z) {iso} remuxának befejezése, a megőrzött hely: {kept}; másolás ide: {target}",
             "kept_copy": "A(z) {iso} remuxának befejezése, a megőrzött hely: {kept}",

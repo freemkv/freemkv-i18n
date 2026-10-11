@@ -959,6 +959,7 @@
             "library_folder_unreadable": "kitaplık klasörü {path} okunamıyor ({error}); hiçbir şey yazılmadı",
             "links_not_saved": "{path} yerinde, ancak yapılandırma klasöründeki library-links.json güncellenemedi ({error}). Bu dosyayı veya klasörünün izinlerini düzeltin, ardından «Retry» seçin.",
             "links_unreadable": "Yapılandırma klasöründeki {file} okunamadı ({error}), bu yüzden bu ISO'nun hangi dosyaları oluşturduğu bilinmiyor; hiçbir şey yazılmadı. Bu dosyayı veya klasörünün izinlerini düzeltin, ardından «Retry» seçin.",
+            "links_unreadable_nothing_queued": "{path} okunamıyor ({error}); kuyruğa hiçbir şey eklenmedi. Bu dosyayı veya klasörünün izinlerini düzeltin, ardından tekrar deneyin.",
             "iso_unresponsive": "Kaynak ISO klasörü {path} yanıt vermiyor – ağ paylaşımı kapalı olabilir veya takılmış olabilir.",
             "kept_copy_to": "{kept} konumunda tutulan {iso} dosyasının remux işlemi tamamlanıyor: {target} konumuna kopyalanıyor",
             "kept_copy": "{kept} konumunda tutulan {iso} dosyasının remux işlemi tamamlanıyor",

@@ -959,6 +959,7 @@
             "library_folder_unreadable": "kirjastokansiota {path} ei voi lukea ({error}); mitään ei kirjoitettu",
             "links_not_saved": "{path} on paikallaan, mutta library-links.json-tiedostoa ei voitu päivittää asetuskansiossa ({error}). Korjaa tiedosto tai sen kansion käyttöoikeudet ja valitse sitten ”Retry”.",
             "links_unreadable": "Tiedostoa {file} asetuskansiossa ei voitu lukea ({error}), joten ei tiedetä, mitkä tiedostot tämä ISO teki; mitään ei kirjoitettu. Korjaa tiedosto tai sen kansion käyttöoikeudet ja valitse sitten ”Retry”.",
+            "links_unreadable_nothing_queued": "Tiedostoa {path} ei voi lukea ({error}); mitään ei lisätty jonoon. Korjaa tämä tiedosto tai sen kansion käyttöoikeudet ja yritä uudelleen.",
             "iso_unresponsive": "Lähde-ISO-kansio {path} ei vastaa – verkkojako voi olla poissa käytöstä tai jumissa.",
             "kept_copy_to": "Viimeistellään tiedoston {iso} remux, joka on säilytetty kohteessa {kept}: kopioidaan kohteeseen {target}",
             "kept_copy": "Viimeistellään tiedoston {iso} remux, joka on säilytetty kohteessa {kept}",

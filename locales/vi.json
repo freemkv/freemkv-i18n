@@ -959,6 +959,7 @@
             "library_folder_unreadable": "thư mục thư viện {path} không đọc được ({error}); không có gì được ghi",
             "links_not_saved": "{path} đã nằm đúng chỗ, nhưng không thể cập nhật library-links.json trong thư mục cấu hình ({error}). Hãy sửa tệp đó hoặc quyền của thư mục chứa nó, rồi chọn «Retry».",
             "links_unreadable": "Không thể đọc {file} trong thư mục cấu hình ({error}), nên không biết ISO này đã tạo những tệp nào; không có gì được ghi. Hãy sửa tệp đó hoặc quyền của thư mục chứa nó, rồi chọn «Retry».",
+            "links_unreadable_nothing_queued": "Không thể đọc {path} ({error}); chưa có gì được đưa vào hàng đợi. Hãy sửa tệp đó hoặc quyền của thư mục chứa nó, rồi thử lại.",
             "iso_unresponsive": "Thư mục ISO nguồn {path} không phản hồi – chia sẻ mạng có thể đã ngừng hoạt động hoặc bị treo.",
             "kept_copy_to": "Đang hoàn tất remux của {iso} được giữ tại {kept}: đang sao chép sang {target}",
             "kept_copy": "Đang hoàn tất remux của {iso} được giữ tại {kept}",

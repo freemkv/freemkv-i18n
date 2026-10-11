@@ -959,6 +959,7 @@
             "library_folder_unreadable": "složku knihovny {path} nelze přečíst ({error}); nic nebylo zapsáno",
             "links_not_saved": "{path} je na místě, ale soubor library-links.json ve složce s konfigurací se nepodařilo aktualizovat ({error}). Opravte tento soubor nebo oprávnění jeho složky a potom zvolte „Retry“.",
             "links_unreadable": "Soubor {file} ve složce s konfigurací se nepodařilo přečíst ({error}), takže není známo, které soubory toto ISO vytvořilo; nic nebylo zapsáno. Opravte tento soubor nebo oprávnění jeho složky a potom zvolte „Retry“.",
+            "links_unreadable_nothing_queued": "Soubor {path} nelze přečíst ({error}); nic nebylo zařazeno do fronty. Opravte tento soubor nebo oprávnění jeho složky a zkuste to znovu.",
             "iso_unresponsive": "Zdrojová složka ISO {path} neodpovídá – sdílené síťové úložiště může být nedostupné nebo zaseknuté.",
             "kept_copy_to": "Dokončuje se remux souboru {iso} uloženého v {kept}: kopíruje se do {target}",
             "kept_copy": "Dokončuje se remux souboru {iso} uloženého v {kept}",

@@ -959,6 +959,7 @@
             "library_folder_unreadable": "媒體庫資料夾 {path} 無法讀取（{error}）；未寫入任何內容",
             "links_not_saved": "{path} 已就位，但無法更新設定資料夾中的 library-links.json（{error}）。請修正該檔案或其資料夾的權限，然後選擇「Retry」。",
             "links_unreadable": "無法讀取設定資料夾中的 {file}（{error}），因此不知道此 ISO 產生了哪些檔案；未寫入任何內容。請修正該檔案或其資料夾的權限，然後選擇「Retry」。",
+            "links_unreadable_nothing_queued": "無法讀取 {path}（{error}）；沒有任何項目加入佇列。請修復該檔案或其資料夾的權限，然後重試。",
             "iso_unresponsive": "來源 ISO 資料夾 {path} 沒有回應——網路共用可能已離線或當機。",
             "kept_copy_to": "正在完成保留在 {kept} 的 {iso} 的 remux：正在將其複製到 {target}",
             "kept_copy": "正在完成保留在 {kept} 的 {iso} 的 remux",

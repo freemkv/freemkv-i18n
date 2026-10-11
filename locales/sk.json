@@ -959,6 +959,7 @@
             "library_folder_unreadable": "priečinok knižnice {path} sa nedá prečítať ({error}); nič sa nezapísalo",
             "links_not_saved": "{path} je na mieste, ale súbor library-links.json v priečinku s konfiguráciou sa nepodarilo aktualizovať ({error}). Opravte tento súbor alebo oprávnenia jeho priečinka a potom zvoľte „Retry“.",
             "links_unreadable": "Súbor {file} v priečinku s konfiguráciou sa nepodarilo prečítať ({error}), takže nie je známe, ktoré súbory toto ISO vytvorilo; nič sa nezapísalo. Opravte tento súbor alebo oprávnenia jeho priečinka a potom zvoľte „Retry“.",
+            "links_unreadable_nothing_queued": "Súbor {path} sa nedá prečítať ({error}); nič nebolo zaradené do frontu. Opravte tento súbor alebo oprávnenia jeho priečinka a skúste to znova.",
             "iso_unresponsive": "Zdrojový priečinok ISO {path} neodpovedá – sieťové zdieľané úložisko môže byť nedostupné alebo zaseknuté.",
             "kept_copy_to": "Dokončuje sa remux súboru {iso} uloženého v {kept}: kopíruje sa do {target}",
             "kept_copy": "Dokončuje sa remux súboru {iso} uloženého v {kept}",

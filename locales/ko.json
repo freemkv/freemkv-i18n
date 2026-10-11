@@ -959,6 +959,7 @@
             "library_folder_unreadable": "라이브러리 폴더 {path}을(를) 읽을 수 없습니다({error}). 아무것도 쓰지 않았습니다",
             "links_not_saved": "{path}은(는) 제자리에 있지만 설정 폴더의 library-links.json을 업데이트할 수 없습니다({error}). 해당 파일이나 폴더 권한을 고친 다음 \"Retry\"을(를) 선택하세요.",
             "links_unreadable": "설정 폴더의 {file}을(를) 읽을 수 없어({error}) 이 ISO가 만든 파일을 알 수 없으므로 아무것도 쓰지 않았습니다. 해당 파일이나 폴더 권한을 고친 다음 \"Retry\"을(를) 선택하세요.",
+            "links_unreadable_nothing_queued": "{path}을(를) 읽을 수 없습니다({error}). 대기열에 아무것도 추가되지 않았습니다. 해당 파일 또는 폴더의 권한을 수정한 다음 다시 시도하세요.",
             "iso_unresponsive": "원본 ISO 폴더 {path}이(가) 응답하지 않습니다. 네트워크 공유가 중단되었거나 멈췄을 수 있습니다.",
             "kept_copy_to": "{kept}에 보관된 {iso}의 remux를 마무리하는 중: {target}(으)로 복사 중",
             "kept_copy": "{kept}에 보관된 {iso}의 remux를 마무리하는 중",

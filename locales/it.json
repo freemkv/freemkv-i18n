@@ -959,6 +959,7 @@
             "library_folder_unreadable": "la cartella della libreria {path} non può essere letta ({error}); non è stato scritto nulla",
             "links_not_saved": "{path} è al suo posto, ma non è stato possibile aggiornare library-links.json nella cartella di configurazione ({error}). Correggi quel file o i permessi della sua cartella, poi scegli «Retry».",
             "links_unreadable": "Non è stato possibile leggere {file} nella cartella di configurazione ({error}), quindi non si sa quali file abbia creato questa ISO; non è stato scritto nulla. Correggi quel file o i permessi della sua cartella, poi scegli «Retry».",
+            "links_unreadable_nothing_queued": "Impossibile leggere {path} ({error}); nulla è stato messo in coda. Correggi quel file o i permessi della sua cartella, poi riprova.",
             "iso_unresponsive": "La cartella ISO di origine {path} non risponde: la condivisione di rete potrebbe essere inattiva o bloccata.",
             "kept_copy_to": "Completamento del remux di {iso} conservato in {kept}: copia in {target}",
             "kept_copy": "Completamento del remux di {iso} conservato in {kept}",

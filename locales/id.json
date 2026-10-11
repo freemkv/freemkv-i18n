@@ -959,6 +959,7 @@
             "library_folder_unreadable": "folder pustaka {path} tidak dapat dibaca ({error}); tidak ada yang ditulis",
             "links_not_saved": "{path} sudah ada di tempatnya, tetapi library-links.json di folder konfigurasi tidak dapat diperbarui ({error}). Perbaiki berkas itu atau izin foldernya, lalu pilih «Retry».",
             "links_unreadable": "{file} di folder konfigurasi tidak dapat dibaca ({error}), sehingga tidak diketahui berkas mana yang dibuat ISO ini; tidak ada yang ditulis. Perbaiki berkas itu atau izin foldernya, lalu pilih «Retry».",
+            "links_unreadable_nothing_queued": "{path} tidak dapat dibaca ({error}); tidak ada yang dimasukkan ke antrean. Perbaiki berkas tersebut atau izin foldernya, lalu coba lagi.",
             "iso_unresponsive": "Folder ISO sumber {path} tidak merespons – share jaringan mungkin mati atau hang.",
             "kept_copy_to": "Menyelesaikan remux {iso} yang disimpan di {kept}: menyalinnya ke {target}",
             "kept_copy": "Menyelesaikan remux {iso} yang disimpan di {kept}",

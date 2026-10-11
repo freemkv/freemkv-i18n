@@ -959,6 +959,7 @@
             "library_folder_unreadable": "biblioteksmappen {path} kan ikke læses ({error}); der blev ikke skrevet noget",
             "links_not_saved": "{path} er på plads, men library-links.json i konfigurationsmappen kunne ikke opdateres ({error}). Ret filen eller mappens tilladelser, og vælg derefter «Retry».",
             "links_unreadable": "{file} i konfigurationsmappen kunne ikke læses ({error}), så det er ukendt, hvilke filer denne ISO har lavet; der blev ikke skrevet noget. Ret filen eller mappens tilladelser, og vælg derefter «Retry».",
+            "links_unreadable_nothing_queued": "{path} kan ikke læses ({error}); intet blev sat i kø. Ret filen eller mappens tilladelser, og prøv igen.",
             "iso_unresponsive": "Kilde-ISO-mappen {path} svarer ikke – netværksdrevet kan være nede eller hængt.",
             "kept_copy_to": "Færdiggør remux af {iso}, som er gemt i {kept}: kopierer den til {target}",
             "kept_copy": "Færdiggør remux af {iso}, som er gemt i {kept}",

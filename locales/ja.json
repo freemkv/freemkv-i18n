@@ -959,6 +959,7 @@
             "library_folder_unreadable": "ライブラリフォルダー {path} を読み取れません ({error})。何も書き込んでいません",
             "links_not_saved": "{path} は配置されましたが、設定フォルダーの library-links.json を更新できませんでした（{error}）。そのファイルかフォルダーのアクセス権を修正してから、「Retry」を選んでください。",
             "links_unreadable": "設定フォルダーの {file} を読み取れませんでした（{error}）。このISOが作成したファイルが分からないため、何も書き込んでいません。そのファイルかフォルダーのアクセス権を修正してから、「Retry」を選んでください。",
+            "links_unreadable_nothing_queued": "{path} を読み取れませんでした（{error}）。キューには何も追加されていません。そのファイルかフォルダーのアクセス権を修正してから、もう一度お試しください。",
             "iso_unresponsive": "ソース ISO フォルダー {path} が応答していません。ネットワーク共有が停止または応答不能になっている可能性があります。",
             "kept_copy_to": "{kept} に保持されている {iso} の remux を完了しています: {target} にコピー中",
             "kept_copy": "{kept} に保持されている {iso} の remux を完了しています",

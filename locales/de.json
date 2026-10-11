@@ -959,6 +959,7 @@
             "library_folder_unreadable": "der Bibliotheksordner {path} kann nicht gelesen werden ({error}); es wurde nichts geschrieben",
             "links_not_saved": "{path} ist vorhanden, aber library-links.json im Konfigurationsordner konnte nicht aktualisiert werden ({error}). Beheben Sie das Problem mit dieser Datei oder den Berechtigungen ihres Ordners und wählen Sie dann „Retry“.",
             "links_unreadable": "{file} im Konfigurationsordner konnte nicht gelesen werden ({error}), daher ist unbekannt, welche Dateien diese ISO erzeugt hat; es wurde nichts geschrieben. Beheben Sie das Problem mit dieser Datei oder den Berechtigungen ihres Ordners und wählen Sie dann „Retry“.",
+            "links_unreadable_nothing_queued": "{path} kann nicht gelesen werden ({error}); es wurde nichts in die Warteschlange gestellt. Beheben Sie das Problem mit dieser Datei oder den Berechtigungen ihres Ordners und versuchen Sie es dann erneut.",
             "iso_unresponsive": "Der Quell-ISO-Ordner {path} antwortet nicht – die Netzwerkfreigabe ist möglicherweise ausgefallen oder hängt.",
             "kept_copy_to": "Der Remux von {iso}, abgelegt in {kept}, wird abgeschlossen: Kopie nach {target}",
             "kept_copy": "Der Remux von {iso}, abgelegt in {kept}, wird abgeschlossen",

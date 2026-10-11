@@ -959,6 +959,7 @@
             "library_folder_unreadable": "de bibliotheekmap {path} kan niet worden gelezen ({error}); er is niets geschreven",
             "links_not_saved": "{path} staat op zijn plek, maar library-links.json in de configuratiemap kon niet worden bijgewerkt ({error}). Herstel dat bestand of de rechten van de map en kies daarna «Retry».",
             "links_unreadable": "{file} in de configuratiemap kon niet worden gelezen ({error}), dus het is onbekend welke bestanden deze ISO heeft gemaakt; er is niets geschreven. Herstel dat bestand of de rechten van de map en kies daarna «Retry».",
+            "links_unreadable_nothing_queued": "{path} kan niet worden gelezen ({error}); er is niets in de wachtrij geplaatst. Herstel dat bestand of de rechten van de map en probeer het opnieuw.",
             "iso_unresponsive": "De bron-ISO-map {path} reageert niet – de netwerkshare is mogelijk uitgevallen of vastgelopen.",
             "kept_copy_to": "Remux van {iso} afronden, bewaard in {kept}: wordt gekopieerd naar {target}",
             "kept_copy": "Remux van {iso} afronden, bewaard in {kept}",

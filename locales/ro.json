@@ -959,6 +959,7 @@
             "library_folder_unreadable": "folderul bibliotecii {path} nu poate fi citit ({error}); nu s-a scris nimic",
             "links_not_saved": "{path} este la locul lui, dar library-links.json din folderul de configurare nu a putut fi actualizat ({error}). Reparați acel fișier sau permisiunile folderului său, apoi alegeți «Retry».",
             "links_unreadable": "{file} din folderul de configurare nu a putut fi citit ({error}), așa că nu se știe ce fișiere a creat acest ISO; nu s-a scris nimic. Reparați acel fișier sau permisiunile folderului său, apoi alegeți «Retry».",
+            "links_unreadable_nothing_queued": "{path} nu poate fi citit ({error}); nimic nu a fost pus în coadă. Remediați acel fișier sau permisiunile folderului său, apoi încercați din nou.",
             "iso_unresponsive": "Folderul ISO sursă {path} nu răspunde – partajarea de rețea poate fi oprită sau blocată.",
             "kept_copy_to": "Se finalizează remux-ul pentru {iso}, păstrat în {kept}: se copiază în {target}",
             "kept_copy": "Se finalizează remux-ul pentru {iso}, păstrat în {kept}",

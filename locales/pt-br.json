@@ -959,6 +959,7 @@
             "library_folder_unreadable": "a pasta da biblioteca {path} não pode ser lida ({error}); nada foi gravado",
             "links_not_saved": "{path} está no lugar, mas não foi possível atualizar library-links.json na pasta de configuração ({error}). Corrija esse arquivo ou as permissões da pasta dele e depois escolha «Retry».",
             "links_unreadable": "Não foi possível ler {file} na pasta de configuração ({error}), então não se sabe quais arquivos esta ISO gerou; nada foi gravado. Corrija esse arquivo ou as permissões da pasta dele e depois escolha «Retry».",
+            "links_unreadable_nothing_queued": "Não foi possível ler {path} ({error}); nada foi colocado na fila. Corrija esse arquivo ou as permissões da pasta dele e tente novamente.",
             "iso_unresponsive": "A pasta ISO de origem {path} não está respondendo – o compartilhamento de rede pode estar fora do ar ou travado.",
             "kept_copy_to": "Concluindo o remux de {iso} mantido em {kept}: copiando para {target}",
             "kept_copy": "Concluindo o remux de {iso} mantido em {kept}",

@@ -959,6 +959,7 @@
             "library_folder_unreadable": "nie można odczytać folderu biblioteki {path} ({error}); nic nie zostało zapisane",
             "links_not_saved": "{path} jest na miejscu, ale nie udało się zaktualizować pliku library-links.json w folderze konfiguracji ({error}). Napraw ten plik lub uprawnienia jego folderu, a następnie wybierz „Retry”.",
             "links_unreadable": "Pliku {file} w folderze konfiguracji nie udało się odczytać ({error}), więc nie wiadomo, które pliki utworzył ten ISO; nic nie zostało zapisane. Napraw ten plik lub uprawnienia jego folderu, a następnie wybierz „Retry“.",
+            "links_unreadable_nothing_queued": "Nie można odczytać pliku {path} ({error}); nic nie zostało dodane do kolejki. Napraw ten plik lub uprawnienia jego folderu i spróbuj ponownie.",
             "iso_unresponsive": "Folder źródłowy ISO {path} nie odpowiada – udział sieciowy może nie działać lub się zawiesić.",
             "kept_copy_to": "Kończenie remuksu {iso} zachowanego w {kept}: kopiowanie do {target}",
             "kept_copy": "Kończenie remuksu {iso} zachowanego w {kept}",

@@ -959,6 +959,7 @@
             "library_folder_unreadable": "la carpeta de la biblioteca {path} no es pot llegir ({error}); no s'ha escrit res",
             "links_not_saved": "{path} és al seu lloc, però no s'ha pogut actualitzar library-links.json a la carpeta de configuració ({error}). Corregiu aquest fitxer o els permisos de la seva carpeta i després trieu «Retry».",
             "links_unreadable": "{file} a la carpeta de configuració no s'ha pogut llegir ({error}), així que no se sap quins fitxers ha creat aquesta ISO; no s'ha escrit res. Corregiu aquest fitxer o els permisos de la seva carpeta i després trieu «Retry».",
+            "links_unreadable_nothing_queued": "No es pot llegir {path} ({error}); no s'ha posat res a la cua. Corregiu aquest fitxer o els permisos de la seva carpeta i torneu-ho a provar.",
             "iso_unresponsive": "La carpeta ISO d'origen {path} no respon: el recurs compartit de xarxa pot estar fora de servei o bloquejat.",
             "kept_copy_to": "S'està acabant el remux de {iso} conservat a {kept}: es copia a {target}",
             "kept_copy": "S'està acabant el remux de {iso} conservat a {kept}",

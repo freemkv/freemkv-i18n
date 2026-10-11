@@ -981,6 +981,7 @@
             "changed_during": "{path} changed while this remux ran; it was not touched",
             "links_not_saved": "{path} is in place, but library-links.json in the config folder could not be updated ({error}). Fix that file or its folder's permissions, then Retry.",
             "links_unreadable": "{file} in the config folder could not be read ({error}), so which files this ISO made is unknown; nothing was written. Fix that file or its folder's permissions, then Retry.",
+            "links_unreadable_nothing_queued": "{path} cannot be read ({error}); nothing was queued. Fix that file or its folder's permissions, then try again.",
             "iso_unresponsive": "The source ISO folder {path} is not responding — the network share may be down or hung.",
             "kept_copy_to": "Finishing the remux of {iso} kept at {kept}: copying it to {target}",
             "kept_copy": "Finishing the remux of {iso} kept at {kept}",
