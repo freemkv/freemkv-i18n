@@ -76,7 +76,9 @@
         "capture_skipped": "Pominięto plik płyty {file}",
         "capture_summary": "Przechwycono strukturę płyty — plików: {files}, bajtów: {bytes}.",
         "capture_unsafe_name": "niebezpieczna nazwa pliku",
-        "capture_aacs_unread": "Nie zebrano diagnostyki AACS — płyta jest zaszyfrowana, ale została przeskanowana bez kluczy."
+        "capture_aacs_unread": "Nie zebrano diagnostyki AACS — płyta jest zaszyfrowana, ale została przeskanowana bez kluczy.",
+        "unlocker": "Odblokowanie: {name}",
+        "unlocker_none": "brak"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Wybierz tytuł (numeracja od 1, można powtarzać). Domyślnie: główny tytuł (tytuł 1); użyj -t all dla wszystkich tytułów.",
             "audio": "  -a, --audio LANGS   Zachowaj tylko te języki dźwięku (nazwy lub kody ISO, oddzielone przecinkami, bez rozróżniania wielkości liter) albo all/none. Domyślnie: zachowaj wszystkie.",
-            "presentation_language": "      --presentation-language de  Preferuj wersję filmu w tym języku (zachowuje tytuł 0, gdy brak takiej wersji)",
+            "presentation_language": "      --presentation-language de  Preferuj wersję filmu w tym języku (zachowuje główny tytuł, gdy brak takiej wersji)",
             "subtitles": "  -s, --subtitles LANGS  Zachowaj tylko te języki napisów (nazwy lub kody ISO, oddzielone przecinkami, bez rozróżniania wielkości liter) albo all/none. Domyślnie: zachowaj wszystkie.",
             "keydb": "      --keydb PATH    Ścieżka KEYDB.cfg (lokalne źródło kluczy)",
             "key_url_1": "      --key-url URL   Bazowy adres URL usługi kluczy online (tylko https).",

@@ -76,7 +76,9 @@
         "capture_skipped": "디스크 파일 {file} 건너뜀",
         "capture_summary": "디스크 구조 수집됨: 파일 {files}개 ({bytes} 바이트).",
         "capture_unsafe_name": "안전하지 않은 파일 이름",
-        "capture_aacs_unread": "AACS 진단 정보를 수집하지 못했습니다 — 디스크가 암호화되어 있지만 키 없이 스캔되었습니다."
+        "capture_aacs_unread": "AACS 진단 정보를 수집하지 못했습니다 — 디스크가 암호화되어 있지만 키 없이 스캔되었습니다.",
+        "unlocker": "잠금 해제기: {name}",
+        "unlocker_none": "없음"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       타이틀 선택 (1부터 시작, 반복 가능). 기본값: 메인 타이틀(타이틀 1). 모든 타이틀은 -t all을 사용하세요.",
             "audio": "  -a, --audio LANGS   이 오디오 언어만 유지 (이름 또는 ISO 코드, 쉼표 구분, 대소문자 무시), 또는 all/none. 기본값: 모두 유지.",
-            "presentation_language": "      --presentation-language de  이 언어의 영화 버전을 우선 선택 (없으면 타이틀 0 유지)",
+            "presentation_language": "      --presentation-language de  이 언어의 영화 버전을 우선 선택 (없으면 메인 타이틀 유지)",
             "subtitles": "  -s, --subtitles LANGS  이 자막 언어만 유지 (이름 또는 ISO 코드, 쉼표 구분, 대소문자 무시), 또는 all/none. 기본값: 모두 유지.",
             "keydb": "      --keydb PATH    KEYDB.cfg 경로 (로컬 키 소스)",
             "key_url_1": "      --key-url URL   온라인 키 서비스 기본 URL (https 전용).",

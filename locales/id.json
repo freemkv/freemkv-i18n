@@ -76,7 +76,9 @@
         "capture_skipped": "Berkas disc {file} dilewati",
         "capture_summary": "Struktur disc ditangkap: {files} berkas ({bytes} byte).",
         "capture_unsafe_name": "nama berkas tidak aman",
-        "capture_aacs_unread": "Diagnostik AACS tidak ditangkap — disc terenkripsi tetapi dipindai tanpa kunci."
+        "capture_aacs_unread": "Diagnostik AACS tidak ditangkap — disc terenkripsi tetapi dipindai tanpa kunci.",
+        "unlocker": "Pembuka kunci: {name}",
+        "unlocker_none": "tidak ada"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Pilih judul (berbasis 1, dapat diulang). Default: judul utama (judul 1); gunakan -t all untuk setiap judul.",
             "audio": "  -a, --audio LANGS   Simpan hanya bahasa audio ini (nama atau kode ISO, dipisah koma, tidak peka huruf besar-kecil), atau all/none. Default: simpan semua.",
-            "presentation_language": "      --presentation-language de  Utamakan versi film dalam bahasa ini (tetap memakai judul 0 jika tidak ada)",
+            "presentation_language": "      --presentation-language de  Utamakan versi film dalam bahasa ini (tetap memakai judul utama jika tidak ada)",
             "subtitles": "  -s, --subtitles LANGS  Simpan hanya bahasa subtitle ini (nama atau kode ISO, dipisah koma, tidak peka huruf besar-kecil), atau all/none. Default: simpan semua.",
             "keydb": "      --keydb PATH    Path KEYDB.cfg (sumber kunci lokal)",
             "key_url_1": "      --key-url URL   URL dasar layanan kunci online (hanya https).",

@@ -76,7 +76,9 @@
         "capture_skipped": "Sprang diskfilen {file} over",
         "capture_summary": "Diskstruktur registreret: {files} filer ({bytes} byte).",
         "capture_unsafe_name": "usikkert filnavn",
-        "capture_aacs_unread": "AACS-diagnostik ikke registreret — disken er krypteret, men blev scannet uden nøgler."
+        "capture_aacs_unread": "AACS-diagnostik ikke registreret — disken er krypteret, men blev scannet uden nøgler.",
+        "unlocker": "Oplåser: {name}",
+        "unlocker_none": "ingen"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Vælg titel (1-baseret, kan gentages). Standard: hovedtitlen (titel 1); brug -t all for hver titel.",
             "audio": "  -a, --audio LANGS   Behold kun disse lydsprog (navne eller ISO-koder, kommasepareret, versalufølsomt), eller all/none. Standard: behold alle.",
-            "presentation_language": "      --presentation-language de  Foretræk filmens version på dette sprog (beholder titel 0, hvis der ikke er nogen)",
+            "presentation_language": "      --presentation-language de  Foretræk filmens version på dette sprog (beholder hovedtitlen, hvis der ikke er nogen)",
             "subtitles": "  -s, --subtitles LANGS  Behold kun disse undertekstsprog (navne eller ISO-koder, kommasepareret, versalufølsomt), eller all/none. Standard: behold alle.",
             "keydb": "      --keydb PATH    KEYDB.cfg-sti (lokal nøglekilde)",
             "key_url_1": "      --key-url URL   Basis-URL for online nøgletjeneste (kun https).",

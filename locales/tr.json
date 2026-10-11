@@ -76,7 +76,9 @@
         "capture_skipped": "Disk dosyası atlandı: {file}",
         "capture_summary": "Disk yapısı yakalandı: {files} dosya ({bytes} bayt).",
         "capture_unsafe_name": "güvenli olmayan dosya adı",
-        "capture_aacs_unread": "AACS tanılama bilgileri yakalanmadı — disk şifreli ancak anahtarsız tarandı."
+        "capture_aacs_unread": "AACS tanılama bilgileri yakalanmadı — disk şifreli ancak anahtarsız tarandı.",
+        "unlocker": "Kilit açıcı: {name}",
+        "unlocker_none": "yok"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Başlık seç (1 tabanlı, tekrarlanabilir). Varsayılan: ana başlık (başlık 1); her başlık için -t all kullanın.",
             "audio": "  -a, --audio LANGS   Yalnızca bu ses dillerini tut (adlar veya ISO kodları, virgülle ayrılmış, büyük/küçük harf duyarsız) ya da all/none. Varsayılan: tümünü tut.",
-            "presentation_language": "      --presentation-language de  Filmin bu dildeki sürümünü tercih et (yoksa 0. başlığı korur)",
+            "presentation_language": "      --presentation-language de  Filmin bu dildeki sürümünü tercih et (yoksa ana başlığı korur)",
             "subtitles": "  -s, --subtitles LANGS  Yalnızca bu altyazı dillerini tut (adlar veya ISO kodları, virgülle ayrılmış, büyük/küçük harf duyarsız) ya da all/none. Varsayılan: tümünü tut.",
             "keydb": "      --keydb PATH    KEYDB.cfg yolu (yerel anahtar kaynağı)",
             "key_url_1": "      --key-url URL   Çevrimiçi anahtar hizmeti temel URL'si (yalnızca https).",

@@ -76,7 +76,9 @@
         "capture_skipped": "Disc-Datei {file} übersprungen",
         "capture_summary": "Disc-Struktur erfasst: {files} Dateien ({bytes} Bytes).",
         "capture_unsafe_name": "unsicherer Dateiname",
-        "capture_aacs_unread": "AACS-Diagnose nicht erfasst — die Disc ist verschlüsselt, wurde aber ohne Schlüssel gescannt."
+        "capture_aacs_unread": "AACS-Diagnose nicht erfasst — die Disc ist verschlüsselt, wurde aber ohne Schlüssel gescannt.",
+        "unlocker": "Entsperrer: {name}",
+        "unlocker_none": "keiner"
     },
     "stream": {
         "purpose": {
@@ -497,7 +499,7 @@
         "flag": {
             "title": "  -t, --title N       Titel auswählen (1-basiert, wiederholbar). Standard: der Hauptfilm (Titel 1); -t all für alle Titel.",
             "audio": "  -a, --audio SPR     Nur diese Audiosprachen behalten (Namen oder ISO-Codes, kommagetrennt, Groß-/Kleinschreibung egal), oder all/none. Standard: alle behalten.",
-            "presentation_language": "      --presentation-language de  Die Fassung des Films in dieser Sprache bevorzugen (behält Titel 0, wenn es keine gibt)",
+            "presentation_language": "      --presentation-language de  Die Fassung des Films in dieser Sprache bevorzugen (behält den Hauptfilm, wenn es keine gibt)",
             "subtitles": "  -s, --subtitles SPR    Nur diese Untertitelsprachen behalten (Namen oder ISO-Codes, kommagetrennt, Groß-/Kleinschreibung egal), oder all/none. Standard: alle behalten.",
             "keydb": "      --keydb PFAD    KEYDB.cfg-Pfad (lokale Schlüsselquelle)",
             "key_url_1": "      --key-url URL   Basis-URL des Online-Schlüsseldienstes (nur https).",

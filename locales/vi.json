@@ -76,7 +76,9 @@
         "capture_skipped": "Đã bỏ qua tệp đĩa {file}",
         "capture_summary": "Đã ghi lại cấu trúc đĩa: {files} tệp ({bytes} byte).",
         "capture_unsafe_name": "tên tệp không an toàn",
-        "capture_aacs_unread": "Chưa ghi lại chẩn đoán AACS — đĩa đã được mã hóa nhưng được quét mà không có khóa."
+        "capture_aacs_unread": "Chưa ghi lại chẩn đoán AACS — đĩa đã được mã hóa nhưng được quét mà không có khóa.",
+        "unlocker": "Trình mở khóa: {name}",
+        "unlocker_none": "không có"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Chọn tiêu đề (đánh số từ 1, lặp lại được). Mặc định: tiêu đề chính (tiêu đề 1); dùng -t all cho mọi tiêu đề.",
             "audio": "  -a, --audio LANGS   Chỉ giữ các ngôn ngữ âm thanh này (tên hoặc mã ISO, phân tách bằng dấu phẩy, không phân biệt hoa thường), hoặc all/none. Mặc định: giữ tất cả.",
-            "presentation_language": "      --presentation-language de  Ưu tiên phiên bản phim bằng ngôn ngữ này (giữ tiêu đề 0 nếu không có)",
+            "presentation_language": "      --presentation-language de  Ưu tiên phiên bản phim bằng ngôn ngữ này (giữ tiêu đề chính nếu không có)",
             "subtitles": "  -s, --subtitles LANGS  Chỉ giữ các ngôn ngữ phụ đề này (tên hoặc mã ISO, phân tách bằng dấu phẩy, không phân biệt hoa thường), hoặc all/none. Mặc định: giữ tất cả.",
             "keydb": "      --keydb PATH    Đường dẫn KEYDB.cfg (nguồn khóa cục bộ)",
             "key_url_1": "      --key-url URL   URL cơ sở của dịch vụ khoá trực tuyến (chỉ https).",

@@ -76,7 +76,9 @@
         "capture_skipped": "S'ha omès el fitxer del disc {file}",
         "capture_summary": "Estructura del disc capturada: {files} fitxers ({bytes} bytes).",
         "capture_unsafe_name": "nom de fitxer no segur",
-        "capture_aacs_unread": "Diagnòstic AACS no capturat — el disc està xifrat però s'ha analitzat sense claus."
+        "capture_aacs_unread": "Diagnòstic AACS no capturat — el disc està xifrat però s'ha analitzat sense claus.",
+        "unlocker": "Desbloquejador: {name}",
+        "unlocker_none": "cap"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Selecciona el títol (des d'1, repetible). Per defecte: el títol principal (títol 1); useu -t all per a tots els títols.",
             "audio": "  -a, --audio LANGS   Conserva només aquests idiomes d'àudio (noms o codis ISO, separats per comes, sense distingir majúscules), o all/none. Per defecte: conserva'ls tots.",
-            "presentation_language": "      --presentation-language de  Prefereix la versió de la pel·lícula en aquest idioma (conserva el títol 0 si no n'hi ha cap)",
+            "presentation_language": "      --presentation-language de  Prefereix la versió de la pel·lícula en aquest idioma (conserva el títol principal si no n'hi ha cap)",
             "subtitles": "  -s, --subtitles LANGS  Conserva només aquests idiomes de subtítols (noms o codis ISO, separats per comes, sense distingir majúscules), o all/none. Per defecte: conserva'ls tots.",
             "keydb": "      --keydb PATH    Camí de KEYDB.cfg (font de claus local)",
             "key_url_1": "      --key-url URL   URL base del servei de claus en línia (només https).",

@@ -76,7 +76,9 @@
         "capture_skipped": "Se omitió el archivo del disco {file}",
         "capture_summary": "Estructura del disco capturada: {files} archivos ({bytes} bytes).",
         "capture_unsafe_name": "nombre de archivo no seguro",
-        "capture_aacs_unread": "No se capturó el diagnóstico de AACS — el disco está cifrado, pero se escaneó sin claves."
+        "capture_aacs_unread": "No se capturó el diagnóstico de AACS — el disco está cifrado, pero se escaneó sin claves.",
+        "unlocker": "Desbloqueador: {name}",
+        "unlocker_none": "ninguno"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Seleccionar título (base 1, repetible). Por defecto: el título principal (título 1); usa -t all para todos los títulos.",
             "audio": "  -a, --audio LANGS   Conservar solo estos idiomas de audio (nombres o códigos ISO, separados por comas, sin distinguir mayúsculas), o all/none. Por defecto: conservar todos.",
-            "presentation_language": "      --presentation-language de  Preferir la versión de la película en este idioma (conserva el título 0 si no hay ninguna)",
+            "presentation_language": "      --presentation-language de  Preferir la versión de la película en este idioma (conserva el título principal si no hay ninguna)",
             "subtitles": "  -s, --subtitles LANGS  Conservar solo estos idiomas de subtítulos (nombres o códigos ISO, separados por comas, sin distinguir mayúsculas), o all/none. Por defecto: conservar todos.",
             "keydb": "      --keydb PATH    Ruta de KEYDB.cfg (fuente de claves local)",
             "key_url_1": "      --key-url URL   URL base del servicio de claves en línea (solo https).",

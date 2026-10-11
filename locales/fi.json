@@ -76,7 +76,9 @@
         "capture_skipped": "Ohitettiin levyn tiedosto {file}",
         "capture_summary": "Levyrakenne kaapattu: {files} tiedostoa ({bytes} tavua).",
         "capture_unsafe_name": "vaarallinen tiedostonimi",
-        "capture_aacs_unread": "AACS-diagnostiikkaa ei kaapattu — levy on salattu, mutta se skannattiin ilman avaimia."
+        "capture_aacs_unread": "AACS-diagnostiikkaa ei kaapattu — levy on salattu, mutta se skannattiin ilman avaimia.",
+        "unlocker": "Avaaja: {name}",
+        "unlocker_none": "ei mitään"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Valitse nimike (1-pohjainen, toistettava). Oletus: päänimike (nimike 1); käytä -t all kaikille nimikkeille.",
             "audio": "  -a, --audio LANGS   Säilytä vain nämä äänikielet (nimet tai ISO-koodit, pilkuin eroteltuina, kirjainkoolla ei väliä) tai all/none. Oletus: säilytä kaikki.",
-            "presentation_language": "      --presentation-language de  Suosi elokuvan tämänkielistä versiota (säilyttää nimikkeen 0, jos sellaista ei ole)",
+            "presentation_language": "      --presentation-language de  Suosi elokuvan tämänkielistä versiota (säilyttää päänimikkeen, jos sellaista ei ole)",
             "subtitles": "  -s, --subtitles LANGS  Säilytä vain nämä tekstityskielet (nimet tai ISO-koodit, pilkuin eroteltuina, kirjainkoolla ei väliä) tai all/none. Oletus: säilytä kaikki.",
             "keydb": "      --keydb PATH    KEYDB.cfg-polku (paikallinen avainlähde)",
             "key_url_1": "      --key-url URL   Verkkoavainpalvelun perus-URL (vain https).",

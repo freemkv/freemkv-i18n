@@ -76,7 +76,9 @@
         "capture_skipped": "Discbestand {file} overgeslagen",
         "capture_summary": "Discstructuur vastgelegd: {files} bestanden ({bytes} bytes).",
         "capture_unsafe_name": "onveilige bestandsnaam",
-        "capture_aacs_unread": "AACS-diagnose niet vastgelegd — de disc is versleuteld maar werd zonder sleutels gescand."
+        "capture_aacs_unread": "AACS-diagnose niet vastgelegd — de disc is versleuteld maar werd zonder sleutels gescand.",
+        "unlocker": "Ontgrendelaar: {name}",
+        "unlocker_none": "geen"
     },
     "stream": {
         "purpose": {
@@ -497,7 +499,7 @@
         "flag": {
             "title": "  -t, --title N       Titel selecteren (basis 1, herhaalbaar). Standaard: de hoofdtitel (titel 1); -t all voor alle titels.",
             "audio": "  -a, --audio TALEN   Alleen deze audiotalen behouden (namen of ISO-codes, kommagescheiden, niet hoofdlettergevoelig), of all/none. Standaard: alle behouden.",
-            "presentation_language": "      --presentation-language de  Geef de voorkeur aan de versie van de film in deze taal (behoudt titel 0 als er geen is)",
+            "presentation_language": "      --presentation-language de  Geef de voorkeur aan de versie van de film in deze taal (behoudt de hoofdtitel als er geen is)",
             "subtitles": "  -s, --subtitles TALEN    Alleen deze ondertiteltalen behouden (namen of ISO-codes, kommagescheiden, niet hoofdlettergevoelig), of all/none. Standaard: alle behouden.",
             "keydb": "      --keydb PAD     KEYDB.cfg-pad (lokale sleutelbron)",
             "key_url_1": "      --key-url URL   Basis-URL van de online sleuteldienst (alleen https).",

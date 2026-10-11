@@ -76,7 +76,9 @@
         "capture_skipped": "ディスクファイル {file} をスキップしました",
         "capture_summary": "ディスク構造を取得しました: {files} ファイル（{bytes} バイト）。",
         "capture_unsafe_name": "安全でないファイル名",
-        "capture_aacs_unread": "AACS 診断情報を取得できませんでした — ディスクは暗号化されていますが、キーなしでスキャンされました。"
+        "capture_aacs_unread": "AACS 診断情報を取得できませんでした — ディスクは暗号化されていますが、キーなしでスキャンされました。",
+        "unlocker": "アンロッカー: {name}",
+        "unlocker_none": "なし"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       タイトルを選択（1 始まり、繰り返し可）。デフォルト: メインタイトル（タイトル 1）。すべてのタイトルには -t all を使用。",
             "audio": "  -a, --audio LANGS   これらの音声言語のみを保持（名称または ISO コード、カンマ区切り、大文字小文字を区別しない）、または all/none。デフォルト: すべて保持。",
-            "presentation_language": "      --presentation-language de  この言語の映画バージョンを優先（該当がなければタイトル 0 を維持）",
+            "presentation_language": "      --presentation-language de  この言語の映画バージョンを優先（該当がなければメインタイトルを維持）",
             "subtitles": "  -s, --subtitles LANGS  これらの字幕言語のみを保持（名称または ISO コード、カンマ区切り、大文字小文字を区別しない）、または all/none。デフォルト: すべて保持。",
             "keydb": "      --keydb PATH    KEYDB.cfg のパス（ローカルキーソース）",
             "key_url_1": "      --key-url URL   オンライン鍵サービスのベース URL (https のみ)。",

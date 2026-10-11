@@ -76,7 +76,9 @@
         "capture_skipped": "已略過光碟檔案 {file}",
         "capture_summary": "已擷取光碟結構：{files} 個檔案（{bytes} 位元組）。",
         "capture_unsafe_name": "不安全的檔名",
-        "capture_aacs_unread": "未擷取 AACS 診斷資訊 — 光碟已加密，但掃描時未使用金鑰。"
+        "capture_aacs_unread": "未擷取 AACS 診斷資訊 — 光碟已加密，但掃描時未使用金鑰。",
+        "unlocker": "解鎖器：{name}",
+        "unlocker_none": "無"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       選擇標題（從 1 起算，可重複）。預設：主標題（標題 1）；使用 -t all 以擷取每個標題。",
             "audio": "  -a, --audio LANGS   僅保留這些音訊語言（名稱或 ISO 代碼，以逗號分隔，不分大小寫），或 all/none。預設：全部保留。",
-            "presentation_language": "      --presentation-language de  優先選擇該語言的影片版本（沒有時保留標題 0）",
+            "presentation_language": "      --presentation-language de  優先選擇該語言的影片版本（沒有時保留主標題）",
             "subtitles": "  -s, --subtitles LANGS  僅保留這些字幕語言（名稱或 ISO 代碼，以逗號分隔，不分大小寫），或 all/none。預設：全部保留。",
             "keydb": "      --keydb PATH    KEYDB.cfg 路徑（本機金鑰來源）",
             "key_url_1": "      --key-url URL   線上金鑰服務的基礎 URL（僅 https）。",

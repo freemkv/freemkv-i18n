@@ -76,7 +76,9 @@
         "capture_skipped": "Hoppade över skivfilen {file}",
         "capture_summary": "Infångad skivstruktur: {files} filer ({bytes} byte).",
         "capture_unsafe_name": "osäkert filnamn",
-        "capture_aacs_unread": "AACS-diagnostik inte infångad — skivan är krypterad men skannades utan nycklar."
+        "capture_aacs_unread": "AACS-diagnostik inte infångad — skivan är krypterad men skannades utan nycklar.",
+        "unlocker": "Upplåsare: {name}",
+        "unlocker_none": "ingen"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Välj titel (1-baserad, upprepbar). Standard: huvudtiteln (titel 1); använd -t all för varje titel.",
             "audio": "  -a, --audio LANGS   Behåll endast dessa ljudspråk (namn eller ISO-koder, kommaseparerade, skiftlägesokänsliga), eller all/none. Standard: behåll alla.",
-            "presentation_language": "      --presentation-language de  Föredra filmens version på det här språket (behåller titel 0 om det inte finns någon)",
+            "presentation_language": "      --presentation-language de  Föredra filmens version på det här språket (behåller huvudtiteln om det inte finns någon)",
             "subtitles": "  -s, --subtitles LANGS  Behåll endast dessa undertextspråk (namn eller ISO-koder, kommaseparerade, skiftlägesokänsliga), eller all/none. Standard: behåll alla.",
             "keydb": "      --keydb PATH    KEYDB.cfg-sökväg (lokal nyckelkälla)",
             "key_url_1": "      --key-url URL   Bas-URL för nyckeltjänsten online (endast https).",

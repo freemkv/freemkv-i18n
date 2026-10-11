@@ -76,7 +76,9 @@
         "capture_skipped": "Hoppet over platefilen {file}",
         "capture_summary": "Platestruktur fanget opp: {files} filer ({bytes} byte).",
         "capture_unsafe_name": "utrygt filnavn",
-        "capture_aacs_unread": "AACS-diagnostikk ble ikke fanget opp — platen er kryptert, men ble skannet uten nøkler."
+        "capture_aacs_unread": "AACS-diagnostikk ble ikke fanget opp — platen er kryptert, men ble skannet uten nøkler.",
+        "unlocker": "Opplåser: {name}",
+        "unlocker_none": "ingen"
     },
     "stream": {
         "purpose": {
@@ -529,7 +531,7 @@
         "flag": {
             "title": "  -t, --title N       Velg tittel (1-basert, kan gjentas). Standard: hovedtittelen (tittel 1); bruk -t all for hver tittel.",
             "audio": "  -a, --audio LANGS   Behold kun disse lydspråkene (navn eller ISO-koder, kommaseparert, ikke versalfølsom), eller all/none. Standard: behold alle.",
-            "presentation_language": "      --presentation-language de  Foretrekk filmens versjon på dette språket (beholder tittel 0 hvis det ikke finnes noen)",
+            "presentation_language": "      --presentation-language de  Foretrekk filmens versjon på dette språket (beholder hovedtittelen hvis det ikke finnes noen)",
             "subtitles": "  -s, --subtitles LANGS  Behold kun disse undertekstspråkene (navn eller ISO-koder, kommaseparert, ikke versalfølsom), eller all/none. Standard: behold alle.",
             "keydb": "      --keydb PATH    KEYDB.cfg-bane (lokal nøkkelkilde)",
             "key_url_1": "      --key-url URL   Basis-URL for nettbasert nøkkeltjeneste (kun https).",
