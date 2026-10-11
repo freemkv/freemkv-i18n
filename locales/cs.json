@@ -924,6 +924,9 @@
             "restarting": "Restartuje se: probíhající práce se zastaví v nejbližším bezpečném bodě a poté se server restartuje.",
             "no_supervisor": "Restart není dostupný: žádný správce služeb tento server po zastavení znovu nespustí. Restartujte ho sami.",
             "too_soon": "Restart není dostupný minutu po spuštění serveru nebo po posledním požadavku na restart. Zkuste to za chvíli znovu."
+        },
+        "mover": {
+            "destination_step_failed": "Zkontrolujte oprávnění, volné místo a připojení cílové složky. Řádek samotného doručení ukazuje, kdy se to zkusí znovu."
         }
     }
 }

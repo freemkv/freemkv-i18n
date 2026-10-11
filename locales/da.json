@@ -924,6 +924,9 @@
             "restarting": "Genstarter: igangværende arbejde stopper ved næste sikre punkt, og derefter genstarter serveren.",
             "no_supervisor": "Genstart er ikke tilgængelig: ingen tjenestestyring starter denne server igen, når den er stoppet. Genstart den selv i stedet.",
             "too_soon": "Genstart er ikke tilgængelig i et minut efter, at serveren er startet, eller efter den seneste anmodning om genstart. Prøv igen om lidt."
+        },
+        "mover": {
+            "destination_step_failed": "Kontrollér destinationsmappens rettigheder, ledige plads og montering. Leveringens egen række viser, hvornår det forsøges igen."
         }
     }
 }

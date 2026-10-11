@@ -924,6 +924,9 @@
             "restarting": "Reiniciando: el trabajo en curso se detiene en el siguiente punto seguro y después el servidor se reinicia.",
             "no_supervisor": "El reinicio no está disponible: ningún gestor de servicios volverá a iniciar este servidor después de que se detenga. Reinícielo usted mismo.",
             "too_soon": "El reinicio no está disponible durante un minuto después de que se inicie el servidor o después de la última solicitud de reinicio. Vuelva a intentarlo en un momento."
+        },
+        "mover": {
+            "destination_step_failed": "Comprueba los permisos, el espacio libre y el montaje de la carpeta de destino. La fila de la entrega muestra cuándo se volverá a intentar."
         }
     }
 }

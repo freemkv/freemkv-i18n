@@ -924,6 +924,9 @@
             "restarting": "Se repornește: lucrările în curs se opresc la următorul punct sigur, apoi serverul repornește.",
             "no_supervisor": "Repornirea nu este disponibilă: niciun manager de servicii nu va porni din nou acest server după ce se oprește. Repornește-l tu însuți.",
             "too_soon": "Repornirea nu este disponibilă timp de un minut după pornirea serverului sau după ultima cerere de repornire. Încearcă din nou în curând."
+        },
+        "mover": {
+            "destination_step_failed": "Verificați permisiunile, spațiul liber și montarea folderului de destinație. Rândul livrării arată când se va încerca din nou."
         }
     }
 }

@@ -924,6 +924,9 @@
             "restarting": "Redémarrage : les travaux en cours s'arrêtent au prochain point sûr, puis le serveur redémarre.",
             "no_supervisor": "Le redémarrage n'est pas disponible : aucun gestionnaire de services ne relancera ce serveur après son arrêt. Redémarrez-le vous-même.",
             "too_soon": "Le redémarrage n'est pas disponible pendant une minute après le démarrage du serveur ou après la dernière demande de redémarrage. Réessayez dans un instant."
+        },
+        "mover": {
+            "destination_step_failed": "Vérifiez les autorisations, l'espace libre et le montage du dossier de destination. La ligne de la livraison indique quand elle sera retentée."
         }
     }
 }

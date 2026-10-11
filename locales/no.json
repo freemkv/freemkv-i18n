@@ -924,6 +924,9 @@
             "restarting": "Starter på nytt: pågående arbeid stopper ved neste trygge punkt, og deretter starter serveren på nytt.",
             "no_supervisor": "Omstart er ikke tilgjengelig: ingen tjenestebehandler starter denne serveren igjen etter at den stopper. Start den på nytt selv.",
             "too_soon": "Omstart er ikke tilgjengelig i ett minutt etter at serveren starter eller etter siste forespørsel om omstart. Prøv igjen om litt."
+        },
+        "mover": {
+            "destination_step_failed": "Kontroller tillatelsene, ledig plass og monteringen for målmappen. Leveransens egen rad viser når det prøves igjen."
         }
     }
 }

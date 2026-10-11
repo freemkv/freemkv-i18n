@@ -924,6 +924,9 @@
             "restarting": "Đang khởi động lại: các tác vụ đang chạy sẽ dừng ở điểm an toàn kế tiếp, sau đó máy chủ khởi động lại.",
             "no_supervisor": "Không thể khởi động lại: không có trình quản lý dịch vụ nào khởi động lại máy chủ này sau khi nó dừng. Hãy tự khởi động lại.",
             "too_soon": "Không thể khởi động lại trong một phút sau khi máy chủ khởi động hoặc sau yêu cầu khởi động lại gần nhất. Hãy thử lại sau ít phút."
+        },
+        "mover": {
+            "destination_step_failed": "Kiểm tra quyền, dung lượng trống và việc gắn kết của thư mục đích. Dòng của chính lần chuyển giao cho biết khi nào sẽ thử lại."
         }
     }
 }

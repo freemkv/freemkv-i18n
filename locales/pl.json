@@ -924,6 +924,9 @@
             "restarting": "Ponowne uruchamianie: trwające prace zatrzymają się w najbliższym bezpiecznym punkcie, po czym serwer uruchomi się ponownie.",
             "no_supervisor": "Restart jest niedostępny: żaden menedżer usług nie uruchomi ponownie tego serwera po jego zatrzymaniu. Zrestartuj go samodzielnie.",
             "too_soon": "Restart jest niedostępny przez minutę po uruchomieniu serwera lub po ostatnim żądaniu restartu. Spróbuj ponownie za chwilę."
+        },
+        "mover": {
+            "destination_step_failed": "Sprawdź uprawnienia, wolne miejsce i zamontowanie folderu docelowego. Wiersz samego dostarczenia pokazuje, kiedy nastąpi ponowna próba."
         }
     }
 }

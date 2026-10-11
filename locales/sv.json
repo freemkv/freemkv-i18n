@@ -924,6 +924,9 @@
             "restarting": "Startar om: pågående arbete stoppas vid nästa säkra punkt, därefter startar servern om.",
             "no_supervisor": "Omstart är inte tillgänglig: ingen tjänsthanterare startar den här servern igen när den har stoppats. Starta om den själv i stället.",
             "too_soon": "Omstart är inte tillgänglig under en minut efter att servern startat eller efter den senaste begäran om omstart. Försök igen om en stund."
+        },
+        "mover": {
+            "destination_step_failed": "Kontrollera målmappens behörigheter, lediga utrymme och montering. Leveransens egen rad visar när det försöks igen."
         }
     }
 }

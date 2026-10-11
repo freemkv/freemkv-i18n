@@ -924,6 +924,9 @@
             "restarting": "Opnieuw opstarten: lopend werk stopt op het volgende veilige punt, daarna start de server opnieuw op.",
             "no_supervisor": "Herstarten is niet beschikbaar: geen servicebeheer start deze server opnieuw nadat hij is gestopt. Start hem zelf opnieuw op.",
             "too_soon": "Herstarten is een minuut lang niet beschikbaar nadat de server is gestart of na het laatste herstartverzoek. Probeer het zo opnieuw."
+        },
+        "mover": {
+            "destination_step_failed": "Controleer de rechten, vrije ruimte en koppeling van de doelmap. De eigen rij van de levering toont wanneer het opnieuw wordt geprobeerd."
         }
     }
 }

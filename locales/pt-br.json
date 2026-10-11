@@ -924,6 +924,9 @@
             "restarting": "Reiniciando: o trabalho em andamento para no próximo ponto seguro e, em seguida, o servidor reinicia.",
             "no_supervisor": "A reinicialização não está disponível: nenhum gerenciador de serviços iniciará este servidor de novo depois que ele parar. Reinicie-o você mesmo.",
             "too_soon": "A reinicialização não está disponível por um minuto após o servidor iniciar ou após o último pedido de reinicialização. Tente novamente em instantes."
+        },
+        "mover": {
+            "destination_step_failed": "Verifique as permissões, o espaço livre e a montagem da pasta de destino. A linha da própria entrega mostra quando será tentado novamente."
         }
     }
 }

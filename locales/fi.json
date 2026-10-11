@@ -924,6 +924,9 @@
             "restarting": "Käynnistetään uudelleen: käynnissä oleva työ pysähtyy seuraavassa turvallisessa kohdassa, minkä jälkeen palvelin käynnistyy uudelleen.",
             "no_supervisor": "Uudelleenkäynnistys ei ole käytettävissä: mikään palveluhallinta ei käynnistä tätä palvelinta uudelleen sen pysähdyttyä. Käynnistä se itse uudelleen.",
             "too_soon": "Uudelleenkäynnistys ei ole käytettävissä minuuttiin palvelimen käynnistymisen tai viimeisimmän uudelleenkäynnistyspyynnön jälkeen. Yritä hetken kuluttua uudelleen."
+        },
+        "mover": {
+            "destination_step_failed": "Tarkista kohdekansion käyttöoikeudet, vapaa tila ja liitos. Toimituksen oma rivi näyttää, milloin sitä yritetään uudelleen."
         }
     }
 }

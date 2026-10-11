@@ -924,6 +924,9 @@
             "restarting": "Újraindítás: a folyamatban lévő munka a következő biztonságos pontnál leáll, majd a kiszolgáló újraindul.",
             "no_supervisor": "Az újraindítás nem érhető el: leállása után egyetlen szolgáltatáskezelő sem indítja újra ezt a kiszolgálót. Indítsa újra saját kezűleg.",
             "too_soon": "Az újraindítás a kiszolgáló indulása vagy a legutóbbi újraindítási kérés után egy percig nem érhető el. Próbálja újra hamarosan."
+        },
+        "mover": {
+            "destination_step_failed": "Ellenőrizze a célmappa jogosultságait, szabad helyét és csatolását. A kézbesítés saját sora mutatja, mikor próbálkozik újra."
         }
     }
 }

@@ -924,6 +924,9 @@
             "restarting": "Riavvio in corso: i lavori in esecuzione si fermano al prossimo punto sicuro, poi il server si riavvia.",
             "no_supervisor": "Il riavvio non è disponibile: nessun gestore di servizi riavvierà questo server dopo l'arresto. Riavvialo tu stesso.",
             "too_soon": "Il riavvio non è disponibile per un minuto dopo l'avvio del server o dopo l'ultima richiesta di riavvio. Riprova tra poco."
+        },
+        "mover": {
+            "destination_step_failed": "Controlla i permessi, lo spazio libero e il montaggio della cartella di destinazione. La riga della consegna indica quando verrà ritentata."
         }
     }
 }

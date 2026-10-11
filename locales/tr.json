@@ -924,6 +924,9 @@
             "restarting": "Yeniden başlatılıyor: çalışan işler bir sonraki güvenli noktada durur, ardından sunucu yeniden başlar.",
             "no_supervisor": "Yeniden başlatma kullanılamıyor: bu sunucu durduktan sonra onu yeniden başlatacak bir hizmet yöneticisi yok. Bunun yerine sunucuyu kendiniz yeniden başlatın.",
             "too_soon": "Yeniden başlatma, sunucu başladıktan veya son yeniden başlatma isteğinden sonra bir dakika boyunca kullanılamaz. Kısa süre sonra yeniden deneyin."
+        },
+        "mover": {
+            "destination_step_failed": "Hedef klasörün izinlerini, boş alanını ve bağlantısını denetleyin. Teslimatın kendi satırı ne zaman yeniden deneneceğini gösterir."
         }
     }
 }
