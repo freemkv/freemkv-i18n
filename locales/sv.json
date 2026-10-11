@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "kan inte granska mellanlagret: vissa poster i mellanlagringsmappen kunde inte läsas",
             "entry_unreadable": "kan inte granska mellanlagerposten {name}: {error}",
-            "mux_job_busy": "En enhet använder just nu mellanlagerjobbet för denna rip; den muxades inte och ligger kvar i mellanlagret."
+            "mux_job_busy": "En enhet använder just nu mellanlagerjobbet för denna rip; den muxades inte och ligger kvar i mellanlagret.",
+            "root_missing": "mellanlagermappen {path} saknas – är resursen monterad?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Omstart är inte tillgänglig under en minut efter att servern startat eller efter den senaste begäran om omstart. Försök igen om en stund."
         },
         "mover": {
-            "destination_step_failed": "Kontrollera målmappens behörigheter, lediga utrymme och montering. Leveransens egen rad visar när det försöks igen."
+            "destination_step_failed": "Kontrollera målmappens behörigheter, lediga utrymme och montering. Leveransens egen rad visar när det försöks igen.",
+            "retry_state_unsaved": "{reason}; automatiska nya försök har stoppats eftersom tillståndet för nya försök inte kunde sparas: {error}",
+            "retry_state_unsaved_hint": "Frigör utrymme på mellanlagret eller gör det skrivbart och välj sedan «Retry». Källfilerna i mellanlagret behålls.",
+            "copy_failed_hint": "Se device_system.log för det underliggande felet. Leveransen försöks igen efter 30 s och sedan efter 2 min; därefter väntar den på «Retry».",
+            "teardown_listing_hint": "Filerna är levererade; mellanlagret behålls tills det kan listas fullständigt. Kontrollera monteringen av mellanlagret; rensningen försöks igen efter en paus och väntar sedan på «Retry».",
+            "teardown_cleanup_hint": "Filerna är levererade. Granska ändrade eller oplanerade artefakter i mellanlagret; de tas inte bort automatiskt. Rensningen försöks igen efter en paus och väntar sedan på «Retry».",
+            "size_mismatch_hint": "Kontrollera målets filsystem för ENOSPC / ofullständiga skrivningar. Mover tar bara bort sin temporära fil och försöker igen efter 30 s och sedan efter 2 min; därefter väntar den på «Retry» (om en dst-fil blir kvar, ta bort den).",
+            "post_copy_invalid_hint": "Kopian har rätt storlek men klarade inte en format- eller läsbarhetskontroll (avkortad header/slut, felaktig TS-synk eller oläsbar dst); se device_system.log för den specifika kontrollen. Mover tar bara bort sin temporära fil och försöker igen efter 30 s och sedan efter 2 min; därefter väntar den på «Retry» (om en dst-fil blir kvar, ta bort den).",
+            "folder_create_failed_hint": "Kontrollera att målresursen är monterad och skrivbar: en resurs som har tappats eller monterats om sedan kontrollen avvisar också detta. Det försöks igen vid nästa genomgång; inget flyttades.",
+            "reservations_unreadable": "det går inte att läsa namnen som andra rips leveranser har reserverat: {error}",
+            "reservations_unreadable_hint": "Inget har flyttats eller namngetts ännu. Det försöks igen vid nästa genomgång; om det kvarstår, reparera mellanlagret eller den andra ripens leveransjournal."
         },
         "library": {
             "changed_during": "{path} ändrades medan denna remux kördes; den rördes inte",

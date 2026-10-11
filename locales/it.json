@@ -450,7 +450,8 @@
         "staging": {
             "listing_incomplete": "impossibile ispezionare l'area di staging: alcune voci della cartella di staging non sono state lette",
             "entry_unreadable": "impossibile ispezionare la voce di staging {name}: {error}",
-            "mux_job_busy": "Un'unità sta usando in questo momento il lavoro di staging di questo rip; non è stato eseguito il mux e resta in staging."
+            "mux_job_busy": "Un'unità sta usando in questo momento il lavoro di staging di questo rip; non è stato eseguito il mux e resta in staging.",
+            "root_missing": "la cartella di staging {path} non esiste: la condivisione è montata?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Il riavvio non è disponibile per un minuto dopo l'avvio del server o dopo l'ultima richiesta di riavvio. Riprova tra poco."
         },
         "mover": {
-            "destination_step_failed": "Controlla i permessi, lo spazio libero e il montaggio della cartella di destinazione. La riga della consegna indica quando verrà ritentata."
+            "destination_step_failed": "Controlla i permessi, lo spazio libero e il montaggio della cartella di destinazione. La riga della consegna indica quando verrà ritentata.",
+            "retry_state_unsaved": "{reason}; i tentativi automatici sono stati interrotti perché non è stato possibile salvare lo stato dei tentativi: {error}",
+            "retry_state_unsaved_hint": "Libera spazio sull'archiviazione di staging o rendila scrivibile, quindi scegli «Retry». I file sorgente in staging vengono conservati.",
+            "copy_failed_hint": "Consulta device_system.log per l'errore sottostante. La consegna viene ritentata dopo 30 s, poi dopo 2 min; dopo di che attende «Retry».",
+            "teardown_listing_hint": "I file sono stati consegnati; lo staging viene conservato finché non può essere elencato per intero. Controlla il montaggio dello staging; lo smontaggio viene ritentato dopo un'attesa, poi attende «Retry».",
+            "teardown_cleanup_hint": "I file sono stati consegnati. Esamina gli artefatti dello staging modificati o non pianificati; non vengono eliminati automaticamente. Lo smontaggio viene ritentato dopo un'attesa, poi attende «Retry».",
+            "size_mismatch_hint": "Controlla il filesystem di destinazione per ENOSPC / scritture parziali. Il mover rimuove solo il proprio file temporaneo e ritenta dopo 30 s, poi dopo 2 min; dopo di che attende «Retry» (se rimane un file dst, rimuovilo).",
+            "post_copy_invalid_hint": "La copia ha la dimensione corretta ma non ha superato un controllo di formato/leggibilità (intestazione o coda troncata, sincronizzazione TS errata o dst illeggibile); consulta device_system.log per il controllo specifico. Il mover rimuove solo il proprio file temporaneo e ritenta dopo 30 s, poi dopo 2 min; dopo di che attende «Retry» (se rimane un file dst, rimuovilo).",
+            "folder_create_failed_hint": "Controlla che la condivisione di destinazione sia montata e scrivibile: anche una condivisione che si è disconnessa o è stata rimontata dopo il suo controllo rifiuta questa operazione. Viene ritentata al passaggio successivo; non è stato spostato nulla.",
+            "reservations_unreadable": "impossibile leggere i nomi riservati dalle consegne di altri rip: {error}",
+            "reservations_unreadable_hint": "Non è stato ancora spostato né nominato nulla. Viene ritentato al passaggio successivo; se il problema persiste, ripara l'archiviazione di staging o il giornale di consegna dell'altro rip."
         },
         "library": {
             "changed_during": "{path} è cambiato mentre questo remux era in corso; non è stato toccato",

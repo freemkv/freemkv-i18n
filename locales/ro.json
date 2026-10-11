@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "zona intermediară nu poate fi inspectată: unele intrări din folderul intermediar nu au putut fi citite",
             "entry_unreadable": "intrarea intermediară {name} nu poate fi inspectată: {error}",
-            "mux_job_busy": "O unitate folosește chiar acum lucrarea intermediară a acestui rip; nu a fost făcut mux și rămâne în zona intermediară."
+            "mux_job_busy": "O unitate folosește chiar acum lucrarea intermediară a acestui rip; nu a fost făcut mux și rămâne în zona intermediară.",
+            "root_missing": "folderul intermediar {path} lipsește – este montată partajarea?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Repornirea nu este disponibilă timp de un minut după pornirea serverului sau după ultima cerere de repornire. Încearcă din nou în curând."
         },
         "mover": {
-            "destination_step_failed": "Verificați permisiunile, spațiul liber și montarea folderului de destinație. Rândul livrării arată când se va încerca din nou."
+            "destination_step_failed": "Verificați permisiunile, spațiul liber și montarea folderului de destinație. Rândul livrării arată când se va încerca din nou.",
+            "retry_state_unsaved": "{reason}; reîncercările automate s-au oprit deoarece starea reîncercărilor nu a putut fi salvată: {error}",
+            "retry_state_unsaved_hint": "Eliberați spațiu în stocarea intermediară sau faceți-o inscriptibilă, apoi alegeți «Retry». Fișierele sursă din zona intermediară sunt păstrate.",
+            "copy_failed_hint": "Consultați device_system.log pentru eroarea de bază. Livrarea se reîncearcă după 30 s, apoi după 2 min; după aceea așteaptă «Retry».",
+            "teardown_listing_hint": "Fișierele au fost livrate; zona intermediară este păstrată până când poate fi listată integral. Verificați montarea zonei intermediare; demontarea se reîncearcă după o pauză, apoi așteaptă «Retry».",
+            "teardown_cleanup_hint": "Fișierele au fost livrate. Inspectați artefactele din zona intermediară care s-au modificat sau nu erau planificate; nu sunt șterse automat. Demontarea se reîncearcă după o pauză, apoi așteaptă «Retry».",
+            "size_mismatch_hint": "Verificați sistemul de fișiere de destinație pentru ENOSPC / scrieri incomplete. Mover-ul șterge doar fișierul său temporar și reîncearcă după 30 s, apoi după 2 min; după aceea așteaptă «Retry» (dacă rămâne un fișier dst, ștergeți-l).",
+            "post_copy_invalid_hint": "Copia are dimensiunea corectă, dar nu a trecut o verificare de format/lizibilitate (antet sau final trunchiat, sincronizare TS greșită sau dst ilizibil); consultați device_system.log pentru verificarea concretă. Mover-ul șterge doar fișierul său temporar și reîncearcă după 30 s, apoi după 2 min; după aceea așteaptă «Retry» (dacă rămâne un fișier dst, ștergeți-l).",
+            "folder_create_failed_hint": "Verificați dacă partajarea de destinație este montată și inscriptibilă: o partajare care s-a deconectat sau a fost remontată de la verificarea sa refuză și aceasta. Se reîncearcă la următoarea trecere; nu s-a mutat nimic.",
+            "reservations_unreadable": "nu se pot citi numele rezervate de livrările altor rip-uri: {error}",
+            "reservations_unreadable_hint": "Încă nu s-a mutat și nu s-a denumit nimic. Se reîncearcă la următoarea trecere; dacă problema persistă, reparați stocarea intermediară sau jurnalul de livrare al celuilalt rip."
         },
         "library": {
             "changed_during": "{path} s-a modificat cât timp rula acest remux; nu a fost atins",

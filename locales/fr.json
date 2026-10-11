@@ -450,7 +450,8 @@
         "staging": {
             "listing_incomplete": "impossible d'inspecter la zone intermédiaire : certaines entrées du dossier intermédiaire n'ont pas pu être lues",
             "entry_unreadable": "impossible d'inspecter l'entrée intermédiaire {name} : {error}",
-            "mux_job_busy": "Un lecteur utilise actuellement la tâche intermédiaire de ce rip ; elle n'a pas été muxée et reste dans la zone intermédiaire."
+            "mux_job_busy": "Un lecteur utilise actuellement la tâche intermédiaire de ce rip ; elle n'a pas été muxée et reste dans la zone intermédiaire.",
+            "root_missing": "le dossier intermédiaire {path} est introuvable : le partage est-il monté ?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Le redémarrage n'est pas disponible pendant une minute après le démarrage du serveur ou après la dernière demande de redémarrage. Réessayez dans un instant."
         },
         "mover": {
-            "destination_step_failed": "Vérifiez les autorisations, l'espace libre et le montage du dossier de destination. La ligne de la livraison indique quand elle sera retentée."
+            "destination_step_failed": "Vérifiez les autorisations, l'espace libre et le montage du dossier de destination. La ligne de la livraison indique quand elle sera retentée.",
+            "retry_state_unsaved": "{reason} ; les nouvelles tentatives automatiques sont arrêtées car l'état des tentatives n'a pas pu être enregistré : {error}",
+            "retry_state_unsaved_hint": "Libérez de l'espace sur le stockage intermédiaire ou rendez-le accessible en écriture, puis choisissez «Retry». Les fichiers source de la zone intermédiaire sont conservés.",
+            "copy_failed_hint": "Consultez device_system.log pour l'erreur sous-jacente. La livraison est retentée après 30 s, puis 2 min ; ensuite elle attend «Retry».",
+            "teardown_listing_hint": "Les fichiers sont livrés ; la zone intermédiaire est conservée jusqu'à ce qu'elle puisse être listée en entier. Vérifiez le montage de la zone intermédiaire ; le nettoyage est retenté après un délai, puis attend «Retry».",
+            "teardown_cleanup_hint": "Les fichiers sont livrés. Examinez les artefacts de la zone intermédiaire modifiés ou non prévus ; ils ne sont pas supprimés automatiquement. Le nettoyage est retenté après un délai, puis attend «Retry».",
+            "size_mismatch_hint": "Vérifiez le système de fichiers de destination (ENOSPC / écritures incomplètes). Le mover ne supprime que son fichier temporaire et réessaie après 30 s, puis 2 min ; ensuite il attend «Retry» (si un fichier dst subsiste, supprimez-le).",
+            "post_copy_invalid_hint": "La copie a la bonne taille, mais n'a pas passé un contrôle de format ou de lisibilité (en-tête ou fin tronqués, mauvaise synchronisation TS ou dst illisible) ; consultez device_system.log pour le contrôle précis. Le mover ne supprime que son fichier temporaire et réessaie après 30 s, puis 2 min ; ensuite il attend «Retry» (si un fichier dst subsiste, supprimez-le).",
+            "folder_create_failed_hint": "Vérifiez que le partage de destination est monté et accessible en écriture : un partage qui s'est déconnecté ou a été remonté depuis sa vérification refuse aussi cette opération. Elle est retentée au prochain passage ; rien n'a été déplacé.",
+            "reservations_unreadable": "impossible de lire les noms réservés par les livraisons des autres rips : {error}",
+            "reservations_unreadable_hint": "Rien n'a encore été déplacé ni nommé. Elle est retentée au prochain passage ; si le problème persiste, réparez le stockage intermédiaire ou le journal de livraison de l'autre rip."
         },
         "library": {
             "changed_during": "{path} a été modifié pendant ce remux ; il n'a pas été touché",

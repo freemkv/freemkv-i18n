@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "no se puede inspeccionar el área intermedia: no se pudieron leer algunas entradas de la carpeta intermedia",
             "entry_unreadable": "no se puede inspeccionar la entrada intermedia {name}: {error}",
-            "mux_job_busy": "Una unidad está usando en este momento el trabajo intermedio de este rip; no se muxeó y permanece en el área intermedia."
+            "mux_job_busy": "Una unidad está usando en este momento el trabajo intermedio de este rip; no se muxeó y permanece en el área intermedia.",
+            "root_missing": "falta la carpeta intermedia {path}: ¿está montado el recurso compartido?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "El reinicio no está disponible durante un minuto después de que se inicia el servidor o después de la última solicitud de reinicio. Vuelve a intentarlo en un momento."
         },
         "mover": {
-            "destination_step_failed": "Revisa los permisos, el espacio libre y el montaje de la carpeta de destino. La fila de la entrega muestra cuándo se volverá a intentar."
+            "destination_step_failed": "Revisa los permisos, el espacio libre y el montaje de la carpeta de destino. La fila de la entrega muestra cuándo se volverá a intentar.",
+            "retry_state_unsaved": "{reason}; los reintentos automáticos se han detenido porque no se pudo guardar el estado de reintento: {error}",
+            "retry_state_unsaved_hint": "Libera espacio en el almacenamiento intermedio o hazlo escribible y luego elige «Retry». Los archivos de origen del área intermedia se conservan.",
+            "copy_failed_hint": "Consulta device_system.log para ver el error subyacente. La entrega se vuelve a intentar a los 30 s y luego a los 2 min; después espera a «Retry».",
+            "teardown_listing_hint": "Los archivos se han entregado; el área intermedia se conserva hasta que pueda listarse por completo. Comprueba el montaje del área intermedia; la limpieza se reintenta tras una espera y después espera a «Retry».",
+            "teardown_cleanup_hint": "Los archivos se han entregado. Revisa los artefactos del área intermedia que hayan cambiado o no estuvieran previstos; no se eliminan automáticamente. La limpieza se reintenta tras una espera y después espera a «Retry».",
+            "size_mismatch_hint": "Comprueba si el sistema de archivos de destino tiene ENOSPC / escrituras cortas. El mover solo elimina su archivo temporal y vuelve a intentarlo a los 30 s y luego a los 2 min; después espera a «Retry» (si queda un archivo dst, elimínalo).",
+            "post_copy_invalid_hint": "La copia tiene el tamaño correcto, pero no superó una comprobación de formato o legibilidad (cabecera o final truncados, sincronización TS incorrecta o dst ilegible); consulta device_system.log para ver la comprobación concreta. El mover solo elimina su archivo temporal y vuelve a intentarlo a los 30 s y luego a los 2 min; después espera a «Retry» (si queda un archivo dst, elimínalo).",
+            "folder_create_failed_hint": "Comprueba que el recurso compartido de destino esté montado y sea escribible: un recurso que se ha desconectado o se ha vuelto a montar desde su comprobación también lo rechaza. Se vuelve a intentar en la siguiente pasada; no se movió nada.",
+            "reservations_unreadable": "no se pueden leer los nombres que reservaron las entregas de otros rips: {error}",
+            "reservations_unreadable_hint": "Todavía no se ha movido ni nombrado nada. Se vuelve a intentar en la siguiente pasada; si persiste, repara el almacenamiento intermedio o el diario de entrega del otro rip."
         },
         "library": {
             "changed_during": "{path} cambió mientras se ejecutaba este remux; no se tocó",

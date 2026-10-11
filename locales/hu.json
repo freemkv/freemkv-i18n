@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "az előkészítő terület nem vizsgálható: az előkészítő mappa néhány bejegyzése nem volt olvasható",
             "entry_unreadable": "a(z) {name} előkészítő bejegyzés nem vizsgálható: {error}",
-            "mux_job_busy": "Egy meghajtó éppen használja ennek a ripnek az előkészítő feladatát; nem lett muxolva, és az előkészítő területen marad."
+            "mux_job_busy": "Egy meghajtó éppen használja ennek a ripnek az előkészítő feladatát; nem lett muxolva, és az előkészítő területen marad.",
+            "root_missing": "a(z) {path} előkészítő mappa hiányzik – csatolva van a megosztás?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Az újraindítás a kiszolgáló indulása vagy a legutóbbi újraindítási kérés után egy percig nem érhető el. Próbálja újra hamarosan."
         },
         "mover": {
-            "destination_step_failed": "Ellenőrizze a célmappa jogosultságait, szabad helyét és csatolását. A kézbesítés saját sora mutatja, mikor próbálkozik újra."
+            "destination_step_failed": "Ellenőrizze a célmappa jogosultságait, szabad helyét és csatolását. A kézbesítés saját sora mutatja, mikor próbálkozik újra.",
+            "retry_state_unsaved": "{reason}; az automatikus újrapróbálkozások leálltak, mert az újrapróbálkozás állapotát nem sikerült menteni: {error}",
+            "retry_state_unsaved_hint": "Szabadítson fel helyet az előkészítő tárolón, vagy tegye írhatóvá, majd válassza a(z) „Retry” lehetőséget. Az előkészítő területen lévő forrásfájlok megmaradnak.",
+            "copy_failed_hint": "A mögöttes hibát lásd a device_system.log fájlban. A kézbesítést 30 s, majd 2 perc múlva újra megpróbálja; ezután a(z) „Retry” műveletre vár.",
+            "teardown_listing_hint": "A fájlok kézbesítve lettek; az előkészítő terület megmarad, amíg teljes egészében fel nem sorolható. Ellenőrizze az előkészítő terület csatolását; a lebontás egy várakozás után újra próbálkozik, majd a(z) „Retry” műveletre vár.",
+            "teardown_cleanup_hint": "A fájlok kézbesítve lettek. Vizsgálja meg az előkészítő területen megváltozott vagy nem tervezett elemeket; ezek nem törlődnek automatikusan. A lebontás egy várakozás után újra próbálkozik, majd a(z) „Retry” műveletre vár.",
+            "size_mismatch_hint": "Ellenőrizze a célfájlrendszert ENOSPC / csonka írások miatt. A mover csak az ideiglenes fájlját távolítja el, és 30 s, majd 2 perc múlva újra próbálkozik; ezután a(z) „Retry” műveletre vár (ha dst fájl marad vissza, törölje).",
+            "post_copy_invalid_hint": "A másolat mérete helyes, de egy formátum- vagy olvashatósági ellenőrzésen elbukott (csonka fejléc vagy vég, hibás TS-szinkron vagy olvashatatlan dst); a konkrét ellenőrzést lásd a device_system.log fájlban. A mover csak az ideiglenes fájlját távolítja el, és 30 s, majd 2 perc múlva újra próbálkozik; ezután a(z) „Retry” műveletre vár (ha dst fájl marad vissza, törölje).",
+            "folder_create_failed_hint": "Ellenőrizze, hogy a célmegosztás csatolva van és írható: az a megosztás is elutasítja ezt, amely az ellenőrzése óta megszakadt vagy újra lett csatolva. A következő körben újra megpróbálja; semmi sem lett áthelyezve.",
+            "reservations_unreadable": "nem olvashatók a más ripek kézbesítései által lefoglalt nevek: {error}",
+            "reservations_unreadable_hint": "Még semmi sem lett áthelyezve vagy elnevezve. A következő körben újra megpróbálja; ha a hiba tartós, javítsa az előkészítő tárolót vagy a másik rip kézbesítési naplóját."
         },
         "library": {
             "changed_during": "{path} megváltozott a remux közben; nem nyúltunk hozzá",

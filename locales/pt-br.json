@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "não é possível inspecionar a área intermediária: algumas entradas da pasta intermediária não puderam ser lidas",
             "entry_unreadable": "não é possível inspecionar a entrada intermediária {name}: {error}",
-            "mux_job_busy": "Uma unidade está usando agora o trabalho intermediário deste rip; ele não passou por mux e permanece na área intermediária."
+            "mux_job_busy": "Uma unidade está usando agora o trabalho intermediário deste rip; ele não passou por mux e permanece na área intermediária.",
+            "root_missing": "a pasta intermediária {path} não existe – o compartilhamento está montado?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "A reinicialização não está disponível por um minuto após o servidor iniciar ou após o último pedido de reinicialização. Tente novamente em instantes."
         },
         "mover": {
-            "destination_step_failed": "Verifique as permissões, o espaço livre e a montagem da pasta de destino. A linha da própria entrega mostra quando será tentado novamente."
+            "destination_step_failed": "Verifique as permissões, o espaço livre e a montagem da pasta de destino. A linha da própria entrega mostra quando será tentado novamente.",
+            "retry_state_unsaved": "{reason}; as novas tentativas automáticas foram interrompidas porque o estado das tentativas não pôde ser salvo: {error}",
+            "retry_state_unsaved_hint": "Libere espaço no armazenamento intermediário ou torne-o gravável e depois escolha «Retry». Os arquivos de origem da área intermediária são mantidos.",
+            "copy_failed_hint": "Veja device_system.log para o erro subjacente. A entrega é tentada de novo após 30 s e depois após 2 min; em seguida, aguarda «Retry».",
+            "teardown_listing_hint": "Os arquivos foram entregues; a área intermediária é mantida até que possa ser listada por completo. Verifique a montagem da área intermediária; a limpeza é tentada de novo após uma espera e depois aguarda «Retry».",
+            "teardown_cleanup_hint": "Os arquivos foram entregues. Inspecione os artefatos da área intermediária que mudaram ou não estavam previstos; eles não são excluídos automaticamente. A limpeza é tentada de novo após uma espera e depois aguarda «Retry».",
+            "size_mismatch_hint": "Verifique o sistema de arquivos de destino quanto a ENOSPC / gravações incompletas. O mover remove apenas o próprio arquivo temporário e tenta de novo após 30 s e depois após 2 min; em seguida, aguarda «Retry» (se um arquivo dst permanecer, remova-o).",
+            "post_copy_invalid_hint": "A cópia tem o tamanho correto, mas falhou em uma verificação de formato/legibilidade (cabeçalho ou final truncado, sincronização TS incorreta ou dst ilegível); veja device_system.log para a verificação específica. O mover remove apenas o próprio arquivo temporário e tenta de novo após 30 s e depois após 2 min; em seguida, aguarda «Retry» (se um arquivo dst permanecer, remova-o).",
+            "folder_create_failed_hint": "Verifique se o compartilhamento de destino está montado e gravável: um compartilhamento que caiu ou foi remontado desde a sua verificação também recusa isso. Será tentado de novo na próxima passada; nada foi movido.",
+            "reservations_unreadable": "não é possível ler os nomes reservados pelas entregas de outros rips: {error}",
+            "reservations_unreadable_hint": "Nada foi movido ou nomeado ainda. Será tentado de novo na próxima passada; se persistir, repare o armazenamento intermediário ou o diário de entrega do outro rip."
         },
         "library": {
             "changed_during": "{path} foi alterado enquanto este remux era executado; não foi tocado",

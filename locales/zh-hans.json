@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "无法检查暂存区：暂存文件夹中的部分条目无法读取",
             "entry_unreadable": "无法检查暂存条目 {name}：{error}",
-            "mux_job_busy": "有驱动器正在使用此次 rip 的暂存任务；它未被 mux，仍保留在暂存区。"
+            "mux_job_busy": "有驱动器正在使用此次 rip 的暂存任务；它未被 mux，仍保留在暂存区。",
+            "root_missing": "暂存文件夹 {path} 缺失——共享是否已挂载？"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "服务器启动后或上次重启请求后的一分钟内无法重启。请稍后再试。"
         },
         "mover": {
-            "destination_step_failed": "请检查目标文件夹的权限、可用空间和挂载。何时重试会显示在该交付自身的行中。"
+            "destination_step_failed": "请检查目标文件夹的权限、可用空间和挂载。何时重试会显示在该交付自身的行中。",
+            "retry_state_unsaved": "{reason}；由于无法保存重试状态，自动重试已停止：{error}",
+            "retry_state_unsaved_hint": "请释放暂存存储的空间或使其可写，然后选择“Retry”。已暂存的源文件会被保留。",
+            "copy_failed_hint": "有关根本错误，请查看 device_system.log。交付会在 30 s 后重试，然后在 2 min 后再试；之后等待“Retry”。",
+            "teardown_listing_hint": "文件已交付；暂存区会一直保留，直到能完整列出为止。请检查暂存区的挂载；清理会在一段退避后重试，之后等待“Retry”。",
+            "teardown_cleanup_hint": "文件已交付。请检查已更改或计划外的暂存产物；它们不会被自动删除。清理会在一段退避后重试，之后等待“Retry”。",
+            "size_mismatch_hint": "请检查目标文件系统是否出现 ENOSPC / 写入不完整。mover 只会删除自己的临时文件，并在 30 s 后重试，然后在 2 min 后再试；之后等待“Retry”（如果仍残留 dst 文件，请将其删除）。",
+            "post_copy_invalid_hint": "副本大小正确，但未通过格式/可读性检查（头部或尾部被截断、TS 同步错误或 dst 无法读取）；具体检查请查看 device_system.log。mover 只会删除自己的临时文件，并在 30 s 后重试，然后在 2 min 后再试；之后等待“Retry”（如果仍残留 dst 文件，请将其删除）。",
+            "folder_create_failed_hint": "请检查目标共享是否已挂载且可写：自检查以来断开或重新挂载的共享同样会拒绝此操作。下一轮会再次尝试；未移动任何内容。",
+            "reservations_unreadable": "无法读取其他 rip 的交付所预留的名称：{error}",
+            "reservations_unreadable_hint": "尚未移动或命名任何内容。下一轮会再次尝试；如果问题持续，请修复暂存存储或另一个 rip 的交付日志。"
         },
         "library": {
             "changed_during": "{path} 在此次 remux 运行期间已更改；未动它",

@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "hazırlık alanı incelenemiyor: hazırlık klasöründeki bazı girdiler okunamadı",
             "entry_unreadable": "{name} hazırlık girdisi incelenemiyor: {error}",
-            "mux_job_busy": "Bir sürücü şu anda bu rip'in hazırlık işini kullanıyor; mux yapılmadı ve hazırlık alanında kalıyor."
+            "mux_job_busy": "Bir sürücü şu anda bu rip'in hazırlık işini kullanıyor; mux yapılmadı ve hazırlık alanında kalıyor.",
+            "root_missing": "hazırlık klasörü {path} eksik – paylaşım bağlı mı?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Yeniden başlatma, sunucu başladıktan veya son yeniden başlatma isteğinden sonra bir dakika boyunca kullanılamaz. Kısa süre sonra yeniden deneyin."
         },
         "mover": {
-            "destination_step_failed": "Hedef klasörün izinlerini, boş alanını ve bağlantısını denetleyin. Teslimatın kendi satırı ne zaman yeniden deneneceğini gösterir."
+            "destination_step_failed": "Hedef klasörün izinlerini, boş alanını ve bağlantısını denetleyin. Teslimatın kendi satırı ne zaman yeniden deneneceğini gösterir.",
+            "retry_state_unsaved": "{reason}; yeniden deneme durumu kaydedilemediği için otomatik yeniden denemeler durduruldu: {error}",
+            "retry_state_unsaved_hint": "Hazırlık depolamasında yer açın veya yazılabilir yapın, ardından «Retry» seçeneğini seçin. Hazırlık alanındaki kaynak dosyalar korunur.",
+            "copy_failed_hint": "Altta yatan hata için device_system.log dosyasına bakın. Teslimat 30 s sonra, ardından 2 min sonra yeniden denenir; sonrasında «Retry» seçeneğini bekler.",
+            "teardown_listing_hint": "Dosyalar teslim edildi; hazırlık alanı tamamen listelenebilene kadar korunur. Hazırlık alanının bağlantısını denetleyin; temizlik bir bekleme sonrasında yeniden denenir, ardından «Retry» seçeneğini bekler.",
+            "teardown_cleanup_hint": "Dosyalar teslim edildi. Hazırlık alanında değişen veya planlanmamış öğeleri inceleyin; bunlar otomatik olarak silinmez. Temizlik bir bekleme sonrasında yeniden denenir, ardından «Retry» seçeneğini bekler.",
+            "size_mismatch_hint": "Hedef dosya sistemini ENOSPC / eksik yazmalar açısından denetleyin. Mover yalnızca kendi geçici dosyasını kaldırır ve 30 s sonra, ardından 2 min sonra yeniden dener; sonrasında «Retry» seçeneğini bekler (bir dst dosyası kalırsa kaldırın).",
+            "post_copy_invalid_hint": "Kopyanın boyutu doğru ancak biçim/okunabilirlik denetiminden geçemedi (kesik üstbilgi veya son, hatalı TS senkronu ya da okunamayan dst); ayrıntılı denetim için device_system.log dosyasına bakın. Mover yalnızca kendi geçici dosyasını kaldırır ve 30 s sonra, ardından 2 min sonra yeniden dener; sonrasında «Retry» seçeneğini bekler (bir dst dosyası kalırsa kaldırın).",
+            "folder_create_failed_hint": "Hedef paylaşımın bağlı ve yazılabilir olduğunu denetleyin: denetiminden sonra bağlantısı kopan veya yeniden bağlanan bir paylaşım da bunu reddeder. Sonraki turda yeniden denenir; hiçbir şey taşınmadı.",
+            "reservations_unreadable": "diğer rip'lerin teslimatlarının ayırdığı adlar okunamıyor: {error}",
+            "reservations_unreadable_hint": "Henüz hiçbir şey taşınmadı veya adlandırılmadı. Sonraki turda yeniden denenir; sürerse hazırlık depolamasını veya diğer rip'in teslimat günlüğünü onarın."
         },
         "library": {
             "changed_during": "{path} bu remux sürerken değişti; ona dokunulmadı",

@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "no es pot inspeccionar l'àrea intermèdia: no s'han pogut llegir algunes entrades de la carpeta intermèdia",
             "entry_unreadable": "no es pot inspeccionar l'entrada intermèdia {name}: {error}",
-            "mux_job_busy": "Una unitat està fent servir ara mateix la tasca intermèdia d'aquest rip; no s'ha muxat i continua a l'àrea intermèdia."
+            "mux_job_busy": "Una unitat està fent servir ara mateix la tasca intermèdia d'aquest rip; no s'ha muxat i continua a l'àrea intermèdia.",
+            "root_missing": "la carpeta intermèdia {path} no hi és: s'ha muntat el recurs compartit?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "El reinici no està disponible durant un minut després que el servidor s'iniciï o després de l'última sol·licitud de reinici. Torneu-ho a provar d'aquí a poc."
         },
         "mover": {
-            "destination_step_failed": "Comproveu els permisos, l'espai lliure i el muntatge de la carpeta de destinació. La fila de l'entrega mostra quan es tornarà a provar."
+            "destination_step_failed": "Comproveu els permisos, l'espai lliure i el muntatge de la carpeta de destinació. La fila de l'entrega mostra quan es tornarà a provar.",
+            "retry_state_unsaved": "{reason}; els reintents automàtics s'han aturat perquè no s'ha pogut desar l'estat dels reintents: {error}",
+            "retry_state_unsaved_hint": "Allibereu espai a l'emmagatzematge intermedi o feu-lo escriptible i trieu després «Retry». Els fitxers d'origen de l'àrea intermèdia es conserven.",
+            "copy_failed_hint": "Consulteu device_system.log per veure l'error subjacent. L'entrega es torna a provar al cap de 30 s i després de 2 min; després espera «Retry».",
+            "teardown_listing_hint": "Els fitxers s'han lliurat; l'àrea intermèdia es conserva fins que es pugui llistar completament. Comproveu el muntatge de l'àrea intermèdia; el desmuntatge es reintenta després d'una espera i després espera «Retry».",
+            "teardown_cleanup_hint": "Els fitxers s'han lliurat. Reviseu els artefactes de l'àrea intermèdia que han canviat o no estaven previstos; no se suprimeixen automàticament. El desmuntatge es reintenta després d'una espera i després espera «Retry».",
+            "size_mismatch_hint": "Comproveu el sistema de fitxers de destinació per detectar ENOSPC / escriptures curtes. El mover només elimina el seu fitxer temporal i ho torna a provar al cap de 30 s i després de 2 min; després espera «Retry» (si hi queda un fitxer dst, elimineu-lo).",
+            "post_copy_invalid_hint": "La còpia té la mida correcta, però no ha superat una comprovació de format o llegibilitat (capçalera o final truncats, sincronització TS incorrecta o dst il·legible); consulteu device_system.log per veure la comprovació concreta. El mover només elimina el seu fitxer temporal i ho torna a provar al cap de 30 s i després de 2 min; després espera «Retry» (si hi queda un fitxer dst, elimineu-lo).",
+            "folder_create_failed_hint": "Comproveu que el recurs compartit de destinació estigui muntat i sigui escriptible: un recurs que s'ha desconnectat o remuntat des de la seva comprovació també ho refusa. Es torna a provar a la passada següent; no s'ha mogut res.",
+            "reservations_unreadable": "no es poden llegir els noms que han reservat les entregues d'altres rips: {error}",
+            "reservations_unreadable_hint": "Encara no s'ha mogut ni anomenat res. Es torna a provar a la passada següent; si persisteix, repareu l'emmagatzematge intermedi o el diari d'entrega de l'altre rip."
         },
         "library": {
             "changed_during": "{path} ha canviat mentre s'executava aquest remux; no s'ha tocat",

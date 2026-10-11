@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "nedá sa skontrolovať prípravná oblasť: niektoré položky v prípravnom priečinku sa nepodarilo prečítať",
             "entry_unreadable": "nedá sa skontrolovať položka prípravnej oblasti {name}: {error}",
-            "mux_job_busy": "Jednotka práve používa prípravnú úlohu tohto ripu; nebola zmuxovaná a zostáva v prípravnej oblasti."
+            "mux_job_busy": "Jednotka práve používa prípravnú úlohu tohto ripu; nebola zmuxovaná a zostáva v prípravnej oblasti.",
+            "root_missing": "prípravný priečinok {path} chýba – je zdieľaný zväzok pripojený?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Reštart nie je dostupný minútu po spustení servera alebo po poslednej požiadavke na reštart. Skúste to o chvíľu znova."
         },
         "mover": {
-            "destination_step_failed": "Skontrolujte oprávnenia, voľné miesto a pripojenie cieľového priečinka. Riadok samotného doručenia ukazuje, kedy sa to skúsi znova."
+            "destination_step_failed": "Skontrolujte oprávnenia, voľné miesto a pripojenie cieľového priečinka. Riadok samotného doručenia ukazuje, kedy sa to skúsi znova.",
+            "retry_state_unsaved": "{reason}; automatické opakovania sa zastavili, pretože sa nepodarilo uložiť stav opakovania: {error}",
+            "retry_state_unsaved_hint": "Uvoľnite miesto v prípravnom úložisku alebo ho sprístupnite na zápis a potom zvoľte „Retry“. Pripravené zdrojové súbory sa zachovajú.",
+            "copy_failed_hint": "Podrobnosti o príčine chyby nájdete v device_system.log. Doručenie sa skúsi znova po 30 s, potom po 2 min; potom čaká na „Retry“.",
+            "teardown_listing_hint": "Súbory sú doručené; prípravná oblasť sa ponechá, kým sa nedá vypísať celá. Skontrolujte pripojenie prípravnej oblasti; upratanie sa po oneskorení zopakuje a potom čaká na „Retry“.",
+            "teardown_cleanup_hint": "Súbory sú doručené. Skontrolujte zmenené alebo neplánované artefakty v prípravnej oblasti; automaticky sa nemažú. Upratanie sa po oneskorení zopakuje a potom čaká na „Retry“.",
+            "size_mismatch_hint": "Skontrolujte, či sa v cieľovom súborovom systéme nevyskytuje ENOSPC / skrátené zápisy. Mover odstráni len svoj dočasný súbor a skúsi to znova po 30 s, potom po 2 min; potom čaká na „Retry“ (ak zostane súbor dst, odstráňte ho).",
+            "post_copy_invalid_hint": "Kópia má správnu veľkosť, ale neprešla kontrolou formátu alebo čitateľnosti (orezaná hlavička alebo koniec, chybná synchronizácia TS alebo nečitateľný dst); konkrétnu kontrolu nájdete v device_system.log. Mover odstráni len svoj dočasný súbor a skúsi to znova po 30 s, potom po 2 min; potom čaká na „Retry“ (ak zostane súbor dst, odstráňte ho).",
+            "folder_create_failed_hint": "Skontrolujte, či je cieľové zdieľané úložisko pripojené a zapisovateľné: odmietne to aj úložisko, ktoré od svojej kontroly vypadlo alebo bolo znova pripojené. Pri ďalšom prechode sa to skúsi znova; nič sa nepresunulo.",
+            "reservations_unreadable": "nedajú sa prečítať názvy rezervované doručeniami iných ripov: {error}",
+            "reservations_unreadable_hint": "Zatiaľ sa nič nepresunulo ani nepomenovalo. Pri ďalšom prechode sa to skúsi znova; ak problém pretrváva, opravte prípravné úložisko alebo žurnál doručenia druhého ripu."
         },
         "library": {
             "changed_during": "{path} sa počas tohto remuxu zmenil; nebol zmenený",

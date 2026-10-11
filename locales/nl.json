@@ -450,7 +450,8 @@
         "staging": {
             "listing_incomplete": "kan de tussenopslag niet inspecteren: sommige items in de tussenopslagmap konden niet worden gelezen",
             "entry_unreadable": "kan het item {name} in de tussenopslag niet inspecteren: {error}",
-            "mux_job_busy": "Een station gebruikt op dit moment de tussenopslagtaak van deze rip; die is niet gemuxt en blijft in de tussenopslag."
+            "mux_job_busy": "Een station gebruikt op dit moment de tussenopslagtaak van deze rip; die is niet gemuxt en blijft in de tussenopslag.",
+            "root_missing": "tussenopslagmap {path} ontbreekt – is de share gekoppeld?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Herstarten is een minuut lang niet beschikbaar nadat de server is gestart of na het laatste herstartverzoek. Probeer het zo opnieuw."
         },
         "mover": {
-            "destination_step_failed": "Controleer de rechten, vrije ruimte en koppeling van de doelmap. De eigen rij van de levering toont wanneer het opnieuw wordt geprobeerd."
+            "destination_step_failed": "Controleer de rechten, vrije ruimte en koppeling van de doelmap. De eigen rij van de levering toont wanneer het opnieuw wordt geprobeerd.",
+            "retry_state_unsaved": "{reason}; automatische nieuwe pogingen zijn gestopt omdat de status van de pogingen niet kon worden opgeslagen: {error}",
+            "retry_state_unsaved_hint": "Maak ruimte vrij op de tussenopslag of maak deze beschrijfbaar en kies daarna «Retry». De bronbestanden in de tussenopslag blijven behouden.",
+            "copy_failed_hint": "Zie device_system.log voor de onderliggende fout. De levering wordt na 30 s opnieuw geprobeerd en daarna na 2 min; daarna wacht ze op «Retry».",
+            "teardown_listing_hint": "De bestanden zijn geleverd; de tussenopslag blijft bewaard totdat deze volledig kan worden opgesomd. Controleer de koppeling van de tussenopslag; het opruimen wordt na een wachttijd opnieuw geprobeerd en wacht daarna op «Retry».",
+            "teardown_cleanup_hint": "De bestanden zijn geleverd. Controleer gewijzigde of ongeplande artefacten in de tussenopslag; ze worden niet automatisch verwijderd. Het opruimen wordt na een wachttijd opnieuw geprobeerd en wacht daarna op «Retry».",
+            "size_mismatch_hint": "Controleer het doelbestandssysteem op ENOSPC / onvolledige schrijfbewerkingen. De mover verwijdert alleen zijn tijdelijke bestand en probeert het na 30 s opnieuw en daarna na 2 min; daarna wacht hij op «Retry» (als er een dst-bestand overblijft, verwijder dat dan).",
+            "post_copy_invalid_hint": "De kopie heeft de juiste grootte, maar is niet door een controle op indeling/leesbaarheid gekomen (afgekapte header of staart, onjuiste TS-synchronisatie of onleesbaar dst); zie device_system.log voor de specifieke controle. De mover verwijdert alleen zijn tijdelijke bestand en probeert het na 30 s opnieuw en daarna na 2 min; daarna wacht hij op «Retry» (als er een dst-bestand overblijft, verwijder dat dan).",
+            "folder_create_failed_hint": "Controleer of de doelshare is gekoppeld en beschrijfbaar: een share die sinds de controle is weggevallen of opnieuw is gekoppeld, weigert dit ook. Het wordt bij de volgende ronde opnieuw geprobeerd; er is niets verplaatst.",
+            "reservations_unreadable": "de namen die de leveringen van andere rips hebben gereserveerd kunnen niet worden gelezen: {error}",
+            "reservations_unreadable_hint": "Er is nog niets verplaatst of benoemd. Het wordt bij de volgende ronde opnieuw geprobeerd; als dit blijft aanhouden, herstel dan de tussenopslag of het leveringsjournaal van de andere rip."
         },
         "library": {
             "changed_during": "{path} is gewijzigd terwijl deze remux liep; het is niet aangeraakt",

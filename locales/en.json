@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "cannot inspect staging: some entries in the staging folder could not be read",
             "entry_unreadable": "cannot inspect staging entry {name}: {error}",
-            "mux_job_busy": "A drive is using this rip's staging job right now; it was not muxed and stays staged."
+            "mux_job_busy": "A drive is using this rip's staging job right now; it was not muxed and stays staged.",
+            "root_missing": "staging folder {path} is missing — is the share mounted?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Reboot is unavailable for a minute after the server starts or after the last reboot request. Try again shortly."
         },
         "mover": {
-            "destination_step_failed": "Check the destination folder's permissions, free space and mount. The delivery's own row shows when it is tried again."
+            "destination_step_failed": "Check the destination folder's permissions, free space and mount. The delivery's own row shows when it is tried again.",
+            "retry_state_unsaved": "{reason}; automatic retries stopped because the retry state could not be saved: {error}",
+            "retry_state_unsaved_hint": "Free space on the staging storage or make it writable, then choose Retry. Staged source files are retained.",
+            "copy_failed_hint": "See device_system.log for the underlying error. The delivery is tried again after 30 s, then 2 min; after that it waits for Retry.",
+            "teardown_listing_hint": "The files are delivered; staging is kept until it can be listed in full. Check the staging mount; the teardown retries after a backoff, then waits for Retry.",
+            "teardown_cleanup_hint": "The files are delivered. Inspect changed or unplanned staging artifacts; they are not automatically deleted. The teardown retries after a backoff, then waits for Retry.",
+            "size_mismatch_hint": "Check the destination filesystem for ENOSPC / short writes. The mover removes only its temp file and tries again after 30 s, then 2 min; after that it waits for Retry (if a dst file remains, remove it).",
+            "post_copy_invalid_hint": "The copy is the correct size but failed a format/readability check (truncated header/tail, bad TS sync, or unreadable dst); see device_system.log for the specific check. The mover removes only its temp file and tries again after 30 s, then 2 min; after that it waits for Retry (if a dst file remains, remove it).",
+            "folder_create_failed_hint": "Check that the destination share is mounted and writable: a share that dropped or was remounted since its check refuses this too. It is tried again on the next pass; nothing was moved.",
+            "reservations_unreadable": "cannot read the names other rips' deliveries reserved: {error}",
+            "reservations_unreadable_hint": "Nothing was moved or named yet. It is tried again on the next pass; if this persists, repair the staging storage or the other rip's delivery journal."
         },
         "library": {
             "retire": {

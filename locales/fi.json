@@ -473,7 +473,8 @@
         "staging": {
             "listing_incomplete": "välivaiheen kansiota ei voi tarkastaa: joitakin sen kohteita ei voitu lukea",
             "entry_unreadable": "välivaiheen kohdetta {name} ei voi tarkastaa: {error}",
-            "mux_job_busy": "Asema käyttää juuri tämän ripin välivaiheen työtä; sitä ei muxattu, ja se pysyy välivaiheessa."
+            "mux_job_busy": "Asema käyttää juuri tämän ripin välivaiheen työtä; sitä ei muxattu, ja se pysyy välivaiheessa.",
+            "root_missing": "välivaihekansio {path} puuttuu – onko jaettu resurssi liitetty?"
         }
     },
     "usage": {
@@ -931,7 +932,17 @@
             "too_soon": "Uudelleenkäynnistys ei ole käytettävissä minuuttiin palvelimen käynnistymisen tai viimeisimmän uudelleenkäynnistyspyynnön jälkeen. Yritä hetken kuluttua uudelleen."
         },
         "mover": {
-            "destination_step_failed": "Tarkista kohdekansion käyttöoikeudet, vapaa tila ja liitos. Toimituksen oma rivi näyttää, milloin sitä yritetään uudelleen."
+            "destination_step_failed": "Tarkista kohdekansion käyttöoikeudet, vapaa tila ja liitos. Toimituksen oma rivi näyttää, milloin sitä yritetään uudelleen.",
+            "retry_state_unsaved": "{reason}; automaattiset uudelleenyritykset pysäytettiin, koska uudelleenyrityksen tilaa ei voitu tallentaa: {error}",
+            "retry_state_unsaved_hint": "Vapauta tilaa välivaiheen tallennustilasta tai tee siitä kirjoitettava ja valitse sitten ”Retry”. Välivaiheessa olevat lähdetiedostot säilytetään.",
+            "copy_failed_hint": "Katso taustalla oleva virhe tiedostosta device_system.log. Toimitusta yritetään uudelleen 30 s ja sen jälkeen 2 min kuluttua; sen jälkeen se odottaa valintaa ”Retry”.",
+            "teardown_listing_hint": "Tiedostot on toimitettu; välivaihe säilytetään, kunnes se voidaan luetteloida kokonaan. Tarkista välivaiheen liitos; purku yritetään uudelleen viiveen jälkeen ja odottaa sitten valintaa ”Retry”.",
+            "teardown_cleanup_hint": "Tiedostot on toimitettu. Tarkista välivaiheen muuttuneet tai suunnittelemattomat tiedostot; niitä ei poisteta automaattisesti. Purku yritetään uudelleen viiveen jälkeen ja odottaa sitten valintaa ”Retry”.",
+            "size_mismatch_hint": "Tarkista kohteen tiedostojärjestelmä: ENOSPC / vajaat kirjoitukset. Mover poistaa vain oman väliaikaistiedostonsa ja yrittää uudelleen 30 s ja sen jälkeen 2 min kuluttua; sen jälkeen se odottaa valintaa ”Retry” (jos dst-tiedosto jää jäljelle, poista se).",
+            "post_copy_invalid_hint": "Kopion koko on oikea, mutta se ei läpäissyt muoto- tai luettavuustarkistusta (katkennut otsake tai loppu, virheellinen TS-synkronointi tai lukukelvoton dst); tarkka tarkistus on tiedostossa device_system.log. Mover poistaa vain oman väliaikaistiedostonsa ja yrittää uudelleen 30 s ja sen jälkeen 2 min kuluttua; sen jälkeen se odottaa valintaa ”Retry” (jos dst-tiedosto jää jäljelle, poista se).",
+            "folder_create_failed_hint": "Tarkista, että kohteen jaettu resurssi on liitetty ja kirjoitettavissa: myös resurssi, joka on irronnut tai liitetty uudelleen tarkistuksensa jälkeen, kieltäytyy tästä. Yritys toistetaan seuraavalla kierroksella; mitään ei siirretty.",
+            "reservations_unreadable": "muiden ripien toimitusten varaamia nimiä ei voi lukea: {error}",
+            "reservations_unreadable_hint": "Mitään ei ole vielä siirretty tai nimetty. Yritys toistetaan seuraavalla kierroksella; jos ongelma jatkuu, korjaa välivaiheen tallennustila tai toisen ripin toimituslokki."
         },
         "library": {
             "changed_during": "{path} muuttui tämän remuxin aikana; siihen ei koskettu",
