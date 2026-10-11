@@ -438,8 +438,8 @@
             "later_disc_start": "Die Episodennummerierung späterer Discs benötigt eine bestätigte erste Episode; Disc-Nummer und Laufzeiten legen sie nicht fest.",
             "episode_range": "Die Episodennummerierung liegt außerhalb des unterstützten Bereichs.",
             "action": {
-                "roster": "Handelt es sich um einen Film, korrigieren Sie die Zuordnung zum Film; um ihn als einen Titel zu rippen, deaktivieren Sie in den Einstellungen „TV-Staffeln automatisch rippen“.",
-                "first_episode": "Legen Sie beim Korrigieren der Zuordnung die erste Episode fest."
+                "roster": "Handelt es sich um einen Film, korrigieren Sie die Zuordnung zum Film; um ihn als einen Titel zu rippen, deaktivieren Sie in den Einstellungen „Rip TV seasons automatically“.",
+                "first_episode": "Legen Sie beim Korrigieren der Zuordnung „First episode“ fest."
             },
             "review_held": "Die Titelauswahl muss vor dem Muxen geprüft werden: {reason}. Es wurde kein Ersatztitel ausgewählt.",
             "review_retained": "Die gespeicherte ISO und der Plan bleiben erhalten."

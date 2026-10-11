@@ -461,8 +461,8 @@
             "later_disc_start": "Sonraki disklerde bölüm numaralandırması, onaylanmış bir İlk bölüm gerektirir; disk numarası ve süreler bunu belirlemez.",
             "episode_range": "Bölüm numaralandırması desteklenen aralığın dışında.",
             "action": {
-                "roster": "Bir film ise eşleşmesini filme göre düzeltin; tek bir başlık olarak rip etmek için Ayarlar'da «TV sezonlarını otomatik rip et» seçeneğini kapatın.",
-                "first_episode": "Eşleşmeyi düzeltirken İlk bölümü ayarlayın."
+                "roster": "Bir film ise eşleşmesini filme göre düzeltin; tek bir başlık olarak rip etmek için Ayarlar'da «Rip TV seasons automatically» seçeneğini kapatın.",
+                "first_episode": "Eşleşmeyi düzeltirken «First episode» alanını ayarlayın."
             },
             "review_held": "Başlık seçimi muxlamadan önce incelenmelidir: {reason}. Yedek başlık seçilmedi.",
             "review_retained": "Kaydedilen ISO ve plan korunuyor."

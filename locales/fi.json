@@ -461,8 +461,8 @@
             "later_disc_start": "Myöhemmän levyn jaksonumerointi vaatii vahvistetun ensimmäisen jakson; levyn numero ja kestot eivät sitä määritä.",
             "episode_range": "Jaksonumerointi on tuetun alueen ulkopuolella.",
             "action": {
-                "roster": "Jos kyseessä on elokuva, korjaa sen vastaavuus elokuvaan; jos haluat rippaa sen yhtenä nimikkeenä, poista Asetuksista käytöstä ”Rippaa TV-kaudet automaattisesti”.",
-                "first_episode": "Aseta Ensimmäinen jakso, kun korjaat vastaavuuden."
+                "roster": "Jos kyseessä on elokuva, korjaa sen vastaavuus elokuvaan; jos haluat rippaa sen yhtenä nimikkeenä, poista Asetuksista käytöstä ”Rip TV seasons automatically”.",
+                "first_episode": "Aseta ”First episode”, kun korjaat vastaavuuden."
             },
             "review_held": "Nimikkeen valinta on tarkistettava ennen muxausta: {reason}. Varanimikettä ei valittu.",
             "review_retained": "Tallennettu ISO ja suunnitelma säilytetään."

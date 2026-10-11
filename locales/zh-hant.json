@@ -461,8 +461,8 @@
             "later_disc_start": "後續光碟的劇集編號需要已確認的第一集；光碟編號和時長無法確定。",
             "episode_range": "劇集編號超出支援範圍。",
             "action": {
-                "roster": "如果這是電影，請將其比對更正為該電影；若要將其作為單一標題擷取，請在「設定」中關閉「自動擷取電視影集季」。",
-                "first_episode": "更正比對時請設定「第一集」。"
+                "roster": "如果這是電影，請將其比對更正為該電影；若要將其作為單一標題擷取，請在「Rip TV seasons automatically」中關閉「自動擷取電視影集季」。",
+                "first_episode": "更正比對時請設定「First episode」。"
             },
             "review_held": "混流前需要審核標題選擇：{reason}。未選擇備用標題。",
             "review_retained": "已儲存的 ISO 與計畫將被保留。"

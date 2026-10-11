@@ -461,8 +461,8 @@
             "later_disc_start": "后续光盘的剧集编号需要已确认的第一集；光盘编号和时长无法确定。",
             "episode_range": "剧集编号超出支持范围。",
             "action": {
-                "roster": "如果这是电影，请将其匹配更正为该电影；若要将其作为单个标题抓取，请在“设置”中关闭“自动抓取电视剧季”。",
-                "first_episode": "更正匹配时请设置“第一集”。"
+                "roster": "如果这是电影，请将其匹配更正为该电影；若要将其作为单个标题抓取，请在“Rip TV seasons automatically”中关闭“自动抓取电视剧季”。",
+                "first_episode": "更正匹配时请设置“First episode”。"
             },
             "review_held": "混流前需要审核标题选择：{reason}。未选择备用标题。",
             "review_retained": "已保存的 ISO 和计划将被保留。"

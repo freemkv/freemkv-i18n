@@ -438,8 +438,8 @@
             "later_disc_start": "La numérotation des épisodes d'un disque ultérieur nécessite un premier épisode confirmé ; le numéro du disque et les durées ne le déterminent pas.",
             "episode_range": "La numérotation des épisodes est hors de la plage prise en charge.",
             "action": {
-                "roster": "S'il s'agit d'un film, corrigez sa correspondance avec le film ; pour l'extraire comme un seul titre, désactivez « Extraire automatiquement les saisons TV » dans les Réglages.",
-                "first_episode": "Définissez le Premier épisode lorsque vous corrigez sa correspondance."
+                "roster": "S'il s'agit d'un film, corrigez sa correspondance avec le film ; pour l'extraire comme un seul titre, désactivez «Rip TV seasons automatically» dans les Réglages.",
+                "first_episode": "Définissez «First episode» lorsque vous corrigez sa correspondance."
             },
             "review_held": "La sélection du titre doit être vérifiée avant le muxage : {reason}. Aucun titre de repli n'a été sélectionné.",
             "review_retained": "L'ISO et le plan enregistrés sont conservés."

@@ -461,8 +461,8 @@
             "later_disc_start": "Việc đánh số tập của đĩa sau cần một Tập đầu tiên đã được xác nhận; số đĩa và thời lượng không xác định được điều này.",
             "episode_range": "Việc đánh số tập nằm ngoài phạm vi được hỗ trợ.",
             "action": {
-                "roster": "Nếu là phim, hãy sửa kết quả khớp thành phim; để rip thành một tiêu đề, hãy tắt «Tự động rip các mùa phim truyền hình» trong Cài đặt.",
-                "first_episode": "Hãy đặt Tập đầu tiên khi bạn sửa kết quả khớp."
+                "roster": "Nếu là phim, hãy sửa kết quả khớp thành phim; để rip thành một tiêu đề, hãy tắt «Rip TV seasons automatically» trong Cài đặt.",
+                "first_episode": "Hãy đặt «First episode» khi bạn sửa kết quả khớp."
             },
             "review_held": "Việc chọn tiêu đề cần được xem xét trước khi muxing: {reason}. Không có tiêu đề dự phòng nào được chọn.",
             "review_retained": "ISO và kế hoạch đã lưu được giữ lại."

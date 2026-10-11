@@ -438,8 +438,8 @@
             "later_disc_start": "Afleveringsnummering van een latere schijf vereist een bevestigde eerste aflevering; schijfnummer en speelduur bepalen die niet.",
             "episode_range": "De afleveringsnummering valt buiten het ondersteunde bereik.",
             "action": {
-                "roster": "Als het een film is, corrigeer dan de koppeling naar de film; om het als één titel te rippen, schakelt u in Instellingen «TV-seizoenen automatisch rippen» uit.",
-                "first_episode": "Stel de Eerste aflevering in wanneer u de koppeling corrigeert."
+                "roster": "Als het een film is, corrigeer dan de koppeling naar de film; om het als één titel te rippen, schakelt u in Instellingen «Rip TV seasons automatically» uit.",
+                "first_episode": "Stel «First episode» in wanneer u de koppeling corrigeert."
             },
             "review_held": "De titelselectie moet worden gecontroleerd vóór het muxen: {reason}. Er is geen terugvaltitel geselecteerd.",
             "review_retained": "De opgeslagen ISO en het plan blijven bewaard."

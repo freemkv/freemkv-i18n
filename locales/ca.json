@@ -461,8 +461,8 @@
             "later_disc_start": "La numeració d'episodis d'un disc posterior necessita un primer episodi confirmat; el número de disc i les durades no el determinen.",
             "episode_range": "La numeració d'episodis és fora de l'interval admès.",
             "action": {
-                "roster": "Si és una pel·lícula, corregiu-ne la coincidència amb la pel·lícula; per extreure-la com un sol títol, desactiveu «Extreu automàticament les temporades de sèries» a la Configuració.",
-                "first_episode": "Definiu el Primer episodi quan en corregiu la coincidència."
+                "roster": "Si és una pel·lícula, corregiu-ne la coincidència amb la pel·lícula; per extreure-la com un sol títol, desactiveu «Rip TV seasons automatically» a la Configuració.",
+                "first_episode": "Definiu «First episode» quan en corregiu la coincidència."
             },
             "review_held": "La selecció de títols necessita revisió abans del muxing: {reason}. No s'ha seleccionat cap títol alternatiu.",
             "review_retained": "L'ISO i el pla desats es conserven."

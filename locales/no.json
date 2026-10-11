@@ -461,8 +461,8 @@
             "later_disc_start": "Episodenummerering på en senere plate krever en bekreftet første episode; platenummer og spilletider fastslår den ikke.",
             "episode_range": "Episodenummereringen er utenfor det støttede området.",
             "action": {
-                "roster": "Hvis det er en film, må du rette treffet til filmen; for å rippe den som én tittel, slå av «Rip TV-sesonger automatisk» i Innstillinger.",
-                "first_episode": "Angi Første episode når du retter treffet."
+                "roster": "Hvis det er en film, må du rette treffet til filmen; for å rippe den som én tittel, slå av «Rip TV seasons automatically» i Innstillinger.",
+                "first_episode": "Angi «First episode» når du retter treffet."
             },
             "review_held": "Tittelvalget må gjennomgås før muxing: {reason}. Ingen reservetittel ble valgt.",
             "review_retained": "Den lagrede ISO-en og planen beholdes."

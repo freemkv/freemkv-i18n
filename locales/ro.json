@@ -461,8 +461,8 @@
             "later_disc_start": "Numerotarea episoadelor de pe un disc ulterior necesită un prim episod confirmat; numărul discului și duratele nu îl stabilesc.",
             "episode_range": "Numerotarea episoadelor este în afara intervalului acceptat.",
             "action": {
-                "roster": "Dacă este un film, corectați potrivirea la film; pentru a-l extrage ca un singur titlu, dezactivați «Extrage automat sezoanele TV» în Setări.",
-                "first_episode": "Setați Primul episod când corectați potrivirea."
+                "roster": "Dacă este un film, corectați potrivirea la film; pentru a-l extrage ca un singur titlu, dezactivați «Rip TV seasons automatically» în Setări.",
+                "first_episode": "Setați «First episode» când corectați potrivirea."
             },
             "review_held": "Selecția titlului necesită verificare înainte de muxare: {reason}. Nu a fost selectat niciun titlu de rezervă.",
             "review_retained": "ISO-ul și planul salvate sunt păstrate."

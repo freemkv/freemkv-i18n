@@ -461,8 +461,8 @@
             "later_disc_start": "Číslovanie epizód na neskoršom disku vyžaduje potvrdenú prvú epizódu; číslo disku a dĺžky ju neurčujú.",
             "episode_range": "Číslovanie epizód je mimo podporovaného rozsahu.",
             "action": {
-                "roster": "Ak ide o film, opravte jeho priradenie k filmu; ak ho chcete ripovať ako jeden titul, vypnite v Nastaveniach voľbu „Automaticky ripovať sezóny seriálov“.",
-                "first_episode": "Pri oprave priradenia nastavte Prvú epizódu."
+                "roster": "Ak ide o film, opravte jeho priradenie k filmu; ak ho chcete ripovať ako jeden titul, vypnite v Nastaveniach voľbu „Rip TV seasons automatically“.",
+                "first_episode": "Pri oprave priradenia nastavte „First episode“."
             },
             "review_held": "Výber titulu vyžaduje pred muxovaním kontrolu: {reason}. Nebol vybraný žiadny náhradný titul.",
             "review_retained": "Uložený ISO a plán zostávajú zachované."

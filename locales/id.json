@@ -461,8 +461,8 @@
             "later_disc_start": "Penomoran episode disc berikutnya memerlukan Episode pertama yang dikonfirmasi; nomor disc dan durasi tidak menentukannya.",
             "episode_range": "Penomoran episode berada di luar rentang yang didukung.",
             "action": {
-                "roster": "Jika ini film, perbaiki kecocokannya ke film tersebut; untuk me-rip sebagai satu judul, matikan «Rip musim TV secara otomatis» di Pengaturan.",
-                "first_episode": "Tetapkan Episode pertama saat Anda memperbaiki kecocokannya."
+                "roster": "Jika ini film, perbaiki kecocokannya ke film tersebut; untuk me-rip sebagai satu judul, matikan «Rip TV seasons automatically» di Pengaturan.",
+                "first_episode": "Tetapkan «First episode» saat Anda memperbaiki kecocokannya."
             },
             "review_held": "Pemilihan judul perlu ditinjau sebelum muxing: {reason}. Tidak ada judul cadangan yang dipilih.",
             "review_retained": "ISO dan rencana yang tersimpan dipertahankan."

@@ -461,8 +461,8 @@
             "later_disc_start": "Afsnitsnummerering på en senere disk kræver et bekræftet første afsnit; disknummer og spilletider fastlægger det ikke.",
             "episode_range": "Afsnitsnummereringen er uden for det understøttede interval.",
             "action": {
-                "roster": "Hvis det er en film, så ret dens match til filmen; for at rippe den som én titel skal du slå «Rip tv-sæsoner automatisk» fra i Indstillinger.",
-                "first_episode": "Angiv Første afsnit, når du retter dens match."
+                "roster": "Hvis det er en film, så ret dens match til filmen; for at rippe den som én titel skal du slå «Rip TV seasons automatically» fra i Indstillinger.",
+                "first_episode": "Angiv «First episode», når du retter dens match."
             },
             "review_held": "Titelvalget skal gennemgås før muxing: {reason}. Der blev ikke valgt nogen reservetitel.",
             "review_retained": "Den gemte ISO og planen bevares."

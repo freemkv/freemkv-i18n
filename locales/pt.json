@@ -438,8 +438,8 @@
             "later_disc_start": "A numeração de episódios de discos posteriores requer um primeiro episódio confirmado; o número do disco e as durações não o determinam.",
             "episode_range": "A numeração de episódios está fora do intervalo suportado.",
             "action": {
-                "roster": "Se for um filme, corrija a correspondência para o filme; para o extrair como um único título, desative «Extrair temporadas de TV automaticamente» nas Definições.",
-                "first_episode": "Defina o Primeiro episódio ao corrigir a correspondência."
+                "roster": "Se for um filme, corrija a correspondência para o filme; para o extrair como um único título, desative «Rip TV seasons automatically» nas Definições.",
+                "first_episode": "Defina «First episode» ao corrigir a correspondência."
             },
             "review_held": "A seleção de títulos precisa de revisão antes da multiplexagem: {reason}. Não foi selecionado nenhum título alternativo.",
             "review_retained": "O ISO e o plano guardados foram mantidos."

@@ -461,8 +461,8 @@
             "later_disc_start": "Avsnittsnumrering på en senare skiva kräver ett bekräftat första avsnitt; skivnummer och speltider fastställer det inte.",
             "episode_range": "Avsnittsnumreringen ligger utanför det som stöds.",
             "action": {
-                "roster": "Om det är en film, rätta matchningen till filmen; för att rippa den som en enda titel, stäng av «Rippa TV-säsonger automatiskt» i Inställningar.",
-                "first_episode": "Ange Första avsnittet när du rättar matchningen."
+                "roster": "Om det är en film, rätta matchningen till filmen; för att rippa den som en enda titel, stäng av «Rip TV seasons automatically» i Inställningar.",
+                "first_episode": "Ange «First episode» när du rättar matchningen."
             },
             "review_held": "Titelvalet behöver granskas före muxning: {reason}. Ingen reservtitel valdes.",
             "review_retained": "Den sparade ISO-filen och planen behålls."

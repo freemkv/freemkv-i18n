@@ -461,8 +461,8 @@
             "later_disc_start": "A későbbi lemezek epizódszámozásához megerősített első epizód kell; a lemez száma és a hossz nem határozza meg.",
             "episode_range": "Az epizódszámozás a támogatott tartományon kívül esik.",
             "action": {
-                "roster": "Ha film, javítsa az egyezését a filmre; ha egyetlen címként szeretné rippelni, kapcsolja ki a Beállításokban a „TV-évadok automatikus rippelése” beállítást.",
-                "first_episode": "Az egyezés javításakor adja meg az Első epizódot."
+                "roster": "Ha film, javítsa az egyezését a filmre; ha egyetlen címként szeretné rippelni, kapcsolja ki a Beállításokban a „Rip TV seasons automatically” beállítást.",
+                "first_episode": "Az egyezés javításakor adja meg a következőt: „First episode”."
             },
             "review_held": "A cím kiválasztását a muxolás előtt felül kell vizsgálni: {reason}. Nem lett kiválasztva tartalék cím.",
             "review_retained": "A mentett ISO és a terv megmarad."
