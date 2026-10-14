@@ -592,6 +592,7 @@
             "help": "Hjælp",
             "docs": "freemkv-dokumentation",
             "check_updates": "Søg efter opdateringer…",
+            "shortcuts": "Tastaturgenveje",
             "edit": "Redigér",
             "open_disc": "Åbn disk…",
             "exit": "Afslut",

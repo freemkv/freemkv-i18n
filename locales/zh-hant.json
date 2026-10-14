@@ -592,6 +592,7 @@
             "help": "說明",
             "docs": "freemkv 文件",
             "check_updates": "檢查更新…",
+            "shortcuts": "鍵盤快速鍵",
             "edit": "編輯",
             "open_disc": "開啟光碟…",
             "exit": "結束",

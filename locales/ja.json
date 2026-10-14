@@ -592,6 +592,7 @@
             "help": "ヘルプ",
             "docs": "freemkv ドキュメント",
             "check_updates": "アップデートを確認…",
+            "shortcuts": "キーボードショートカット",
             "edit": "編集",
             "open_disc": "ディスクを開く…",
             "exit": "終了",

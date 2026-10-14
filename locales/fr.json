@@ -592,6 +592,7 @@
             "help": "Aide",
             "docs": "Documentation freemkv",
             "check_updates": "Rechercher les mises à jour…",
+            "shortcuts": "Raccourcis clavier",
             "edit": "Édition",
             "open_disc": "Ouvrir un disque…",
             "exit": "Quitter",
