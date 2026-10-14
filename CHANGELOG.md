@@ -4,6 +4,7 @@
 
 ### Added
 
+- `gui.set.group_*` (13 Settings section headings) and `gui.menu.shortcuts` in every locale; the English notes for minimum length, languages, lost seconds, raw output and decrypt threads are reworded.
 - **Texts for everything new in freemkv 1.8.4, in every locale**: presentation language (the `--presentation-language` help and usage lines, and its error), title-selection review (E9086 and one reason text per engine review reason), the Library's Change match, TV remux and retire messages, queue and folder holds, staging-folder and listing errors, delivery retry hints, Reboot refusals (no service manager, too soon), the unlocker line in `info`, and the Review-hold save failure.
 
 ### Changed
