@@ -622,6 +622,8 @@
             "default_dest": "Standaardbestemming:",
             "filename_template": "Bestandsnaamsjabloon:",
             "tmdb_api_key": "TMDB API-sleutel (optioneel)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Bij opstarten",
             "startup_show": "Stations tonen",
             "startup_any": "Geplaatste schijf openen",

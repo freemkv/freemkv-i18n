@@ -622,6 +622,8 @@
             "default_dest": "Назначение по умолчанию :",
             "filename_template": "Шаблон имени файла :",
             "tmdb_api_key": "Ключ API TMDB (необязательно)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "При запуске",
             "startup_show": "Показать приводы",
             "startup_any": "Открыть вставленный диск",

@@ -622,6 +622,8 @@
             "default_dest": "Predvolený cieľ :",
             "filename_template": "Šablóna názvu súboru :",
             "tmdb_api_key": "Kľúč API TMDB (voliteľný)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Pri spustení",
             "startup_show": "Zobraziť mechaniky",
             "startup_any": "Otvoriť vložený disk",

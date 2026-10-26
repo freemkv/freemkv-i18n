@@ -622,6 +622,8 @@
             "default_dest": "Domyślne miejsce docelowe:",
             "filename_template": "Szablon nazwy pliku:",
             "tmdb_api_key": "Klucz API TMDB (opcjonalny)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Przy uruchomieniu",
             "startup_show": "Pokaż napędy",
             "startup_any": "Otwórz włożoną płytę",

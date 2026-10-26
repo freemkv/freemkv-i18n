@@ -622,6 +622,8 @@
             "default_dest": "Standardmål :",
             "filename_template": "Filnamnsmall :",
             "tmdb_api_key": "TMDB API-nyckel (valfri)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Vid start",
             "startup_show": "Visa enheter",
             "startup_any": "Öppna en isatt skiva",

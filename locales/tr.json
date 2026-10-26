@@ -622,6 +622,8 @@
             "default_dest": "Varsayılan hedef :",
             "filename_template": "Dosya adı şablonu :",
             "tmdb_api_key": "TMDB API anahtarı (isteğe bağlı)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Başlangıçta",
             "startup_show": "Sürücüleri göster",
             "startup_any": "Takılı diski aç",

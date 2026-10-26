@@ -622,6 +622,8 @@
             "default_dest": "預設目的地：",
             "filename_template": "檔名範本：",
             "tmdb_api_key": "TMDB API 金鑰（選填）",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "啟動時",
             "startup_show": "顯示光碟機",
             "startup_any": "開啟已插入的光碟",

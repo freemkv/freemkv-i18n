@@ -622,6 +622,8 @@
             "default_dest": "Destinació per defecte :",
             "filename_template": "Plantilla de nom de fitxer :",
             "tmdb_api_key": "Clau API de TMDB (opcional)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "En iniciar",
             "startup_show": "Mostra les unitats",
             "startup_any": "Obre un disc inserit",

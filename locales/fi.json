@@ -622,6 +622,8 @@
             "default_dest": "Oletuskohde :",
             "filename_template": "Tiedostonimen malli :",
             "tmdb_api_key": "TMDB API-avain (valinnainen)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Käynnistettäessä",
             "startup_show": "Näytä asemat",
             "startup_any": "Avaa asemassa oleva levy",

@@ -622,6 +622,8 @@
             "default_dest": "Destinazione predefinita:",
             "filename_template": "Modello nome file:",
             "tmdb_api_key": "Chiave API TMDB (facoltativa)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "All’avvio",
             "startup_show": "Mostra le unità",
             "startup_any": "Apri un disco inserito",

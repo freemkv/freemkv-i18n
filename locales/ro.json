@@ -622,6 +622,8 @@
             "default_dest": "Destinație implicită :",
             "filename_template": "Șablon nume de fișier :",
             "tmdb_api_key": "Cheie API TMDB (opțional)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "La pornire",
             "startup_show": "Afișează unitățile",
             "startup_any": "Deschide un disc introdus",

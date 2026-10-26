@@ -622,6 +622,8 @@
             "default_dest": "Standardziel:",
             "filename_template": "Dateinamenvorlage:",
             "tmdb_api_key": "TMDB-API-Schlüssel (optional)",
+            "tv_season": "Staffel (aktuelle Quelle, optional)",
+            "tv_first_episode": "Erste Folge auf dieser Disc (optional)",
             "startup_mode": "Beim Start",
             "startup_show": "Laufwerke anzeigen",
             "startup_any": "Eingelegte Disc öffnen",

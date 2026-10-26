@@ -622,6 +622,8 @@
             "default_dest": "默认目标 ：",
             "filename_template": "文件名模板 ：",
             "tmdb_api_key": "TMDB API 密钥（可选）",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "启动时",
             "startup_show": "显示光驱",
             "startup_any": "打开已插入的光盘",

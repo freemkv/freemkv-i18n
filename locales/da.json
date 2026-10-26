@@ -622,6 +622,8 @@
             "default_dest": "Standarddestination :",
             "filename_template": "Filnavnsskabelon :",
             "tmdb_api_key": "TMDB API-nøgle (valgfri)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Ved opstart",
             "startup_show": "Vis drev",
             "startup_any": "Åbn en indsat disk",

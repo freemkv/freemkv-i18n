@@ -622,6 +622,8 @@
             "default_dest": "Đích mặc định :",
             "filename_template": "Mẫu tên tệp :",
             "tmdb_api_key": "Khóa API TMDB (tùy chọn)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Khi khởi động",
             "startup_show": "Hiển thị ổ đĩa",
             "startup_any": "Mở đĩa đã lắp",

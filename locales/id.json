@@ -622,6 +622,8 @@
             "default_dest": "Tujuan default :",
             "filename_template": "Templat nama berkas :",
             "tmdb_api_key": "Kunci API TMDB (opsional)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Saat memulai",
             "startup_show": "Tampilkan drive",
             "startup_any": "Buka disk yang dimasukkan",

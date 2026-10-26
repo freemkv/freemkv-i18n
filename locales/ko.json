@@ -622,6 +622,8 @@
             "default_dest": "기본 대상 :",
             "filename_template": "파일 이름 템플릿 :",
             "tmdb_api_key": "TMDB API 키 (선택 사항)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "시작할 때",
             "startup_show": "드라이브 표시",
             "startup_any": "삽입된 디스크 열기",

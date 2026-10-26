@@ -622,6 +622,8 @@
             "default_dest": "デフォルト宛先 :",
             "filename_template": "ファイル名テンプレート :",
             "tmdb_api_key": "TMDB APIキー（任意）",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "起動時",
             "startup_show": "ドライブを表示",
             "startup_any": "挿入済みディスクを開く",

@@ -622,6 +622,8 @@
             "default_dest": "Standard destinasjon:",
             "filename_template": "Filnavnmal:",
             "tmdb_api_key": "TMDB API-nøkkel (valgfri)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Ved oppstart",
             "startup_show": "Vis stasjoner",
             "startup_any": "Åpne en innsatt plate",

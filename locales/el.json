@@ -622,6 +622,8 @@
             "default_dest": "Προεπιλεγμένος προορισμός :",
             "filename_template": "Πρότυπο ονόματος αρχείου :",
             "tmdb_api_key": "Κλειδί API TMDB (προαιρετικό)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Κατά την εκκίνηση",
             "startup_show": "Εμφάνιση μονάδων",
             "startup_any": "Άνοιγμα τοποθετημένου δίσκου",

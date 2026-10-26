@@ -622,6 +622,8 @@
             "default_dest": "Типове призначення :",
             "filename_template": "Шаблон імені файлу :",
             "tmdb_api_key": "Ключ API TMDB (необов’язково)",
+            "tv_season": "TV season (current source, optional)",
+            "tv_first_episode": "First episode on this disc (optional)",
             "startup_mode": "Під час запуску",
             "startup_show": "Показати приводи",
             "startup_any": "Відкрити вставлений диск",
