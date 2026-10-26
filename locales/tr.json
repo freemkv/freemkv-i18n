@@ -717,6 +717,8 @@
             "no_disc": "Disk algılanmadı."
         },
         "progress": {
+            "reading_titles": "Seçilen başlıklar diskten okunuyor",
+            "reading_saving_titles": "Tüm başlıklar okunuyor ve kaydediliyor",
             "saving_current": "{container} dosyasına kaydediliyor",
             "saving_overall": "Tüm başlıklar {container} dosyalarına kaydediliyor",
             "elapsed": "Geçen süre: {hms}",

@@ -717,6 +717,8 @@
             "no_disc": "Ingen disk fundet."
         },
         "progress": {
+            "reading_titles": "Læser valgte titler fra disken",
+            "reading_saving_titles": "Læser og gemmer alle titler",
             "saving_current": "Gemmer til {container}-fil",
             "saving_overall": "Gemmer alle titler til {container}-filer",
             "elapsed": "Forløbet: {hms}",

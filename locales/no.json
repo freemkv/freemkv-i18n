@@ -717,6 +717,8 @@
             "no_disc": "Ingen plate funnet."
         },
         "progress": {
+            "reading_titles": "Leser valgte titler fra platen",
+            "reading_saving_titles": "Leser og lagrer alle titler",
             "saving_current": "Lagrer til {container}-fil",
             "saving_overall": "Lagrer alle titler til {container}-filer",
             "elapsed": "Medgått: {hms}",

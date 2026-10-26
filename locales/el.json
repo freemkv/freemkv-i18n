@@ -717,6 +717,8 @@
             "no_disc": "Δεν εντοπίστηκε δίσκος."
         },
         "progress": {
+            "reading_titles": "Ανάγνωση επιλεγμένων τίτλων από τον δίσκο",
+            "reading_saving_titles": "Ανάγνωση και αποθήκευση όλων των τίτλων",
             "saving_current": "Αποθήκευση σε αρχείο {container}",
             "saving_overall": "Αποθήκευση όλων των τίτλων σε αρχεία {container}",
             "elapsed": "Παρήλθε: {hms}",

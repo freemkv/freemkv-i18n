@@ -717,6 +717,8 @@
             "no_disc": "Nebol zistený žiadny disk."
         },
         "progress": {
+            "reading_titles": "Čítanie vybraných titulov z disku",
+            "reading_saving_titles": "Čítanie a ukladanie všetkých titulov",
             "saving_current": "Ukladá sa do súboru {container}",
             "saving_overall": "Ukladajú sa všetky tituly do súborov {container}",
             "elapsed": "Uplynulo: {hms}",

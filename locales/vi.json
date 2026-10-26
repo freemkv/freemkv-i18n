@@ -717,6 +717,8 @@
             "no_disc": "Không phát hiện đĩa."
         },
         "progress": {
+            "reading_titles": "Đang đọc các tiêu đề đã chọn từ đĩa",
+            "reading_saving_titles": "Đang đọc và lưu tất cả tiêu đề",
             "saving_current": "Đang lưu vào tệp {container}",
             "saving_overall": "Đang lưu tất cả tiêu đề vào tệp {container}",
             "elapsed": "Đã trôi qua: {hms}",

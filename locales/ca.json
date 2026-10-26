@@ -717,6 +717,8 @@
             "no_disc": "No s'ha detectat cap disc."
         },
         "progress": {
+            "reading_titles": "Llegint els títols seleccionats del disc",
+            "reading_saving_titles": "Llegint i desant tots els títols",
             "saving_current": "S'està desant al fitxer {container}",
             "saving_overall": "S'estan desant tots els títols a fitxers {container}",
             "elapsed": "Transcorregut: {hms}",

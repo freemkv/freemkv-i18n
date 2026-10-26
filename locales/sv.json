@@ -717,6 +717,8 @@
             "no_disc": "Ingen skiva hittades."
         },
         "progress": {
+            "reading_titles": "Läser valda titlar från skivan",
+            "reading_saving_titles": "Läser och sparar alla titlar",
             "saving_current": "Sparar till {container}-fil",
             "saving_overall": "Sparar alla titlar till {container}-filer",
             "elapsed": "Förfluten tid: {hms}",

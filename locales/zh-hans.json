@@ -717,6 +717,8 @@
             "no_disc": "未检测到光盘。"
         },
         "progress": {
+            "reading_titles": "正在从光盘读取所选标题",
+            "reading_saving_titles": "正在读取并保存所有标题",
             "saving_current": "正在保存到 {container} 文件",
             "saving_overall": "正在将所有标题保存到 {container} 文件",
             "elapsed": "已用时：{hms}",

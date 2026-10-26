@@ -717,6 +717,8 @@
             "no_disc": "Nem található lemez."
         },
         "progress": {
+            "reading_titles": "Kiválasztott címek olvasása a lemezről",
+            "reading_saving_titles": "Az összes cím olvasása és mentése",
             "saving_current": "Mentés {container} fájlba",
             "saving_overall": "Az összes cím mentése {container} fájlokba",
             "elapsed": "Eltelt: {hms}",

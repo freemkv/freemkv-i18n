@@ -717,6 +717,8 @@
             "no_disc": "No se detectó ningún disco."
         },
         "progress": {
+            "reading_titles": "Leyendo los títulos seleccionados del disco",
+            "reading_saving_titles": "Leyendo y guardando todos los títulos",
             "saving_current": "Guardando en archivo {container}",
             "saving_overall": "Guardando todos los títulos en archivos {container}",
             "elapsed": "Transcurrido: {hms}",

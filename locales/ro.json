@@ -717,6 +717,8 @@
             "no_disc": "Nu a fost detectat niciun disc."
         },
         "progress": {
+            "reading_titles": "Se citesc titlurile selectate de pe disc",
+            "reading_saving_titles": "Se citesc și se salvează toate titlurile",
             "saving_current": "Se salvează în fișierul {container}",
             "saving_overall": "Se salvează toate titlurile în fișiere {container}",
             "elapsed": "Timp scurs: {hms}",

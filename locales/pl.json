@@ -717,6 +717,8 @@
             "no_disc": "Nie wykryto płyty."
         },
         "progress": {
+            "reading_titles": "Odczytywanie wybranych tytułów z płyty",
+            "reading_saving_titles": "Odczytywanie i zapisywanie wszystkich tytułów",
             "saving_current": "Zapisywanie do pliku {container}",
             "saving_overall": "Zapisywanie wszystkich tytułów do plików {container}",
             "elapsed": "Upłynęło: {hms}",

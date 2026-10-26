@@ -717,6 +717,8 @@
             "no_disc": "Geen schijf gedetecteerd."
         },
         "progress": {
+            "reading_titles": "Geselecteerde titels van schijf lezen",
+            "reading_saving_titles": "Alle titels lezen en opslaan",
             "saving_current": "Opslaan naar {container}-bestand",
             "saving_overall": "Alle titels opslaan naar {container}-bestanden",
             "elapsed": "Verstreken: {hms}",

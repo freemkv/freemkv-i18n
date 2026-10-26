@@ -717,6 +717,8 @@
             "no_disc": "Keine Disc erkannt."
         },
         "progress": {
+            "reading_titles": "Ausgewählte Titel werden von der Disc gelesen",
+            "reading_saving_titles": "Alle Titel werden gelesen und gespeichert",
             "saving_current": "Wird in {container}-Datei gespeichert",
             "saving_overall": "Alle Titel werden in {container}-Dateien gespeichert",
             "elapsed": "Vergangen: {hms}",

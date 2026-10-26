@@ -717,6 +717,8 @@
             "no_disc": "Tidak ada disc terdeteksi."
         },
         "progress": {
+            "reading_titles": "Membaca judul yang dipilih dari cakram",
+            "reading_saving_titles": "Membaca dan menyimpan semua judul",
             "saving_current": "Menyimpan ke berkas {container}",
             "saving_overall": "Menyimpan semua judul ke berkas {container}",
             "elapsed": "Berlalu: {hms}",

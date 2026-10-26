@@ -717,6 +717,8 @@
             "no_disc": "Levyä ei havaittu."
         },
         "progress": {
+            "reading_titles": "Luetaan valittuja nimikkeitä levyltä",
+            "reading_saving_titles": "Luetaan ja tallennetaan kaikki nimikkeet",
             "saving_current": "Tallennetaan {container}-tiedostoon",
             "saving_overall": "Tallennetaan kaikki nimikkeet {container}-tiedostoihin",
             "elapsed": "Kulunut: {hms}",

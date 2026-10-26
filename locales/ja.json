@@ -717,6 +717,8 @@
             "no_disc": "ディスクが検出されません。"
         },
         "progress": {
+            "reading_titles": "選択したタイトルをディスクから読み取り中",
+            "reading_saving_titles": "すべてのタイトルを読み取り・保存中",
             "saving_current": "{container} ファイルに保存中",
             "saving_overall": "すべてのタイトルを {container} ファイルに保存中",
             "elapsed": "経過: {hms}",

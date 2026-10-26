@@ -717,6 +717,8 @@
             "no_disc": "Диск не виявлено."
         },
         "progress": {
+            "reading_titles": "Читання вибраних титулів із диска",
+            "reading_saving_titles": "Читання та збереження всіх титулів",
             "saving_current": "Збереження у файл {container}",
             "saving_overall": "Збереження всіх розділів у файли {container}",
             "elapsed": "Минуло: {hms}",

@@ -717,6 +717,8 @@
             "no_disc": "Aucun disque détecté."
         },
         "progress": {
+            "reading_titles": "Lecture des titres sélectionnés sur le disque",
+            "reading_saving_titles": "Lecture et enregistrement de tous les titres",
             "saving_current": "Enregistrement dans un fichier {container}",
             "saving_overall": "Enregistrement de tous les titres dans des fichiers {container}",
             "elapsed": "Écoulé : {hms}",

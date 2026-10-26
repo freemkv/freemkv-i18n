@@ -717,6 +717,8 @@
             "no_disc": "Nessun disco rilevato."
         },
         "progress": {
+            "reading_titles": "Lettura dei titoli selezionati dal disco",
+            "reading_saving_titles": "Lettura e salvataggio di tutti i titoli",
             "saving_current": "Salvataggio nel file {container}",
             "saving_overall": "Salvataggio di tutti i titoli in file {container}",
             "elapsed": "Trascorso: {hms}",

@@ -717,6 +717,8 @@
             "no_disc": "未偵測到光碟。"
         },
         "progress": {
+            "reading_titles": "正在從光碟讀取所選標題",
+            "reading_saving_titles": "正在讀取並儲存所有標題",
             "saving_current": "儲存至 {container} 檔案",
             "saving_overall": "將所有標題儲存至 {container} 檔案",
             "elapsed": "已耗時：{hms}",

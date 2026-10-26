@@ -717,6 +717,8 @@
             "no_disc": "Nenhum disco detetado."
         },
         "progress": {
+            "reading_titles": "A ler os títulos selecionados do disco",
+            "reading_saving_titles": "A ler e guardar todos os títulos",
             "saving_current": "A guardar no ficheiro {container}",
             "saving_overall": "A guardar todos os títulos em ficheiros {container}",
             "elapsed": "Decorrido: {hms}",

@@ -717,6 +717,8 @@
             "no_disc": "No disc detected."
         },
         "progress": {
+            "reading_titles": "Reading selected titles from disc",
+            "reading_saving_titles": "Reading and saving all titles",
             "saving_current": "Saving to {container} file",
             "saving_overall": "Saving all titles to {container} files",
             "elapsed": "Elapsed: {hms}",
