@@ -621,6 +621,7 @@
             "default_output": "Типовий вивід :",
             "default_dest": "Типове призначення :",
             "filename_template": "Шаблон імені файлу :",
+            "tmdb_api_key": "Ключ API TMDB (необов’язково)",
             "keep_iso": "Зберігати проміжний ISO :",
             "auto_eject": "Витягнути диск після завершення :",
             "default_selection": "Типовий вибір :",

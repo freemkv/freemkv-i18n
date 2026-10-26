@@ -621,6 +621,7 @@
             "default_output": "デフォルト出力 :",
             "default_dest": "デフォルト宛先 :",
             "filename_template": "ファイル名テンプレート :",
+            "tmdb_api_key": "TMDB APIキー（任意）",
             "keep_iso": "中間 ISO を保持 :",
             "auto_eject": "完了時にディスクを取り出す :",
             "default_selection": "デフォルト選択 :",

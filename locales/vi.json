@@ -621,6 +621,7 @@
             "default_output": "Đầu ra mặc định :",
             "default_dest": "Đích mặc định :",
             "filename_template": "Mẫu tên tệp :",
+            "tmdb_api_key": "Khóa API TMDB (tùy chọn)",
             "keep_iso": "Giữ ISO trung gian :",
             "auto_eject": "Đẩy đĩa ra khi hoàn tất :",
             "default_selection": "Lựa chọn mặc định :",

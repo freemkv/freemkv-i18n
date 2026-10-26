@@ -621,6 +621,7 @@
             "default_output": "Keluaran default :",
             "default_dest": "Tujuan default :",
             "filename_template": "Templat nama berkas :",
+            "tmdb_api_key": "Kunci API TMDB (opsional)",
             "keep_iso": "Simpan ISO perantara :",
             "auto_eject": "Keluarkan disc saat selesai :",
             "default_selection": "Pilihan default :",

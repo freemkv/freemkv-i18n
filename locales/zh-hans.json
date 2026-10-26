@@ -621,6 +621,7 @@
             "default_output": "默认输出 ：",
             "default_dest": "默认目标 ：",
             "filename_template": "文件名模板 ：",
+            "tmdb_api_key": "TMDB API 密钥（可选）",
             "keep_iso": "保留中间 ISO ：",
             "auto_eject": "完成后弹出光盘：",
             "default_selection": "默认选择 ：",

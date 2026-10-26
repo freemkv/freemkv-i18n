@@ -621,6 +621,7 @@
             "default_output": "Cartella di destinazione predefinita:",
             "default_dest": "Destinazione predefinita:",
             "filename_template": "Modello nome file:",
+            "tmdb_api_key": "Chiave API TMDB (facoltativa)",
             "keep_iso": "Conserva l'ISO intermedio:",
             "auto_eject": "Espelli il disco al termine:",
             "default_selection": "Selezione predefinita:",

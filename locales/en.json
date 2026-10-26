@@ -621,6 +621,7 @@
             "default_output": "Default output :",
             "default_dest": "Default destination :",
             "filename_template": "Filename template :",
+            "tmdb_api_key": "TMDB API key (optional)",
             "keep_iso": "Keep intermediate ISO :",
             "auto_eject": "Eject disc when done :",
             "default_selection": "Default selection :",

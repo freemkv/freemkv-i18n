@@ -621,6 +621,7 @@
             "default_output": "Oletustuloste :",
             "default_dest": "Oletuskohde :",
             "filename_template": "Tiedostonimen malli :",
+            "tmdb_api_key": "TMDB API-avain (valinnainen)",
             "keep_iso": "Säilytä väliaikainen ISO :",
             "auto_eject": "Poista levy valmistuttua :",
             "default_selection": "Oletusvalinta :",

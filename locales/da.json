@@ -621,6 +621,7 @@
             "default_output": "Standardoutput :",
             "default_dest": "Standarddestination :",
             "filename_template": "Filnavnsskabelon :",
+            "tmdb_api_key": "TMDB API-nøgle (valgfri)",
             "keep_iso": "Behold mellemliggende ISO :",
             "auto_eject": "Skub disken ud når færdig :",
             "default_selection": "Standardvalg :",

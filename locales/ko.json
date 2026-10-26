@@ -621,6 +621,7 @@
             "default_output": "기본 출력 :",
             "default_dest": "기본 대상 :",
             "filename_template": "파일 이름 템플릿 :",
+            "tmdb_api_key": "TMDB API 키 (선택 사항)",
             "keep_iso": "중간 ISO 유지 :",
             "auto_eject": "완료 시 디스크 꺼내기 :",
             "default_selection": "기본 선택 :",

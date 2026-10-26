@@ -621,6 +621,7 @@
             "default_output": "預設輸出：",
             "default_dest": "預設目的地：",
             "filename_template": "檔名範本：",
+            "tmdb_api_key": "TMDB API 金鑰（選填）",
             "keep_iso": "保留中繼 ISO：",
             "auto_eject": "完成後退出光碟：",
             "default_selection": "預設選擇：",

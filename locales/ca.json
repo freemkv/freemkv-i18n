@@ -621,6 +621,7 @@
             "default_output": "Sortida per defecte :",
             "default_dest": "Destinació per defecte :",
             "filename_template": "Plantilla de nom de fitxer :",
+            "tmdb_api_key": "Clau API de TMDB (opcional)",
             "keep_iso": "Conserva la ISO intermèdia :",
             "auto_eject": "Expulsa el disc en acabar :",
             "default_selection": "Selecció per defecte :",

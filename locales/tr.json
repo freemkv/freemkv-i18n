@@ -621,6 +621,7 @@
             "default_output": "Varsayılan çıktı :",
             "default_dest": "Varsayılan hedef :",
             "filename_template": "Dosya adı şablonu :",
+            "tmdb_api_key": "TMDB API anahtarı (isteğe bağlı)",
             "keep_iso": "Ara ISO'yu koru :",
             "auto_eject": "Bitince diski çıkar :",
             "default_selection": "Varsayılan seçim :",

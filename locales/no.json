@@ -621,6 +621,7 @@
             "default_output": "Standard utdata:",
             "default_dest": "Standard destinasjon:",
             "filename_template": "Filnavnmal:",
+            "tmdb_api_key": "TMDB API-nøkkel (valgfri)",
             "keep_iso": "Behold mellomliggende ISO:",
             "auto_eject": "Løs ut platen når ferdig:",
             "default_selection": "Standard utvalg:",

@@ -621,6 +621,7 @@
             "default_output": "Salida predeterminada:",
             "default_dest": "Destino predeterminado:",
             "filename_template": "Plantilla de nombre de archivo:",
+            "tmdb_api_key": "Clave de API de TMDB (opcional)",
             "keep_iso": "Conservar ISO intermedio:",
             "auto_eject": "Expulsar el disco al terminar:",
             "default_selection": "Selección predeterminada:",

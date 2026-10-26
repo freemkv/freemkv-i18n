@@ -621,6 +621,7 @@
             "default_output": "Výchozí výstup :",
             "default_dest": "Výchozí cíl :",
             "filename_template": "Šablona názvu souboru :",
+            "tmdb_api_key": "Klíč API TMDB (volitelný)",
             "keep_iso": "Zachovat mezilehlé ISO :",
             "auto_eject": "Po dokončení vysunout disk :",
             "default_selection": "Výchozí výběr :",

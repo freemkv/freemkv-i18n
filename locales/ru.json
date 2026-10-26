@@ -621,6 +621,7 @@
             "default_output": "Вывод по умолчанию :",
             "default_dest": "Назначение по умолчанию :",
             "filename_template": "Шаблон имени файла :",
+            "tmdb_api_key": "Ключ API TMDB (необязательно)",
             "keep_iso": "Сохранять промежуточный ISO :",
             "auto_eject": "Извлечь диск по завершении :",
             "default_selection": "Выбор по умолчанию :",
