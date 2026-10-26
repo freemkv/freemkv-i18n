@@ -917,7 +917,8 @@
             "all": "Tot",
             "none": "Cap",
             "forced": "Només forçats",
-            "episodes": "Episodis"
+            "episodes": "Episodis",
+            "main_or_episodes": "Film principal / episodis"
         }
     },
     "warn": {

@@ -917,7 +917,8 @@
             "all": "모두",
             "none": "없음",
             "forced": "강제 자막만",
-            "episodes": "에피소드"
+            "episodes": "에피소드",
+            "main_or_episodes": "본편 / 에피소드"
         }
     },
     "warn": {

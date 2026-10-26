@@ -917,7 +917,8 @@
             "all": "Tümü",
             "none": "Hiçbiri",
             "forced": "Yalnızca zorlanmış",
-            "episodes": "Bölümler"
+            "episodes": "Bölümler",
+            "main_or_episodes": "Ana film / bölümler"
         }
     },
     "warn": {

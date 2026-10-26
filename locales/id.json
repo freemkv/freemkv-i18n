@@ -917,7 +917,8 @@
             "all": "Semua",
             "none": "Tidak ada",
             "forced": "Hanya paksa",
-            "episodes": "Episode"
+            "episodes": "Episode",
+            "main_or_episodes": "Film utama / episode"
         }
     },
     "warn": {

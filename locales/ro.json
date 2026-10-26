@@ -917,7 +917,8 @@
             "all": "Toate",
             "none": "Niciuna",
             "forced": "Doar forțate",
-            "episodes": "Episoade"
+            "episodes": "Episoade",
+            "main_or_episodes": "Film principal / episoade"
         }
     },
     "warn": {

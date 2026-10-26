@@ -917,7 +917,8 @@
             "all": "Vše",
             "none": "Žádné",
             "forced": "Jen vynucené",
-            "episodes": "Epizody"
+            "episodes": "Epizody",
+            "main_or_episodes": "Hlavní film / epizody"
         }
     },
     "warn": {

@@ -917,7 +917,8 @@
             "all": "すべて",
             "none": "なし",
             "forced": "強制のみ",
-            "episodes": "エピソード"
+            "episodes": "エピソード",
+            "main_or_episodes": "本編／エピソード"
         }
     },
     "warn": {

@@ -917,7 +917,8 @@
             "all": "全部",
             "none": "無",
             "forced": "僅強制",
-            "episodes": "劇集"
+            "episodes": "劇集",
+            "main_or_episodes": "主影片／影集"
         }
     },
     "warn": {

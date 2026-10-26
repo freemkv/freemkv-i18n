@@ -917,7 +917,8 @@
             "all": "Alle",
             "none": "Ingen",
             "forced": "Kun tvungne",
-            "episodes": "Afsnit"
+            "episodes": "Afsnit",
+            "main_or_episodes": "Hovedfilm / afsnit"
         }
     },
     "warn": {

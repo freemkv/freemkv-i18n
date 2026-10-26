@@ -917,7 +917,8 @@
             "all": "Tất cả",
             "none": "Không có",
             "forced": "Chỉ bắt buộc",
-            "episodes": "Các tập"
+            "episodes": "Các tập",
+            "main_or_episodes": "Phim chính / các tập"
         }
     },
     "warn": {

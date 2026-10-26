@@ -917,7 +917,8 @@
             "all": "Todos",
             "none": "Ninguno",
             "forced": "Solo forzados",
-            "episodes": "Episodios"
+            "episodes": "Episodios",
+            "main_or_episodes": "Película principal / episodios"
         }
     },
     "warn": {

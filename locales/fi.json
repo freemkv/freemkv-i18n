@@ -917,7 +917,8 @@
             "all": "Kaikki",
             "none": "Ei mitään",
             "forced": "Vain pakotetut",
-            "episodes": "Jaksot"
+            "episodes": "Jaksot",
+            "main_or_episodes": "Pääelokuva / jaksot"
         }
     },
     "warn": {

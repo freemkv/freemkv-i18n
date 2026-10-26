@@ -917,7 +917,8 @@
             "all": "Alle",
             "none": "Geen",
             "forced": "Alleen geforceerd",
-            "episodes": "Afleveringen"
+            "episodes": "Afleveringen",
+            "main_or_episodes": "Hoofdfilm / afleveringen"
         }
     },
     "warn": {

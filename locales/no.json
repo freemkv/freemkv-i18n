@@ -917,7 +917,8 @@
             "all": "Alle",
             "none": "Ingen",
             "forced": "Bare tvungne",
-            "episodes": "Episoder"
+            "episodes": "Episoder",
+            "main_or_episodes": "Hovedfilm / episoder"
         }
     },
     "warn": {

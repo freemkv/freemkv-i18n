@@ -917,7 +917,8 @@
             "all": "Alla",
             "none": "Inga",
             "forced": "Endast tvingade",
-            "episodes": "Avsnitt"
+            "episodes": "Avsnitt",
+            "main_or_episodes": "Huvudfilm / avsnitt"
         }
     },
     "warn": {

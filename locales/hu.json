@@ -917,7 +917,8 @@
             "all": "Mind",
             "none": "Nincs",
             "forced": "Csak kényszerített",
-            "episodes": "Epizódok"
+            "episodes": "Epizódok",
+            "main_or_episodes": "Főfilm / epizódok"
         }
     },
     "warn": {

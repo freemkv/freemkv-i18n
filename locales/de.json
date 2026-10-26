@@ -917,7 +917,8 @@
             "all": "Alle",
             "none": "Keine",
             "forced": "Nur erzwungene",
-            "episodes": "Folgen"
+            "episodes": "Folgen",
+            "main_or_episodes": "Hauptfilm / Folgen"
         }
     },
     "warn": {
