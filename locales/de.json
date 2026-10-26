@@ -622,6 +622,11 @@
             "default_dest": "Standardziel:",
             "filename_template": "Dateinamenvorlage:",
             "tmdb_api_key": "TMDB-API-Schlüssel (optional)",
+            "startup_mode": "Beim Start",
+            "startup_show": "Laufwerke anzeigen",
+            "startup_any": "Eingelegte Disc öffnen",
+            "startup_preferred": "Bevorzugtes Laufwerk öffnen",
+            "preferred_drive": "Bevorzugtes Laufwerk",
             "keep_iso": "Zwischen-ISO behalten:",
             "auto_eject": "Disc nach Abschluss auswerfen:",
             "default_selection": "Standardauswahl:",
@@ -909,6 +914,13 @@
             "tracks": "{n} Spuren",
             "forced": "Erzwungen",
             "episode": "Folge"
+        },
+        "home": {
+            "loaded": "Disc eingelegt",
+            "empty": "Leer",
+            "unknown": "Disc-Status unbekannt",
+            "open": "Öffnen",
+            "use_startup": "Beim Start verwenden"
         },
         "pick": {
             "titles": "Titel",

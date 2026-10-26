@@ -622,6 +622,11 @@
             "default_dest": "默认目标 ：",
             "filename_template": "文件名模板 ：",
             "tmdb_api_key": "TMDB API 密钥（可选）",
+            "startup_mode": "启动时",
+            "startup_show": "显示光驱",
+            "startup_any": "打开已插入的光盘",
+            "startup_preferred": "打开首选光驱",
+            "preferred_drive": "首选光驱",
             "keep_iso": "保留中间 ISO ：",
             "auto_eject": "完成后弹出光盘：",
             "default_selection": "默认选择 ：",
@@ -909,6 +914,13 @@
             "tracks": "{n} 条轨道",
             "forced": "强制",
             "episode": "剧集"
+        },
+        "home": {
+            "loaded": "已插入光盘",
+            "empty": "空",
+            "unknown": "光盘状态未知",
+            "open": "打开",
+            "use_startup": "启动时使用"
         },
         "pick": {
             "titles": "标题",

@@ -622,6 +622,11 @@
             "default_dest": "Destinació per defecte :",
             "filename_template": "Plantilla de nom de fitxer :",
             "tmdb_api_key": "Clau API de TMDB (opcional)",
+            "startup_mode": "En iniciar",
+            "startup_show": "Mostra les unitats",
+            "startup_any": "Obre un disc inserit",
+            "startup_preferred": "Obre la unitat preferida",
+            "preferred_drive": "Unitat preferida",
             "keep_iso": "Conserva la ISO intermèdia :",
             "auto_eject": "Expulsa el disc en acabar :",
             "default_selection": "Selecció per defecte :",
@@ -909,6 +914,13 @@
             "tracks": "{n} pistes",
             "forced": "Forçat",
             "episode": "Episodi"
+        },
+        "home": {
+            "loaded": "Disc inserit",
+            "empty": "Buida",
+            "unknown": "Estat del disc desconegut",
+            "open": "Obre",
+            "use_startup": "Utilitza en iniciar"
         },
         "pick": {
             "titles": "Títols",

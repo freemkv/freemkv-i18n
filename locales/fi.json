@@ -622,6 +622,11 @@
             "default_dest": "Oletuskohde :",
             "filename_template": "Tiedostonimen malli :",
             "tmdb_api_key": "TMDB API-avain (valinnainen)",
+            "startup_mode": "Käynnistettäessä",
+            "startup_show": "Näytä asemat",
+            "startup_any": "Avaa asemassa oleva levy",
+            "startup_preferred": "Avaa ensisijainen asema",
+            "preferred_drive": "Ensisijainen asema",
             "keep_iso": "Säilytä väliaikainen ISO :",
             "auto_eject": "Poista levy valmistuttua :",
             "default_selection": "Oletusvalinta :",
@@ -909,6 +914,13 @@
             "tracks": "{n} raitaa",
             "forced": "Pakotettu",
             "episode": "Jakso"
+        },
+        "home": {
+            "loaded": "Levy asemassa",
+            "empty": "Tyhjä",
+            "unknown": "Levyn tila tuntematon",
+            "open": "Avaa",
+            "use_startup": "Käytä käynnistettäessä"
         },
         "pick": {
             "titles": "Nimikkeet",

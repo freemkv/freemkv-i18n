@@ -622,6 +622,11 @@
             "default_dest": "Alapértelmezett cél:",
             "filename_template": "Fájlnévsablon:",
             "tmdb_api_key": "TMDB API-kulcs (opcionális)",
+            "startup_mode": "Indításkor",
+            "startup_show": "Meghajtók megjelenítése",
+            "startup_any": "Behelyezett lemez megnyitása",
+            "startup_preferred": "Elsődleges meghajtó megnyitása",
+            "preferred_drive": "Elsődleges meghajtó",
             "keep_iso": "Köztes ISO megtartása:",
             "auto_eject": "Lemez kiadása befejezéskor:",
             "default_selection": "Alapértelmezett kijelölés:",
@@ -909,6 +914,13 @@
             "tracks": "{n} sáv",
             "forced": "Kényszerített",
             "episode": "Epizód"
+        },
+        "home": {
+            "loaded": "Lemez behelyezve",
+            "empty": "Üres",
+            "unknown": "Lemez állapota ismeretlen",
+            "open": "Megnyitás",
+            "use_startup": "Használat indításkor"
         },
         "pick": {
             "titles": "Címek",

@@ -622,6 +622,11 @@
             "default_dest": "Tujuan default :",
             "filename_template": "Templat nama berkas :",
             "tmdb_api_key": "Kunci API TMDB (opsional)",
+            "startup_mode": "Saat memulai",
+            "startup_show": "Tampilkan drive",
+            "startup_any": "Buka disk yang dimasukkan",
+            "startup_preferred": "Buka drive pilihan",
+            "preferred_drive": "Drive pilihan",
             "keep_iso": "Simpan ISO perantara :",
             "auto_eject": "Keluarkan disc saat selesai :",
             "default_selection": "Pilihan default :",
@@ -909,6 +914,13 @@
             "tracks": "{n} trek",
             "forced": "Paksa",
             "episode": "Episode"
+        },
+        "home": {
+            "loaded": "Disk dimasukkan",
+            "empty": "Kosong",
+            "unknown": "Status disk tidak diketahui",
+            "open": "Buka",
+            "use_startup": "Gunakan saat memulai"
         },
         "pick": {
             "titles": "Judul",

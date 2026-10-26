@@ -622,6 +622,11 @@
             "default_dest": "Đích mặc định :",
             "filename_template": "Mẫu tên tệp :",
             "tmdb_api_key": "Khóa API TMDB (tùy chọn)",
+            "startup_mode": "Khi khởi động",
+            "startup_show": "Hiển thị ổ đĩa",
+            "startup_any": "Mở đĩa đã lắp",
+            "startup_preferred": "Mở ổ đĩa ưu tiên",
+            "preferred_drive": "Ổ đĩa ưu tiên",
             "keep_iso": "Giữ ISO trung gian :",
             "auto_eject": "Đẩy đĩa ra khi hoàn tất :",
             "default_selection": "Lựa chọn mặc định :",
@@ -909,6 +914,13 @@
             "tracks": "{n} rãnh",
             "forced": "Bắt buộc",
             "episode": "Tập"
+        },
+        "home": {
+            "loaded": "Đã lắp đĩa",
+            "empty": "Trống",
+            "unknown": "Không rõ trạng thái đĩa",
+            "open": "Mở",
+            "use_startup": "Dùng khi khởi động"
         },
         "pick": {
             "titles": "Tiêu đề",

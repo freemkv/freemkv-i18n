@@ -622,6 +622,11 @@
             "default_dest": "Destino predefinido:",
             "filename_template": "Modelo de nome de ficheiro:",
             "tmdb_api_key": "Chave de API TMDB (opcional)",
+            "startup_mode": "Ao iniciar",
+            "startup_show": "Mostrar unidades",
+            "startup_any": "Abrir um disco inserido",
+            "startup_preferred": "Abrir a unidade preferida",
+            "preferred_drive": "Unidade preferida",
             "keep_iso": "Manter ISO intermédia:",
             "auto_eject": "Ejectar o disco ao terminar:",
             "default_selection": "Seleção predefinida:",
@@ -909,6 +914,13 @@
             "tracks": "{n} faixas",
             "forced": "Forçada",
             "episode": "Episódio"
+        },
+        "home": {
+            "loaded": "Disco inserido",
+            "empty": "Vazia",
+            "unknown": "Estado do disco desconhecido",
+            "open": "Abrir",
+            "use_startup": "Utilizar ao iniciar"
         },
         "pick": {
             "titles": "Títulos",

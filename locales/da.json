@@ -622,6 +622,11 @@
             "default_dest": "Standarddestination :",
             "filename_template": "Filnavnsskabelon :",
             "tmdb_api_key": "TMDB API-nøgle (valgfri)",
+            "startup_mode": "Ved opstart",
+            "startup_show": "Vis drev",
+            "startup_any": "Åbn en indsat disk",
+            "startup_preferred": "Åbn foretrukket drev",
+            "preferred_drive": "Foretrukket drev",
             "keep_iso": "Behold mellemliggende ISO :",
             "auto_eject": "Skub disken ud når færdig :",
             "default_selection": "Standardvalg :",
@@ -909,6 +914,13 @@
             "tracks": "{n} spor",
             "forced": "Tvungen",
             "episode": "Afsnit"
+        },
+        "home": {
+            "loaded": "Disk indsat",
+            "empty": "Tomt",
+            "unknown": "Diskstatus ukendt",
+            "open": "Åbn",
+            "use_startup": "Brug ved opstart"
         },
         "pick": {
             "titles": "Titler",

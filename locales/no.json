@@ -622,6 +622,11 @@
             "default_dest": "Standard destinasjon:",
             "filename_template": "Filnavnmal:",
             "tmdb_api_key": "TMDB API-nøkkel (valgfri)",
+            "startup_mode": "Ved oppstart",
+            "startup_show": "Vis stasjoner",
+            "startup_any": "Åpne en innsatt plate",
+            "startup_preferred": "Åpne foretrukket stasjon",
+            "preferred_drive": "Foretrukket stasjon",
             "keep_iso": "Behold mellomliggende ISO:",
             "auto_eject": "Løs ut platen når ferdig:",
             "default_selection": "Standard utvalg:",
@@ -909,6 +914,13 @@
             "tracks": "{n} spor",
             "forced": "Tvunget",
             "episode": "Episode"
+        },
+        "home": {
+            "loaded": "Plate satt inn",
+            "empty": "Tom",
+            "unknown": "Platens status er ukjent",
+            "open": "Åpne",
+            "use_startup": "Bruk ved oppstart"
         },
         "pick": {
             "titles": "Titler",

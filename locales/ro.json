@@ -622,6 +622,11 @@
             "default_dest": "Destinație implicită :",
             "filename_template": "Șablon nume de fișier :",
             "tmdb_api_key": "Cheie API TMDB (opțional)",
+            "startup_mode": "La pornire",
+            "startup_show": "Afișează unitățile",
+            "startup_any": "Deschide un disc introdus",
+            "startup_preferred": "Deschide unitatea preferată",
+            "preferred_drive": "Unitatea preferată",
             "keep_iso": "Păstrează ISO-ul intermediar :",
             "auto_eject": "Scoate discul la finalizare :",
             "default_selection": "Selecție implicită :",
@@ -909,6 +914,13 @@
             "tracks": "{n} piste",
             "forced": "Forțat",
             "episode": "Episod"
+        },
+        "home": {
+            "loaded": "Disc introdus",
+            "empty": "Goală",
+            "unknown": "Starea discului necunoscută",
+            "open": "Deschide",
+            "use_startup": "Folosește la pornire"
         },
         "pick": {
             "titles": "Titluri",

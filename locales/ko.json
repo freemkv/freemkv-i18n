@@ -622,6 +622,11 @@
             "default_dest": "기본 대상 :",
             "filename_template": "파일 이름 템플릿 :",
             "tmdb_api_key": "TMDB API 키 (선택 사항)",
+            "startup_mode": "시작할 때",
+            "startup_show": "드라이브 표시",
+            "startup_any": "삽입된 디스크 열기",
+            "startup_preferred": "선호 드라이브 열기",
+            "preferred_drive": "선호 드라이브",
             "keep_iso": "중간 ISO 유지 :",
             "auto_eject": "완료 시 디스크 꺼내기 :",
             "default_selection": "기본 선택 :",
@@ -909,6 +914,13 @@
             "tracks": "트랙 {n}개",
             "forced": "강제",
             "episode": "에피소드"
+        },
+        "home": {
+            "loaded": "디스크 삽입됨",
+            "empty": "비어 있음",
+            "unknown": "디스크 상태를 알 수 없음",
+            "open": "열기",
+            "use_startup": "시작할 때 사용"
         },
         "pick": {
             "titles": "타이틀",

@@ -622,6 +622,11 @@
             "default_dest": "デフォルト宛先 :",
             "filename_template": "ファイル名テンプレート :",
             "tmdb_api_key": "TMDB APIキー（任意）",
+            "startup_mode": "起動時",
+            "startup_show": "ドライブを表示",
+            "startup_any": "挿入済みディスクを開く",
+            "startup_preferred": "優先ドライブを開く",
+            "preferred_drive": "優先ドライブ",
             "keep_iso": "中間 ISO を保持 :",
             "auto_eject": "完了時にディスクを取り出す :",
             "default_selection": "デフォルト選択 :",
@@ -909,6 +914,13 @@
             "tracks": "{n} トラック",
             "forced": "強制",
             "episode": "エピソード"
+        },
+        "home": {
+            "loaded": "ディスクが挿入されています",
+            "empty": "空",
+            "unknown": "ディスクの状態は不明です",
+            "open": "開く",
+            "use_startup": "起動時に使用"
         },
         "pick": {
             "titles": "タイトル",

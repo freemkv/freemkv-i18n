@@ -622,6 +622,11 @@
             "default_dest": "Standaardbestemming:",
             "filename_template": "Bestandsnaamsjabloon:",
             "tmdb_api_key": "TMDB API-sleutel (optioneel)",
+            "startup_mode": "Bij opstarten",
+            "startup_show": "Stations tonen",
+            "startup_any": "Geplaatste schijf openen",
+            "startup_preferred": "Voorkeursstation openen",
+            "preferred_drive": "Voorkeursstation",
             "keep_iso": "Tussenliggende ISO behouden:",
             "auto_eject": "Schijf uitwerpen als klaar:",
             "default_selection": "Standaardselectie:",
@@ -909,6 +914,13 @@
             "tracks": "{n} sporen",
             "forced": "Geforceerd",
             "episode": "Aflevering"
+        },
+        "home": {
+            "loaded": "Schijf geplaatst",
+            "empty": "Leeg",
+            "unknown": "Schijfstatus onbekend",
+            "open": "Openen",
+            "use_startup": "Gebruiken bij opstarten"
         },
         "pick": {
             "titles": "Titels",

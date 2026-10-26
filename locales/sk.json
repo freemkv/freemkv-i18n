@@ -622,6 +622,11 @@
             "default_dest": "Predvolený cieľ :",
             "filename_template": "Šablóna názvu súboru :",
             "tmdb_api_key": "Kľúč API TMDB (voliteľný)",
+            "startup_mode": "Pri spustení",
+            "startup_show": "Zobraziť mechaniky",
+            "startup_any": "Otvoriť vložený disk",
+            "startup_preferred": "Otvoriť preferovanú mechaniku",
+            "preferred_drive": "Preferovaná mechanika",
             "keep_iso": "Ponechať medziľahlý ISO :",
             "auto_eject": "Po dokončení vysunúť disk :",
             "default_selection": "Predvolený výber :",
@@ -909,6 +914,13 @@
             "tracks": "Stopy: {n}",
             "forced": "Vynútené",
             "episode": "Epizóda"
+        },
+        "home": {
+            "loaded": "Disk vložený",
+            "empty": "Prázdna",
+            "unknown": "Stav disku neznámy",
+            "open": "Otvoriť",
+            "use_startup": "Použiť pri spustení"
         },
         "pick": {
             "titles": "Tituly",

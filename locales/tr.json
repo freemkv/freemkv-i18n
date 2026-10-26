@@ -622,6 +622,11 @@
             "default_dest": "Varsayılan hedef :",
             "filename_template": "Dosya adı şablonu :",
             "tmdb_api_key": "TMDB API anahtarı (isteğe bağlı)",
+            "startup_mode": "Başlangıçta",
+            "startup_show": "Sürücüleri göster",
+            "startup_any": "Takılı diski aç",
+            "startup_preferred": "Tercih edilen sürücüyü aç",
+            "preferred_drive": "Tercih edilen sürücü",
             "keep_iso": "Ara ISO'yu koru :",
             "auto_eject": "Bitince diski çıkar :",
             "default_selection": "Varsayılan seçim :",
@@ -909,6 +914,13 @@
             "tracks": "{n} parça",
             "forced": "Zorlanmış",
             "episode": "Bölüm"
+        },
+        "home": {
+            "loaded": "Disk takılı",
+            "empty": "Boş",
+            "unknown": "Disk durumu bilinmiyor",
+            "open": "Aç",
+            "use_startup": "Başlangıçta kullan"
         },
         "pick": {
             "titles": "Başlıklar",

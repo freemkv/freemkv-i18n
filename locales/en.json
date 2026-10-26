@@ -622,6 +622,11 @@
             "default_dest": "Default destination :",
             "filename_template": "Filename template :",
             "tmdb_api_key": "TMDB API key (optional)",
+            "startup_mode": "At startup",
+            "startup_show": "Show drives",
+            "startup_any": "Open a loaded disc",
+            "startup_preferred": "Open preferred drive",
+            "preferred_drive": "Preferred drive",
             "keep_iso": "Keep intermediate ISO :",
             "auto_eject": "Eject disc when done :",
             "default_selection": "Default selection :",
@@ -909,6 +914,13 @@
             "tracks": "{n} tracks",
             "forced": "Forced",
             "episode": "Episode"
+        },
+        "home": {
+            "loaded": "Disc inserted",
+            "empty": "Empty",
+            "unknown": "Disc status unknown",
+            "open": "Open",
+            "use_startup": "Use at startup"
         },
         "pick": {
             "titles": "Titles",
