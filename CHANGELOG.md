@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.6] — UNRELEASED
+
+### Added
+
+- Texts for everything new in freemkv 1.8.6, in every locale: the ready screen's drive list and startup drive choice, the combined film / episodes selection, the optional desktop TMDB key, TV season and episode controls, and separate progress lines for preparing a title and saving its file.
+
 ## [1.8.5] — 2026-10-19
 
 ### Changed
