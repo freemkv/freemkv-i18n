@@ -142,6 +142,8 @@
         "mapfile_summary": "Kartfil: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
         "staging_not_kept": "Det klargjorte bildet ble ikke beholdt: plasseringen til en strømfil på denne platen kunne ikke leses, så bare de valgte titlene ble lest, og det er ikke et bilde av hele platen.",
         "retry_with_multipass": "Kjør på nytt med --multipass for å prøve å lese mer; det gjenopptar fra mapfilen.",
+        "aacs_key_file_kept": "Kopien beholder AACS/Unit_Key_RO.inf, så enkelte avspillere (som VLC) kan behandle den som kryptert. Innholdet er dekryptert.",
+        "aacs_key_file_kept_retry": "En gjenopptatt kjøring som leser det skadde området, gir den nytt navn til Unit_Key_RO.bak.",
         "nothing_to_patch": "Ingenting å reparere — alle sektorer er gode",
         "patch_start": "Reparerer: {good} GB gode, {unreadable} MB uleselige, {pending} MB ventende",
         "patch_done": "Reparasjon fullført: gjenopprettet {recovered} MB, {unreadable} MB uleselige, {pending} MB ventende ({time}s, {speed} MB/s)",

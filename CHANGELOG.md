@@ -4,7 +4,7 @@
 
 ### Added
 
-- Texts for everything new in freemkv 1.8.6, in every locale: the ready screen's drive list and startup drive choice, the combined film / episodes selection, the optional desktop TMDB key, TV season and episode controls, and separate progress lines for preparing a title and saving its file.
+- Texts for everything new in freemkv 1.8.6, in every locale: the ready screen's drive list and startup drive choice, the combined film / episodes selection, the optional desktop TMDB key, TV season and episode controls, separate progress lines for preparing a title and saving its file, and the note that a decrypted copy keeps `AACS/Unit_Key_RO.inf` (`rip.aacs_key_file_kept`, `rip.aacs_key_file_kept_retry`).
 
 ## [1.8.5] — 2026-10-19
 

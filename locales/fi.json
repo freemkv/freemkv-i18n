@@ -142,6 +142,8 @@
         "mapfile_summary": "Karttatiedosto: {good} Gt kelvollista, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa",
         "staging_not_kept": "Valmisteltua levykuvaa ei säilytetty: erään virtatiedoston sijaintia tällä levyllä ei voitu lukea, joten vain valitut nimikkeet luettiin, eikä se ole koko levyn levykuva.",
         "retry_with_multipass": "Aja uudelleen --multipass-valitsimella lukeaksesi lisää; se jatkaa mapfile-tiedostosta.",
+        "aacs_key_file_kept": "Kopio säilyttää tiedoston AACS/Unit_Key_RO.inf, joten jotkin soittimet (kuten VLC) voivat käsitellä sitä salattuna. Sen sisältö on purettu salauksesta.",
+        "aacs_key_file_kept_retry": "Jatkettu ajo, joka lukee vaurioituneen alueen, nimeää sen uudelleen nimellä Unit_Key_RO.bak.",
         "nothing_to_patch": "Ei paikattavaa — kaikki sektorit ovat kelvollisia",
         "patch_start": "Paikataan: {good} Gt kelvollista, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa",
         "patch_done": "Paikkaus valmis: palautettu {recovered} Mt, {unreadable} Mt lukukelvotonta, {pending} Mt odottaa ({time} s, {speed} Mt/s)",

@@ -142,6 +142,8 @@
         "mapfile_summary": "Harita dosyası: {good} GB iyi, {unreadable} MB okunamaz, {pending} MB beklemede",
         "staging_not_kept": "Hazırlanan kalıp saklanmadı: bu diskteki bir akış dosyasının konumu okunamadığı için yalnızca seçilen başlıklar okundu ve bu, diskin tamamının kalıbı değil.",
         "retry_with_multipass": "Daha fazlasını okumayı denemek için --multipass ile yeniden çalıştırın; mapfile'dan devam eder.",
+        "aacs_key_file_kept": "Kopya AACS/Unit_Key_RO.inf dosyasını koruduğundan bazı oynatıcılar (VLC gibi) onu şifreli olarak değerlendirebilir. İçeriğinin şifresi çözülmüştür.",
+        "aacs_key_file_kept_retry": "Hasarlı alanı okuyan devam ettirilmiş bir çalıştırma onu Unit_Key_RO.bak olarak yeniden adlandırır.",
         "nothing_to_patch": "Yamalanacak bir şey yok — tüm sektörler iyi",
         "patch_start": "Yamalanıyor: {good} GB iyi, {unreadable} MB okunamaz, {pending} MB beklemede",
         "patch_done": "Yama tamamlandı: {recovered} MB kurtarıldı, {unreadable} MB okunamaz, {pending} MB beklemede ({time}sn, {speed} MB/sn)",

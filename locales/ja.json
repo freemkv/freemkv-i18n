@@ -142,6 +142,8 @@
         "mapfile_summary": "マップファイル: 良好 {good} GB、読み取り不能 {unreadable} MB、保留 {pending} MB",
         "staging_not_kept": "準備したイメージは保持されませんでした。このディスク上のストリームファイルの位置を読み取れなかったため、選択したタイトルだけを読み取っており、ディスク全体のイメージではありません。",
         "retry_with_multipass": "--multipass を付けて再実行するとさらに読み取りを試みます。マップファイルから再開します。",
+        "aacs_key_file_kept": "コピーには AACS/Unit_Key_RO.inf が残っているため、一部のプレーヤー（VLC など）は暗号化されているものとして扱う場合があります。内容は復号済みです。",
+        "aacs_key_file_kept_retry": "損傷した領域を読み取れた再開実行で、Unit_Key_RO.bak に名前が変更されます。",
         "nothing_to_patch": "パッチ対象がありません — すべてのセクタが良好です",
         "patch_start": "パッチ中: 良好 {good} GB、読み取り不能 {unreadable} MB、保留 {pending} MB",
         "patch_done": "パッチ完了: {recovered} MB を復元、読み取り不能 {unreadable} MB、保留 {pending} MB（{time} 秒、{speed} MB/s）",

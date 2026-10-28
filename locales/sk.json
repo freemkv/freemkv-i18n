@@ -142,6 +142,8 @@
         "mapfile_summary": "Mapovací súbor: v poriadku: {good} GB, nečitateľné: {unreadable} MB, čakajúce: {pending} MB",
         "staging_not_kept": "Pripravený obraz nebol zachovaný: umiestnenie súboru streamu na tomto disku sa nepodarilo prečítať, takže sa prečítali len vybrané tituly a nejde o obraz celého disku.",
         "retry_with_multipass": "Spustite to znova s --multipass, aby ste sa pokúsili prečítať viac; nadviaže na mapový súbor.",
+        "aacs_key_file_kept": "Kópia ponecháva AACS/Unit_Key_RO.inf, takže ju niektoré prehrávače (napríklad VLC) môžu považovať za šifrovanú. Jej obsah je dešifrovaný.",
+        "aacs_key_file_kept_retry": "Obnovený beh, ktorý prečíta poškodenú oblasť, ho premenuje na Unit_Key_RO.bak.",
         "nothing_to_patch": "Niet čo opraviť — všetky sektory sú v poriadku",
         "patch_start": "Oprava: v poriadku: {good} GB, nečitateľné: {unreadable} MB, čakajúce: {pending} MB",
         "patch_done": "Oprava dokončená: obnovené: {recovered} MB, nečitateľné: {unreadable} MB, čakajúce: {pending} MB ({time}s, {speed} MB/s)",

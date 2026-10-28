@@ -138,6 +138,8 @@
         "mapfile_summary": "Mapfile: {good} GB bons, {unreadable} MB ilegíveis, {pending} MB pendentes",
         "staging_not_kept": "A imagem preparada não foi mantida: não foi possível ler a localização de um ficheiro de fluxo deste disco, pelo que só foram lidos os títulos escolhidos e não é uma imagem do disco inteiro.",
         "retry_with_multipass": "Execute novamente com --multipass para tentar ler mais; retoma a partir do mapfile.",
+        "aacs_key_file_kept": "A cópia mantém AACS/Unit_Key_RO.inf, pelo que alguns leitores (como o VLC) podem tratá-la como encriptada. O seu conteúdo está desencriptado.",
+        "aacs_key_file_kept_retry": "Uma execução retomada que leia a área danificada muda-lhe o nome para Unit_Key_RO.bak.",
         "nothing_to_patch": "Nada a corrigir — todos os setores estão bons",
         "patch_start": "Corrigindo: {good} GB bons, {unreadable} MB ilegíveis, {pending} MB pendentes",
         "patch_done": "Correção concluída: recuperados {recovered} MB, {unreadable} MB ilegíveis, {pending} MB pendentes ({time}s, {speed} MB/s)",

@@ -142,6 +142,8 @@
         "mapfile_summary": "Plik mapy — dobre: {good} GB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB",
         "staging_not_kept": "Przygotowanego obrazu nie zachowano: nie udało się odczytać położenia pliku strumienia na tej płycie, więc odczytano tylko wybrane tytuły i nie jest to obraz całej płyty.",
         "retry_with_multipass": "Uruchom ponownie z --multipass, aby spróbować odczytać więcej; wznawia od pliku mapy.",
+        "aacs_key_file_kept": "Kopia zachowuje AACS/Unit_Key_RO.inf, więc niektóre odtwarzacze (np. VLC) mogą traktować ją jako zaszyfrowaną. Jej zawartość jest odszyfrowana.",
+        "aacs_key_file_kept_retry": "Wznowione uruchomienie, które odczyta uszkodzony obszar, zmieni jego nazwę na Unit_Key_RO.bak.",
         "nothing_to_patch": "Nic do naprawienia — wszystkie sektory są dobre",
         "patch_start": "Naprawianie — dobre: {good} GB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB",
         "patch_done": "Naprawianie ukończone — odzyskano: {recovered} MB, nieczytelne: {unreadable} MB, oczekujące: {pending} MB ({time} s, {speed} MB/s)",

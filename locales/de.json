@@ -138,6 +138,8 @@
         "mapfile_summary": "Mapfile: {good} GB gut, {unreadable} MB unlesbar, {pending} MB ausstehend",
         "staging_not_kept": "Das vorbereitete Image wurde nicht behalten: Die Position einer Stream-Datei auf dieser Disc konnte nicht gelesen werden, daher wurden nur die gewählten Titel gelesen, und es ist kein Image der ganzen Disc.",
         "retry_with_multipass": "Erneut mit --multipass ausführen, um mehr zu lesen; es setzt anhand der Mapfile fort.",
+        "aacs_key_file_kept": "Die Kopie behält AACS/Unit_Key_RO.inf, daher behandeln manche Player (etwa VLC) sie möglicherweise als verschlüsselt. Ihr Inhalt ist entschlüsselt.",
+        "aacs_key_file_kept_retry": "Ein fortgesetzter Lauf, der den beschädigten Bereich liest, benennt sie in Unit_Key_RO.bak um.",
         "nothing_to_patch": "Nichts zu patchen — alle Sektoren sind gut",
         "patch_start": "Patchen: {good} GB gut, {unreadable} MB unlesbar, {pending} MB ausstehend",
         "patch_done": "Patch fertig: {recovered} MB wiederhergestellt, {unreadable} MB unlesbar, {pending} MB ausstehend ({time}s, {speed} MB/s)",

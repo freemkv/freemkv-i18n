@@ -142,6 +142,8 @@
         "mapfile_summary": "映射文件：{good} GB 良好，{unreadable} MB 不可读，{pending} MB 待处理",
         "staging_not_kept": "未保留准备的镜像：无法读取此光盘上某个流文件的位置，因此只读取了所选标题，它不是整张光盘的镜像。",
         "retry_with_multipass": "使用 --multipass 重新运行以尝试读取更多内容；它会从映射文件恢复。",
+        "aacs_key_file_kept": "副本保留了 AACS/Unit_Key_RO.inf，因此某些播放器（如 VLC）可能会将其视为已加密。其内容已解密。",
+        "aacs_key_file_kept_retry": "继续运行时若读取了损坏区域，会将其重命名为 Unit_Key_RO.bak。",
         "nothing_to_patch": "无需修补 —— 所有扇区均良好",
         "patch_start": "正在修补：{good} GB 良好，{unreadable} MB 不可读，{pending} MB 待处理",
         "patch_done": "修补完成：恢复 {recovered} MB，{unreadable} MB 不可读，{pending} MB 待处理（{time} 秒，{speed} MB/s）",
