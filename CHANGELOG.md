@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.8.7] — UNRELEASED
+
+### Changed
+
+- `rip.aacs_key_file_kept` and `rip.aacs_key_file_kept_retry` in every locale: a decrypted copy now renames its AACS folder to SCAA (no longer `AACS/Unit_Key_RO.inf` to `Unit_Key_RO.bak`), so the note names the kept AACS folder and the retry names SCAA.
+
 ## [1.8.6] — 2026-10-29
 
 ### Added
