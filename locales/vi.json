@@ -149,7 +149,9 @@
         "patch_done": "Vá xong: khôi phục {recovered} MB, {unreadable} MB không đọc được, {pending} MB đang chờ ({time}s, {speed} MB/s)",
         "multipass_ignored": "Lưu ý: --multipass bị bỏ qua với disc->MKV/M2TS (mux một lượt). Dùng đầu ra iso:// để khôi phục nhiều lượt.",
         "title_skipped": "Bỏ qua tiêu đề {num}: được bảo vệ chống sao chép, không khôi phục được khóa.",
-        "title_skipped_empty": "Bỏ qua tiêu đề {num}: trống (không có video) — có thể là menu/nav stub."
+        "title_skipped_empty": "Bỏ qua tiêu đề {num}: trống (không có video) — có thể là menu/nav stub.",
+        "layer_break_file": "Layer break file: {path}",
+        "layer_break_file_failed": "Could not write the layer break file {path}: {error}"
     },
     "dir": {
         "extracting": "Đang trích xuất cây tệp đã giải mã vào {path}",
@@ -467,12 +469,15 @@
             "episode_range": "Việc đánh số tập nằm ngoài phạm vi được hỗ trợ.",
             "action": {
                 "roster": "Nếu là phim, hãy sửa kết quả khớp thành phim; để rip thành một tiêu đề, hãy tắt «Rip TV seasons automatically» trong Cài đặt.",
-                "first_episode": "Hãy đặt «First episode» khi bạn sửa kết quả khớp."
+                "first_episode": "Hãy đặt «First episode» khi bạn sửa kết quả khớp.",
+                "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
+                "repick": "Choose the titles again for this disc."
             },
             "review_held": "Việc chọn tiêu đề cần được xem xét trước khi muxing: {reason}. Không có tiêu đề dự phòng nào được chọn.",
             "review_retained": "ISO và kế hoạch đã lưu được giữ lại.",
             "review_hold_failed": "Không thể lưu trạng thái giữ để xem xét: {error}",
-            "review_unsaved": "Không thể lưu trạng thái giữ để xem xét ({error}); bản ghi vẫn được giữ lại. Hãy sửa thư mục chia sẻ của khu vực tạm, rồi tiếp tục đĩa bằng «Resume»."
+            "review_unsaved": "Không thể lưu trạng thái giữ để xem xét ({error}); bản ghi vẫn được giữ lại. Hãy sửa thư mục chia sẻ của khu vực tạm, rồi tiếp tục đĩa bằng «Resume».",
+            "pick_mismatch": "the chosen titles are not on this disc as scanned"
         },
         "staging": {
             "listing_incomplete": "không thể kiểm tra khu vực tạm: một số mục trong thư mục tạm không đọc được",
@@ -483,6 +488,24 @@
             "share_unmounted": "không thể tạo khu vực tạm: thư mục chia sẻ mạng của nó chưa được gắn kết",
             "unlisted": "không thể kiểm tra khu vực tạm: không thể liệt kê thư mục tạm",
             "duplicate_match": "có nhiều hơn một mục trong khu vực tạm khớp với đĩa này; hãy giữ cả hai và xử lý mục trùng lặp trước khi tiếp tục"
+        },
+        "titles": {
+            "no_image": "This rip's saved disc image is no longer in staging, so its titles cannot be listed.",
+            "not_a_list": "titles must be a list of titles as the title list gave them",
+            "movie_one": "A movie is one title: choose exactly one.",
+            "tv_none": "Choose at least one episode.",
+            "tv_one_needs_first": "One episode needs its First episode number: set it with Change title, then choose again.",
+            "mismatch": "The chosen titles are not on this disc as scanned; refresh the list and choose again.",
+            "unscanned": "This disc's titles are not known yet; scan the disc, then try again.",
+            "not_swept": "Only titles this capture read can be chosen here; to rip the others, insert the disc and choose them on its drive."
+        },
+        "title": {
+            "first_episode_movie": "First episode applies to TV only; clear it or choose TV",
+            "season_movie": "Season applies to TV only; clear it or choose TV",
+            "disc_movie": "Disc applies to TV only; clear it or choose TV",
+            "first_episode_range": "First episode must be an integer between 1 and 65535",
+            "season_range": "Season must be an integer between 1 and 65535",
+            "disc_range": "Disc must be an integer between 1 and 65535"
         }
     },
     "usage": {
@@ -697,7 +720,8 @@
             "keydb_age_days": "{days} ngày trước",
             "keydb_age_unknown": "không rõ",
             "lang_any": "Bất kỳ",
-            "notify_when_rip_finished": "Thông báo khi trích xuất xong"
+            "notify_when_rip_finished": "Thông báo khi trích xuất xong",
+            "organize_library": "Organize into Movies/TV folders"
         },
         "btn": {
             "open_file": "Mở tệp hoặc ISO…",
@@ -820,7 +844,8 @@
             "update_bad_response": "Kiểm tra cập nhật thất bại: phản hồi không hợp lệ ({error})",
             "update_latest": "Bạn đang dùng phiên bản mới nhất ({current}).",
             "update_available": "Có bản cập nhật: {latest} (bạn đang dùng {current}) — https://freemkv.org",
-            "update_no_version": "Kiểm tra cập nhật thất bại: không có phiên bản trong phản hồi"
+            "update_no_version": "Kiểm tra cập nhật thất bại: không có phiên bản trong phản hồi",
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
         },
         "alert": {
             "rip_title": "Quá trình trích xuất đang diễn ra.",
@@ -935,6 +960,30 @@
             "forced": "Chỉ bắt buộc",
             "episodes": "Các tập",
             "main_or_episodes": "Phim chính / các tập"
+        },
+        "review": {
+            "missing_roster": "This disc does not list its episodes.",
+            "incomplete_roster": "This disc's episode list is incomplete.",
+            "conflicting_roster": "This disc's episode list contradicts itself.",
+            "invalid_roster": "This disc's episode list is invalid.",
+            "suggested": "Suggested episodes — check the ticks and order before ripping",
+            "clusters": "Possible episode sets are marked in Notes — tick the episodes to rip",
+            "tick": "Tick the titles to rip",
+            "set": "Set {set}",
+            "episode": "Suggested episode {n}",
+            "alternate": "Alternate of {title}"
+        },
+        "details": {
+            "auto_tv": "Auto (TV series)",
+            "auto": "Auto",
+            "movie": "Movie",
+            "tv": "TV series",
+            "name": "Name",
+            "year": "Year",
+            "kind": "Kind",
+            "season": "Season",
+            "disc": "Disc",
+            "first_episode": "First episode"
         }
     },
     "warn": {
@@ -1029,6 +1078,10 @@
             "target_changed": "{error}. Tệp thư viện {path} đã thay đổi sau khi remux này bắt đầu, hoặc MKV hoàn tất đã được sao chép vào, nên tệp không bị động đến.",
             "tv_folder_empty": "thư mục TV {path} trống (thư mục chia sẻ đã được gắn chưa?); không có gì được ghi",
             "tv_folder_unreadable": "thư mục TV {path} không đọc được ({error}); không có gì được ghi"
+        },
+        "titles": {
+            "audio_tracks": "{n} audio",
+            "subtitle_tracks": "{n} subtitles"
         }
     }
 }

@@ -149,7 +149,9 @@
         "patch_done": "패치 완료: {recovered} MB 복구, 읽기 불가 {unreadable} MB, 대기 {pending} MB ({time}초, {speed} MB/s)",
         "multipass_ignored": "참고: disc->MKV/M2TS(단일 패스 먹스)에서는 --multipass가 무시됩니다. 멀티패스 복구에는 iso:// 출력을 사용하세요.",
         "title_skipped": "타이틀 {num} 건너뜀: 복사 방지됨, 복구 가능한 키 없음.",
-        "title_skipped_empty": "타이틀 {num} 건너뜀: 비어 있음 (비디오 없음) — 메뉴/내비게이션 스텁일 가능성이 높음."
+        "title_skipped_empty": "타이틀 {num} 건너뜀: 비어 있음 (비디오 없음) — 메뉴/내비게이션 스텁일 가능성이 높음.",
+        "layer_break_file": "Layer break file: {path}",
+        "layer_break_file_failed": "Could not write the layer break file {path}: {error}"
     },
     "dir": {
         "extracting": "복호화된 파일 트리를 {path}로 추출 중",
@@ -467,12 +469,15 @@
             "episode_range": "에피소드 번호가 지원되는 범위를 벗어났습니다.",
             "action": {
                 "roster": "영화라면 일치 항목을 영화로 수정하세요. 하나의 타이틀로 립하려면 설정에서 \"Rip TV seasons automatically\"을 끄세요.",
-                "first_episode": "일치 항목을 수정할 때 \"First episode\"를 설정하세요."
+                "first_episode": "일치 항목을 수정할 때 \"First episode\"를 설정하세요.",
+                "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
+                "repick": "Choose the titles again for this disc."
             },
             "review_held": "먹싱하기 전에 타이틀 선택을 검토해야 합니다: {reason}. 대체 타이틀은 선택되지 않았습니다.",
             "review_retained": "저장된 ISO와 계획은 유지됩니다.",
             "review_hold_failed": "검토 보류를 저장할 수 없습니다: {error}",
-            "review_unsaved": "검토 보류를 저장할 수 없습니다({error}). 캡처는 유지됩니다. 스테이징 공유를 고친 다음 \"Resume\"을(를) 선택해 디스크를 다시 시작하세요."
+            "review_unsaved": "검토 보류를 저장할 수 없습니다({error}). 캡처는 유지됩니다. 스테이징 공유를 고친 다음 \"Resume\"을(를) 선택해 디스크를 다시 시작하세요.",
+            "pick_mismatch": "the chosen titles are not on this disc as scanned"
         },
         "staging": {
             "listing_incomplete": "스테이징을 검사할 수 없습니다: 스테이징 폴더의 일부 항목을 읽을 수 없습니다",
@@ -483,6 +488,24 @@
             "share_unmounted": "스테이징을 만들 수 없습니다. 네트워크 공유가 마운트되어 있지 않습니다",
             "unlisted": "스테이징을 검사할 수 없습니다. 스테이징 폴더의 목록을 가져올 수 없습니다",
             "duplicate_match": "이 디스크와 일치하는 스테이징 항목이 둘 이상입니다. 둘 다 유지하고 중복을 해결한 뒤 계속하세요"
+        },
+        "titles": {
+            "no_image": "This rip's saved disc image is no longer in staging, so its titles cannot be listed.",
+            "not_a_list": "titles must be a list of titles as the title list gave them",
+            "movie_one": "A movie is one title: choose exactly one.",
+            "tv_none": "Choose at least one episode.",
+            "tv_one_needs_first": "One episode needs its First episode number: set it with Change title, then choose again.",
+            "mismatch": "The chosen titles are not on this disc as scanned; refresh the list and choose again.",
+            "unscanned": "This disc's titles are not known yet; scan the disc, then try again.",
+            "not_swept": "Only titles this capture read can be chosen here; to rip the others, insert the disc and choose them on its drive."
+        },
+        "title": {
+            "first_episode_movie": "First episode applies to TV only; clear it or choose TV",
+            "season_movie": "Season applies to TV only; clear it or choose TV",
+            "disc_movie": "Disc applies to TV only; clear it or choose TV",
+            "first_episode_range": "First episode must be an integer between 1 and 65535",
+            "season_range": "Season must be an integer between 1 and 65535",
+            "disc_range": "Disc must be an integer between 1 and 65535"
         }
     },
     "usage": {
@@ -697,7 +720,8 @@
             "keydb_age_days": "{days}일 전",
             "keydb_age_unknown": "알 수 없음",
             "lang_any": "모두",
-            "notify_when_rip_finished": "추출이 완료되면 알림"
+            "notify_when_rip_finished": "추출이 완료되면 알림",
+            "organize_library": "Organize into Movies/TV folders"
         },
         "btn": {
             "open_file": "파일 또는 ISO 열기…",
@@ -820,7 +844,8 @@
             "update_bad_response": "업데이트 확인 실패: 잘못된 응답({error})",
             "update_latest": "최신 버전({current})을 사용 중입니다.",
             "update_available": "업데이트 가능: {latest}(현재 {current}) — https://freemkv.org",
-            "update_no_version": "업데이트 확인 실패: 응답에 버전 정보가 없습니다"
+            "update_no_version": "업데이트 확인 실패: 응답에 버전 정보가 없습니다",
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
         },
         "alert": {
             "rip_title": "추출이 진행 중입니다.",
@@ -935,6 +960,30 @@
             "forced": "강제 자막만",
             "episodes": "에피소드",
             "main_or_episodes": "본편 / 에피소드"
+        },
+        "review": {
+            "missing_roster": "This disc does not list its episodes.",
+            "incomplete_roster": "This disc's episode list is incomplete.",
+            "conflicting_roster": "This disc's episode list contradicts itself.",
+            "invalid_roster": "This disc's episode list is invalid.",
+            "suggested": "Suggested episodes — check the ticks and order before ripping",
+            "clusters": "Possible episode sets are marked in Notes — tick the episodes to rip",
+            "tick": "Tick the titles to rip",
+            "set": "Set {set}",
+            "episode": "Suggested episode {n}",
+            "alternate": "Alternate of {title}"
+        },
+        "details": {
+            "auto_tv": "Auto (TV series)",
+            "auto": "Auto",
+            "movie": "Movie",
+            "tv": "TV series",
+            "name": "Name",
+            "year": "Year",
+            "kind": "Kind",
+            "season": "Season",
+            "disc": "Disc",
+            "first_episode": "First episode"
         }
     },
     "warn": {
@@ -1029,6 +1078,10 @@
             "target_changed": "{error}. 이 remux가 시작된 뒤 라이브러리 파일 {path}이(가) 변경되었거나 완성된 MKV가 이미 복사되어 건드리지 않았습니다.",
             "tv_folder_empty": "TV 폴더 {path}이(가) 비어 있습니다(공유가 마운트되어 있습니까?). 아무것도 쓰지 않았습니다",
             "tv_folder_unreadable": "TV 폴더 {path}을(를) 읽을 수 없습니다({error}). 아무것도 쓰지 않았습니다"
+        },
+        "titles": {
+            "audio_tracks": "{n} audio",
+            "subtitle_tracks": "{n} subtitles"
         }
     }
 }

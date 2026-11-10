@@ -149,7 +149,9 @@
         "patch_done": "修补完成：恢复 {recovered} MB，{unreadable} MB 不可读，{pending} MB 待处理（{time} 秒，{speed} MB/s）",
         "multipass_ignored": "注意：disc->MKV/M2TS 会忽略 --multipass（单遍复用）。如需多遍恢复，请使用 iso:// 输出。",
         "title_skipped": "跳过标题 {num}：受复制保护，无可恢复的密钥。",
-        "title_skipped_empty": "跳过标题 {num}：为空（无视频）—— 很可能是菜单/导航桩。"
+        "title_skipped_empty": "跳过标题 {num}：为空（无视频）—— 很可能是菜单/导航桩。",
+        "layer_break_file": "Layer break file: {path}",
+        "layer_break_file_failed": "Could not write the layer break file {path}: {error}"
     },
     "dir": {
         "extracting": "正在将解密后的文件树提取至 {path}",
@@ -467,12 +469,15 @@
             "episode_range": "剧集编号超出支持范围。",
             "action": {
                 "roster": "如果这是电影，请将其匹配更正为该电影；若要将其作为单个标题抓取，请在“Rip TV seasons automatically”中关闭“自动抓取电视剧季”。",
-                "first_episode": "更正匹配时请设置“First episode”。"
+                "first_episode": "更正匹配时请设置“First episode”。",
+                "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
+                "repick": "Choose the titles again for this disc."
             },
             "review_held": "混流前需要审核标题选择：{reason}。未选择备用标题。",
             "review_retained": "已保存的 ISO 和计划将被保留。",
             "review_hold_failed": "无法保存审核暂停状态：{error}",
-            "review_unsaved": "无法保存审核暂停状态（{error}）；捕获内容已保留。请修复暂存共享，然后选择“Resume”以继续处理该光盘。"
+            "review_unsaved": "无法保存审核暂停状态（{error}）；捕获内容已保留。请修复暂存共享，然后选择“Resume”以继续处理该光盘。",
+            "pick_mismatch": "the chosen titles are not on this disc as scanned"
         },
         "staging": {
             "listing_incomplete": "无法检查暂存区：暂存文件夹中的部分条目无法读取",
@@ -483,6 +488,24 @@
             "share_unmounted": "无法创建暂存区：其网络共享未挂载",
             "unlisted": "无法检查暂存区：无法列出暂存文件夹",
             "duplicate_match": "有多个暂存条目与此光盘匹配；请两者都保留，并在继续之前解决重复问题"
+        },
+        "titles": {
+            "no_image": "This rip's saved disc image is no longer in staging, so its titles cannot be listed.",
+            "not_a_list": "titles must be a list of titles as the title list gave them",
+            "movie_one": "A movie is one title: choose exactly one.",
+            "tv_none": "Choose at least one episode.",
+            "tv_one_needs_first": "One episode needs its First episode number: set it with Change title, then choose again.",
+            "mismatch": "The chosen titles are not on this disc as scanned; refresh the list and choose again.",
+            "unscanned": "This disc's titles are not known yet; scan the disc, then try again.",
+            "not_swept": "Only titles this capture read can be chosen here; to rip the others, insert the disc and choose them on its drive."
+        },
+        "title": {
+            "first_episode_movie": "First episode applies to TV only; clear it or choose TV",
+            "season_movie": "Season applies to TV only; clear it or choose TV",
+            "disc_movie": "Disc applies to TV only; clear it or choose TV",
+            "first_episode_range": "First episode must be an integer between 1 and 65535",
+            "season_range": "Season must be an integer between 1 and 65535",
+            "disc_range": "Disc must be an integer between 1 and 65535"
         }
     },
     "usage": {
@@ -697,7 +720,8 @@
             "keydb_age_days": "{days} 天前",
             "keydb_age_unknown": "未知",
             "lang_any": "任意",
-            "notify_when_rip_finished": "抓取完成时通知"
+            "notify_when_rip_finished": "抓取完成时通知",
+            "organize_library": "Organize into Movies/TV folders"
         },
         "btn": {
             "open_file": "打开文件或 ISO……",
@@ -820,7 +844,8 @@
             "update_bad_response": "检查更新失败：响应无效（{error}）",
             "update_latest": "您正在运行最新版本（{current}）。",
             "update_available": "有可用更新：{latest}（当前版本 {current}）— https://freemkv.org",
-            "update_no_version": "检查更新失败：响应中没有版本信息"
+            "update_no_version": "检查更新失败：响应中没有版本信息",
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
         },
         "alert": {
             "rip_title": "抓取正在进行中。",
@@ -935,6 +960,30 @@
             "forced": "仅强制",
             "episodes": "剧集",
             "main_or_episodes": "主影片／剧集"
+        },
+        "review": {
+            "missing_roster": "This disc does not list its episodes.",
+            "incomplete_roster": "This disc's episode list is incomplete.",
+            "conflicting_roster": "This disc's episode list contradicts itself.",
+            "invalid_roster": "This disc's episode list is invalid.",
+            "suggested": "Suggested episodes — check the ticks and order before ripping",
+            "clusters": "Possible episode sets are marked in Notes — tick the episodes to rip",
+            "tick": "Tick the titles to rip",
+            "set": "Set {set}",
+            "episode": "Suggested episode {n}",
+            "alternate": "Alternate of {title}"
+        },
+        "details": {
+            "auto_tv": "Auto (TV series)",
+            "auto": "Auto",
+            "movie": "Movie",
+            "tv": "TV series",
+            "name": "Name",
+            "year": "Year",
+            "kind": "Kind",
+            "season": "Season",
+            "disc": "Disc",
+            "first_episode": "First episode"
         }
     },
     "warn": {
@@ -1029,6 +1078,10 @@
             "target_changed": "{error}。媒体库文件 {path} 在此次 remux 开始后已更改，或完成的 MKV 已被复制进去，因此未动它。",
             "tv_folder_empty": "电视文件夹 {path} 为空（共享是否已挂载？）；未写入任何内容",
             "tv_folder_unreadable": "电视文件夹 {path} 无法读取（{error}）；未写入任何内容"
+        },
+        "titles": {
+            "audio_tracks": "{n} audio",
+            "subtitle_tracks": "{n} subtitles"
         }
     }
 }

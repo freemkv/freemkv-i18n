@@ -149,7 +149,9 @@
         "patch_done": "Apedaçament fet: recuperats {recovered} MB, {unreadable} MB il·legibles, {pending} MB pendents ({time}s, {speed} MB/s)",
         "multipass_ignored": "Nota: --multipass s'ignora per a disc->MKV/M2TS (mux d'una sola passada). Useu una sortida iso:// per a la recuperació multipassada.",
         "title_skipped": "S'omet el títol {num}: protegit contra còpia, no s'ha pogut recuperar cap clau.",
-        "title_skipped_empty": "S'omet el títol {num}: buit (sense vídeo) — probablement un fragment de menú o navegació."
+        "title_skipped_empty": "S'omet el títol {num}: buit (sense vídeo) — probablement un fragment de menú o navegació.",
+        "layer_break_file": "Layer break file: {path}",
+        "layer_break_file_failed": "Could not write the layer break file {path}: {error}"
     },
     "dir": {
         "extracting": "S'està extraient l'arbre de fitxers desxifrat a {path}",
@@ -467,12 +469,15 @@
             "episode_range": "La numeració d'episodis és fora de l'interval admès.",
             "action": {
                 "roster": "Si és una pel·lícula, corregiu-ne la coincidència amb la pel·lícula; per extreure-la com un sol títol, desactiveu «Rip TV seasons automatically» a la Configuració.",
-                "first_episode": "Definiu «First episode» quan en corregiu la coincidència."
+                "first_episode": "Definiu «First episode» quan en corregiu la coincidència.",
+                "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
+                "repick": "Choose the titles again for this disc."
             },
             "review_held": "La selecció de títols necessita revisió abans del muxing: {reason}. No s'ha seleccionat cap títol alternatiu.",
             "review_retained": "L'ISO i el pla desats es conserven.",
             "review_hold_failed": "No s'ha pogut desar la retenció de revisió: {error}",
-            "review_unsaved": "No s'ha pogut desar la retenció de revisió ({error}); la captura es conserva. Corregiu el recurs compartit intermedi i després reprengueu el disc amb «Resume»."
+            "review_unsaved": "No s'ha pogut desar la retenció de revisió ({error}); la captura es conserva. Corregiu el recurs compartit intermedi i després reprengueu el disc amb «Resume».",
+            "pick_mismatch": "the chosen titles are not on this disc as scanned"
         },
         "staging": {
             "listing_incomplete": "no es pot inspeccionar l'àrea intermèdia: no s'han pogut llegir algunes entrades de la carpeta intermèdia",
@@ -483,6 +488,24 @@
             "share_unmounted": "no es pot crear l'àrea intermèdia: el seu recurs compartit de xarxa no està muntat",
             "unlisted": "no es pot inspeccionar l'àrea intermèdia: no s'ha pogut llistar la carpeta intermèdia",
             "duplicate_match": "més d'una entrada intermèdia coincideix amb aquest disc; conserveu-les totes dues i resoleu el duplicat abans de continuar"
+        },
+        "titles": {
+            "no_image": "This rip's saved disc image is no longer in staging, so its titles cannot be listed.",
+            "not_a_list": "titles must be a list of titles as the title list gave them",
+            "movie_one": "A movie is one title: choose exactly one.",
+            "tv_none": "Choose at least one episode.",
+            "tv_one_needs_first": "One episode needs its First episode number: set it with Change title, then choose again.",
+            "mismatch": "The chosen titles are not on this disc as scanned; refresh the list and choose again.",
+            "unscanned": "This disc's titles are not known yet; scan the disc, then try again.",
+            "not_swept": "Only titles this capture read can be chosen here; to rip the others, insert the disc and choose them on its drive."
+        },
+        "title": {
+            "first_episode_movie": "First episode applies to TV only; clear it or choose TV",
+            "season_movie": "Season applies to TV only; clear it or choose TV",
+            "disc_movie": "Disc applies to TV only; clear it or choose TV",
+            "first_episode_range": "First episode must be an integer between 1 and 65535",
+            "season_range": "Season must be an integer between 1 and 65535",
+            "disc_range": "Disc must be an integer between 1 and 65535"
         }
     },
     "usage": {
@@ -697,7 +720,8 @@
             "keydb_age_days": "fa {days} dies",
             "keydb_age_unknown": "desconegut",
             "lang_any": "Qualsevol",
-            "notify_when_rip_finished": "Notifica quan acabi una extracció"
+            "notify_when_rip_finished": "Notifica quan acabi una extracció",
+            "organize_library": "Organize into Movies/TV folders"
         },
         "btn": {
             "open_file": "Obre un fitxer o una ISO…",
@@ -820,7 +844,8 @@
             "update_bad_response": "La comprovació d'actualitzacions ha fallat: resposta no vàlida ({error})",
             "update_latest": "Esteu executant la darrera versió ({current}).",
             "update_available": "Actualització disponible: {latest} (teniu {current}) — https://freemkv.org",
-            "update_no_version": "La comprovació d'actualitzacions ha fallat: la resposta no conté cap versió"
+            "update_no_version": "La comprovació d'actualitzacions ha fallat: la resposta no conté cap versió",
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
         },
         "alert": {
             "rip_title": "Hi ha una extracció en curs.",
@@ -935,6 +960,30 @@
             "forced": "Només forçats",
             "episodes": "Episodis",
             "main_or_episodes": "Film principal / episodis"
+        },
+        "review": {
+            "missing_roster": "This disc does not list its episodes.",
+            "incomplete_roster": "This disc's episode list is incomplete.",
+            "conflicting_roster": "This disc's episode list contradicts itself.",
+            "invalid_roster": "This disc's episode list is invalid.",
+            "suggested": "Suggested episodes — check the ticks and order before ripping",
+            "clusters": "Possible episode sets are marked in Notes — tick the episodes to rip",
+            "tick": "Tick the titles to rip",
+            "set": "Set {set}",
+            "episode": "Suggested episode {n}",
+            "alternate": "Alternate of {title}"
+        },
+        "details": {
+            "auto_tv": "Auto (TV series)",
+            "auto": "Auto",
+            "movie": "Movie",
+            "tv": "TV series",
+            "name": "Name",
+            "year": "Year",
+            "kind": "Kind",
+            "season": "Season",
+            "disc": "Disc",
+            "first_episode": "First episode"
         }
     },
     "warn": {
@@ -1029,6 +1078,10 @@
             "target_changed": "{error}. El fitxer de la biblioteca {path} ha canviat després de començar aquest remux, o el MKV acabat ja s'havia copiat, de manera que no s'ha tocat.",
             "tv_folder_empty": "la carpeta de sèries {path} és buida (la compartició està muntada?); no s'ha escrit res",
             "tv_folder_unreadable": "la carpeta de sèries {path} no es pot llegir ({error}); no s'ha escrit res"
+        },
+        "titles": {
+            "audio_tracks": "{n} audio",
+            "subtitle_tracks": "{n} subtitles"
         }
     }
 }
