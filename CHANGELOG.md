@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## [1.8.9] — UNRELEASED
 
 ### Added
 
