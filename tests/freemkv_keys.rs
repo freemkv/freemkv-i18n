@@ -258,7 +258,12 @@ struct Extracted {
     pair_tables: HashMap<String, Vec<(String, String)>>,
     /// `"english" => "key"` match arms per fn: `fn -> [(key, english)]`.
     match_tables: HashMap<String, Vec<(String, String)>>,
+    /// `(key, english, argument names, line)` of each parsed `fmt_or` site; `None` names
+    /// when the argument list is not a literal `&[("name", value), ...]`.
+    fmt_args: Vec<FmtSite>,
 }
+
+type FmtSite = (String, String, Option<Vec<String>>, usize);
 
 struct Block {
     parent: Option<usize>,
@@ -387,8 +392,12 @@ fn extract(src: &str) -> Result<Extracted, String> {
                     || (bare && aliased(&blocks, cur, name));
                 if callee && !is(i.wrapping_sub(1), "fn") {
                     let open = if pending { i + 3 } else { i + 1 };
+                    let args = if is(open, "(") {
+                        call_args(&toks, open)
+                    } else {
+                        Vec::new()
+                    };
                     let parsed = if is(open, "(") {
-                        let args = call_args(&toks, open);
                         // A string literal or a visible const, optionally borrowed.
                         let arg = |n: usize| -> Result<Option<String>, String> {
                             let a = args.get(n).map(Vec::as_slice).unwrap_or_default();
@@ -418,7 +427,13 @@ fn extract(src: &str) -> Result<Extracted, String> {
                         None
                     };
                     match parsed {
-                        Some((k, e)) => ex.pairs.push((k, e, line)),
+                        Some((k, e)) => {
+                            if name == "fmt_or" {
+                                let names = args.get(2).and_then(|a| fmt_arg_names(a));
+                                ex.fmt_args.push((k.clone(), e.clone(), names, line));
+                            }
+                            ex.pairs.push((k, e, line))
+                        }
                         None => ex.unparsed.push((blocks[cur].func.clone(), line)),
                     }
                     if pending {
@@ -458,6 +473,96 @@ fn call_args(toks: &[Token], open: usize) -> Vec<Vec<Token>> {
         args.push(arg);
     }
     args
+}
+
+// Names of the top-level `("name", value)` tuples of a literal `&[...]` argument list.
+fn fmt_arg_names(arg: &[Token]) -> Option<Vec<String>> {
+    let p = |t: &Token, s: &str| t.tok == Tok::Punct(s.into());
+    let arg = match arg {
+        [amp, rest @ ..] if p(amp, "&") => rest,
+        _ => arg,
+    };
+    let [open, inner @ .., close] = arg else {
+        return None;
+    };
+    if !p(open, "[") || !p(close, "]") {
+        return None;
+    }
+    let (mut names, mut depth) = (Vec::new(), 0);
+    for (j, t) in inner.iter().enumerate() {
+        match &t.tok {
+            Tok::Punct(x) if ["(", "[", "{"].contains(&x.as_str()) => {
+                if depth == 0 {
+                    match (inner.get(j + 1).map(|t| &t.tok), inner.get(j + 2)) {
+                        (Some(Tok::Str(name)), Some(comma)) if x == "(" && p(comma, ",") => {
+                            names.push(name.clone())
+                        }
+                        _ => return None,
+                    }
+                }
+                depth += 1;
+            }
+            Tok::Punct(x) if [")", "]", "}"].contains(&x.as_str()) => depth -= 1,
+            Tok::Punct(x) if x == "," && depth == 0 => {}
+            _ if depth == 0 => return None,
+            _ => {}
+        }
+    }
+    Some(names)
+}
+
+// `{name}` placeholders freemkv's `fmt_or` replaces: a brace-enclosed identifier.
+fn english_placeholders(s: &str) -> Vec<String> {
+    let mut out: Vec<String> = s
+        .split('{')
+        .skip(1)
+        .filter_map(|rest| rest.split_once('}'))
+        .map(|(name, _)| name)
+        .filter(|n| !n.is_empty() && n.chars().all(|c| c.is_ascii_alphanumeric() || c == '_'))
+        .map(String::from)
+        .collect();
+    out.sort();
+    out.dedup();
+    out
+}
+
+/// `(file, key, reason)` for `fmt_or` sites whose argument list is built, not literal.
+const OPAQUE_FMT_ARGS: &[(&str, &str, &str)] = &[(
+    "pipe.rs",
+    "error.title_changed",
+    "maps a (name, String) array of num/expected/found to &str pairs",
+)];
+
+// A `fmt_or` whose argument names differ from its English placeholders leaks `{name}`.
+// Opaque argument lists must be on `opaque`; each one matched sets its `used` flag.
+fn fmt_arg_problems(
+    file: &str,
+    sites: &[FmtSite],
+    opaque: &[(&str, &str, &str)],
+    used: &mut [bool],
+) -> Vec<String> {
+    let mut problems = Vec::new();
+    for (key, english, names, line) in sites {
+        let Some(names) = names else {
+            match opaque.iter().position(|(f, k, _)| *f == file && k == key) {
+                Some(n) => used[n] = true,
+                None => problems.push(format!(
+                    "{file}:{line} {key}: fmt_or arguments are not a literal list"
+                )),
+            }
+            continue;
+        };
+        let mut sorted = names.clone();
+        sorted.sort();
+        sorted.dedup();
+        let wanted = english_placeholders(english);
+        if sorted.len() != names.len() || sorted != wanted {
+            problems.push(format!(
+                "{file}:{line} {key}: fmt_or passes {names:?} but {english:?} needs {wanted:?}"
+            ));
+        }
+    }
+    problems
 }
 
 fn is_key(s: &str) -> bool {
@@ -644,6 +749,8 @@ fn freemkv_fallback_keys_ship_in_english_with_the_same_text() {
     let mut problems = Vec::new();
     let mut used = vec![false; ALLOWLIST.len()];
     let mut raw_sources: Vec<(String, String)> = Vec::new();
+    let mut fmt_sites = 0;
+    let mut opaque_used = vec![false; OPAQUE_FMT_ARGS.len()];
     for file in &files {
         let name = file.file_name().unwrap().to_string_lossy().to_string();
         let text = std::fs::read_to_string(file).unwrap();
@@ -658,6 +765,13 @@ fn freemkv_fallback_keys_ship_in_english_with_the_same_text() {
         for (k, e, line) in ex.pairs {
             checked.push((k, e, format!("{name}:{line}")));
         }
+        fmt_sites += ex.fmt_args.len();
+        problems.extend(fmt_arg_problems(
+            &name,
+            &ex.fmt_args,
+            OPAQUE_FMT_ARGS,
+            &mut opaque_used,
+        ));
         // Group by fn: ALLOWLIST now matches on (file, fn, expected COUNT), not a line.
         let mut by_func: std::collections::BTreeMap<String, Vec<usize>> = Default::default();
         for (func, line) in ex.unparsed {
@@ -702,6 +816,15 @@ fn freemkv_fallback_keys_ship_in_english_with_the_same_text() {
         checked.len() > 40,
         "only {} keys extracted from {src:?}; the call shape changed",
         checked.len()
+    );
+    for (n, (f, key, why)) in OPAQUE_FMT_ARGS.iter().enumerate() {
+        if !opaque_used[n] {
+            problems.push(format!("stale opaque fmt_or entry {f} {key} ({why})"));
+        }
+    }
+    assert!(
+        fmt_sites > 20,
+        "only {fmt_sites} fmt_or sites extracted; the call shape changed"
     );
     for (key, english, at) in &checked {
         match lookup(&en, key) {
@@ -940,4 +1063,121 @@ fn every_selection_review_reason_has_an_english_key() {
         missing.is_empty(),
         "missing en.json reason keys: {missing:?}"
     );
+}
+
+#[test]
+fn fmt_or_argument_names_must_match_the_english_placeholders() {
+    let src = "fn a() {
+        fmt_or(\"a.ok\", \"{p} of {q}\", &[(\"p\", &x), (\"q\", &fmt_or(\"a.in\", \"{r}\", &[(\"r\", y)]))]);
+        fmt_or(\"a.none\", \"Done\", &[]);
+        fmt_or(\"a.missing\", \"at {path}\", &[]);
+        fmt_or(\"a.extra\", \"Done\", &[(\"path\", p)]);
+        fmt_or(\"a.typo\", \"at {path}\", &[(\"pth\", p)]);
+        fmt_or(\"a.twice\", \"at {path}\", &[(\"path\", p), (\"path\", q)]);
+        fmt_or(\"a.opaque\", \"at {path}\", args);
+        get_or(\"a.plain\", \"{not_checked}\");
+    }";
+    let ex = extract(src).unwrap();
+    assert_eq!(ex.fmt_args.len(), 8);
+    let mut used = [false];
+    let problems = fmt_arg_problems("x.rs", &ex.fmt_args, &[], &mut []);
+    let flagged: Vec<_> = ["a.missing", "a.extra", "a.typo", "a.twice", "a.opaque"]
+        .into_iter()
+        .filter(|k| problems.iter().any(|p| p.contains(&format!(" {k}:"))))
+        .collect();
+    assert_eq!(flagged.len(), 5, "{problems:?}");
+    assert_eq!(problems.len(), 5, "{problems:?}");
+    assert_eq!(english_placeholders("{a} {{b}} {a} { c} {}"), ["a", "b"]);
+    let opaque = [("x.rs", "a.opaque", "built")];
+    let problems = fmt_arg_problems("x.rs", &ex.fmt_args, &opaque, &mut used);
+    assert_eq!((problems.len(), used), (4, [true]), "{problems:?}");
+    let mut elsewhere = [false];
+    let problems = fmt_arg_problems("y.rs", &ex.fmt_args, &opaque, &mut elsewhere);
+    assert_eq!((problems.len(), elsewhere), (5, [false]), "{problems:?}");
+}
+
+/// en.json key prefixes (ending in `.`) and exact keys that freemkv alone renders, each
+/// through a literal key, so every matching key must appear quoted in freemkv's source.
+const FREEMKV_LITERAL_KEYS: &[&str] = &[
+    "error.titles.",
+    "error.title.",
+    "error.plan.",
+    "gui.review.",
+    "gui.details.",
+    "server.titles.",
+    "rip.layer_break_file",
+    "rip.layer_break_file_failed",
+    "gui.set.organize_library",
+    "gui.log.bad_number_detail",
+];
+
+fn flat_keys(value: &Value, prefix: &str, out: &mut Vec<String>) {
+    for (k, v) in value.as_object().into_iter().flatten() {
+        let path = format!("{prefix}{k}");
+        match v {
+            Value::Object(_) => flat_keys(v, &format!("{path}."), out),
+            _ => out.push(path),
+        }
+    }
+}
+
+// Keys under `patterns` that no source file quotes, plus patterns matching no key at all.
+fn unrendered_keys(en: &Value, patterns: &[&str], files: &[(String, String)]) -> Vec<String> {
+    let mut keys = Vec::new();
+    flat_keys(en, "", &mut keys);
+    let mut problems = Vec::new();
+    for pattern in patterns {
+        let matching: Vec<_> = keys
+            .iter()
+            .filter(|k| k == pattern || pattern.ends_with('.') && k.starts_with(pattern))
+            .collect();
+        if matching.is_empty() {
+            problems.push(format!("{pattern} matches no en.json key"));
+        }
+        for key in matching {
+            let quoted = format!("\"{key}\"");
+            if !files.iter().any(|(_, text)| text.contains(&quoted)) {
+                problems.push(format!("{key} is in en.json but freemkv never renders it"));
+            }
+        }
+    }
+    problems
+}
+
+#[test]
+fn freemkv_owned_keys_are_all_rendered() {
+    let Some(src) = std::env::var_os("FREEMKV_SRC") else {
+        eprintln!("FREEMKV_SRC not set; skipping the freemkv unrendered-key check");
+        return;
+    };
+    let en_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("locales/en.json");
+    let en: Value = serde_json::from_str(&std::fs::read_to_string(en_path).unwrap()).unwrap();
+    let mut files = Vec::new();
+    rust_files(Path::new(&src), &mut files);
+    let sources: Vec<(String, String)> = files
+        .iter()
+        .map(|f| (f.display().to_string(), std::fs::read_to_string(f).unwrap()))
+        .collect();
+    let problems = unrendered_keys(&en, FREEMKV_LITERAL_KEYS, &sources);
+    assert!(problems.is_empty(), "{}", problems.join("\n"));
+}
+
+#[test]
+fn an_unrendered_or_unmatched_freemkv_key_is_reported() {
+    let en: Value = serde_json::json!({
+        "gui": { "review": { "set": "Set {set}", "gone": "Old" }, "x": "X" }
+    });
+    let files = [(
+        "ui.rs".to_string(),
+        "get_or(\"gui.review.set\", \"Set {set}\")".to_string(),
+    )];
+    assert_eq!(
+        unrendered_keys(&en, &["gui.review.", "gui.x", "gui.nothing."], &files),
+        [
+            "gui.review.gone is in en.json but freemkv never renders it",
+            "gui.x is in en.json but freemkv never renders it",
+            "gui.nothing. matches no en.json key",
+        ]
+    );
+    assert!(unrendered_keys(&en, &["gui.review.set"], &files).is_empty());
 }
