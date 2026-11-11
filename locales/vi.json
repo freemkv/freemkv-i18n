@@ -465,10 +465,8 @@
             "no_titles": "đĩa không có tiêu đề nào dùng được",
             "no_outputs": "kế hoạch không có đầu ra nào",
             "duplicate_output": "hai đầu ra sẽ dùng cùng một tên tệp: {name}",
-            "later_disc_start": "Việc đánh số tập của đĩa sau cần một Tập đầu tiên đã được xác nhận; số đĩa và thời lượng không xác định được điều này.",
             "episode_range": "Việc đánh số tập nằm ngoài phạm vi được hỗ trợ.",
             "action": {
-                "roster": "Nếu là phim, hãy sửa kết quả khớp thành phim; để rip thành một tiêu đề, hãy tắt «Rip TV seasons automatically» trong Cài đặt.",
                 "first_episode": "Hãy đặt «First episode» khi bạn sửa kết quả khớp.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

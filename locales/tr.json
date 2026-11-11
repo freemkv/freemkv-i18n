@@ -465,10 +465,8 @@
             "no_titles": "diskte kullanılabilir başlık yok",
             "no_outputs": "planda çıktı yok",
             "duplicate_output": "iki çıktı aynı dosya adını kullanacak: {name}",
-            "later_disc_start": "Sonraki disklerde bölüm numaralandırması, onaylanmış bir İlk bölüm gerektirir; disk numarası ve süreler bunu belirlemez.",
             "episode_range": "Bölüm numaralandırması desteklenen aralığın dışında.",
             "action": {
-                "roster": "Bir film ise eşleşmesini filme göre düzeltin; tek bir başlık olarak rip etmek için Ayarlar'da «Rip TV seasons automatically» seçeneğini kapatın.",
                 "first_episode": "Eşleşmeyi düzeltirken «First episode» alanını ayarlayın.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

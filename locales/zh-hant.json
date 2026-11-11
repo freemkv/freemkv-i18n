@@ -465,10 +465,8 @@
             "no_titles": "光碟沒有可用的標題",
             "no_outputs": "計畫沒有輸出",
             "duplicate_output": "兩個輸出將使用相同的檔案名稱：{name}",
-            "later_disc_start": "後續光碟的劇集編號需要已確認的第一集；光碟編號和時長無法確定。",
             "episode_range": "劇集編號超出支援範圍。",
             "action": {
-                "roster": "如果這是電影，請將其比對更正為該電影；若要將其作為單一標題擷取，請在「Rip TV seasons automatically」中關閉「自動擷取電視影集季」。",
                 "first_episode": "更正比對時請設定「First episode」。",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

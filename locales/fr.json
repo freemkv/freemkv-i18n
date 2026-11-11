@@ -442,10 +442,8 @@
             "no_titles": "le disque n'a aucun titre exploitable",
             "no_outputs": "le plan n'a aucune sortie",
             "duplicate_output": "deux sorties utiliseraient le même nom de fichier : {name}",
-            "later_disc_start": "La numérotation des épisodes d'un disque ultérieur nécessite un premier épisode confirmé ; le numéro du disque et les durées ne le déterminent pas.",
             "episode_range": "La numérotation des épisodes est hors de la plage prise en charge.",
             "action": {
-                "roster": "S'il s'agit d'un film, corrigez sa correspondance avec le film ; pour l'extraire comme un seul titre, désactivez «Rip TV seasons automatically» dans les Réglages.",
                 "first_episode": "Définissez «First episode» lorsque vous corrigez sa correspondance.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

@@ -465,10 +465,8 @@
             "no_titles": "на диске нет подходящих заголовков",
             "no_outputs": "в плане нет выходных файлов",
             "duplicate_output": "два выходных файла получили бы одно и то же имя: {name}",
-            "later_disc_start": "Нумерация серий на последующем диске требует подтверждённой первой серии; номер диска и длительности её не определяют.",
             "episode_range": "Нумерация серий выходит за поддерживаемый диапазон.",
             "action": {
-                "roster": "Если это фильм, исправьте сопоставление на фильм; чтобы скопировать его как один заголовок, отключите в Настройках «Rip TV seasons automatically».",
                 "first_episode": "Укажите «First episode» при исправлении сопоставления.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

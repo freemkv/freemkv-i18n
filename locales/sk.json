@@ -465,10 +465,8 @@
             "no_titles": "disk nemá žiadne použiteľné tituly",
             "no_outputs": "plán nemá žiadne výstupy",
             "duplicate_output": "dva výstupy by použili rovnaký názov súboru: {name}",
-            "later_disc_start": "Číslovanie epizód na neskoršom disku vyžaduje potvrdenú prvú epizódu; číslo disku a dĺžky ju neurčujú.",
             "episode_range": "Číslovanie epizód je mimo podporovaného rozsahu.",
             "action": {
-                "roster": "Ak ide o film, opravte jeho priradenie k filmu; ak ho chcete ripovať ako jeden titul, vypnite v Nastaveniach voľbu „Rip TV seasons automatically“.",
                 "first_episode": "Pri oprave priradenia nastavte „First episode“.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

@@ -465,10 +465,8 @@
             "no_titles": "光盘没有可用的标题",
             "no_outputs": "计划没有输出",
             "duplicate_output": "两个输出将使用相同的文件名：{name}",
-            "later_disc_start": "后续光盘的剧集编号需要已确认的第一集；光盘编号和时长无法确定。",
             "episode_range": "剧集编号超出支持范围。",
             "action": {
-                "roster": "如果这是电影，请将其匹配更正为该电影；若要将其作为单个标题抓取，请在“Rip TV seasons automatically”中关闭“自动抓取电视剧季”。",
                 "first_episode": "更正匹配时请设置“First episode”。",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

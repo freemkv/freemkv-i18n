@@ -465,10 +465,8 @@
             "no_titles": "disc tidak memiliki judul yang dapat digunakan",
             "no_outputs": "rencana tidak memiliki output",
             "duplicate_output": "dua output akan memakai nama file yang sama: {name}",
-            "later_disc_start": "Penomoran episode disc berikutnya memerlukan Episode pertama yang dikonfirmasi; nomor disc dan durasi tidak menentukannya.",
             "episode_range": "Penomoran episode berada di luar rentang yang didukung.",
             "action": {
-                "roster": "Jika ini film, perbaiki kecocokannya ke film tersebut; untuk me-rip sebagai satu judul, matikan «Rip TV seasons automatically» di Pengaturan.",
                 "first_episode": "Tetapkan «First episode» saat Anda memperbaiki kecocokannya.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

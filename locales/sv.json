@@ -465,10 +465,8 @@
             "no_titles": "skivan har inga användbara titlar",
             "no_outputs": "planen har inga utdata",
             "duplicate_output": "två utdata skulle använda samma filnamn: {name}",
-            "later_disc_start": "Avsnittsnumrering på en senare skiva kräver ett bekräftat första avsnitt; skivnummer och speltider fastställer det inte.",
             "episode_range": "Avsnittsnumreringen ligger utanför det som stöds.",
             "action": {
-                "roster": "Om det är en film, rätta matchningen till filmen; för att rippa den som en enda titel, stäng av «Rip TV seasons automatically» i Inställningar.",
                 "first_episode": "Ange «First episode» när du rättar matchningen.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

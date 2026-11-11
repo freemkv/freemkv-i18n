@@ -465,10 +465,8 @@
             "no_titles": "levyllä ei ole käyttökelpoisia nimikkeitä",
             "no_outputs": "suunnitelmassa ei ole tulosteita",
             "duplicate_output": "kaksi tulostetta käyttäisi samaa tiedostonimeä: {name}",
-            "later_disc_start": "Myöhemmän levyn jaksonumerointi vaatii vahvistetun ensimmäisen jakson; levyn numero ja kestot eivät sitä määritä.",
             "episode_range": "Jaksonumerointi on tuetun alueen ulkopuolella.",
             "action": {
-                "roster": "Jos kyseessä on elokuva, korjaa sen vastaavuus elokuvaan; jos haluat rippaa sen yhtenä nimikkeenä, poista Asetuksista käytöstä ”Rip TV seasons automatically”.",
                 "first_episode": "Aseta ”First episode”, kun korjaat vastaavuuden.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

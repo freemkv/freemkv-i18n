@@ -465,10 +465,8 @@
             "no_titles": "a lemezen nincs használható cím",
             "no_outputs": "a tervben nincs kimenet",
             "duplicate_output": "két kimenet ugyanazt a fájlnevet használná: {name}",
-            "later_disc_start": "A későbbi lemezek epizódszámozásához megerősített első epizód kell; a lemez száma és a hossz nem határozza meg.",
             "episode_range": "Az epizódszámozás a támogatott tartományon kívül esik.",
             "action": {
-                "roster": "Ha film, javítsa az egyezését a filmre; ha egyetlen címként szeretné rippelni, kapcsolja ki a Beállításokban a „Rip TV seasons automatically” beállítást.",
                 "first_episode": "Az egyezés javításakor adja meg a következőt: „First episode”.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

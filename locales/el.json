@@ -465,10 +465,8 @@
             "no_titles": "ο δίσκος δεν έχει χρησιμοποιήσιμους τίτλους",
             "no_outputs": "το σχέδιο δεν έχει εξόδους",
             "duplicate_output": "δύο έξοδοι θα χρησιμοποιούσαν το ίδιο όνομα αρχείου: {name}",
-            "later_disc_start": "Η αρίθμηση επεισοδίων σε μεταγενέστερο δίσκο απαιτεί επιβεβαιωμένο Πρώτο επεισόδιο· ο αριθμός δίσκου και οι διάρκειες δεν το καθορίζουν.",
             "episode_range": "Η αρίθμηση επεισοδίων είναι εκτός του υποστηριζόμενου εύρους.",
             "action": {
-                "roster": "Αν πρόκειται για ταινία, διορθώστε την αντιστοίχισή της στην ταινία· για να την αντιγράψετε ως έναν τίτλο, απενεργοποιήστε το «Rip TV seasons automatically» στις Ρυθμίσεις.",
                 "first_episode": "Ορίστε το «First episode» όταν διορθώνετε την αντιστοίχισή του.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

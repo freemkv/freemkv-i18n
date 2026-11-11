@@ -442,10 +442,8 @@
             "no_titles": "de schijf heeft geen bruikbare titels",
             "no_outputs": "het plan heeft geen uitvoer",
             "duplicate_output": "twee uitvoerbestanden zouden dezelfde bestandsnaam gebruiken: {name}",
-            "later_disc_start": "Afleveringsnummering van een latere schijf vereist een bevestigde eerste aflevering; schijfnummer en speelduur bepalen die niet.",
             "episode_range": "De afleveringsnummering valt buiten het ondersteunde bereik.",
             "action": {
-                "roster": "Als het een film is, corrigeer dan de koppeling naar de film; om het als één titel te rippen, schakelt u in Instellingen «Rip TV seasons automatically» uit.",
                 "first_episode": "Stel «First episode» in wanneer u de koppeling corrigeert.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

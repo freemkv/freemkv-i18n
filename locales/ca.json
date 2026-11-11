@@ -465,10 +465,8 @@
             "no_titles": "el disc no té cap títol utilitzable",
             "no_outputs": "el pla no té cap sortida",
             "duplicate_output": "dues sortides farien servir el mateix nom de fitxer: {name}",
-            "later_disc_start": "La numeració d'episodis d'un disc posterior necessita un primer episodi confirmat; el número de disc i les durades no el determinen.",
             "episode_range": "La numeració d'episodis és fora de l'interval admès.",
             "action": {
-                "roster": "Si és una pel·lícula, corregiu-ne la coincidència amb la pel·lícula; per extreure-la com un sol títol, desactiveu «Rip TV seasons automatically» a la Configuració.",
                 "first_episode": "Definiu «First episode» quan en corregiu la coincidència.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

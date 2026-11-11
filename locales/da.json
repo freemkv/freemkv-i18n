@@ -465,10 +465,8 @@
             "no_titles": "disken har ingen brugbare titler",
             "no_outputs": "planen har ingen outputs",
             "duplicate_output": "to outputs ville bruge det samme filnavn: {name}",
-            "later_disc_start": "Afsnitsnummerering på en senere disk kræver et bekræftet første afsnit; disknummer og spilletider fastlægger det ikke.",
             "episode_range": "Afsnitsnummereringen er uden for det understøttede interval.",
             "action": {
-                "roster": "Hvis det er en film, så ret dens match til filmen; for at rippe den som én titel skal du slå «Rip TV seasons automatically» fra i Indstillinger.",
                 "first_episode": "Angiv «First episode», når du retter dens match.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

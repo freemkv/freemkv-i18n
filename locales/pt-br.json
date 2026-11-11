@@ -465,10 +465,8 @@
             "no_titles": "o disco não tem títulos utilizáveis",
             "no_outputs": "o plano não tem saídas",
             "duplicate_output": "duas saídas usariam o mesmo nome de arquivo: {name}",
-            "later_disc_start": "A numeração de episódios de discos posteriores exige um primeiro episódio confirmado; o número do disco e as durações não o determinam.",
             "episode_range": "A numeração de episódios está fora do intervalo compatível.",
             "action": {
-                "roster": "Se for um filme, corrija a correspondência para o filme; para extraí-lo como um único título, desative «Rip TV seasons automatically» em Configurações.",
                 "first_episode": "Defina «First episode» ao corrigir a correspondência.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

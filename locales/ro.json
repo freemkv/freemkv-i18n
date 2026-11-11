@@ -465,10 +465,8 @@
             "no_titles": "discul nu are titluri utilizabile",
             "no_outputs": "planul nu are ieșiri",
             "duplicate_output": "două ieșiri ar folosi același nume de fișier: {name}",
-            "later_disc_start": "Numerotarea episoadelor de pe un disc ulterior necesită un prim episod confirmat; numărul discului și duratele nu îl stabilesc.",
             "episode_range": "Numerotarea episoadelor este în afara intervalului acceptat.",
             "action": {
-                "roster": "Dacă este un film, corectați potrivirea la film; pentru a-l extrage ca un singur titlu, dezactivați «Rip TV seasons automatically» în Setări.",
                 "first_episode": "Setați «First episode» când corectați potrivirea.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

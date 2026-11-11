@@ -465,10 +465,8 @@
             "no_titles": "ディスクに使用可能なタイトルがありません",
             "no_outputs": "プランに出力がありません",
             "duplicate_output": "2つの出力が同じファイル名を使用します: {name}",
-            "later_disc_start": "後続ディスクのエピソード番号付けには確定した最初のエピソードが必要です。ディスク番号と再生時間からは決定できません。",
             "episode_range": "エピソード番号がサポート範囲外です。",
             "action": {
-                "roster": "映画の場合は、一致先を映画に修正してください。1つのタイトルとしてリッピングするには、設定で「Rip TV seasons automatically」をオフにしてください。",
                 "first_episode": "一致を修正するときに「First episode」を設定してください。",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

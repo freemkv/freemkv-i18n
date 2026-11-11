@@ -465,10 +465,8 @@
             "no_titles": "płyta nie ma żadnych użytecznych tytułów",
             "no_outputs": "plan nie ma żadnych wyjść",
             "duplicate_output": "dwa wyjścia użyłyby tej samej nazwy pliku: {name}",
-            "later_disc_start": "Numeracja odcinków na kolejnej płycie wymaga potwierdzonego pierwszego odcinka; numer płyty i czasy trwania go nie określają.",
             "episode_range": "Numeracja odcinków jest poza obsługiwanym zakresem.",
             "action": {
-                "roster": "Jeśli to film, popraw jego dopasowanie do filmu; aby zripować go jako jeden tytuł, wyłącz w Ustawieniach opcję „Rip TV seasons automatically”.",
                 "first_episode": "Ustaw „First episode” podczas poprawiania dopasowania.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."

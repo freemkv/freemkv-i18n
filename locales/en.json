@@ -465,10 +465,8 @@
             "no_titles": "the disc has no usable titles",
             "no_outputs": "the plan has no outputs",
             "duplicate_output": "two outputs would use the same file name: {name}",
-            "later_disc_start": "Later-disc episode numbering needs a confirmed First episode; disc number and runtimes do not establish it.",
             "episode_range": "Episode numbering is outside the supported range.",
             "action": {
-                "roster": "If it is a film, correct its match to the movie; to rip it as one title, turn off \"Rip TV seasons automatically\" in Settings.",
                 "first_episode": "Set the First episode when you correct its match.",
                 "confirm_episodes": "Confirm which titles are the episodes, and their order, to rip them; if it is a film, correct its match to Movie.",
                 "repick": "Choose the titles again for this disc."
