@@ -520,6 +520,23 @@ fn every_submit_prompt_offers_its_affirmative_token() {
     }
 }
 
+// A title's track counts read "1 subtitle" / "2 subtitles": the singular has its own key in
+// every shipped locale. ("{n} audio" reads the same for any count.)
+#[test]
+fn title_track_counts_have_a_singular_subtitle_key() {
+    for code in SHIPPED_CODES {
+        let v: Value = serde_json::from_str(bundled_locale_json(code).unwrap()).unwrap();
+        let titles = &v["server"]["titles"];
+        for key in ["subtitle_track", "subtitle_tracks"] {
+            let text = titles[key].as_str();
+            assert!(
+                text.is_some_and(|t| t.contains("{n}")),
+                "{code}: server.titles.{key} = {text:?}"
+            );
+        }
+    }
+}
+
 #[test]
 fn locale_en_loads() {
     let _: Value = serde_json::from_str(LOCALE_EN).expect("en.json invalid");

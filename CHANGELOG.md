@@ -5,6 +5,7 @@
 ### Added
 
 - Keys for freemkv's title picks and TV numbers (`error.titles.*`, `error.title.*`, `error.plan.pick_mismatch`, `error.plan.action.confirm_episodes`, `error.plan.action.repick`), the roster review marks (`gui.review.*`), the disc details form (`gui.details.*`), title track counts (`server.titles.*`), the layer-break file notes (`rip.layer_break_file`, `rip.layer_break_file_failed`), `gui.set.organize_library` and `gui.log.bad_number_detail`, in every locale with English copy.
+- `server.titles.subtitle_track`, the singular of `server.titles.subtitle_tracks`, so a title with one subtitle track reads "1 subtitle", in every locale with English copy.
 
 ### Removed
 

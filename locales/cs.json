@@ -1079,6 +1079,7 @@
         },
         "titles": {
             "audio_tracks": "{n} audio",
+            "subtitle_track": "{n} subtitle",
             "subtitle_tracks": "{n} subtitles"
         }
     }
