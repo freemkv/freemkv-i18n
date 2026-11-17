@@ -417,7 +417,7 @@
         "invalid_stream_indices": "Invalid stream list '{spec}': use positive track numbers separated by commas, or languages; do not mix them or use ranges.",
         "stream_index_out_of_range": "{class} track {requested} is out of range (available tracks: {count})",
         "title_stream_selection": "Title {title}: {detail}",
-        "E9087": "Stream position is out of range ({detail}).",
+        "E9087": "Stream position is out of range ({path}).",
         "unknown_language": "unknown language '{tag}' (available on this title: {available})",
         "dir_not_found": "Error: Folder input not found: '{path}'.",
         "dir_not_readable": "Error: Folder input is not readable: '{path}' ({error}).",

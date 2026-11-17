@@ -109,6 +109,24 @@ fn the_startup_and_live_switch_paths_select_the_right_catalog() {
     );
     assert!(!filled.contains("{detail}"));
 
+    // E9087 must preserve the caller's track/count detail in every locale,
+    // even if all catalogs accidentally agree on the wrong placeholder name.
+    let detail = "subtitle track 37 requested; available tracks: 2";
+    for code in freemkv_i18n::SHIPPED_CODES {
+        freemkv_i18n::set_locale(code);
+        let filled = freemkv_i18n::error_message_with(9087, detail);
+        assert!(
+            filled.contains(detail),
+            "{code}: E9087 dropped the caller's track/count detail: {filled}"
+        );
+        let bare = freemkv_i18n::error_message(9087);
+        assert_ne!(bare, "error.E9087", "{code}: E9087 is missing");
+        assert!(
+            !bare.contains(['{', '}']),
+            "{code}: E9087 leaked a placeholder without detail: {bare}"
+        );
+    }
+
     // ── 6. A locale with no catalog anywhere still returns a real message ──
     // Not the key path, and not a panic: the per-key English fallback covers
     // it. A missing key must never take the process down.

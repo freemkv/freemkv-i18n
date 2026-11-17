@@ -417,7 +417,7 @@
         "invalid_stream_indices": "Invalid stream list '{spec}': use positive track numbers separated by commas, or languages; do not mix them or use ranges.",
         "stream_index_out_of_range": "{class} track {requested} is out of range (available tracks: {count})",
         "title_stream_selection": "Title {title}: {detail}",
-        "E9087": "Stream position is out of range ({detail}).",
+        "E9087": "Stream position is out of range ({path}).",
         "unknown_language": "未知语言 '{tag}'（此标题可用：{available}）",
         "dir_not_found": "错误：未找到文件夹输入：'{path}'。",
         "dir_not_readable": "错误：文件夹输入不可读：'{path}'（{error}）。",

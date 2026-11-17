@@ -417,7 +417,7 @@
         "invalid_stream_indices": "Invalid stream list '{spec}': use positive track numbers separated by commas, or languages; do not mix them or use ranges.",
         "stream_index_out_of_range": "{class} track {requested} is out of range (available tracks: {count})",
         "title_stream_selection": "Title {title}: {detail}",
-        "E9087": "Stream position is out of range ({detail}).",
+        "E9087": "Stream position is out of range ({path}).",
         "unknown_language": "ukjent språk «{tag}» (tilgjengelig på denne tittelen: {available})",
         "dir_not_found": "Feil: Mappe-inndata ikke funnet: «{path}».",
         "dir_not_readable": "Feil: Mappe-inndata er ikke lesbar: «{path}» ({error}).",
