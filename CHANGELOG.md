@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.8.10] — UNRELEASED
+
+### Added
+
+- Numeric stream-selection diagnostics and E9087 catalog entries across all shipped locales; English CLI help describes both positions and languages.
+
+### Testing
+
+- Verify that E9087 preserves the caller's track/count detail in every shipped locale.
+
 ## [1.8.9] — 2026-11-11
 
 ### Added
