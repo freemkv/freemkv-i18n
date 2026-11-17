@@ -431,7 +431,7 @@ fn is_posix_c_locale(val: &str) -> bool {
 // The user's home directory, by whichever variable this platform sets ($HOME
 // alone gated search path 3, and stock Windows doesn't set it).
 fn home_dir() -> Option<PathBuf> {
-    home_dir_from(std::env::var_os)
+    home_dir_from(|k| std::env::var_os(k))
 }
 
 fn home_dir_from(get_var: impl Fn(&str) -> Option<std::ffi::OsString>) -> Option<PathBuf> {
