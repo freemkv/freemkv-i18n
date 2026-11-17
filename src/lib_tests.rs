@@ -895,3 +895,80 @@ fn key_service_failure_codes_do_not_reuse_the_missing_key_wording() {
         seen.push(msg);
     }
 }
+
+// Only the first script and the first region subtag count; a later one is ignored.
+#[test]
+fn normalize_code_keeps_only_the_first_script_and_region() {
+    assert_eq!(normalize_code("pt-BR-US"), "pt-br");
+    assert_eq!(normalize_code("sr-Latn-Cyrl"), "sr-latn");
+    assert_eq!(normalize_code("sr-Latn-RS-BA"), "sr-latn-rs");
+}
+
+// Subtags of the wrong shape are dropped, not promoted to script or region.
+#[test]
+fn normalize_code_drops_malformed_subtags() {
+    assert_eq!(normalize_code("es-1234"), "es");
+    assert_eq!(normalize_code("en-abcde"), "en");
+    assert_eq!(normalize_code("en-12"), "en");
+    assert_eq!(normalize_code("en-abcd-xyz"), "en-abcd");
+}
+
+// Only a 4-letter subtag is Titlecased as a script; other alphabetic subtags keep their case.
+#[test]
+fn locale_filenames_leave_odd_length_subtags_alone() {
+    assert_eq!(
+        locale_filenames("en-abcde"),
+        ["en-abcde.json", "en_abcde.json"]
+    );
+    assert_eq!(locale_filenames("en-xyz"), ["en-xyz.json", "en_xyz.json"]);
+}
+
+#[test]
+fn locale_not_found_notice_names_only_a_requested_non_english_locale() {
+    assert_eq!(
+        locale_not_found_notice(&["sw".to_string(), "de".to_string()]).as_deref(),
+        Some("freemkv: locale 'sw' not found, using English")
+    );
+    assert_eq!(locale_not_found_notice(&["en".to_string()]), None);
+    assert_eq!(locale_not_found_notice(&[]), None);
+}
+
+#[test]
+fn home_dir_from_takes_the_first_non_empty_variable() {
+    let get = |pairs: Vec<(&'static str, &'static str)>| {
+        move |k: &str| {
+            pairs
+                .iter()
+                .find(|(n, _)| *n == k)
+                .map(|(_, v)| std::ffi::OsString::from(v))
+        }
+    };
+    assert_eq!(
+        home_dir_from(get(vec![("HOME", "/h"), ("USERPROFILE", "C:\\u")])),
+        Some(PathBuf::from(if cfg!(windows) { "C:\\u" } else { "/h" }))
+    );
+    assert_eq!(home_dir_from(get(vec![("HOME", "")])), None);
+    assert_eq!(home_dir_from(get(vec![])), None);
+    #[cfg(not(windows))]
+    assert_eq!(
+        home_dir(),
+        std::env::var_os("HOME")
+            .filter(|v| !v.is_empty())
+            .map(PathBuf::from)
+    );
+}
+
+#[test]
+fn programdata_locale_dir_requires_a_non_empty_value() {
+    assert_eq!(
+        programdata_locale_dir(Some("/pd".into())),
+        Some(PathBuf::from("/pd").join("freemkv").join("locales"))
+    );
+    assert_eq!(programdata_locale_dir(Some("".into())), None);
+    assert_eq!(programdata_locale_dir(None), None);
+}
+
+#[test]
+fn locale_file_size_cap_is_eight_mebibytes() {
+    assert_eq!(MAX_LOCALE_FILE_BYTES, 8_388_608);
+}

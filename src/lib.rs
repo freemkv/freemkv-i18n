@@ -138,16 +138,21 @@ fn resolve_catalog_for_candidates(candidates: &[String]) -> (Value, bool) {
             }
         }
     }
-    // Notify the user when they explicitly requested a locale that isn't
-    // available (VAL-3). Plain English is intentional here. The first candidate
-    // is the one the user most wanted, so it is the one worth naming.
-    match candidates.first() {
-        Some(first) if first != "en" => {
-            eprintln!("freemkv: locale '{first}' not found, using English");
-        }
-        _ => {}
+    if let Some(notice) = locale_not_found_notice(candidates) {
+        eprintln!("{notice}");
     }
     (english_catalog().clone(), true)
+}
+
+// The not-found diagnostic for an explicitly requested locale (VAL-3), or None when nothing
+// was requested or English was. The first candidate is the one the user most wanted.
+fn locale_not_found_notice(candidates: &[String]) -> Option<String> {
+    match candidates.first() {
+        Some(first) if first != "en" => Some(format!(
+            "freemkv: locale '{first}' not found, using English"
+        )),
+        _ => None,
+    }
 }
 
 /// Load one locale code: compiled-in first, then disk search paths. `None` if
@@ -426,6 +431,10 @@ fn is_posix_c_locale(val: &str) -> bool {
 // The user's home directory, by whichever variable this platform sets ($HOME
 // alone gated search path 3, and stock Windows doesn't set it).
 fn home_dir() -> Option<PathBuf> {
+    home_dir_from(std::env::var_os)
+}
+
+fn home_dir_from(get_var: impl Fn(&str) -> Option<std::ffi::OsString>) -> Option<PathBuf> {
     #[cfg(windows)]
     const HOME_VARS: &[&str] = &["USERPROFILE", "HOME"];
     #[cfg(not(windows))]
@@ -433,9 +442,17 @@ fn home_dir() -> Option<PathBuf> {
 
     HOME_VARS
         .iter()
-        .filter_map(std::env::var_os)
+        .filter_map(|v| get_var(v))
         .find(|v| !v.is_empty())
         .map(PathBuf::from)
+}
+
+// The %PROGRAMDATA% catalog directory; None when the variable is unset or empty.
+#[cfg_attr(not(windows), allow(dead_code))]
+fn programdata_locale_dir(programdata: Option<std::ffi::OsString>) -> Option<PathBuf> {
+    programdata
+        .filter(|v| !v.is_empty())
+        .map(|p| PathBuf::from(p).join("freemkv").join("locales"))
 }
 
 /// The machine-wide locale directory. `/usr/share` has no meaning on Windows,
@@ -443,9 +460,7 @@ fn home_dir() -> Option<PathBuf> {
 fn system_locale_dir() -> Option<PathBuf> {
     #[cfg(windows)]
     {
-        std::env::var_os("PROGRAMDATA")
-            .filter(|v| !v.is_empty())
-            .map(|p| PathBuf::from(p).join("freemkv").join("locales"))
+        programdata_locale_dir(std::env::var_os("PROGRAMDATA"))
     }
     #[cfg(not(windows))]
     {

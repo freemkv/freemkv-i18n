@@ -29,6 +29,9 @@ fn the_startup_and_live_switch_paths_select_the_right_catalog() {
     // This is the only chance to exercise it: `LANG_OVERRIDE` is a OnceLock and
     // `set_language` refuses (and debug-asserts) once a catalog is installed.
     freemkv_i18n::set_language("de");
+    // init must re-resolve from the override, replacing an installed catalog.
+    freemkv_i18n::set_locale("fr");
+    assert_eq!(freemkv_i18n::get(KEY), bundled("fr", KEY));
     freemkv_i18n::init();
     assert_eq!(
         freemkv_i18n::get(KEY),
