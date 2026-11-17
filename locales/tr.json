@@ -417,7 +417,7 @@
         "invalid_stream_indices": "Invalid stream list '{spec}': use positive track numbers separated by commas, or languages; do not mix them or use ranges.",
         "stream_index_out_of_range": "{class} track {requested} is out of range (available tracks: {count})",
         "title_stream_selection": "Title {title}: {detail}",
-        "E9087": "Stream position is out of range ({path}).",
+        "E9087": "Stream position is out of range ({detail}).",
         "unknown_language": "bilinmeyen dil '{tag}' (bu başlıkta mevcut: {available})",
         "dir_not_found": "Hata: klasör girdisi bulunamadı: '{path}'.",
         "dir_not_readable": "Hata: klasör girdisi okunamaz: '{path}' ({error}).",

@@ -417,7 +417,7 @@
         "invalid_stream_indices": "Invalid stream list '{spec}': use positive track numbers separated by commas, or languages; do not mix them or use ranges.",
         "stream_index_out_of_range": "{class} track {requested} is out of range (available tracks: {count})",
         "title_stream_selection": "Title {title}: {detail}",
-        "E9087": "Stream position is out of range ({path}).",
+        "E9087": "Stream position is out of range ({detail}).",
         "unknown_language": "ngôn ngữ không xác định '{tag}' (có sẵn trên tiêu đề này: {available})",
         "dir_not_found": "Lỗi: Không tìm thấy đầu vào thư mục: '{path}'.",
         "dir_not_readable": "Lỗi: Đầu vào thư mục không đọc được: '{path}' ({error}).",

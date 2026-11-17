@@ -417,7 +417,7 @@
         "invalid_stream_indices": "Invalid stream list '{spec}': use positive track numbers separated by commas, or languages; do not mix them or use ranges.",
         "stream_index_out_of_range": "{class} track {requested} is out of range (available tracks: {count})",
         "title_stream_selection": "Title {title}: {detail}",
-        "E9087": "Stream position is out of range ({path}).",
+        "E9087": "Stream position is out of range ({detail}).",
         "unknown_language": "不明な言語 '{tag}' です（このタイトルで利用可能: {available}）",
         "dir_not_found": "エラー: フォルダ入力が見つかりません: '{path}'。",
         "dir_not_readable": "エラー: フォルダ入力を読み取れません: '{path}'（{error}）。",
