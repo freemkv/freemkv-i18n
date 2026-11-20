@@ -663,6 +663,7 @@
             "default_selection": "Standaardselectie:",
             "persist_stream_preferences": "Keuzes voor titels, audio en ondertitels onthouden",
             "presentation_language": "Presentatietaal (de / en; leeg = audiovoorkeur)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Alleen hoofdfilm",
             "sel_all": "Alle titels",
             "sel_longest": "Langste titel",

@@ -663,6 +663,7 @@
             "default_selection": "Lựa chọn mặc định :",
             "persist_stream_preferences": "Ghi nhớ lựa chọn tiêu đề, âm thanh và phụ đề",
             "presentation_language": "Ngôn ngữ trình chiếu (de / en; để trống = ưu tiên âm thanh)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Chỉ phim chính",
             "sel_all": "Tất cả tiêu đề",
             "sel_longest": "Tiêu đề dài nhất",

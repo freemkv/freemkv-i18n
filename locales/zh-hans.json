@@ -663,6 +663,7 @@
             "default_selection": "默认选择 ：",
             "persist_stream_preferences": "记住标题、音频和字幕选择",
             "presentation_language": "演示语言（de / en；留空 = 音频偏好）",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "仅正片",
             "sel_all": "全部标题",
             "sel_longest": "最长标题",

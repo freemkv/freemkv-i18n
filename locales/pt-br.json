@@ -663,6 +663,7 @@
             "default_selection": "Seleção padrão:",
             "persist_stream_preferences": "Lembrar as escolhas de títulos, áudio e legendas",
             "presentation_language": "Idioma de apresentação (de / en; vazio = preferência de áudio)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Apenas o filme principal",
             "sel_all": "Todos os títulos",
             "sel_longest": "Título mais longo",

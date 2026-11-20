@@ -663,6 +663,7 @@
             "default_selection": "Standard utvalg:",
             "persist_stream_preferences": "Husk valg av titler, lyd og undertekster",
             "presentation_language": "Presentasjonsspråk (de / en; tomt = lydpreferanse)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Kun hovedfilm",
             "sel_all": "Alle titler",
             "sel_longest": "Lengste tittel",

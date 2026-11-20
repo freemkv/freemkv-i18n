@@ -663,6 +663,7 @@
             "default_selection": "Выбор по умолчанию :",
             "persist_stream_preferences": "Запоминать выбор тайтлов, звука и субтитров",
             "presentation_language": "Язык презентации (de / en; пусто = предпочтение звука)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Только основной фильм",
             "sel_all": "Все тайтлы",
             "sel_longest": "Самый длинный тайтл",

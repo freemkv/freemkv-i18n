@@ -663,6 +663,7 @@
             "default_selection": "Selecció per defecte :",
             "persist_stream_preferences": "Recorda les opcions de títols, àudio i subtítols",
             "presentation_language": "Llengua de presentació (de / en; buit = preferència d'àudio)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Només la pel·lícula principal",
             "sel_all": "Tots els títols",
             "sel_longest": "Títol més llarg",

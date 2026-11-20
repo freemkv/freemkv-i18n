@@ -663,6 +663,7 @@
             "default_selection": "Varsayılan seçim :",
             "persist_stream_preferences": "Başlık, ses ve altyazı seçimlerini hatırla",
             "presentation_language": "Sunum dili (de / en; boş = ses tercihi)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Yalnızca ana film",
             "sel_all": "Tüm başlıklar",
             "sel_longest": "En uzun başlık",

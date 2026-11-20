@@ -663,6 +663,7 @@
             "default_selection": "デフォルト選択 :",
             "persist_stream_preferences": "タイトル、音声、字幕の選択を記憶する",
             "presentation_language": "プレゼンテーション言語 (de / en、空欄 = 音声の優先設定)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "メイン作品のみ",
             "sel_all": "すべてのタイトル",
             "sel_longest": "最長のタイトル",

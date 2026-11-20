@@ -663,6 +663,7 @@
             "default_selection": "Výchozí výběr :",
             "persist_stream_preferences": "Pamatovat si volby titulů, zvuku a titulků",
             "presentation_language": "Jazyk prezentace (de / en; prázdné = preference zvuku)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Pouze hlavní film",
             "sel_all": "Všechny tituly",
             "sel_longest": "Nejdelší titul",

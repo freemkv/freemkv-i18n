@@ -663,6 +663,7 @@
             "default_selection": "Selecție implicită :",
             "persist_stream_preferences": "Reține alegerile pentru titluri, audio și subtitrări",
             "presentation_language": "Limba de prezentare (de / en; gol = preferința audio)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Doar filmul principal",
             "sel_all": "Toate titlurile",
             "sel_longest": "Cel mai lung titlu",

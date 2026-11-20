@@ -663,6 +663,7 @@
             "default_selection": "Oletusvalinta :",
             "persist_stream_preferences": "Muista nimike-, ääni- ja tekstitysvalinnat",
             "presentation_language": "Esityskieli (de / en; tyhjä = äänen asetus)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Vain pääelokuva",
             "sel_all": "Kaikki nimikkeet",
             "sel_longest": "Pisin nimike",

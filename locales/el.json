@@ -663,6 +663,7 @@
             "default_selection": "Προεπιλεγμένη επιλογή :",
             "persist_stream_preferences": "Απομνημόνευση επιλογών τίτλων, ήχου και υποτίτλων",
             "presentation_language": "Γλώσσα παρουσίασης (de / en· κενό = προτίμηση ήχου)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "Μόνο η κύρια ταινία",
             "sel_all": "Όλοι οι τίτλοι",
             "sel_longest": "Ο μεγαλύτερος τίτλος",

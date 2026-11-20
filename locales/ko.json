@@ -663,6 +663,7 @@
             "default_selection": "기본 선택 :",
             "persist_stream_preferences": "타이틀, 오디오 및 자막 선택 기억",
             "presentation_language": "프레젠테이션 언어 (de / en, 비워 두면 오디오 선호 설정)",
+            "presentation_language_hint": "Leave blank to follow your audio languages.",
             "sel_main": "메인 영상만",
             "sel_all": "모든 타이틀",
             "sel_longest": "가장 긴 타이틀",
