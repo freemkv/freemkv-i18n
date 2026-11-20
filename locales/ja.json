@@ -627,7 +627,8 @@
             "copy": "コピー",
             "select_all_text": "すべて選択",
             "cut": "切り取り",
-            "paste": "貼り付け"
+            "paste": "貼り付け",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "種類",
@@ -737,7 +738,8 @@
             "close": "閉じる",
             "browse": "…",
             "show_explorer": "エクスプローラーで表示",
-            "show_folder": "フォルダに表示"
+            "show_folder": "フォルダに表示",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "出力",
@@ -850,7 +852,8 @@
             "update_latest": "最新バージョン ({current}) を使用中です。",
             "update_available": "アップデートがあります: {latest} (現在のバージョン: {current}) — https://freemkv.org",
             "update_no_version": "アップデートの確認に失敗しました: 応答にバージョンが含まれていません",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "リッピングが進行中です。",

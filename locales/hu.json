@@ -627,7 +627,8 @@
             "copy": "Másolás",
             "select_all_text": "Az összes kijelölése",
             "cut": "Kivágás",
-            "paste": "Beillesztés"
+            "paste": "Beillesztés",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Típus",
@@ -737,7 +738,8 @@
             "close": "Bezárás",
             "browse": "…",
             "show_explorer": "Megjelenítés az Intézőben",
-            "show_folder": "Megjelenítés mappában"
+            "show_folder": "Megjelenítés mappában",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Kimenet",
@@ -850,7 +852,8 @@
             "update_latest": "A legújabb verziót használja ({current}).",
             "update_available": "Frissítés érhető el: {latest} (jelenlegi: {current}) — https://freemkv.org",
             "update_no_version": "A frissítések keresése sikertelen: a válaszban nincs verzió",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Kimásolás van folyamatban.",

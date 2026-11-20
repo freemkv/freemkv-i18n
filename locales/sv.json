@@ -627,7 +627,8 @@
             "copy": "Kopiera",
             "select_all_text": "Markera allt",
             "cut": "Klipp ut",
-            "paste": "Klistra in"
+            "paste": "Klistra in",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Typ",
@@ -737,7 +738,8 @@
             "close": "Stäng",
             "browse": "…",
             "show_explorer": "Visa i Utforskaren",
-            "show_folder": "Visa i mapp"
+            "show_folder": "Visa i mapp",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Utdata",
@@ -850,7 +852,8 @@
             "update_latest": "Du kör den senaste versionen ({current}).",
             "update_available": "Uppdatering tillgänglig: {latest} (du har {current}) — https://freemkv.org",
             "update_no_version": "Sökning efter uppdateringar misslyckades: ingen version i svaret",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "En rippning pågår.",

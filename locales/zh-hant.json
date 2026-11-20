@@ -627,7 +627,8 @@
             "copy": "複製",
             "select_all_text": "全選",
             "cut": "剪下",
-            "paste": "貼上"
+            "paste": "貼上",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "類型",
@@ -737,7 +738,8 @@
             "close": "關閉",
             "browse": "…",
             "show_explorer": "在檔案總管中顯示",
-            "show_folder": "在資料夾中顯示"
+            "show_folder": "在資料夾中顯示",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "輸出",
@@ -850,7 +852,8 @@
             "update_latest": "您正在執行最新版本（{current}）。",
             "update_available": "有可用更新：{latest}（目前版本 {current}）— https://freemkv.org",
             "update_no_version": "檢查更新失敗：回應中沒有版本資訊",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "擷取正在進行中。",

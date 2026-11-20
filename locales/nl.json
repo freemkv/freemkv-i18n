@@ -627,7 +627,8 @@
             "copy": "Kopiëren",
             "select_all_text": "Alles selecteren",
             "cut": "Knippen",
-            "paste": "Plakken"
+            "paste": "Plakken",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Type",
@@ -737,7 +738,8 @@
             "close": "Sluiten",
             "browse": "…",
             "show_explorer": "Weergeven in Verkenner",
-            "show_folder": "Weergeven in map"
+            "show_folder": "Weergeven in map",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Uitvoer",
@@ -850,7 +852,8 @@
             "update_latest": "U gebruikt de nieuwste versie ({current}).",
             "update_available": "Update beschikbaar: {latest} (u hebt {current}) — https://freemkv.org",
             "update_no_version": "Controle op updates mislukt: geen versie in antwoord",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Er is een rip bezig.",

@@ -627,7 +627,8 @@
             "copy": "Kopyala",
             "select_all_text": "Tümünü Seç",
             "cut": "Kes",
-            "paste": "Yapıştır"
+            "paste": "Yapıştır",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Tür",
@@ -737,7 +738,8 @@
             "close": "Kapat",
             "browse": "…",
             "show_explorer": "Dosya Gezgini'nde Göster",
-            "show_folder": "Klasörde Göster"
+            "show_folder": "Klasörde Göster",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Çıktı",
@@ -850,7 +852,8 @@
             "update_latest": "En son sürümü kullanıyorsunuz ({current}).",
             "update_available": "Güncelleme mevcut: {latest} (sizdeki: {current}) — https://freemkv.org",
             "update_no_version": "Güncelleme denetimi başarısız oldu: yanıtta sürüm yok",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Bir kopyalama sürüyor.",

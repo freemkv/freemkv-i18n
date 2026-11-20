@@ -627,7 +627,8 @@
             "copy": "Kopiér",
             "select_all_text": "Markér alt",
             "cut": "Klip",
-            "paste": "Sæt ind"
+            "paste": "Sæt ind",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Type",
@@ -737,7 +738,8 @@
             "close": "Luk",
             "browse": "…",
             "show_explorer": "Vis i Stifinder",
-            "show_folder": "Vis i mappe"
+            "show_folder": "Vis i mappe",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Output",
@@ -850,7 +852,8 @@
             "update_latest": "Du kører den nyeste version ({current}).",
             "update_available": "Opdatering tilgængelig: {latest} (du har {current}) — https://freemkv.org",
             "update_no_version": "Søgning efter opdateringer mislykkedes: ingen version i svaret",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Et rip er i gang.",

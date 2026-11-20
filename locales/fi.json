@@ -627,7 +627,8 @@
             "copy": "Kopioi",
             "select_all_text": "Valitse kaikki",
             "cut": "Leikkaa",
-            "paste": "Liitä"
+            "paste": "Liitä",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Tyyppi",
@@ -737,7 +738,8 @@
             "close": "Sulje",
             "browse": "…",
             "show_explorer": "Näytä Resurssienhallinnassa",
-            "show_folder": "Näytä kansiossa"
+            "show_folder": "Näytä kansiossa",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Tuloste",
@@ -850,7 +852,8 @@
             "update_latest": "Käytössäsi on uusin versio ({current}).",
             "update_available": "Päivitys saatavilla: {latest} (sinulla on {current}) — https://freemkv.org",
             "update_no_version": "Päivitysten tarkistus epäonnistui: vastauksessa ei ollut versiota",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Rippaus on käynnissä.",

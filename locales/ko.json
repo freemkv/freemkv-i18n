@@ -627,7 +627,8 @@
             "copy": "복사",
             "select_all_text": "모두 선택",
             "cut": "잘라내기",
-            "paste": "붙여넣기"
+            "paste": "붙여넣기",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "유형",
@@ -737,7 +738,8 @@
             "close": "닫기",
             "browse": "…",
             "show_explorer": "탐색기에서 표시",
-            "show_folder": "폴더에서 보기"
+            "show_folder": "폴더에서 보기",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "출력",
@@ -850,7 +852,8 @@
             "update_latest": "최신 버전({current})을 사용 중입니다.",
             "update_available": "업데이트 가능: {latest}(현재 {current}) — https://freemkv.org",
             "update_no_version": "업데이트 확인 실패: 응답에 버전 정보가 없습니다",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "추출이 진행 중입니다.",

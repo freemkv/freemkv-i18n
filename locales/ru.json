@@ -627,7 +627,8 @@
             "copy": "Копировать",
             "select_all_text": "Выделить все",
             "cut": "Вырезать",
-            "paste": "Вставить"
+            "paste": "Вставить",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Тип",
@@ -737,7 +738,8 @@
             "close": "Закрыть",
             "browse": "…",
             "show_explorer": "Показать в Проводнике",
-            "show_folder": "Показать в папке"
+            "show_folder": "Показать в папке",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Вывод",
@@ -850,7 +852,8 @@
             "update_latest": "Установлена последняя версия ({current}).",
             "update_available": "Доступно обновление: {latest} (у вас {current}) — https://freemkv.org",
             "update_no_version": "Не удалось проверить обновления: в ответе нет версии",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Выполняется копирование.",

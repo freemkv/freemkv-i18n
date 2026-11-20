@@ -627,7 +627,8 @@
             "copy": "Salin",
             "select_all_text": "Pilih Semua",
             "cut": "Potong",
-            "paste": "Tempel"
+            "paste": "Tempel",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Tipe",
@@ -737,7 +738,8 @@
             "close": "Tutup",
             "browse": "…",
             "show_explorer": "Tampilkan di Explorer",
-            "show_folder": "Tampilkan di Folder"
+            "show_folder": "Tampilkan di Folder",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Keluaran",
@@ -850,7 +852,8 @@
             "update_latest": "Anda menjalankan versi terbaru ({current}).",
             "update_available": "Pembaruan tersedia: {latest} (Anda memakai {current}) — https://freemkv.org",
             "update_no_version": "Pemeriksaan pembaruan gagal: tidak ada versi dalam respons",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Rip sedang berlangsung.",

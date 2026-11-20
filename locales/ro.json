@@ -627,7 +627,8 @@
             "copy": "Copiază",
             "select_all_text": "Selectează tot",
             "cut": "Decupează",
-            "paste": "Lipește"
+            "paste": "Lipește",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Tip",
@@ -737,7 +738,8 @@
             "close": "Închide",
             "browse": "…",
             "show_explorer": "Afișează în Explorer",
-            "show_folder": "Afișează în dosar"
+            "show_folder": "Afișează în dosar",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Ieșire",
@@ -850,7 +852,8 @@
             "update_latest": "Rulați cea mai recentă versiune ({current}).",
             "update_available": "Actualizare disponibilă: {latest} (aveți {current}) — https://freemkv.org",
             "update_no_version": "Verificarea actualizărilor a eșuat: niciun număr de versiune în răspuns",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "O extragere este în curs.",

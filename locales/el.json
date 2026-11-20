@@ -627,7 +627,8 @@
             "copy": "Αντιγραφή",
             "select_all_text": "Επιλογή όλων",
             "cut": "Αποκοπή",
-            "paste": "Επικόλληση"
+            "paste": "Επικόλληση",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Τύπος",
@@ -737,7 +738,8 @@
             "close": "Κλείσιμο",
             "browse": "…",
             "show_explorer": "Εμφάνιση στην Εξερεύνηση",
-            "show_folder": "Εμφάνιση στον φάκελο"
+            "show_folder": "Εμφάνιση στον φάκελο",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Έξοδος",
@@ -850,7 +852,8 @@
             "update_latest": "Χρησιμοποιείτε την πιο πρόσφατη έκδοση ({current}).",
             "update_available": "Διαθέσιμη ενημέρωση: {latest} (έχετε {current}) — https://freemkv.org",
             "update_no_version": "Ο έλεγχος ενημερώσεων απέτυχε: δεν υπάρχει έκδοση στην απάντηση",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Μια εξαγωγή βρίσκεται σε εξέλιξη.",

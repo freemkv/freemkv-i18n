@@ -627,7 +627,8 @@
             "copy": "Sao chép",
             "select_all_text": "Chọn tất cả",
             "cut": "Cắt",
-            "paste": "Dán"
+            "paste": "Dán",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Loại",
@@ -737,7 +738,8 @@
             "close": "Đóng",
             "browse": "…",
             "show_explorer": "Hiện trong File Explorer",
-            "show_folder": "Hiện trong thư mục"
+            "show_folder": "Hiện trong thư mục",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Đầu ra",
@@ -850,7 +852,8 @@
             "update_latest": "Bạn đang dùng phiên bản mới nhất ({current}).",
             "update_available": "Có bản cập nhật: {latest} (bạn đang dùng {current}) — https://freemkv.org",
             "update_no_version": "Kiểm tra cập nhật thất bại: không có phiên bản trong phản hồi",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Quá trình trích xuất đang diễn ra.",

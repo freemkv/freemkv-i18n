@@ -627,7 +627,8 @@
             "copy": "Kopírovať",
             "select_all_text": "Vybrať všetko",
             "cut": "Vystrihnúť",
-            "paste": "Prilepiť"
+            "paste": "Prilepiť",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Typ",
@@ -737,7 +738,8 @@
             "close": "Zavrieť",
             "browse": "…",
             "show_explorer": "Zobraziť v Prieskumníkovi",
-            "show_folder": "Zobraziť v priečinku"
+            "show_folder": "Zobraziť v priečinku",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Výstup",
@@ -850,7 +852,8 @@
             "update_latest": "Používate najnovšiu verziu ({current}).",
             "update_available": "Je dostupná aktualizácia: {latest} (máte {current}) — https://freemkv.org",
             "update_no_version": "Kontrola aktualizácií zlyhala: odpoveď neobsahuje verziu",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Prebieha kopírovanie.",

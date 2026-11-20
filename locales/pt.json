@@ -627,7 +627,8 @@
             "copy": "Copiar",
             "select_all_text": "Selecionar tudo",
             "cut": "Cortar",
-            "paste": "Colar"
+            "paste": "Colar",
+            "open_folder": "Open Folder…"
         },
         "col": {
             "type": "Tipo",
@@ -737,7 +738,8 @@
             "close": "Fechar",
             "browse": "…",
             "show_explorer": "Mostrar no Explorador",
-            "show_folder": "Mostrar na pasta"
+            "show_folder": "Mostrar na pasta",
+            "open_folder": "Open folder…"
         },
         "group": {
             "output": "Saída",
@@ -850,7 +852,8 @@
             "update_latest": "Está a utilizar a versão mais recente ({current}).",
             "update_available": "Atualização disponível: {latest} (tem {current}) — https://freemkv.org",
             "update_no_version": "Falha ao procurar atualizações: nenhuma versão na resposta",
-            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again."
+            "bad_number_detail": "“{name}” must be a whole number, not “{value}”. Fix it in the disc details, then start again.",
+            "not_disc_folder": "That folder isn't a disc folder: choose the one containing BDMV or VIDEO_TS."
         },
         "alert": {
             "rip_title": "Está uma extração em curso.",
