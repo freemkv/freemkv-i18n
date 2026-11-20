@@ -753,8 +753,7 @@
             "detail_default": "Åbn et diskimage for at se dets titler.",
             "disc_ready_title": "Disk indsat",
             "open_source_title": "Åbn en kilde",
-            "disc_ready": "Disk indsat — klar til åbning.",
-            "no_disc": "Ingen disk fundet."
+            "disc_ready": "Disk indsat — klar til åbning."
         },
         "progress": {
             "reading_titles": "Læser valgte titler fra disken",

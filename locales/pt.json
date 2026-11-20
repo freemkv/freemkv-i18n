@@ -753,8 +753,7 @@
             "detail_default": "Abra uma imagem de disco para ver os seus títulos.",
             "disc_ready_title": "Disco inserido",
             "open_source_title": "Abrir uma origem",
-            "disc_ready": "Disco inserido — pronto para abrir.",
-            "no_disc": "Nenhum disco detetado."
+            "disc_ready": "Disco inserido — pronto para abrir."
         },
         "progress": {
             "reading_titles": "A ler os títulos selecionados do disco",

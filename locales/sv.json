@@ -753,8 +753,7 @@
             "detail_default": "Öppna en skivavbild för att se dess titlar.",
             "disc_ready_title": "Skiva isatt",
             "open_source_title": "Öppna en källa",
-            "disc_ready": "Skiva isatt — redo att öppnas.",
-            "no_disc": "Ingen skiva hittades."
+            "disc_ready": "Skiva isatt — redo att öppnas."
         },
         "progress": {
             "reading_titles": "Läser valda titlar från skivan",

@@ -753,8 +753,7 @@
             "detail_default": "開啟光碟映像檔以檢視其標題。",
             "disc_ready_title": "已插入光碟",
             "open_source_title": "開啟來源",
-            "disc_ready": "已插入光碟 — 可以開啟。",
-            "no_disc": "未偵測到光碟。"
+            "disc_ready": "已插入光碟 — 可以開啟。"
         },
         "progress": {
             "reading_titles": "正在從光碟讀取所選標題",

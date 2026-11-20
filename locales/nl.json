@@ -753,8 +753,7 @@
             "detail_default": "Open een disc-image om de titels ervan te zien.",
             "disc_ready_title": "Schijf geplaatst",
             "open_source_title": "Een bron openen",
-            "disc_ready": "Schijf geplaatst — klaar om te openen.",
-            "no_disc": "Geen schijf gedetecteerd."
+            "disc_ready": "Schijf geplaatst — klaar om te openen."
         },
         "progress": {
             "reading_titles": "Geselecteerde titels van schijf lezen",

@@ -753,8 +753,7 @@
             "detail_default": "Avaa levykuva nähdäksesi sen nimikkeet.",
             "disc_ready_title": "Levy asetettu",
             "open_source_title": "Avaa lähde",
-            "disc_ready": "Levy asetettu — valmis avattavaksi.",
-            "no_disc": "Levyä ei havaittu."
+            "disc_ready": "Levy asetettu — valmis avattavaksi."
         },
         "progress": {
             "reading_titles": "Luetaan valittuja nimikkeitä levyltä",

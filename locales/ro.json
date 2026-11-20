@@ -753,8 +753,7 @@
             "detail_default": "Deschide o imagine de disc pentru a-i vedea titlurile.",
             "disc_ready_title": "Disc introdus",
             "open_source_title": "Deschide o sursă",
-            "disc_ready": "Disc introdus — gata de deschidere.",
-            "no_disc": "Nu a fost detectat niciun disc."
+            "disc_ready": "Disc introdus — gata de deschidere."
         },
         "progress": {
             "reading_titles": "Se citesc titlurile selectate de pe disc",

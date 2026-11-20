@@ -753,8 +753,7 @@
             "detail_default": "Otvorte obraz disku, aby ste videli jeho tituly.",
             "disc_ready_title": "Disk vložený",
             "open_source_title": "Otvoriť zdroj",
-            "disc_ready": "Disk vložený — pripravený na otvorenie.",
-            "no_disc": "Nebol zistený žiadny disk."
+            "disc_ready": "Disk vložený — pripravený na otvorenie."
         },
         "progress": {
             "reading_titles": "Čítanie vybraných titulov z disku",

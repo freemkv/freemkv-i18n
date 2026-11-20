@@ -753,8 +753,7 @@
             "detail_default": "打开一个光盘镜像以查看其标题。",
             "disc_ready_title": "已插入光盘",
             "open_source_title": "打开源",
-            "disc_ready": "已插入光盘 — 可以打开。",
-            "no_disc": "未检测到光盘。"
+            "disc_ready": "已插入光盘 — 可以打开。"
         },
         "progress": {
             "reading_titles": "正在从光盘读取所选标题",

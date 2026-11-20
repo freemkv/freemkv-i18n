@@ -753,8 +753,7 @@
             "detail_default": "Otwórz obraz płyty, aby zobaczyć jej tytuły.",
             "disc_ready_title": "Włożono płytę",
             "open_source_title": "Otwórz źródło",
-            "disc_ready": "Włożono płytę — gotowa do otwarcia.",
-            "no_disc": "Nie wykryto płyty."
+            "disc_ready": "Włożono płytę — gotowa do otwarcia."
         },
         "progress": {
             "reading_titles": "Odczytywanie wybranych tytułów z płyty",

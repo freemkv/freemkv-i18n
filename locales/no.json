@@ -753,8 +753,7 @@
             "detail_default": "Åpne et platebilde for å se titlene.",
             "disc_ready_title": "Plate satt inn",
             "open_source_title": "Åpne en kilde",
-            "disc_ready": "Plate satt inn — klar til å åpnes.",
-            "no_disc": "Ingen plate funnet."
+            "disc_ready": "Plate satt inn — klar til å åpnes."
         },
         "progress": {
             "reading_titles": "Leser valgte titler fra platen",

@@ -753,8 +753,7 @@
             "detail_default": "Obriu una imatge de disc per veure'n els títols.",
             "disc_ready_title": "Disc inserit",
             "open_source_title": "Obre una font",
-            "disc_ready": "Disc inserit — a punt per obrir.",
-            "no_disc": "No s'ha detectat cap disc."
+            "disc_ready": "Disc inserit — a punt per obrir."
         },
         "progress": {
             "reading_titles": "Llegint els títols seleccionats del disc",

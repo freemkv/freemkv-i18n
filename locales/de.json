@@ -753,8 +753,7 @@
             "detail_default": "Öffnen Sie ein Disc-Abbild, um seine Titel zu sehen.",
             "disc_ready_title": "Disc eingelegt",
             "open_source_title": "Quelle öffnen",
-            "disc_ready": "Disc eingelegt — bereit zum Öffnen.",
-            "no_disc": "Keine Disc erkannt."
+            "disc_ready": "Disc eingelegt — bereit zum Öffnen."
         },
         "progress": {
             "reading_titles": "Ausgewählte Titel werden von der Disc gelesen",

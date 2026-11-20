@@ -753,8 +753,7 @@
             "detail_default": "Nyiss meg egy lemezképet a címei megtekintéséhez.",
             "disc_ready_title": "Lemez behelyezve",
             "open_source_title": "Forrás megnyitása",
-            "disc_ready": "Lemez behelyezve — megnyitásra kész.",
-            "no_disc": "Nem található lemez."
+            "disc_ready": "Lemez behelyezve — megnyitásra kész."
         },
         "progress": {
             "reading_titles": "Kiválasztott címek olvasása a lemezről",

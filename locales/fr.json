@@ -753,8 +753,7 @@
             "detail_default": "Ouvrez une image de disque pour afficher ses titres.",
             "disc_ready_title": "Disque inséré",
             "open_source_title": "Ouvrir une source",
-            "disc_ready": "Disque inséré — prêt à être ouvert.",
-            "no_disc": "Aucun disque détecté."
+            "disc_ready": "Disque inséré — prêt à être ouvert."
         },
         "progress": {
             "reading_titles": "Lecture des titres sélectionnés sur le disque",

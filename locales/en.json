@@ -753,8 +753,7 @@
             "detail_default": "Open a disc image to see its titles.",
             "disc_ready_title": "Disc inserted",
             "open_source_title": "Open a source",
-            "disc_ready": "Disc inserted — ready to open.",
-            "no_disc": "No disc detected."
+            "disc_ready": "Open it from the list below."
         },
         "progress": {
             "reading_titles": "Reading selected titles from disc",

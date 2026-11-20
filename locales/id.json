@@ -753,8 +753,7 @@
             "detail_default": "Buka image disc untuk melihat judulnya.",
             "disc_ready_title": "Disc dimasukkan",
             "open_source_title": "Buka sumber",
-            "disc_ready": "Disc dimasukkan — siap dibuka.",
-            "no_disc": "Tidak ada disc terdeteksi."
+            "disc_ready": "Disc dimasukkan — siap dibuka."
         },
         "progress": {
             "reading_titles": "Membaca judul yang dipilih dari cakram",

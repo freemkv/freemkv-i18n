@@ -753,8 +753,7 @@
             "detail_default": "Mở một ảnh đĩa để xem các tiêu đề của nó.",
             "disc_ready_title": "Đã cho đĩa vào",
             "open_source_title": "Mở một nguồn",
-            "disc_ready": "Đã cho đĩa vào — sẵn sàng để mở.",
-            "no_disc": "Không phát hiện đĩa."
+            "disc_ready": "Đã cho đĩa vào — sẵn sàng để mở."
         },
         "progress": {
             "reading_titles": "Đang đọc các tiêu đề đã chọn từ đĩa",

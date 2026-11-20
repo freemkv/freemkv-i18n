@@ -753,8 +753,7 @@
             "detail_default": "Başlıklarını görmek için bir disk imajı açın.",
             "disc_ready_title": "Disk takıldı",
             "open_source_title": "Bir kaynak aç",
-            "disc_ready": "Disk takıldı — açmaya hazır.",
-            "no_disc": "Disk algılanmadı."
+            "disc_ready": "Disk takıldı — açmaya hazır."
         },
         "progress": {
             "reading_titles": "Seçilen başlıklar diskten okunuyor",
