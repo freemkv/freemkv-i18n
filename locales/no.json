@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Skriv/oppdater kartfil for gjenoppretting over flere pass",
             "share": "      --share         Send inn stasjonsprofil og platestruktur (info disc://, iso:// eller dir://; på en ripping betyr -s --subtitles)",
             "mask": "  -m, --mask          Masker serienumre (med --share)",
-            "force": "      --force        Pakk ut i et ikke-tomt dir://-mål (overskriv)"
+            "force": "      --force        Pakk ut i et ikke-tomt dir://-mål (overskriv)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Avslutningskoder:",
         "exit_code": {

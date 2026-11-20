@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Εγγραφή/ενημέρωση αρχείου χάρτη για ανάκτηση πολλαπλών περασμάτων",
             "share": "      --share         Υποβολή προφίλ μονάδας και δομής δίσκου (info disc://, iso:// ή dir://· σε εξαγωγή, -s σημαίνει --subtitles)",
             "mask": "  -m, --mask          Απόκρυψη σειριακών αριθμών (με --share)",
-            "force": "      --force        Εξαγωγή σε μη κενό προορισμό dir:// (αντικατάσταση)"
+            "force": "      --force        Εξαγωγή σε μη κενό προορισμό dir:// (αντικατάσταση)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Κωδικοί εξόδου:",
         "exit_code": {

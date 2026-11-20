@@ -587,7 +587,8 @@
             "multipass": "      --multipass    マルチパス復元用にマップファイルを書き込み/更新",
             "share": "      --share         ドライブプロファイルとディスク構造を送信（info disc://、iso:// または dir://。リッピングでは -s は --subtitles を意味します）",
             "mask": "  -m, --mask          シリアル番号をマスク（--share と併用）",
-            "force": "      --force        空でない dir:// ターゲットに展開（上書き）"
+            "force": "      --force        空でない dir:// ターゲットに展開（上書き）",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "終了コード:",
         "exit_code": {

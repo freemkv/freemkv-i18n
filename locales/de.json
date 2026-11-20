@@ -555,7 +555,8 @@
             "multipass": "      --multipass    Mapfile für Mehrpass-Wiederherstellung schreiben/aktualisieren",
             "share": "      --share         Laufwerkprofil und Disc-Struktur einreichen (info disc://, iso:// oder dir://; bei einem Rip bedeutet -s --subtitles)",
             "mask": "  -m, --mask          Seriennummern maskieren (mit --share)",
-            "force": "      --force        In ein nicht leeres dir://-Ziel extrahieren (überschreiben)"
+            "force": "      --force        In ein nicht leeres dir://-Ziel extrahieren (überschreiben)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "synopsis_4": "       freemkv <command> [args]",
         "subcommands_header": "Unterbefehle:",

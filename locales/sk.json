@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Zapísať/aktualizovať mapovací súbor pre viacprechodovú obnovu",
             "share": "      --share         Odoslať profil mechaniky a štruktúru disku (info disc://, iso:// alebo dir://; pri kopírovaní -s znamená --subtitles)",
             "mask": "  -m, --mask          Maskovať sériové čísla (s --share)",
-            "force": "      --force        Extrahovať do neprázdneho cieľa dir:// (prepísať)"
+            "force": "      --force        Extrahovať do neprázdneho cieľa dir:// (prepísať)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Návratové kódy:",
         "exit_code": {

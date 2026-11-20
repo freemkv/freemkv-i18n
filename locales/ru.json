@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Записать/обновить файл карты для многопроходного восстановления",
             "share": "      --share         Отправить профиль привода и структуру диска (info disc://, iso:// или dir://; при копировании -s означает --subtitles)",
             "mask": "  -m, --mask          Маскировать серийные номера (с --share)",
-            "force": "      --force        Извлечь в непустую цель dir:// (перезаписать)"
+            "force": "      --force        Извлечь в непустую цель dir:// (перезаписать)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Коды завершения:",
         "exit_code": {

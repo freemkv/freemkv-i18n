@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Tulis/perbarui mapfile untuk pemulihan multipass",
             "share": "      --share         Kirim profil drive dan struktur disc (info disc://, iso:// atau dir://; pada rip, -s berarti --subtitles)",
             "mask": "  -m, --mask          Samarkan nomor seri (dengan --share)",
-            "force": "      --force        Ekstrak ke target dir:// yang tidak kosong (timpa)"
+            "force": "      --force        Ekstrak ke target dir:// yang tidak kosong (timpa)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Kode keluar:",
         "exit_code": {

@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Записати/оновити файл карти для багатопрохідного відновлення",
             "share": "      --share         Надіслати профіль приводу й структуру диска (info disc://, iso:// або dir://; під час копіювання -s означає --subtitles)",
             "mask": "  -m, --mask          Маскувати серійні номери (з --share)",
-            "force": "      --force        Витягти в непорожню ціль dir:// (перезапис)"
+            "force": "      --force        Витягти в непорожню ціль dir:// (перезапис)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Коди завершення:",
         "exit_code": {

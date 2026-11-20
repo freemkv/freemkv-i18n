@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Ghi/cập nhật tệp bản đồ cho khôi phục nhiều lượt",
             "share": "      --share         Gửi hồ sơ ổ đĩa và cấu trúc đĩa (info disc://, iso:// hoặc dir://; khi trích xuất, -s nghĩa là --subtitles)",
             "mask": "  -m, --mask          Che số sê-ri (với --share)",
-            "force": "      --force        Trích xuất vào đích dir:// không trống (ghi đè)"
+            "force": "      --force        Trích xuất vào đích dir:// không trống (ghi đè)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Mã thoát:",
         "exit_code": {

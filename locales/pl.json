@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Zapisz/zaktualizuj plik mapy dla odzyskiwania wieloprzebiegowego",
             "share": "      --share         Prześlij profil napędu i strukturę płyty (info disc://, iso:// lub dir://; przy zgrywaniu -s oznacza --subtitles)",
             "mask": "  -m, --mask          Maskuj numery seryjne (z --share)",
-            "force": "      --force        Wyodrębnij do niepustego celu dir:// (nadpisanie)"
+            "force": "      --force        Wyodrębnij do niepustego celu dir:// (nadpisanie)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Kody wyjścia:",
         "exit_code": {

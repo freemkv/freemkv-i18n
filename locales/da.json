@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Skriv/opdatér mapfile til multipass-gendannelse",
             "share": "      --share         Indsend drevprofil og diskstruktur (info disc://, iso:// eller dir://; ved et rip betyder -s --subtitles)",
             "mask": "  -m, --mask          Maskér serienumre (med --share)",
-            "force": "      --force        Udpak ind i et ikke-tomt dir://-mål (overskriv)"
+            "force": "      --force        Udpak ind i et ikke-tomt dir://-mål (overskriv)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Afslutningskoder:",
         "exit_code": {

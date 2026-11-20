@@ -587,7 +587,8 @@
             "multipass": "      --multipass    멀티패스 복구를 위한 맵파일 쓰기/업데이트",
             "share": "      --share         드라이브 프로파일과 디스크 구조 제출 (info disc://, iso:// 또는 dir://; 추출에서 -s는 --subtitles를 의미)",
             "mask": "  -m, --mask          일련번호 마스킹 (--share와 함께)",
-            "force": "      --force        비어 있지 않은 dir:// 대상에 추출 (덮어쓰기)"
+            "force": "      --force        비어 있지 않은 dir:// 대상에 추출 (덮어쓰기)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "종료 코드:",
         "exit_code": {

@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Scrie/actualizează fișierul de mapare pentru recuperare multipass",
             "share": "      --share         Trimite profilul unității și structura discului (info disc://, iso:// sau dir://; la o extragere, -s înseamnă --subtitles)",
             "mask": "  -m, --mask          Maschează numerele de serie (cu --share)",
-            "force": "      --force        Extrage într-o țintă dir:// negoală (suprascrie)"
+            "force": "      --force        Extrage într-o țintă dir:// negoală (suprascrie)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Coduri de ieșire:",
         "exit_code": {

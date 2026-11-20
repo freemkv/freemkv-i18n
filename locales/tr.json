@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Çok geçişli kurtarma için harita dosyası yaz/güncelle",
             "share": "      --share         Sürücü profilini ve disk yapısını gönder (info disc://, iso:// veya dir://; bir kopyalamada -s, --subtitles anlamına gelir)",
             "mask": "  -m, --mask          Seri numaralarını maskele (--share ile)",
-            "force": "      --force        Boş olmayan bir dir:// hedefine çıkar (üzerine yaz)"
+            "force": "      --force        Boş olmayan bir dir:// hedefine çıkar (üzerine yaz)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Çıkış kodları:",
         "exit_code": {

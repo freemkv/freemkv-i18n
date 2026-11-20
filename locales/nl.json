@@ -555,7 +555,8 @@
             "multipass": "      --multipass    Mapfile schrijven/bijwerken voor multipass-herstel",
             "share": "      --share         Stationsprofiel en discstructuur indienen (info disc://, iso:// of dir://; bij een rip betekent -s --subtitles)",
             "mask": "  -m, --mask          Serienummers maskeren (met --share)",
-            "force": "      --force        Uitpakken in een niet-lege dir://-bestemming (overschrijven)"
+            "force": "      --force        Uitpakken in een niet-lege dir://-bestemming (overschrijven)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "synopsis_4": "       freemkv <command> [args]",
         "subcommands_header": "Subopdrachten:",

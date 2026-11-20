@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Write/update mapfile for multipass recovery",
             "share": "      --share         Submit the drive profile and disc structure (info disc://, iso:// or dir://; on a rip, -s means --subtitles)",
             "mask": "  -m, --mask          Mask serial numbers (with --share)",
-            "force": "      --force        Extract into a non-empty dir:// target (overwrite)"
+            "force": "      --force        Extract into a non-empty dir:// target (overwrite)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Exit codes:",
         "exit_code": {

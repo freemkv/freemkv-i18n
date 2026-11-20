@@ -555,7 +555,8 @@
             "multipass": "      --multipass    Escribir/actualizar mapfile para recuperación multipaso",
             "share": "      --share         Enviar perfil de unidad y estructura del disco (info disc://, iso:// o dir://; en una extracción, -s significa --subtitles)",
             "mask": "  -m, --mask          Enmascarar números de serie (con --share)",
-            "force": "      --force        Extraer a un destino dir:// no vacío (sobrescribir)"
+            "force": "      --force        Extraer a un destino dir:// no vacío (sobrescribir)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "synopsis_4": "       freemkv <command> [args]",
         "subcommands_header": "Subcomandos:",

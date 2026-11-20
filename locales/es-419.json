@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Escribir/actualizar mapfile para recuperación multipass",
             "share": "      --share         Enviar el perfil de la unidad y la estructura del disco (info disc://, iso:// o dir://; en una extracción, -s significa --subtitles)",
             "mask": "  -m, --mask          Enmascarar números de serie (con --share)",
-            "force": "      --force        Extraer en un destino dir:// no vacío (sobrescribir)"
+            "force": "      --force        Extraer en un destino dir:// no vacío (sobrescribir)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Códigos de salida:",
         "exit_code": {

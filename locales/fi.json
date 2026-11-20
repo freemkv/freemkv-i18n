@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Kirjoita/päivitä karttatiedosto monivaiheista palautusta varten",
             "share": "      --share         Lähetä aseman profiili ja levyrakenne (info disc://, iso:// tai dir://; rippauksessa -s tarkoittaa --subtitles)",
             "mask": "  -m, --mask          Peitä sarjanumerot (--share:n kanssa)",
-            "force": "      --force        Pura ei-tyhjään dir://-kohteeseen (ylikirjoita)"
+            "force": "      --force        Pura ei-tyhjään dir://-kohteeseen (ylikirjoita)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Poistumiskoodit:",
         "exit_code": {

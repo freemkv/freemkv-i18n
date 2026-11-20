@@ -587,7 +587,8 @@
             "multipass": "      --multipass    寫入／更新對應檔以進行多次復原",
             "share": "      --share         提交光碟機設定檔與光碟結構（info disc://、iso:// 或 dir://；擷取時 -s 代表 --subtitles）",
             "mask": "  -m, --mask          遮蔽序號（搭配 --share）",
-            "force": "      --force        擷取至非空的 dir:// 目標（覆寫）"
+            "force": "      --force        擷取至非空的 dir:// 目標（覆寫）",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "結束代碼：",
         "exit_code": {

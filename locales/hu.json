@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Térképfájl írása/frissítése a többmenetes helyreállításhoz",
             "share": "      --share         Meghajtóprofil és lemezszerkezet beküldése (info disc://, iso:// vagy dir://; másolásnál a -s a --subtitles kapcsolót jelenti)",
             "mask": "  -m, --mask          Sorozatszámok elrejtése (a --share kapcsolóval)",
-            "force": "      --force        Kibontás nem üres dir:// célba (felülírás)"
+            "force": "      --force        Kibontás nem üres dir:// célba (felülírás)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Kilépési kódok:",
         "exit_code": {

@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Escriu/actualitza el fitxer de mapa per a recuperació multipassada",
             "share": "      --share         Envia el perfil de la unitat i l'estructura del disc (info disc://, iso:// o dir://; en una extracció, -s vol dir --subtitles)",
             "mask": "  -m, --mask          Emmascara els números de sèrie (amb --share)",
-            "force": "      --force        Extreu a una destinació dir:// no buida (sobreescriu)"
+            "force": "      --force        Extreu a una destinació dir:// no buida (sobreescriu)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Codis de sortida:",
         "exit_code": {

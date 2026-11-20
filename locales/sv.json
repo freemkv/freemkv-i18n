@@ -587,7 +587,8 @@
             "multipass": "      --multipass    Skriv/uppdatera kartfil för flerpass-återställning",
             "share": "      --share         Skicka in enhetsprofil och skivstruktur (info disc://, iso:// eller dir://; vid en rippning betyder -s --subtitles)",
             "mask": "  -m, --mask          Maskera serienummer (med --share)",
-            "force": "      --force        Extrahera in i ett icke-tomt dir://-mål (skriv över)"
+            "force": "      --force        Extrahera in i ett icke-tomt dir://-mål (skriv över)",
+            "source_names": "      --source-names  With several titles, name each file after its title's source (00024.mpls gives <name>_00024.mkv) instead of <name>_t<N>."
         },
         "exit_codes_header": "Avslutningskoder:",
         "exit_code": {
