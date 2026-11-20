@@ -953,7 +953,10 @@
             "empty": "Vuota",
             "unknown": "Stato del disco sconosciuto",
             "open": "Apri",
-            "use_startup": "Usa all’avvio"
+            "use_startup": "Usa all’avvio",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Titoli",
@@ -963,7 +966,8 @@
             "none": "Nessuno",
             "forced": "Solo forzati",
             "episodes": "Episodi",
-            "main_or_episodes": "Film principale / episodi"
+            "main_or_episodes": "Film principale / episodi",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

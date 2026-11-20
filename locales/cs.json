@@ -953,7 +953,10 @@
             "empty": "Prázdná",
             "unknown": "Stav disku neznámý",
             "open": "Otevřít",
-            "use_startup": "Použít při spuštění"
+            "use_startup": "Použít při spuštění",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Tituly",
@@ -963,7 +966,8 @@
             "none": "Žádné",
             "forced": "Jen vynucené",
             "episodes": "Epizody",
-            "main_or_episodes": "Hlavní film / epizody"
+            "main_or_episodes": "Hlavní film / epizody",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

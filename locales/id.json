@@ -953,7 +953,10 @@
             "empty": "Kosong",
             "unknown": "Status disk tidak diketahui",
             "open": "Buka",
-            "use_startup": "Gunakan saat memulai"
+            "use_startup": "Gunakan saat memulai",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Judul",
@@ -963,7 +966,8 @@
             "none": "Tidak ada",
             "forced": "Hanya paksa",
             "episodes": "Episode",
-            "main_or_episodes": "Film utama / episode"
+            "main_or_episodes": "Film utama / episode",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

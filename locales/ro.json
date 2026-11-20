@@ -953,7 +953,10 @@
             "empty": "Goală",
             "unknown": "Starea discului necunoscută",
             "open": "Deschide",
-            "use_startup": "Folosește la pornire"
+            "use_startup": "Folosește la pornire",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Titluri",
@@ -963,7 +966,8 @@
             "none": "Niciuna",
             "forced": "Doar forțate",
             "episodes": "Episoade",
-            "main_or_episodes": "Film principal / episoade"
+            "main_or_episodes": "Film principal / episoade",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

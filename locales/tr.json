@@ -953,7 +953,10 @@
             "empty": "Boş",
             "unknown": "Disk durumu bilinmiyor",
             "open": "Aç",
-            "use_startup": "Başlangıçta kullan"
+            "use_startup": "Başlangıçta kullan",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Başlıklar",
@@ -963,7 +966,8 @@
             "none": "Hiçbiri",
             "forced": "Yalnızca zorlanmış",
             "episodes": "Bölümler",
-            "main_or_episodes": "Ana film / bölümler"
+            "main_or_episodes": "Ana film / bölümler",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

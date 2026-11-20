@@ -953,7 +953,10 @@
             "empty": "空",
             "unknown": "光盘状态未知",
             "open": "打开",
-            "use_startup": "启动时使用"
+            "use_startup": "启动时使用",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "标题",
@@ -963,7 +966,8 @@
             "none": "无",
             "forced": "仅强制",
             "episodes": "剧集",
-            "main_or_episodes": "主影片／剧集"
+            "main_or_episodes": "主影片／剧集",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

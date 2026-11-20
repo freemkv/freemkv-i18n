@@ -953,7 +953,10 @@
             "empty": "Leeg",
             "unknown": "Schijfstatus onbekend",
             "open": "Openen",
-            "use_startup": "Gebruiken bij opstarten"
+            "use_startup": "Gebruiken bij opstarten",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Titels",
@@ -963,7 +966,8 @@
             "none": "Geen",
             "forced": "Alleen geforceerd",
             "episodes": "Afleveringen",
-            "main_or_episodes": "Hoofdfilm / afleveringen"
+            "main_or_episodes": "Hoofdfilm / afleveringen",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

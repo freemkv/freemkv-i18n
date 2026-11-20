@@ -953,7 +953,10 @@
             "empty": "Порожньо",
             "unknown": "Стан диска невідомий",
             "open": "Відкрити",
-            "use_startup": "Використовувати під час запуску"
+            "use_startup": "Використовувати під час запуску",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Титули",
@@ -963,7 +966,8 @@
             "none": "Немає",
             "forced": "Лише примусові",
             "episodes": "Епізоди",
-            "main_or_episodes": "Основний фільм / серії"
+            "main_or_episodes": "Основний фільм / серії",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

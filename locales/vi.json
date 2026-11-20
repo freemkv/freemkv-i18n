@@ -953,7 +953,10 @@
             "empty": "Trống",
             "unknown": "Không rõ trạng thái đĩa",
             "open": "Mở",
-            "use_startup": "Dùng khi khởi động"
+            "use_startup": "Dùng khi khởi động",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Tiêu đề",
@@ -963,7 +966,8 @@
             "none": "Không có",
             "forced": "Chỉ bắt buộc",
             "episodes": "Các tập",
-            "main_or_episodes": "Phim chính / các tập"
+            "main_or_episodes": "Phim chính / các tập",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

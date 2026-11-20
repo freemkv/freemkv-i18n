@@ -953,7 +953,10 @@
             "empty": "Pusty",
             "unknown": "Stan płyty nieznany",
             "open": "Otwórz",
-            "use_startup": "Używaj przy uruchomieniu"
+            "use_startup": "Używaj przy uruchomieniu",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Tytuły",
@@ -963,7 +966,8 @@
             "none": "Brak",
             "forced": "Tylko wymuszone",
             "episodes": "Odcinki",
-            "main_or_episodes": "Film główny / odcinki"
+            "main_or_episodes": "Film główny / odcinki",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

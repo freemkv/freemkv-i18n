@@ -953,7 +953,10 @@
             "empty": "Buida",
             "unknown": "Estat del disc desconegut",
             "open": "Obre",
-            "use_startup": "Utilitza en iniciar"
+            "use_startup": "Utilitza en iniciar",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Títols",
@@ -963,7 +966,8 @@
             "none": "Cap",
             "forced": "Només forçats",
             "episodes": "Episodis",
-            "main_or_episodes": "Film principal / episodis"
+            "main_or_episodes": "Film principal / episodis",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

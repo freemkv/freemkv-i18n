@@ -953,7 +953,10 @@
             "empty": "Κενή",
             "unknown": "Άγνωστη κατάσταση δίσκου",
             "open": "Άνοιγμα",
-            "use_startup": "Χρήση κατά την εκκίνηση"
+            "use_startup": "Χρήση κατά την εκκίνηση",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Τίτλοι",
@@ -963,7 +966,8 @@
             "none": "Κανένα",
             "forced": "Μόνο εξαναγκασμένοι",
             "episodes": "Επεισόδια",
-            "main_or_episodes": "Κύρια ταινία / επεισόδια"
+            "main_or_episodes": "Κύρια ταινία / επεισόδια",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

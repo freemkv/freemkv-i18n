@@ -953,7 +953,10 @@
             "empty": "Tom",
             "unknown": "Platens status er ukjent",
             "open": "Åpne",
-            "use_startup": "Bruk ved oppstart"
+            "use_startup": "Bruk ved oppstart",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Titler",
@@ -963,7 +966,8 @@
             "none": "Ingen",
             "forced": "Bare tvungne",
             "episodes": "Episoder",
-            "main_or_episodes": "Hovedfilm / episoder"
+            "main_or_episodes": "Hovedfilm / episoder",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

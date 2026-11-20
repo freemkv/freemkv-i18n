@@ -953,7 +953,10 @@
             "empty": "Tyhjä",
             "unknown": "Levyn tila tuntematon",
             "open": "Avaa",
-            "use_startup": "Käytä käynnistettäessä"
+            "use_startup": "Käytä käynnistettäessä",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Nimikkeet",
@@ -963,7 +966,8 @@
             "none": "Ei mitään",
             "forced": "Vain pakotetut",
             "episodes": "Jaksot",
-            "main_or_episodes": "Pääelokuva / jaksot"
+            "main_or_episodes": "Pääelokuva / jaksot",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

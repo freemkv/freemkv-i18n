@@ -953,7 +953,10 @@
             "empty": "Tomt",
             "unknown": "Diskstatus ukendt",
             "open": "Åbn",
-            "use_startup": "Brug ved opstart"
+            "use_startup": "Brug ved opstart",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Titler",
@@ -963,7 +966,8 @@
             "none": "Ingen",
             "forced": "Kun tvungne",
             "episodes": "Afsnit",
-            "main_or_episodes": "Hovedfilm / afsnit"
+            "main_or_episodes": "Hovedfilm / afsnit",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

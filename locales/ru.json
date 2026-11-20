@@ -953,7 +953,10 @@
             "empty": "Пусто",
             "unknown": "Состояние диска неизвестно",
             "open": "Открыть",
-            "use_startup": "Использовать при запуске"
+            "use_startup": "Использовать при запуске",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Тайтлы",
@@ -963,7 +966,8 @@
             "none": "Нет",
             "forced": "Только форсированные",
             "episodes": "Эпизоды",
-            "main_or_episodes": "Основной фильм / серии"
+            "main_or_episodes": "Основной фильм / серии",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

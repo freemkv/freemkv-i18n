@@ -953,7 +953,10 @@
             "empty": "Üres",
             "unknown": "Lemez állapota ismeretlen",
             "open": "Megnyitás",
-            "use_startup": "Használat indításkor"
+            "use_startup": "Használat indításkor",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "Címek",
@@ -963,7 +966,8 @@
             "none": "Nincs",
             "forced": "Csak kényszerített",
             "episodes": "Epizódok",
-            "main_or_episodes": "Főfilm / epizódok"
+            "main_or_episodes": "Főfilm / epizódok",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",

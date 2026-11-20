@@ -953,7 +953,10 @@
             "empty": "空",
             "unknown": "ディスクの状態は不明です",
             "open": "開く",
-            "use_startup": "起動時に使用"
+            "use_startup": "起動時に使用",
+            "drives": "Drives",
+            "eject": "Eject",
+            "drive_actions": "Drive actions"
         },
         "pick": {
             "titles": "タイトル",
@@ -963,7 +966,8 @@
             "none": "なし",
             "forced": "強制のみ",
             "episodes": "エピソード",
-            "main_or_episodes": "本編／エピソード"
+            "main_or_episodes": "本編／エピソード",
+            "automatic": "Automatic"
         },
         "review": {
             "missing_roster": "This disc does not list its episodes.",
