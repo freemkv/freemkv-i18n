@@ -764,7 +764,9 @@
             "word_track": "spår",
             "word_video_track": "videospår",
             "word_audio_track": "ljudspår",
-            "word_subtitle_track": "undertextspår"
+            "word_subtitle_track": "undertextspår",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Slutförd",

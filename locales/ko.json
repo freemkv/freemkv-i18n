@@ -764,7 +764,9 @@
             "word_track": "트랙",
             "word_video_track": "비디오 트랙",
             "word_audio_track": "오디오 트랙",
-            "word_subtitle_track": "자막 트랙"
+            "word_subtitle_track": "자막 트랙",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "완료됨",

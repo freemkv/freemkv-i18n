@@ -764,7 +764,9 @@
             "word_track": "raita",
             "word_video_track": "videoraita",
             "word_audio_track": "ääniraita",
-            "word_subtitle_track": "tekstitysraita"
+            "word_subtitle_track": "tekstitysraita",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Valmis",

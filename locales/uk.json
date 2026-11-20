@@ -764,7 +764,9 @@
             "word_track": "доріжки",
             "word_video_track": "відеодоріжки",
             "word_audio_track": "аудіодоріжки",
-            "word_subtitle_track": "доріжки субтитрів"
+            "word_subtitle_track": "доріжки субтитрів",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Завершено",

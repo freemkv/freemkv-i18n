@@ -764,7 +764,9 @@
             "word_track": "Spur",
             "word_video_track": "Videospur",
             "word_audio_track": "Audiospur",
-            "word_subtitle_track": "Untertitelspur"
+            "word_subtitle_track": "Untertitelspur",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Abgeschlossen",

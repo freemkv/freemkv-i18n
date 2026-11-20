@@ -764,7 +764,9 @@
             "word_track": "iz",
             "word_video_track": "video izi",
             "word_audio_track": "ses izi",
-            "word_subtitle_track": "altyazı izi"
+            "word_subtitle_track": "altyazı izi",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Tamamlandı",

@@ -764,7 +764,9 @@
             "word_track": "дорожки",
             "word_video_track": "видеодорожки",
             "word_audio_track": "аудиодорожки",
-            "word_subtitle_track": "дорожки субтитров"
+            "word_subtitle_track": "дорожки субтитров",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Завершено",

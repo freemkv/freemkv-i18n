@@ -764,7 +764,9 @@
             "word_track": "rãnh",
             "word_video_track": "rãnh video",
             "word_audio_track": "rãnh âm thanh",
-            "word_subtitle_track": "rãnh phụ đề"
+            "word_subtitle_track": "rãnh phụ đề",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Đã hoàn tất",

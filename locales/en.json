@@ -764,7 +764,9 @@
             "word_track": "track",
             "word_video_track": "video track",
             "word_audio_track": "audio track",
-            "word_subtitle_track": "subtitle track"
+            "word_subtitle_track": "subtitle track",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Finished",

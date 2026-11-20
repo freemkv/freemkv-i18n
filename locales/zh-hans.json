@@ -764,7 +764,9 @@
             "word_track": "轨道",
             "word_video_track": "视频轨道",
             "word_audio_track": "音频轨道",
-            "word_subtitle_track": "字幕轨道"
+            "word_subtitle_track": "字幕轨道",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "已完成",

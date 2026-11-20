@@ -764,7 +764,9 @@
             "word_track": "faixa",
             "word_video_track": "faixa de vídeo",
             "word_audio_track": "faixa de áudio",
-            "word_subtitle_track": "faixa de legendas"
+            "word_subtitle_track": "faixa de legendas",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Concluído",

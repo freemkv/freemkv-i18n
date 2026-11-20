@@ -764,7 +764,9 @@
             "word_track": "pistă",
             "word_video_track": "pistă video",
             "word_audio_track": "pistă audio",
-            "word_subtitle_track": "pistă de subtitrare"
+            "word_subtitle_track": "pistă de subtitrare",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Finalizat",

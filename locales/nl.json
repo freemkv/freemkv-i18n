@@ -764,7 +764,9 @@
             "word_track": "spoor",
             "word_video_track": "videospoor",
             "word_audio_track": "audiospoor",
-            "word_subtitle_track": "ondertitelspoor"
+            "word_subtitle_track": "ondertitelspoor",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Voltooid",

@@ -764,7 +764,9 @@
             "word_track": "trek",
             "word_video_track": "trek video",
             "word_audio_track": "trek audio",
-            "word_subtitle_track": "trek subjudul"
+            "word_subtitle_track": "trek subjudul",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Selesai",

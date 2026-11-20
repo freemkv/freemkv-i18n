@@ -764,7 +764,9 @@
             "word_track": "traccia",
             "word_video_track": "traccia video",
             "word_audio_track": "traccia audio",
-            "word_subtitle_track": "traccia dei sottotitoli"
+            "word_subtitle_track": "traccia dei sottotitoli",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Completato",

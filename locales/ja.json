@@ -764,7 +764,9 @@
             "word_track": "トラック",
             "word_video_track": "ビデオトラック",
             "word_audio_track": "オーディオトラック",
-            "word_subtitle_track": "字幕トラック"
+            "word_subtitle_track": "字幕トラック",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "完了",

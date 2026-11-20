@@ -764,7 +764,9 @@
             "word_track": "sáv",
             "word_video_track": "videósáv",
             "word_audio_track": "hangsáv",
-            "word_subtitle_track": "feliratsáv"
+            "word_subtitle_track": "feliratsáv",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Befejezve",

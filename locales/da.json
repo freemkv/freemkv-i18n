@@ -764,7 +764,9 @@
             "word_track": "spor",
             "word_video_track": "videospor",
             "word_audio_track": "lydspor",
-            "word_subtitle_track": "undertekstspor"
+            "word_subtitle_track": "undertekstspor",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Afsluttet",

@@ -764,7 +764,9 @@
             "word_track": "pista",
             "word_video_track": "pista de vídeo",
             "word_audio_track": "pista d'àudio",
-            "word_subtitle_track": "pista de subtítols"
+            "word_subtitle_track": "pista de subtítols",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Finalitzat",

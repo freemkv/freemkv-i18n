@@ -764,7 +764,9 @@
             "word_track": "piste",
             "word_video_track": "piste vidéo",
             "word_audio_track": "piste audio",
-            "word_subtitle_track": "piste de sous-titres"
+            "word_subtitle_track": "piste de sous-titres",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Terminé",

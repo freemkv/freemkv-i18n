@@ -764,7 +764,9 @@
             "word_track": "stopy",
             "word_video_track": "videostopy",
             "word_audio_track": "zvukové stopy",
-            "word_subtitle_track": "stopy titulků"
+            "word_subtitle_track": "stopy titulků",
+            "reading_title": "Reading title {n} of {total}",
+            "writing_title": "Writing {container} {n} of {total}"
         },
         "result": {
             "finished": "Dokončeno",
