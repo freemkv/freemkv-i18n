@@ -797,6 +797,7 @@
             "container_mismatch": "{container} kan ikke gemme {codecs}-video. Vælg MKV i stedet.",
             "opened_version": "freemkv {version}",
             "opened": "{label} åbnet — {n} titel/titler, nøgler: {keys}",
+            "opened_one": "{label} åbnet — {n} titel/titler, nøgler: {keys}",
             "ready_convert": "Klar til at konvertere",
             "ready_rip": "Klar til at rippe",
             "cannot_rip": "Kan ikke rippe: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Vælg en outputmappe først.",
             "starting_rip": "Starter rip → {dir}",
             "unreadable": "{n} ulæselig(e) sektor(er) indtil videre",
+            "unreadable_one": "{n} ulæselig(e) sektor(er) indtil videre",
             "not_supported": "Ikke en understøttet kilde: {p}",
             "settings_saved": "Indstillinger gemt",
             "settings_save_error": "Kunne ikke gemme indstillinger: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Bemærk: {count} stream(s) kunne ikke leveres og blev udeladt:",
+        "undelivered_header_one": "Bemærk: {count} stream(s) kunne ikke leveres og blev udeladt:",
         "excluded_header": "Bemærk: {count} spor kan ikke gemmes i {container} og udelades (brug {keep}:// for at beholde dem):",
+        "excluded_header_one": "Bemærk: {count} spor kan ikke gemmes i {container} og udelades (brug {keep}:// for at beholde dem):",
         "reason": {
             "subtitle": "undertekstformatet har ingen {container}-tilknytning",
             "audio": "lydcodec har ingen {container}-tilknytning",

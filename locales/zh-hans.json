@@ -797,6 +797,7 @@
             "container_mismatch": "{container} 无法存储 {codecs} 视频。请改选 MKV。",
             "opened_version": "freemkv {version}",
             "opened": "{label} 已打开 —— {n} 个标题，密钥：{keys}",
+            "opened_one": "{label} 已打开 —— {n} 个标题，密钥：{keys}",
             "ready_convert": "准备转换",
             "ready_rip": "准备抓取",
             "cannot_rip": "无法抓取：{reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "请先选择一个输出文件夹。",
             "starting_rip": "正在开始抓取 → {dir}",
             "unreadable": "目前已有 {n} 个不可读扇区",
+            "unreadable_one": "目前已有 {n} 个不可读扇区",
             "not_supported": "不是受支持的源：{p}",
             "settings_saved": "设置已保存",
             "settings_save_error": "无法保存设置：{e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "注意：{count} 条轨道无法写入输出，已被略去：",
+        "undelivered_header_one": "注意：{count} 条轨道无法写入输出，已被略去：",
         "excluded_header": "注意：{count} 条轨道无法存入 {container}，将被略去（使用 {keep}:// 可保留它们）：",
+        "excluded_header_one": "注意：{count} 条轨道无法存入 {container}，将被略去（使用 {keep}:// 可保留它们）：",
         "reason": {
             "subtitle": "字幕格式无对应的 {container} 映射",
             "audio": "音频编解码器无对应的 {container} 映射",

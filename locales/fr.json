@@ -797,6 +797,7 @@
             "container_mismatch": "{container} ne peut pas stocker de vidéo {codecs}. Choisissez plutôt MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} ouvert — {n} titre(s), clés : {keys}",
+            "opened_one": "{label} ouvert — {n} titre(s), clés : {keys}",
             "ready_convert": "Prêt à convertir",
             "ready_rip": "Prêt à extraire",
             "cannot_rip": "Extraction impossible : {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Choisissez d'abord un dossier de sortie.",
             "starting_rip": "Démarrage de l'extraction → {dir}",
             "unreadable": "{n} secteur(s) illisible(s) jusqu'ici",
+            "unreadable_one": "{n} secteur(s) illisible(s) jusqu'ici",
             "not_supported": "Source non prise en charge : {p}",
             "settings_saved": "Réglages enregistrés",
             "settings_save_error": "Impossible d'enregistrer les réglages : {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Remarque : {count} flux n'ont pas pu être livrés et ont été omis :",
+        "undelivered_header_one": "Remarque : {count} flux n'ont pas pu être livrés et ont été omis :",
         "excluded_header": "Remarque : {count} piste(s) ne peuvent pas être stockées dans {container} et seront exclues (utilisez {keep}:// pour les conserver) :",
+        "excluded_header_one": "Remarque : {count} piste(s) ne peuvent pas être stockées dans {container} et seront exclues (utilisez {keep}:// pour les conserver) :",
         "reason": {
             "subtitle": "le format de sous-titre n'a pas de correspondance {container}",
             "audio": "le codec audio n'a pas de correspondance {container}",

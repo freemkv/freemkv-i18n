@@ -797,6 +797,7 @@
             "container_mismatch": "A(z) {container} formátum nem tárolhat {codecs} videót. Válaszd helyette az MKV-t.",
             "opened_version": "freemkv {version}",
             "opened": "{label} megnyitva — {n} cím, kulcsok: {keys}",
+            "opened_one": "{label} megnyitva — {n} cím, kulcsok: {keys}",
             "ready_convert": "Kész az átalakításra",
             "ready_rip": "Kész a kimásolásra",
             "cannot_rip": "Nem másolható ki: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Előbb válassz egy kimeneti mappát.",
             "starting_rip": "Kimásolás indítása → {dir}",
             "unreadable": "{n} olvashatatlan szektor eddig",
+            "unreadable_one": "{n} olvashatatlan szektor eddig",
             "not_supported": "Nem támogatott forrás: {p}",
             "settings_saved": "Beállítások elmentve",
             "settings_save_error": "Nem sikerült elmenteni a beállításokat: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Megjegyzés: {count} adatfolyamot nem sikerült kiírni, ezek kimaradtak:",
+        "undelivered_header_one": "Megjegyzés: {count} adatfolyamot nem sikerült kiírni, ezek kimaradtak:",
         "excluded_header": "Megjegyzés: {count} sáv nem tárolható {container} formátumban, ezért kimarad (a megőrzésükhöz használd a {keep}:// formátumot):",
+        "excluded_header_one": "Megjegyzés: {count} sáv nem tárolható {container} formátumban, ezért kimarad (a megőrzésükhöz használd a {keep}:// formátumot):",
         "reason": {
             "subtitle": "a feliratformátumhoz nincs {container}-leképezés",
             "audio": "a hangkodekhez nincs {container}-leképezés",

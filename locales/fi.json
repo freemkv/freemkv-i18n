@@ -797,6 +797,7 @@
             "container_mismatch": "Muoto {container} ei voi tallentaa {codecs}-videota. Valitse sen sijaan MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} avattu — {n} nimikettä, avaimet: {keys}",
+            "opened_one": "{label} avattu — {n} nimikettä, avaimet: {keys}",
             "ready_convert": "Valmis muuntamaan",
             "ready_rip": "Valmis rippaamaan",
             "cannot_rip": "Ei voi ripata: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Valitse ensin tulostekansio.",
             "starting_rip": "Aloitetaan rippaus → {dir}",
             "unreadable": "{n} lukukelvotonta sektoria toistaiseksi",
+            "unreadable_one": "{n} lukukelvotonta sektoria toistaiseksi",
             "not_supported": "Ei-tuettu lähde: {p}",
             "settings_saved": "Asetukset tallennettu",
             "settings_save_error": "Asetuksia ei voitu tallentaa: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Huomautus: {count} raitaa ei voitu toimittaa, ja ne jätettiin pois:",
+        "undelivered_header_one": "Huomautus: {count} raitaa ei voitu toimittaa, ja ne jätettiin pois:",
         "excluded_header": "Huomautus: {count} raitaa ei voi tallentaa muotoon {container}, joten ne jätetään pois (käytä {keep}:// säilyttääksesi ne):",
+        "excluded_header_one": "Huomautus: {count} raitaa ei voi tallentaa muotoon {container}, joten ne jätetään pois (käytä {keep}:// säilyttääksesi ne):",
         "reason": {
             "subtitle": "tekstitysmuodolla ei ole vastaavuutta muodossa {container}",
             "audio": "äänikoodekilla ei ole vastaavuutta muodossa {container}",

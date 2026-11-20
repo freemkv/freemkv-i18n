@@ -797,6 +797,7 @@
             "container_mismatch": "{container} 無法儲存 {codecs} 影片。請改選 MKV。",
             "opened_version": "freemkv {version}",
             "opened": "已開啟 {label} — {n} 個標題，金鑰：{keys}",
+            "opened_one": "已開啟 {label} — {n} 個標題，金鑰：{keys}",
             "ready_convert": "準備轉換",
             "ready_rip": "準備擷取",
             "cannot_rip": "無法擷取：{reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "請先選擇輸出資料夾。",
             "starting_rip": "開始擷取 → {dir}",
             "unreadable": "目前已有 {n} 個無法讀取的磁區",
+            "unreadable_one": "目前已有 {n} 個無法讀取的磁區",
             "not_supported": "不受支援的來源：{p}",
             "settings_saved": "設定已儲存",
             "settings_save_error": "無法儲存設定：{e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "注意：{count} 條軌道無法寫入輸出，已略過：",
+        "undelivered_header_one": "注意：{count} 條軌道無法寫入輸出，已略過：",
         "excluded_header": "注意：{count} 條軌道無法儲存於 {container} 中，將被略過（使用 {keep}:// 以保留它們）：",
+        "excluded_header_one": "注意：{count} 條軌道無法儲存於 {container} 中，將被略過（使用 {keep}:// 以保留它們）：",
         "reason": {
             "subtitle": "字幕格式無對應的 {container} 格式",
             "audio": "音訊編碼無對應的 {container} 格式",

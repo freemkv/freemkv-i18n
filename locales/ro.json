@@ -797,6 +797,7 @@
             "container_mismatch": "{container} nu poate stoca video {codecs}. Alege MKV în schimb.",
             "opened_version": "freemkv {version}",
             "opened": "{label} deschis — {n} titlu(ri), chei: {keys}",
+            "opened_one": "{label} deschis — {n} titlu(ri), chei: {keys}",
             "ready_convert": "Pregătit pentru conversie",
             "ready_rip": "Pregătit pentru extragere",
             "cannot_rip": "Extragere imposibilă: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Alege mai întâi un director de ieșire.",
             "starting_rip": "Se începe extragerea → {dir}",
             "unreadable": "{n} sector/sectoare ilizibil(e) până acum",
+            "unreadable_one": "{n} sector/sectoare ilizibil(e) până acum",
             "not_supported": "Nu este o sursă acceptată: {p}",
             "settings_saved": "Setări salvate",
             "settings_save_error": "Nu s-au putut salva setările: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Notă: {count} flux(uri) nu au putut fi livrate și au fost omise:",
+        "undelivered_header_one": "Notă: {count} flux(uri) nu au putut fi livrate și au fost omise:",
         "excluded_header": "Notă: {count} pistă/piste nu pot fi stocate în {container} și vor fi omise (folosește {keep}:// pentru a le păstra):",
+        "excluded_header_one": "Notă: {count} pistă/piste nu pot fi stocate în {container} și vor fi omise (folosește {keep}:// pentru a le păstra):",
         "reason": {
             "subtitle": "formatul de subtitrare nu are corespondent {container}",
             "audio": "codecul audio nu are corespondent {container}",

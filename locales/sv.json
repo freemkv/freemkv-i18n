@@ -797,6 +797,7 @@
             "container_mismatch": "{container} kan inte lagra {codecs}-video. Välj MKV i stället.",
             "opened_version": "freemkv {version}",
             "opened": "{label} öppnad — {n} titel/titlar, nycklar: {keys}",
+            "opened_one": "{label} öppnad — {n} titel/titlar, nycklar: {keys}",
             "ready_convert": "Redo att konvertera",
             "ready_rip": "Redo att rippa",
             "cannot_rip": "Kan inte rippa: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Välj en utdatamapp först.",
             "starting_rip": "Startar rippning → {dir}",
             "unreadable": "{n} oläsbara sektorer hittills",
+            "unreadable_one": "{n} oläsbara sektorer hittills",
             "not_supported": "Inte en källa som stöds: {p}",
             "settings_saved": "Inställningar sparade",
             "settings_save_error": "Kunde inte spara inställningar: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Obs: {count} spår kunde inte levereras och utelämnades:",
+        "undelivered_header_one": "Obs: {count} spår kunde inte levereras och utelämnades:",
         "excluded_header": "Obs: {count} spår kan inte lagras i {container} och kommer att utelämnas (använd {keep}:// för att behålla dem):",
+        "excluded_header_one": "Obs: {count} spår kan inte lagras i {container} och kommer att utelämnas (använd {keep}:// för att behålla dem):",
         "reason": {
             "subtitle": "undertextformatet har ingen {container}-mappning",
             "audio": "ljudkodeken har ingen {container}-mappning",

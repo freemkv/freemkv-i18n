@@ -797,6 +797,7 @@
             "container_mismatch": "{container} tidak dapat menyimpan video {codecs}. Pilih MKV sebagai gantinya.",
             "opened_version": "freemkv {version}",
             "opened": "{label} dibuka — {n} judul, kunci: {keys}",
+            "opened_one": "{label} dibuka — {n} judul, kunci: {keys}",
             "ready_convert": "Siap mengonversi",
             "ready_rip": "Siap merip",
             "cannot_rip": "Tidak dapat merip: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Pilih folder keluaran terlebih dahulu.",
             "starting_rip": "Memulai rip → {dir}",
             "unreadable": "{n} sektor tidak terbaca sejauh ini",
+            "unreadable_one": "{n} sektor tidak terbaca sejauh ini",
             "not_supported": "Bukan sumber yang didukung: {p}",
             "settings_saved": "Pengaturan disimpan",
             "settings_save_error": "Tidak dapat menyimpan pengaturan: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Catatan: {count} stream tidak dapat dikirim dan dihilangkan:",
+        "undelivered_header_one": "Catatan: {count} stream tidak dapat dikirim dan dihilangkan:",
         "excluded_header": "Catatan: {count} trek tidak dapat disimpan dalam {container} dan akan diabaikan (gunakan {keep}:// untuk menyimpannya):",
+        "excluded_header_one": "Catatan: {count} trek tidak dapat disimpan dalam {container} dan akan diabaikan (gunakan {keep}:// untuk menyimpannya):",
         "reason": {
             "subtitle": "format subtitle tidak dapat dipetakan ke {container}",
             "audio": "codec audio tidak dapat dipetakan ke {container}",

@@ -797,6 +797,7 @@
             "container_mismatch": "{container} no pot emmagatzemar vídeo {codecs}. Trieu MKV al seu lloc.",
             "opened_version": "freemkv {version}",
             "opened": "{label} obert — {n} títol(s), claus: {keys}",
+            "opened_one": "{label} obert — {n} títol(s), claus: {keys}",
             "ready_convert": "A punt per convertir",
             "ready_rip": "A punt per extreure",
             "cannot_rip": "No es pot extreure: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Trieu primer una carpeta de sortida.",
             "starting_rip": "S'està iniciant l'extracció → {dir}",
             "unreadable": "{n} sector(s) il·legible(s) fins ara",
+            "unreadable_one": "{n} sector(s) il·legible(s) fins ara",
             "not_supported": "Origen no compatible: {p}",
             "settings_saved": "Configuració desada",
             "settings_save_error": "No s'ha pogut desar la configuració: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Nota: no s'han pogut lliurar {count} flux(os) i s'han deixat fora:",
+        "undelivered_header_one": "Nota: no s'han pogut lliurar {count} flux(os) i s'han deixat fora:",
         "excluded_header": "Nota: {count} pista(es) no es poden desar en {container} i s'ometran (useu {keep}:// per conservar-les):",
+        "excluded_header_one": "Nota: {count} pista(es) no es poden desar en {container} i s'ometran (useu {keep}:// per conservar-les):",
         "reason": {
             "subtitle": "el format de subtítol no té correspondència en {container}",
             "audio": "el còdec d'àudio no té correspondència en {container}",

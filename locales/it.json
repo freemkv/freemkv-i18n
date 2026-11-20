@@ -797,6 +797,7 @@
             "container_mismatch": "{container} non può contenere video {codecs}. Scegli invece MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} aperto — {n} titolo/i, chiavi: {keys}",
+            "opened_one": "{label} aperto — {n} titolo/i, chiavi: {keys}",
             "ready_convert": "Pronto per la conversione",
             "ready_rip": "Pronto per l'estrazione",
             "cannot_rip": "Impossibile estrarre: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Scegli prima una cartella di destinazione.",
             "starting_rip": "Avvio estrazione → {dir}",
             "unreadable": "{n} settore/i illeggibile/i finora",
+            "unreadable_one": "{n} settore/i illeggibile/i finora",
             "not_supported": "Sorgente non supportata: {p}",
             "settings_saved": "Impostazioni salvate",
             "settings_save_error": "Impossibile salvare le impostazioni: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Nota: {count} flussi non sono stati scritti e sono stati esclusi:",
+        "undelivered_header_one": "Nota: {count} flussi non sono stati scritti e sono stati esclusi:",
         "excluded_header": "Nota: {count} traccia/e non possono essere memorizzate in {container} e verranno escluse (usa {keep}:// per conservarle):",
+        "excluded_header_one": "Nota: {count} traccia/e non possono essere memorizzate in {container} e verranno escluse (usa {keep}:// per conservarle):",
         "reason": {
             "subtitle": "il formato dei sottotitoli non ha una mappatura {container}",
             "audio": "il codec audio non ha una mappatura {container}",

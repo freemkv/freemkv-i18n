@@ -797,6 +797,7 @@
             "container_mismatch": "{container} no puede almacenar video {codecs}. Elige MKV en su lugar.",
             "opened_version": "freemkv {version}",
             "opened": "{label} abierto — {n} título(s), claves: {keys}",
+            "opened_one": "{label} abierto — {n} título(s), claves: {keys}",
             "ready_convert": "Listo para convertir",
             "ready_rip": "Listo para extraer",
             "cannot_rip": "No se puede extraer: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Elige primero una carpeta de salida.",
             "starting_rip": "Iniciando extracción → {dir}",
             "unreadable": "{n} sector(es) ilegible(s) hasta ahora",
+            "unreadable_one": "{n} sector(es) ilegible(s) hasta ahora",
             "not_supported": "Origen no compatible: {p}",
             "settings_saved": "Configuración guardada",
             "settings_save_error": "No se pudo guardar la configuración: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Nota: no se pudieron entregar {count} pista(s) y se omitieron:",
+        "undelivered_header_one": "Nota: no se pudieron entregar {count} pista(s) y se omitieron:",
         "excluded_header": "Nota: {count} pista(s) no se pueden almacenar en {container} y quedarán excluidas (usa {keep}:// para conservarlas):",
+        "excluded_header_one": "Nota: {count} pista(s) no se pueden almacenar en {container} y quedarán excluidas (usa {keep}:// para conservarlas):",
         "reason": {
             "subtitle": "el formato de subtítulo no tiene equivalente en {container}",
             "audio": "el códec de audio no tiene equivalente en {container}",

@@ -797,6 +797,7 @@
             "container_mismatch": "{container} kan ikke lagre {codecs}-video. Velg MKV i stedet.",
             "opened_version": "freemkv {version}",
             "opened": "{label} åpnet — {n} tittel(er), nøkler: {keys}",
+            "opened_one": "{label} åpnet — {n} tittel(er), nøkler: {keys}",
             "ready_convert": "Klar til å konvertere",
             "ready_rip": "Klar til å rippe",
             "cannot_rip": "Kan ikke rippe: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Velg en utdatamappe først.",
             "starting_rip": "Starter ripping → {dir}",
             "unreadable": "{n} uleselig(e) sektor(er) så langt",
+            "unreadable_one": "{n} uleselig(e) sektor(er) så langt",
             "not_supported": "Ikke en støttet kilde: {p}",
             "settings_saved": "Innstillinger lagret",
             "settings_save_error": "Kunne ikke lagre innstillinger: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Merk: {count} strøm(mer) kunne ikke leveres og ble utelatt:",
+        "undelivered_header_one": "Merk: {count} strøm(mer) kunne ikke leveres og ble utelatt:",
         "excluded_header": "Merk: {count} spor kan ikke lagres i {container} og vil bli utelatt (bruk {keep}:// for å beholde dem):",
+        "excluded_header_one": "Merk: {count} spor kan ikke lagres i {container} og vil bli utelatt (bruk {keep}:// for å beholde dem):",
         "reason": {
             "subtitle": "undertekstformatet har ingen {container}-tilordning",
             "audio": "lydkodeken har ingen {container}-tilordning",

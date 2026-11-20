@@ -797,6 +797,7 @@
             "container_mismatch": "{container} không thể lưu video {codecs}. Hãy chọn MKV thay thế.",
             "opened_version": "freemkv {version}",
             "opened": "{label} đã mở — {n} tiêu đề, khóa: {keys}",
+            "opened_one": "{label} đã mở — {n} tiêu đề, khóa: {keys}",
             "ready_convert": "Sẵn sàng chuyển đổi",
             "ready_rip": "Sẵn sàng trích xuất",
             "cannot_rip": "Không thể trích xuất: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Chọn một thư mục đầu ra trước.",
             "starting_rip": "Đang bắt đầu trích xuất → {dir}",
             "unreadable": "{n} sector không đọc được cho đến nay",
+            "unreadable_one": "{n} sector không đọc được cho đến nay",
             "not_supported": "Không phải nguồn được hỗ trợ: {p}",
             "settings_saved": "Đã lưu cài đặt",
             "settings_save_error": "Không thể lưu cài đặt: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Lưu ý: {count} rãnh không thể ghi vào đầu ra và đã bị bỏ qua:",
+        "undelivered_header_one": "Lưu ý: {count} rãnh không thể ghi vào đầu ra và đã bị bỏ qua:",
         "excluded_header": "Lưu ý: {count} rãnh không thể lưu trong {container} và sẽ bị bỏ qua (dùng {keep}:// để giữ chúng):",
+        "excluded_header_one": "Lưu ý: {count} rãnh không thể lưu trong {container} và sẽ bị bỏ qua (dùng {keep}:// để giữ chúng):",
         "reason": {
             "subtitle": "định dạng phụ đề không có ánh xạ {container}",
             "audio": "codec âm thanh không có ánh xạ {container}",

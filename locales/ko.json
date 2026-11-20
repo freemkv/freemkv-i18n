@@ -797,6 +797,7 @@
             "container_mismatch": "{container}에는 {codecs} 비디오를 저장할 수 없습니다. 대신 MKV를 선택하세요.",
             "opened_version": "freemkv {version}",
             "opened": "{label} 열림 — 타이틀 {n}개, 키: {keys}",
+            "opened_one": "{label} 열림 — 타이틀 {n}개, 키: {keys}",
             "ready_convert": "변환 준비 완료",
             "ready_rip": "추출 준비 완료",
             "cannot_rip": "추출할 수 없음: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "먼저 출력 폴더를 선택하세요.",
             "starting_rip": "추출 시작 → {dir}",
             "unreadable": "지금까지 읽을 수 없는 섹터 {n}개",
+            "unreadable_one": "지금까지 읽을 수 없는 섹터 {n}개",
             "not_supported": "지원되지 않는 소스: {p}",
             "settings_saved": "설정 저장됨",
             "settings_save_error": "설정을 저장할 수 없음: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "참고: 스트림 {count}개를 출력할 수 없어 제외했습니다:",
+        "undelivered_header_one": "참고: 스트림 {count}개를 출력할 수 없어 제외했습니다:",
         "excluded_header": "참고: {count}개 트랙은 {container}에 저장할 수 없어 제외됩니다 (유지하려면 {keep}:// 사용):",
+        "excluded_header_one": "참고: {count}개 트랙은 {container}에 저장할 수 없어 제외됩니다 (유지하려면 {keep}:// 사용):",
         "reason": {
             "subtitle": "자막 형식에 {container} 매핑이 없습니다",
             "audio": "오디오 코덱에 {container} 매핑이 없습니다",

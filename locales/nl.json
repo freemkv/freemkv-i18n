@@ -797,6 +797,7 @@
             "container_mismatch": "{container} kan {codecs}-video niet opslaan. Kies in plaats daarvan MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} geopend — {n} titel(s), sleutels: {keys}",
+            "opened_one": "{label} geopend — {n} titel(s), sleutels: {keys}",
             "ready_convert": "Klaar om te converteren",
             "ready_rip": "Klaar om te rippen",
             "cannot_rip": "Rippen niet mogelijk: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Kies eerst een uitvoermap.",
             "starting_rip": "Rip starten → {dir}",
             "unreadable": "{n} onleesbare sector(en) tot nu toe",
+            "unreadable_one": "{n} onleesbare sector(en) tot nu toe",
             "not_supported": "Geen ondersteunde bron: {p}",
             "settings_saved": "Instellingen opgeslagen",
             "settings_save_error": "Kon instellingen niet opslaan: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Let op: {count} stream(s) kon(den) niet worden geleverd en is/zijn weggelaten:",
+        "undelivered_header_one": "Let op: {count} stream(s) kon(den) niet worden geleverd en is/zijn weggelaten:",
         "excluded_header": "Let op: {count} spo(o)r(en) kunnen niet in {container} worden opgeslagen en worden weggelaten (gebruik {keep}:// om ze te behouden):",
+        "excluded_header_one": "Let op: {count} spo(o)r(en) kunnen niet in {container} worden opgeslagen en worden weggelaten (gebruik {keep}:// om ze te behouden):",
         "reason": {
             "subtitle": "ondertitelformaat heeft geen {container}-toewijzing",
             "audio": "audiocodec heeft geen {container}-toewijzing",

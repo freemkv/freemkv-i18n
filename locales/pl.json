@@ -797,6 +797,7 @@
             "container_mismatch": "Format {container} nie może przechowywać wideo {codecs}. Wybierz zamiast tego MKV.",
             "opened_version": "freemkv {version}",
             "opened": "Otwarto {label} — liczba tytułów: {n}, klucze: {keys}",
+            "opened_one": "Otwarto {label} — liczba tytułów: {n}, klucze: {keys}",
             "ready_convert": "Gotowy do konwersji",
             "ready_rip": "Gotowy do zgrywania",
             "cannot_rip": "Nie można zgrać: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Najpierw wybierz folder wyjściowy.",
             "starting_rip": "Rozpoczynanie zgrywania → {dir}",
             "unreadable": "Nieczytelne sektory jak dotąd: {n}",
+            "unreadable_one": "Nieczytelne sektory jak dotąd: {n}",
             "not_supported": "Nieobsługiwane źródło: {p}",
             "settings_saved": "Ustawienia zapisane",
             "settings_save_error": "Nie można zapisać ustawień: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Uwaga: nie udało się dostarczyć strumieni (liczba: {count}), więc zostały pominięte:",
+        "undelivered_header_one": "Uwaga: nie udało się dostarczyć strumieni (liczba: {count}), więc zostały pominięte:",
         "excluded_header": "Uwaga: następujących ścieżek (liczba: {count}) nie można zapisać w formacie {container}, więc zostaną pominięte (użyj {keep}://, aby je zachować):",
+        "excluded_header_one": "Uwaga: następujących ścieżek (liczba: {count}) nie można zapisać w formacie {container}, więc zostaną pominięte (użyj {keep}://, aby je zachować):",
         "reason": {
             "subtitle": "format napisów nie ma odpowiednika w formacie {container}",
             "audio": "kodek dźwięku nie ma odpowiednika w formacie {container}",

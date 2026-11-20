@@ -797,6 +797,7 @@
             "container_mismatch": "{container} não pode armazenar vídeo {codecs}. Escolha MKV em alternativa.",
             "opened_version": "freemkv {version}",
             "opened": "{label} aberto — {n} título(s), chaves: {keys}",
+            "opened_one": "{label} aberto — {n} título(s), chaves: {keys}",
             "ready_convert": "Pronto para converter",
             "ready_rip": "Pronto para extrair",
             "cannot_rip": "Não é possível extrair: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Escolha primeiro uma pasta de saída.",
             "starting_rip": "A iniciar extração → {dir}",
             "unreadable": "{n} setor(es) ilegível(eis) até agora",
+            "unreadable_one": "{n} setor(es) ilegível(eis) até agora",
             "not_supported": "Origem não suportada: {p}",
             "settings_saved": "Definições guardadas",
             "settings_save_error": "Não foi possível guardar as definições: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Nota: {count} fluxo(s) não puderam ser entregues e foram deixados de fora:",
+        "undelivered_header_one": "Nota: {count} fluxo(s) não puderam ser entregues e foram deixados de fora:",
         "excluded_header": "Nota: {count} faixa(s) não podem ser armazenadas em {container} e serão excluídas (use {keep}:// para as manter):",
+        "excluded_header_one": "Nota: {count} faixa(s) não podem ser armazenadas em {container} e serão excluídas (use {keep}:// para as manter):",
         "reason": {
             "subtitle": "o formato de legenda não tem mapeamento para {container}",
             "audio": "o codec de áudio não tem mapeamento para {container}",

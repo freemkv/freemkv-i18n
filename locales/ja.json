@@ -797,6 +797,7 @@
             "container_mismatch": "{container} は {codecs} 映像を格納できません。代わりに MKV を選択してください。",
             "opened_version": "freemkv {version}",
             "opened": "{label} を開きました — {n} タイトル、キー: {keys}",
+            "opened_one": "{label} を開きました — {n} タイトル、キー: {keys}",
             "ready_convert": "変換の準備ができました",
             "ready_rip": "リッピングの準備ができました",
             "cannot_rip": "リッピングできません: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "先に出力フォルダを選択してください。",
             "starting_rip": "リッピングを開始 → {dir}",
             "unreadable": "これまでに {n} 個の読み取り不能なセクタ",
+            "unreadable_one": "これまでに {n} 個の読み取り不能なセクタ",
             "not_supported": "対応していないソースです: {p}",
             "settings_saved": "設定を保存しました",
             "settings_save_error": "設定を保存できませんでした: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "注意: {count} 個のストリームを出力できなかったため除外しました:",
+        "undelivered_header_one": "注意: {count} 個のストリームを出力できなかったため除外しました:",
         "excluded_header": "注意: {count} 個のトラックは {container} に格納できないため除外されます（保持するには {keep}:// を使用）:",
+        "excluded_header_one": "注意: {count} 個のトラックは {container} に格納できないため除外されます（保持するには {keep}:// を使用）:",
         "reason": {
             "subtitle": "字幕形式に {container} へのマッピングがありません",
             "audio": "音声コーデックに {container} へのマッピングがありません",

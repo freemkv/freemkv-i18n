@@ -797,6 +797,7 @@
             "container_mismatch": "{container} nedokáže uložiť video {codecs}. Zvoľte namiesto toho MKV.",
             "opened_version": "freemkv {version}",
             "opened": "{label} otvorené — počet titulov: {n}, kľúče: {keys}",
+            "opened_one": "{label} otvorené — počet titulov: {n}, kľúče: {keys}",
             "ready_convert": "Pripravené na konverziu",
             "ready_rip": "Pripravené na kopírovanie",
             "cannot_rip": "Nedá sa kopírovať: {reasons}",
@@ -804,6 +805,7 @@
             "choose_folder_first": "Najprv zvoľte výstupný priečinok.",
             "starting_rip": "Spúšťa sa kopírovanie → {dir}",
             "unreadable": "Nečitateľné sektory doteraz: {n}",
+            "unreadable_one": "Nečitateľné sektory doteraz: {n}",
             "not_supported": "Nepodporovaný zdroj: {p}",
             "settings_saved": "Nastavenia uložené",
             "settings_save_error": "Nepodarilo sa uložiť nastavenia: {e}",
@@ -1005,7 +1007,9 @@
     },
     "mux": {
         "undelivered_header": "Poznámka: nasledujúce stopy (počet: {count}) sa nepodarilo zapísať a boli vynechané:",
+        "undelivered_header_one": "Poznámka: nasledujúce stopy (počet: {count}) sa nepodarilo zapísať a boli vynechané:",
         "excluded_header": "Poznámka: nasledujúce stopy (počet: {count}) nemožno uložiť do formátu {container} a budú vynechané (na ich zachovanie použite {keep}://):",
+        "excluded_header_one": "Poznámka: nasledujúce stopy (počet: {count}) nemožno uložiť do formátu {container} a budú vynechané (na ich zachovanie použite {keep}://):",
         "reason": {
             "subtitle": "formát titulkov nemá mapovanie na {container}",
             "audio": "zvukový kodek nemá mapovanie na {container}",
