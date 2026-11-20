@@ -659,7 +659,7 @@
             "keep_iso": "保留中间 ISO ：",
             "auto_eject": "完成后弹出光盘：",
             "default_selection": "默认选择 ：",
-            "persist_stream_preferences": "记住音频和字幕选择",
+            "persist_stream_preferences": "记住标题、音频和字幕选择",
             "presentation_language": "演示语言（de / en；留空 = 音频偏好）",
             "sel_main": "仅正片",
             "sel_all": "全部标题",

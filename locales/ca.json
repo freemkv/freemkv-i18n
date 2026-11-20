@@ -659,7 +659,7 @@
             "keep_iso": "Conserva la ISO intermèdia :",
             "auto_eject": "Expulsa el disc en acabar :",
             "default_selection": "Selecció per defecte :",
-            "persist_stream_preferences": "Recorda les opcions d'àudio i subtítols",
+            "persist_stream_preferences": "Recorda les opcions de títols, àudio i subtítols",
             "presentation_language": "Llengua de presentació (de / en; buit = preferència d'àudio)",
             "sel_main": "Només la pel·lícula principal",
             "sel_all": "Tots els títols",

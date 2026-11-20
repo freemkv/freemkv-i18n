@@ -659,7 +659,7 @@
             "keep_iso": "Ponechať medziľahlý ISO :",
             "auto_eject": "Po dokončení vysunúť disk :",
             "default_selection": "Predvolený výber :",
-            "persist_stream_preferences": "Pamätať si voľby zvuku a titulkov",
+            "persist_stream_preferences": "Pamätať si voľby titulov, zvuku a titulkov",
             "presentation_language": "Jazyk prezentácie (de / en; prázdne = preferencia zvuku)",
             "sel_main": "Iba hlavný film",
             "sel_all": "Všetky tituly",

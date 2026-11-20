@@ -659,7 +659,7 @@
             "keep_iso": "Simpan ISO perantara :",
             "auto_eject": "Keluarkan disc saat selesai :",
             "default_selection": "Pilihan default :",
-            "persist_stream_preferences": "Ingat pilihan audio dan subtitel",
+            "persist_stream_preferences": "Ingat pilihan judul, audio, dan subtitel",
             "presentation_language": "Bahasa presentasi (de / en; kosong = preferensi audio)",
             "sel_main": "Film utama saja",
             "sel_all": "Semua judul",

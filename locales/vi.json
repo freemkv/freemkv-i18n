@@ -659,7 +659,7 @@
             "keep_iso": "Giữ ISO trung gian :",
             "auto_eject": "Đẩy đĩa ra khi hoàn tất :",
             "default_selection": "Lựa chọn mặc định :",
-            "persist_stream_preferences": "Ghi nhớ lựa chọn âm thanh và phụ đề",
+            "persist_stream_preferences": "Ghi nhớ lựa chọn tiêu đề, âm thanh và phụ đề",
             "presentation_language": "Ngôn ngữ trình chiếu (de / en; để trống = ưu tiên âm thanh)",
             "sel_main": "Chỉ phim chính",
             "sel_all": "Tất cả tiêu đề",

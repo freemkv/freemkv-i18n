@@ -659,7 +659,7 @@
             "keep_iso": "Сохранять промежуточный ISO :",
             "auto_eject": "Извлечь диск по завершении :",
             "default_selection": "Выбор по умолчанию :",
-            "persist_stream_preferences": "Запоминать выбор звука и субтитров",
+            "persist_stream_preferences": "Запоминать выбор тайтлов, звука и субтитров",
             "presentation_language": "Язык презентации (de / en; пусто = предпочтение звука)",
             "sel_main": "Только основной фильм",
             "sel_all": "Все тайтлы",

@@ -659,7 +659,7 @@
             "keep_iso": "Tussenliggende ISO behouden:",
             "auto_eject": "Schijf uitwerpen als klaar:",
             "default_selection": "Standaardselectie:",
-            "persist_stream_preferences": "Keuzes voor audio en ondertitels onthouden",
+            "persist_stream_preferences": "Keuzes voor titels, audio en ondertitels onthouden",
             "presentation_language": "Presentatietaal (de / en; leeg = audiovoorkeur)",
             "sel_main": "Alleen hoofdfilm",
             "sel_all": "Alle titels",

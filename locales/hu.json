@@ -659,7 +659,7 @@
             "keep_iso": "Köztes ISO megtartása:",
             "auto_eject": "Lemez kiadása befejezéskor:",
             "default_selection": "Alapértelmezett kijelölés:",
-            "persist_stream_preferences": "Hang- és feliratválasztás megjegyzése",
+            "persist_stream_preferences": "Cím-, hang- és feliratválasztás megjegyzése",
             "presentation_language": "Megjelenítési nyelv (de / en; üres = hangbeállítás)",
             "sel_main": "Csak a főfilm",
             "sel_all": "Összes cím",

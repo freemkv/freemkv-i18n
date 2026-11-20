@@ -659,7 +659,7 @@
             "keep_iso": "Behold mellomliggende ISO:",
             "auto_eject": "Løs ut platen når ferdig:",
             "default_selection": "Standard utvalg:",
-            "persist_stream_preferences": "Husk valg av lyd og undertekster",
+            "persist_stream_preferences": "Husk valg av titler, lyd og undertekster",
             "presentation_language": "Presentasjonsspråk (de / en; tomt = lydpreferanse)",
             "sel_main": "Kun hovedfilm",
             "sel_all": "Alle titler",

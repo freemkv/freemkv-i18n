@@ -659,7 +659,7 @@
             "keep_iso": "Conserva l'ISO intermedio:",
             "auto_eject": "Espelli il disco al termine:",
             "default_selection": "Selezione predefinita:",
-            "persist_stream_preferences": "Ricorda le scelte di audio e sottotitoli",
+            "persist_stream_preferences": "Ricorda le scelte di titoli, audio e sottotitoli",
             "presentation_language": "Lingua di presentazione (de / en; vuoto = preferenza audio)",
             "sel_main": "Solo film principale",
             "sel_all": "Tutti i titoli",

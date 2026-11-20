@@ -659,7 +659,7 @@
             "keep_iso": "Zachovat mezilehlé ISO :",
             "auto_eject": "Po dokončení vysunout disk :",
             "default_selection": "Výchozí výběr :",
-            "persist_stream_preferences": "Pamatovat si volby zvuku a titulků",
+            "persist_stream_preferences": "Pamatovat si volby titulů, zvuku a titulků",
             "presentation_language": "Jazyk prezentace (de / en; prázdné = preference zvuku)",
             "sel_main": "Pouze hlavní film",
             "sel_all": "Všechny tituly",

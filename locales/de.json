@@ -659,7 +659,7 @@
             "keep_iso": "Zwischen-ISO behalten:",
             "auto_eject": "Disc nach Abschluss auswerfen:",
             "default_selection": "Standardauswahl:",
-            "persist_stream_preferences": "Audio- und Untertitelauswahl merken",
+            "persist_stream_preferences": "Titel-, Audio- und Untertitelauswahl merken",
             "presentation_language": "Präsentationssprache (de / en; leer = Audio-Präferenz)",
             "sel_main": "Nur Hauptfilm",
             "sel_all": "Alle Titel",

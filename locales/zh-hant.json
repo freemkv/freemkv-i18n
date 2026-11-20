@@ -659,7 +659,7 @@
             "keep_iso": "保留中繼 ISO：",
             "auto_eject": "完成後退出光碟：",
             "default_selection": "預設選擇：",
-            "persist_stream_preferences": "記住音訊和字幕選擇",
+            "persist_stream_preferences": "記住標題、音訊和字幕選擇",
             "presentation_language": "簡報語言（de / en；留空 = 音訊偏好）",
             "sel_main": "僅主要影片",
             "sel_all": "所有標題",

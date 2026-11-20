@@ -659,7 +659,7 @@
             "keep_iso": "Ara ISO'yu koru :",
             "auto_eject": "Bitince diski çıkar :",
             "default_selection": "Varsayılan seçim :",
-            "persist_stream_preferences": "Ses ve altyazı seçimlerini hatırla",
+            "persist_stream_preferences": "Başlık, ses ve altyazı seçimlerini hatırla",
             "presentation_language": "Sunum dili (de / en; boş = ses tercihi)",
             "sel_main": "Yalnızca ana film",
             "sel_all": "Tüm başlıklar",
