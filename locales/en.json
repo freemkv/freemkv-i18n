@@ -686,7 +686,7 @@
             "key_source": "Key source:",
             "key_src_local": "Local keydb only",
             "key_src_online": "Online key service only",
-            "key_src_both": "keydb, then online",
+            "key_src_both": "Local keydb, then online",
             "keydb_path": "keydb.cfg location:",
             "keydb_url": "keydb update URL:",
             "keydb_busy": "A keydb update is already running — please wait.",
@@ -791,9 +791,9 @@
             "source_closed": "Source closed",
             "keydb_dir_failed": "cannot create keydb directory {path}: {error} (the directory must be writable by freemkv)",
             "keydb_replace_failed": "{message} — {dest}: cannot replace keydb.cfg; check directory write permissions and sandbox access",
-            "cancelling": "Cancelling …",
+            "cancelling": "Cancelling…",
             "nothing_eject": "Nothing to eject — the source is a file, not a drive.",
-            "checking_updates": "Checking for updates …",
+            "checking_updates": "Checking for updates…",
             "container_mismatch": "{container} cannot store {codecs} video. Choose MKV instead.",
             "opened_version": "freemkv {version}",
             "opened": "{label} opened — {n} title(s), keys: {keys}",
@@ -810,7 +810,7 @@
             "no_keyserver": "No key service URL set.",
             "keyserver_valid": "Key service URL is valid: {url}",
             "keyserver_rejected": "Key service URL rejected: {e}",
-            "fetching_keydb": "Fetching keydb …",
+            "fetching_keydb": "Fetching keydb…",
             "backing_up": "Backing up whole disc to {p}",
             "backup_note": "Backup ignores the title selection and the loss tolerance.",
             "folder_unsupported": "Folder sources are not supported yet: {p}",
@@ -1020,10 +1020,10 @@
         "zip_failed": "Could not build the profile zip: {error}"
     },
     "stop": {
-        "stopping": "Stopping …",
-        "waiting_for_drive": "Waiting for the drive …",
+        "stopping": "Stopping…",
+        "waiting_for_drive": "Waiting for the drive…",
         "progress_kept": "Progress kept",
-        "finishing": "Finishing …",
+        "finishing": "Finishing…",
         "artifact_lock_failed": "Could not take the lock on {name}; another process may be using it."
     },
     "server": {
