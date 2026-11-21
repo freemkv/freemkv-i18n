@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.8.11] — UNRELEASED
+
+### Added
+
+- Strings for the Open Folder action, the Automatic title mode, the drive list labels, per-title progress captions and the `--source-names` usage line.
+- Singular and plural forms of the title, sector, stream and track count strings.
+
+### Changed
+
+- English copy: menu items are title-cased, labels drop the space before the colon, the Output tab gains its missing colons, the presentation-language label is shorter with the blank hint in its own string, the Settings notes are plain sentences, and the home status no longer repeats its heading (`no_disc` is removed).
+
 ## [1.8.10] — 2026-11-17
 
 ### Added
